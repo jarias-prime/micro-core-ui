@@ -1,12 +1,12 @@
-# Micro UI
+# Micro Core UI
 
-Micro UI is a Vue 3 component library built with Vite and Tailwind CSS that provides reusable, customizable UI components to help teams build consistent and modern interfaces faster.
+Micro Core UI is a Vue 3 component library built with Vite and Tailwind CSS that provides reusable, customizable UI components to help teams build consistent and modern interfaces faster.
 
-## Why Micro UI?
+## Why Micro Core UI?
 
-Micro UI offers a set of flexible and composable components designed to streamline UI development. It helps teams maintain design consistency, improve development speed, and create scalable front-end architectures.
+Micro Core UI offers a set of flexible and composable components designed to streamline UI development. It helps teams maintain design consistency, improve development speed, and create scalable front-end architectures.
 
-Whether you're building internal tools, dashboards, or full-scale applications, Micro UI provides the foundation for a clean and maintainable UI system.
+Whether you're building internal tools, dashboards, or full-scale applications, Micro Core UI provides the foundation for a clean and maintainable UI system.
 
 ## Built With
 

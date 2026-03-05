@@ -16,7 +16,7 @@ const setPackageVersion = () => {
 
       if (navbarTitle) {
         const versionText = `
-          <p class="title">Micro UI</p>
+          <p class="title">Micro Core UI</p>
           <p class="version">v${pkg.version}</p>
         `;
 

@@ -29,7 +29,7 @@ const install = (app: App) => {
     });
 
   console.info(
-    `%c★ Micro UI Next Installed v${pkg.version} ★`,
+    `%c★ Micro Core UI Next Installed v${pkg.version} ★`,
     'font-weight: bold; font-size: 14px; color: green; padding: 16px 8px; border: 1px dashed green; border-radius: 4px; margin: 10px auto;',
   );
 };

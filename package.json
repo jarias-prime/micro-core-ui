@@ -1,13 +1,13 @@
 {
-  "name": "micro-ui",
+  "name": "micro-core-ui",
   "private": false,
   "version": "1.0.0",
-  "main": "./dist/micro-ui.umd.js",
-  "module": "./dist/micro-ui.es.js",
-  "types": "./dist/micro-ui.es.d.ts",
+  "main": "./dist/micro-core-ui.umd.js",
+  "module": "./dist/micro-core-ui.es.js",
+  "types": "./dist/micro-core-ui.es.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jarias-prime/micro-ui"
+    "url": "https://github.com/jarias-prime/micro-core-ui"
   },
   "type": "module",
   "files": [
@@ -18,14 +18,14 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/micro-ui.es.d.ts",
-      "import": "./dist/micro-ui.es.js",
-      "require": "./dist/micro-ui.umd.js"
+      "types": "./dist/micro-core-ui.es.d.ts",
+      "import": "./dist/micro-core-ui.es.js",
+      "require": "./dist/micro-core-ui.umd.js"
     },
     "./style.css": "./dist/main.css",
     "./types": {
-      "types": "./dist/micro-ui.es.d.ts",
-      "import": "./dist/micro-ui.es.d.ts"
+      "types": "./dist/micro-core-ui.es.d.ts",
+      "import": "./dist/micro-core-ui.es.d.ts"
     }
   },
   "scripts": {

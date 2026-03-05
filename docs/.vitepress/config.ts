@@ -9,9 +9,9 @@ import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
-  title: 'Micro UI',
+  title: 'Micro Core UI',
   description:
-    'Micro UI is a Vue 3 component library built with Vite and Tailwind CSS 4 that provides reusable components to help teams design and develop consistent, modern user interfaces.',
+    'Micro Core UI is a Vue 3 component library built with Vite and Tailwind CSS 4 that provides reusable components to help teams design and develop consistent, modern user interfaces.',
   srcDir: './',
   vite: {
     css: {
@@ -380,13 +380,13 @@ export default defineConfig({
             </svg>
           `,
         },
-        link: 'https://github.com/jarias-prime/micro-ui',
-        ariaLabel: 'Link To Micro UI Repository',
+        link: 'https://github.com/jarias-prime/micro-core-ui',
+        ariaLabel: 'Link To Micro Core UI Repository',
       },
     ],
 
     footer: {
-      copyright: 'Copyright © 2026 Micro UI Team',
+      copyright: 'Copyright © 2026 Micro Core UI Team',
     },
   },
   head: [
@@ -398,9 +398,9 @@ export default defineConfig({
       'meta',
       {
         property: 'og:title',
-        content: 'Welcome to Micro UI - A Vue 3 Component Library',
+        content: 'Welcome to Micro Core UI - A Vue 3 Component Library',
       },
     ],
-    ['meta', { property: 'og:site_name', content: 'Micro UI' }],
+    ['meta', { property: 'og:site_name', content: 'Micro Core UI' }],
   ],
 });

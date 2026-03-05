@@ -49,8 +49,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'lib/main.ts'),
-      name: 'MicroUI',
-      fileName: (format) => `micro-ui.${format}.js`,
+      name: 'MicroCoreUI',
+      fileName: (format) => `micro-core-ui.${format}.js`,
       formats: ['es', 'umd'],
     },
     rollupOptions: {

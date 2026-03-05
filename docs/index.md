@@ -1,7 +1,7 @@
 ---
 layout: home
 hero:
-  name: 'Micro UI'
+  name: 'Micro Core UI'
   tagline: 'A lightweight component library for scalable Vue apps!'
 
 features:
