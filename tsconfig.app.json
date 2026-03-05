@@ -40,5 +40,5 @@
     "tests/**/*.ts",
     "scripts/**/*.js"
   ],
-  "exclude": ["dist/", "playground/", "playwright/.cache/"]
+  "exclude": ["dist/"]
 }

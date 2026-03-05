@@ -27,7 +27,7 @@ export default defineConfig({
       copyDtsFiles: false,
       staticImport: true,
       rollupTypes: true,
-      exclude: ['src/**/*.spec.ts', 'tests/**/*', 'playwright/**/*'],
+      exclude: ['src/**/*.spec.ts', 'tests/**/*'],
       compilerOptions: {
         composite: false,
         declaration: true,
