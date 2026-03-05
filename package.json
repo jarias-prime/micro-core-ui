@@ -1,0 +1,104 @@
+{
+  "name": "micro-ui",
+  "private": false,
+  "version": "1.0.0",
+  "main": "./dist/micro-ui.umd.js",
+  "module": "./dist/micro-ui.es.js",
+  "types": "./dist/micro-ui.es.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jarias-prime/micro-ui"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/micro-ui.es.d.ts",
+      "import": "./dist/micro-ui.es.js",
+      "require": "./dist/micro-ui.umd.js"
+    },
+    "./style.css": "./dist/main.css",
+    "./types": {
+      "types": "./dist/micro-ui.es.d.ts",
+      "import": "./dist/micro-ui.es.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch-build": "vite build --watch",
+    "types": "vue-tsc --noEmit",
+    "preview": "vite preview",
+    "lint:script": "eslint \"**/*.{js,ts,vue}\"",
+    "lint:style": "stylelint \"**/*.{vue,css}\"",
+    "fix:style": "stylelint --fix \"**/*.{vue,css}\"",
+    "lint": "npm run lint:script && npm run lint:style",
+    "prepublishOnly": "npm run build",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "docs:preview": "vitepress preview docs",
+    "test:ui": "npx playwright test --ui --config=playwright-ct.config.ts",
+    "test:components": "npx playwright test --config=playwright-ct.config.ts --reporter=line",
+    "test:changed": "node scripts/test-changed-components.js",
+    "clean": "rm -rf node_modules dist coverage package-lock.json && npm install"
+  },
+  "dependencies": {
+    "@cloudinary/url-gen": "^1.22.0",
+    "@eslint/js": "^9.37.0",
+    "@iconify-icons/ph": "^1.2.5",
+    "@iconify/vue": "^5.0.0",
+    "classnames": "^2.5.1",
+    "countries-list": "^3.1.1",
+    "dayjs": "^1.11.18",
+    "floating-vue": "^5.2.2",
+    "libphonenumber-js": "^1.12.24",
+    "lodash": "^4.17.21",
+    "pinia": "^3.0.3",
+    "sortablejs": "^1.15.6",
+    "stylelint": "^16.25.0",
+    "stylelint-config-recess-order": "^7.4.0",
+    "stylelint-config-recommended": "^17.0.0",
+    "stylelint-config-recommended-vue": "^1.6.1",
+    "typescript-eslint": "^8.46.1",
+    "vite-plugin-sass": "^0.1.0",
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "@stylistic/stylelint-plugin": "^4.0.0",
+    "@types/node": "^20.0.0",
+    "@types/sortablejs": "^1.15.8",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.5.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.0",
+    "rollup-plugin-gzip": "^4.1.1",
+    "sass-embedded": "^1.93.2",
+    "stylelint-order": "^7.0.0",
+    "tailwindcss": "^3.4.17",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "~5.9.3",
+    "unplugin-vue-components": "^29.1.0",
+    "vite": "^6.4.1",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitepress": "^1.6.4",
+    "vue-eslint-parser": "^10.2.0",
+    "vue-tsc": "^3.1.1"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=10.0.0"
+  }
+}
