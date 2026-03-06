@@ -1,5 +1,5 @@
 <template>
-  <spr-dropdown
+  <mc-dropdown
     :id="props.id"
     ref="tableHeaderDropdown"
     width="100%"
@@ -11,41 +11,36 @@
     <div :class="props.headerClasses" @click="showDropdown">
       <span> {{ props.header.name }} </span>
       <span>
-        <Icon          
-          class="!spr-justify-normal spr-text-[#4B685E]"
-          icon="ph:funnel-simple"
-          height="20px"
-          width="20px"          
-        />
+        <Icon class="!mc-justify-normal mc-text-[#4B685E]" icon="ph:funnel-simple" height="20px" width="20px" />
       </span>
     </div>
 
     <template #popper>
-      <spr-card class="spr-max-h-[372px] spr-font-main" border-width="0px" :has-content-padding="false" show-header>
+      <mc-card class="mc-max-h-[372px] mc-font-main" border-width="0px" :has-content-padding="false" show-header>
         <template #header>
           <div
-            class="spr-border-color-weak spr-flex spr-w-full spr-flex-row spr-items-center spr-justify-between spr-border-0 spr-border-b spr-border-solid spr-p-size-spacing-xs"
+            class="mc-border-color-weak mc-flex mc-w-full mc-flex-row mc-items-center mc-justify-between mc-border-0 mc-border-b mc-border-solid mc-p-size-spacing-xs"
           >
-            <span class="spr-subheading-xs spr-capitalize">{{ props.header.name }}</span>
-            <spr-button v-if="props.hasSelectAll" size="small" variant="secondary" @click="selectAll"
-              >Select All</spr-button
+            <span class="mc-subheading-xs mc-capitalize">{{ props.header.name }}</span>
+            <mc-button v-if="props.hasSelectAll" size="small" variant="secondary" @click="selectAll"
+              >Select All</mc-button
             >
           </div>
         </template>
         <template #content>
-          <div class="spr-max-h-[251px] spr-overflow-y-auto">
-            <div v-if="props.isSortable" class="spr-border-color-weak spr-border-0 spr-border-b spr-border-solid">
-              <spr-list
+          <div class="mc-max-h-[251px] mc-overflow-y-auto">
+            <div v-if="props.isSortable" class="mc-border-color-weak mc-border-0 mc-border-b mc-border-solid">
+              <mc-list
                 v-model="selectedSort"
-                class="spr-body-sm-regular spr-text-color-strong spr-capitalize [&_svg.spr-text-color-brand-base]:spr-hidden [&_svg]:spr-h-[16px] [&_svg]:spr-w-[16px]"
+                class="mc-body-sm-regular mc-text-color-strong mc-capitalize [&_svg.mc-text-color-brand-base]:mc-hidden [&_svg]:mc-h-[16px] [&_svg]:mc-w-[16px]"
                 :menu-list="props.sortOptions"
                 :allow-deselect="true"
               />
             </div>
             <div v-if="props.header.headerDropdown?.filterList && props.header.headerDropdown.filterList.length > 0">
-              <spr-list
+              <mc-list
                 v-model="selectedFilters"
-                class="spr-body-sm-regular spr-text-color-strong spr-capitalize [&_svg]:spr-h-[16px] [&_svg]:spr-w-[16px]"
+                class="mc-body-sm-regular mc-text-color-strong mc-capitalize [&_svg]:mc-h-[16px] [&_svg]:mc-w-[16px]"
                 :menu-list="props.header.headerDropdown.filterList"
                 multi-select
               />
@@ -53,26 +48,26 @@
           </div>
         </template>
         <template #footer>
-          <div class="spr-ms-auto spr-flex spr-items-center spr-py-size-spacing-5xs">
-            <spr-button tone="success" @click="applyFilter">Apply Filter</spr-button>
+          <div class="mc-ms-auto mc-flex mc-items-center mc-py-size-spacing-5xs">
+            <mc-button tone="success" @click="applyFilter">Apply Filter</mc-button>
           </div>
         </template>
-      </spr-card>
+      </mc-card>
     </template>
-  </spr-dropdown>
+  </mc-dropdown>
 </template>
 
 <script setup lang="ts">
-import SprDropdown from '@/components/dropdown/dropdown.vue';
-import SprCard from '@/components/card/card.vue';
-import SprButton from '@/components/button/button.vue';
-import SprList from '@/components/list/list.vue';
+import McDropdown from '@/components/dropdown/dropdown.vue';
+import McCard from '@/components/card/card.vue';
+import McButton from '@/components/button/button.vue';
+import McList from '@/components/list/list.vue';
 import { Icon } from '@iconify/vue';
 import { tableHeaderDropdownEmitTypes, tableHeaderDropdownPropTypes } from './table-header-dropdown';
 import { ref } from 'vue';
 import { MenuListType } from '@/components/list/list';
 
-const tableHeaderDropdown = ref<InstanceType<typeof SprDropdown> | null>(null);
+const tableHeaderDropdown = ref<InstanceType<typeof McDropdown> | null>(null);
 const showDropdown = () => {
   tableHeaderDropdown.value?.showDropdown();
 };
@@ -104,6 +99,6 @@ const selectAll = () => {
 };
 
 defineExpose({
-  showDropdown
+  showDropdown,
 });
 </script>

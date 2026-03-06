@@ -1,5 +1,5 @@
 <template>
-  <div v-for="(navLink, navLinkIndex) in positionedNavLinks" :key="navLinkIndex" class="spr-grid spr-gap-2">
+  <div v-for="(navLink, navLinkIndex) in positionedNavLinks" :key="navLinkIndex" class="mc-grid mc-gap-2">
     <!-- Desktop -->
     <template v-for="(parentLink, parentLinkIndex) in navLink.parentLinks" :key="parentLinkIndex">
       <!-- #region - Parent Links with Menus -->
@@ -16,11 +16,11 @@
           <div
             :id="`${generateId(parentLink.title)}`"
             :class="{
-              'spr-m-auto spr-box-border spr-flex spr-max-h-9 spr-max-w-9 spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-border-radius-md spr-p-2 spr-transition spr-duration-150 spr-ease-in-out': true,
-              'spr-background-color-single-active spr-border-color-brand-base spr-border-[1.5px] spr-border-solid active:spr-scale-90':
+              'mc-m-auto mc-box-border mc-flex mc-max-h-9 mc-max-w-9 mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-border-radius-md mc-p-2 mc-transition mc-duration-150 mc-ease-in-out': true,
+              'mc-background-color-single-active mc-border-color-brand-base mc-border-[1.5px] mc-border-solid active:mc-scale-90':
                 props.activeNav.parentNav === parentLink.title,
-              'hover:spr-background-color-hover': props.activeNav.parentNav != parentLink.title,
-              'active:spr-background-color-single-active active:spr-scale-90': true,
+              'hover:mc-background-color-hover': props.activeNav.parentNav != parentLink.title,
+              'active:mc-background-color-single-active active:mc-scale-90': true,
             }"
           >
             <template v-if="parentLink.icon && parentLink.icon.includes('https://')">
@@ -28,25 +28,25 @@
                 v-if="parentLink.icon && props.activeNav.parentNav !== parentLink.title"
                 :src="parentLink.icon"
                 :alt="`${parentLink.title} icon`"
-                class="spr-h-[1.25em] spr-w-[1.25em] spr-max-w-[1.25em]"
+                class="mc-h-[1.25em] mc-w-[1.25em] mc-max-w-[1.25em]"
               />
               <img
                 v-else-if="props.activeNav.parentNav === parentLink.title"
                 :src="parentLink.icon.replace(/\.(svg|png|jpg)$/, '-fill.$1')"
                 :alt="`${parentLink.title} icon`"
-                class="spr-h-[1.25em] spr-w-[1.25em] spr-max-w-[1.25em]"
+                class="mc-h-[1.25em] mc-w-[1.25em] mc-max-w-[1.25em]"
               />
             </template>
             <template v-else>
               <Icon
                 v-if="parentLink.icon && props.activeNav.parentNav !== parentLink.title"
                 :icon="parentLink.icon"
-                class="spr-h-[1.25em] spr-w-[1.25em]"
+                class="mc-h-[1.25em] mc-w-[1.25em]"
               />
               <Icon
                 v-else-if="props.activeNav.parentNav === parentLink.title"
                 :icon="`${parentLink.icon}-fill`"
-                class="spr-h-[1.25em] spr-w-[1.25em] spr-text-kangkong-700"
+                class="mc-h-[1.25em] mc-w-[1.25em] mc-text-kangkong-700"
               />
               <Icon v-else icon="ph:globe" />
             </template>
@@ -55,8 +55,8 @@
 
           <!-- #region - Menu Links Popper -->
           <template #popper>
-            <div class="spr-border-color-weak spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid spr-p-2">
-              <h3 class="spr-body-sm-regular-medium spr-m-0">
+            <div class="mc-border-color-weak mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid mc-p-2">
+              <h3 class="mc-body-sm-regular-medium mc-m-0">
                 {{ parentLink.title }}
               </h3>
             </div>
@@ -65,8 +65,8 @@
               <h5
                 v-if="menuLink.menuHeading"
                 :class="{
-                  'spr-label-xs-medium spr-text-color-supporting spr-m-0 spr-p-2': true,
-                  'spr-pt-2': menuLinkIndex !== 0,
+                  'mc-label-xs-medium mc-text-color-supporting mc-m-0 mc-p-2': true,
+                  'mc-pt-2': menuLinkIndex !== 0,
                 }"
               >
                 {{ menuLink.menuHeading }}
@@ -87,26 +87,26 @@
                     <div
                       :id="`${generateId(parentLink.title, menuLinkItem.title)}`"
                       :class="{
-                        'spr-body-sm-regular spr-relative spr-m-0 spr-flex spr-cursor-pointer spr-px-2 spr-py-1.5 spr-align-middle spr-duration-150 spr-ease-in-out': true,
-                        'spr-background-color-single-active': props.activeNav.menu === menuLinkItem.title,
-                        'hover:spr-background-color-hover': props.activeNav.menu !== menuLinkItem.title,
-                        'active:spr-background-color-pressed': true,
+                        'mc-body-sm-regular mc-relative mc-m-0 mc-flex mc-cursor-pointer mc-px-2 mc-py-1.5 mc-align-middle mc-duration-150 mc-ease-in-out': true,
+                        'mc-background-color-single-active': props.activeNav.menu === menuLinkItem.title,
+                        'hover:mc-background-color-hover': props.activeNav.menu !== menuLinkItem.title,
+                        'active:mc-background-color-pressed': true,
                       }"
                     >
                       <div
                         v-if="props.activeNav.menu === menuLinkItem.title"
-                        class="spr-background-color-brand-base spr-absolute spr-left-0 spr-top-0 spr-h-full spr-w-[2px]"
+                        class="mc-background-color-brand-base mc-absolute mc-left-0 mc-top-0 mc-h-full mc-w-[2px]"
                       ></div>
 
-                      <div class="spr-flex spr-w-full spr-items-center spr-justify-between spr-gap-1">
+                      <div class="mc-flex mc-w-full mc-items-center mc-justify-between mc-gap-1">
                         <span>{{ menuLinkItem.title }}</span>
 
-                        <div class="spr-flex spr-items-center spr-gap-2">
+                        <div class="mc-flex mc-items-center mc-gap-2">
                           <template
                             v-for="(attribute, i) in convertAttributesToArray(menuLinkItem?.attributes)"
                             :key="i"
                           >
-                            <spr-lozenge
+                            <mc-lozenge
                               v-if="attribute?.name === 'lozenge' && attribute?.value"
                               :label="getLozengeLabel(attribute)"
                               :tone="getLozengeTone(attribute)"
@@ -115,7 +115,7 @@
                           </template>
                           <Icon
                             icon="ph:caret-right"
-                            class="spr-h-[16px] spr-w-[16px] spr-transform spr-font-normal spr-transition-transform spr-duration-300"
+                            class="mc-h-[16px] mc-w-[16px] mc-transform mc-font-normal mc-transition-transform mc-duration-300"
                           />
                         </div>
                       </div>
@@ -138,8 +138,8 @@
                           <h5
                             v-if="submenuLink.subMenuHeading"
                             :class="{
-                              'spr-label-xs-medium spr-text-color-supporting spr-m-0 spr-p-2': true,
-                              'spr-pt-2': submenuLinkIndex !== 0,
+                              'mc-label-xs-medium mc-text-color-supporting mc-m-0 mc-p-2': true,
+                              'mc-pt-2': submenuLinkIndex !== 0,
                             }"
                           >
                             {{ submenuLink.subMenuHeading }}
@@ -154,10 +154,10 @@
                               v-if="!submenuLinkItem.hidden"
                               :id="`${generateId(parentLink.title, menuLinkItem.title, submenuLinkItem.title)}`"
                               :class="{
-                                'spr-body-sm-regular spr-relative spr-m-0 spr-flex spr-cursor-pointer spr-px-2 spr-py-1.5 spr-align-middle spr-duration-150 spr-ease-in-out': true,
-                                'spr-background-color-single-active': props.activeNav.submenu === submenuLinkItem.title,
-                                'hover:spr-background-color-hover': props.activeNav.submenu !== submenuLinkItem.title,
-                                'active:spr-background-color-pressed': true,
+                                'mc-body-sm-regular mc-relative mc-m-0 mc-flex mc-cursor-pointer mc-px-2 mc-py-1.5 mc-align-middle mc-duration-150 mc-ease-in-out': true,
+                                'mc-background-color-single-active': props.activeNav.submenu === submenuLinkItem.title,
+                                'hover:mc-background-color-hover': props.activeNav.submenu !== submenuLinkItem.title,
+                                'active:mc-background-color-pressed': true,
                               }"
                               @click="
                                 handleRedirect(
@@ -170,18 +170,18 @@
                             >
                               <div
                                 v-show="props.activeNav.submenu === submenuLinkItem.title"
-                                class="spr-background-color-brand-base spr-absolute spr-left-0 spr-top-0 spr-h-full spr-w-[2px]"
+                                class="mc-background-color-brand-base mc-absolute mc-left-0 mc-top-0 mc-h-full mc-w-[2px]"
                               ></div>
 
-                              <div class="spr-flex spr-w-full spr-items-center spr-justify-between spr-gap-1">
+                              <div class="mc-flex mc-w-full mc-items-center mc-justify-between mc-gap-1">
                                 <span>{{ submenuLinkItem.title }}</span>
 
-                                <div class="spr-flex spr-items-center spr-gap-2">
+                                <div class="mc-flex mc-items-center mc-gap-2">
                                   <template
                                     v-for="(attribute, i) in convertAttributesToArray(submenuLinkItem?.attributes)"
                                     :key="i"
                                   >
-                                    <spr-lozenge
+                                    <mc-lozenge
                                       v-if="attribute?.name === 'lozenge' && attribute?.value"
                                       :label="getLozengeLabel(attribute)"
                                       :tone="getLozengeTone(attribute)"
@@ -207,24 +207,24 @@
                     v-if="!menuLinkItem.hidden"
                     :id="`${generateId(parentLink.title, menuLinkItem.title)}`"
                     :class="{
-                      'spr-body-sm-regular spr-relative spr-m-0 spr-flex spr-cursor-pointer spr-px-2 spr-py-1.5 spr-align-middle spr-duration-150 spr-ease-in-out': true,
-                      'spr-background-color-single-active': props.activeNav.menu === menuLinkItem.title,
-                      'hover:spr-background-color-hover': props.activeNav.menu !== menuLinkItem.title,
-                      'active:spr-background-color-pressed': true,
+                      'mc-body-sm-regular mc-relative mc-m-0 mc-flex mc-cursor-pointer mc-px-2 mc-py-1.5 mc-align-middle mc-duration-150 mc-ease-in-out': true,
+                      'mc-background-color-single-active': props.activeNav.menu === menuLinkItem.title,
+                      'hover:mc-background-color-hover': props.activeNav.menu !== menuLinkItem.title,
+                      'active:mc-background-color-pressed': true,
                     }"
                     @click="handleRedirect(menuLinkItem, parentLink.title, menuLinkItem.title, '')"
                   >
                     <div
                       v-if="props.activeNav.menu === menuLinkItem.title"
-                      class="spr-background-color-brand-base spr-absolute spr-left-0 spr-top-0 spr-h-full spr-w-[2px]"
+                      class="mc-background-color-brand-base mc-absolute mc-left-0 mc-top-0 mc-h-full mc-w-[2px]"
                     ></div>
 
-                    <div class="spr-flex spr-w-full spr-items-center spr-justify-between spr-gap-1">
+                    <div class="mc-flex mc-w-full mc-items-center mc-justify-between mc-gap-1">
                       <span>{{ menuLinkItem.title }}</span>
 
-                      <div class="spr-flex spr-items-center spr-gap-2">
+                      <div class="mc-flex mc-items-center mc-gap-2">
                         <template v-for="(attribute, i) in convertAttributesToArray(menuLinkItem?.attributes)" :key="i">
-                          <spr-lozenge
+                          <mc-lozenge
                             v-if="attribute?.name === 'lozenge' && attribute?.value"
                             :label="getLozengeLabel(attribute)"
                             :tone="getLozengeTone(attribute)"
@@ -246,7 +246,7 @@
 
       <!-- #region - Parent link only -->
       <template v-else>
-        <spr-tooltip
+        <mc-tooltip
           v-if="!parentLink.hidden"
           :text="parentLink.title"
           placement="right"
@@ -256,11 +256,11 @@
           <div
             :id="`${generateId(parentLink.title)}`"
             :class="{
-              'spr-m-auto spr-box-border spr-flex spr-max-h-9 spr-max-w-9 spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-border-radius-md spr-p-2 spr-transition spr-duration-150 spr-ease-in-out': true,
-              'spr-background-color-single-active spr-border-color-brand-base spr-border-[1.5px] spr-border-solid active:spr-scale-90':
+              'mc-m-auto mc-box-border mc-flex mc-max-h-9 mc-max-w-9 mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-border-radius-md mc-p-2 mc-transition mc-duration-150 mc-ease-in-out': true,
+              'mc-background-color-single-active mc-border-color-brand-base mc-border-[1.5px] mc-border-solid active:mc-scale-90':
                 props.activeNav.parentNav === parentLink.title,
-              'hover:spr-background-color-hover': props.activeNav.parentNav != parentLink.title,
-              'active:spr-background-color-single-active active:spr-scale-90': true,
+              'hover:mc-background-color-hover': props.activeNav.parentNav != parentLink.title,
+              'active:mc-background-color-single-active active:mc-scale-90': true,
             }"
             @click="handleRedirect(parentLink, parentLink.title, '', '')"
           >
@@ -269,30 +269,30 @@
                 v-if="parentLink.icon && props.activeNav.parentNav !== parentLink.title"
                 :src="parentLink.icon"
                 :alt="`${parentLink.title} icon`"
-                class="spr-h-[1.25em] spr-w-[1.25em] spr-max-w-[1.25em]"
+                class="mc-h-[1.25em] mc-w-[1.25em] mc-max-w-[1.25em]"
               />
               <img
                 v-else-if="props.activeNav.parentNav === parentLink.title"
                 :src="parentLink.icon.replace(/\.(svg|png|jpg)$/, '-fill.$1')"
                 :alt="`${parentLink.title} icon`"
-                class="spr-h-[1.25em] spr-w-[1.25em] spr-max-w-[1.25em]"
+                class="mc-h-[1.25em] mc-w-[1.25em] mc-max-w-[1.25em]"
               />
             </template>
             <template v-else>
               <Icon
                 v-if="parentLink.icon && props.activeNav.parentNav !== parentLink.title"
                 :icon="parentLink.icon"
-                class="spr-h-[1.25em] spr-w-[1.25em]"
+                class="mc-h-[1.25em] mc-w-[1.25em]"
               />
               <Icon
                 v-else-if="props.activeNav.parentNav === parentLink.title"
                 :icon="`${parentLink.icon}-fill`"
-                class="spr-h-[1.25em] spr-w-[1.25em] spr-text-kangkong-700"
+                class="mc-h-[1.25em] mc-w-[1.25em] mc-text-kangkong-700"
               />
               <Icon v-else icon="ph:globe" />
             </template>
           </div>
-        </spr-tooltip>
+        </mc-tooltip>
       </template>
       <!-- #endregion - Parent link only  -->
     </template>
@@ -300,7 +300,7 @@
     <!-- Divider -->
     <div
       v-if="positionedNavLinks.length > 0 && navLinkIndex < positionedNavLinks.length - 1"
-      class="spr-background-color-hover spr-h-[2px] spr-w-full"
+      class="mc-background-color-hover mc-h-[2px] mc-w-full"
     ></div>
   </div>
 </template>
@@ -314,8 +314,8 @@ import 'floating-vue/dist/style.css';
 import { sidenavPropTypes, sidenavEmitTypes, type NavLinks } from './sidenav';
 import { useSidenav } from './use-sidenav';
 
-import SprLozenge from '../lozenge/lozenge.vue';
-import SprTooltip from '../tooltip/tooltip.vue';
+import McLozenge from '../lozenge/lozenge.vue';
+import McTooltip from '../tooltip/tooltip.vue';
 import { computed, type PropType } from 'vue';
 
 const props = defineProps({

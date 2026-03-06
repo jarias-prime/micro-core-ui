@@ -22,13 +22,13 @@
       :class="[radioClasses.labelClasses, { [radioClasses.borderedClasses]: props.bordered }]"
     >
       <span :class="radioClasses.baseIndicatorClasses"></span>
-      <div class="spr-flex spr-flex-col spr-gap-size-spacing-6xs">
+      <div class="mc-flex mc-flex-col mc-gap-size-spacing-6xs">
         <slot />
         <span
           v-if="props.description && props.description !== ''"
           :class="[
-            'spr-text-xs spr-font-normal spr-leading-4 spr-text-mushroom-600',
-            { 'spr-text-color-disabled': props.disabled },
+            'mc-text-xs mc-font-normal mc-leading-4 mc-text-mushroom-600',
+            { 'mc-text-color-disabled': props.disabled },
           ]"
         >
           {{ props.description }}

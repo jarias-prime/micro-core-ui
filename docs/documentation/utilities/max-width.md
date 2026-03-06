@@ -16,15 +16,15 @@ Additional max-width classes.
     </tr>
     <tr>
       <td>640px</td>
-      <td>spr-max-w-sm</td>
+      <td>mc-max-w-sm</td>
     </tr>
     <tr>
       <td>1000px</td>
-      <td>spr-max-w-md</td>
+      <td>mc-max-w-md</td>
     </tr>
     <tr>
       <td>1320px</td>
-      <td>spr-max-w-lg</td>
+      <td>mc-max-w-lg</td>
     </tr>
   </tbody>
 </table>

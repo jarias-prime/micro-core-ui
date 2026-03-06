@@ -10,11 +10,11 @@ Currency input with selectable currency code and formatting (thousand separators
 
 ## Basic Usage
 
-<spr-input-currency id="input-currency-basic" v-model="inputModels.basic" label="Input Currenct" />
+<mc-input-currency id="input-currency-basic" v-model="inputModels.basic" label="Input Currenct" />
 
 ```vue
 <template>
-  <spr-input-currency id="input-currency-basic" v-model="inputModel" label="Input Currenct" />
+  <mc-input-currency id="input-currency-basic" v-model="inputModel" label="Input Currenct" />
 </template>
 
 <script setup lang="ts">
@@ -26,11 +26,11 @@ const inputModel = ref('');
 
 ## Active State
 
-<spr-input-currency id="input-currency-active-state" v-model="inputModels.activeState" label="Input Currenct" active />
+<mc-input-currency id="input-currency-active-state" v-model="inputModels.activeState" label="Input Currenct" active />
 
 ```vue
 <template>
-  <spr-input-currency id="input-currency-active-state" v-model="inputModel" label="Input Currenct" active />
+  <mc-input-currency id="input-currency-active-state" v-model="inputModel" label="Input Currenct" active />
 </template>
 
 <script setup lang="ts">
@@ -42,19 +42,19 @@ const inputModel = ref('');
 
 ## Error State
 
-<spr-input-currency id="input-currency-error-state" v-model="inputModels.errorState" label="Input Currenct" error>
+<mc-input-currency id="input-currency-error-state" v-model="inputModels.errorState" label="Input Currenct" error>
   <template #icon>
     <Icon icon="ph:warning-circle-fill" />
   </template>
-</spr-input-currency>
+</mc-input-currency>
 
 ```vue
 <template>
-  <spr-input-currency id="input-currency-error-state" v-model="inputModel" label="Input Currenct" error>
+  <mc-input-currency id="input-currency-error-state" v-model="inputModel" label="Input Currenct" error>
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input-currency>
+  </mc-input-currency>
 </template>
 
 <script setup lang="ts">
@@ -67,7 +67,7 @@ const inputModel = ref('');
 ## Disabled State
 
 <div>
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-disabled-state" 
     v-model="inputModels.disabledState" 
     label="Input Currenct" 
@@ -77,7 +77,7 @@ const inputModel = ref('');
 
 ```vue
 <template>
-  <spr-input-currency id="input-currency-disabled-state" v-model="inputModel" label="Input Currenct" disabled />
+  <mc-input-currency id="input-currency-disabled-state" v-model="inputModel" label="Input Currenct" disabled />
 </template>
 
 <script setup lang="ts">
@@ -90,7 +90,7 @@ const inputModel = ref('');
 ## Disabled Country Currency
 
 <div>
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-disabled-country-currency" 
     v-model="inputModels.disabledCountryCurrency" 
     label="Input Currenct" 
@@ -100,7 +100,7 @@ const inputModel = ref('');
 
 ```vue
 <template>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-disabled-country-currency"
     v-model="inputModel"
     label="Input Currenct"
@@ -119,13 +119,13 @@ const inputModel = ref('');
 
 The default of the currency component is to display the currency code (e.g., USD, EUR). You can switch to display the currency symbol (e.g., $, €) by setting the `display-as-symbol` prop to `true`.
 
-<div class="spr-grid spr-gap-3">
-  <spr-input-currency 
+<div class="mc-grid mc-gap-3">
+  <mc-input-currency 
     id="input-currency-code-or-symbol-1" 
     v-model="inputModels.currencyCodeSymbol1" 
     label="Input Currenct" 
   />
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-code-or-symbol-2" 
     v-model="inputModels.currencyCodeSymbol2" 
     label="Input Currenct" 
@@ -135,9 +135,9 @@ The default of the currency component is to display the currency code (e.g., USD
 
 ```vue
 <template>
-  <spr-input-currency id="input-currency-code-or-symbol-1" v-model="inputModel" label="Input Currenct" />
+  <mc-input-currency id="input-currency-code-or-symbol-1" v-model="inputModel" label="Input Currenct" />
 
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-code-or-symbol-2"
     v-model="inputModel"
     label="Input Currenct"
@@ -154,15 +154,15 @@ const inputModel = ref('');
 
 ## Get Selected Currency Meta
 
-<div class="spr-grid spr-gap-4">
-  <spr-input-currency 
+<div class="mc-grid mc-gap-4">
+  <mc-input-currency 
     id="input-currency-selected-currency"
     v-model="inputModels.selectedCurrencyMeta" 
     label="Input Currenct"  
     @get-selected-currency-meta="handleSelectedCurrencyMeta"
   />
 
-  <div class="spr-p-4 spr-bg-blue-100">
+  <div class="mc-p-4 mc-bg-blue-100">
     <p>Model Output: {{ inputModels.selectedCurrencyMeta }}</p>
     <p>Selected Currency: {{ meta.currency }}</p>
     <p>Selected Symbol: {{ meta.symbol }}</p>
@@ -172,14 +172,14 @@ const inputModel = ref('');
 
 ```vue
 <template>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-selected-currency"
     v-model="inputModel"
     label="Input Currenct"
     @get-selected-currency-meta="handleSelectedCurrencyMeta"
   />
 
-  <div class="spr-bg-blue-100 spr-p-4">
+  <div class="mc-bg-blue-100 mc-p-4">
     <p>Model Output: {{ inputModel }}</p>
     <p>Selected Currency: {{ selectedCurrency }}</p>
     <p>Selected Symbol: {{ selectedSymbol }}</p>
@@ -202,11 +202,11 @@ const handleSelectedCurrencyMeta = (val: { currency: string; symbol: string }) =
 
 ## Pre-Selected Currency
 
-<spr-input-currency v-model="inputModels.preSelectedCurrency" label="Input Currenct" pre-selected-currency="USD" />
+<mc-input-currency v-model="inputModels.preSelectedCurrency" label="Input Currenct" pre-selected-currency="USD" />
 
 ```vue
 <template>
-  <spr-input-currency v-model="inputModel" label="Input Currenct" pre-selected-currency="USD" />
+  <mc-input-currency v-model="inputModel" label="Input Currenct" pre-selected-currency="USD" />
 </template>
 ```
 
@@ -214,8 +214,8 @@ const handleSelectedCurrencyMeta = (val: { currency: string; symbol: string }) =
 
 Change the currency dynamically using the `currency` prop. The component supports both uppercase and lowercase currency codes. If no currency prop is provided, it defaults to **PHP** (Philippine Peso).
 
-<div class="spr-grid spr-gap-4">
-  <spr-select 
+<div class="mc-grid mc-gap-4">
+  <mc-select 
     id="currency-select"
     v-model="selectedCurrency" 
     label="Select Currency"
@@ -224,7 +224,7 @@ Change the currency dynamically using the `currency` prop. The component support
     popper-width="200px"
   />
   
-  <spr-input-currency 
+  <mc-input-currency 
     v-model="inputModels.dynamicCurrency" 
     label="Dynamic Currency Input" 
     :currency="selectedCurrency"
@@ -232,18 +232,18 @@ Change the currency dynamically using the `currency` prop. The component support
     placeholder="Enter amount"
   />
   
-  <div class="spr-p-4 spr-bg-blue-50 spr-rounded spr-border spr-border-blue-200">
-    <p class="spr-text-sm spr-text-gray-700"><span class="spr-font-medium">Selected Currency:</span> {{ selectedCurrency.toUpperCase() }}</p>
-    <p class="spr-text-sm spr-text-gray-700"><span class="spr-font-medium">Amount:</span> {{ inputModels.dynamicCurrency }}</p>
+  <div class="mc-p-4 mc-bg-blue-50 mc-rounded mc-border mc-border-blue-200">
+    <p class="mc-text-sm mc-text-gray-700"><span class="mc-font-medium">Selected Currency:</span> {{ selectedCurrency.toUpperCase() }}</p>
+    <p class="mc-text-sm mc-text-gray-700"><span class="mc-font-medium">Amount:</span> {{ inputModels.dynamicCurrency }}</p>
   </div>
 </div>
 
 ```vue
 <template>
-  <div class="spr-grid spr-gap-4">
-    <spr-select id="currency-select" v-model="selectedCurrency" label="Select Currency" :options="currencyOptions" />
+  <div class="mc-grid mc-gap-4">
+    <mc-select id="currency-select" v-model="selectedCurrency" label="Select Currency" :options="currencyOptions" />
 
-    <spr-input-currency
+    <mc-input-currency
       v-model="amount"
       label="Dynamic Currency Input"
       :currency="selectedCurrency"
@@ -251,18 +251,18 @@ Change the currency dynamically using the `currency` prop. The component support
       placeholder="Enter amount"
     />
 
-    <div class="spr-rounded spr-border spr-border-blue-200 spr-bg-blue-50 spr-p-4">
-      <p class="spr-text-sm spr-text-gray-700">
-        <span class="spr-font-medium">Selected Currency:</span> {{ selectedCurrency.toUpperCase() }}
+    <div class="mc-rounded mc-border mc-border-blue-200 mc-bg-blue-50 mc-p-4">
+      <p class="mc-text-sm mc-text-gray-700">
+        <span class="mc-font-medium">Selected Currency:</span> {{ selectedCurrency.toUpperCase() }}
       </p>
-      <p class="spr-text-sm spr-text-gray-700"><span class="spr-font-medium">Amount:</span> {{ amount }}</p>
+      <p class="mc-text-sm mc-text-gray-700"><span class="mc-font-medium">Amount:</span> {{ amount }}</p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import SprSelect from '@/components/select/select.vue';
+import McSelect from '@/components/select/select.vue';
 
 const amount = ref('');
 const selectedCurrency = ref('php');
@@ -290,30 +290,30 @@ Examples
 
 ```vue
 <!-- Default (PHP) -->
-<spr-input-currency v-model="amount" />
+<mc-input-currency v-model="amount" />
 
 <!-- Explicit uppercase -->
-<spr-input-currency v-model="amount" currency="USD" />
+<mc-input-currency v-model="amount" currency="USD" />
 
 <!-- Lowercase support -->
-<spr-input-currency v-model="amount" currency="eur" />
+<mc-input-currency v-model="amount" currency="eur" />
 
 <!-- Dynamic/reactive -->
-<spr-input-currency v-model="amount" :currency="userSelectedCurrency" />
+<mc-input-currency v-model="amount" :currency="userSelectedCurrency" />
 ```
 
 ## Auto Format
 
 Automatically applies thousand separators and limits decimals based on currency standards while typing and on blur. If a value already exists when the component is mounted, it will be auto-formatted immediately.
 
-<div class="spr-grid spr-gap-3">
-  <spr-input-currency 
+<div class="mc-grid mc-gap-3">
+  <mc-input-currency 
     id="input-currency-auto-format" 
     v-model="inputModels.autoFormat" 
     label="Input Currency" 
     auto-format
   />
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-auto-format-existing" 
     v-model="inputModels.autoFormatExisting" 
     label="With Initial Value" 
@@ -323,14 +323,14 @@ Automatically applies thousand separators and limits decimals based on currency 
 
 ```vue
 <template>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-auto-format-empty"
     v-model="inputModelEmpty"
     label="Empty Input Currency"
     auto-format
   />
 
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-auto-format-existing"
     v-model="inputModelWithValue"
     label="With Initial Value"
@@ -364,7 +364,7 @@ Always show exactly 2 decimal places. Perfect for price inputs where you need co
 Try typing: `100` → After blur shows `100.00`
 
 <div>
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-fixed-decimals" 
     v-model="inputModels.fixedDecimals" 
     label="Product Price (Fixed 2 Decimals)" 
@@ -376,7 +376,7 @@ Try typing: `100` → After blur shows `100.00`
 
 ```vue
 <template>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-fixed-decimals"
     v-model="price"
     label="Product Price"
@@ -399,7 +399,7 @@ Allow 0 to 4 decimal places. Useful for cryptocurrencies or measurements where p
 Try typing: `100` → Stays as `100` (no padding), or `100.123456` → Becomes `100.1234`
 
 <div>
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-flexible-decimals" 
     v-model="inputModels.flexibleDecimals" 
     label="Cryptocurrency Amount (0-4 Decimals)" 
@@ -411,7 +411,7 @@ Try typing: `100` → Stays as `100` (no padding), or `100.123456` → Becomes `
 
 ```vue
 <template>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-flexible-decimals"
     v-model="cryptoAmount"
     label="Cryptocurrency Amount"
@@ -434,7 +434,7 @@ Force at least 3 decimals, allow up to 6. Useful for scientific or financial cal
 Try typing: `100` → Becomes `100.000`, or `100.1234567` → Becomes `100.123456`
 
 <div>
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-scientific-decimals" 
     v-model="inputModels.scientificDecimals" 
     label="Scientific Measurement (3-6 Decimals)" 
@@ -446,7 +446,7 @@ Try typing: `100` → Becomes `100.000`, or `100.1234567` → Becomes `100.12345
 
 ```vue
 <template>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-scientific-decimals"
     v-model="scientificValue"
     label="Scientific Measurement"
@@ -469,7 +469,7 @@ Limit precision to 4 decimals without enforcing minimum padding. Useful for flex
 Try typing: `100` → Stays as `100`, or `100.12345` → Becomes `100.1234`
 
 <div>
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-max-decimals" 
     v-model="inputModels.maxDecimals" 
     label="Flexible Amount (Max 4 Decimals)" 
@@ -480,7 +480,7 @@ Try typing: `100` → Stays as `100`, or `100.12345` → Becomes `100.1234`
 
 ```vue
 <template>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-max-decimals"
     v-model="amount"
     label="Flexible Amount"
@@ -502,7 +502,7 @@ Enforce minimum 2 decimal places padding without maximum limit. Useful when you 
 Try typing: `100` → Becomes `100.00`, or `100.123456` → Stays as `100.123456`
 
 <div>
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-min-decimals" 
     v-model="inputModels.minDecimals" 
     label="Amount with Min Padding (Min 2 Decimals)" 
@@ -513,7 +513,7 @@ Try typing: `100` → Becomes `100.00`, or `100.123456` → Stays as `100.123456
 
 ```vue
 <template>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-min-decimals"
     v-model="minAmount"
     label="Amount with Min Padding"
@@ -533,7 +533,7 @@ const minAmount = ref('');
 When enabled, the component truncates (instead of rounds) fractional digits to the maximum allowed decimals.
 
 <div>
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-disable-rounding" 
     v-model="inputModels.disableRounding" 
     label="Input Currency" 
@@ -544,7 +544,7 @@ When enabled, the component truncates (instead of rounds) fractional digits to t
 
 ```vue
 <template>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-disable-rounding"
     v-model="inputModel"
     label="Input Currency"
@@ -565,7 +565,7 @@ const inputModel = ref('');
 You can pass a custom helper message through the `helperMessage` slot to display custom validation or additional information.
 
 <div>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-custom-helper"
     v-model="inputModels.customHelper"
     label="Input Currency"
@@ -574,17 +574,17 @@ You can pass a custom helper message through the `helperMessage` slot to display
     :error="!!inputModels.customHelperError"
   > 
     <template #helperMessage>
-      <div class="spr-flex spr-gap-2">
-        <span v-if="inputModels.customHelperError" class="spr-text-red-500">{{ inputModels.customHelperError }}</span>
-        <span v-else class="spr-text-gray-500">Minimum amount is $100</span>
+      <div class="mc-flex mc-gap-2">
+        <span v-if="inputModels.customHelperError" class="mc-text-red-500">{{ inputModels.customHelperError }}</span>
+        <span v-else class="mc-text-gray-500">Minimum amount is $100</span>
       </div>
     </template>
-  </spr-input-currency>
+  </mc-input-currency>
 </div>
 
 ```vue
 <template>
-  <spr-input-currency
+  <mc-input-currency
     id="input-currency-custom-helper"
     v-model="inputModel"
     label="Input Currency"
@@ -593,12 +593,12 @@ You can pass a custom helper message through the `helperMessage` slot to display
     :error="!!errorMessage"
   >
     <template #helperMessage>
-      <div class="spr-flex spr-gap-2">
-        <span v-if="errorMessage" class="spr-text-red-500">{{ errorMessage }}</span>
-        <span v-else class="spr-text-gray-500">Minimum amount is $100</span>
+      <div class="mc-flex mc-gap-2">
+        <span v-if="errorMessage" class="mc-text-red-500">{{ errorMessage }}</span>
+        <span v-else class="mc-text-gray-500">Minimum amount is $100</span>
       </div>
     </template>
-  </spr-input-currency>
+  </mc-input-currency>
 </template>
 
 <script setup lang="ts">
@@ -618,31 +618,31 @@ const errorMessage = computed(() => {
 Access the numeric value directly through the `@get-currency-value` event. This emits the parsed numeric value, making it easy to work with currency values without string conversion.
 
 <div>
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-get-value" 
     v-model="inputModels.getCurrencyValue" 
     label="Get Raw Value" 
     placeholder="Type and blur to see raw value"
     @get-currency-value="onGetCurrencyValue"
   />
-  <div v-if="displayedRawValue" class="spr-mt-4 spr-p-3 spr-bg-gray-100 spr-rounded">
-    <p class="spr-text-sm spr-text-gray-700">Raw Value: <span class="spr-font-bold">{{ displayedRawValue }}</span></p>
+  <div v-if="displayedRawValue" class="mc-mt-4 mc-p-3 mc-bg-gray-100 mc-rounded">
+    <p class="mc-text-sm mc-text-gray-700">Raw Value: <span class="mc-font-bold">{{ displayedRawValue }}</span></p>
   </div>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-input-currency
+    <mc-input-currency
       id="input-currency-get-value"
       v-model="currencyValue"
       label="Get Raw Value"
       placeholder="Type and blur to see raw value"
       @get-currency-value="handleGetCurrencyValue"
     />
-    <div v-if="rawValue" class="spr-mt-4 spr-rounded spr-bg-gray-100 spr-p-3">
-      <p class="spr-text-sm spr-text-gray-700">
-        Raw Value: <span class="spr-font-bold">{{ rawValue }}</span>
+    <div v-if="rawValue" class="mc-mt-4 mc-rounded mc-bg-gray-100 mc-p-3">
+      <p class="mc-text-sm mc-text-gray-700">
+        Raw Value: <span class="mc-font-bold">{{ rawValue }}</span>
       </p>
     </div>
   </div>
@@ -695,8 +695,8 @@ const onGetCurrencyValue = (value: number | null) => {
 
 Use the `base-value` prop to automatically fill the input with a default value when it's empty and loses focus. This is useful for ensuring a minimum value is always present.
 
-<div class="spr-grid spr-gap-4">
-  <spr-input-currency 
+<div class="mc-grid mc-gap-4">
+  <mc-input-currency 
     id="input-currency-base-value-zero" 
     v-model="inputModels.baseValueZero" 
     label="With Base Value 0" 
@@ -704,7 +704,7 @@ Use the `base-value` prop to automatically fill the input with a default value w
     :base-value="0"
   />
   
-  <spr-input-currency 
+  <mc-input-currency 
     id="input-currency-base-value-two" 
     v-model="inputModels.baseValueTwo" 
     label="With Base Value 2" 
@@ -715,8 +715,8 @@ Use the `base-value` prop to automatically fill the input with a default value w
 
 ```vue
 <template>
-  <div class="spr-grid spr-gap-4">
-    <spr-input-currency
+  <div class="mc-grid mc-gap-4">
+    <mc-input-currency
       id="input-currency-base-value-zero"
       v-model="amount"
       label="With Base Value 0"
@@ -724,7 +724,7 @@ Use the `base-value` prop to automatically fill the input with a default value w
       :base-value="0"
     />
 
-    <spr-input-currency
+    <mc-input-currency
       id="input-currency-base-value-two"
       v-model="amount"
       label="With Base Value 2"
@@ -854,7 +854,7 @@ This is useful for:
   </tbody>
 </table>
 
-<p class="spr-mt-4 spr-text-300">
+<p class="mc-mt-4 mc-text-300">
 For additional shared props, events, slots, and behavior inherited from the base input component, please refer to the
 <a href="/documentation/components/input/input.html#api-reference">Input Component API Reference</a>.
 </p>
@@ -893,8 +893,8 @@ import { ref, computed } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
-import SprInputCurrency from '@/components/input/input-currency/input-currency.vue';
-import SprSelect from '@/components/select/select.vue';
+import McInputCurrency from '@/components/input/input-currency/input-currency.vue';
+import McSelect from '@/components/select/select.vue';
 
 const inputModels = ref({
   basic: '',

@@ -6,13 +6,11 @@ import type { SetupContext } from 'vue';
 import type { DateCalendarPickerEmitTypes, DateCalendarPickerPropTypes } from './date-calendar-picker';
 
 export const useDateCalendarPicker = (
-  props: DateCalendarPickerPropTypes, 
-  emit: SetupContext<DateCalendarPickerEmitTypes>['emit']
+  props: DateCalendarPickerPropTypes,
+  emit: SetupContext<DateCalendarPickerEmitTypes>['emit'],
 ) => {
   // Extract reactive props
-  const { 
-    mode, 
-  } = toRefs(props);
+  const { mode } = toRefs(props);
 
   // Internal state
   const currentTab = ref<string>('tab-calendar');
@@ -34,12 +32,14 @@ export const useDateCalendarPicker = (
   // Computed properties
   const showMonthInput = computed(() => mode.value === 'full' || mode.value === 'month-year');
   const showDateInput = computed(() => mode.value === 'full');
-  const showYearInput = computed(() => mode.value === 'full' || mode.value === 'month-year' || mode.value === 'year-only');
+  const showYearInput = computed(
+    () => mode.value === 'full' || mode.value === 'month-year' || mode.value === 'year-only',
+  );
 
   const calendarDays = computed(() => calendarTabPageData.value.calendarDays);
   const selectedMonthComputed = computed(() => calendarTabPageData.value.selectedMonth);
   const selectedYearComputed = computed(() => calendarTabPageData.value.selectedYear);
-  const selectedDayComputed = computed(() => props.modelValue ? dayjs(props.modelValue, props.format).date() : 0);
+  const selectedDayComputed = computed(() => (props.modelValue ? dayjs(props.modelValue, props.format).date() : 0));
 
   // Calendar navigation computed properties
   const calendarTabIsMinMonth = computed(() =>
@@ -122,10 +122,10 @@ export const useDateCalendarPicker = (
   };
 
   const goBackToCalendarTab = () => {
-    if(props.mode === 'full' && currentTab.value !== 'tab-calendar') {      
+    if (props.mode === 'full' && currentTab.value !== 'tab-calendar') {
       currentTab.value = 'tab-calendar';
     }
-  }
+  };
 
   // Navigation functions
   const calendarTabPrevMonth = () => {
@@ -174,12 +174,12 @@ export const useDateCalendarPicker = (
   // Tab functions
   const getTabClasses = (tab: string) => {
     return {
-      'spr-cursor-pointer': true,
-      'spr-background-color-pressed !spr-shadow-button': currentTab.value === tab,
+      'mc-cursor-pointer': true,
+      'mc-background-color-pressed !mc-shadow-button': currentTab.value === tab,
     };
   };
 
-  const handleTabClick = (tab: string) => {    
+  const handleTabClick = (tab: string) => {
     if (currentTab.value === tab && props.mode === 'full') {
       currentTab.value = 'tab-calendar';
     } else {
@@ -206,14 +206,14 @@ export const useDateCalendarPicker = (
   // Event handlers
   const handleCalendarDateUpdate = (day: { date: Date; inactive: boolean }) => {
     const selectedDate = dayjs(day.date);
-    
+
     // Update internal state
     calendarTabPageData.value.selectedMonth = day.date.getMonth();
     calendarTabPageData.value.selectedYear = day.date.getFullYear();
-    
+
     // Update calendar display
     calendarTabUpdateCalendar();
-    
+
     // Emit events
     emit('update:month', day.date.getMonth());
     emit('update:year', day.date.getFullYear());
@@ -289,50 +289,66 @@ export const useDateCalendarPicker = (
   calendarTabUpdateCalendar();
 
   // Watch for prop changes
-  watch(() => props.modelValue, (newValue) => {
-    if (newValue) {
-      const parsedDate = dayjs(newValue, props.format);
-      if (parsedDate.isValid()) {
-        calendarTabPageData.value.selectedMonth = parsedDate.month();
-        calendarTabPageData.value.selectedYear = parsedDate.year();
+  watch(
+    () => props.modelValue,
+    (newValue) => {
+      if (newValue) {
+        const parsedDate = dayjs(newValue, props.format);
+        if (parsedDate.isValid()) {
+          calendarTabPageData.value.selectedMonth = parsedDate.month();
+          calendarTabPageData.value.selectedYear = parsedDate.year();
+          calendarTabUpdateCalendar();
+        }
+      }
+    },
+  );
+
+  watch(
+    () => props.selectedMonth,
+    (newMonth) => {
+      if (newMonth !== undefined) {
+        calendarTabPageData.value.selectedMonth = newMonth;
         calendarTabUpdateCalendar();
       }
-    }
-  });
+    },
+  );
 
-  watch(() => props.selectedMonth, (newMonth) => {
-    if (newMonth !== undefined) {
-      calendarTabPageData.value.selectedMonth = newMonth;
-      calendarTabUpdateCalendar();
-    }
-  });
+  watch(
+    () => props.selectedYear,
+    (newYear) => {
+      if (newYear !== undefined) {
+        calendarTabPageData.value.selectedYear = newYear;
+        calendarTabUpdateCalendar();
+      }
+    },
+  );
 
-  watch(() => props.selectedYear, (newYear) => {
-    if (newYear !== undefined) {
-      calendarTabPageData.value.selectedYear = newYear;
-      calendarTabUpdateCalendar();
-    }
-  });
+  watch(
+    () => props.mode,
+    () => {
+      currentTab.value = getInitialTab();
+    },
+  );
 
-  watch(() => props.mode, () => {
-    currentTab.value = getInitialTab();
-  });
+  watch(
+    () => props.minMaxYear,
+    () => {
+      yearTabPageData.value.yearsArray = Array.from(
+        { length: props.minMaxYear.max - props.minMaxYear.min + 1 },
+        (_, index) => props.minMaxYear.min + index,
+      ).filter((year) => year <= props.minMaxYear.max && year >= props.minMaxYear.min);
 
-  watch(() => props.minMaxYear, () => {
-    yearTabPageData.value.yearsArray = Array.from(
-      { length: props.minMaxYear.max - props.minMaxYear.min + 1 },
-      (_, index) => props.minMaxYear.min + index,
-    ).filter((year) => year <= props.minMaxYear.max && year >= props.minMaxYear.min);
-    
-    yearTabPageData.value.currentPage = 0;
-  }, { deep: true });
+      yearTabPageData.value.currentPage = 0;
+    },
+    { deep: true },
+  );
 
   return {
     // State
     currentTab,
     calendarTabPageData,
     yearTabPageData,
-    
+
     // Computed properties
     showMonthInput,
     showDateInput,
@@ -345,7 +361,7 @@ export const useDateCalendarPicker = (
     calendarTabIsMaxMonth,
     yearTabIsPreviousButtonDisabled,
     yearTabIsNextButtonDisabled,
-    
+
     // Functions
     getTabClasses,
     handleTabClick,
@@ -354,7 +370,7 @@ export const useDateCalendarPicker = (
     calendarTabNextMonth,
     yearTabGoToPreviousPage,
     yearTabGoToNextPage,
-    
+
     // Event handlers
     handleCalendarDateUpdateWrapper,
     handleCalendarMonthUpdateWrapper,

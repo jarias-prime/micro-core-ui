@@ -11,22 +11,22 @@ A modal is a versatile UI component that allows you to display important informa
 ## Basic Usage
 
 <div>
-  <spr-button tone="success" @click="modalModel.modal1 = true">
+  <mc-button tone="success" @click="modalModel.modal1 = true">
     Open Modal
-  </spr-button>
+  </mc-button>
 
-  <spr-modal v-model="modalModel.modal1">
-    <p class="!spr-m-0 spr-text-center">This is a sample modal</p>
-  </spr-modal>
+  <mc-modal v-model="modalModel.modal1">
+    <p class="!mc-m-0 mc-text-center">This is a sample modal</p>
+  </mc-modal>
 </div>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel">
-    <p class="spr-text-center">This is a sample modal</p>
-  </spr-modal>
+  <mc-modal v-model="modalModel">
+    <p class="mc-text-center">This is a sample modal</p>
+  </mc-modal>
 </template>
 
 <script setup lang="ts">
@@ -50,25 +50,25 @@ The header of a modal is used to display the title or heading, giving users cont
 
 This flexibility allows you to tailor the modal's header to meet the needs of your specific application.
 
-<h5 class="spr-mb-3">By using props <code>title</code>:</h5>
+<h5 class="mc-mb-3">By using props <code>title</code>:</h5>
 
 <div>
-  <spr-button tone="success" @click="modalModel.modal2 = true">
+  <mc-button tone="success" @click="modalModel.modal2 = true">
     Open Modal
-  </spr-button>
+  </mc-button>
 
-  <spr-modal v-model="modalModel.modal2" title="Modal Header Props">
-    <p class="!spr-m-0 spr-text-center">This is a modal</p>
-  </spr-modal>
+  <mc-modal v-model="modalModel.modal2" title="Modal Header Props">
+    <p class="!mc-m-0 mc-text-center">This is a modal</p>
+  </mc-modal>
 </div>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel" title="Modal Header Props">
-    <p class="spr-text-center">This is a sample modal</p>
-  </spr-modal>
+  <mc-modal v-model="modalModel" title="Modal Header Props">
+    <p class="mc-text-center">This is a sample modal</p>
+  </mc-modal>
 </template>
 
 <script setup lang="ts">
@@ -78,28 +78,28 @@ const modalModel = ref<boolean>(false);
 </script>
 ```
 
-<h5 class="spr-mb-3">By using <code>slot</code>:</h5>
+<h5 class="mc-mb-3">By using <code>slot</code>:</h5>
 
 <div>
-  <spr-button tone="success" @click="modalModel.modal3 = true">
+  <mc-button tone="success" @click="modalModel.modal3 = true">
     Open Modal
-  </spr-button>
+  </mc-button>
 
-  <spr-modal v-model="modalModel.modal3">
+  <mc-modal v-model="modalModel.modal3">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a modal</p>
-  </spr-modal>
+    <p class="!mc-m-0 mc-text-center">This is a modal</p>
+  </mc-modal>
 </div>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel">
+  <mc-modal v-model="modalModel">
     <template #header>Modal Header Slot</template>
 
-    <p class="spr-text-center">This is a sample modal</p>
-  </spr-modal>
+    <p class="mc-text-center">This is a sample modal</p>
+  </mc-modal>
 </template>
 
 <script setup lang="ts">
@@ -109,30 +109,30 @@ const modalModel = ref<boolean>(false);
 </script>
 ```
 
-<h5 class="spr-mb-3">
+<h5 class="mc-mb-3">
   You can also force remove <code>X</code> button from header by using props <code>closeButtonX</code>:
 </h5>
 
 <div>
-  <spr-button tone="success" @click="modalModel.modal4 = true">
+  <mc-button tone="success" @click="modalModel.modal4 = true">
     Open Modal
-  </spr-button>
+  </mc-button>
 
-  <spr-modal v-model="modalModel.modal4" :closeButtonX="false">
+  <mc-modal v-model="modalModel.modal4" :closeButtonX="false">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a modal</p>
-  </spr-modal>
+    <p class="!mc-m-0 mc-text-center">This is a modal</p>
+  </mc-modal>
 </div>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel" :closeButtonX="false">
+  <mc-modal v-model="modalModel" :closeButtonX="false">
     <template #header>Modal Header Slot</template>
 
-    <p class="spr-text-center">This is a sample modal</p>
-  </spr-modal>
+    <p class="mc-text-center">This is a sample modal</p>
+  </mc-modal>
 </template>
 
 <script setup lang="ts">
@@ -147,36 +147,36 @@ const modalModel = ref<boolean>(false);
 The footer of a modal can contain action buttons like "Cancel" or "Save," or it can simply display text. You can customize it using slots or props to provide clear actions or additional information to users.
 
 <div>
-  <spr-button tone="success" @click="modalModel.modal5 = true">
+  <mc-button tone="success" @click="modalModel.modal5 = true">
     Open Modal
-  </spr-button>
+  </mc-button>
 
-  <spr-modal v-model="modalModel.modal5">
+  <mc-modal v-model="modalModel.modal5">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.modal5 = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.modal5 = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 </div>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel">
+  <mc-modal v-model="modalModel">
     <template #header>Modal Header Slot</template>
 
-    <p class="spr-text-center">This is a sample modal</p>
+    <p class="mc-text-center">This is a sample modal</p>
 
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 </template>
 
 <script setup lang="ts">
@@ -195,28 +195,28 @@ To make the modal visible, bind the `v-model` value to the modal's visibility st
 You can control the content padding inside the modal by passing the `contentPadding` prop. Set the value to `true` to enable padding, or `false` to disable it. This allows you to adjust the layout of the modal’s content, providing a more customized and visually appealing design based on your needs.
 
 <div>
-  <spr-button tone="success" @click="modalModel.modal6 = true">
+  <mc-button tone="success" @click="modalModel.modal6 = true">
     Open Modal
-  </spr-button>
+  </mc-button>
 
-  <spr-modal v-model="modalModel.modal6" :contentPadding="false">
+  <mc-modal v-model="modalModel.modal6" :contentPadding="false">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0">
+    <p class="!mc-m-0">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula metus ut lectus tempor, ac volutpat turpis malesuada. Suspendisse potenti. Sed efficitur mi non dui tincidunt, non venenatis lorem lacinia. Ut scelerisque, mi nec egestas interdum, lorem ante volutpat enim, at volutpat purus purus ac magna. Nulla facilisi. Integer fermentum neque sit amet sollicitudin suscipit. Integer scelerisque sapien a risus cursus, nec euismod lacus faucibus. Etiam sed eros in velit egestas lobortis.
     </p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.modal6 = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.modal6 = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 </div>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel" :contentPadding="false">
+  <mc-modal v-model="modalModel" :contentPadding="false">
     <template #header>Modal Header Slot</template>
 
     <p>
@@ -228,11 +228,11 @@ You can control the content padding inside the modal by passing the `contentPadd
     </p>
 
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 </template>
 
 <script setup lang="ts">
@@ -261,128 +261,128 @@ Modals come in different sizes to suit various use cases. You can adjust the mod
   </li>
 </ul>
 
-<div class="spr-flex spr-space-x-4">
-  <spr-button tone="success" @click="modalModel.modal7 = true">
+<div class="mc-flex mc-space-x-4">
+  <mc-button tone="success" @click="modalModel.modal7 = true">
     Small (sm)
-  </spr-button>
-  <spr-button tone="success" @click="modalModel.modal8 = true">
+  </mc-button>
+  <mc-button tone="success" @click="modalModel.modal8 = true">
     Medium (md)
-  </spr-button>
-  <spr-button tone="success" @click="modalModel.modal9 = true">
+  </mc-button>
+  <mc-button tone="success" @click="modalModel.modal9 = true">
     Large (lg)
-  </spr-button>
-  <spr-button tone="success" @click="modalModel.modal10 = true">
+  </mc-button>
+  <mc-button tone="success" @click="modalModel.modal10 = true">
     Extra Large (xl)
-  </spr-button>
-  <spr-button tone="success" @click="modalModel.modal11 = true">
+  </mc-button>
+  <mc-button tone="success" @click="modalModel.modal11 = true">
     Extra Extra Large (xxl)
-  </spr-button>
+  </mc-button>
 </div>
 
 <div>
-  <spr-modal v-model="modalModel.modal7" size="sm">
+  <mc-modal v-model="modalModel.modal7" size="sm">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a sample small modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a sample small modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.modal7 = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.modal7 = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
-  <spr-modal v-model="modalModel.modal8" size="md">
+  </mc-modal>
+  <mc-modal v-model="modalModel.modal8" size="md">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a sample medium modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a sample medium modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.modal8 = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.modal8 = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
-  <spr-modal v-model="modalModel.modal9" size="lg">
+  </mc-modal>
+  <mc-modal v-model="modalModel.modal9" size="lg">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a sample large modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a sample large modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.modal9 = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.modal9 = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
-  <spr-modal v-model="modalModel.modal10" size="xl">
+  </mc-modal>
+  <mc-modal v-model="modalModel.modal10" size="xl">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a sample extra large modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a sample extra large modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.modal10 = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.modal10 = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
-  <spr-modal v-model="modalModel.modal11" size="xxl">
+  </mc-modal>
+  <mc-modal v-model="modalModel.modal11" size="xxl">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a sample extra extra large modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a sample extra extra large modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.modal11 = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.modal11 = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 </div>
 
 ```vue
 <template>
-  <div class="spr-flex spr-space-x-4">
-    <spr-button tone="success" @click="modalModel.small = true">Small (sm)</spr-button>
-    <spr-button tone="success" @click="modalModel.medium = true">Medium (md)</spr-button>
-    <spr-button tone="success" @click="modalModel.large = true">Large (lg)</spr-button>
-    <spr-button tone="success" @click="modalModel.extraLarge = true">Extra Large (xl)</spr-button>
-    <spr-button tone="success" @click="modalModel.extraExtraLarge = true">Extra Extra Large (xxl)</spr-button>
+  <div class="mc-flex mc-space-x-4">
+    <mc-button tone="success" @click="modalModel.small = true">Small (sm)</mc-button>
+    <mc-button tone="success" @click="modalModel.medium = true">Medium (md)</mc-button>
+    <mc-button tone="success" @click="modalModel.large = true">Large (lg)</mc-button>
+    <mc-button tone="success" @click="modalModel.extraLarge = true">Extra Large (xl)</mc-button>
+    <mc-button tone="success" @click="modalModel.extraExtraLarge = true">Extra Extra Large (xxl)</mc-button>
   </div>
 
-  <spr-modal v-model="modalModel.small" size="sm">
+  <mc-modal v-model="modalModel.small" size="sm">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a sample small modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a sample small modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.small = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.small = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 
-  <spr-modal v-model="modalModel.medium" size="md">
+  <mc-modal v-model="modalModel.medium" size="md">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a sample medium modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a sample medium modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.medium = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.medium = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 
-  <spr-modal v-model="modalModel.large" size="lg">
+  <mc-modal v-model="modalModel.large" size="lg">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a sample large modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a sample large modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.large = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.large = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 
-  <spr-modal v-model="modalModel.extraLarge" size="xl">
+  <mc-modal v-model="modalModel.extraLarge" size="xl">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a sample extra large modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a sample extra large modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.extraLarge = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.extraLarge = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 
-  <spr-modal v-model="modalModel.extraExtraLarge" size="xxl">
+  <mc-modal v-model="modalModel.extraExtraLarge" size="xxl">
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a sample extra extra large modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a sample extra extra large modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.extraExtraLarge = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.extraExtraLarge = false">Close</mc-button>
       </div>
     </template>
 </template>
@@ -405,36 +405,36 @@ const modalModel = ref({
 To prevent the modal from closing when the user clicks on the backdrop (the area outside the modal), you can disable this behavior by setting the appropriate prop, such as `staticBackdrop` to `true`. This ensures that the modal remains open even if the user interacts with the backdrop, requiring explicit user actions (like clicking a close button) to close the modal.
 
 <div>
-  <spr-button tone="success" @click="modalModel.modal12 = true">
+  <mc-button tone="success" @click="modalModel.modal12 = true">
     Open Modal
-  </spr-button>
+  </mc-button>
 
-  <spr-modal v-model="modalModel.modal12" staticBackdrop>
+  <mc-modal v-model="modalModel.modal12" staticBackdrop>
     <template #header>Modal Header Slot</template>
-    <p class="!spr-m-0 spr-text-center">This is a modal</p>
+    <p class="!mc-m-0 mc-text-center">This is a modal</p>
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel.modal12 = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel.modal12 = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 </div>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel" staticBackdrop>
+  <mc-modal v-model="modalModel" staticBackdrop>
     <template #header>Modal Header Slot</template>
 
-    <p class="spr-text-center">This is a sample modal</p>
+    <p class="mc-text-center">This is a sample modal</p>
 
     <template #footer>
-      <div class="spr-flex spr-w-full spr-justify-end">
-        <spr-button tone="success" @click="modalModel = false">Close</spr-button>
+      <div class="mc-flex mc-w-full mc-justify-end">
+        <mc-button tone="success" @click="modalModel = false">Close</mc-button>
       </div>
     </template>
-  </spr-modal>
+  </mc-modal>
 </template>
 
 <script setup lang="ts">
@@ -559,9 +559,8 @@ const modalModel = ref<boolean>(false);
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprModal from "@/components/modal/modal.vue"
-import SprButton from "@/components/button/button.vue"
-import SprLogo from "@/components/logo/logo.vue";
+import McModal from "@/components/modal/modal.vue"
+import McButton from "@/components/button/button.vue"
 
 const modalModel = ref({
   modal1: false,

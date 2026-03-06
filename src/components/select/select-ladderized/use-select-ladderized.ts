@@ -12,9 +12,9 @@ export const useSelectLadderized = (
   const { options, disabled, textSeperator, prependText } = toRefs(props);
 
   const ladderizedClasses = computed(() => ({
-    baseClasses: 'spr-flex spr-flex-col spr-gap-size-spacing-4xs',
-    labelClasses: 'spr-body-sm-regular spr-text-color-strong spr-flex spr-gap-2',
-    supportingLabelClasses: 'spr-body-sm-regular spr-text-color-supporting',
+    baseClasses: 'mc-flex mc-flex-col mc-gap-size-spacing-4xs',
+    labelClasses: 'mc-body-sm-regular mc-text-color-strong mc-flex mc-gap-2',
+    supportingLabelClasses: 'mc-body-sm-regular mc-text-color-supporting',
   }));
 
   // Wrapper for input field

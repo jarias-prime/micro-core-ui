@@ -1,7 +1,6 @@
 <template>
   <div :class="paginationClasses.baseClass" v-bind="$attrs">
-    
-    <spr-dropdown
+    <mc-dropdown
       v-if="showNumberOfRowsDropdown"
       :id="dropdownId"
       :menu-list="dropdownSelection"
@@ -10,24 +9,24 @@
       :class="paginationClasses.dropdownClass"
       @update:model-value="handleSelectedItem"
     >
-      <spr-input v-model="computeSelectedRowCount" :class="paginationClasses.dropdownInputFieldClass" :readonly="true">
+      <mc-input v-model="computeSelectedRowCount" :class="paginationClasses.dropdownInputFieldClass" :readonly="true">
         <template #icon>
-          <Icon icon="ph:caret-down-bold" :class="paginationClasses.inputFieldIconClass" width="12px" height="12px"/>
+          <Icon icon="ph:caret-down-bold" :class="paginationClasses.inputFieldIconClass" width="12px" height="12px" />
         </template>
-      </spr-input>
-    </spr-dropdown>
+      </mc-input>
+    </mc-dropdown>
 
     <div :class="paginationClasses.rightSideClass">
-      <div v-if="editableCurrentPage" class="spr-flex spr-flex-row spr-items-center spr-gap-size-spacing-4xs">
-        <span class="spr-body-xs-regular spr-text-color-base">Page</span>
+      <div v-if="editableCurrentPage" class="mc-flex mc-flex-row mc-items-center mc-gap-size-spacing-4xs">
+        <span class="mc-body-xs-regular mc-text-color-base">Page</span>
         <input
-          v-model="currentPage" type="number" min="1" :max="totalPages" 
-          class="number-input 
-            spr-text-center spr-font-main spr-font-medium spr-font-size-200 spr-font-height-300 sp-text-color-strong
-            spr-p-size-spacing-3xs spr-rounded-border-radius-md spr-border spr-border-solid spr-border-color-base spr-outline-none 
-            spr-min-w-[48px] spr-max-h-[36px] spr-w-[48px] spr-h-[32px] spr-box-border"
+          v-model="currentPage"
+          type="number"
+          min="1"
+          :max="totalPages"
+          class="number-input mc-text-center mc-font-main mc-font-medium mc-font-size-200 mc-font-height-300 sp-text-color-strong mc-p-size-spacing-3xs mc-rounded-border-radius-md mc-border mc-border-solid mc-border-color-base mc-outline-none mc-min-w-[48px] mc-max-h-[36px] mc-w-[48px] mc-h-[32px] mc-box-border"
         />
-        <span class="spr-body-xs-regular spr-text-color-base">of {{ totalPages }}</span>
+        <span class="mc-body-xs-regular mc-text-color-base">of {{ totalPages }}</span>
       </div>
       <template v-else>
         <div :class="paginationClasses.computeRowRangeClass">
@@ -35,7 +34,7 @@
         </div>
       </template>
       <div :class="paginationClasses.navigationContainerClass">
-        <spr-button
+        <mc-button
           id="previousButton"
           has-icon
           :class="paginationClasses.navigationButtonClass"
@@ -43,8 +42,8 @@
           @click="previous"
         >
           <Icon icon="ph:caret-left" />
-        </spr-button>
-        <spr-button
+        </mc-button>
+        <mc-button
           id="nextButton"
           has-icon
           :class="paginationClasses.navigationButtonClass"
@@ -52,7 +51,7 @@
           @click="next"
         >
           <Icon icon="ph:caret-right" />
-        </spr-button>
+        </mc-button>
       </div>
     </div>
     <div v-if="slots.actions" id="table_pagination_actions_slot">
@@ -67,9 +66,9 @@ import { Icon } from '@iconify/vue';
 import { tablePaginationEmitTypes, tablePaginationPropTypes } from './table-pagination';
 import { useTablePagination } from './use-table-pagination';
 
-import SprInput from '@/components/input/input.vue';
-import SprButton from '@/components/button/button.vue';
-import SprDropdown from '@/components/dropdown/dropdown.vue';
+import McInput from '@/components/input/input.vue';
+import McButton from '@/components/button/button.vue';
+import McDropdown from '@/components/dropdown/dropdown.vue';
 import { useSlots } from 'vue';
 
 const emit = defineEmits(tablePaginationEmitTypes);
@@ -90,7 +89,7 @@ const {
   dropdownId,
   currentPage,
   totalPages,
-  showNumberOfRowsDropdown
+  showNumberOfRowsDropdown,
 } = useTablePagination(props, emit);
 </script>
 

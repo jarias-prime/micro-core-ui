@@ -3,8 +3,8 @@
     ref="sliderRef"
     :class="[
       handleSliderSize,
-      'spr-relative spr-w-full spr-rounded-lg spr-bg-white-100',
-      props.disabled ? 'spr-cursor-not-allowed spr-opacity-50' : 'spr-cursor-pointer',
+      'mc-relative mc-w-full mc-rounded-lg mc-bg-white-100',
+      props.disabled ? 'mc-cursor-not-allowed mc-opacity-50' : 'mc-cursor-pointer',
     ]"
     role="slider"
     :aria-valuenow="props.modelValue"
@@ -17,8 +17,8 @@
     <div
       :class="[
         handleSliderSize,
-        'spr-absolute spr-left-0 spr-top-1/2 spr--translate-y-1/2 spr-rounded-lg spr-bg-kangkong-600',
-        { 'spr-cursor-not-allowed': props.disabled },
+        'mc-absolute mc-left-0 mc-top-1/2 mc--translate-y-1/2 mc-rounded-lg mc-bg-kangkong-600',
+        { 'mc-cursor-not-allowed': props.disabled },
       ]"
       :style="handleSliderStyle"
     ></div>
@@ -27,8 +27,8 @@
       icon="ph:circle-fill"
       :class="[
         handleSliderThumbSize,
-        'spr-absolute spr-top-1/2 spr--translate-x-1/2 spr--translate-y-1/2 spr-transform spr-rounded-full spr-text-kangkong-600 hover:spr-text-kangkong-700 active:spr-border-2 active:spr-border-solid active:spr-text-kangkong-800',
-        { 'spr-pointer-events-none spr-cursor-not-allowed': props.disabled },
+        'mc-absolute mc-top-1/2 mc--translate-x-1/2 mc--translate-y-1/2 mc-transform mc-rounded-full mc-text-kangkong-600 hover:mc-text-kangkong-700 active:mc-border-2 active:mc-border-solid active:mc-text-kangkong-800',
+        { 'mc-pointer-events-none mc-cursor-not-allowed': props.disabled },
       ]"
       :style="handleThumbStyle"
       @pointerdown="startDrag"

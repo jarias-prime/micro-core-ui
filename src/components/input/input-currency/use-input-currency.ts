@@ -25,20 +25,20 @@ export const useInputCurrency = (props: InputCurrencyPropTypes, emit: SetupConte
 
   const inputCurrencyClasses: ComputedRef<InputCurrencyClasses> = computed(() => {
     const dropdownBaseClasses = classNames(
-      '[&_#dropdown-wrapper]:spr-my-1',
-      '[&_#dropdown-wrapper[data-popper-placement="bottom-start"]]:spr-ml-[-10px]',
-      '[&_#dropdown-wrapper[data-popper-placement="bottom-start"]]:spr-mt-[6px]',
-      '[&_#dropdown-wrapper[data-popper-placement="top-start"]]:spr-ml-[-10px]',
-      '[&_#dropdown-wrapper[data-popper-placement="top-start"]]:spr-mt-[-6px]',
+      '[&_#dropdown-wrapper]:mc-my-1',
+      '[&_#dropdown-wrapper[data-popper-placement="bottom-start"]]:mc-ml-[-10px]',
+      '[&_#dropdown-wrapper[data-popper-placement="bottom-start"]]:mc-mt-[6px]',
+      '[&_#dropdown-wrapper[data-popper-placement="top-start"]]:mc-ml-[-10px]',
+      '[&_#dropdown-wrapper[data-popper-placement="top-start"]]:mc-mt-[-6px]',
     );
 
     const dropdownWrappertClasses = classNames(
-      'spr-font-weight-regular spr-font-size-200 spr-line-height-500 spr-letter-spacing-none spr-font-main',
-      'spr-flex spr-items-center spr-gap-size-spacing-5xs',
+      'mc-font-weight-regular mc-font-size-200 mc-line-height-500 mc-letter-spacing-none mc-font-main',
+      'mc-flex mc-items-center mc-gap-size-spacing-5xs',
       {
-        'spr-cursor-not-allowed': disabled.value,
-        'spr-cursor-default': disabledCountryCurrency.value && !disabled.value,
-        'spr-cursor-pointer': !disabledCountryCurrency.value && !disabled.value,
+        'mc-cursor-not-allowed': disabled.value,
+        'mc-cursor-default': disabledCountryCurrency.value && !disabled.value,
+        'mc-cursor-pointer': !disabledCountryCurrency.value && !disabled.value,
       },
     );
 

@@ -10,20 +10,20 @@ A Radio Button is a component that enables a user to select a single option from
 
 ## Basic Usage
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <spr-radio id="radio1" v-model="radioModel.radio1" name="radio_name1" value="value1">
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <mc-radio id="radio1" v-model="radioModel.radio1" name="radio_name1" value="value1">
     Radio Label 1
-  </spr-radio>
-  <spr-radio id="radio2" v-model="radioModel.radio1" name="radio_name1" value="value2">
+  </mc-radio>
+  <mc-radio id="radio2" v-model="radioModel.radio1" name="radio_name1" value="value2">
     Radio Label 2
-  </spr-radio>
+  </mc-radio>
 </div>
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-    <spr-radio id="radio1" v-model="radioModel" name="radio_name" value="value1">Radio Label 1</spr-radio>
-    <spr-radio id="radio2" v-model="radioModel" name="radio_name" value="value2">Radio Label 2</spr-radio>
+  <div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+    <mc-radio id="radio1" v-model="radioModel" name="radio_name" value="value1">Radio Label 1</mc-radio>
+    <mc-radio id="radio2" v-model="radioModel" name="radio_name" value="value2">Radio Label 2</mc-radio>
   </div>
 </template>
 
@@ -36,19 +36,19 @@ const radioModel = ref('');
 
 ## Active
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <spr-radio id="radio3" v-model="radioModel.radio2" name="radio_name2" value="value1">
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <mc-radio id="radio3" v-model="radioModel.radio2" name="radio_name2" value="value1">
     Radio Label 1
-  </spr-radio>
-  <spr-radio id="radio4" v-model="radioModel.radio2" name="radio_name2" value="value2">
+  </mc-radio>
+  <mc-radio id="radio4" v-model="radioModel.radio2" name="radio_name2" value="value2">
     Radio Label 2
-  </spr-radio>
+  </mc-radio>
 </div>
 
 ```vue
 <template>
-  <spr-radio id="radio1" v-model="radioModel" name="radio_name" value="value1">Radio Label 1</spr-radio>
-  <spr-radio id="radio2" v-model="radioModel" name="radio_name" value="value2">Radio Label 2</spr-radio>
+  <mc-radio id="radio1" v-model="radioModel" name="radio_name" value="value1">Radio Label 1</mc-radio>
+  <mc-radio id="radio2" v-model="radioModel" name="radio_name" value="value2">Radio Label 2</mc-radio>
 </template>
 
 <script lang="ts" setup>
@@ -60,24 +60,24 @@ const radioModel = ref('value2');
 
 ## Disabled
 
-Add the `disabled` attribute to the `<spr-radio>` component to disable the radio button.
+Add the `disabled` attribute to the `<mc-radio>` component to disable the radio button.
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <spr-radio id="radio5" v-model="radioModel.radio3" name="radio_name3" value="value1">
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <mc-radio id="radio5" v-model="radioModel.radio3" name="radio_name3" value="value1">
     Radio Label 1
-  </spr-radio>
-  <spr-radio id="radio6" v-model="radioModel.radio3" name="radio_name3" value="value2" disabled>
+  </mc-radio>
+  <mc-radio id="radio6" v-model="radioModel.radio3" name="radio_name3" value="value2" disabled>
     Radio Label 2
-  </spr-radio>
+  </mc-radio>
 </div>
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-    <spr-radio id="disabledradio1" v-model="radioModel" name="radio_name" value="value1">Radio Label 1</spr-radio>
-    <spr-radio id="disabledradio2" v-model="radioModel" name="radio_name" value="value2" disabled>
+  <div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+    <mc-radio id="disabledradio1" v-model="radioModel" name="radio_name" value="value1">Radio Label 1</mc-radio>
+    <mc-radio id="disabledradio2" v-model="radioModel" name="radio_name" value="value2" disabled>
       Radio Label 2
-    </spr-radio>
+    </mc-radio>
   </div>
 </template>
 
@@ -92,36 +92,36 @@ const radioModel = ref('');
 
 Use the `choiceBox` prop to display radio buttons in a choice box style with an expanded clickable area. This makes the entire component clickable, improving usability and user experience.
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <spr-radio id="choicebox1" v-model="radioModel.radio4" name="radio_choicebox" value="option1" choice-box full-width>
-    <div class="spr-body-sm-regular spr-text-color-strong">Option 1</div>
-    <div class="spr-body-sm-regular spr-text-color-base">Select this option for feature A</div>
-  </spr-radio>
-  <spr-radio id="choicebox2" v-model="radioModel.radio4" name="radio_choicebox" value="option2" choice-box full-width>
-    <div class="spr-body-sm-regular spr-text-color-strong">Option 2</div>
-    <div class="spr-body-sm-regular spr-text-color-base">Select this option for feature B</div>
-  </spr-radio>
-  <spr-radio id="choicebox3" v-model="radioModel.radio4" name="radio_choicebox" value="option3" choice-box full-width>
-    <div class="spr-body-sm-regular spr-text-color-strong">Option 3</div>
-    <div class="spr-body-sm-regular spr-text-color-base">Select this option for feature C</div>
-  </spr-radio>
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <mc-radio id="choicebox1" v-model="radioModel.radio4" name="radio_choicebox" value="option1" choice-box full-width>
+    <div class="mc-body-sm-regular mc-text-color-strong">Option 1</div>
+    <div class="mc-body-sm-regular mc-text-color-base">Select this option for feature A</div>
+  </mc-radio>
+  <mc-radio id="choicebox2" v-model="radioModel.radio4" name="radio_choicebox" value="option2" choice-box full-width>
+    <div class="mc-body-sm-regular mc-text-color-strong">Option 2</div>
+    <div class="mc-body-sm-regular mc-text-color-base">Select this option for feature B</div>
+  </mc-radio>
+  <mc-radio id="choicebox3" v-model="radioModel.radio4" name="radio_choicebox" value="option3" choice-box full-width>
+    <div class="mc-body-sm-regular mc-text-color-strong">Option 3</div>
+    <div class="mc-body-sm-regular mc-text-color-base">Select this option for feature C</div>
+  </mc-radio>
 </div>
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-    <spr-radio id="choicebox1" v-model="selectedOption" name="radio_choicebox" value="option1" choice-box full-width>
-      <div class="spr-body-sm-regular spr-text-color-strong">Option 1</div>
-      <div class="spr-body-sm-regular spr-text-color-base">Select this option for feature A</div>
-    </spr-radio>
-    <spr-radio id="choicebox2" v-model="selectedOption" name="radio_choicebox" value="option2" choice-box full-width>
-      <div class="spr-body-sm-regular spr-text-color-strong">Option 2</div>
-      <div class="spr-body-sm-regular spr-text-color-base">Select this option for feature B</div>
-    </spr-radio>
-    <spr-radio id="choicebox3" v-model="selectedOption" name="radio_choicebox" value="option3" choice-box full-width>
-      <div class="spr-body-sm-regular spr-text-color-strong">Option 3</div>
-      <div class="spr-body-sm-regular spr-text-color-base">Select this option for feature C</div>
-    </spr-radio>
+  <div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+    <mc-radio id="choicebox1" v-model="selectedOption" name="radio_choicebox" value="option1" choice-box full-width>
+      <div class="mc-body-sm-regular mc-text-color-strong">Option 1</div>
+      <div class="mc-body-sm-regular mc-text-color-base">Select this option for feature A</div>
+    </mc-radio>
+    <mc-radio id="choicebox2" v-model="selectedOption" name="radio_choicebox" value="option2" choice-box full-width>
+      <div class="mc-body-sm-regular mc-text-color-strong">Option 2</div>
+      <div class="mc-body-sm-regular mc-text-color-base">Select this option for feature B</div>
+    </mc-radio>
+    <mc-radio id="choicebox3" v-model="selectedOption" name="radio_choicebox" value="option3" choice-box full-width>
+      <div class="mc-body-sm-regular mc-text-color-strong">Option 3</div>
+      <div class="mc-body-sm-regular mc-text-color-base">Select this option for feature C</div>
+    </mc-radio>
   </div>
 </template>
 
@@ -139,7 +139,7 @@ const selectedOption = ref('option1');
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Type</th>
       <th>Default</th>
@@ -226,7 +226,7 @@ const selectedOption = ref('option1');
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Parameters</th>
     </tr>
@@ -249,7 +249,7 @@ const selectedOption = ref('option1');
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -268,7 +268,7 @@ const selectedOption = ref('option1');
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Animation</th>
+      <th class="mc-min-w-[180px]">Animation</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -285,8 +285,7 @@ const selectedOption = ref('option1');
 <script lang="ts" setup>
 import { ref } from "vue";
 
-import SprRadio from "@/components/radio/radio.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McRadio from "@/components/radio/radio.vue";
 
 const radioModel = ref({
   radio1: '',

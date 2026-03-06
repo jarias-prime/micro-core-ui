@@ -1,7 +1,7 @@
 <template>
   <transition name="fade-in-out">
     <div v-if="showModel" :class="[bannerClasses.base]" v-bind="$attrs">
-      <div class="spr-flex spr-items-start spr-gap-size-spacing-3xs">
+      <div class="mc-flex mc-items-start mc-gap-size-spacing-3xs">
         <slot>
           <div :class="[bannerClasses.icon]">
             <icon :icon="bannerIcon" width="16px" height="16px" />
@@ -10,7 +10,7 @@
         </slot>
       </div>
 
-      <div v-if="props.showCloseButton" class="spr-flex spr-h-full spr-items-start">
+      <div v-if="props.showCloseButton" class="mc-flex mc-h-full mc-items-start">
         <icon icon="ph:x-bold" width="16px" height="16px" :class="[bannerClasses.close]" @click="closeBanner" />
       </div>
     </div>

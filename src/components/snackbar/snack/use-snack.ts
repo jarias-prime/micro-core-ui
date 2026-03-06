@@ -18,16 +18,16 @@ export const useSnack = (props: SnackPropTypes, emit: SetupContext<SnackEmitType
       showAction: showAction,
       showIcon: showIcon,
       duration: duration,
-      actionIconProps: actionIconProps
+      actionIconProps: actionIconProps,
     };
   });
 
   const snackToneCssClass: ComputedRef<string> = computed(() => {
     return classNames({
-      'spr-text-kangkong-500': tone === 'success',
-      'spr-text-tomato-500': tone === 'danger',
-      'spr-text-carrot-500': tone === 'caution',
-      'spr-text-blueberry-500': tone === 'information',
+      'mc-text-kangkong-500': tone === 'success',
+      'mc-text-tomato-500': tone === 'danger',
+      'mc-text-carrot-500': tone === 'caution',
+      'mc-text-blueberry-500': tone === 'information',
     });
   });
 

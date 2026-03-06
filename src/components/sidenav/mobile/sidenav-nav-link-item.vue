@@ -3,50 +3,49 @@
     v-if="!sideNavLinks.hidden"
     :id="props.id"
     :class="[
-      'spr-flex spr-w-full spr-cursor-pointer spr-items-center spr-gap-3 !spr-p-size-spacing-3xs',
-      'spr-select-none spr-rounded-border-radius-md',
+      'mc-flex mc-w-full mc-cursor-pointer mc-items-center mc-gap-3 !mc-p-size-spacing-3xs',
+      'mc-select-none mc-rounded-border-radius-md',
       '-webkit-tap-highlight-color-transparent',
-      'spr-transition-all spr-duration-500 spr-ease-in-out',
+      'mc-transition-all mc-duration-500 mc-ease-in-out',
       {
-        'spr-background-color-single-active spr-border-color-brand-base spr-border-[1.5px] spr-border-solid':
-          isActiveNav,
+        'mc-background-color-single-active mc-border-color-brand-base mc-border-[1.5px] mc-border-solid': isActiveNav,
       },
     ]"
-    style="-webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none;"
+    style="-webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none"
     @click="handleOnLinkClick"
   >
     <!-- Icon -->
-    <div v-if="parentLink" id="sidenav_item_icon" class="spr-flex spr-h-6 spr-w-6 spr-items-center spr-justify-center">
+    <div v-if="parentLink" id="sidenav_item_icon" class="mc-flex mc-h-6 mc-w-6 mc-items-center mc-justify-center">
       <template v-if="parentLink.icon && parentLink.icon.includes('https://')">
-        <img :src="parentLink.icon" :alt="`${sideNavLinks.title} icon`" class="spr-h-6 spr-w-6 spr-object-cover" />
+        <img :src="parentLink.icon" :alt="`${sideNavLinks.title} icon`" class="mc-h-6 mc-w-6 mc-object-cover" />
       </template>
       <template v-else>
         <Icon
           v-if="parentLink.icon"
           :icon="props.activeNav.parentNav === sideNavLinks.title ? `${parentLink.icon}-fill` : parentLink.icon"
           :class="[
-            'spr-h-6 spr-w-6 spr-transition-all spr-duration-500 spr-ease-in-out',
-            { 'spr-text-color-brand-base': isActiveNav },
+            'mc-h-6 mc-w-6 mc-transition-all mc-duration-500 mc-ease-in-out',
+            { 'mc-text-color-brand-base': isActiveNav },
           ]"
         />
         <Icon
           v-else
           :icon="props.activeNav.parentNav === sideNavLinks.title ? 'ph:globe-fill' : 'ph:globe'"
-          class="spr-h-6 spr-w-6"
+          class="mc-h-6 mc-w-6"
         />
       </template>
     </div>
 
     <!-- Title and Badge -->
-    <div class="spr-flex spr-flex-1 spr-items-center spr-justify-between">
-      <span class="spr-body-sm-regular spr-text-color-strong">
+    <div class="mc-flex mc-flex-1 mc-items-center mc-justify-between">
+      <span class="mc-body-sm-regular mc-text-color-strong">
         {{ sideNavLinks.title }}
       </span>
 
       <!-- Badge if attributes exist -->
-      <div class="spr-flex spr-items-center spr-gap-2">        
+      <div class="mc-flex mc-items-center mc-gap-2">
         <template v-if="props.convertedNavAttributes.length > 0">
-          <spr-lozenge
+          <mc-lozenge
             v-for="(attribute, attributeIndex) in props.convertedNavAttributes"
             :key="attributeIndex"
             :label="attribute.lozengeLabel"
@@ -59,7 +58,7 @@
         <Icon
           v-if="hasChildrenLinks"
           icon="ph:caret-right"
-          class="spr-text-color-supporting"
+          class="mc-text-color-supporting"
           width="16px"
           height="16px"
         />
@@ -76,7 +75,7 @@ import {
   type ActiveNav,
   type ConvertedNavAttribute,
 } from '@/components/sidenav/sidenav';
-import SprLozenge from '@/components/lozenge/lozenge.vue';
+import McLozenge from '@/components/lozenge/lozenge.vue';
 import { Icon } from '@iconify/vue';
 
 const props = defineProps({

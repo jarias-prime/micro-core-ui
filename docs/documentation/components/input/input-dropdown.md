@@ -11,7 +11,7 @@ Input styled variant primarily used as trigger/display inside dropdown-based com
 ## Basic Usage
 
 <div>
-  <spr-input-dropdown 
+  <mc-input-dropdown 
     id="input-dropdown-basic" 
     v-model="inputModels.basic" 
     label="Input Dropdown" 
@@ -22,7 +22,7 @@ Input styled variant primarily used as trigger/display inside dropdown-based com
 
 ```vue
 <template>
-  <spr-input-dropdown
+  <mc-input-dropdown
     id="input-dropdown-basic"
     v-model="inputModel"
     label="Input Dropdown"
@@ -41,7 +41,7 @@ const inputModel = ref('');
 ## Active State
 
 <div>
-  <spr-input-dropdown 
+  <mc-input-dropdown 
     id="input-dropdown-active-state" 
     v-model="inputModels.activeState" 
     label="Input Dropdown" 
@@ -53,7 +53,7 @@ const inputModel = ref('');
 
 ```vue
 <template>
-  <spr-input-dropdown
+  <mc-input-dropdown
     id="input-dropdown-active-state"
     v-model="inputModel"
     label="Input Dropdown"
@@ -73,7 +73,7 @@ const inputModel = ref('');
 ## Error State
 
 <div>
-  <spr-input-dropdown 
+  <mc-input-dropdown 
     id="input-dropdown-error-state" 
     v-model="inputModels.errorState" 
     label="Input Dropdown" 
@@ -84,7 +84,7 @@ const inputModel = ref('');
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input-dropdown>
+  </mc-input-dropdown>
 </div>
 
 ## API Reference
@@ -98,7 +98,7 @@ Only the visual intent (username context) differs; no additional props or unique
 
 ```vue
 <template>
-  <spr-input-dropdown
+  <mc-input-dropdown
     id="input-dropdown-error-state"
     v-model="inputModel"
     label="Input Dropdown"
@@ -109,7 +109,7 @@ Only the visual intent (username context) differs; no additional props or unique
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input-dropdown>
+  </mc-input-dropdown>
 </template>
 
 <script setup lang="ts">
@@ -122,7 +122,7 @@ const inputModel = ref('');
 ## Disabled State
 
 <div>
-  <spr-input-dropdown 
+  <mc-input-dropdown 
     id="input-dropdown-disabled-state" 
     v-model="inputModels.disabledState" 
     label="Input Dropdown" 
@@ -133,7 +133,7 @@ const inputModel = ref('');
 
 ```vue
 <template>
-  <spr-input-dropdown
+  <mc-input-dropdown
     id="input-dropdown-disabled-state"
     v-model="inputModel"
     label="Input Dropdown"
@@ -154,7 +154,7 @@ import { ref } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
-import SprInputDropdown from '@/components/input/input-dropdown/input-dropdown.vue';
+import McInputDropdown from '@/components/input/input-dropdown/input-dropdown.vue';
 
 const inputModels = ref({
   basic: '',

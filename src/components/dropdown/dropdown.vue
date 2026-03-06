@@ -32,7 +32,7 @@
     <template #popper>
       <template v-if="$slots.popper">
         <div
-          :class="['spr-overflow-y-auto spr-overflow-x-hidden', !props.noPadding && 'spr-p-4']"
+          :class="['mc-overflow-y-auto mc-overflow-x-hidden', !props.noPadding && 'mc-p-4']"
           :style="{
             width: props.popperInnerWidth,
           }"
@@ -44,7 +44,7 @@
         <div
           ref="dropdownRef"
           :class="[
-            'spr-grid spr-max-h-[300px] spr-gap-0.5 spr-overflow-y-auto spr-overflow-x-hidden',
+            'mc-grid mc-max-h-[300px] mc-gap-0.5 mc-overflow-y-auto mc-overflow-x-hidden',
             !props.ladderized || isLadderizedSearch,
           ]"
           :style="{
@@ -52,7 +52,7 @@
           }"
         >
           <template v-if="dropdownMenuList.length > 0">
-            <spr-list
+            <mc-list
               v-if="!props.ladderized || isLadderizedSearch"
               v-model="selectedListItems"
               :menu-list="dropdownMenuList"
@@ -64,7 +64,7 @@
               :lozenge="props.lozenge"
               @update:model-value="handleSelectedItem"
             />
-            <spr-ladderized-list
+            <mc-ladderized-list
               v-else
               v-model="dropdownValue"
               :ladderized="props.ladderized"
@@ -75,8 +75,8 @@
             />
           </template>
           <template v-else>
-            <div class="spr-flex spr-items-center spr-justify-center spr-p-2 spr-text-center">
-              <span class="spr-body-sm-regular spr-m-0">No results found</span>
+            <div class="mc-flex mc-items-center mc-justify-center mc-p-2 mc-text-center">
+              <span class="mc-body-sm-regular mc-m-0">No results found</span>
             </div>
           </template>
         </div>
@@ -90,8 +90,8 @@ import { Menu } from 'floating-vue';
 
 import 'floating-vue/dist/style.css';
 
-import SprList from '../list/list.vue';
-import SprLadderizedList from '../list/ladderized-list/ladderized-list.vue';
+import McList from '../list/list.vue';
+import McLadderizedList from '../list/ladderized-list/ladderized-list.vue';
 
 import { dropdownPropTypes, dropdownEmitTypes } from './dropdown';
 

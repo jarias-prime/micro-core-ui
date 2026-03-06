@@ -1,13 +1,13 @@
 <template>
-  <div class="spr-flex spr-h-fit spr-flex-row">
-    <spr-button
+  <div class="mc-flex mc-h-fit mc-flex-row">
+    <mc-button
       v-bind="props"
       :class="buttonDropdownClasses.mainButtonClasses"
       @click="(event) => emits('click', event)"
     >
       <slot />
-    </spr-button>
-    <spr-dropdown
+    </mc-button>
+    <mc-dropdown
       :id="props.dropdownId"
       v-model="selectedMenu"
       :menu-list="menuList"
@@ -17,15 +17,15 @@
       :placement="props.placement"
       no-check-in-list
     >
-      <spr-button
+      <mc-button
         v-bind="props"
         :fullwidth="false"
         :has-icon="true"
         :class="buttonDropdownClasses.dropdownButtonClasses"
       >
         <icon icon="ph:caret-down" />
-      </spr-button>
-    </spr-dropdown>
+      </mc-button>
+    </mc-dropdown>
   </div>
 </template>
 
@@ -35,8 +35,8 @@ import { Icon } from '@iconify/vue';
 import { buttonDropdownEmits, buttonDropdownProps } from './button-dropdown';
 import { useButtonDropdown } from './use-button-dropdown';
 
-import SprButton from '@/components/button/button.vue';
-import SprDropdown from '@/components/dropdown/dropdown.vue';
+import McButton from '@/components/button/button.vue';
+import McDropdown from '@/components/dropdown/dropdown.vue';
 
 const props = defineProps(buttonDropdownProps);
 const emits = defineEmits(buttonDropdownEmits);

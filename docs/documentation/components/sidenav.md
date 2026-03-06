@@ -15,11 +15,11 @@ The side navigation provides a customizable navigation bar that includes a logo,
 To implement the Sidenav component, use the following syntax:
 
 ```vue
-<spr-sidenav>
+<mc-sidenav>
   <template #logo-image>
     <img src="[logo_image_path]" alt="logo" />
   </template>
-</spr-sidenav>
+</mc-sidenav>
 ```
 
 ## Slots
@@ -67,11 +67,11 @@ defining the navigation links has 2 sections, `top` and `bottom`. Each section c
 
 ```vue
 <template>
-  <spr-sidenav :nav-links="navLinks">
+  <mc-sidenav :nav-links="navLinks">
     <template #logo-image>
       <img src="@/assets/images/sprout-hr-logo.svg" alt="logo" />
     </template>
-  </spr-sidenav>
+  </mc-sidenav>
 </template>
 
 <script lang="ts" setup>
@@ -232,19 +232,19 @@ The nav-links attribute expects an array of objects that define the navigation m
 
 <ul>
   <li>
-    <code class="spr-mr-2">top:</code>
+    <code class="mc-mr-2">top:</code>
     <span> 
       You can define the top-level navigation links in the top section of the side navigation.
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">bottom:</code>
+    <code class="mc-mr-2">bottom:</code>
     <span> 
       You can define the top-level navigation links in the bottom section of the side navigation.
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">parentLinks:</code>
+    <code class="mc-mr-2">parentLinks:</code>
     <span> 
       List of top-level navigation links. Each link may contain additional properties such as a 
       <code>title</code>, 
@@ -252,57 +252,57 @@ The nav-links attribute expects an array of objects that define the navigation m
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">title:</code>
+    <code class="mc-mr-2">title:</code>
     <span>
       The title of each nav link item. When <code>menulinks</code> is empty or not indicated. 
       Title will shows when parent link is hovered.
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">icon:</code>
+    <code class="mc-mr-2">icon:</code>
     <span>
       The icon associated only with <code>parentLinks</code>, usually an iconify strong (e.g., `ph:home`, `ph:users-three`).
       See more on <a href="https://iconify.design/docs/usage/svg/iconify/">Iconify</a>.
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">redirect:</code>
+    <code class="mc-mr-2">redirect:</code>
     <span>
       The URL or path to which the user is redirected when they click on the navigation item. Redirection wont work if <code>menuLinks</code> or <code>submenuLinks</code> is present.
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">openInNewTab:</code>
+    <code class="mc-mr-2">openInNewTab:</code>
     <span>
       A boolean flag indicating whether the link is to open in a new tab.
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">isAbsoluteURL:</code>
+    <code class="mc-mr-2">isAbsoluteURL:</code>
     <span>
       A boolean flag indicating whether the link will be open using href.
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">link:</code>
+    <code class="mc-mr-2">link:</code>
     <span>
       The actual URL or destination for the navigation item, often used for internal routing or linking to different parts of the app.
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">menuLinks:</code>
+    <code class="mc-mr-2">menuLinks:</code>
     <span>
       This appear under a <code>parentLinks</code> navigation item. These menu links define additional sections or categories under the parent link.
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">submenuLinks:</code>
+    <code class="mc-mr-2">submenuLinks:</code>
     <span>
       Links nested under the <code>menuLinks</code>, enabling multi-level navigation. These are further breakdowns or child items under each <code>menuLinks</code> section.
     </span>
   </li>
   <li>
-    <code class="spr-mr-2">hidden:</code>
+    <code class="mc-mr-2">hidden:</code>
     <span>
       A boolean flag indicating whether the quick action item should be hidden.
     </span>
@@ -417,11 +417,11 @@ Here’s a example of how to implement the active navigation property:
 
 ```vue
 <template>
-  <spr-sidenav :active-nav="activeNav" :nav-links="navLinks">
+  <mc-sidenav :active-nav="activeNav" :nav-links="navLinks">
     <template #logo-image>
       <img src="@/assets/images/sprout-hr-logo.svg" alt="logo" />
     </template>
-  </spr-sidenav>
+  </mc-sidenav>
 </template>
 
 <script lang="ts" setup>
@@ -619,11 +619,11 @@ When `isNavApi` is set to `true`, the sidenav component expects navigation data 
 
 ```vue
 <template>
-  <spr-sidenav :nav-links="apiNavLinks" :is-nav-api="true" :active-nav="activeNav" @get-navlink-item="handleNavClick">
+  <mc-sidenav :nav-links="apiNavLinks" :is-nav-api="true" :active-nav="activeNav" @get-navlink-item="handleNavClick">
     <template #logo-image>
       <img src="/path/to/logo.png" alt="logo" />
     </template>
-  </spr-sidenav>
+  </mc-sidenav>
 </template>
 
 <script lang="ts" setup>
@@ -807,11 +807,11 @@ The `iconBgColor` property currently can only handle 2 values `green` or `purple
 
 ```vue
 <template>
-  <spr-sidenav :quick-actions="quickActions" :active-nav="activeNav" :nav-links="navLinks">
+  <mc-sidenav :quick-actions="quickActions" :active-nav="activeNav" :nav-links="navLinks">
     <template #logo-image>
       <img src="@/assets/images/sprout-hr-logo.svg" alt="logo" />
     </template>
-  </spr-sidenav>
+  </mc-sidenav>
 </template>
 
 <script lang="ts" setup>
@@ -1070,11 +1070,11 @@ Using the `@search` event, you can handle the search functionality.
 
 ```vue
 <template>
-  <spr-sidenav has-search @search="handleSearch">
+  <mc-sidenav has-search @search="handleSearch">
     <template #logo-image>
       <img src="@/assets/images/sprout-hr-logo.svg" alt="logo" />
     </template>
-  </spr-sidenav>
+  </mc-sidenav>
 </template>
 
 <script lang="ts" setup>
@@ -1092,7 +1092,7 @@ Using the `@notifications` or `@requests` event, you can handle the notification
 
 ```vue
 <template>
-  <spr-sidenav
+  <mc-sidenav
     :notification-count="5"
     :request-count="10"
     @notifications="handleNotifications"
@@ -1101,7 +1101,7 @@ Using the `@notifications` or `@requests` event, you can handle the notification
     <template #logo-image>
       <img src="@/assets/images/sprout-hr-logo.svg" alt="logo" />
     </template>
-  </spr-sidenav>
+  </mc-sidenav>
 </template>
 
 <script lang="ts" setup>
@@ -1121,11 +1121,11 @@ The user menu allows you to add a user avatar at the bottom of the side navigati
 
 ```vue
 <template>
-  <spr-sidenav :user-menu="userMenu">
+  <mc-sidenav :user-menu="userMenu">
     <template #logo-image>
       <img src="@/assets/images/sprout-hr-logo.svg" alt="logo" />
     </template>
-  </spr-sidenav>
+  </mc-sidenav>
 </template>
 
 <script lang="ts" setup>
@@ -1182,13 +1182,13 @@ const userMenu = ref({
 Here’s a full example of how to implement the Sidenav component:
 Switch to loading to see the loading state.
 
-<div class="spr-p-4 spr-w-full spr-justify-end spr-flex">
-  <spr-switch v-model="loading" >Switch to loading</spr-switch>
+<div class="mc-p-4 mc-w-full mc-justify-end mc-flex">
+  <mc-switch v-model="loading" >Switch to loading</mc-switch>
 </div>
 
-<div class="no-darkmode spr-m-0 spr-bg-mushroom-100 spr-text-mushroom-950 spr-font-main spr-rounded-md spr-h-[100vh] spr-w-full spr-relative spr-flex">
-  <spr-sidenav 
-    class="spr-absolute spr-z-[1]" 
+<div class="no-darkmode mc-m-0 mc-bg-mushroom-100 mc-text-mushroom-950 mc-font-main mc-rounded-md mc-h-[100vh] mc-w-full mc-relative mc-flex">
+  <mc-sidenav 
+    class="mc-absolute mc-z-[1]" 
     :quick-actions="quickActions"
     has-search
     :active-nav="activeNav"
@@ -1205,8 +1205,8 @@ Switch to loading to see the loading state.
     <template #logo-image>
       <img src="@/assets/images/sprout-hr-logo.svg" alt="logo" />
     </template>
-  </spr-sidenav>
-  <div class="spr-flex-1 spr-px-4 spr-py-4 spr-w-full [@media(min-width:1024px)]:spr-max-w-[calc(100%-68px)] [@media(min-width:1024px)]:spr-ml-[68px] spr-ml-0 [@media(min-width:1024px)]:spr-mt-0 spr-mt-[54px] spr-overflow-auto">
+  </mc-sidenav>
+  <div class="mc-flex-1 mc-px-4 mc-py-4 mc-w-full [@media(min-width:1024px)]:mc-max-w-[calc(100%-68px)] [@media(min-width:1024px)]:mc-ml-[68px] mc-ml-0 [@media(min-width:1024px)]:mc-mt-0 mc-mt-[54px] mc-overflow-auto">
     <h1>Lorem Ipsum</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis est in quam efficitur tempor. Integer blandit egestas risus, non consequat massa rhoncus eget. Donec commodo luctus diam, egestas scelerisque justo fermentum vel. Morbi vestibulum quis arcu sit amet sollicitudin. Vestibulum fringilla et risus at porttitor. Sed at augue non nunc tempus sagittis quis a magna. Mauris lacinia neque massa, sed fermentum libero dignissim et. Vivamus faucibus aliquet arcu, a viverra leo vehicula at. Aliquam ut turpis vitae mi scelerisque blandit in non diam. Nulla molestie, ipsum id interdum auctor, sem odio bibendum turpis, sed accumsan nisl nunc id lacus. Vestibulum ante eros, accumsan sit amet mollis et, fermentum at est. In hac habitasse platea dictumst.
@@ -1228,7 +1228,7 @@ Switch to loading to see the loading state.
 
 ```vue
 <template>
-  <spr-sidenav
+  <mc-sidenav
     :quick-actions="quickActions"
     has-search
     :active-nav="activeNav"
@@ -1243,13 +1243,13 @@ Switch to loading to see the loading state.
     <template #logo-image>
       <img src="@/assets/images/sprout-hr-logo.svg" alt="logo" />
     </template>
-  </spr-sidenav>
+  </mc-sidenav>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprSidenav from '@/components/sidenav/sidenav.vue';
+import McSidenav from '@/components/sidenav/sidenav.vue';
 
 const quickActions = ref([
   {
@@ -1735,9 +1735,9 @@ const userMenu = ref({
 
 Here's a complete implementation example using the sidenav component with `isNavApi: true` and real API data structure:
 
-<div class="no-darkmode spr-m-0 spr-bg-mushroom-100 spr-text-mushroom-950 spr-font-main spr-rounded-md spr-h-[100vh] spr-w-full spr-relative spr-flex">
-  <spr-sidenav 
-    class="spr-absolute spr-z-[1]" 
+<div class="no-darkmode mc-m-0 mc-bg-mushroom-100 mc-text-mushroom-950 mc-font-main mc-rounded-md mc-h-[100vh] mc-w-full mc-relative mc-flex">
+  <mc-sidenav 
+    class="mc-absolute mc-z-[1]" 
     :nav-links="apiNavData"
     :is-nav-api="true"
     :active-nav="activeNav"
@@ -1755,8 +1755,8 @@ Here's a complete implementation example using the sidenav component with `isNav
     <template #logo-image>
       <img src="@/assets/images/sprout-hr-logo.svg" alt="logo" />
     </template>
-  </spr-sidenav>
-  <div class="spr-flex-1 spr-px-4 spr-py-4 spr-w-full [@media(min-width:1024px)]:spr-max-w-[calc(100%-68px)] [@media(min-width:1024px)]:spr-ml-[68px] spr-ml-0 [@media(min-width:1024px)]:spr-mt-0 spr-mt-[54px] spr-overflow-auto">
+  </mc-sidenav>
+  <div class="mc-flex-1 mc-px-4 mc-py-4 mc-w-full [@media(min-width:1024px)]:mc-max-w-[calc(100%-68px)] [@media(min-width:1024px)]:mc-ml-[68px] mc-ml-0 [@media(min-width:1024px)]:mc-mt-0 mc-mt-[54px] mc-overflow-auto">
     <h1>API-Driven Navigation Example</h1>
     <p>
       This example demonstrates how the sidenav component works with real API data structure. The navigation is dynamically generated from the API response, supporting complex nested hierarchies with multiple levels of menus and submenus.
@@ -1772,7 +1772,7 @@ Here's a complete implementation example using the sidenav component with `isNav
 
 ```vue
 <template>
-  <spr-sidenav
+  <mc-sidenav
     :nav-links="apiNavData"
     :is-nav-api="true"
     :active-nav="activeNav"
@@ -1788,13 +1788,13 @@ Here's a complete implementation example using the sidenav component with `isNav
     <template #logo-image>
       <img src="@/assets/images/sprout-hr-logo.svg" alt="logo" />
     </template>
-  </spr-sidenav>
+  </mc-sidenav>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprSidenav from '@/components/sidenav/sidenav.vue';
+import McSidenav from '@/components/sidenav/sidenav.vue';
 
 // Real API data structure example
 const apiNavData = ref({
@@ -2138,7 +2138,7 @@ The following props are available for the Sidenav component:
 <table>
   <thead>
     <tr>
-      <td class="spr-min-w-[180px]">Name</td>
+      <td class="mc-min-w-[180px]">Name</td>
       <td>Description</td>
       <td>Type</td>
       <td>Default</td>
@@ -2251,7 +2251,7 @@ The following events are emitted by the Sidenav component:
 <table>
   <thead>
     <tr>
-      <td class="spr-min-w-[180px]">Name</td>
+      <td class="mc-min-w-[180px]">Name</td>
       <td>Description</td>
       <td>Parameters</td>
     </tr>
@@ -2301,7 +2301,7 @@ The following events are emitted by the Sidenav component:
 <table>
   <thead>
     <tr>
-      <td class="spr-min-w-[180px]">Name</td>
+      <td class="mc-min-w-[180px]">Name</td>
       <td>Description</td>
     </tr>
   </thead>
@@ -2448,11 +2448,10 @@ type UserMenuItem = {
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SideNavDataApi from '../../../../json-data/side-nav-api.json';
+import SideNavDataApi from '../../json-data/side-nav-api.json';
 
-import SprSidenav from '@/components/sidenav/sidenav.vue';
-import SprLogo from "@/components/logo/logo.vue";
-import SprSwitch from '@/components/switch/switch.vue';
+import McSidenav from '@/components/sidenav/sidenav.vue';
+import McSwitch from '@/components/switch/switch.vue';
 
 const loading= ref(false);
 const quickActions = ref([

@@ -8,26 +8,26 @@ outline: deep
 
 ## Basic Usage
 
-<div class="spr-p-8 spr-bg-white-500">
-  <spr-empty-state description="No results found" subDescription="Try a different search term" >
+<div class="mc-p-8 mc-bg-white-500">
+  <mc-empty-state description="No results found" subDescription="Try a different search term" >
     <div>
       Image Slot Here
     </div>
     <template #button>
-      <spr-button tone="success">Retry</spr-button>
+      <mc-button tone="success">Retry</mc-button>
     </template>
-  </spr-empty-state>
+  </mc-empty-state>
 </div>
 
 ```vue
 <template>
-  <spr-empty-state description="No results found" subDescription="Try a different search term">
+  <mc-empty-state description="No results found" subDescription="Try a different search term">
     <div>Image Here</div>
 
     <template #button>
-      <spr-button tone="success">Retry</spr-button>
+      <mc-button tone="success">Retry</mc-button>
     </template>
-  </spr-empty-state>
+  </mc-empty-state>
 </template>
 ```
 
@@ -37,15 +37,15 @@ You can also use the `image` prop to display an image in the defined empty state
 
 List of images that can be used in the empty state component.
 
-<div class="spr-flex spr-gap-6 spr-mb-6">
-  <ul class="!spr-m-0">
+<div class="mc-flex mc-gap-6 mc-mb-6">
+  <ul class="!mc-m-0">
     <li>bug</li>
     <li>clock</li>
     <li>dashboard</li>
     <li>employees</li>
     <li>government-id</li>
   </ul>
-  <ul class="!spr-m-0">
+  <ul class="!mc-m-0">
     <li>integration</li>
     <li>list</li>
     <li>social-media-handles</li>
@@ -54,34 +54,34 @@ List of images that can be used in the empty state component.
   </ul>
 </div>
 
-<div class="spr-p-8 spr-bg-white-500">
-  <spr-empty-state
+<div class="mc-p-8 mc-bg-white-500">
+  <mc-empty-state
     :description="`Current image is ${currentImage}`"
     subDescription="Try a different image"
     :image="currentImage"
   >
     <template #button>
-      <div class="spr-flex spr-flex-col spr-gap-4">
-        <spr-button tone="success" @click="changeImage">Change Image</spr-button>
+      <div class="mc-flex mc-flex-col mc-gap-4">
+        <mc-button tone="success" @click="changeImage">Change Image</mc-button>
       </div>
     </template>
-  </spr-empty-state>
+  </mc-empty-state>
 </div>
 
 ```vue
 <template>
-  <spr-empty-state
+  <mc-empty-state
     :description="`Current image is ${currentImage}`"
     subDescription="Try a different image"
     :image="currentImage"
   >
     <template #button>
-      <div class="spr-flex spr-flex-col spr-gap-4">
-        <spr-button tone="success">Retry</spr-button>
-        <spr-button variant="secondary" @click="changeImage">Change Image</spr-button>
+      <div class="mc-flex mc-flex-col mc-gap-4">
+        <mc-button tone="success">Retry</mc-button>
+        <mc-button variant="secondary" @click="changeImage">Change Image</mc-button>
       </div>
     </template>
-  </spr-empty-state>
+  </mc-empty-state>
 </template>
 
 <script setup>
@@ -116,50 +116,50 @@ const changeImage = () => {
 
 Image size can be controlled by passing the `size` prop. The default size is `small`. (`small` and `large`)
 
-<div class="spr-p-8 spr-bg-white-500">
-  <spr-empty-state
+<div class="mc-p-8 mc-bg-white-500">
+  <mc-empty-state
     description="No results found"
     subDescription="Try a different search term"
     image="bug"
     size="small"
   >
     <template #button>
-      <spr-button tone="success">Retry</spr-button>
+      <mc-button tone="success">Retry</mc-button>
     </template>
-  </spr-empty-state>
+  </mc-empty-state>
 </div>
 
-<div class="spr-p-8 spr-bg-white-500">
-  <spr-empty-state
+<div class="mc-p-8 mc-bg-white-500">
+  <mc-empty-state
     description="No results found"
     subDescription="Try a different search term"
     image="work-location"
     size="large"
   >
     <template #button>
-      <spr-button tone="success">Retry</spr-button>
+      <mc-button tone="success">Retry</mc-button>
     </template>
-  </spr-empty-state>
+  </mc-empty-state>
 </div>
 
 ```vue
 <template>
-  <spr-empty-state description="No results found" subDescription="Try a different search term" image="bug" size="small">
+  <mc-empty-state description="No results found" subDescription="Try a different search term" image="bug" size="small">
     <template #button>
-      <spr-button tone="success">Retry</spr-button>
+      <mc-button tone="success">Retry</mc-button>
     </template>
-  </spr-empty-state>
+  </mc-empty-state>
 
-  <spr-empty-state
+  <mc-empty-state
     description="No results found"
     subDescription="Try a different search term"
     image="work-location"
     size="large"
   >
     <template #button>
-      <spr-button tone="success">Retry</spr-button>
+      <mc-button tone="success">Retry</mc-button>
     </template>
-  </spr-empty-state>
+  </mc-empty-state>
 </template>
 ```
 
@@ -167,13 +167,13 @@ Image size can be controlled by passing the `size` prop. The default size is `sm
 
 Display a coming soon message using only the description prop without any additional imagery or buttons:
 
-<div class="spr-p-8 spr-bg-white-500">
-  <spr-empty-state description="Coming Soon" />
+<div class="mc-p-8 mc-bg-white-500">
+  <mc-empty-state description="Coming Soon" />
 </div>
 
 ```vue
 <template>
-  <spr-empty-state description="Coming Soon" />
+  <mc-empty-state description="Coming Soon" />
 </template>
 ```
 
@@ -283,8 +283,8 @@ Display a coming soon message using only the description prop without any additi
 </table>
 
 <script lang="ts" setup>
-import SprEmptyState from "@/components/empty-state/empty-state.vue";
-import SprButton from '@/components/button/button.vue';
+import McEmptyState from "@/components/empty-state/empty-state.vue";
+import McButton from '@/components/button/button.vue';
 import { ref } from 'vue';
 
 const imageTypes = [

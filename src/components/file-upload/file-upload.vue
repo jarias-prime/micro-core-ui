@@ -1,6 +1,6 @@
 <template>
   <div class="media-upload">
-    <label v-if="props.title" class="spr-body-md-regular">
+    <label v-if="props.title" class="mc-body-md-regular">
       {{ props.title }}
     </label>
     <div v-if="props.modelValue.length <= 0" ref="fileUploadRef" :class="fileUploadClasses.wrapperClasses">
@@ -15,21 +15,21 @@
           @change="onFileChangeHandler"
         />
         <icon icon="ph:cloud-arrow-up" width="28px" height="28px" />
-        <spr-button
+        <mc-button
           size="small"
           tone="neutral"
           variant="secondary"
           :disabled="props.disabled"
           @click="clickInitialInputFile"
-          >Browse Files</spr-button
+          >Browse Files</mc-button
         >
-        <label v-if="!props.hideDropzoneLabel" class="spr-body-sm-regular">
+        <label v-if="!props.hideDropzoneLabel" class="mc-body-sm-regular">
           {{ 'or drop your ' + (props.multiple ? 'files' : 'file') + ' to upload' }}
         </label>
       </div>
       <div
         v-if="props.showError"
-        class="spr-body-xs-regular spr-text-color-danger-base spr-grid spr-content-center spr-text-center"
+        class="mc-body-xs-regular mc-text-color-danger-base mc-grid mc-content-center mc-text-center"
       >
         <label v-for="(error, index) in props.errorMessages" :key="index">{{ error }}</label>
       </div>
@@ -47,55 +47,55 @@
         hidden
         @change="replaceFile"
       />
-      <div v-for="(file, index) in modelValue" :key="index" class="spr-flex spr-flex-col spr-gap-size-spacing-4xs">
-        <div class="spr-flex spr-justify-between spr-gap-2">
+      <div v-for="(file, index) in modelValue" :key="index" class="mc-flex mc-flex-col mc-gap-size-spacing-4xs">
+        <div class="mc-flex mc-justify-between mc-gap-2">
           <div
-            class="spr-flex spr-flex-auto spr-items-center spr-gap-2 spr-overflow-hidden spr-whitespace-break-spaces spr-break-words"
+            class="mc-flex mc-flex-auto mc-items-center mc-gap-2 mc-overflow-hidden mc-whitespace-break-spaces mc-break-words"
           >
             <icon
               v-if="!props.hideFilePreviewIcon"
               :icon="iconMap[file.type as keyof typeof iconMap] || 'ph:check-circle-fill'"
               width="20px"
               height="20px"
-              class="spr-text-color-brand-base spr-flex-none"
+              class="mc-text-color-brand-base mc-flex-none"
             />
-            <label class="spr-body-sm-regular">{{ file ? file.name : '' }}</label>
+            <label class="mc-body-sm-regular">{{ file ? file.name : '' }}</label>
           </div>
-          <div class="spr-flex spr-items-start spr-gap-2 spr-gap-size-spacing-5xs">
-            <spr-button
+          <div class="mc-flex mc-items-start mc-gap-2 mc-gap-size-spacing-5xs">
+            <mc-button
               size="small"
               tone="neutral"
               variant="secondary"
               :disabled="props.disabled"
               @click="clickListInputFile(index)"
-              >Replace</spr-button
+              >Replace</mc-button
             >
-            <spr-button
+            <mc-button
               size="small"
               tone="danger"
               variant="secondary"
               :disabled="props.disabled"
               @click="deleteFile(index)"
               ><icon icon="ph:trash"
-            /></spr-button>
+            /></mc-button>
           </div>
         </div>
         <div
           v-if="props.showError && props.errorMessages[index]"
-          class="spr-body-sm-regular spr-text-color-danger-base spr-flex spr-gap-size-spacing-5xs"
+          class="mc-body-sm-regular mc-text-color-danger-base mc-flex mc-gap-size-spacing-5xs"
         >
-          <Icon class="spr-flex-none" icon="ph:warning-circle-fill" width="20px" height="20px" />
-          <span class="spr-self-start">{{ props.errorMessages[index] }}</span>
+          <Icon class="mc-flex-none" icon="ph:warning-circle-fill" width="20px" height="20px" />
+          <span class="mc-self-start">{{ props.errorMessages[index] }}</span>
         </div>
       </div>
       <slot name="file-upload-progress-bar">
-        <div v-if="props.showProgress" class="spr-flex spr-gap-size-spacing-5xs">
-          <spr-progress-bar
+        <div v-if="props.showProgress" class="mc-flex mc-gap-size-spacing-5xs">
+          <mc-progress-bar
             :value="props.progressValue"
             :max="100"
             :color="props.showError ? 'danger' : 'success'"
             size="sm"
-            class="spr-w-full"
+            class="mc-w-full"
             :label="false"
           />
         </div>
@@ -110,8 +110,8 @@ import { Icon } from '@iconify/vue';
 import { fileUploadEmitTypes, fileUploadPropTypes } from './file-upload';
 import { useFileUpload } from './use-file-upload';
 
-import SprButton from '../button/button.vue';
-import SprProgressBar from '../progress-bar/progress-bar.vue';
+import McButton from '../button/button.vue';
+import McProgressBar from '../progress-bar/progress-bar.vue';
 
 const props = defineProps(fileUploadPropTypes);
 const emit = defineEmits(fileUploadEmitTypes);

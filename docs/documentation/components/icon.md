@@ -35,37 +35,37 @@ Icon component provides a consistent way to display icons with various sizes, to
 
 A basic icon requires an ID and icon name from the Iconify library.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-icon id="basic-icon" icon="ph:user" />
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-icon id="basic-icon" icon="ph:user" />
 </div>
 
 ```vue
-<spr-icon id="basic-icon" icon="ph:user" />
+<mc-icon id="basic-icon" icon="ph:user" />
 ```
 
 ## Sizes
 
 Icons can be displayed in different sizes to match various UI contexts.
 
-<div class="spr-flex spr-items-center spr-gap-4 spr-p-4">
-  <spr-icon id="icon-2xs" icon="ph:user" size="2xs" />
-  <spr-icon id="icon-xs" icon="ph:user" size="xs" />
-  <spr-icon id="icon-sm" icon="ph:user" size="sm" />
-  <spr-icon id="icon-md" icon="ph:user" size="md" />
-  <spr-icon id="icon-lg" icon="ph:user" size="lg" />
-  <spr-icon id="icon-xl" icon="ph:user" size="xl" />
-  <spr-icon id="icon-2xl" icon="ph:user" size="2xl" />
+<div class="mc-flex mc-items-center mc-gap-4 mc-p-4">
+  <mc-icon id="icon-2xs" icon="ph:user" size="2xs" />
+  <mc-icon id="icon-xs" icon="ph:user" size="xs" />
+  <mc-icon id="icon-sm" icon="ph:user" size="sm" />
+  <mc-icon id="icon-md" icon="ph:user" size="md" />
+  <mc-icon id="icon-lg" icon="ph:user" size="lg" />
+  <mc-icon id="icon-xl" icon="ph:user" size="xl" />
+  <mc-icon id="icon-2xl" icon="ph:user" size="2xl" />
 </div>
 
 ```vue
 <template>
-  <spr-icon id="icon-2xs" icon="ph:user" size="2xs" />
-  <spr-icon id="icon-xs" icon="ph:user" size="xs" />
-  <spr-icon id="icon-sm" icon="ph:user" size="sm" />
-  <spr-icon id="icon-md" icon="ph:user" size="md" />
-  <spr-icon id="icon-lg" icon="ph:user" size="lg" />
-  <spr-icon id="icon-xl" icon="ph:user" size="xl" />
-  <spr-icon id="icon-2xl" icon="ph:user" size="2xl" />
+  <mc-icon id="icon-2xs" icon="ph:user" size="2xs" />
+  <mc-icon id="icon-xs" icon="ph:user" size="xs" />
+  <mc-icon id="icon-sm" icon="ph:user" size="sm" />
+  <mc-icon id="icon-md" icon="ph:user" size="md" />
+  <mc-icon id="icon-lg" icon="ph:user" size="lg" />
+  <mc-icon id="icon-xl" icon="ph:user" size="xl" />
+  <mc-icon id="icon-2xl" icon="ph:user" size="2xl" />
 </template>
 ```
 
@@ -75,44 +75,44 @@ Icons can be styled with different tones and variants to convey meaning or statu
 
 ### Primary Variant (Filled)
 
-<div class="spr-flex spr-items-center spr-gap-4 spr-p-4">
-  <spr-icon id="success-primary" icon="ph:check-circle" tone="success" variant="primary" />
-  <spr-icon id="error-primary" icon="ph:x-circle" tone="error" variant="primary" />
-  <spr-icon id="info-primary" icon="ph:info" tone="info" variant="primary" />
-  <spr-icon id="pending-primary" icon="ph:clock" tone="pending" variant="primary" />
-  <spr-icon id="caution-primary" icon="ph:warning" tone="caution" variant="primary" />
+<div class="mc-flex mc-items-center mc-gap-4 mc-p-4">
+  <mc-icon id="success-primary" icon="ph:check-circle" tone="success" variant="primary" />
+  <mc-icon id="error-primary" icon="ph:x-circle" tone="error" variant="primary" />
+  <mc-icon id="info-primary" icon="ph:info" tone="info" variant="primary" />
+  <mc-icon id="pending-primary" icon="ph:clock" tone="pending" variant="primary" />
+  <mc-icon id="caution-primary" icon="ph:warning" tone="caution" variant="primary" />
 </div>
 
 ### Secondary Variant (Outlined)
 
-<div class="spr-flex spr-items-center spr-gap-4 spr-p-4">
-  <spr-icon id="success-secondary" icon="ph:check-circle" tone="success" variant="secondary" />
-  <spr-icon id="error-secondary" icon="ph:x-circle" tone="error" variant="secondary" />
-  <spr-icon id="info-secondary" icon="ph:info" tone="info" variant="secondary" />
-  <spr-icon id="pending-secondary" icon="ph:clock" tone="pending" variant="secondary" />
-  <spr-icon id="caution-secondary" icon="ph:warning" tone="caution" variant="secondary" />
+<div class="mc-flex mc-items-center mc-gap-4 mc-p-4">
+  <mc-icon id="success-secondary" icon="ph:check-circle" tone="success" variant="secondary" />
+  <mc-icon id="error-secondary" icon="ph:x-circle" tone="error" variant="secondary" />
+  <mc-icon id="info-secondary" icon="ph:info" tone="info" variant="secondary" />
+  <mc-icon id="pending-secondary" icon="ph:clock" tone="pending" variant="secondary" />
+  <mc-icon id="caution-secondary" icon="ph:warning" tone="caution" variant="secondary" />
 </div>
 
 ### Tertiary Variant (Plain)
 
-<div class="spr-flex spr-items-center spr-gap-4 spr-p-4">
-  <spr-icon id="success-tertiary" icon="ph:check-circle" tone="success" variant="tertiary" />
-  <spr-icon id="error-tertiary" icon="ph:x-circle" tone="error" variant="tertiary" />
-  <spr-icon id="info-tertiary" icon="ph:info" tone="info" variant="tertiary" />
-  <spr-icon id="pending-tertiary" icon="ph:clock" tone="pending" variant="tertiary" />
-  <spr-icon id="caution-tertiary" icon="ph:warning" tone="caution" variant="tertiary" />
+<div class="mc-flex mc-items-center mc-gap-4 mc-p-4">
+  <mc-icon id="success-tertiary" icon="ph:check-circle" tone="success" variant="tertiary" />
+  <mc-icon id="error-tertiary" icon="ph:x-circle" tone="error" variant="tertiary" />
+  <mc-icon id="info-tertiary" icon="ph:info" tone="info" variant="tertiary" />
+  <mc-icon id="pending-tertiary" icon="ph:clock" tone="pending" variant="tertiary" />
+  <mc-icon id="caution-tertiary" icon="ph:warning" tone="caution" variant="tertiary" />
 </div>
 
 ```vue
 <template>
   <!-- Primary Variant -->
-  <spr-icon id="success-primary" icon="ph:check-circle" tone="success" variant="primary" />
+  <mc-icon id="success-primary" icon="ph:check-circle" tone="success" variant="primary" />
 
   <!-- Secondary Variant -->
-  <spr-icon id="info-secondary" icon="ph:info" tone="info" variant="secondary" />
+  <mc-icon id="info-secondary" icon="ph:info" tone="info" variant="secondary" />
 
   <!-- Tertiary Variant -->
-  <spr-icon id="warning-tertiary" icon="ph:warning" tone="caution" variant="tertiary" />
+  <mc-icon id="warning-tertiary" icon="ph:warning" tone="caution" variant="tertiary" />
 </template>
 ```
 
@@ -190,6 +190,5 @@ Icons can be styled with different tones and variants to convey meaning or statu
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
-import SprIcon from "@/components/icon/icon.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McIcon from "@/components/icon/icon.vue";
 </script>

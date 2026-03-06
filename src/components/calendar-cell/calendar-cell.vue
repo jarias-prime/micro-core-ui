@@ -11,7 +11,7 @@
           <Icon v-if="hasIconStatus" :icon="getCellIcon" />
         </slot>
       </div>
-      <spr-status v-if="isError" :state="props.state" size="sm" />
+      <mc-status v-if="isError" :state="props.state" size="sm" />
       <div v-if="hasContent" :class="getCalendarCellClassess.getTextFormatClasses">
         <div v-if="props.title" :class="getCalendarCellClassess.titleClasses">
           {{ props.title }}
@@ -35,7 +35,7 @@ import { Icon } from '@iconify/vue';
 import { calendarCellPropTypes, calendarCellEmitTypes } from './calendar-cell';
 import { useCalendarCell } from './use-calendar-cell';
 
-import SprStatus from '@/components/status/status.vue';
+import McStatus from '@/components/status/status.vue';
 
 const props = defineProps(calendarCellPropTypes);
 const emit = defineEmits(calendarCellEmitTypes);

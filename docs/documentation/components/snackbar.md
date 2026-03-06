@@ -8,21 +8,21 @@ outline: deep
 
 A toast to display message and perform action.
 
-<spr-snackbar ref="snackbar" />
+<mc-snackbar ref="snackbar" />
 
 ## Basic Usage
 
 Snackbar uses Vue's `<Teleport>` component to attach the snackbar component to the HTML `body`. It also utilizes Vue's `defineExpose` to expose five functions for displaying different snackbars..
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-button @click="showSnackbar1">Show Snackbar</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-button @click="showSnackbar1">Show Snackbar</mc-button>
 </div>
 
 ```vue
 <template>
-  <spr-snackbar ref="snackbar" />
+  <mc-snackbar ref="snackbar" />
 
-  <spr-button @click="showSnackbar1">Show Snackbar</spr-button>
+  <mc-button @click="showSnackbar1">Show Snackbar</mc-button>
 </template>
 
 <script lang="ts" setup>
@@ -41,21 +41,21 @@ const showSnackbar1 = () => {
 
 The snackbar can have four tones: `success`, `information`, `danger`, `caution`.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-button @click="showInformation">Show Information</spr-button>
-  <spr-button @click="showSuccess" tone="success">Show Success</spr-button>
-  <spr-button @click="showDanger" tone="danger">Show Danger</spr-button>
-  <spr-button @click="showCaution" tone="danger" variant="secondary">Show Caution</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-button @click="showInformation">Show Information</mc-button>
+  <mc-button @click="showSuccess" tone="success">Show Success</mc-button>
+  <mc-button @click="showDanger" tone="danger">Show Danger</mc-button>
+  <mc-button @click="showCaution" tone="danger" variant="secondary">Show Caution</mc-button>
 </div>
 
 ```vue
 <template>
-  <div class="spr-flex spr-items-center spr-gap-2">
-    <spr-snackbar ref="snackbar" />
-    <spr-button @click="showInformation">Show Information</spr-button>
-    <spr-button @click="showSuccess" tone="success">Show Success</spr-button>
-    <spr-button @click="showDanger" tone="danger">Show Danger</spr-button>
-    <spr-button @click="showCaution" tone="danger" variant="secondary">Show Caution</spr-button>
+  <div class="mc-flex mc-items-center mc-gap-2">
+    <mc-snackbar ref="snackbar" />
+    <mc-button @click="showInformation">Show Information</mc-button>
+    <mc-button @click="showSuccess" tone="success">Show Success</mc-button>
+    <mc-button @click="showDanger" tone="danger">Show Danger</mc-button>
+    <mc-button @click="showCaution" tone="danger" variant="secondary">Show Caution</mc-button>
   </div>
 </template>
 
@@ -101,19 +101,19 @@ Alternatively, you can use the default `showSnackbar()` and define the `tone` pr
 
 The action property is a clickable label on the snackbar where we can define a function. When action is not define, the default is it deletes the snackbar.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-button @click="showWithCloseButton">Show snackbar with close action</spr-button>
-  <spr-button @click="showWithFunction">Show snackbar with function</spr-button>
-  <spr-button @click="showWithActionIconOnly">Show snackbar with action icon only</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-button @click="showWithCloseButton">Show snackbar with close action</mc-button>
+  <mc-button @click="showWithFunction">Show snackbar with function</mc-button>
+  <mc-button @click="showWithActionIconOnly">Show snackbar with action icon only</mc-button>
 </div>
 
 ```vue
 <template>
-  <spr-snackbar ref="snackbar" />
+  <mc-snackbar ref="snackbar" />
 
-  <spr-button @click="showWithCloseButton">Show snackbar with close action</spr-button>
-  <spr-button @click="showWithFunction">Show snackbar with function</spr-button>
-  <spr-button @click="showWithActionIconOnly">Show snackbar with action icon</spr-button>
+  <mc-button @click="showWithCloseButton">Show snackbar with close action</mc-button>
+  <mc-button @click="showWithFunction">Show snackbar with function</mc-button>
+  <mc-button @click="showWithActionIconOnly">Show snackbar with action icon</mc-button>
 </template>
 
 <script lang="ts" setup>
@@ -164,29 +164,29 @@ This slot allows you to customize the action section of the snackbar. You can us
 `showAction` property must be set to `true` in order to render the slot.
 :::
 
-  <spr-snackbar ref="slottedActionSnackbar">
+  <mc-snackbar ref="slottedActionSnackbar">
     <template #snackbarActions>
-      <div class="spr-flex spr-cursor-pointer spr-items-center">
-        <spr-button class="spr-mr-2" @click="handleSlottedAction">
+      <div class="mc-flex mc-cursor-pointer mc-items-center">
+        <mc-button class="mc-mr-2" @click="handleSlottedAction">
           Slotted Action
-        </spr-button>
+        </mc-button>
         Action Text
       </div>
     </template>
-  </spr-snackbar>
-<spr-button @click="showSlottedActionSnackbar">Show snackbar with slotted action</spr-button>
+  </mc-snackbar>
+<mc-button @click="showSlottedActionSnackbar">Show snackbar with slotted action</mc-button>
 
 ```vue
 <template>
-  <spr-snackbar ref="slottedActionSnackbar">
+  <mc-snackbar ref="slottedActionSnackbar">
     <template #snackbarActions>
-      <div class="spr-flex spr-cursor-pointer spr-items-center">
-        <spr-button class="spr-mr-2" @click="handleSlottedAction"> Slotted Action </spr-button>
+      <div class="mc-flex mc-cursor-pointer mc-items-center">
+        <mc-button class="mc-mr-2" @click="handleSlottedAction"> Slotted Action </mc-button>
         Action Text
       </div>
     </template>
-  </spr-snackbar>
-  <spr-button @click="showSlottedSnackbarAction">Show snackbar with function</spr-button>
+  </mc-snackbar>
+  <mc-button @click="showSlottedSnackbarAction">Show snackbar with function</mc-button>
 </template>
 
 <script lang="ts" setup>
@@ -217,7 +217,7 @@ const showSlottedSnackbarAction = () => {
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Type</th>
       <th>Default</th>
@@ -310,7 +310,7 @@ const showSlottedSnackbarAction = () => {
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Parameters</th>
     </tr>
@@ -331,7 +331,7 @@ const showSlottedSnackbarAction = () => {
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -362,7 +362,7 @@ const showSlottedSnackbarAction = () => {
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Method</th>
+      <th class="mc-min-w-[180px]">Method</th>
       <th>Description</th>
       <th>Parameters</th>
     </tr>
@@ -411,8 +411,8 @@ import { ref } from "vue";
 
 import { useSnackbar } from "@/components/snackbar/use-snackbar.ts";
 
-import SprSnackbar from "@/components/snackbar/snackbar.vue";
-import SprButton from "@/components/button/button.vue";
+import McSnackbar from "@/components/snackbar/snackbar.vue";
+import McButton from "@/components/button/button.vue";
 
 const snackbar = ref(null);
 const slottedActionSnackbar = ref(null);

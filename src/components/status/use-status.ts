@@ -5,27 +5,27 @@ import type { StatusPropTypes } from './status';
 export const useStatus = (props: StatusPropTypes) => {
   const statusSize: ComputedRef<string> = computed(() => {
     const stateSizes: Record<string, string> = {
-      '2xs': 'spr-w-[14px] spr-h-[14px]',
-      xs: 'spr-w-4 spr-h-4',
-      sm: 'spr-w-5 spr-h-5',
-      base: 'spr-w-6 spr-h-6',
-      lg: 'spr-w-8 spr-h-8',
-      xl: 'spr-w-10 spr-h-10',
-      '2xl': 'spr-w-12 spr-h-12',
+      '2xs': 'mc-w-[14px] mc-h-[14px]',
+      xs: 'mc-w-4 mc-h-4',
+      sm: 'mc-w-5 mc-h-5',
+      base: 'mc-w-6 mc-h-6',
+      lg: 'mc-w-8 mc-h-8',
+      xl: 'mc-w-10 mc-h-10',
+      '2xl': 'mc-w-12 mc-h-12',
     };
 
-    return stateSizes[props.size] || 'spr-w-6 spr-h-6';
+    return stateSizes[props.size] || 'mc-w-6 mc-h-6';
   });
 
   const statusClass: ComputedRef<string> = computed(() => {
     const stateClasses: Record<string, string> = {
-      success: 'spr-text-kangkong-600',
-      information: 'spr-text-blueberry-700',
-      pending: 'spr-text-mango-500',
-      caution: 'spr-text-carrot-500',
-      danger: 'spr-text-tomato-600',
+      success: 'mc-text-kangkong-600',
+      information: 'mc-text-blueberry-700',
+      pending: 'mc-text-mango-500',
+      caution: 'mc-text-carrot-500',
+      danger: 'mc-text-tomato-600',
     };
-    return stateClasses[props.state] || 'spr-text-kangkong-600';
+    return stateClasses[props.state] || 'mc-text-kangkong-600';
   });
 
   const statusIcon: ComputedRef<string> = computed(() => {

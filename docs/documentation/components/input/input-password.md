@@ -10,11 +10,11 @@ Password input with toggle visibility (if implemented in component) and native m
 
 ## Basic Usage
 
-<spr-input-password v-model="inputModels.basic" label="Password" placeholder="Enter password" />
+<mc-input-password v-model="inputModels.basic" label="Password" placeholder="Enter password" />
 
 ```vue
 <template>
-  <spr-input-password v-model="inputModel" label="Password" placeholder="Enter password" />
+  <mc-input-password v-model="inputModel" label="Password" placeholder="Enter password" />
 </template>
 
 <script setup lang="ts">
@@ -26,11 +26,11 @@ const inputModel = ref('');
 
 ## Active State
 
-<spr-input-password v-model="inputModels.activeState" label="Password" placeholder="Enter password" active />
+<mc-input-password v-model="inputModels.activeState" label="Password" placeholder="Enter password" active />
 
 ```vue
 <template>
-  <spr-input-password v-model="inputModel" label="Password" placeholder="Enter password" active />
+  <mc-input-password v-model="inputModel" label="Password" placeholder="Enter password" active />
 </template>
 
 <script setup lang="ts">
@@ -42,19 +42,19 @@ const inputModel = ref('');
 
 ## Error State
 
-<spr-input-password v-model="inputModels.errorState" label="Password" placeholder="Enter password" :error="true">
+<mc-input-password v-model="inputModels.errorState" label="Password" placeholder="Enter password" :error="true">
   <template #icon>
     <Icon icon="ph:warning-circle-fill" />
   </template>
-</spr-input-password>
+</mc-input-password>
 
 ```vue
 <template>
-  <spr-input-password v-model="inputModel" label="Password" placeholder="Enter password" :error="true">
+  <mc-input-password v-model="inputModel" label="Password" placeholder="Enter password" :error="true">
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input-password>
+  </mc-input-password>
 </template>
 
 <script setup lang="ts">
@@ -66,11 +66,11 @@ const inputModel = ref('');
 
 ## Disabled State
 
-<spr-input-password v-model="inputModels.disabledState" label="Password" placeholder="Enter password" :disabled="true" />
+<mc-input-password v-model="inputModels.disabledState" label="Password" placeholder="Enter password" :disabled="true" />
 
 ```vue
 <template>
-  <spr-input-password v-model="inputModel" label="Password" placeholder="Enter password" :disabled="true" />
+  <mc-input-password v-model="inputModel" label="Password" placeholder="Enter password" :disabled="true" />
 </template>
 
 <script setup lang="ts">
@@ -94,7 +94,7 @@ import { ref } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
-import SprInputPassword from '@/components/input/input-password/input-password.vue';
+import McInputPassword from '@/components/input/input-password/input-password.vue';
 
 const inputModels = ref({
   basic: '',

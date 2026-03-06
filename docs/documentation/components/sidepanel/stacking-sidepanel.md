@@ -31,99 +31,99 @@ The `StackingSidepanel` component is designed to work with right-positioned side
 
 ## Basic Usage
 
-<spr-button @click="stackingSidepanel?.showPanel('sidepanel-1')">Show Panel 1</spr-button>
-<span class="spr-body-md">Active Panels: {{ activePanelText }}</span>
+<mc-button @click="stackingSidepanel?.showPanel('sidepanel-1')">Show Panel 1</mc-button>
+<span class="mc-body-md">Active Panels: {{ activePanelText }}</span>
 
-<spr-stacking-sidepanel ref="stacking-sidepanel" v-model:stack="activePanel" @update:stack="activePanelsHandler">
+<mc-stacking-sidepanel ref="stacking-sidepanel" v-model:stack="activePanel" @update:stack="activePanelsHandler">
 <template #sidepanel-1>
-  <spr-sidepanel
-  size="sm"
-  :position="'right'"
-  :is-stacking="true"
-  :is-active-panel="stackingSidepanel?.activePanel === 'sidepanel-1'"
-  header-title="Sidepanel 1"
-  @close="stackingSidepanel?.hidePanel('sidepanel-1')" >
+<mc-sidepanel
+size="sm"
+:position="'right'"
+:is-stacking="true"
+:is-active-panel="stackingSidepanel?.activePanel === 'sidepanel-1'"
+header-title="Sidepanel 1"
+@close="stackingSidepanel?.hidePanel('sidepanel-1')" >
 
-<div class="spr-p-size-spacing-2xs">
-<spr-button @click="stackingSidepanel?.showPanel('sidepanel-2')">Show Panel 2</spr-button>
+<div class="mc-p-size-spacing-2xs">
+<mc-button @click="stackingSidepanel?.showPanel('sidepanel-2')">Show Panel 2</mc-button>
 </div>
-</spr-sidepanel>
+</mc-sidepanel>
 </template>
 <template #sidepanel-2>
-<spr-sidepanel
+<mc-sidepanel
 size="sm"
 :position="'right'"
 :is-stacking="true"
 header-title="Sidepanel 2"
 :is-active-panel="stackingSidepanel?.activePanel === 'sidepanel-2'"
 @close="stackingSidepanel?.hidePanel('sidepanel-2')" >
-<div class="spr-p-size-spacing-2xs">
-<spr-button @click="stackingSidepanel?.showPanel('sidepanel-3')">Show Panel 3</spr-button>
+<div class="mc-p-size-spacing-2xs">
+<mc-button @click="stackingSidepanel?.showPanel('sidepanel-3')">Show Panel 3</mc-button>
 </div>
-</spr-sidepanel>
+</mc-sidepanel>
 </template>
 <template #sidepanel-3>
-<spr-sidepanel
+<mc-sidepanel
 size="sm"
 :position="'right'"
 :is-stacking="true"
 header-title="Sidepanel 3"
 :is-active-panel="stackingSidepanel?.activePanel === 'sidepanel-3'"
 @close="stackingSidepanel?.hidePanel('sidepanel-3')" >
-<div class="spr-p-size-spacing-2xs">
-<spr-button @click="stackingSidepanel?.hidePanel('sidepanel-3')">Close Panel 3</spr-button>
+<div class="mc-p-size-spacing-2xs">
+<mc-button @click="stackingSidepanel?.hidePanel('sidepanel-3')">Close Panel 3</mc-button>
 </div>
-</spr-sidepanel>
+</mc-sidepanel>
 </template>
-</spr-stacking-sidepanel>
+</mc-stacking-sidepanel>
 
 ```vue{6,7,53}
 <template>
-  <spr-button @click="stackingSidepanel?.showPanel('sidepanel-1')">Show Panel 1</spr-button>
-  <span class="spr-body-md">Active Panels: {{ activePanelText }}</span>
+  <mc-button @click="stackingSidepanel?.showPanel('sidepanel-1')">Show Panel 1</mc-button>
+  <span class="mc-body-md">Active Panels: {{ activePanelText }}</span>
 
-  <spr-stacking-sidepanel ref="stacking-sidepanel" v-model:stack="activePanel" @update:stack="activePanelsHandler">
+  <mc-stacking-sidepanel ref="stacking-sidepanel" v-model:stack="activePanel" @update:stack="activePanelsHandler">
     <template #sidepanel-1> <!-- Stacking sidepanel utilizes custom named slots. Make sure the slot names are unique. -->
       <!-- Stacking sidepanel is only supported for right positioned sidepanel. Also, set `is-stacking` to true. -->
-      <spr-sidepanel
+      <mc-sidepanel
         size="sm"
         position="right"
         :is-stacking="true"
         header-title="Sidepanel 1"
         @close="stackingSidepanel?.hidePanel('sidepanel-1')"
       >
-        <div class="spr-p-size-spacing-2xs">
-          <spr-button @click="stackingSidepanel?.showPanel('sidepanel-2')">Show Panel 2</spr-button>
+        <div class="mc-p-size-spacing-2xs">
+          <mc-button @click="stackingSidepanel?.showPanel('sidepanel-2')">Show Panel 2</mc-button>
         </div>
-      </spr-sidepanel>
+      </mc-sidepanel>
     </template>
     <template #sidepanel-2>
-      <spr-sidepanel
+      <mc-sidepanel
         size="md"
         position="right"
         :is-stacking="true"
         header-title="Sidepanel 2"
         @close="stackingSidepanel?.hidePanel('sidepanel-2')"
       >
-        <div class="spr-p-size-spacing-2xs">
-          <spr-button @click="stackingSidepanel?.showPanel('sidepanel-3')">Show Panel 3</spr-button>
+        <div class="mc-p-size-spacing-2xs">
+          <mc-button @click="stackingSidepanel?.showPanel('sidepanel-3')">Show Panel 3</mc-button>
         </div>
-      </spr-sidepanel>
+      </mc-sidepanel>
     </template>
     <template #sidepanel-3>
-      <spr-sidepanel
+      <mc-sidepanel
         size="lg"
         position="right"
         :is-stacking="true"
         header-title="Sidepanel 2"
         @close="stackingSidepanel?.hidePanel('sidepanel-3')"
       >
-        <div class="spr-p-size-spacing-2xs">
-          <spr-button @click="stackingSidepanel?.hidePanel('sidepanel-3')">Close Panel 3</spr-button>
+        <div class="mc-p-size-spacing-2xs">
+          <mc-button @click="stackingSidepanel?.hidePanel('sidepanel-3')">Close Panel 3</mc-button>
         </div>
-      </spr-sidepanel>
+      </mc-sidepanel>
     </template>
-  </spr-stacking-sidepanel>
+  </mc-stacking-sidepanel>
 </template>
 
 <script lang="ts" setup>
@@ -141,26 +141,30 @@ const activePanelsHandler = (panel: string[]) => {
 ```
 
 ## Expanding Sidepanels
+
 :::warning IMPORTANT
 To properly integrate expandable sidepanels within the Stacking Sidepanel component, These props are required: <br/>
-- `is-stacking` should be `true` on each `spr-sidepanel` <br/>
-- `:is-expandable` on each `spr-sidepanel`. <br/>
-- `:is-expanded` on each `spr-sidepanel` <br/>
-- `:is-active-panel` on each `spr-sidepanel`. <br/>
+
+- `is-stacking` should be `true` on each `mc-sidepanel` <br/>
+- `:is-expandable` on each `mc-sidepanel`. <br/>
+- `:is-expanded` on each `mc-sidepanel` <br/>
+- `:is-active-panel` on each `mc-sidepanel`. <br/>
 
 For more details on these props, refer to the [Sidepanel Props Documentation](./sidepanel.md#props).
 :::
 
-  <spr-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-1')">Show Expanding Panel 1</spr-button>
-  <span class="spr-body-md">Active Panels: {{ activePanelText }}</span>
-
-  <spr-stacking-sidepanel
-    ref="stacking-expandable-sidepanel"
-    v-model:stack="activeExpandablePanel"
+<div>
+  <mc-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-1')">
+    Show Expanding Panel 1
+  </mc-button>
+  <span class="mc-body-md">Active Panels: {{ activePanelText }}</span>
+  <mc-stacking-sidepanel 
+    ref="stacking-expandable-sidepanel" 
+    v-model:stack="activeExpandablePanel" 
     @update:stack="activePanelsHandler"
-  >
-  <template #expandable-sidepanel-1>      
-      <spr-sidepanel
+  > 
+    <template #expandable-sidepanel-1>
+      <mc-sidepanel
         size="sm"
         position="right"
         :is-stacking="true"
@@ -172,13 +176,13 @@ For more details on these props, refer to the [Sidepanel Props Documentation](./
         @expand="stackingExpandableSidepanel?.handleExpandPanel('expand', 'expandable-sidepanel-1')"
         @shrink="stackingExpandableSidepanel?.handleExpandPanel('shrink', 'expandable-sidepanel-1')"
       >
-        <div class="spr-p-size-spacing-2xs">
-          <spr-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-2')">Show Expanding Panel 2</spr-button>          
+        <div class="mc-p-size-spacing-2xs">
+          <mc-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-2')">Show Expanding Panel 2</mc-button>
         </div>
-      </spr-sidepanel>
+      </mc-sidepanel>
     </template>
     <template #expandable-sidepanel-2>
-      <spr-sidepanel
+      <mc-sidepanel
         size="md"
         position="right"
         :is-stacking="true"
@@ -190,13 +194,13 @@ For more details on these props, refer to the [Sidepanel Props Documentation](./
         @expand="stackingExpandableSidepanel?.handleExpandPanel('expand', 'expandable-sidepanel-2')"
         @shrink="stackingExpandableSidepanel?.handleExpandPanel('shrink', 'expandable-sidepanel-2')"
       >
-        <div class="spr-p-size-spacing-2xs">
-          <spr-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-3')">Show ExpandingPanel 3</spr-button>
+        <div class="mc-p-size-spacing-2xs">
+          <mc-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-3')">Show ExpandingPanel 3</mc-button>
         </div>
-      </spr-sidepanel>
+      </mc-sidepanel>
     </template>
     <template #expandable-sidepanel-3>
-      <spr-sidepanel
+      <mc-sidepanel
         size="lg"
         position="right"
         :is-stacking="true"
@@ -208,26 +212,28 @@ For more details on these props, refer to the [Sidepanel Props Documentation](./
         @expand="stackingExpandableSidepanel?.handleExpandPanel('expand', 'expandable-sidepanel-3')"
         @shrink="stackingExpandableSidepanel?.handleExpandPanel('shrink', 'expandable-sidepanel-3')"
       >
-        <div class="spr-p-size-spacing-2xs">
-          <spr-button @click="stackingExpandableSidepanel?.hidePanel('expandable-sidepanel-3')">Close Expanding Panel 3</spr-button>
+        <div class="mc-p-size-spacing-2xs">
+          <mc-button @click="stackingExpandableSidepanel?.hidePanel('expandable-sidepanel-3')">Close Expanding Panel 3</mc-button>
         </div>
-      </spr-sidepanel>
+      </mc-sidepanel>
     </template>
-  </spr-stacking-sidepanel>
+
+  </mc-stacking-sidepanel>
+</div>
 
 ```vue
 <template>
-    <spr-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-1')">Show Panel 1</spr-button>
-  <span class="spr-body-md">Active Panels: {{ activePanelText }}</span>
+    <mc-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-1')">Show Panel 1</mc-button>
+  <span class="mc-body-md">Active Panels: {{ activePanelText }}</span>
 
-  <spr-stacking-sidepanel
+  <mc-stacking-sidepanel
     ref="stacking-expandable-sidepanel"
     v-model:stack="activePanel"
     @update:stack="activePanelsHandler"
     :expanded-panel="expandedPanel"
   >
-  <template #sidepanel-1>      
-      <spr-sidepanel
+  <template #sidepanel-1>
+      <mc-sidepanel
         size="sm"
         position="right"
         :is-stacking="true"
@@ -239,13 +245,13 @@ For more details on these props, refer to the [Sidepanel Props Documentation](./
         @expand="stackingExpandableSidepanel?.handleExpandPanel('expand', 'expandable-sidepanel-1')"
         @shrink="stackingExpandableSidepanel?.handleExpandPanel('shrink', 'expandable-sidepanel-1')"
       >
-        <div class="spr-p-size-spacing-2xs">
-          <spr-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-2')">Show Panel 2</spr-button>          
+        <div class="mc-p-size-spacing-2xs">
+          <mc-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-2')">Show Panel 2</mc-button>
         </div>
-      </spr-sidepanel>
+      </mc-sidepanel>
     </template>
     <template #sidepanel-2>
-      <spr-sidepanel
+      <mc-sidepanel
         size="md"
         position="right"
         :is-stacking="true"
@@ -257,13 +263,13 @@ For more details on these props, refer to the [Sidepanel Props Documentation](./
         @expand="stackingExpandableSidepanel?.handleExpandPanel('expand', 'expandable-sidepanel-2')"
         @shrink="stackingExpandableSidepanel?.handleExpandPanel('shrink', 'expandable-sidepanel-2')"
       >
-        <div class="spr-p-size-spacing-2xs">
-          <spr-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-3')">Show Panel 3</spr-button>
+        <div class="mc-p-size-spacing-2xs">
+          <mc-button @click="stackingExpandableSidepanel?.showPanel('expandable-sidepanel-3')">Show Panel 3</mc-button>
         </div>
-      </spr-sidepanel>
+      </mc-sidepanel>
     </template>
     <template #sidepanel-3>
-      <spr-sidepanel
+      <mc-sidepanel
         size="lg"
         position="right"
         :is-stacking="true"
@@ -275,12 +281,12 @@ For more details on these props, refer to the [Sidepanel Props Documentation](./
         @expand="stackingExpandableSidepanel?.handleExpandPanel('expand', 'expandable-sidepanel-3')"
         @shrink="stackingExpandableSidepanel?.handleExpandPanel('shrink', 'expandable-sidepanel-3')"
       >
-        <div class="spr-p-size-spacing-2xs">
-          <spr-button @click="stackingExpandableSidepanel?.hidePanel('expandable-sidepanel-3')">Close Panel 3</spr-button>
+        <div class="mc-p-size-spacing-2xs">
+          <mc-button @click="stackingExpandableSidepanel?.hidePanel('expandable-sidepanel-3')">Close Panel 3</mc-button>
         </div>
-      </spr-sidepanel>
+      </mc-sidepanel>
     </template>
-  </spr-stacking-sidepanel>
+  </mc-stacking-sidepanel>
 </template>
 
 <script lang="ts" setup>
@@ -369,6 +375,7 @@ const expandedPanel = ref('');
 </table>
 
 ### Exposed Variables
+
 <table>
   <thead>
     <tr>
@@ -448,9 +455,9 @@ const expandedPanel = ref('');
 
 <script lang="ts" setup>
 import { ref, useTemplateRef } from 'vue';
-import SprButton from "@/components/button/button.vue"
-import SprSidepanel from "@/components/sidepanel/sidepanel.vue";
-import SprStackingSidepanel from "@/components/sidepanel/stacking-sidepanel/stacking-sidepanel.vue"
+import McButton from "@/components/button/button.vue"
+import McSidepanel from "@/components/sidepanel/sidepanel.vue";
+import McStackingSidepanel from "@/components/sidepanel/stacking-sidepanel/stacking-sidepanel.vue"
 
 const activePanel = ref<string[]>([]);
 const activeExpandablePanel = ref<string[]>([]);

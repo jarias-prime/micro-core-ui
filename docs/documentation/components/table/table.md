@@ -8,29 +8,29 @@ outline: deep
 
 ## Basic Usage
 
-<div class="spr-space-y-4 spr-bg-white-50 spr-p-size-spacing-sm">
-  <spr-table action :headers="headers" :data-table="data" variant="white" >
+<div class="mc-space-y-4 mc-bg-white-50 mc-p-size-spacing-sm">
+  <mc-table action :headers="headers" :data-table="data" variant="white" >
     <div>
       Customize your content here!
     </div>
     <template #action="{ row }">
-      <spr-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
+      <mc-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
     </template>
     <template #action-name>
       Status
     </template>
-  </spr-table>
+  </mc-table>
 </div>
 
 ```vue
 <template>
-  <spr-table action :headers="headers" :data-table="data">
+  <mc-table action :headers="headers" :data-table="data">
     <div>Customize your content here!</div>
     <template #action="{ row }">
-      <spr-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
+      <mc-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
     </template>
     <template #action-name> Status </template>
-  </spr-table>
+  </mc-table>
 </template>
 
 <script setup lang="ts">
@@ -67,11 +67,11 @@ const data = ref([
 
 You can add filter dropdowns to table headers by using the `headerDropdown` property in the header configuration, set `enable` property to true, and providing a `filterList` array of options for the dropdown.
 
-<spr-table :headers="headersTableHeaderFilter" :data-table="dataTableHeaderFilter" @on-apply-filter="handleApplyFilter" />
+<mc-table :headers="headersTableHeaderFilter" :data-table="dataTableHeaderFilter" @on-apply-filter="handleApplyFilter" />
 
 ```vue
 <template>
-  <spr-table
+  <mc-table
     :headers="headersTableHeaderFilter"
     :data-table="dataTableHeaderFilter"
     @on-apply-filter="handleApplyFilter"
@@ -161,13 +161,13 @@ const handleApplyFilter = (filters) => {
 
 ## No Slot and Action
 
-<div class="spr-space-y-4 spr-bg-white-50 spr-p-size-spacing-sm">
-  <spr-table  :headers="headers" :data-table="data"/>
+<div class="mc-space-y-4 mc-bg-white-50 mc-p-size-spacing-sm">
+  <mc-table  :headers="headers" :data-table="data"/>
 </div>
 
 ```vue
 <template>
-  <spr-table :headers="headers" :data-table="data" />
+  <mc-table :headers="headers" :data-table="data" />
 </template>
 
 <script setup lang="ts">
@@ -203,11 +203,11 @@ const data = ref([
 ## Table Actions
 
 The implementation for the search field here is to emit and trigger an API call to update the data-table
-<spr-table action :headers="headers" :data-table="data" :table-actions="tableActions" v-model:searchModel="searchModel"></spr-table>
+<mc-table action :headers="headers" :data-table="data" :table-actions="tableActions" v-model:searchModel="searchModel"></mc-table>
 
 ```vue
 <template>
-  <spr-table
+  <mc-table
     action
     :headers="headers"
     :data-table="data"
@@ -248,19 +248,19 @@ watch(searchModel, (newValue) => {
 
 ### Table Action Slot
 
-<spr-table action :headers="headers" :data-table="data" :table-actions="tableActions" v-model:searchModel="searchModel">
+<mc-table action :headers="headers" :data-table="data" :table-actions="tableActions" v-model:searchModel="searchModel">
   <div>
-    <div class="spr-text-color-strong spr-font-size-400 spr-font-weight-medium">Table Name</div>
+    <div class="mc-text-color-strong mc-font-size-400 mc-font-weight-medium">Table Name</div>
     <div>table description</div>
   </div>
   <template #tableActionSection>
-    <spr-button>Button</spr-button>
+    <mc-button>Button</mc-button>
   </template>
-</spr-table>
+</mc-table>
 
 ```vue
 <template>
-  <spr-table
+  <mc-table
     action
     :headers="headers"
     :data-table="data"
@@ -268,13 +268,13 @@ watch(searchModel, (newValue) => {
     v-model:searchModel="searchModel"
   >
     <div>
-      <div class="spr-text-color-strong spr-font-size-400 spr-font-weight-medium">Table Name</div>
+      <div class="mc-text-color-strong mc-font-size-400 mc-font-weight-medium">Table Name</div>
       <div>table description</div>
     </div>
     <template #tableActionSection>
-      <spr-button>Button</spr-button>
+      <mc-button>Button</mc-button>
     </template>
-  </spr-table>
+  </mc-table>
 </template>
 ```
 
@@ -299,8 +299,8 @@ Set the prop <strong>returnCompleteSelectedProperties</strong> to <strong>false<
   {{ selectedTableData }}
 </code>
 
-<div class="spr-space-y-4 spr-bg-white-50 spr-p-size-spacing-sm">
-  <spr-table 
+<div class="mc-space-y-4 mc-bg-white-50 mc-p-size-spacing-sm">
+  <mc-table 
     action 
     :headers="headers" 
     :data-table="data" 
@@ -311,17 +311,17 @@ Set the prop <strong>returnCompleteSelectedProperties</strong> to <strong>false<
     @update:selected-data="handleSelectedData"
   >
     <template #action="{ row }">
-      <spr-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
+      <mc-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
     </template>
     <template #action-name>
       Status
     </template>
-  </spr-table>
+  </mc-table>
 </div>
 
 ```vue
 <template>
-  <spr-table
+  <mc-table
     action
     :headers="headers"
     :data-table="data"
@@ -332,10 +332,10 @@ Set the prop <strong>returnCompleteSelectedProperties</strong> to <strong>false<
     @update:selectedData="handleSelectedData"
   >
     <template #action="{ row }">
-      <spr-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
+      <mc-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
     </template>
     <template #action-name> Status </template>
-  </spr-table>
+  </mc-table>
 </template>
 
 <script setup lang="ts">
@@ -462,53 +462,53 @@ const handleSelectedData = (data) => {
 
 You can customize the column of the table by using the dynamically named slot column field (the field property in the headers object).
 
-<div class="spr-space-y-4 spr-bg-white-50 spr-p-size-spacing-sm">
-    <spr-table
+<div class="mc-space-y-4 mc-bg-white-50 mc-p-size-spacing-sm">
+    <mc-table
       action
       :headers="headers"
       :data-table="data2"
     >
       <template #name="{ row }">
-        <spr-tooltip :has-max-width="true" :text="String(row.name.title)">
-          <div ref="rowTitleRef" class="spr-truncate spr-text-sm" :style="`max-width: ${getCellMaxWidth}`">{{ row.name.title }}</div>
-        </spr-tooltip>
-        <span class="spr-text-color-base spr-text-xs spr-font-normal">{{ row.name.subtext }}</span>
+        <mc-tooltip :has-max-width="true" :text="String(row.name.title)">
+          <div ref="rowTitleRef" class="mc-truncate mc-text-sm" :style="`max-width: ${getCellMaxWidth}`">{{ row.name.title }}</div>
+        </mc-tooltip>
+        <span class="mc-text-color-base mc-text-xs mc-font-normal">{{ row.name.subtext }}</span>
       </template>
       <template #action>
-        <div class="spr-flex spr-flex-auto spr-justify-end spr-gap-2">
-          <spr-button variant="primary" tone="success" size="small"> Action 1 </spr-button>
-          <spr-button variant="primary" tone="danger" size="small"> Action 2 </spr-button>
+        <div class="mc-flex mc-flex-auto mc-justify-end mc-gap-2">
+          <mc-button variant="primary" tone="success" size="small"> Action 1 </mc-button>
+          <mc-button variant="primary" tone="danger" size="small"> Action 2 </mc-button>
         </div>
       </template>
-    </spr-table>
+    </mc-table>
 </div>
     
 ```vue {7}
 <template>
-  <spr-table
+  <mc-table
     action
     :headers="headers"
     :data-table="data"
   >
     <template #name="{ row }"> //slot name is the field property value in the headers object
-      <spr-tooltip :has-max-width="true" :text="String(row.name.title)">
+      <mc-tooltip :has-max-width="true" :text="String(row.name.title)">
         <div 
           ref="rowTitleRef" 
-          class="spr-truncate spr-text-sm" 
+          class="mc-truncate mc-text-sm" 
           :style="`max-width: ${getCellMaxWidth}`"
         >
           {{ row.name.title }}
         </div>
-      </spr-tooltip>
-      <span class="spr-text-color-base spr-text-xs spr-font-normal">{{ row.name.subtext }}</span>
+      </mc-tooltip>
+      <span class="mc-text-color-base mc-text-xs mc-font-normal">{{ row.name.subtext }}</span>
     </template>
     <template #action>
-      <div class="spr-flex spr-flex-auto spr-justify-end spr-gap-2">
-        <spr-button variant="primary" tone="success" size="small"> Action 1 </spr-button>
-        <spr-button variant="primary" tone="danger" size="small"> Action 2 </spr-button>
+      <div class="mc-flex mc-flex-auto mc-justify-end mc-gap-2">
+        <mc-button variant="primary" tone="success" size="small"> Action 1 </mc-button>
+        <mc-button variant="primary" tone="danger" size="small"> Action 2 </mc-button>
       </div>
     </template>
-  </spr-table>
+  </mc-table>
 </template>
 <script setup lang="ts">
 import { ref, computed } from 'vue';
@@ -570,26 +570,26 @@ image: 'https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-
 You can customize the header cells with Tailwind CSS classes by using the `customTailwindClasses` property in the header configuration.
 
 ::: warning
-Utilizing this field will remove all of the existing tailwind classes on the header only (th) the classes of the main DIV which holds the name, icon and badge will still take effect. Additionally, the only tested tailwind classes for this is the spr- tailwind classes. If you're using your own tailwind configurations, the component may not behave as expected. Additionally, changing the class of the multi-select header is currently not supported.
+Utilizing this field will remove all of the existing tailwind classes on the header only (th) the classes of the main DIV which holds the name, icon and badge will still take effect. Additionally, the only tested tailwind classes for this is the mc- tailwind classes. If you're using your own tailwind configurations, the component may not behave as expected. Additionally, changing the class of the multi-select header is currently not supported.
 :::
 
-<spr-table :headers="customHeaders" :data-table="data">
+<mc-table :headers="customHeaders" :data-table="data">
   <template #header="{ column }">
     <div :class="column.customTailwindClasses">
       {{ column.name }}
     </div>
   </template>
-</spr-table>
+</mc-table>
 
 ```vue
 <template>
-  <spr-table :headers="headers" :data-table="data">
+  <mc-table :headers="headers" :data-table="data">
     <template #header="{ column }">
       <div :class="column.customTailwindClasses">
         {{ column.name }}
       </div>
     </template>
-  </spr-table>
+  </mc-table>
 </template>
 
 <script setup lang="ts">
@@ -602,7 +602,7 @@ const headers = ref([
     sort: true,
     hasAvatar: true,
     hasSubtext: true,
-    customTailwindClasses: 'spr-bg-tomato-500',
+    customTailwindClasses: 'mc-bg-tomato-500',
   },
   {
     field: 'lastUpdate',
@@ -610,7 +610,7 @@ const headers = ref([
     sort: true,
     hasAvatar: false,
     hasSubtext: false,
-    customTailwindClasses: 'spr-bg-blueberry-500',
+    customTailwindClasses: 'mc-bg-blueberry-500',
   },
 ]);
 </script>
@@ -619,13 +619,13 @@ const headers = ref([
 ## Table Footer
 
 The implementation for the pagination here is to emit and trigger an API call to update the data-table
-<spr-table 
+<mc-table 
       action 
       :headers="headers" 
       :data-table="data" 
     >
 <template #footer>
-<spr-table-pagination
+<mc-table-pagination
 v-model:selected-row-count="selectedRowCount"
 :total-items="totalItems"
 :current-page="currentPage"
@@ -635,13 +635,13 @@ v-model:selected-row-count="selectedRowCount"
 :version="'backend'"
 />
 </template>
-</spr-table>
+</mc-table>
 
 ```vue
 <template>
-  <spr-table action :headers="headers" :data-table="data">
+  <mc-table action :headers="headers" :data-table="data">
     <template #footer>
-      <spr-table-pagination
+      <mc-table-pagination
         v-model:selected-row-count="selectedRowCount"
         :total-items="totalItems"
         :current-page="currentPage"
@@ -651,7 +651,7 @@ v-model:selected-row-count="selectedRowCount"
         :version="'backend'"
       />
     </template>
-  </spr-table>
+  </mc-table>
 </template>
 
 <script setup lang="ts">
@@ -714,19 +714,19 @@ const fetchItems = computed((page) => {
 
 You can change the title of a cell to a lozenge
 
-<div class="spr-space-y-4 spr-bg-white-50 spr-p-size-spacing-sm">
-  <spr-table action :headers="headersLozenge" :data-table="dataLozenge" variant="surface" @onSort="handleSort">
+<div class="mc-space-y-4 mc-bg-white-50 mc-p-size-spacing-sm">
+  <mc-table action :headers="headersLozenge" :data-table="dataLozenge" variant="surface" @onSort="handleSort">
     <div>
       Customize your content here!
     </div>
-  </spr-table>
+  </mc-table>
 </div>
 
 ```vue
 <template>
-  <spr-table action :headers="headersLozenge" :data-table="dataLozenge" variant="surface" @onSort="handleSort">
+  <mc-table action :headers="headersLozenge" :data-table="dataLozenge" variant="surface" @onSort="handleSort">
     <div>Customize your content here!</div>
-  </spr-table>
+  </mc-table>
 </template>
 
 <script setup lang="ts">
@@ -772,19 +772,19 @@ const dataLozenge = [
 
 You can change the title of a cell to a chip
 
-<div class="spr-space-y-4 spr-bg-white-50 spr-p-size-spacing-sm">
-  <spr-table action :headers="headersChips" :data-table="dataChips" variant="surface" @onSort="handleSort">
+<div class="mc-space-y-4 mc-bg-white-50 mc-p-size-spacing-sm">
+  <mc-table action :headers="headersChips" :data-table="dataChips" variant="surface" @onSort="handleSort">
     <div>
       Customize your content here!
     </div>
-  </spr-table>
+  </mc-table>
 </div>
 
 ```vue
 <template>
-  <spr-table action :headers="headersChips" :data-table="dataChips" variant="surface" @onSort="handleSort">
+  <mc-table action :headers="headersChips" :data-table="dataChips" variant="surface" @onSort="handleSort">
     <div>Customize your content here!</div>
-  </spr-table>
+  </mc-table>
 </template>
 
 <script setup lang="ts">
@@ -836,19 +836,19 @@ const dataChips = [
 
 You can change the title to multiple chips and lozenges
 
-<div class="spr-space-y-4 spr-bg-white-50 spr-p-size-spacing-sm">
-  <spr-table action :headers="headersMultiple" :data-table="dataMultiple" variant="surface" @onSort="handleSort">
+<div class="mc-space-y-4 mc-bg-white-50 mc-p-size-spacing-sm">
+  <mc-table action :headers="headersMultiple" :data-table="dataMultiple" variant="surface" @onSort="handleSort">
     <div>
       Customize your content here!
     </div>
-  </spr-table>
+  </mc-table>
 </div>
 
 ```vue
 <template>
-  <spr-table action :headers="headersMultiple" :data-table="dataMultiple" variant="surface" @onSort="handleSort">
+  <mc-table action :headers="headersMultiple" :data-table="dataMultiple" variant="surface" @onSort="handleSort">
     <div>Customize your content here!</div>
-  </spr-table>
+  </mc-table>
 </template>
 
 <script setup lang="ts">
@@ -910,19 +910,19 @@ const dataMultiple = [
 
 You can customize the header background of the table using the `variant` attribute. The available options are `white` and `surface`.
 
-<div class="spr-space-y-4 spr-bg-white-50 spr-p-size-spacing-sm">
-  <spr-table action :headers="headers" :data-table="data" variant="surface" @onSort="handleSort">
+<div class="mc-space-y-4 mc-bg-white-50 mc-p-size-spacing-sm">
+  <mc-table action :headers="headers" :data-table="data" variant="surface" @onSort="handleSort">
     <div>
       Customize your content here!
     </div>
-  </spr-table>
+  </mc-table>
 </div>
 
 ```vue
 <template>
-  <spr-table action :headers="headers" :data-table="data">
+  <mc-table action :headers="headers" :data-table="data">
     <div>Customize your content here!</div>
-  </spr-table>
+  </mc-table>
 </template>
 
 <script setup lang="ts">
@@ -961,29 +961,29 @@ const handleSort = (e) => {
 
 ## Sorting
 
-<div class="spr-space-y-4 spr-bg-white-50 spr-p-size-spacing-sm">
-  <spr-table action :headers="headers" :data-table="data" variant="white" @onSort="getSortOrder()" sortOrder>
+<div class="mc-space-y-4 mc-bg-white-50 mc-p-size-spacing-sm">
+  <mc-table action :headers="headers" :data-table="data" variant="white" @onSort="getSortOrder()" sortOrder>
     <div>
       Customize your content here!
     </div>
     <template #action="{ row }">
-      <spr-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
+      <mc-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
     </template>
     <template #action-name>
       Status
     </template>
-  </spr-table>
+  </mc-table>
 </div>
 
 ```vue
 <template>
-  <spr-table action :headers="headers" :data-table="data" variant="white" @onSort="getSortOrder()" sortOrder>
+  <mc-table action :headers="headers" :data-table="data" variant="white" @onSort="getSortOrder()" sortOrder>
     <div>Customize your content here!</div>
     <template #action="{ row }">
-      <spr-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
+      <mc-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
     </template>
     <template #action-name> Status </template>
-  </spr-table>
+  </mc-table>
 </template>
 
 <script setup lang="ts">
@@ -1027,29 +1027,29 @@ const getSortOrder = () => {
 
 Badges can have different color schemes to indicate various statuses, such as `disabled`, `brand`, `danger`, or `information`.
 
-<div class="spr-space-y-4 spr-bg-white-50 spr-p-size-spacing-sm">
-  <spr-table action :headers="headersWithBadge" :data-table="data">
+<div class="mc-space-y-4 mc-bg-white-50 mc-p-size-spacing-sm">
+  <mc-table action :headers="headersWithBadge" :data-table="data">
     <div>
       Customize your content here!
     </div>
     <template #action="{ row }">
-      <spr-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
+      <mc-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
     </template>
     <template #action-name>
       Status
     </template>
-  </spr-table>
+  </mc-table>
 </div>
 
 ```vue
 <template>
-  <spr-table action :headers="headersWithBadge" :data-table="data">
+  <mc-table action :headers="headersWithBadge" :data-table="data">
     <div>Customize your content here!</div>
     <template #action="{ row }">
-      <spr-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
+      <mc-lozenge :label="row.status.title" :tone="row.status.title.toLowerCase()" />
     </template>
     <template #action-name> Status </template>
-  </spr-table>
+  </mc-table>
 </template>
 
 <script setup lang="ts">
@@ -1139,11 +1139,11 @@ const headers = ref([
 
 ### Dynamic Width Considerations
 
-When using dynamic values, avoid Tailwind CSS classes like `spr-w-[${width}]` as they won't be generated at build time. Instead, use inline styles or the `width` property:
+When using dynamic values, avoid Tailwind CSS classes like `mc-w-[${width}]` as they won't be generated at build time. Instead, use inline styles or the `width` property:
 
 ```javascript
 // ❌ Avoid - Tailwind won't generate dynamic classes
-{ field: 'name', name: 'Name', customTailwindClasses: `spr-w-[${dynamicWidth}]` }
+{ field: 'name', name: 'Name', customTailwindClasses: `mc-w-[${dynamicWidth}]` }
 
 // ✅ Recommended - Use the width property
 { field: 'name', name: 'Name', width: dynamicWidth }
@@ -1181,58 +1181,55 @@ Allows the drag and drop of table rows.
 :::
 
 <div    
-    class="spr-grid spr-w-full spr-grid-cols-2 spr-gap-size-spacing-2xs"
+    class="mc-grid mc-w-full mc-grid-cols-2 mc-gap-size-spacing-2xs"
   >
-    <div class="pr:max-w-[465px] pr:h-fit spr-background-color spr-rounded-border-radius-lg">
-      <spr-table
+    <div class="pr:max-w-[465px] pr:h-fit mc-background-color mc-rounded-border-radius-lg">
+      <mc-table
         :headers="draggableTableHeaders"
         :data-table="availableEmployees"
         variant="white"                       
         :is-draggable="true"   
         @on-drag-add="handleOnDragAdd($event, 'available')"
         @on-drag-remove="handleOnDragRemove($event, 'available')"     
-      ></spr-table>
+      ></mc-table>
     </div>
     <div
       id="select_employee_table_wrapper_2"
-      class="pr:max-w-[465px] spr-background-color spr-rounded-border-radius-lg"
+      class="pr:max-w-[465px] mc-background-color mc-rounded-border-radius-lg"
     >
-      <spr-table
+      <mc-table
         :headers="draggableTableHeaders"
         :data-table="selectedEmployees"
         variant="white"        
         :is-draggable="true"
         @on-drag-add="handleOnDragAdd($event, 'selected')"
         @on-drag-remove="handleOnDragRemove($event, 'selected')"
-      ></spr-table>
+      ></mc-table>
     </div>
   </div>
 
 ```vue
 <template>
-  <div class="spr-grid spr-w-full spr-grid-cols-2 spr-gap-size-spacing-2xs">
-    <div class="pr:max-w-[465px] pr:h-fit spr-background-color spr-rounded-border-radius-lg">
-      <spr-table
+  <div class="mc-grid mc-w-full mc-grid-cols-2 mc-gap-size-spacing-2xs">
+    <div class="pr:max-w-[465px] pr:h-fit mc-background-color mc-rounded-border-radius-lg">
+      <mc-table
         :headers="tableHeaders"
         :data-table="availableEmployees"
         :is-draggable="true"
         variant="white"
         @on-drag-add="handleOnDragAdd($event, 'available')"
         @on-drag-remove="handleOnDragRemove($event, 'available')"
-      ></spr-table>
+      ></mc-table>
     </div>
-    <div
-      id="select_employee_table_wrapper_2"
-      class="pr:max-w-[465px] spr-background-color spr-rounded-border-radius-lg"
-    >
-      <spr-table
+    <div id="select_employee_table_wrapper_2" class="pr:max-w-[465px] mc-background-color mc-rounded-border-radius-lg">
+      <mc-table
         :headers="tableHeaders"
         :data-table="selectedEmployees"
         variant="white"
         :is-draggable="true"
         @on-drag-add="handleOnDragAdd($event, 'selected')"
         @on-drag-remove="handleOnDragRemove($event, 'selected')"
-      ></spr-table>
+      ></mc-table>
     </div>
   </div>
 </template>
@@ -1747,12 +1744,11 @@ const handleOnDragRemove = (event: DragOnRemoveEvent, tableType: TableTypes) => 
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import SprTable from "@/components/table/table.vue";
-import SprTablePagination from "@/components/table/table-pagination/table-pagination.vue";
-import SprButton from '@/components/button/button.vue';
-import SprLozenge from "@/components/lozenge/lozenge.vue";
-import SprLogo from "@/components/logo/logo.vue";
-import SprTooltip from "@/components/tooltip/tooltip.vue";
+import McTable from "@/components/table/table.vue";
+import McTablePagination from "@/components/table/table-pagination/table-pagination.vue";
+import McButton from '@/components/button/button.vue';
+import McLozenge from "@/components/lozenge/lozenge.vue";
+import McTooltip from "@/components/tooltip/tooltip.vue";
 import { Icon } from '@iconify/vue';
 import draggable from 'vuedraggable';
 import type { Header } from '@/components/table/table';
@@ -2227,7 +2223,7 @@ const customHeaders = ref([
     sort: true, 
     hasAvatar: true, 
     hasSubtext: true, 
-    customTailwindClasses: '!spr-bg-tomato-500', // To override Vitepress' default styles
+    customTailwindClasses: '!mc-bg-tomato-500', // To override Vitepress' default styles
   },
   { 
     field: 'lastUpdate', 
@@ -2235,7 +2231,7 @@ const customHeaders = ref([
     sort: true, 
     hasAvatar: false, 
     hasSubtext: false, 
-    customTailwindClasses: '!spr-bg-blueberry-500', // To override Vitepress' default styles
+    customTailwindClasses: '!mc-bg-blueberry-500', // To override Vitepress' default styles
   },
 ]);
 

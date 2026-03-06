@@ -1,9 +1,9 @@
 <template>
-  <div class="spr-grid spr-grid-cols-7">
+  <div class="mc-grid mc-grid-cols-7">
     <div
       v-for="(dayOfWeek, dayOfWeekIndex) in daysOfWeek"
       :key="dayOfWeekIndex"
-      class="spr-py-1 spr-text-center spr-font-semibold"
+      class="mc-py-1 mc-text-center mc-font-semibold"
     >
       {{ dayOfWeek.text }}
     </div>
@@ -12,31 +12,31 @@
       <div
         v-if="minMaxYear.min <= day.date.getFullYear() && minMaxYear.max >= day.date.getFullYear()"
         :class="[
-          'spr-relative spr-box-border spr-flex spr-h-[40px] spr-items-center spr-justify-center spr-p-2',
-          'spr-transition spr-duration-150 spr-ease-in-out',
+          'mc-relative mc-box-border mc-flex mc-h-[40px] mc-items-center mc-justify-center mc-p-2',
+          'mc-transition mc-duration-150 mc-ease-in-out',
           {
             // Rest Days
-            'spr-background-color-disabled': isRestDay(day),
+            'mc-background-color-disabled': isRestDay(day),
 
             // Today Indicator - only apply brand color if not selected
-            'spr-text-color-brand-base': isTodayIndicator(day) && !isSelectedDate(day),
+            'mc-text-color-brand-base': isTodayIndicator(day) && !isSelectedDate(day),
 
             // Active Month Dates - only apply if not selected and not today
-            'spr-text-color-strong': isActiveMonthDates(day) && !isSelectedDate(day) && !isTodayIndicator(day),
+            'mc-text-color-strong': isActiveMonthDates(day) && !isSelectedDate(day) && !isTodayIndicator(day),
 
             // Inactive Month Dates (Past/Future)
-            'spr-text-color-disabled': isInactiveMonthDates(day),
+            'mc-text-color-disabled': isInactiveMonthDates(day),
 
             // Selected Date
-            'spr-background-color-brand-base active:spr-background-color-brand-pressed spr-text-color-inverted-strong spr-cursor-pointer !spr-text-white-50 active:spr-scale-95':
+            'mc-background-color-brand-base active:mc-background-color-brand-pressed mc-text-color-inverted-strong mc-cursor-pointer !mc-text-white-50 active:mc-scale-95':
               isSelectedDate(day),
 
             // Unselected Date
-            'hover:spr-background-color-hover spr-border-color-weak active:spr-background-color-pressed spr-cursor-pointer spr-border spr-border-solid active:spr-scale-95':
+            'hover:mc-background-color-hover mc-border-color-weak active:mc-background-color-pressed mc-cursor-pointer mc-border mc-border-solid active:mc-scale-95':
               isUnSelectedDate(day),
 
             // Disabled Dates
-            'spr-cursor-not-allowed spr-opacity-30': isDateDisabled(day),
+            'mc-cursor-not-allowed mc-opacity-30': isDateDisabled(day),
           },
         ]"
         @click="!isDateDisabled(day) ? handleDateClick(day) : null"
@@ -44,7 +44,7 @@
         <span>{{ day.date.getDate() }}</span>
         <div
           v-if="isTodayIndicator(day)"
-          class="spr-background-color-brand-base spr-absolute spr-bottom-1 spr-m-auto spr-h-1 spr-w-1 spr-rounded-full"
+          class="mc-background-color-brand-base mc-absolute mc-bottom-1 mc-m-auto mc-h-1 mc-w-1 mc-rounded-full"
         ></div>
       </div>
       <div v-else></div>

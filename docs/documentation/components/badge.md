@@ -23,54 +23,54 @@ The Badge component is a small visual indicator that can be used to convey infor
 
 ## Basic Usage
 
-<div class="spr-flex spr-items-center spr-gap-2 spr-p-1">
-  <spr-badge variant="neutral" size="big" />
-  <spr-badge variant="disabled" size="big" />
-  <spr-badge variant="danger" size="big" />
-  <spr-badge variant="information" size="big" />
-  <spr-badge variant="brand" size="big" />
+<div class="mc-flex mc-items-center mc-gap-2 mc-p-1">
+  <mc-badge variant="neutral" size="big" />
+  <mc-badge variant="disabled" size="big" />
+  <mc-badge variant="danger" size="big" />
+  <mc-badge variant="information" size="big" />
+  <mc-badge variant="brand" size="big" />
 </div>
 
-<div class="spr-flex spr-items-center spr-gap-2 spr-p-1">
-  <spr-badge variant="neutral" size="small" />
-  <spr-badge variant="disabled" size="small" />
-  <spr-badge variant="danger" size="small" />
-  <spr-badge variant="information" size="small" />
-  <spr-badge variant="brand" size="small" />
+<div class="mc-flex mc-items-center mc-gap-2 mc-p-1">
+  <mc-badge variant="neutral" size="small" />
+  <mc-badge variant="disabled" size="small" />
+  <mc-badge variant="danger" size="small" />
+  <mc-badge variant="information" size="small" />
+  <mc-badge variant="brand" size="small" />
 </div>
 
-<div class="spr-flex spr-items-center spr-gap-2 spr-p-1">
-  <spr-badge variant="neutral" size="tiny" />
-  <spr-badge variant="disabled" size="tiny" />
-  <spr-badge variant="danger" size="tiny" />
-  <spr-badge variant="information" size="tiny" />
-  <spr-badge variant="brand" size="tiny" />
+<div class="mc-flex mc-items-center mc-gap-2 mc-p-1">
+  <mc-badge variant="neutral" size="tiny" />
+  <mc-badge variant="disabled" size="tiny" />
+  <mc-badge variant="danger" size="tiny" />
+  <mc-badge variant="information" size="tiny" />
+  <mc-badge variant="brand" size="tiny" />
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-badge text="9" variant="neutral" size="big" />
-    <spr-badge text="9" variant="disabled" size="big" />
-    <spr-badge text="9" variant="danger" size="big" />
-    <spr-badge text="9" variant="information" size="big" />
-    <spr-badge text="9" variant="brand" size="big" />
+    <mc-badge text="9" variant="neutral" size="big" />
+    <mc-badge text="9" variant="disabled" size="big" />
+    <mc-badge text="9" variant="danger" size="big" />
+    <mc-badge text="9" variant="information" size="big" />
+    <mc-badge text="9" variant="brand" size="big" />
   </div>
 
   <div>
-    <spr-badge text="9" variant="neutral" size="small" />
-    <spr-badge text="9" variant="disabled" size="small" />
-    <spr-badge text="9" variant="danger" size="small" />
-    <spr-badge text="9" variant="information" size="small" />
-    <spr-badge text="9" variant="brand" size="small" />
+    <mc-badge text="9" variant="neutral" size="small" />
+    <mc-badge text="9" variant="disabled" size="small" />
+    <mc-badge text="9" variant="danger" size="small" />
+    <mc-badge text="9" variant="information" size="small" />
+    <mc-badge text="9" variant="brand" size="small" />
   </div>
 
   <div>
-    <spr-badge variant="neutral" size="tiny" />
-    <spr-badge variant="disabled" size="tiny" />
-    <spr-badge variant="danger" size="tiny" />
-    <spr-badge variant="information" size="tiny" />
-    <spr-badge variant="brand" size="tiny" />
+    <mc-badge variant="neutral" size="tiny" />
+    <mc-badge variant="disabled" size="tiny" />
+    <mc-badge variant="danger" size="tiny" />
+    <mc-badge variant="information" size="tiny" />
+    <mc-badge variant="brand" size="tiny" />
   </div>
 </template>
 ```
@@ -79,40 +79,40 @@ The Badge component is a small visual indicator that can be used to convey infor
 
 used to customize the background of the badge
 
-<div class="spr-p-1 spr-flex spr-gap-4">
-  <spr-badge text="9" variant="neutral" size="big" />
-  <spr-badge text="9" variant="disabled" size="big" />
-  <spr-badge text="9" variant="danger" size="big" />
-  <spr-badge text="9" variant="information" size="big" />
-  <spr-badge text="9" variant="brand" size="big" />
+<div class="mc-p-1 mc-flex mc-gap-4">
+  <mc-badge text="9" variant="neutral" size="big" />
+  <mc-badge text="9" variant="disabled" size="big" />
+  <mc-badge text="9" variant="danger" size="big" />
+  <mc-badge text="9" variant="information" size="big" />
+  <mc-badge text="9" variant="brand" size="big" />
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-badge text="9" variant="neutral" size="big" />
-    <spr-badge text="9" variant="disabled" size="big" />
-    <spr-badge text="9" variant="danger" size="big" />
-    <spr-badge text="9" variant="information" size="big" />
-    <spr-badge text="9" variant="brand" size="big" />
+    <mc-badge text="9" variant="neutral" size="big" />
+    <mc-badge text="9" variant="disabled" size="big" />
+    <mc-badge text="9" variant="danger" size="big" />
+    <mc-badge text="9" variant="information" size="big" />
+    <mc-badge text="9" variant="brand" size="big" />
   </div>
 </template>
 ```
 
 ## Size
 
-<div class="spr-flex spr-gap-4">
-  <spr-badge text="4" variant="information" size="tiny" />
-  <spr-badge text="0" variant="information" size="small" />
-  <spr-badge text="30" variant="information" size="big" />
+<div class="mc-flex mc-gap-4">
+  <mc-badge text="4" variant="information" size="tiny" />
+  <mc-badge text="0" variant="information" size="small" />
+  <mc-badge text="30" variant="information" size="big" />
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-badge text="4" variant="information" size="tiny" />
-    <spr-badge text="0" variant="information" size="small" />
-    <spr-badge text="30" variant="information" size="big" />
+    <mc-badge text="4" variant="information" size="tiny" />
+    <mc-badge text="0" variant="information" size="small" />
+    <mc-badge text="30" variant="information" size="big" />
   </div>
 </template>
 ```
@@ -121,104 +121,104 @@ used to customize the background of the badge
 
 used to display the badge in different positions (top, bottom).
 
-<div class="spr-grid spr-gap-4">
-  <div class="spr-flex spr-gap-4">
-    <spr-badge text="9" variant="neutral" size="big" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
-    <spr-badge text="9" variant="neutral" size="small" position="top">
-      <spr-lozenge label="top"/>
-    </spr-badge>    
-    <spr-badge text="9" variant="neutral" size="tiny" position="top">
-      <spr-lozenge label="top"/>
-    </spr-badge>
+<div class="mc-grid mc-gap-4">
+  <div class="mc-flex mc-gap-4">
+    <mc-badge text="9" variant="neutral" size="big" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
+    <mc-badge text="9" variant="neutral" size="small" position="top">
+      <mc-lozenge label="top"/>
+    </mc-badge>    
+    <mc-badge text="9" variant="neutral" size="tiny" position="top">
+      <mc-lozenge label="top"/>
+    </mc-badge>
   </div>
 
-  <div class="spr-flex spr-gap-4">
-    <spr-badge text="9" variant="brand" size="big" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
-    <spr-badge text="9" variant="brand" size="small" position="top">
-      <spr-lozenge label="top"/>
-    </spr-badge>    
-    <spr-badge text="9" variant="brand" size="tiny" position="top">
-      <spr-lozenge label="top"/>
-    </spr-badge>
+  <div class="mc-flex mc-gap-4">
+    <mc-badge text="9" variant="brand" size="big" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
+    <mc-badge text="9" variant="brand" size="small" position="top">
+      <mc-lozenge label="top"/>
+    </mc-badge>    
+    <mc-badge text="9" variant="brand" size="tiny" position="top">
+      <mc-lozenge label="top"/>
+    </mc-badge>
   </div>
 
-  <div class="spr-flex spr-gap-4">
-    <spr-badge text="9" variant="information" size="big" position="bottom">
-      <spr-lozenge label="bottom"/>
-    </spr-badge>
-    <spr-badge text="9" variant="information" size="small" position="bottom">
-      <spr-lozenge label="bottom"/>
-    </spr-badge>    
-    <spr-badge text="9" variant="information" size="tiny" position="bottom">
-      <spr-lozenge label="bottom"/>
-    </spr-badge>
+  <div class="mc-flex mc-gap-4">
+    <mc-badge text="9" variant="information" size="big" position="bottom">
+      <mc-lozenge label="bottom"/>
+    </mc-badge>
+    <mc-badge text="9" variant="information" size="small" position="bottom">
+      <mc-lozenge label="bottom"/>
+    </mc-badge>    
+    <mc-badge text="9" variant="information" size="tiny" position="bottom">
+      <mc-lozenge label="bottom"/>
+    </mc-badge>
   </div>
 
-  <div class="spr-flex spr-gap-4">
-    <spr-badge text="9" variant="danger" size="big" >
-      <spr-lozenge label="default"/>
-    </spr-badge>
-    <spr-badge text="9" variant="danger" size="small">
-      <spr-lozenge label="default"/>
-    </spr-badge>    
-    <spr-badge text="9" variant="danger" size="tiny">
-      <spr-lozenge label="default"/>
-    </spr-badge>
+  <div class="mc-flex mc-gap-4">
+    <mc-badge text="9" variant="danger" size="big" >
+      <mc-lozenge label="default"/>
+    </mc-badge>
+    <mc-badge text="9" variant="danger" size="small">
+      <mc-lozenge label="default"/>
+    </mc-badge>    
+    <mc-badge text="9" variant="danger" size="tiny">
+      <mc-lozenge label="default"/>
+    </mc-badge>
   </div>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-badge text="9" variant="neutral" size="big" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
-    <spr-badge text="9" variant="neutral" size="small" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
-    <spr-badge text="9" variant="neutral" size="tiny" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
+    <mc-badge text="9" variant="neutral" size="big" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
+    <mc-badge text="9" variant="neutral" size="small" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
+    <mc-badge text="9" variant="neutral" size="tiny" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
   </div>
 
   <div>
-    <spr-badge text="9" variant="brand" size="big" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
-    <spr-badge text="9" variant="brand" size="small" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
-    <spr-badge text="9" variant="brand" size="tiny" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
+    <mc-badge text="9" variant="brand" size="big" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
+    <mc-badge text="9" variant="brand" size="small" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
+    <mc-badge text="9" variant="brand" size="tiny" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
   </div>
 
   <div>
-    <spr-badge text="9" variant="information" size="big" position="bottom">
-      <spr-lozenge label="bottom" />
-    </spr-badge>
-    <spr-badge text="9" variant="information" size="small" position="bottom">
-      <spr-lozenge label="bottom" />
-    </spr-badge>
-    <spr-badge text="9" variant="information" size="tiny" position="bottom">
-      <spr-lozenge label="bottom" />
-    </spr-badge>
+    <mc-badge text="9" variant="information" size="big" position="bottom">
+      <mc-lozenge label="bottom" />
+    </mc-badge>
+    <mc-badge text="9" variant="information" size="small" position="bottom">
+      <mc-lozenge label="bottom" />
+    </mc-badge>
+    <mc-badge text="9" variant="information" size="tiny" position="bottom">
+      <mc-lozenge label="bottom" />
+    </mc-badge>
   </div>
 
   <div>
-    <spr-badge text="9" variant="danger" size="big">
-      <spr-lozenge label="default" />
-    </spr-badge>
-    <spr-badge text="9" variant="danger" size="small">
-      <spr-lozenge label="default" />
-    </spr-badge>
-    <spr-badge text="9" variant="danger" size="tiny">
-      <spr-lozenge label="default" />
-    </spr-badge>
+    <mc-badge text="9" variant="danger" size="big">
+      <mc-lozenge label="default" />
+    </mc-badge>
+    <mc-badge text="9" variant="danger" size="small">
+      <mc-lozenge label="default" />
+    </mc-badge>
+    <mc-badge text="9" variant="danger" size="tiny">
+      <mc-lozenge label="default" />
+    </mc-badge>
   </div>
 </template>
 ```
@@ -227,30 +227,30 @@ used to display the badge in different positions (top, bottom).
 
 When using the default position, use can use the slot to wrap the element to which you want to attach the badge.
 
-<div class="spr-flex spr-gap-4">
-  <spr-badge text="9" variant="brand" size="big" position="top">
-    <spr-lozenge label="top"/>
-  </spr-badge>
-  <spr-badge text="9" variant="brand" size="small" position="top">
-    <spr-lozenge label="top"/>
-  </spr-badge>
-  <spr-badge text="9" variant="brand" size="tiny" position="top">
-    <spr-lozenge label="top"/>
-  </spr-badge>
+<div class="mc-flex mc-gap-4">
+  <mc-badge text="9" variant="brand" size="big" position="top">
+    <mc-lozenge label="top"/>
+  </mc-badge>
+  <mc-badge text="9" variant="brand" size="small" position="top">
+    <mc-lozenge label="top"/>
+  </mc-badge>
+  <mc-badge text="9" variant="brand" size="tiny" position="top">
+    <mc-lozenge label="top"/>
+  </mc-badge>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-badge text="9" variant="brand" size="big" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
-    <spr-badge text="9" variant="brand" size="small" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
-    <spr-badge text="9" variant="brand" size="tiny" position="top">
-      <spr-lozenge label="top" />
-    </spr-badge>
+    <mc-badge text="9" variant="brand" size="big" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
+    <mc-badge text="9" variant="brand" size="small" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
+    <mc-badge text="9" variant="brand" size="tiny" position="top">
+      <mc-lozenge label="top" />
+    </mc-badge>
   </div>
 </template>
 ```
@@ -343,7 +343,6 @@ When using the default position, use can use the slot to wrap the element to whi
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprBadge from "@/components/badge/badge.vue"
-import SprLozenge from '@/components/lozenge/lozenge.vue';
-import SprLogo from "@/components/logo/logo.vue";
+import McBadge from "@/components/badge/badge.vue"
+import McLozenge from '@/components/lozenge/lozenge.vue';
 </script>

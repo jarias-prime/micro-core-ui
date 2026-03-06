@@ -29,23 +29,23 @@ export const useList = (props: ListPropTypes, emit: SetupContext<ListEmitTypes>[
   } = toRefs(props);
 
   const listClasses: ComputedRef<ListClasses> = computed(() => {
-    const borderClasses = classNames('spr-border-color-weak spr-border spr-border-solid');
+    const borderClasses = classNames('mc-border-color-weak mc-border mc-border-solid');
 
     const headerClasses = classNames(
-      'spr-sticky spr-z-20',
-      'spr-grid spr-gap-3 spr-bg-white-50 spr-px-size-spacing-3xs spr-py-size-spacing-2xs',
+      'mc-sticky mc-z-20',
+      'mc-grid mc-gap-3 mc-bg-white-50 mc-px-size-spacing-3xs mc-py-size-spacing-2xs',
       borderClasses,
-      'spr-border-x-0 spr-border-b spr-border-t-0',
+      'mc-border-x-0 mc-border-b mc-border-t-0',
     );
 
     const listItemClasses = classNames(
-      'spr-flex spr-cursor-pointer spr-items-center spr-justify-between spr-gap-1.5 spr-rounded-lg spr-p-2',
-      'spr-transition spr-duration-150 spr-ease-in-out',
-      'hover:spr-background-color-hover',
-      'active:spr-background-color-single-active active:spr-scale-[.98]',
+      'mc-flex mc-cursor-pointer mc-items-center mc-justify-between mc-gap-1.5 mc-rounded-lg mc-p-2',
+      'mc-transition mc-duration-150 mc-ease-in-out',
+      'hover:mc-background-color-hover',
+      'active:mc-background-color-single-active active:mc-scale-[.98]',
     );
 
-    const listControlsClasses = classNames('spr-flex spr-w-full spr-items-center');
+    const listControlsClasses = classNames('mc-flex mc-w-full mc-items-center');
 
     return { headerClasses, listItemClasses, borderClasses, listControlsClasses };
   });
@@ -382,11 +382,11 @@ export const useList = (props: ListPropTypes, emit: SetupContext<ListEmitTypes>[
 
   const getListItemClasses = (item: MenuListType) => ({
     [listClasses.value.listItemClasses]: !item.disabled && !(disabledUnselectedItems.value && !isItemSelected(item)),
-    'spr-background-color-single-active': isItemSelected(item) && !item.disabled && !noCheck.value,
-    'spr-cursor-not-allowed spr-flex spr-items-center spr-justify-between spr-gap-1.5 spr-rounded-lg':
+    'mc-background-color-single-active': isItemSelected(item) && !item.disabled && !noCheck.value,
+    'mc-cursor-not-allowed mc-flex mc-items-center mc-justify-between mc-gap-1.5 mc-rounded-lg':
       item.disabled || (disabledUnselectedItems.value && !isItemSelected(item)),
-    'spr-p-size-spacing-3xs': !props.lozenge,
-    'spr-py-size-spacing-3xs spr-px-size-spacing-4xs': props.lozenge,
+    'mc-p-size-spacing-3xs': !props.lozenge,
+    'mc-py-size-spacing-3xs mc-px-size-spacing-4xs': props.lozenge,
   });
 
   const handleSearch = () => {

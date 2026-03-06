@@ -10,11 +10,11 @@ Search input optimized for filtering lists or triggering search queries.
 
 ## Basic Usage
 
-<spr-input-search v-model="inputModels.basic" label="Search" placeholder="Search..." />
+<mc-input-search v-model="inputModels.basic" label="Search" placeholder="Search..." />
 
 ```vue
 <template>
-  <spr-input-search v-model="inputModel" label="Search" placeholder="Search..." />
+  <mc-input-search v-model="inputModel" label="Search" placeholder="Search..." />
 </template>
 
 <script setup lang="ts">
@@ -26,11 +26,11 @@ const inputModel = ref('');
 
 ## Active State
 
-<spr-input-search v-model="inputModels.activeState" label="Search" placeholder="Search..." active />
+<mc-input-search v-model="inputModels.activeState" label="Search" placeholder="Search..." active />
 
 ```vue
 <template>
-  <spr-input-search v-model="inputModel" label="Search" placeholder="Search..." active />
+  <mc-input-search v-model="inputModel" label="Search" placeholder="Search..." active />
 </template>
 
 <script setup lang="ts">
@@ -42,19 +42,19 @@ const inputModel = ref('');
 
 ## Error State
 
-<spr-input-search v-model="inputModels.errorState" label="Search" placeholder="Search..." :error="true">
+<mc-input-search v-model="inputModels.errorState" label="Search" placeholder="Search..." :error="true">
   <template #icon>
     <Icon icon="ph:warning-circle-fill" />
   </template>
-</spr-input-search>
+</mc-input-search>
 
 ```vue
 <template>
-  <spr-input-search v-model="inputModel" label="Search" placeholder="Search..." :error="true">
+  <mc-input-search v-model="inputModel" label="Search" placeholder="Search..." :error="true">
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input-search>
+  </mc-input-search>
 </template>
 
 <script setup lang="ts">
@@ -66,11 +66,11 @@ const inputModel = ref('');
 
 ## Disabled State
 
-<spr-input-search v-model="inputModels.disabledState" label="Search" placeholder="Search..." :disabled="true" />
+<mc-input-search v-model="inputModels.disabledState" label="Search" placeholder="Search..." :disabled="true" />
 
 ```vue
 <template>
-  <spr-input-search v-model="inputModel" label="Search" placeholder="Search..." :disabled="true" />
+  <mc-input-search v-model="inputModel" label="Search" placeholder="Search..." :disabled="true" />
 </template>
 
 <script setup lang="ts">
@@ -94,7 +94,7 @@ import { ref } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
-import SprInputSearch from '@/components/input/input-search/input-search.vue';
+import McInputSearch from '@/components/input/input-search/input-search.vue';
 
 const inputModels = ref({
   basic: '',

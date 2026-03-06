@@ -12,25 +12,25 @@ The Banner component is used to display important messages, statuses, or alerts 
 
 Display banners of different types using the `type` prop.
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-banner v-model:show="showBannerSuccess" type="success" message="This is a success banner." />
-  <spr-banner v-model:show="showBannerError" type="error" message="This is an error banner." />
-  <spr-banner v-model:show="showBannerInfo" type="info" message="This is an info banner." />
-  <spr-banner v-model:show="showBannerPending" type="pending" message="This is a pending banner." />
-  <spr-banner v-model:show="showBannerCaution" type="caution" message="This is a caution banner." />
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-banner v-model:show="showBannerSuccess" type="success" message="This is a success banner." />
+  <mc-banner v-model:show="showBannerError" type="error" message="This is an error banner." />
+  <mc-banner v-model:show="showBannerInfo" type="info" message="This is an info banner." />
+  <mc-banner v-model:show="showBannerPending" type="pending" message="This is a pending banner." />
+  <mc-banner v-model:show="showBannerCaution" type="caution" message="This is a caution banner." />
 </div>
 
 ```vue
 <template>
-  <spr-banner v-model:show="showBannerSuccess" type="success" message="This is a success banner." />
-  <spr-banner v-model:show="showBannerError" type="error" message="This is an error banner." />
-  <spr-banner v-model:show="showBannerInfo" type="info" message="This is an info banner." />
-  <spr-banner v-model:show="showBannerPending" type="pending" message="This is a pending banner." />
-  <spr-banner v-model:show="showBannerCaution" type="caution" message="This is a caution banner." />
+  <mc-banner v-model:show="showBannerSuccess" type="success" message="This is a success banner." />
+  <mc-banner v-model:show="showBannerError" type="error" message="This is an error banner." />
+  <mc-banner v-model:show="showBannerInfo" type="info" message="This is an info banner." />
+  <mc-banner v-model:show="showBannerPending" type="pending" message="This is a pending banner." />
+  <mc-banner v-model:show="showBannerCaution" type="caution" message="This is a caution banner." />
 </template>
 
 <script setup lang="ts">
-import SprBanner from '@/components/banner/banner.vue';
+import McBanner from '@/components/banner/banner.vue';
 import { ref } from 'vue';
 
 const showBannerSuccess = ref(true);
@@ -45,46 +45,46 @@ const showBannerCaution = ref(true);
 
 Banners can be closed by the user if `showCloseButton` is `true. Use `v-model:show` to control visibility.
 
-<table class="spr-w-full" style="border: none;">
+<table class="mc-w-full" style="border: none;">
   <tbody>
     <tr style="background: none;">
       <td style="width: 20%; vertical-align: top; background: none; border: none;">
-      <spr-button @click="showBannerCloseSuccess = true" class="spr-w-full">Show Success</spr-button>
+      <mc-button @click="showBannerCloseSuccess = true" class="mc-w-full">Show Success</mc-button>
       </td>
       <td style="background: none; border: none;">
-      <spr-banner v-model:show="showBannerCloseSuccess" type="success" show-close-button message="This is a closable success banner." />
+      <mc-banner v-model:show="showBannerCloseSuccess" type="success" show-close-button message="This is a closable success banner." />
       </td>
     </tr>
     <tr style="background: none;">
       <td style="width: 20%; vertical-align: top; background: none; border: none;">
-      <spr-button @click="showBannerCloseError = true" class="spr-w-full">Show Error</spr-button>
+      <mc-button @click="showBannerCloseError = true" class="mc-w-full">Show Error</mc-button>
       </td>
       <td style="background: none; border: none;">
-      <spr-banner v-model:show="showBannerCloseError" type="error" show-close-button message="This is a closable error banner." />
+      <mc-banner v-model:show="showBannerCloseError" type="error" show-close-button message="This is a closable error banner." />
       </td>
     </tr>
     <tr style="background: none;">
       <td style="width: 20%; vertical-align: top; background: none; border: none;">
-      <spr-button @click="showBannerCloseInfo = true" class="spr-w-full">Show Info</spr-button>
+      <mc-button @click="showBannerCloseInfo = true" class="mc-w-full">Show Info</mc-button>
       </td>
       <td style="background: none; border: none;">
-      <spr-banner v-model:show="showBannerCloseInfo" type="info" show-close-button message="This is a closable info banner." />
+      <mc-banner v-model:show="showBannerCloseInfo" type="info" show-close-button message="This is a closable info banner." />
       </td>
     </tr>
     <tr style="background: none;">
       <td style="width: 20%; vertical-align: top; background: none; border: none;">
-      <spr-button @click="showBannerClosePending = true" class="spr-w-full">Show Pending</spr-button>
+      <mc-button @click="showBannerClosePending = true" class="mc-w-full">Show Pending</mc-button>
       </td>
       <td style="background: none; border: none;">
-      <spr-banner v-model:show="showBannerClosePending" type="pending" show-close-button message="This is a closable pending banner." />
+      <mc-banner v-model:show="showBannerClosePending" type="pending" show-close-button message="This is a closable pending banner." />
       </td>
     </tr>
     <tr style="background: none;">
       <td style="width: 20%; vertical-align: top; background: none; border: none;">
-      <spr-button @click="showBannerCloseCaution = true" class="spr-w-full">Show Caution</spr-button>
+      <mc-button @click="showBannerCloseCaution = true" class="mc-w-full">Show Caution</mc-button>
       </td>
       <td style="background: none; border: none;">
-      <spr-banner v-model:show="showBannerCloseCaution" type="caution" show-close-button message="This is a closable caution banner." />
+      <mc-banner v-model:show="showBannerCloseCaution" type="caution" show-close-button message="This is a closable caution banner." />
       </td>
     </tr>
   </tbody>
@@ -93,49 +93,49 @@ Banners can be closed by the user if `showCloseButton` is `true. Use `v-model:sh
 ```vue
 <template>
   ...
-  <spr-banner
+  <mc-banner
     v-model:show="showBannerCloseSuccess"
     type="success"
     show-close-button
     message="This is a closable success banner."
   />
-  <spr-banner
+  <mc-banner
     v-model:show="showBannerCloseError"
     type="error"
     show-close-button
     message="This is a closable error banner."
   />
-  <spr-banner
+  <mc-banner
     v-model:show="showBannerCloseInfo"
     type="info"
     show-close-button
     message="This is a closable info banner."
   />
-  <spr-banner
+  <mc-banner
     v-model:show="showBannerClosePending"
     type="pending"
     show-close-button
     message="This is a closable pending banner."
   />
-  <spr-banner
+  <mc-banner
     v-model:show="showBannerCloseCaution"
     type="caution"
     show-close-button
     message="This is a closable caution banner."
   />
   ...
-  <spr-button tone="success" @click="showBannerCloseSuccess = true">Show Success</spr-button>
-  <spr-button tone="danger" @click="showBannerCloseError = true">Show Error</spr-button>
-  <spr-button tone="info" @click="showBannerCloseInfo = true">Show Info</spr-button>
-  <spr-button tone="pending" @click="showBannerClosePending = true">Show Pending</spr-button>
-  <spr-button tone="caution" @click="showBannerCloseCaution = true">Show Caution</spr-button>
+  <mc-button tone="success" @click="showBannerCloseSuccess = true">Show Success</mc-button>
+  <mc-button tone="danger" @click="showBannerCloseError = true">Show Error</mc-button>
+  <mc-button tone="info" @click="showBannerCloseInfo = true">Show Info</mc-button>
+  <mc-button tone="pending" @click="showBannerClosePending = true">Show Pending</mc-button>
+  <mc-button tone="caution" @click="showBannerCloseCaution = true">Show Caution</mc-button>
   ...
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import SprBanner from '@/components/banner/banner.vue';
-import SprButton from '@/components/button/button.vue';
+import McBanner from '@/components/banner/banner.vue';
+import McButton from '@/components/button/button.vue';
 
 const showBannerCloseSuccess = ref(true);
 const showBannerCloseError = ref(true);
@@ -150,28 +150,28 @@ const showBannerCloseCaution = ref(true);
 You can customize the content of the banner using the default slot.
 
 <div>
-  <spr-banner v-model:show="showBannerCustom" type="success" show-close-button>
-    <div class="spr-flex spr-flex-col spr-gap-2">
+  <mc-banner v-model:show="showBannerCustom" type="success" show-close-button>
+    <div class="mc-flex mc-flex-col mc-gap-2">
       <strong>Custom Success!</strong> 
       <span>This is a custom banner message.</span>
     </div>
-  </spr-banner>
-  <spr-button tone="success" @click="showBannerCustom = true" class="spr-mt-2">Show Custom Banner</spr-button>
+  </mc-banner>
+  <mc-button tone="success" @click="showBannerCustom = true" class="mc-mt-2">Show Custom Banner</mc-button>
 </div>
 
 ```vue
 <template>
-  <spr-banner v-model:show="showBannerCustom" type="success" show-close-button>
-    <div class="spr-flex spr-flex-col spr-gap-2">
+  <mc-banner v-model:show="showBannerCustom" type="success" show-close-button>
+    <div class="mc-flex mc-flex-col mc-gap-2">
       <strong>Custom Success!</strong> <span>This is a custom banner message.</span>
     </div>
-  </spr-banner>
-  <spr-button tone="success" @click="showBannerCustom = true">Show Custom Banner</spr-button>
+  </mc-banner>
+  <mc-button tone="success" @click="showBannerCustom = true">Show Custom Banner</mc-button>
 </template>
 
 <script setup lang="ts">
-import SprBanner from '@/components/banner/banner.vue';
-import SprButton from '@/components/button/button.vue';
+import McBanner from '@/components/banner/banner.vue';
+import McButton from '@/components/button/button.vue';
 import { ref } from 'vue';
 
 const showBannerCustom = ref(true);
@@ -269,9 +269,8 @@ const showBannerCustom = ref(true);
 </table>
 
 <script lang="ts" setup>
-import SprBanner from '@/components/banner/banner.vue';
-import SprButton from '@/components/button/button.vue';
-import SprLogo from '@/components/logo/logo.vue';
+import McBanner from '@/components/banner/banner.vue';
+import McButton from '@/components/button/button.vue';
 import { ref } from 'vue';
 
 const showBannerSuccess = ref(true);

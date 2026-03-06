@@ -12,24 +12,19 @@
       <slot />
     </template>
     <template v-else-if="variant === 'tag'">
-      <span v-if="hasIcon" class="chips-icon spr-inline-flex spr-items-center spr-leading-[0]">
+      <span v-if="hasIcon" class="chips-icon mc-inline-flex mc-items-center mc-leading-[0]">
         <slot name="icon">
-          <Icon :icon="getIcon" class="spr-font-size-300" />
+          <Icon :icon="getIcon" class="mc-font-size-300" />
         </slot>
       </span>
-      <span v-if="hasAvatar" class="spr-flex spr-items-center spr-justify-center">
-        <spr-avatar
-          size="2xs"
-          :src="props.avatarUrl"
-          :variant="props.avatarVariant"
-          :initial="props.avatarInitials"
-        />
+      <span v-if="hasAvatar" class="mc-flex mc-items-center mc-justify-center">
+        <mc-avatar size="2xs" :src="props.avatarUrl" :variant="props.avatarVariant" :initial="props.avatarInitials" />
       </span>
-      <span class="spr-chips-label">
+      <span class="mc-chips-label">
         {{ label }}
       </span>
       <span v-if="badge" class="chips-badge">
-        <spr-badge :text="badgeText" :variant="badgeVariant" size="small" position="default" />
+        <mc-badge :text="badgeText" :variant="badgeVariant" size="small" position="default" />
       </span>
       <span
         v-if="closable"
@@ -56,9 +51,9 @@ import { useSlots } from 'vue';
 import { Icon } from '@iconify/vue';
 import { chipsPropTypes } from './chips';
 import { useChips } from './use-chips';
-import SprBadge from '@/components/badge/badge.vue';
+import McBadge from '@/components/badge/badge.vue';
 import { chipsEmitTypes } from './chips';
-import SprAvatar from '@/components/avatar/avatar.vue';
+import McAvatar from '@/components/avatar/avatar.vue';
 
 const props = defineProps(chipsPropTypes);
 const emit = defineEmits(chipsEmitTypes);

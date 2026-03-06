@@ -1,5 +1,5 @@
 <template>
-  <div class="spr-h-fit spr-w-fit">
+  <div class="mc-h-fit mc-w-fit">
     <div v-if="!props.loading && !imageError" :class="avatarClasses.baseClasses">
       <template v-if="props.variant === 'count' || props.variant === 'initial'">
         <div :class="avatarClasses.initialsContainerClasses">
@@ -16,11 +16,11 @@
       </template>
 
       <span v-if="props.notification" :class="avatarClasses.notificationClasses">
-        <spr-badge :text="props.notificationText" variant="danger" :size="getAvatarSize.notif" />
+        <mc-badge :text="props.notificationText" variant="danger" :size="getAvatarSize.notif" />
       </span>
 
       <span v-if="props.badge" :class="avatarClasses.onlineNotificationClasses">
-        <spr-badge :variant="status" :size="getAvatarSize.badge" />
+        <mc-badge :variant="status" :size="getAvatarSize.badge" />
       </span>
     </div>
 
@@ -36,7 +36,7 @@ import { Icon } from '@iconify/vue';
 import { avatarPropTypes, avatarEmitTypes } from './avatar';
 import { useAvatar } from './use-avatar';
 
-import SprBadge from '@/components/badge/badge.vue';
+import McBadge from '@/components/badge/badge.vue';
 
 const props = defineProps(avatarPropTypes);
 const emit = defineEmits(avatarEmitTypes);

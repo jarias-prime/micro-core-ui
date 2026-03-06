@@ -5,7 +5,8 @@ export function useFloatingAction(props: FloatingActionProps) {
   const isVisible = toRef(props, 'show');
 
   const floatingActionClasses = computed(() => {
-    const wrapperClass = 'spr-bg-white-50 spr-body-md-regular spr-text-color-strong spr-bg-white spr-fixed spr-bottom-8 spr-left-1/2 spr-z-50 spr-flex spr-w-full spr-max-w-[1024px] spr--translate-x-1/2 spr-items-center spr-gap-4 spr-rounded-border-radius-md  spr-drop-shadow-md'
+    const wrapperClass =
+      'mc-bg-white-50 mc-body-md-regular mc-text-color-strong mc-bg-white mc-fixed mc-bottom-8 mc-left-1/2 mc-z-50 mc-flex mc-w-full mc-max-w-[1024px] mc--translate-x-1/2 mc-items-center mc-gap-4 mc-rounded-border-radius-md  mc-drop-shadow-md';
 
     return {
       wrapperClass,

@@ -25,7 +25,7 @@
     >
       <!-- Main Search Input -->
       <slot>
-        <spr-input
+        <mc-input
           :id="props.id"
           v-model="searchValue"
           type="text"
@@ -39,16 +39,16 @@
           <template #icon>
             <Icon icon="ph:magnifying-glass" />
           </template>
-        </spr-input>
+        </mc-input>
       </slot>
     </div>
 
     <template #popper>
       <div :class="filterClass.MenuOptionClasses">
-        <div v-if="filterMenu.length > 0 && filterable" class="spr-flex spr-items-center spr-gap-2">
-          <div class="spr-space-x-size-spacing-3xs spr-space-y-size-spacing-3xs">
+        <div v-if="filterMenu.length > 0 && filterable" class="mc-flex mc-items-center mc-gap-2">
+          <div class="mc-space-x-size-spacing-3xs mc-space-y-size-spacing-3xs">
             <template v-for="menu in filterMenu" :key="menu.field">
-              <spr-chips
+              <mc-chips
                 v-if="mappedFilterMenuList[menu.field].count"
                 :label="mappedFilterMenuList[menu.field].columnName"
                 icon="ph:funnel-simple"
@@ -66,15 +66,15 @@
             :delay="0"
             popover-base="filter-menu-base"
           >
-            <spr-button id="add-filter-button" has-icon variant="secondary" size="small">
+            <mc-button id="add-filter-button" has-icon variant="secondary" size="small">
               <Icon icon="ph:faders-horizontal" />
-            </spr-button>
+            </mc-button>
 
             <template #popper>
               <div :class="filterClass.PopperWrapperClasses">
                 <div :class="filterClass.PopperHeaderClasses">
                   Add Filter
-                  <span class="spr-cursor-pointer" @click="isAddFilterVisible = false">
+                  <span class="mc-cursor-pointer" @click="isAddFilterVisible = false">
                     <Icon icon="ph:x" />
                   </span>
                 </div>
@@ -90,7 +90,7 @@
                     :auto-hide="false"
                     popover-base="filter-menu-field"
                   >
-                    <spr-chips
+                    <mc-chips
                       :active="mappedFilterMenuList[menu.field].isFilterVisible"
                       :label="mappedFilterMenuList[menu.field].columnName"
                       :badge="getSelectedItemPerFilterMenu(menu.field) > 0"
@@ -101,20 +101,20 @@
                     />
 
                     <template #popper>
-                      <div :class="['spr-w-[320px]', filterClass.PopperWrapperClasses]">
+                      <div :class="['mc-w-[320px]', filterClass.PopperWrapperClasses]">
                         <div :class="filterClass.PopperHeaderClasses">
                           Add Filter
                           <span
-                            class="spr-cursor-pointer"
+                            class="mc-cursor-pointer"
                             @click="mappedFilterMenuList[menu.field].isFilterVisible = false"
                           >
                             <Icon icon="ph:x" />
                           </span>
                         </div>
 
-                        <div class="spr-p-size-spacing-2xs">
+                        <div class="mc-p-size-spacing-2xs">
                           <!-- search for the filter Option -->
-                          <spr-input
+                          <mc-input
                             :id="`${props.id}-search`"
                             v-model="filterMenuSearchvalue"
                             type="text"
@@ -123,14 +123,14 @@
                             <template #icon>
                               <Icon icon="ph:magnifying-glass" />
                             </template>
-                          </spr-input>
+                          </mc-input>
                         </div>
 
                         <div
                           v-if="getSelectedFilterMenuOption.length > 0"
-                          class="spr-h-[70px] spr-space-x-2 spr-space-y-2 spr-overflow-auto spr-p-size-spacing-2xs"
+                          class="mc-h-[70px] mc-space-x-2 mc-space-y-2 mc-overflow-auto mc-p-size-spacing-2xs"
                         >
-                          <spr-chips
+                          <mc-chips
                             v-for="(FilterMenuOption, i) in getSelectedFilterMenuOption"
                             :key="i"
                             :label="FilterMenuOption.text"
@@ -143,20 +143,20 @@
                           v-if="getFilteredMenuOption.length > 0"
                           :id="menu.field"
                           ref="filterMenuOptionList"
-                          class="spr-h-[264px] spr-space-y-size-spacing-6xs spr-overflow-auto spr-p-size-spacing-2xs"
+                          class="mc-h-[264px] mc-space-y-size-spacing-6xs mc-overflow-auto mc-p-size-spacing-2xs"
                         >
                           <div
                             v-for="(option, key) in getFilteredMenuOption"
                             :key="option.value"
                             :class="[
                               filterClass.filterListClasses,
-                              { 'spr-background-color-multiple-active': getFilteredMenuOption[key].isSelected },
+                              { 'mc-background-color-multiple-active': getFilteredMenuOption[key].isSelected },
                             ]"
                           >
-                            <spr-checkbox
+                            <mc-checkbox
                               id="filter-menu-option"
                               v-model="getFilteredMenuOption[key].isSelected"
-                              class="spr-w-full"
+                              class="mc-w-full"
                               :checked="getFilteredMenuOption[key].isSelected"
                               :label="getFilteredMenuOption[key].text"
                               :description="getFilteredMenuOption[key].subtext"
@@ -170,22 +170,22 @@
                         </div>
 
                         <div :class="filterClass.ActionButtonClasses">
-                          <spr-button
+                          <mc-button
                             id="cancel-button"
                             variant="secondary"
                             size="small"
                             @click="mappedFilterMenuList[menu.field].isFilterVisible = false"
                           >
                             Cancel
-                          </spr-button>
-                          <spr-button
+                          </mc-button>
+                          <mc-button
                             id="save-button"
                             size="small"
                             tone="success"
                             @click="saveSelectedFilter(menu.field)"
                           >
                             Save
-                          </spr-button>
+                          </mc-button>
                         </div>
                       </div>
                     </template>
@@ -196,15 +196,15 @@
           </Menu>
         </div>
 
-        <spr-button id="select-all-button" variant="secondary" size="small" @click="selectAllOptions"
-          >Select All</spr-button
+        <mc-button id="select-all-button" variant="secondary" size="small" @click="selectAllOptions"
+          >Select All</mc-button
         >
       </div>
 
       <div
         v-if="getFiltereredOption.length > 0 && !filling"
         ref="filterOptionRef"
-        class="spr-max-h-[264px] spr-space-y-size-spacing-6xs spr-overflow-auto spr-p-size-spacing-3xs"
+        class="mc-max-h-[264px] mc-space-y-size-spacing-6xs mc-overflow-auto mc-p-size-spacing-3xs"
       >
         <div
           v-for="(option, key) in getFiltereredOption"
@@ -212,20 +212,17 @@
           :class="[
             filterClass.filterListClasses,
             {
-              'spr-background-color-multiple-active': getFiltereredOption[key].isSelected,
+              'mc-background-color-multiple-active': getFiltereredOption[key].isSelected,
             },
           ]"
         >
           <div
-            class="spr-flex spr-w-full spr-flex-row spr-items-center spr-justify-items-start spr-gap-size-spacing-3xs"
+            class="mc-flex mc-w-full mc-flex-row mc-items-center mc-justify-items-start mc-gap-size-spacing-3xs"
             @click="getFiltereredOption[key].isSelected = !getFiltereredOption[key].isSelected"
           >
-            <spr-checkbox
-              v-model="getFiltereredOption[key].isSelected"
-              :checked="getFiltereredOption[key].isSelected"
-            />
+            <mc-checkbox v-model="getFiltereredOption[key].isSelected" :checked="getFiltereredOption[key].isSelected" />
 
-            <spr-avatar
+            <mc-avatar
               v-if="props.hasAvatar"
               size="md"
               alt="User Avatar"
@@ -235,8 +232,8 @@
             />
 
             <div>
-              <div class="spr-body-sm-regular">{{ getFiltereredOption[key].text }}</div>
-              <div class="spr-body-xs-regular spr-text-color-supporting">{{ getFiltereredOption[key].subtext }}</div>
+              <div class="mc-body-sm-regular">{{ getFiltereredOption[key].text }}</div>
+              <div class="mc-body-xs-regular mc-text-color-supporting">{{ getFiltereredOption[key].subtext }}</div>
             </div>
           </div>
         </div>
@@ -256,11 +253,11 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
 import { Menu } from 'floating-vue';
-import SprInput from '@/components/input/input.vue';
-import SprButton from '@/components/button/button.vue';
-import SprChips from '@/components/chips/chips.vue';
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
-import SprAvatar from '@/components/avatar/avatar.vue';
+import McInput from '@/components/input/input.vue';
+import McButton from '@/components/button/button.vue';
+import McChips from '@/components/chips/chips.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
+import McAvatar from '@/components/avatar/avatar.vue';
 import 'floating-vue/dist/style.css';
 import { useFilter } from './use-filter';
 import { filterPropTypes, filterEmitTypes } from './filter';

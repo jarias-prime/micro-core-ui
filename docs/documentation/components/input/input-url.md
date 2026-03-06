@@ -10,11 +10,11 @@ URL input with native browser validation for properly formatted URLs.
 
 ## Basic Usage
 
-<spr-input-url v-model="inputModels.basic" label="Website" placeholder="https://example.com" />
+<mc-input-url v-model="inputModels.basic" label="Website" placeholder="https://example.com" />
 
 ```vue
 <template>
-  <spr-input-url v-model="inputModel" label="Website" placeholder="https://example.com" />
+  <mc-input-url v-model="inputModel" label="Website" placeholder="https://example.com" />
 </template>
 
 <script setup lang="ts">
@@ -26,11 +26,11 @@ const inputModel = ref('');
 
 ## Active State
 
-<spr-input-url v-model="inputModels.activeState" label="Website" placeholder="https://example.com" active />
+<mc-input-url v-model="inputModels.activeState" label="Website" placeholder="https://example.com" active />
 
 ```vue
 <template>
-  <spr-input-url v-model="inputModel" label="Website" placeholder="https://example.com" active />
+  <mc-input-url v-model="inputModel" label="Website" placeholder="https://example.com" active />
 </template>
 
 <script setup lang="ts">
@@ -42,19 +42,19 @@ const inputModel = ref('');
 
 ## Error State
 
-<spr-input-url v-model="inputModels.errorState" label="Website" placeholder="https://example.com" :error="true">
+<mc-input-url v-model="inputModels.errorState" label="Website" placeholder="https://example.com" :error="true">
   <template #icon>
     <Icon icon="ph:warning-circle-fill" />
   </template>
-</spr-input-url>
+</mc-input-url>
 
 ```vue
 <template>
-  <spr-input-url v-model="inputModel" label="Website" placeholder="https://example.com" :error="true">
+  <mc-input-url v-model="inputModel" label="Website" placeholder="https://example.com" :error="true">
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input-url>
+  </mc-input-url>
 </template>
 
 <script setup lang="ts">
@@ -66,7 +66,7 @@ const inputModel = ref('');
 
 ## Disabled State
 
-<spr-input-url v-model="inputModels.disabledState" label="Website" placeholder="https://example.com" :disabled="true" />
+<mc-input-url v-model="inputModels.disabledState" label="Website" placeholder="https://example.com" :disabled="true" />
 
 ## API Reference
 
@@ -79,7 +79,7 @@ Only the visual intent (username context) differs; no additional props or unique
 
 ```vue
 <template>
-  <spr-input-url v-model="inputModel" label="Website" placeholder="https://example.com" :disabled="true" />
+  <mc-input-url v-model="inputModel" label="Website" placeholder="https://example.com" :disabled="true" />
 </template>
 
 <script setup lang="ts">
@@ -94,7 +94,7 @@ import { ref } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
-import SprInputUrl from '@/components/input/input-url/input-url.vue';
+import McInputUrl from '@/components/input/input-url/input-url.vue';
 
 const inputModels = ref({
   basic: '',

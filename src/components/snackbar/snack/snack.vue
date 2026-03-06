@@ -2,20 +2,20 @@
   <div
     v-bind="snackProps"
     ref="snackRef"
-    class="snackbar spr-background-color-inverted spr-text-color-inverted-strong spr-font-size-200 spr-line-height-400 spr-border-color-strong spr-box-border spr-flex spr-h-fit spr-flex-row spr-items-center spr-rounded-border-radius-lg spr-border spr-border-solid spr-px-size-spacing-2xs spr-py-size-spacing-3xs"
+    class="snackbar mc-background-color-inverted mc-text-color-inverted-strong mc-font-size-200 mc-line-height-400 mc-border-color-strong mc-box-border mc-flex mc-h-fit mc-flex-row mc-items-center mc-rounded-border-radius-lg mc-border mc-border-solid mc-px-size-spacing-2xs mc-py-size-spacing-3xs"
     @click="handleClick"
   >
-    <div class="spr-flex spr-flex-auto spr-items-center">
+    <div class="mc-flex mc-flex-auto mc-items-center">
       <slot name="icon">
         <Icon
           v-if="showIcon"
           :icon="snackIcon"
           :width="iconSize"
           :height="iconSize"
-          :class="[snackToneCssClass, 'spr-mr-size-spacing-3xs spr-flex-shrink-0']"
+          :class="[snackToneCssClass, 'mc-mr-size-spacing-3xs mc-flex-shrink-0']"
         />
       </slot>
-      
+
       <slot name="label">
         <label>{{ text }}</label>
       </slot>
@@ -25,20 +25,20 @@
         <label
           :class="[
             snackToneCssClass,
-            'spr-font-size-100 spr-line-height-100 spr-ml-size-spacing-3xs spr-flex spr-items-center spr-font-medium spr-uppercase selection:spr-cursor-pointer',
+            'mc-font-size-100 mc-line-height-100 mc-ml-size-spacing-3xs mc-flex mc-items-center mc-font-medium mc-uppercase selection:mc-cursor-pointer',
           ]"
           @click="() => action()"
         >
-          <spr-button
+          <mc-button
             v-if="actionIconProps"
             icon-only
-            :class="['!spr-p-size-spacing-4xs hover:spr-cursor-pointer', { 'spr-mr-2': actionText !== '' }]"
+            :class="['!mc-p-size-spacing-4xs hover:mc-cursor-pointer', { 'mc-mr-2': actionText !== '' }]"
             size="small"
             variant="secondary"
             :tone="actionIconProps.tone"
           >
             <Icon :icon="actionIconProps.icon" width="20" height="20" />
-          </spr-button>
+          </mc-button>
           {{ actionText }}
         </label>
       </slot>
@@ -48,7 +48,7 @@
 
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue';
-import SprButton from '@/components/button/button.vue';
+import McButton from '@/components/button/button.vue';
 import { snackEmitTypes, snackPropTypes } from './snack';
 import { useSnack } from './use-snack';
 

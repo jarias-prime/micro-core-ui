@@ -9,9 +9,9 @@
     <div
       :class="[
         handleProgressBarSize,
-        'spr-overflow-hidden spr-rounded-lg spr-bg-white-100',
+        'mc-overflow-hidden mc-rounded-lg mc-bg-white-100',
         {
-          'spr-w-full': [
+          'mc-w-full': [
             'top',
             'top-start',
             'top-center',
@@ -21,18 +21,18 @@
             'bottom-center',
             'bottom-end',
           ].includes(props.labelPlacement),
-          'spr-flex-1': ['left', 'right'].includes(props.labelPlacement),
+          'mc-flex-1': ['left', 'right'].includes(props.labelPlacement),
         },
       ]"
     >
       <div
-        :class="[`spr-background-color-${validColor}-base`, 'spr-transition-all spr-duration-300']"
+        :class="[`mc-background-color-${validColor}-base`, 'mc-transition-all mc-duration-300']"
         :style="handleProgressBarStyle"
       ></div>
     </div>
-    <div v-if="props.label || props.supportingLabel" class="spr-flex spr-gap-1.5">
-      <span v-if="props.label" class="spr-text-color-strong spr-subheading-sm">{{ percentage }}%</span>
-      <span v-if="props.supportingLabel" class="spr-body-md-regular">{{ props.supportingLabel }}</span>
+    <div v-if="props.label || props.supportingLabel" class="mc-flex mc-gap-1.5">
+      <span v-if="props.label" class="mc-text-color-strong mc-subheading-sm">{{ percentage }}%</span>
+      <span v-if="props.supportingLabel" class="mc-body-md-regular">{{ props.supportingLabel }}</span>
     </div>
   </div>
 </template>

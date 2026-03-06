@@ -5,7 +5,7 @@ export const useCollapsible = (props: CollapsibleProps, emit: SetupContext<Colla
   const { modelValue, transitionDuration } = toRefs(props);
 
   const collapsibleClasses = computed(() => ({
-    container: 'spr-w-full',
+    container: 'mc-w-full',
   }));
 
   const contentStyle = computed(() => ({

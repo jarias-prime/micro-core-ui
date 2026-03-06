@@ -233,27 +233,27 @@ export const useFilter = (props: FilterPropTypes, emit: SetupContext<FilterEmitT
   useInfiniteScroll(filterOptionRef, infiniteScrollHandler, { distance: 10 });
 
   const filterClass = computed(() => {
-    const MainClasses = classNames('spr-relative spr-inline-block spr-w-full');
+    const MainClasses = classNames('mc-relative mc-inline-block mc-w-full');
     const MenuOptionClasses = classNames(
-      'spr-border-color-weak spr-border spr-border-x-0 spr-border-t-0 spr-border-solid spr-p-size-spacing-2xs',
-      'spr-flex spr-items-center',
-      { 'spr-justify-between': filterMenu.value.length > 0 && filterable.value },
-      { 'spr-justify-end': filterMenu.value.length === 0 || !filterable.value },
+      'mc-border-color-weak mc-border mc-border-x-0 mc-border-t-0 mc-border-solid mc-p-size-spacing-2xs',
+      'mc-flex mc-items-center',
+      { 'mc-justify-between': filterMenu.value.length > 0 && filterable.value },
+      { 'mc-justify-end': filterMenu.value.length === 0 || !filterable.value },
     );
     const PopperWrapperClasses = classNames(
-      'spr-flex spr-flex-col spr-divide-x-0 spr-divide-y spr-divide-solid spr-divide-mushroom-200',
+      'mc-flex mc-flex-col mc-divide-x-0 mc-divide-y mc-divide-solid mc-divide-mushroom-200',
     );
-    const PopperHeaderClasses = classNames('spr-flex spr-items-center spr-justify-between spr-p-size-spacing-2xs');
+    const PopperHeaderClasses = classNames('mc-flex mc-items-center mc-justify-between mc-p-size-spacing-2xs');
     const PopperContentClasses = classNames(
-      'spr-flex spr-w-[328px] spr-flex-wrap spr-gap-size-spacing-2xs spr-p-size-spacing-xs',
+      'mc-flex mc-w-[328px] mc-flex-wrap mc-gap-size-spacing-2xs mc-p-size-spacing-xs',
     );
     const LoadingStateClasses = classNames(
-      'spr-h-[264px] spr-p-size-spacing-sm spr-flex spr-items-center spr-justify-center',
+      'mc-h-[264px] mc-p-size-spacing-sm mc-flex mc-items-center mc-justify-center',
     );
-    const ActionButtonClasses = classNames('spr-flex spr-justify-end spr-gap-2 spr-p-size-spacing-2xs');
+    const ActionButtonClasses = classNames('mc-flex mc-justify-end mc-gap-2 mc-p-size-spacing-2xs');
     const filterListClasses = classNames(
-      'spr-body-xs-regular spr-flex spr-cursor-pointer spr-justify-between spr-rounded-border-radius-md spr-p-size-spacing-4xs',
-      'hover:spr-background-color-hover',
+      'mc-body-xs-regular mc-flex mc-cursor-pointer mc-justify-between mc-rounded-border-radius-md mc-p-size-spacing-4xs',
+      'hover:mc-background-color-hover',
     );
 
     getMappedFilterMenuList();

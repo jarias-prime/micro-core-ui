@@ -29,44 +29,44 @@ The basic implementation of a Sidepanel requires:
 3. State management for opening and closing
 
 <div>
-  <spr-button tone="success" @click="isSidepanelOpen = true">
+  <mc-button tone="success" @click="isSidepanelOpen = true">
     Open Sidepanel
-  </spr-button>
-  <spr-sidepanel
+  </mc-button>
+  <mc-sidepanel
     :is-open="isSidepanelOpen"
     @close="isSidepanelOpen = false"
     header-title="Sidepanel Example"
   >
-    <div class="spr-p-4">
+    <div class="mc-p-4">
       Sidepanel Content
     </div>
     <template #footer>
-      <div class="spr-px-4 spr-flex spr-justify-end spr-gap-2">
-        <spr-button @click="isSidepanelOpen = false">Cancel</spr-button>
-        <spr-button tone="success">Submit</spr-button>
+      <div class="mc-px-4 mc-flex mc-justify-end mc-gap-2">
+        <mc-button @click="isSidepanelOpen = false">Cancel</mc-button>
+        <mc-button tone="success">Submit</mc-button>
       </div>
     </template>
-  </spr-sidepanel>
+  </mc-sidepanel>
 </div>
 
 ```vue
 <template>
   <!-- Trigger button -->
-  <spr-button tone="success" @click="isSidepanelOpen = true"> Open Sidepanel </spr-button>
+  <mc-button tone="success" @click="isSidepanelOpen = true"> Open Sidepanel </mc-button>
 
   <!-- Sidepanel component -->
-  <spr-sidepanel :is-open="isSidepanelOpen" @close="isSidepanelOpen = false" header-title="Sidepanel Example">
+  <mc-sidepanel :is-open="isSidepanelOpen" @close="isSidepanelOpen = false" header-title="Sidepanel Example">
     <!-- Main content -->
-    <div class="spr-p-4">Sidepanel Content</div>
+    <div class="mc-p-4">Sidepanel Content</div>
 
     <!-- Footer actions -->
     <template #footer>
-      <div class="spr-flex spr-justify-end spr-gap-2 spr-px-4">
-        <spr-button @click="isSidepanelOpen = false">Cancel</spr-button>
-        <spr-button tone="success">Submit</spr-button>
+      <div class="mc-flex mc-justify-end mc-gap-2 mc-px-4">
+        <mc-button @click="isSidepanelOpen = false">Cancel</mc-button>
+        <mc-button tone="success">Submit</mc-button>
       </div>
     </template>
-  </spr-sidepanel>
+  </mc-sidepanel>
 </template>
 
 <script setup>
@@ -83,10 +83,10 @@ The Sidepanel includes a built-in close button in the header and can also be clo
 ## Expandable Sidepanel
 
 <div>
-  <spr-button tone="success" @click="isExpandableSidepanelOpen = true">
+  <mc-button tone="success" @click="isExpandableSidepanelOpen = true">
     Open Sidepanel
-  </spr-button>
-  <spr-sidepanel
+  </mc-button>
+  <mc-sidepanel
     :is-open="isExpandableSidepanelOpen"
     @close="isExpandableSidepanelOpen = false"
     :is-expandable="true"
@@ -95,23 +95,23 @@ The Sidepanel includes a built-in close button in the header and can also be clo
     @shrink="isSidepanelExpanded = false"
     header-title="Sidepanel Example"
   >
-    <div class="spr-p-4">
+    <div class="mc-p-4">
       Sidepanel Content
     </div>
     <template #footer>
-      <div class="spr-px-4 spr-flex spr-justify-end spr-gap-2">
-        <spr-button @click="isExpandableSidepanelOpen = false">Cancel</spr-button>
-        <spr-button tone="success">Submit</spr-button>
+      <div class="mc-px-4 mc-flex mc-justify-end mc-gap-2">
+        <mc-button @click="isExpandableSidepanelOpen = false">Cancel</mc-button>
+        <mc-button tone="success">Submit</mc-button>
       </div>
     </template>
-  </spr-sidepanel>
+  </mc-sidepanel>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-button tone="success" @click="isExpandableSidepanelOpen = true"> Open Sidepanel </spr-button>
-    <spr-sidepanel
+    <mc-button tone="success" @click="isExpandableSidepanelOpen = true"> Open Sidepanel </mc-button>
+    <mc-sidepanel
       :is-open="isExpandableSidepanelOpen"
       @close="isExpandableSidepanelOpen = false"
       :is-expandable="true"
@@ -120,14 +120,14 @@ The Sidepanel includes a built-in close button in the header and can also be clo
       @shrink="isSidepanelExpanded = false"
       header-title="Sidepanel Example"
     >
-      <div class="spr-p-4">Sidepanel Content</div>
+      <div class="mc-p-4">Sidepanel Content</div>
       <template #footer>
-        <div class="spr-flex spr-justify-end spr-gap-2 spr-px-4">
-          <spr-button @click="isExpandableSidepanelOpen = false">Cancel</spr-button>
-          <spr-button tone="success">Submit</spr-button>
+        <div class="mc-flex mc-justify-end mc-gap-2 mc-px-4">
+          <mc-button @click="isExpandableSidepanelOpen = false">Cancel</mc-button>
+          <mc-button tone="success">Submit</mc-button>
         </div>
       </template>
-    </spr-sidepanel>
+    </mc-sidepanel>
   </div>
 </template>
 ```
@@ -137,83 +137,83 @@ The Sidepanel includes a built-in close button in the header and can also be clo
 The Sidepanel component offers three predefined sizes to accommodate different content needs. Use the `size` prop to specify the width of the panel.
 
 <div>
-  <div class="spr-flex spr-space-x-4">
-    <spr-button tone="success" @click="isSmallSidepanelOpen = true">Small (360px)</spr-button>
-    <spr-button tone="success" @click="isMediumSidepanelOpen = true">Medium (420px)</spr-button>
-    <spr-button tone="success" @click="isLargeSidepanelOpen = true">Large (480px)</spr-button>
+  <div class="mc-flex mc-space-x-4">
+    <mc-button tone="success" @click="isSmallSidepanelOpen = true">Small (360px)</mc-button>
+    <mc-button tone="success" @click="isMediumSidepanelOpen = true">Medium (420px)</mc-button>
+    <mc-button tone="success" @click="isLargeSidepanelOpen = true">Large (480px)</mc-button>
   </div>
-  <spr-sidepanel
+  <mc-sidepanel
     size="sm"
     :is-open="isSmallSidepanelOpen"
     @close="isSmallSidepanelOpen = false"
     header-title="Small Sidepanel"
   >
-    <div class="spr-p-4">
-      <p class="spr-mb-2 spr-font-semibold">Width: 360px</p>
+    <div class="mc-p-4">
+      <p class="mc-mb-2 mc-font-semibold">Width: 360px</p>
       <p>Small sidepanels are ideal for simple forms, filters, or quick information display.</p>
     </div>
-  </spr-sidepanel>
-  <spr-sidepanel
+  </mc-sidepanel>
+  <mc-sidepanel
     size="md"
     :is-open="isMediumSidepanelOpen"
     @close="isMediumSidepanelOpen = false"
     header-title="Medium Sidepanel"
   >
-    <div class="spr-p-4">
-      <p class="spr-mb-2 spr-font-semibold">Width: 420px</p>
+    <div class="mc-p-4">
+      <p class="mc-mb-2 mc-font-semibold">Width: 420px</p>
       <p>Medium sidepanels provide more space for complex forms or detailed information displays.</p>
     </div>
-  </spr-sidepanel>
-  <spr-sidepanel
+  </mc-sidepanel>
+  <mc-sidepanel
     size="lg"
     :is-open="isLargeSidepanelOpen"
     @close="isLargeSidepanelOpen = false"
     header-title="Large Sidepanel"
   >
-    <div class="spr-p-4">
-      <p class="spr-mb-2 spr-font-semibold">Width: 480px</p>
+    <div class="mc-p-4">
+      <p class="mc-mb-2 mc-font-semibold">Width: 480px</p>
       <p>Large sidepanels are best for complex interfaces with multiple inputs or rich content display.</p>
     </div>
-  </spr-sidepanel>
+  </mc-sidepanel>
 </div>
 
 ```vue
 <template>
-  <div class="spr-flex spr-space-x-4">
-    <spr-button tone="success" @click="isSmallSidepanelOpen = true"> Small (360px) </spr-button>
-    <spr-button tone="success" @click="isMediumSidepanelOpen = true"> Medium (420px) </spr-button>
-    <spr-button tone="success" @click="isLargeSidepanelOpen = true"> Large (480px) </spr-button>
+  <div class="mc-flex mc-space-x-4">
+    <mc-button tone="success" @click="isSmallSidepanelOpen = true"> Small (360px) </mc-button>
+    <mc-button tone="success" @click="isMediumSidepanelOpen = true"> Medium (420px) </mc-button>
+    <mc-button tone="success" @click="isLargeSidepanelOpen = true"> Large (480px) </mc-button>
   </div>
 
   <!-- Small Sidepanel -->
-  <spr-sidepanel
+  <mc-sidepanel
     size="sm"
     :is-open="isSmallSidepanelOpen"
     @close="isSmallSidepanelOpen = false"
     header-title="Small Sidepanel"
   >
-    <div class="spr-p-4">Width: 360px</div>
-  </spr-sidepanel>
+    <div class="mc-p-4">Width: 360px</div>
+  </mc-sidepanel>
 
   <!-- Medium Sidepanel -->
-  <spr-sidepanel
+  <mc-sidepanel
     size="md"
     :is-open="isMediumSidepanelOpen"
     @close="isMediumSidepanelOpen = false"
     header-title="Medium Sidepanel"
   >
-    <div class="spr-p-4">Width: 420px</div>
-  </spr-sidepanel>
+    <div class="mc-p-4">Width: 420px</div>
+  </mc-sidepanel>
 
   <!-- Large Sidepanel -->
-  <spr-sidepanel
+  <mc-sidepanel
     size="lg"
     :is-open="isLargeSidepanelOpen"
     @close="isLargeSidepanelOpen = false"
     header-title="Large Sidepanel"
   >
-    <div class="spr-p-4">Width: 480px</div>
-  </spr-sidepanel>
+    <div class="mc-p-4">Width: 480px</div>
+  </mc-sidepanel>
 </template>
 
 <script setup>
@@ -236,49 +236,49 @@ On small screens (mobile devices), sidepanels automatically adjust to take up mo
 Use the `footer-no-padding` prop to remove the default padding from the footer. This is useful when you need to create custom layouts or when using components that provide their own padding.
 
 <div>
-  <div class="spr-flex spr-space-x-4">
-    <spr-button tone="success" @click="isNoPaddingModal = true">Footer Without Padding</spr-button>
+  <div class="mc-flex mc-space-x-4">
+    <mc-button tone="success" @click="isNoPaddingModal = true">Footer Without Padding</mc-button>
   </div>
-  <spr-sidepanel
+  <mc-sidepanel
     size="sm"
     :is-open="isNoPaddingModal"
     header-title="Custom Footer Example"
     footer-no-padding
     @close="isNoPaddingModal = false"
   >
-    <div class="spr-p-4">
+    <div class="mc-p-4">
       <p>The footer below has no default padding, allowing for custom styling.</p>
     </div>
     <template #footer>
-      <div class="spr-bg-neutral-50 spr-p-3 spr-flex spr-justify-end spr-gap-2">
-        <spr-button variant="secondary" @click="isNoPaddingModal = false">Cancel</spr-button>
-        <spr-button tone="success">Confirm</spr-button>
+      <div class="mc-bg-neutral-50 mc-p-3 mc-flex mc-justify-end mc-gap-2">
+        <mc-button variant="secondary" @click="isNoPaddingModal = false">Cancel</mc-button>
+        <mc-button tone="success">Confirm</mc-button>
       </div>
     </template>
-  </spr-sidepanel>
+  </mc-sidepanel>
 </div>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="isNoPaddingModal = true"> Footer Without Padding </spr-button>
+  <mc-button tone="success" @click="isNoPaddingModal = true"> Footer Without Padding </mc-button>
 
-  <spr-sidepanel
+  <mc-sidepanel
     size="sm"
     :is-open="isNoPaddingModal"
     header-title="Custom Footer Example"
     footer-no-padding
     @close="isNoPaddingModal = false"
   >
-    <div class="spr-p-4">
+    <div class="mc-p-4">
       <p>The footer below has no default padding, allowing for custom styling.</p>
     </div>
     <template #footer>
-      <div class="spr-flex spr-justify-end spr-gap-2 spr-bg-neutral-50 spr-p-3">
-        <spr-button variant="secondary" @click="isNoPaddingModal = false">Cancel</spr-button>
-        <spr-button tone="success">Confirm</spr-button>
+      <div class="mc-flex mc-justify-end mc-gap-2 mc-bg-neutral-50 mc-p-3">
+        <mc-button variant="secondary" @click="isNoPaddingModal = false">Cancel</mc-button>
+        <mc-button tone="success">Confirm</mc-button>
       </div>
     </template>
-  </spr-sidepanel>
+  </mc-sidepanel>
 </template>
 
 <script setup>
@@ -294,21 +294,21 @@ You can fully customize the header section using the `header` slot.
 
 ```vue
 <template>
-  <spr-sidepanel :is-open="isOpen" @close="isOpen = false">
+  <mc-sidepanel :is-open="isOpen" @close="isOpen = false">
     <!-- Custom header -->
     <template #header>
-      <div class="spr-flex spr-items-center spr-justify-between spr-bg-neutral-50 spr-p-4">
-        <div class="spr-flex spr-items-center spr-gap-2">
-          <Icon icon="ph:user-circle" class="spr-text-brand-600 spr-size-6" />
-          <h3 class="spr-subheading-md">User Profile</h3>
+      <div class="mc-flex mc-items-center mc-justify-between mc-bg-neutral-50 mc-p-4">
+        <div class="mc-flex mc-items-center mc-gap-2">
+          <Icon icon="ph:user-circle" class="mc-text-brand-600 mc-size-6" />
+          <h3 class="mc-subheading-md">User Profile</h3>
         </div>
-        <Icon icon="ph:x" class="spr-text-color-weak spr-cursor-pointer" @click="isOpen = false" />
+        <Icon icon="ph:x" class="mc-text-color-weak mc-cursor-pointer" @click="isOpen = false" />
       </div>
     </template>
 
     <!-- Panel content -->
-    <div class="spr-p-4">Content goes here</div>
-  </spr-sidepanel>
+    <div class="mc-p-4">Content goes here</div>
+  </mc-sidepanel>
 </template>
 ```
 
@@ -325,14 +325,14 @@ You can customize the height of the sidepanel using the `height` prop. This can 
 ```vue
 <template>
   <!-- Fixed height in pixels -->
-  <spr-sidepanel :is-open="isOpen" @close="isOpen = false" height="500">
+  <mc-sidepanel :is-open="isOpen" @close="isOpen = false" height="500">
     <!-- Content -->
-  </spr-sidepanel>
+  </mc-sidepanel>
 
   <!-- Height with CSS units -->
-  <spr-sidepanel :is-open="isOpen" @close="isOpen = false" height="80vh">
+  <mc-sidepanel :is-open="isOpen" @close="isOpen = false" height="80vh">
     <!-- Content -->
-  </spr-sidepanel>
+  </mc-sidepanel>
 </template>
 ```
 
@@ -343,9 +343,9 @@ You can control whether the sidepanel displays a backdrop using the `has-backdro
 ```vue
 <template>
   <!-- Without backdrop -->
-  <spr-sidepanel :is-open="isOpen" @close="isOpen = false" :has-backdrop="false">
+  <mc-sidepanel :is-open="isOpen" @close="isOpen = false" :has-backdrop="false">
     <!-- Content -->
-  </spr-sidepanel>
+  </mc-sidepanel>
 </template>
 ```
 
@@ -356,14 +356,14 @@ Control how the sidepanel can be closed using the `close-outside` and `escape-cl
 ```vue
 <template>
   <!-- Prevent closing when clicking outside -->
-  <spr-sidepanel :is-open="isOpen" @close="isOpen = false" :close-outside="false">
+  <mc-sidepanel :is-open="isOpen" @close="isOpen = false" :close-outside="false">
     <!-- Content -->
-  </spr-sidepanel>
+  </mc-sidepanel>
 
   <!-- Prevent closing with ESC key -->
-  <spr-sidepanel :is-open="isOpen" @close="isOpen = false" :escape-close="false">
+  <mc-sidepanel :is-open="isOpen" @close="isOpen = false" :escape-close="false">
     <!-- Content -->
-  </spr-sidepanel>
+  </mc-sidepanel>
 </template>
 ```
 
@@ -554,9 +554,8 @@ The Sidepanel component provides three slots for customizing different sections 
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprSidepanel from '@/components/sidepanel/sidepanel.vue';
-import SprButton from "@/components/button/button.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McSidepanel from '@/components/sidepanel/sidepanel.vue';
+import McButton from "@/components/button/button.vue";
 
 const isSidepanelOpen = ref(false)
 const isSmallSidepanelOpen = ref(false)
@@ -567,6 +566,6 @@ const isNoPaddingModal = ref(false)
 const isSidepanelExpanded = ref(false)
 const isExpandableSidepanelOpen = ref(false)
 
-import SprSidenav from '@/components/sidenav/sidenav.vue';
+import McSidenav from '@/components/sidenav/sidenav.vue';
 
 </script>

@@ -23,17 +23,17 @@ The `Filter` component is a versatile and powerful filtering solution designed f
 
 ## Basic Usage
 
-<div class="spr-space-y-3"> 
-<div class="spr-flex  spr-flex-col  spr-gap-2 spr-body-sm spr-border-b spr-border-solid spr-border-x-0 spr-border-t-0">
+<div class="mc-space-y-3"> 
+<div class="mc-flex  mc-flex-col  mc-gap-2 mc-body-sm mc-border-b mc-border-solid mc-border-x-0 mc-border-t-0">
   <span>Selected: {{selectedOptions}}</span>
   <span>searchValue: {{searchValue}}</span>
 </div>
-  <spr-filter v-model="selectedOptions"  :options="options" label="Search"  v-model:search="searchValue" hasAvatar/>
+  <mc-filter v-model="selectedOptions"  :options="options" label="Search"  v-model:search="searchValue" hasAvatar/>
 </div>
 
 ```vue
 <template>
-  <spr-filter v-model="selectedOptions" v-model:search="searchValue" :options="options" label="Search" hasAvatar />
+  <mc-filter v-model="selectedOptions" v-model:search="searchValue" :options="options" label="Search" hasAvatar />
 </template>
 
 <script setup>
@@ -54,14 +54,14 @@ const searchValue = ref('');
 
 ## Filterable
 
-<div class="spr-flex spr-flex-col spr-gap-6"> 
+<div class="mc-flex mc-flex-col mc-gap-6"> 
   <div
-    class="spr-body-sm spr-flex spr-flex-col spr-gap-2 spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid"
+    class="mc-body-sm mc-flex mc-flex-col mc-gap-2 mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid"
   >
     <span>Selected: {{ selectedOptions1 }}</span>
     <span>searchValue: {{ searchValue1 }}</span>
   </div>
-  <spr-filter 
+  <mc-filter 
     v-model="selectedOptions1"
     v-model:search="searchValue1" 
     :options="options1"
@@ -76,7 +76,7 @@ const searchValue = ref('');
 
 ```vue
 <template>
-  <spr-filter
+  <mc-filter
     v-model="selectedOptions1"
     v-model:search="searchValue1"
     :options="options1"
@@ -120,16 +120,16 @@ const searchValue = ref('');
 
 This example demonstrates how to remove selected options from outside the component.
 
-<div class="spr-space-y-3"> 
-  <div class="spr-flex spr-gap-2">
+<div class="mc-space-y-3"> 
+  <div class="mc-flex mc-gap-2">
     <div v-for="selected in selectedOptions2">
-      <spr-button hasIcon size="small" tone="danger" variant="secondary" @click="removeSelected(selected.value)">
+      <mc-button hasIcon size="small" tone="danger" variant="secondary" @click="removeSelected(selected.value)">
       {{selected.value}}
         <Icon icon="ph:trash" />
-      </spr-button>
+      </mc-button>
     </div> 
   </div>
-  <spr-filter
+  <mc-filter
     v-model="selectedOptions2" 
     v-model:search="searchValue2"
     id="search-filter"
@@ -141,16 +141,16 @@ This example demonstrates how to remove selected options from outside the compon
 
 ```vue
 <template>
-  <div class="spr-space-y-3">
-    <div class="spr-flex spr-gap-2">
+  <div class="mc-space-y-3">
+    <div class="mc-flex mc-gap-2">
       <div v-for="selected in selectedOptions2">
-        <spr-button hasIcon size="small" tone="danger" variant="secondary" @click="removeSelected(selected.value)">
+        <mc-button hasIcon size="small" tone="danger" variant="secondary" @click="removeSelected(selected.value)">
           {{ selected.value }}
           <Icon icon="ph:trash" />
-        </spr-button>
+        </mc-button>
       </div>
     </div>
-    <spr-filter
+    <mc-filter
       v-model="selectedOptions2"
       v-model:search="searchValue2"
       id="search-filter"
@@ -164,7 +164,7 @@ This example demonstrates how to remove selected options from outside the compon
 <script setup>
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
-import SprButton from '@/components/button/button.vue';
+import McButton from '@/components/button/button.vue';
 
 const options = ref([
   { column: '', isSelected: false, text: 'sample 1', value: 'sample1' },
@@ -186,8 +186,8 @@ const removeSelected = (removeSelected) => {
 
 ## Error State
 
-<div class="spr-space-y-3">
-  <spr-filter
+<div class="mc-space-y-3">
+  <mc-filter
       v-model="selectedOptions2" 
       v-model:search="searchValue2"
       id="search-filter-display-text"
@@ -196,7 +196,7 @@ const removeSelected = (removeSelected) => {
       helper-text="This is helper text!!"
     />
 
-<spr-filter
+<mc-filter
       v-model="selectedOptions2" 
       v-model:search="searchValue2"
       id="search-filter-error"
@@ -209,8 +209,8 @@ const removeSelected = (removeSelected) => {
 
 ```vue
 <template>
-  <div class="spr-space-y-3">
-    <spr-filter
+  <div class="mc-space-y-3">
+    <mc-filter
       v-model="selectedOptions2"
       v-model:search="searchValue2"
       id="search-filter-display-text"
@@ -219,7 +219,7 @@ const removeSelected = (removeSelected) => {
       helper-text="This is helper text!!"
     />
 
-    <spr-filter
+    <mc-filter
       v-model="selectedOptions2"
       v-model:search="searchValue2"
       id="search-filter-error"
@@ -233,7 +233,7 @@ const removeSelected = (removeSelected) => {
 <script setup>
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
-import SprButton from '@/components/button/button.vue';
+import McButton from '@/components/button/button.vue';
 
 const options = ref([
   { column: '', isSelected: false, text: 'sample 1', value: 'sample1' },
@@ -309,7 +309,7 @@ const searchValue2 = ref('');
       <td><code>id</code></td>
       <td>Unique identifier for the filter component. Used for accessibility and DOM manipulation.</td>
       <td><code>String</code></td>
-      <td><code>'spr-filter'</code></td>
+      <td><code>'mc-filter'</code></td>
       <td>No</td>
     </tr>
     <tr>
@@ -478,9 +478,9 @@ const searchValue2 = ref('');
       <td><code>default</code></td>
       <td>Slot for customizing the filter input field. Replaces the default input component entirely.</td>
       <td>
-      <pre><code>&lt;spr-filter&gt;
+      <pre><code>&lt;mc-filter&gt;
   &lt;custom-input /&gt;
-&lt;/spr-filter&gt;</code></pre>
+&lt;/mc-filter&gt;</code></pre>
       </td>
     </tr>
     <tr>
@@ -535,7 +535,7 @@ The component supports infinite scrolling for both the main filter and the advan
    - Load additional data and append it to the `options` array.
 
 ```vue
-<spr-filter v-model="selectedOptions" :options="options" @infiniteScrollTrigger="loadMoreOptions" />
+<mc-filter v-model="selectedOptions" :options="options" @infiniteScrollTrigger="loadMoreOptions" />
 
 <script setup>
 const loadMoreOptions = () => {
@@ -551,7 +551,7 @@ const loadMoreOptions = () => {
    - Load additional data for that specific column.
 
 ```vue
-<spr-filter
+<mc-filter
   v-model="selectedOptions"
   :options="options"
   :filter-menu="filterMenu"
@@ -578,7 +578,7 @@ The Filter component supports integration with external search APIs for both the
 Enable the `hasSearchApi` prop to use an external API for filtering the main options. When enabled, the component doesn't filter options locally but relies on the external API to provide filtered results.
 
 ```vue
-<spr-filter
+<mc-filter
   v-model="selectedOptions"
   v-model:search="searchValue"
   :options="options"
@@ -599,7 +599,7 @@ const handleSearchChange = async (query) => {
 Enable the `hasAdvancedFilterApi` prop to use an external API for the advanced filter menu search. This works similarly to the main search API but for the advanced filter menu.
 
 ```vue
-<spr-filter
+<mc-filter
   v-model="selectedOptions"
   :filter-menu="filterMenu"
   :filter-data="filterData"
@@ -623,7 +623,7 @@ The Filter component can display avatars alongside filter options to provide vis
 Enable the `hasAvatar` prop to display avatars for filter options. Provide an `avatar` property in each option object:
 
 ```vue
-<spr-filter v-model="selectedOptions" :options="optionsWithAvatars" has-avatar />
+<mc-filter v-model="selectedOptions" :options="optionsWithAvatars" has-avatar />
 
 <script setup>
 const optionsWithAvatars = ref([
@@ -653,15 +653,15 @@ The Filter component allows for deselecting options from outside the component, 
 
 ```vue
 <template>
-  <div class="spr-flex spr-gap-2">
+  <div class="mc-flex mc-gap-2">
     <div v-for="selected in selectedOptions">
-      <spr-button @click="removeSelected(selected.value)">
+      <mc-button @click="removeSelected(selected.value)">
         {{ selected.text }}
         <Icon icon="ph:x" />
-      </spr-button>
+      </mc-button>
     </div>
   </div>
-  <spr-filter v-model="selectedOptions" :options="options" :deselected="deselectedOption" />
+  <mc-filter v-model="selectedOptions" :options="options" :deselected="deselectedOption" />
 </template>
 
 <script setup>
@@ -680,10 +680,9 @@ const removeSelected = (value) => {
 
 <script setup>
 import { ref } from 'vue';
-import SprFilter from '@/components/filter/filter.vue';
+import McFilter from '@/components/filter/filter.vue';
 import { Icon } from '@iconify/vue';
-import SprButton from "@/components/button/button.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McButton from "@/components/button/button.vue";
 
 const options = ref([
     { column: '', isSelected: false, text: 'sample 1', subtext: '', value: 'sample1' },

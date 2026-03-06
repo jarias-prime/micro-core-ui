@@ -29,7 +29,7 @@ export const useFileUpload = (props: FileUploadPropTypes, emit: SetupContext<Fil
     let filesToValidate: File[] = [];
 
     // For input file event
-    if(files instanceof Event) {
+    if (files instanceof Event) {
       const target = files.target as HTMLInputElement;
       const fileList = target.files;
       filesToValidate = fileList ? Array.from(fileList) : [];
@@ -56,23 +56,24 @@ export const useFileUpload = (props: FileUploadPropTypes, emit: SetupContext<Fil
 
     // Emit validation errors if any invalid files were found
     if (invalidFiles.length > 0) {
-      const errorMessage = invalidFiles.length === 1
-        ? `File "${invalidFiles[0]}" is not a supported file type.`
-        : `Files ${invalidFiles.map(name => `"${name}"`).join(', ')} are not supported file types.`;
-      
+      const errorMessage =
+        invalidFiles.length === 1
+          ? `File "${invalidFiles[0]}" is not a supported file type.`
+          : `Files ${invalidFiles.map((name) => `"${name}"`).join(', ')} are not supported file types.`;
+
       validationErrors.value = [errorMessage];
       emit('validation-error', validationErrors.value);
     } else {
       validationErrors.value = [];
       emit('validation-error', []);
     }
-  }
+  };
 
-  const onDropZoneOver = ( _files: File[] | null , event: DragEvent) => {
+  const onDropZoneOver = (_files: File[] | null, event: DragEvent) => {
     if (props.disabled) {
       event.dataTransfer!.dropEffect = 'none'; // Update the cursor to 'not-allowed' on drop over
     }
-  }
+  };
 
   const { isOverDropZone } = useDropZone(fileUploadRef, {
     onDrop: onFileChangeHandler,
@@ -80,60 +81,52 @@ export const useFileUpload = (props: FileUploadPropTypes, emit: SetupContext<Fil
     multiple: props.multiple,
     dataTypes: props.fileTypes,
     preventDefaultForUnhandled: false,
-  })
+  });
 
   const fileUploadClasses: ComputedRef<FileUploadClasses> = computed(() => {
-    const wrapperClasses = classNames(
-      'spr-rounded-border-radius-xl spr-mt-size-spacing-3xs spr-flex',
-      {
-        'spr-min-w-[56px] spr-py-size-spacing-2xs spr-px-size-spacing-xs': props.type !== 'center',
-        'spr-min-h-[160px] spr-p-size-spacing-xs spr-flex-col spr-justify-center spr-items-center': props.type === 'center',
-        'spr-border spr-border-solid spr-border-color-brand-base spr-background-color-single-active': isOverDropZone.value && !props.disabled,
-        'file-upload_wrapper': !isOverDropZone.value && !props.showError,
-        'file-upload_wrapper-error': !isOverDropZone.value && props.showError,
-        'spr-border-color-base spr-background-color-surface': !props.disabled && !props.showError,
-        'spr-border-color-danger-base spr-background-color-danger-weak': !props.disabled && props.showError,
-        'spr-border-color-disabled spr-background-color-disabled': props.disabled,
-        'spr-cursor-not-allowed file-upload_wrapper': props.disabled && isOverDropZone.value,
-      }
-    );
+    const wrapperClasses = classNames('mc-rounded-border-radius-xl mc-mt-size-spacing-3xs mc-flex', {
+      'mc-min-w-[56px] mc-py-size-spacing-2xs mc-px-size-spacing-xs': props.type !== 'center',
+      'mc-min-h-[160px] mc-p-size-spacing-xs mc-flex-col mc-justify-center mc-items-center': props.type === 'center',
+      'mc-border mc-border-solid mc-border-color-brand-base mc-background-color-single-active':
+        isOverDropZone.value && !props.disabled,
+      'file-upload_wrapper': !isOverDropZone.value && !props.showError,
+      'file-upload_wrapper-error': !isOverDropZone.value && props.showError,
+      'mc-border-color-base mc-background-color-surface': !props.disabled && !props.showError,
+      'mc-border-color-danger-base mc-background-color-danger-weak': !props.disabled && props.showError,
+      'mc-border-color-disabled mc-background-color-disabled': props.disabled,
+      'mc-cursor-not-allowed file-upload_wrapper': props.disabled && isOverDropZone.value,
+    });
 
-    const inputClasses = classNames(
-      'spr-flex spr-items-center spr-gap-size-spacing-3xs',
-      {
-        'spr-flex-auto ': props.type !== 'center',
-        'spr-mb-size-spacing-xs': props.type === 'center',
-        'spr-text-color-strong': !props.disabled,
-        'spr-text-color-disabled': props.disabled,
-      }
-    );
+    const inputClasses = classNames('mc-flex mc-items-center mc-gap-size-spacing-3xs', {
+      'mc-flex-auto ': props.type !== 'center',
+      'mc-mb-size-spacing-xs': props.type === 'center',
+      'mc-text-color-strong': !props.disabled,
+      'mc-text-color-disabled': props.disabled,
+    });
 
-    const sublabelClasses = classNames(
-      'spr-grid spr-content-center spr-body-xs-regular',
-      {
-        'spr-w-fit ': props.type !== 'center',
-        'spr-text-color-base': !props.disabled,
-        'spr-text-color-disabled': props.disabled,
-      }
-    );
+    const sublabelClasses = classNames('mc-grid mc-content-center mc-body-xs-regular', {
+      'mc-w-fit ': props.type !== 'center',
+      'mc-text-color-base': !props.disabled,
+      'mc-text-color-disabled': props.disabled,
+    });
 
     const fileListClasses = classNames(
-      'spr-rounded-border-radius-xl',
-      'spr-border spr-border-solid spr-border-color-weak spr-background-color',
-      'spr-mt-size-spacing-3xs spr-px-size-spacing-xs spr-py-size-spacing-2xs',
-      'spr-flex spr-flex-col spr-gap-size-spacing-xs',
+      'mc-rounded-border-radius-xl',
+      'mc-border mc-border-solid mc-border-color-weak mc-background-color',
+      'mc-mt-size-spacing-3xs mc-px-size-spacing-xs mc-py-size-spacing-2xs',
+      'mc-flex mc-flex-col mc-gap-size-spacing-xs',
       {
-        'spr-min-h-[160px] spr-justify-center': props.type === 'center',
-        'spr-text-color-strong': !props.disabled,
-        'spr-text-color-disabled': props.disabled,
-      }
+        'mc-min-h-[160px] mc-justify-center': props.type === 'center',
+        'mc-text-color-strong': !props.disabled,
+        'mc-text-color-disabled': props.disabled,
+      },
     );
 
-    return { 
-      wrapperClasses, 
-      inputClasses, 
+    return {
+      wrapperClasses,
+      inputClasses,
       sublabelClasses,
-      fileListClasses
+      fileListClasses,
     };
   });
 
@@ -157,35 +150,35 @@ export const useFileUpload = (props: FileUploadPropTypes, emit: SetupContext<Fil
     tempFileIndex.value = fileIndex;
   };
 
-  const replaceFile = (event: Event,) => {
+  const replaceFile = (event: Event) => {
     const target = event.target as HTMLInputElement;
     if (!target.files || target.files.length <= 0) return;
     if (tempFileIndex.value === null) return;
 
     fileArray.value[tempFileIndex.value] = target.files[0];
     tempFileIndex.value = null;
-  }
+  };
 
   // Sublabel for supported file types
   const supportedFileTypeLabel = computed(() => {
-    if (props.supportedFileTypeLabel) return props.supportedFileTypeLabel
-    if (!props.fileTypes) return "";
-  
+    if (props.supportedFileTypeLabel) return props.supportedFileTypeLabel;
+    if (!props.fileTypes) return '';
+
     const parsedFileTypes = props.fileTypes.map((fileType) => {
       switch (fileType) {
         case 'application/msword':
-          return "MS WORD";
+          return 'MS WORD';
         case 'application/vnd.ms-excel':
-          return "MS EXCEL";
+          return 'MS EXCEL';
         case 'application/vnd.ms-powerpoint':
-          return "MS PPT";
+          return 'MS PPT';
         case 'text/plain':
-          return "TXT";
+          return 'TXT';
         case 'image/svg+xml':
-          return "SVG";
+          return 'SVG';
         default:
           return fileType.split('/')[1].toUpperCase();
-      };
+      }
     });
 
     return parsedFileTypes.join(', ');
@@ -211,7 +204,7 @@ export const useFileUpload = (props: FileUploadPropTypes, emit: SetupContext<Fil
       'image/heif': 'ph:file-heif-fill',
       'image/heif-sequence': 'ph:file-heif-sequence-fill',
       'image/heic-sequence': 'ph:file-heic-sequence-fill',
-    }
+    };
   });
 
   return {
@@ -226,6 +219,6 @@ export const useFileUpload = (props: FileUploadPropTypes, emit: SetupContext<Fil
     replaceFile,
     supportedFileTypeLabel,
     iconMap,
-    validationErrors
+    validationErrors,
   };
 };

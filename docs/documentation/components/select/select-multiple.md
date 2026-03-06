@@ -10,8 +10,8 @@ The Multi Select component allows users to select multiple options from a select
 
 ## Basic Usage
 
-<div class="spr-grid spr-gap-4">
-  <spr-select-multiple
+<div class="mc-grid mc-gap-4">
+  <mc-select-multiple
     id="select-multiple-basic"
     v-model="multiSelectModel.multiSelectBasic"
     label="Multi-Select Label"
@@ -19,14 +19,14 @@ The Multi Select component allows users to select multiple options from a select
     :options="options"
   />
 
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ multiSelectModel.multiSelectBasic }}
   </code>
 </div>
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-basic"
     v-model="multiSelectBasic"
     label="Multi-Select Label"
@@ -57,8 +57,8 @@ The Multi Select component allows users to select multiple options from a select
 
 ## Chipped
 
-<div class="spr-grid spr-gap-4">
-  <spr-select-multiple
+<div class="mc-grid mc-gap-4">
+  <mc-select-multiple
     id="select-multiple-chipped"
     v-model="multiSelectModel.multiSelectChipped"
     label="Multi-Select Label"
@@ -67,14 +67,14 @@ The Multi Select component allows users to select multiple options from a select
     chipped
   />
 
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ multiSelectModel.multiSelectChipped }}
   </code>
 </div>
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-chipped"
     v-model="multiSelectChipped"
     label="Multi-Select Label"
@@ -88,8 +88,8 @@ The Multi Select component allows users to select multiple options from a select
 
 You can group items by `default`, `A-Z` or `Z-A` order by passing the `group-items-by` prop and specifying the desired grouping type.
 
-<div class="spr-grid spr-gap-4">
-  <spr-select-multiple
+<div class="mc-grid mc-gap-4">
+  <mc-select-multiple
     id="select-multiple-grouped-items-by"
     v-model="multiSelectModel.multiSelectGroupedItemsBy"
     label="Multi-Select Label"
@@ -101,8 +101,8 @@ You can group items by `default`, `A-Z` or `Z-A` order by passing the `group-ite
 
 ```vue
 <template>
-  <div class="spr-grid spr-gap-4">
-    <spr-select-multiple
+  <div class="mc-grid mc-gap-4">
+    <mc-select-multiple
       id="select-multiple-grouped-items-by"
       v-model="multiSelectGroupedItemsBy"
       label="Multi-Select Label"
@@ -137,8 +137,8 @@ const options = ref([
 
 Pre-selected items are options that are automatically selected when the select is first displayed. For multi-select, the `v-model` should be an array of values (strings, numbers, or objects) that match the `value` field of your options.
 
-<div class="spr-grid spr-gap-4">
-  <spr-select-multiple
+<div class="mc-grid mc-gap-4">
+  <mc-select-multiple
     id="select-multiple-preselected-items"
     v-model="multiSelectModel.multiSelectPreSelectedItems"
     label="Select Fruits"
@@ -149,14 +149,14 @@ Pre-selected items are options that are automatically selected when the select i
     value-field="value"
   />
   
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ multiSelectModel.multiSelectPreSelectedItems ? multiSelectModel.multiSelectPreSelectedItems : `[]` }}
   </code>
 </div>
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-preselected-items"
     v-model="multiSelectPreSelectedItems"
     label="Select Fruits"
@@ -224,8 +224,8 @@ The search feature allows users to quickly filter and find specific items within
 
 - Use the `searchable-options` prop to enable the search input within the select component.
 
-<div class="spr-grid spr-gap-4">
-  <spr-select-multiple
+<div class="mc-grid mc-gap-4">
+  <mc-select-multiple
     id="select-multiple-search"
     v-model="multiSelectModel.multiSelectSearch"
     label="Select Label"
@@ -234,14 +234,14 @@ The search feature allows users to quickly filter and find specific items within
     searchable
   />
 
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ multiSelectModel.multiSelectSearch ? multiSelectModel.multiSelectSearch : `[]` }}
   </code>
 </div>
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-search"
     v-model="multiSelectModel"
     label="Select Label"
@@ -276,8 +276,8 @@ You can disable local search by passing the `disabled-local-search` prop. This i
 
 Use `@searchString` emit to get the search string when the user types in the search input. This allows you to handle the search logic externally, such as fetching options from an API based on the search query.
 
-<div class="spr-grid spr-gap-4">
-  <spr-select-multiple
+<div class="mc-grid mc-gap-4">
+  <mc-select-multiple
     id="select-multiple-search-disabled-local-search"
     v-model="multiSelectModel.multiSelectSearchDisabledLocalSearch"
     label="Select Label"
@@ -287,14 +287,14 @@ Use `@searchString` emit to get the search string when the user types in the sea
     disabled-local-search
   />
   
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ multiSelectModel.multiSelectSearchDisabledLocalSearch ? multiSelectModel.multiSelectSearchDisabledLocalSearch : `[]` }}
   </code>
 </div>
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-search-disabled-local-search"
     v-model="multiSelectModel"
     label="Select Label"
@@ -330,8 +330,8 @@ You can disable local search by passing the `disabled-local-search` prop. This i
 
 Use `@searchString` emit to get the search string when the user types in the search input. This allows you to handle the search logic externally, such as fetching options from an API based on the search query.
 
-<div class="spr-grid spr-gap-4">
-  <spr-select-multiple
+<div class="mc-grid mc-gap-4">
+  <mc-select-multiple
     id="select-multiple-search-disabled-local-search"
     v-model="multiSelectModel.multiSelectSearchDisabledLocalSearch"
     label="Select Label"
@@ -341,14 +341,14 @@ Use `@searchString` emit to get the search string when the user types in the sea
     disabled-local-search
   />
   
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ multiSelectModel.multiSelectSearchDisabledLocalSearch ? multiSelectModel.multiSelectSearchDisabledLocalSearch : `""` }}
   </code>
 </div>
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-search-disabled-local-search"
     v-model="multiSelectModel"
     label="Select Label"
@@ -388,9 +388,9 @@ The available placement options are: `auto`, `auto-start`, `auto-end`, `top`, `t
 
 The default placement is `bottom`.
 
-<div class="spr-grid spr-gap-4">
-  <div class="spr-flex spr-gap-4">
-    <spr-select-multiple
+<div class="mc-grid mc-gap-4">
+  <div class="mc-flex mc-gap-4">
+    <mc-select-multiple
       id="select-multiple-placement-auto"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Auto"
@@ -399,7 +399,7 @@ The default placement is `bottom`.
       placement="auto"
       popper-width="200px"
     />
-    <spr-select-multiple
+    <mc-select-multiple
       id="select-multiple-placement-auto-start"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Auto Start"
@@ -408,7 +408,7 @@ The default placement is `bottom`.
       placement="auto-start"
       popper-width="200px"
     />
-    <spr-select-multiple
+    <mc-select-multiple
       id="select-multiple-placement-auto-end"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Auto End"
@@ -418,8 +418,8 @@ The default placement is `bottom`.
       popper-width="200px"
     />
   </div>
-  <div class="spr-flex spr-gap-4">
-    <spr-select-multiple
+  <div class="mc-flex mc-gap-4">
+    <mc-select-multiple
       id="select-multiple-placement-top"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Top"
@@ -428,7 +428,7 @@ The default placement is `bottom`.
       placement="top"
       popper-width="200px"
     />
-    <spr-select-multiple
+    <mc-select-multiple
       id="select-multiple-placement-top-start"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Top Start"
@@ -437,7 +437,7 @@ The default placement is `bottom`.
       placement="top-start"
       popper-width="200px"
     />
-    <spr-select-multiple
+    <mc-select-multiple
       id="select-multiple-placement-top-end"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Top End"
@@ -447,8 +447,8 @@ The default placement is `bottom`.
       popper-width="200px"
     />
   </div>
-  <div class="spr-flex spr-gap-4">
-    <spr-select-multiple
+  <div class="mc-flex mc-gap-4">
+    <mc-select-multiple
       id="select-multiple-placement-right"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Right"
@@ -457,7 +457,7 @@ The default placement is `bottom`.
       placement="right"
       popper-width="200px"
     />
-    <spr-select-multiple
+    <mc-select-multiple
       id="select-multiple-placement-right-start"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Right Start"
@@ -466,7 +466,7 @@ The default placement is `bottom`.
       placement="right-start"
       popper-width="200px"
     />
-    <spr-select-multiple
+    <mc-select-multiple
       id="select-multiple-placement-right-end"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Right End"
@@ -476,8 +476,8 @@ The default placement is `bottom`.
       popper-width="200px"
     />
   </div>
-  <div class="spr-flex spr-gap-4">
-    <spr-select-multiple
+  <div class="mc-flex mc-gap-4">
+    <mc-select-multiple
       id="select-multiple-placement-bottom"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Bottom"
@@ -486,7 +486,7 @@ The default placement is `bottom`.
       placement="bottom"
       popper-width="200px"
     />
-    <spr-select-multiple
+    <mc-select-multiple
       id="select-multiple-placement-bottom-start"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Bottom Start"
@@ -495,7 +495,7 @@ The default placement is `bottom`.
       placement="bottom-start"
       popper-width="200px"
     />
-    <spr-select-multiple
+    <mc-select-multiple
       id="select-multiple-placement-bottom-end"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Bottom End"
@@ -505,8 +505,8 @@ The default placement is `bottom`.
       popper-width="200px"
     />
   </div>
-  <div class="spr-flex spr-gap-4">
-    <spr-select-multiple
+  <div class="mc-flex mc-gap-4">
+    <mc-select-multiple
       id="select-multiple-placement-left"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Left"
@@ -515,7 +515,7 @@ The default placement is `bottom`.
       placement="left"
       popper-width="200px"
     />
-    <spr-select-multiple
+    <mc-select-multiple
       id="select-multiple-placement-left-start"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Left Start"
@@ -524,7 +524,7 @@ The default placement is `bottom`.
       placement="left-start"
       popper-width="200px"
     />
-    <spr-select-multiple
+    <mc-select-multiple
       id="select-multiple-placement-left-end"
       v-model="multiSelectModel.multiSelectPlacement"
       label="Left End"
@@ -540,8 +540,8 @@ The default placement is `bottom`.
 
 The clearable feature allows users to easily remove the selected value from the select input. This is particularly useful for forms where users may want to reset their selection without having to open the select.
 
-<div class="spr-grid spr-gap-4">
-  <spr-select-multiple
+<div class="mc-grid mc-gap-4">
+  <mc-select-multiple
     id="select-multiple-clearable"
     v-model="multiSelectModel.multiSelectClearable"
     label="Multi-Select Label"
@@ -550,7 +550,7 @@ The clearable feature allows users to easily remove the selected value from the 
     clearable
   />
 
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ multiSelectModel.multiSelectClearable ? multiSelectModel.multiSelectClearable : `""` }}
   </code>
 </div>
@@ -564,7 +564,7 @@ You can modify the width of the select component in two ways: by adjusting the w
 `Popper Width` - Width of only popper element
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-width"
     v-model="multiSelectModel.multiSelectWidth"
     label="Multi-Select Label"
@@ -577,7 +577,7 @@ You can modify the width of the select component in two ways: by adjusting the w
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-width"
     v-model="multiSelectModel"
     label="Multi-Select Label"
@@ -601,10 +601,10 @@ Pass the prop `popper-strategy` to change the behavior position of the popper.
 Do not forget to pass prop `wrapperPosition` to overwrite `relative` position into `initial`.
 :::
 
-<spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+<mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-<spr-modal v-model="modalModel" title="Select with Modal">
-   <spr-select-multiple
+<mc-modal v-model="modalModel" title="Select with Modal">
+   <mc-select-multiple
     id="select-multiple-popper-strategy"
     v-model="multiSelectModel.multiSelectStrategy"
     label="Multi-Select Label"
@@ -616,14 +616,14 @@ Do not forget to pass prop `wrapperPosition` to overwrite `relative` position in
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </p>
-</spr-modal>
+</mc-modal>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel" title="Select with Modal">
-    <spr-select-multiple
+  <mc-modal v-model="modalModel" title="Select with Modal">
+    <mc-select-multiple
       id="select-multiple-popper-strategy"
       v-model="multiSelectModel"
       label="Multi-Select Label"
@@ -637,7 +637,7 @@ Do not forget to pass prop `wrapperPosition` to overwrite `relative` position in
       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
     </p>
-  </spr-modal>
+  </mc-modal>
 </template>
 ```
 
@@ -646,7 +646,7 @@ You can also use the `popper-container` prop to specify a custom container for t
 Since the popper is being teleported to a different container, the `popper-width` prop will not work as expected. To set a custom width for the popper in this case, you can use custom styles or CSS classes to define the desired width.
 
 <div>
-  <spr-dropdown
+  <mc-dropdown
     id="dropdown-custom-popper"
     width="300px"
     :triggers="['hover', 'click']"
@@ -654,12 +654,12 @@ Since the popper is being teleported to a different container, the `popper-width
     popper-width="500px"
     :auto-hide="false"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Custom Popper With Dropdown</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
+    </mc-button>
     <template #popper>
-      <spr-select-multiple
+      <mc-select-multiple
         id="select-multiple-dropdown-custom-popper"
         v-model="multiSelectModel.multiSelectStrategy"
         label="Select Label"
@@ -671,12 +671,12 @@ Since the popper is being teleported to a different container, the `popper-width
         placement="bottom"
       />
     </template>
-  </spr-dropdown>
+  </mc-dropdown>
 </div>
 
 ```vue
 <template>
-  <spr-dropdown
+  <mc-dropdown
     id="dropdown-custom-popper"
     width="300px"
     :triggers="['hover', 'click']"
@@ -684,12 +684,12 @@ Since the popper is being teleported to a different container, the `popper-width
     popper-width="500px"
     :auto-hide="false"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Custom Popper With Dropdown</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
+    </mc-button>
     <template #popper>
-      <spr-select-multiple
+      <mc-select-multiple
         id="select-multiple-dropdown-custom-popper"
         v-model="multiSelectModel"
         label="Multi-Select Label"
@@ -701,7 +701,7 @@ Since the popper is being teleported to a different container, the `popper-width
         placement="bottom"
       />
     </template>
-  </spr-dropdown>
+  </mc-dropdown>
 </template>
 ```
 
@@ -712,7 +712,7 @@ For guidance on implementing error, active, and disabled states in the select co
 ### Active State
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-active-state"
     v-model="multiSelectModel.multiSelectActiveState"
     label="Select Label"
@@ -724,7 +724,7 @@ For guidance on implementing error, active, and disabled states in the select co
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-active-state"
     v-model="multiSelectModel"
     label="Select Label"
@@ -738,7 +738,7 @@ For guidance on implementing error, active, and disabled states in the select co
 ### Disabled State
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-disabled-state"
     v-model="multiSelectModel.multiSelectDisabledState"
     label="Select Label"
@@ -750,7 +750,7 @@ For guidance on implementing error, active, and disabled states in the select co
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-disabled-state"
     v-model="multiSelectModel"
     label="Select Label"
@@ -764,7 +764,7 @@ For guidance on implementing error, active, and disabled states in the select co
 ### Error State
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-error-state"
     v-model="multiSelectModel.multiSelectErrorState"
     label="Select Label"
@@ -776,7 +776,7 @@ For guidance on implementing error, active, and disabled states in the select co
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-error-state"
     v-model="multiSelectModel"
     label="Select Label"
@@ -792,7 +792,7 @@ For guidance on implementing error, active, and disabled states in the select co
 By default, when multiple items are selected in the component, the selected items are displayed as text or chips within the input field. However, you can choose to display only the count of selected items instead of showing each selected item individually.
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-display-selected-count-only"
     v-model="multiSelectModel.multiSelectDisplaySelectedCountOnly"
     label="Select Label"
@@ -804,7 +804,7 @@ By default, when multiple items are selected in the component, the selected item
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-display-selected-count-only"
     v-model="multiSelectModel"
     label="Select Label"
@@ -820,7 +820,7 @@ By default, when multiple items are selected in the component, the selected item
 The display list item selected feature allows you to visually indicate which items have been selected in the dropdown list. This can enhance the user experience by providing clear feedback on their selections. To enable this feature, use the `display-list-item-selected` prop.
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-display-list-item-selected"
     v-model="multiSelectModel.multiSelectDisplayListItemSelected"
     label="Select Label"
@@ -833,7 +833,7 @@ The display list item selected feature allows you to visually indicate which ite
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-display-list-item-selected"
     v-model="multiSelectModel"
     label="Select Label"
@@ -870,7 +870,7 @@ When using multi-select with the `allow-select-all` prop enabled, a "Select All"
 - **Prop Controlled**: Only appears when `allow-select-all` is enabled
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-allow-select-all"
     v-model="multiSelectModel.multiSelectAllowSelectAll"
     label="Select Multiple with Select All"
@@ -884,7 +884,7 @@ When using multi-select with the `allow-select-all` prop enabled, a "Select All"
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-allow-select-all"
     v-model="selectedItems"
     label="Select Multiple with Select All"
@@ -922,8 +922,8 @@ A helper message is a text label below the input field that provides additional 
 
 To display the helper message, set the `display-helper` prop to `true` and add the `helper-text` prop with the helper message text. You can also insert an icon with the `helper-icon` prop. This uses the [Iconify](https://icon-sets.iconify.design/) icon library.
 
-<div class="spr-grid spr-gap-8">
-  <spr-select-multiple
+<div class="mc-grid mc-gap-8">
+  <mc-select-multiple
     id="select-multiple-helper-message"
     v-model="multiSelectModel.multiSelectHelperMessage"
     label="Select Label"
@@ -932,7 +932,7 @@ To display the helper message, set the `display-helper` prop to `true` and add t
     helper-text="This is a helper message"
     display-helper
   />
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-helper-message-error"
     v-model="multiSelectModel.multiSelectHelperMessage"
     label="Select Label"
@@ -947,7 +947,7 @@ To display the helper message, set the `display-helper` prop to `true` and add t
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-helper-message"
     v-model="multiSelectModel"
     label="Select Label"
@@ -957,7 +957,7 @@ To display the helper message, set the `display-helper` prop to `true` and add t
     display-helper
   />
 
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-helper-message-error"
     v-model="multiSelectModel"
     label="Select Label"
@@ -973,8 +973,8 @@ To display the helper message, set the `display-helper` prop to `true` and add t
 
 Alternatively, you can use the `helperMessage` slot to display a custom helper message.
 
-<div class="spr-grid spr-gap-8">
-  <spr-select-multiple
+<div class="mc-grid mc-gap-8">
+  <mc-select-multiple
     id="select-multiple-helper-message-slot"
     v-model="multiSelectModel.multiSelectHelperMessage"
     label="Select Label"
@@ -983,8 +983,8 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
     display-helper
   >
     <template #helperMessage>This is a helper message</template>
-  </spr-select-multiple>
-  <spr-select-multiple
+  </mc-select-multiple>
+  <mc-select-multiple
     id="select-multiple-helper-message-slot-error"
     v-model="multiSelectModel.multiSelectHelperMessage"
     label="Select Label"
@@ -997,12 +997,12 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
       <icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is an error message</span>
     </template>
-  </spr-select-multiple>
+  </mc-select-multiple>
 </div>
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-helper-message-slot"
     v-model="multiSelectModel"
     label="Select Label"
@@ -1011,9 +1011,9 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
     display-helper
   >
     <template #helperMessage>This is a helper message</template>
-  </spr-select-multiple>
+  </mc-select-multiple>
 
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-helper-message-slot-error"
     v-model="multiSelectModel"
     label="Select Label"
@@ -1026,19 +1026,19 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
       <icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is an error message</span>
     </template>
-  </spr-select-multiple>
+  </mc-select-multiple>
 </template>
 ```
 
 ## Supported Value Types
 
-The `spr-select-multiple` component supports multiple value types for selection. **For multi-select, always use an array for `v-model`**, regardless of whether your values are strings, numbers, or objects. The component normalizes single values to an array internally, but it is best practice to use an array from the start.
+The `mc-select-multiple` component supports multiple value types for selection. **For multi-select, always use an array for `v-model`**, regardless of whether your values are strings, numbers, or objects. The component normalizes single values to an array internally, but it is best practice to use an array from the start.
 
 ### Multiple String Values
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-string"
     v-model="stringValues"
     label="Select Fruits"
@@ -1064,7 +1064,7 @@ const stringOptions = ref([
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-number"
     v-model="numberValues"
     label="Select Numbers"
@@ -1090,7 +1090,7 @@ const numberOptions = ref([
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-object"
     v-model="selectedUsers"
     label="Select Users"
@@ -1122,7 +1122,7 @@ const userList = ref([
 The avatar variant feature allows you to display an avatar image alongside the text of each option in the select list. This can help users quickly identify options based on visual cues. Use the `avatar-variant` and `avatar-source` props to specify the avatar type and source URL.
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-item-icon"
     v-model="multiSelectModel.multiSelectItemIcon"
     label="Select Label"
@@ -1135,7 +1135,7 @@ The avatar variant feature allows you to display an avatar image alongside the t
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-item-icon"
     v-model="multiSelectModel.multiSelectItemIcon"
     label="Select Label"
@@ -1166,7 +1166,7 @@ const options = ref([
 The item subtext feature allows you to display additional information below the main text of each option in the select list. This can be useful for providing context or details about each option. Use the `subtext` props in the options array to specify the subtext for each option.
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-item-subtext"
     v-model="multiSelectModel.multiSelectItemSubtext"
     label="Select Label"
@@ -1177,7 +1177,7 @@ The item subtext feature allows you to display additional information below the 
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-item-subtext"
     v-model="multiSelectModel"
     label="Select Label"
@@ -1208,7 +1208,7 @@ The item icon feature allows you to display an icon alongside the text of each o
 Icon uses phosphor icons from [Iconify](https://icon-sets.iconify.design/)
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-item-icon"
     v-model="multiSelectModel.multiSelectItemIcon"
     label="Select Label"
@@ -1220,7 +1220,7 @@ Icon uses phosphor icons from [Iconify](https://icon-sets.iconify.design/)
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-item-icon"
     v-model="multiSelectModel"
     label="Select Label"
@@ -1250,7 +1250,7 @@ const options = ref([
 The item custom icon feature allows you to display different icons for each option in the select list. This is useful for providing unique visual representations for each option. Add property `icon` in the options array to specify the custom icon for each option.
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-item-custom-icon"
     v-model="multiSelectModel.multiSelectItemCustomIcon"
     label="Select Label"
@@ -1261,7 +1261,7 @@ The item custom icon feature allows you to display different icons for each opti
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-item-custom-icon"
     v-model="multiSelectModel"
     label="Select Label"
@@ -1308,7 +1308,7 @@ Lozenge Properties Reference:
 Add property `lozenge` to display the selected item as a lozenge in the select input. Then if you want to change the lozenge style for each option, you can use `lozengeProps` to customize the lozenge appearance.
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-display-item-lozenge"
     v-model="multiSelectModel.multiSelectItemLozenge"
     label="Select Label"
@@ -1320,7 +1320,7 @@ Add property `lozenge` to display the selected item as a lozenge in the select i
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-display-item-lozenge"
     v-model="multiSelectModel"
     label="Select Label"
@@ -1350,7 +1350,7 @@ const options = ref([
 Add property `lozenge` in the options array to specify the lozenge for each option.
 
 <div>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-item-lozenge"
     v-model="multiSelectModel.multiSelectItemLozengeAppend"
     label="Select Label"
@@ -1361,7 +1361,7 @@ Add property `lozenge` in the options array to specify the lozenge for each opti
 
 ```vue
 <template>
-  <spr-select-multiple
+  <mc-select-multiple
     id="select-multiple-item-lozenge"
     v-model="multiSelectModel"
     label="Select Label"
@@ -1704,7 +1704,7 @@ const optionsWithLozenge = ref([
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Method</th>
+      <th class="mc-min-w-[180px]">Method</th>
       <th>Description</th>
       <th>Parameters</th>
     </tr>
@@ -1735,14 +1735,13 @@ import { useDebounceFn } from '@vueuse/core';
 
 import { Icon } from '@iconify/vue';
 
-import SprSelectMultiple from "@/components/select/select-multiple/select-multiple.vue";
-import SprInput from "@/components/input/input.vue";
-import SprButton from "@/components/button/button.vue";
-import SprChips from "@/components/chips/chips.vue";
-import SprLozenge from "@/components/lozenge/lozenge.vue"
-import SprModal from "@/components/modal/modal.vue"
-import SprLogo from "@/components/logo/logo.vue";
-import SprDropdown from "@/components/dropdown/dropdown.vue";
+import McSelectMultiple from "@/components/select/select-multiple/select-multiple.vue";
+import McInput from "@/components/input/input.vue";
+import McButton from "@/components/button/button.vue";
+import McChips from "@/components/chips/chips.vue";
+import McLozenge from "@/components/lozenge/lozenge.vue"
+import McModal from "@/components/modal/modal.vue"
+import McDropdown from "@/components/dropdown/dropdown.vue";
 
 // Import MenuListType for typing
 import type { MenuListType } from '@/components/list/list';

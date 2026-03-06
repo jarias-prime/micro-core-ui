@@ -12,77 +12,77 @@ The Dropdown component provides a flexible way to display a menu of options when
 
 The Dropdown component can be used with various trigger elements, such as buttons, chips, or lozenges. The content inside the dropdown slot becomes the trigger element that opens the dropdown menu when clicked.
 
-<div class="spr-flex spr-items-center spr-gap-4">
-  <spr-dropdown 
+<div class="mc-flex mc-items-center mc-gap-4">
+  <mc-dropdown 
     id="sample-dropdownBasic1" 
     v-model="dropdownModel.dropdownBasic1" 
     :menu-list="menuList" 
     width="100px" 
     popper-width="200px" 
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Button</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
-  </spr-dropdown>
-  <spr-dropdown 
+    </mc-button>
+  </mc-dropdown>
+  <mc-dropdown 
     id="sample-dropdownBasic2" 
     v-model="dropdownModel.dropdownBasic2" 
     :menu-list="menuList" 
     width="100px" 
     popper-width="200px" 
   >
-    <spr-chips class="spr-w-full" label="Chips" />
-  </spr-dropdown>
-  <spr-dropdown 
+    <mc-chips class="mc-w-full" label="Chips" />
+  </mc-dropdown>
+  <mc-dropdown 
     id="sample-dropdownBasic3" 
     v-model="dropdownModel.dropdownBasic3" 
     :menu-list="menuList" 
     width="100px" 
     popper-width="200px" 
   >
-    <spr-lozenge class="spr-w-full" label="Lozange" />
-  </spr-dropdown>
+    <mc-lozenge class="mc-w-full" label="Lozange" />
+  </mc-dropdown>
 </div>
 
 ```vue
 <template>
-  <div class="spr-flex spr-items-center spr-gap-4">
+  <div class="mc-flex mc-items-center mc-gap-4">
     <!-- Button trigger dropdown -->
-    <spr-dropdown
+    <mc-dropdown
       id="sample-dropdownBasic1"
       v-model="dropdownModel.dropdownBasic1"
       :menu-list="menuList"
       width="100px"
       popper-width="200px"
     >
-      <spr-button class="spr-w-full" tone="success" has-icon>
+      <mc-button class="mc-w-full" tone="success" has-icon>
         <span>Button</span>
         <Icon icon="ph:caret-down" />
-      </spr-button>
-    </spr-dropdown>
+      </mc-button>
+    </mc-dropdown>
 
     <!-- Chips trigger dropdown -->
-    <spr-dropdown
+    <mc-dropdown
       id="sample-dropdownBasic2"
       v-model="dropdownModel.dropdownBasic2"
       :menu-list="menuList"
       width="100px"
       popper-width="200px"
     >
-      <spr-chips class="spr-w-full" label="Chips" />
-    </spr-dropdown>
+      <mc-chips class="mc-w-full" label="Chips" />
+    </mc-dropdown>
 
     <!-- Lozenge trigger dropdown -->
-    <spr-dropdown
+    <mc-dropdown
       id="sample-dropdownBasic3"
       v-model="dropdownModel.dropdownBasic3"
       :menu-list="menuList"
       width="100px"
       popper-width="200px"
     >
-      <spr-lozenge class="spr-w-full" label="Lozange" />
-    </spr-dropdown>
+      <mc-lozenge class="mc-w-full" label="Lozange" />
+    </mc-dropdown>
   </div>
 </template>
 
@@ -116,64 +116,64 @@ Available placement options:
 - `bottom`, `bottom-start`, `bottom-end` - Position below the trigger (default)
 - `left`, `left-start`, `left-end` - Position to the left of the trigger
 
-<div class="spr-grid spr-gap-4">
-  <div class="spr-flex spr-gap-4">
-    <spr-dropdown
+<div class="mc-grid mc-gap-4">
+  <div class="mc-flex mc-gap-4">
+    <mc-dropdown
       id="sample-dropdownPlacements0"
       v-model="dropdownModel.dropdownPlacements0"
       :menu-list="menuList"
       placement="auto"
       popper-width="200px"
     >
-      <spr-button class="spr-w-full" tone="success" has-icon>
+      <mc-button class="mc-w-full" tone="success" has-icon>
         <span>Auto</span>
         <Icon icon="ph:caret-down" />
-      </spr-button>
-    </spr-dropdown>
-    <spr-dropdown
+      </mc-button>
+    </mc-dropdown>
+    <mc-dropdown
       id="sample-dropdownPlacements1"
       v-model="dropdownModel.dropdownPlacements1"
       :menu-list="menuList"
       placement="auto-start"
       popper-width="200px"
     >
-      <spr-button class="spr-w-full" tone="success" has-icon>
+      <mc-button class="mc-w-full" tone="success" has-icon>
         <span>Auto Start</span>
         <Icon icon="ph:caret-down" />
-      </spr-button>
-    </spr-dropdown>
-    <spr-dropdown
+      </mc-button>
+    </mc-dropdown>
+    <mc-dropdown
       id="sample-dropdownPlacements2"
       v-model="dropdownModel.dropdownPlacements2"
       :menu-list="menuList"
       placement="auto-end"
       popper-width="200px"
     >
-      <spr-button class="spr-w-full" tone="success" has-icon>
+      <mc-button class="mc-w-full" tone="success" has-icon>
         <span>Auto End</span>
         <Icon icon="ph:caret-down" />
-      </spr-button>
-    </spr-dropdown>
+      </mc-button>
+    </mc-dropdown>
   </div>
 </div>
 
 ```vue
 <template>
   <!-- Auto placement -->
-  <spr-dropdown id="dropdown-auto" v-model="selectedValue" :menu-list="menuList" placement="auto" popper-width="200px">
-    <spr-button class="spr-w-full" tone="success" has-icon>
+  <mc-dropdown id="dropdown-auto" v-model="selectedValue" :menu-list="menuList" placement="auto" popper-width="200px">
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Auto</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
-  </spr-dropdown>
+    </mc-button>
+  </mc-dropdown>
 
   <!-- Top placement -->
-  <spr-dropdown id="dropdown-top" v-model="selectedValue" :menu-list="menuList" placement="top" popper-width="200px">
-    <spr-button class="spr-w-full" tone="success" has-icon>
+  <mc-dropdown id="dropdown-top" v-model="selectedValue" :menu-list="menuList" placement="top" popper-width="200px">
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Top</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
-  </spr-dropdown>
+    </mc-button>
+  </mc-dropdown>
 </template>
 ```
 
@@ -185,34 +185,28 @@ The Dropdown component provides two ways to control the sizing:
 - `popper-width`: Controls the width of just the dropdown menu that appears when clicked
 
 <div>
-  <spr-dropdown
+  <mc-dropdown
     id="sample-dropdownWidth"
     v-model="dropdownModel.dropdownWidth"
     :menu-list="menuList"
     width="50%"
     popper-width="500px"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Button</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
-  </spr-dropdown>
+    </mc-button>
+  </mc-dropdown>
 </div>
 
 ```vue
 <template>
-  <spr-dropdown
-    id="sample-dropdownWidth"
-    v-model="dropdownWidth"
-    :menu-list="menuList"
-    width="50%"
-    popper-width="500px"
-  >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+  <mc-dropdown id="sample-dropdownWidth" v-model="dropdownWidth" :menu-list="menuList" width="50%" popper-width="500px">
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Button</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
-  </spr-dropdown>
+    </mc-button>
+  </mc-dropdown>
 </template>
 ```
 
@@ -223,10 +217,10 @@ When using dropdowns inside positioned elements like modals or fixed panels, you
 - `absolute` (default): Positions the dropdown relative to its nearest positioned ancestor
 - `fixed`: Positions the dropdown relative to the viewport, ignoring parent element positioning
 
-<spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+<mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-<spr-modal v-model="modalModel" title="Dropdown with Modal">
-  <spr-dropdown
+<mc-modal v-model="modalModel" title="Dropdown with Modal">
+  <mc-dropdown
     id="sample-dropdownStrategy"
     v-model="dropdownModel.dropdownStrategy"
     :menu-list="menuList"
@@ -234,22 +228,22 @@ When using dropdowns inside positioned elements like modals or fixed panels, you
     popper-strategy="fixed"
     width="100px"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Button</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
-  </spr-dropdown>
+    </mc-button>
+  </mc-dropdown>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </p>
-</spr-modal>
+</mc-modal>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel" title="Dropdown with Modal">
-    <spr-dropdown
+  <mc-modal v-model="modalModel" title="Dropdown with Modal">
+    <mc-dropdown
       id="sample-dropdownStrategy"
       v-model="dropdownStrategy"
       :menu-list="menuList"
@@ -257,13 +251,13 @@ When using dropdowns inside positioned elements like modals or fixed panels, you
       popper-strategy="fixed"
       width="100px"
     >
-      <spr-button class="spr-w-full" tone="success" has-icon>
+      <mc-button class="mc-w-full" tone="success" has-icon>
         <span>Button</span>
         <Icon icon="ph:caret-down" />
-      </spr-button>
-    </spr-dropdown>
+      </mc-button>
+    </mc-dropdown>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-  </spr-modal>
+  </mc-modal>
 </template>
 
 <script setup>
@@ -283,41 +277,41 @@ When using the `fixed` popper strategy, you should also set `wrapper-position="i
 You can customize the content of the dropdown menu by using the `popper` slot. This allows you to include any custom HTML or components inside the dropdown.
 
 <div>
-  <spr-dropdown
+  <mc-dropdown
     id="sample-dropdownCustomPopper"
     width="150px"
     :triggers="['hover', 'click']"
     :popper-triggers="['hover', 'click']"
     popper-width="500px"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Custom Popper</span>
       <Icon icon="ph:caret-down" /> 
-    </spr-button>
+    </mc-button>
     <template #popper>
-      <h5 class="spr-text-center">This is a custom popper!</h5>
+      <h5 class="mc-text-center">This is a custom popper!</h5>
     </template>
-  </spr-dropdown>
+  </mc-dropdown>
 </div>
 
 ```vue
 <template>
-  <spr-dropdown
+  <mc-dropdown
     id="sample-dropdownCustomPopper"
     width="150px"
     :triggers="['hover', 'click']"
     :popper-triggers="['hover', 'click']"
     popper-width="500px"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Custom Popper</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
+    </mc-button>
 
     <template #popper>
-      <h5 class="spr-text-center">This is a custom popper!</h5>
+      <h5 class="mc-text-center">This is a custom popper!</h5>
     </template>
-  </spr-dropdown>
+  </mc-dropdown>
 </template>
 ```
 
@@ -577,12 +571,11 @@ import { ref, watch, onMounted } from "vue";
 
 import { Icon } from '@iconify/vue';
 
-import SprDropdown from "@/components/dropdown/dropdown.vue";
-import SprButton from "@/components/button/button.vue";
-import SprChips from "@/components/chips/chips.vue";
-import SprLozenge from "@/components/lozenge/lozenge.vue"
-import SprModal from "@/components/modal/modal.vue"
-import SprLogo from "@/components/logo/logo.vue";
+import McDropdown from "@/components/dropdown/dropdown.vue";
+import McButton from "@/components/button/button.vue";
+import McChips from "@/components/chips/chips.vue";
+import McLozenge from "@/components/lozenge/lozenge.vue"
+import McModal from "@/components/modal/modal.vue"
 
 const dropdownModel = ref({
   dropdownBasic1: '',

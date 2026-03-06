@@ -1,5 +1,5 @@
 <template>
-  <spr-input v-bind="$attrs" type="url">
+  <mc-input v-bind="$attrs" type="url">
     <template v-for="(_, slotName) in $slots" #[slotName]>
       <slot :name="slotName" />
     </template>
@@ -10,11 +10,11 @@
     <template #icon>
       <Icon icon="ph:question-fill" />
     </template>
-  </spr-input>
+  </mc-input>
 </template>
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
 
-import SprInput from '@/components/input/input.vue';
+import McInput from '@/components/input/input.vue';
 </script>

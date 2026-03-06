@@ -10,13 +10,13 @@ The month year picker allows users to select a month and year from a calendar-st
 
 ## Basic Usage
 
-<spr-month-year-picker :id="monthYearPickerId.monthYear1" class="[&>p]:spr-m-0" v-model="monthYearPickerModel.monthYear1" display-helper />
+<mc-month-year-picker :id="monthYearPickerId.monthYear1" class="[&>p]:mc-m-0" v-model="monthYearPickerModel.monthYear1" display-helper />
 
-`Property Value:` <span class="spr-text-xs">{{monthYearPickerModel.monthYear1}}</span>
+`Property Value:` <span class="mc-text-xs">{{monthYearPickerModel.monthYear1}}</span>
 
 ```vue
 <template>
-  <spr-month-year-picker id="monthyearpicker" v-model="monthYearPickerModel" display-helper />
+  <mc-month-year-picker id="monthyearpicker" v-model="monthYearPickerModel" display-helper />
 </template>
 
 <script lang="ts" setup>
@@ -28,15 +28,15 @@ const monthYearPickerModel = ref('');
 
 ## Adding Label
 
-<spr-month-year-picker :id="monthYearPickerId.monthYear2" class="[&>p]:spr-m-0" v-model="monthYearPickerModel.monthYear2" label="Select Month and Year" display-helper format="YYYY-MM" />
+<mc-month-year-picker :id="monthYearPickerId.monthYear2" class="[&>p]:mc-m-0" v-model="monthYearPickerModel.monthYear2" label="Select Month and Year" display-helper format="YYYY-MM" />
 
 Value: {{ monthYearPickerModel.monthYear2 }}
 
-`Property Value:` <span class="spr-text-xs">{{monthYearPickerModel.monthYear2}}</span>
+`Property Value:` <span class="mc-text-xs">{{monthYearPickerModel.monthYear2}}</span>
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Select Month and Year"
@@ -57,7 +57,7 @@ const monthYearPickerModel = ref('');
 You can use the default slot to use any component as the month year picker input or to change the format of the rendered date without changing the format of the date model.
 
 <div>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel.monthYear30"
     label="Custom Month Year Picker Input"
@@ -66,28 +66,28 @@ You can use the default slot to use any component as the month year picker input
     @update:model-value="handleMonthYearPickerModelChange"
   >
     <template #default="{ handleClick }">
-      <spr-input
+      <mc-input
         v-model="monthYearPickerInputModel"
         readonly
-        class="spr-w-full spr-cursor-pointer"
+        class="mc-w-full mc-cursor-pointer"
         placeholder="MMM / YYYY"      
         @click="handleClick"
       >
         <template #icon>
           <Icon icon="ph:calendar-blank" />
         </template>
-      </spr-input>
+      </mc-input>
     </template>
-  </spr-month-year-picker>
+  </mc-month-year-picker>
 </div>
 
-`monthYearPickerModel:` <span class="spr-text-xs">{{monthYearPickerModel.monthYear30}}</span>
+`monthYearPickerModel:` <span class="mc-text-xs">{{monthYearPickerModel.monthYear30}}</span>
 <br/>
-`monthYearPickerInputModel:` <span class="spr-text-xs">{{monthYearPickerInputModel}}</span>
+`monthYearPickerInputModel:` <span class="mc-text-xs">{{monthYearPickerInputModel}}</span>
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Custom Month Year Picker Input"
@@ -96,19 +96,19 @@ You can use the default slot to use any component as the month year picker input
     @update:model-value="handleMonthYearPickerModelChange"
   >
     <template #default="{ handleClick }">
-      <spr-input
+      <mc-input
         v-model="monthYearPickerInputModel"
         readonly
-        class="spr-w-full spr-cursor-pointer"
+        class="mc-w-full mc-cursor-pointer"
         placeholder="MMM / YYYY"
         @click="handleClick"
       >
         <template #icon>
           <Icon icon="ph:calendar-blank" />
         </template>
-      </spr-input>
+      </mc-input>
     </template>
-  </spr-month-year-picker>
+  </mc-month-year-picker>
 </template>
 
 <script lang="ts" setup>
@@ -129,9 +129,9 @@ const handleMonthYearPickerModelChange = (newValue: string) => {
 You can manually set the width of the month year picker by passing the `width` prop.
 
 <div>
-  <spr-month-year-picker 
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear3" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear3" 
     label="Month Year Picker" 
     width="400px" 
@@ -139,11 +139,11 @@ You can manually set the width of the month year picker by passing the `width` p
   />
 </div>
 
-`Property Value:` <span class="spr-text-xs">{{monthYearPickerModel.monthYear3}}</span>
+`Property Value:` <span class="mc-text-xs">{{monthYearPickerModel.monthYear3}}</span>
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -163,13 +163,13 @@ const monthYearPickerModel = ref('');
 
 You can specify the format of the month-year by passing the `format` prop. The default format is `MM-YYYY`. The component will return dates in the specified format.
 
-<spr-month-year-picker :id="monthYearPickerId.monthYear28" class="[&>p]:spr-m-0" v-model="monthYearPickerModel.monthYear28" label="Month Year Picker" display-helper format="YYYY-MM" />
+<mc-month-year-picker :id="monthYearPickerId.monthYear28" class="[&>p]:mc-m-0" v-model="monthYearPickerModel.monthYear28" label="Month Year Picker" display-helper format="YYYY-MM" />
 
 Value: <code>{{ monthYearPickerModel.monthYear28 }}</code>
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year with YYYY-MM format"
@@ -185,10 +185,10 @@ const monthYearPickerModel = ref('');
 </script>
 ```
 
-<div class="spr-mt-3">
-  <spr-month-year-picker
+<div class="mc-mt-3">
+  <mc-month-year-picker
     :id="monthYearPickerId.monthYear29"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="monthYearPickerModel.monthYear29"
     label="Month Year with MMMM YYYY format"
     format="MMMM YYYY"
@@ -200,7 +200,7 @@ Value: <code>{{ monthYearPickerModel.monthYear29 }}</code>
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year with MMMM YYYY format"
@@ -220,11 +220,11 @@ const monthYearPickerModel = ref('');
 
 Add the `disabled` prop to disable the month year picker.
 
-<spr-month-year-picker :id="monthYearPickerId.monthYear4" class="[&>p]:spr-m-0" v-model="monthYearPickerModel.monthYear4" label="Month Year Picker" display-helper disabled />
+<mc-month-year-picker :id="monthYearPickerId.monthYear4" class="[&>p]:mc-m-0" v-model="monthYearPickerModel.monthYear4" label="Month Year Picker" display-helper disabled />
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -244,11 +244,11 @@ const monthYearPickerModel = ref('');
 
 Add the `readonly` prop to make month year picker as read only.
 
-<spr-month-year-picker :id="monthYearPickerId.monthYear5" class="[&>p]:spr-m-0" v-model="monthYearPickerModel.monthYear5" label="Month Year Picker" display-helper readonly />
+<mc-month-year-picker :id="monthYearPickerId.monthYear5" class="[&>p]:mc-m-0" v-model="monthYearPickerModel.monthYear5" label="Month Year Picker" display-helper readonly />
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -272,25 +272,25 @@ To display the helper message, set the `display-helper` prop to true and add the
 
 ### Using Helper Text Directly to Props
 
-<div class="spr-mt-3">
-  <spr-month-year-picker 
+<div class="mc-mt-3">
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear6"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear6" 
     label="Month Year Picker" 
     helper-text="This is a helper message" 
     display-helper 
   />
 
-`Property Value:` <span class="spr-text-xs">{{monthYearPickerModel.monthYear6}}</span>
+`Property Value:` <span class="mc-text-xs">{{monthYearPickerModel.monthYear6}}</span>
 
 </div>
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
     helper-icon="ph:warning-circle-fill"
@@ -310,10 +310,10 @@ const monthYearPickerModel = ref('');
 
 ### Using Helper Text Slot
 
-<div class="spr-mt-3">
-  <spr-month-year-picker 
+<div class="mc-mt-3">
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear7"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear7" 
     label="Month Year Picker" 
     display-helper 
@@ -321,14 +321,14 @@ const monthYearPickerModel = ref('');
     <template #helperMessage>
       <span>This is a helper message</span>
     </template>
-  </spr-month-year-picker>
+  </mc-month-year-picker>
 </div>
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
     display-helper
@@ -336,7 +336,7 @@ const monthYearPickerModel = ref('');
     <template #helperMessage>
       <span>This is a helper message</span>
     </template>
-  </spr-month-year-picker>
+  </mc-month-year-picker>
 </template>
 
 <script lang="ts" setup>
@@ -354,10 +354,10 @@ To handle error states, add the `error` prop to the month year picker. You can a
 
 ### Using Helper Text Directly to Props
 
-<div class="spr-mt-3">
-  <spr-month-year-picker 
+<div class="mc-mt-3">
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear8"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear8" 
     label="Month Year Picker" 
     helper-icon="ph:warning-circle-fill"
@@ -369,7 +369,7 @@ To handle error states, add the `error` prop to the month year picker. You can a
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -391,10 +391,10 @@ const monthYearPickerModel = ref('');
 
 ### Using Helper Text Slot
 
-<div class="spr-mt-3">
-  <spr-month-year-picker 
+<div class="mc-mt-3">
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear9"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear9" 
     label="Month Year Picker" 
     display-helper 
@@ -404,12 +404,12 @@ const monthYearPickerModel = ref('');
       <Icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is a helper message</span>
     </template>
-  </spr-month-year-picker>
+  </mc-month-year-picker>
 </div>
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -420,7 +420,7 @@ const monthYearPickerModel = ref('');
       <Icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is a helper message</span>
     </template>
-  </spr-month-year-picker>
+  </mc-month-year-picker>
 </template>
 
 <script lang="ts" setup>
@@ -437,9 +437,9 @@ const monthYearPickerModel = ref('');
 You can manually set the current year to be shown in the picker. The default current year is the current year. Pass the `current-year` prop to set the current year.
 
 <div>
-  <spr-month-year-picker 
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear10" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear10" 
     label="Month Year Picker" 
     current-year="2000" 
@@ -449,7 +449,7 @@ You can manually set the current year to be shown in the picker. The default cur
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -472,9 +472,9 @@ const monthYearPickerModel = ref('');
 It also allows you to manually set the minimum and maximum year to be shown in the picker. The default minimum year is set `1900` and the maximum year is the current year.
 
 <div>
-  <spr-month-year-picker 
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear11"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="monthYearPickerModel.monthYear11" 
     label="Month Year Picker" 
     :min-max-year="{
@@ -487,7 +487,7 @@ It also allows you to manually set the minimum and maximum year to be shown in t
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -512,11 +512,11 @@ const minMaxYear = ref({
 
 You can pre-select a month-year by just adding value in your `v-model`. The value should be in the format `MM-YYYY` or your specified format.
 
-<spr-month-year-picker :id="monthYearPickerId.monthYear22" class="[&>p]:spr-m-0" v-model="monthYearPickerModel.monthYear22" label="Month Year Picker" display-helper />
+<mc-month-year-picker :id="monthYearPickerId.monthYear22" class="[&>p]:mc-m-0" v-model="monthYearPickerModel.monthYear22" label="Month Year Picker" display-helper />
 
 ```vue
 <template>
-  <spr-month-year-picker id="monthyearpicker" v-model="monthYearPickerModel" label="Month Year Picker" display-helper />
+  <mc-month-year-picker id="monthyearpicker" v-model="monthYearPickerModel" label="Month Year Picker" display-helper />
 </template>
 
 <script lang="ts" setup>
@@ -530,15 +530,15 @@ const monthYearPickerModel = ref('09-1997');
 
 To get the date formats, you can use the `@get-date-formats` emits. When the month-year is valid it will return different formats.
 
-<div class="spr-my-3 spr-p-4 spr-bg-blue-100">
+<div class="mc-my-3 mc-p-4 mc-bg-blue-100">
   <h5>Output:</h5>
   <pre>{{ JSON.stringify(monthYearDateFormats, null, 2) }}</pre>
 </div>
 
 <div>
-  <spr-month-year-picker 
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear23" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear23" 
     label="Month Year Picker" 
     @get-date-formats="getMonthYearDateFormats" 
@@ -548,7 +548,7 @@ To get the date formats, you can use the `@get-date-formats` emits. When the mon
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -573,9 +573,9 @@ const getMonthYearDateFormats = (date) => {
 To get the month lists used, you can use the `@get-month-list` emits.
 
 <div>
-  <spr-month-year-picker 
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear24" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear24" 
     label="Month Year Picker" 
     @get-month-list="getMonthYearMonthList" 
@@ -583,14 +583,14 @@ To get the month lists used, you can use the `@get-month-list` emits.
   />
 </div>
 
-<div class="spr-mt-3 spr-p-4 spr-bg-blue-100">
+<div class="mc-mt-3 mc-p-4 mc-bg-blue-100">
   <h5>Output:</h5>
   <pre>{{ JSON.stringify(monthYearMonthLists, null, 2) }}</pre>
 </div>
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -615,9 +615,9 @@ const getMonthYearMonthList = (date) => {
 To get the year lists used, you can use the `@get-year-list` emits.
 
 <div>
-  <spr-month-year-picker 
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear25" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear25" 
     label="Month Year Picker" 
     @get-year-list="getMonthYearYearList" 
@@ -625,14 +625,14 @@ To get the year lists used, you can use the `@get-year-list` emits.
   />
 </div>
 
-<div class="spr-mt-3 spr-p-4 spr-bg-blue-100">
+<div class="mc-mt-3 mc-p-4 mc-bg-blue-100">
   <h5>Output:</h5>
   <p>{{ monthYearYearLists }}</p>
 </div>
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -663,15 +663,15 @@ List of component-level error validations:
   <li>Validate year if it is under min and max year</li>
 </ul>
 
-<div class="spr-my-3 spr-p-4 spr-bg-blue-100">
+<div class="mc-my-3 mc-p-4 mc-bg-blue-100">
   <h5>Output:</h5>
   <pre>{{ monthYearDateErrors }}</pre>
 </div>
 
 <div>
-  <spr-month-year-picker 
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear26" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear26" 
     label="Month Year Picker" 
     @get-date-errors="getMonthYearDateErrors" 
@@ -681,7 +681,7 @@ List of component-level error validations:
 
 ```vue
 <template>
-  <spr-month-year-picker
+  <mc-month-year-picker
     id="monthyearpicker"
     v-model="monthYearPickerModel"
     label="Month Year Picker"
@@ -713,12 +713,12 @@ Pass the prop `popper-strategy` to change the behavior position of the popper.
 Do not forget to pass prop `wrapperPosition` to overwrite `relative` position into `initial`.
 :::
 
-<spr-button tone="success" @click="modalModelMonthYear = true">Open Modal</spr-button>
+<mc-button tone="success" @click="modalModelMonthYear = true">Open Modal</mc-button>
 
-<spr-modal v-model="modalModelMonthYear" title="Month Year Picker with Modal">
-  <spr-month-year-picker 
+<mc-modal v-model="modalModelMonthYear" title="Month Year Picker with Modal">
+  <mc-month-year-picker 
     :id="monthYearPickerId.monthYear27"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="monthYearPickerModel.monthYear27" 
     label="Month Year Picker" 
     popper-strategy="fixed"
@@ -728,14 +728,14 @@ Do not forget to pass prop `wrapperPosition` to overwrite `relative` position in
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </p>
-</spr-modal>
+</mc-modal>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel" title="Month Year Picker with Modal">
-    <spr-month-year-picker
+  <mc-modal v-model="modalModel" title="Month Year Picker with Modal">
+    <mc-month-year-picker
       id="monthyearpicker"
       v-model="monthYearPickerModel"
       label="Month Year Picker"
@@ -749,7 +749,7 @@ Do not forget to pass prop `wrapperPosition` to overwrite `relative` position in
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-  </spr-modal>
+  </mc-modal>
 </template>
 
 <script lang="ts" setup>
@@ -766,7 +766,7 @@ You can also use the `popper-container` prop to specify a custom container for t
 Since the popper is being teleported to a different container, the `popper-width` prop will not work as expected. To set a custom width for the popper in this case, you can use custom styles or CSS classes to define the desired width.
 
 <div>
-  <spr-dropdown
+  <mc-dropdown
     id="sample-dropdownCustomPopperMonthYear"
     width="300px"
     :triggers="['hover', 'click']"
@@ -774,14 +774,14 @@ Since the popper is being teleported to a different container, the `popper-width
     popper-width="500px"
     :auto-hide="false"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Custom Popper With Dropdown</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
+    </mc-button>
     <template #popper>
-      <spr-month-year-picker
+      <mc-month-year-picker
         :id="monthYearPickerId.monthYear27"
-        class="[&>p]:spr-m-0" 
+        class="[&>p]:mc-m-0" 
         v-model="monthYearPickerModel.monthYear27" 
         label="Month Year Picker" 
         popper-strategy="fixed"
@@ -790,13 +790,13 @@ Since the popper is being teleported to a different container, the `popper-width
         display-helper
       />
     </template>
-  </spr-dropdown>
+  </mc-dropdown>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-dropdown
+    <mc-dropdown
       id="sample-dropdownCustomPopperMonthYear"
       width="300px"
       :triggers="['hover', 'click']"
@@ -804,12 +804,12 @@ Since the popper is being teleported to a different container, the `popper-width
       popper-width="500px"
       :auto-hide="false"
     >
-      <spr-button class="spr-w-full" tone="success" has-icon>
+      <mc-button class="mc-w-full" tone="success" has-icon>
         <span>Custom Popper With Dropdown</span>
         <Icon icon="ph:caret-down" />
-      </spr-button>
+      </mc-button>
       <template #popper>
-        <spr-month-year-picker
+        <mc-month-year-picker
           id="monthyearpicker"
           v-model="monthYearPickerModel"
           label="Month Year Picker"
@@ -819,16 +819,16 @@ Since the popper is being teleported to a different container, the `popper-width
           display-helper
         />
       </template>
-    </spr-dropdown>
+    </mc-dropdown>
   </div>
 </template>
 ```
 
 ## Action
 
-<div class="spr-space-y-2">
-  <spr-button tone="success" @click="clearMonthYear()">Clear Month Year</spr-button>
-  <spr-month-year-picker 
+<div class="mc-space-y-2">
+  <mc-button tone="success" @click="clearMonthYear()">Clear Month Year</mc-button>
+  <mc-month-year-picker 
     ref="monthYearPickerRef"
     :id="monthYearPickerId.monthYear31" 
     v-model="monthYearPickerModel.monthYear31" 
@@ -838,9 +838,9 @@ Since the popper is being teleported to a different container, the `popper-width
 
 ```vue
 <template>
-  <div class="spr-space-y-2">
-    <spr-button tone="success" @click="clearMonthYear()">Clear Month Year</spr-button>
-    <spr-month-year-picker
+  <div class="mc-space-y-2">
+    <mc-button tone="success" @click="clearMonthYear()">Clear Month Year</mc-button>
+    <mc-month-year-picker
       ref="monthYearPickerRef"
       id="monthyearpicker"
       v-model="monthYearPickerModel"
@@ -1030,12 +1030,11 @@ import { ref } from "vue";
 
 import { Icon } from "@iconify/vue";
 
-import SprMonthYearPicker from "@/components/date-picker/month-year-picker/month-year-picker.vue";
-import SprButton from "@/components/button/button.vue";
-import SprModal from "@/components/modal/modal.vue";
-import SprLogo from "@/components/logo/logo.vue";
-import SprInput from "@/components/input/input.vue";
-import SprDropdown from "@/components/dropdown/dropdown.vue";
+import McMonthYearPicker from "@/components/date-picker/month-year-picker/month-year-picker.vue";
+import McButton from "@/components/button/button.vue";
+import McModal from "@/components/modal/modal.vue";
+import McInput from "@/components/input/input.vue";
+import McDropdown from "@/components/dropdown/dropdown.vue";
 
 import dayjs from "dayjs";
 

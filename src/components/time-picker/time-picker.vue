@@ -18,7 +18,7 @@
         width: '100%',
       }"
     >
-      <spr-input
+      <mc-input
         :id="props.id"
         v-model="selectedValue"
         type="text"
@@ -34,7 +34,7 @@
         <template #icon>
           <Icon icon="ph:clock" />
         </template>
-      </spr-input>
+      </mc-input>
     </div>
 
     <template #popper>
@@ -44,10 +44,10 @@
             v-for="option in filteredOptions"
             :key="option"
             :class="[
-              'spr-body-xs-regular spr-flex spr-cursor-pointer spr-justify-between spr-rounded-border-radius-md spr-p-size-spacing-3xs',
-              'hover:spr-background-color-hover',
+              'mc-body-xs-regular mc-flex mc-cursor-pointer mc-justify-between mc-rounded-border-radius-md mc-p-size-spacing-3xs',
+              'hover:mc-background-color-hover',
               {
-                'spr-background-color-single-active spr-rounded-border-radius-md':
+                'mc-background-color-single-active mc-rounded-border-radius-md':
                   option.toUpperCase() === selectedValue?.toUpperCase(),
               },
             ]"
@@ -57,13 +57,13 @@
 
             <span
               v-if="option.toUpperCase() === selectedValue?.toUpperCase()"
-              class="spr-text-color-brand-base spr-font-bold"
+              class="mc-text-color-brand-base mc-font-bold"
             >
               <Icon icon="ph:check" />
             </span>
           </div>
         </div>
-        <div v-else class="spr-px-3 spr-py-2 spr-text-gray-500">No matching options found</div>
+        <div v-else class="mc-px-3 mc-py-2 mc-text-gray-500">No matching options found</div>
       </div>
     </template>
   </Menu>
@@ -73,7 +73,7 @@
 import { Icon } from '@iconify/vue';
 import { Menu } from 'floating-vue';
 import 'floating-vue/dist/style.css';
-import SprInput from '@/components/input/input.vue';
+import McInput from '@/components/input/input.vue';
 
 import { timePickerPropTypes, timePickerEmitTypes } from './time-picker';
 import { useTimePicker } from './use-time-picker';

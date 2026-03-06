@@ -36,25 +36,23 @@ export function useListItem(
     const fill = itemIconFill?.value || false;
 
     const toneClasses: Record<string, string> = {
-      plain: 'spr-text-color-base',
+      plain: 'mc-text-color-base',
       pending: fill
-        ? 'spr-bg-yellow-100 spr-text-yellow-700 spr-rounded-md spr-p-1.5'
-        : 'spr-text-yellow-600 spr-rounded-md spr-p-1.5',
+        ? 'mc-bg-yellow-100 mc-text-yellow-700 mc-rounded-md mc-p-1.5'
+        : 'mc-text-yellow-600 mc-rounded-md mc-p-1.5',
       information: fill
-        ? 'spr-bg-blue-100 spr-text-blue-700 spr-rounded-md spr-p-1.5'
-        : 'spr-text-blue-600 spr-rounded-md spr-p-1.5',
+        ? 'mc-bg-blue-100 mc-text-blue-700 mc-rounded-md mc-p-1.5'
+        : 'mc-text-blue-600 mc-rounded-md mc-p-1.5',
       success: fill
-        ? 'spr-bg-green-100 spr-text-green-700 spr-rounded-md spr-p-1.5'
-        : 'spr-text-green-600 spr-rounded-md spr-p-1.5',
-      danger: fill
-        ? 'spr-bg-red-100 spr-text-red-700 spr-rounded-md spr-p-1.5'
-        : 'spr-text-red-600 spr-rounded-md spr-p-1.5',
+        ? 'mc-bg-green-100 mc-text-green-700 mc-rounded-md mc-p-1.5'
+        : 'mc-text-green-600 mc-rounded-md mc-p-1.5',
+      danger: fill ? 'mc-bg-red-100 mc-text-red-700 mc-rounded-md mc-p-1.5' : 'mc-text-red-600 mc-rounded-md mc-p-1.5',
       neutral: fill
-        ? 'spr-bg-gray-100 spr-text-gray-700 spr-rounded-md spr-p-1.5'
-        : 'spr-text-gray-600 spr-rounded-md spr-p-1.5',
+        ? 'mc-bg-gray-100 mc-text-gray-700 mc-rounded-md mc-p-1.5'
+        : 'mc-text-gray-600 mc-rounded-md mc-p-1.5',
       caution: fill
-        ? 'spr-bg-orange-100 spr-text-orange-700 spr-rounded-md spr-p-1.5'
-        : 'spr-text-orange-600 spr-rounded-md spr-p-1.5',
+        ? 'mc-bg-orange-100 mc-text-orange-700 mc-rounded-md mc-p-1.5'
+        : 'mc-text-orange-600 mc-rounded-md mc-p-1.5',
     };
 
     return toneClasses[tone] || toneClasses['plain'];

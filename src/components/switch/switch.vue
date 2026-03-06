@@ -1,6 +1,6 @@
 <template>
-  <div v-bind="switchProps" :class="['spr-flex spr-items-center spr-gap-2', switchTextClass]">
-    <label v-if="!isLeftTextLabel" :for="defaultId" class="spr-cursor-pointer">
+  <div v-bind="switchProps" :class="['mc-flex mc-items-center mc-gap-2', switchTextClass]">
+    <label v-if="!isLeftTextLabel" :for="defaultId" class="mc-cursor-pointer">
       <slot name="leftText">
         <slot></slot>
       </slot>
@@ -8,8 +8,8 @@
     <div
       ref="switchWrapperRef"
       :class="{
-        'spr-relative spr-flex spr-items-center': true,
-        'spr-cursor-pointer spr-transition spr-duration-300 spr-ease-in-out active:spr-scale-90': !props.disabled,
+        'mc-relative mc-flex mc-items-center': true,
+        'mc-cursor-pointer mc-transition mc-duration-300 mc-ease-in-out active:mc-scale-90': !props.disabled,
       }"
     >
       <input
@@ -18,20 +18,17 @@
         v-model="proxyValue"
         type="checkbox"
         name="checkbox"
-        :class="[
-          'input spr-absolute spr-left-0 spr-top-0 spr-z-10 spr-m-0 spr-h-6 spr-w-12 spr-opacity-0',
-          switchInputClass,
-        ]"
+        :class="['input mc-absolute mc-left-0 mc-top-0 mc-z-10 mc-m-0 mc-h-6 mc-w-12 mc-opacity-0', switchInputClass]"
         :disabled="props.disabled"
       />
       <span
         :class="[
-          'switch-mark spr-relative spr-box-border spr-inline-block spr-h-6 spr-w-12 spr-rounded-[40px] spr-p-1',
+          'switch-mark mc-relative mc-box-border mc-inline-block mc-h-6 mc-w-12 mc-rounded-[40px] mc-p-1',
           switchMarkClass,
         ]"
       ></span>
     </div>
-    <label v-if="!isRightTextLabel" :for="defaultId" class="spr-cursor-pointer">
+    <label v-if="!isRightTextLabel" :for="defaultId" class="mc-cursor-pointer">
       <slot name="rightText"></slot>
     </label>
   </div>
@@ -67,19 +64,19 @@ const {
 <style lang="scss" scoped>
 .input {
   &:checked ~ .switch-mark:before {
-    @apply spr-left-[1.7rem];
+    @apply mc-left-[1.7rem];
   }
 }
 
 .switch-mark {
   &:before,
   &:after {
-    @apply spr-absolute;
+    @apply mc-absolute;
     content: '';
   }
 
   &:before {
-    @apply spr-left-1 spr-top-1 spr-h-4 spr-w-4 spr-rounded-[50%] spr-bg-white-50;
+    @apply mc-left-1 mc-top-1 mc-h-4 mc-w-4 mc-rounded-[50%] mc-bg-white-50;
   }
 }
 </style>

@@ -10,13 +10,13 @@ The date picker allows users to select a date from a calendar.
 
 ## Basic Usage
 
-<spr-date-picker :id="datePickerId.date1" class="[&>p]:spr-m-0" v-model="datePickerModel.date1" />
+<mc-date-picker :id="datePickerId.date1" class="[&>p]:mc-m-0" v-model="datePickerModel.date1" />
 
-`Property Value:` <span class="spr-text-xs">{{datePickerModel.date1}}</span>
+`Property Value:` <span class="mc-text-xs">{{datePickerModel.date1}}</span>
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" />
 </template>
 
 <script lang="ts" setup>
@@ -28,15 +28,15 @@ const datePickerModel = ref('');
 
 ## Adding Label
 
-<spr-date-picker :id="datePickerId.date2" class="[&>p]:spr-m-0" v-model="datePickerModel.date2" label="Date Picker" format="YYYY-MM-DD" />
+<mc-date-picker :id="datePickerId.date2" class="[&>p]:mc-m-0" v-model="datePickerModel.date2" label="Date Picker" format="YYYY-MM-DD" />
 
 Value: {{ datePickerModel.date2 }}
 
-`Property Value:` <span class="spr-text-xs">{{datePickerModel.date2}}</span>
+`Property Value:` <span class="mc-text-xs">{{datePickerModel.date2}}</span>
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" format="MM-DD-YYYY" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" format="MM-DD-YYYY" />
 </template>
 
 <script lang="ts" setup>
@@ -51,7 +51,7 @@ const datePickerModel = ref('');
 You can use the default slot to use any component as the date picker input or to change the format of the rendered date without changing the format of the date model.
 
 <div>
- <spr-date-picker
+ <mc-date-picker
     id="datepicker"
     v-model="datePickerModel.date30"
     label="Custom Date Picker Input"
@@ -60,28 +60,28 @@ You can use the default slot to use any component as the date picker input or to
     @update:model-value="handleDatePickerModelChange"
   >
     <template #default="{ handleClick }">
-      <spr-input
+      <mc-input
         v-model="datePickerInputModel"
         readonly
-        class="spr-w-full spr-cursor-pointer"
+        class="mc-w-full mc-cursor-pointer"
         placeholder="MMM / DD"      
         @click="handleClick"
       >
         <template #icon>
           <Icon icon="ph:calendar-blank" />
         </template>
-      </spr-input>
+      </mc-input>
     </template>
-  </spr-date-picker>
+  </mc-date-picker>
 </div>
 
-`datePickerModel:` <span class="spr-text-xs">{{datePickerModel.date30}}</span>
+`datePickerModel:` <span class="mc-text-xs">{{datePickerModel.date30}}</span>
 <br/>
-`datePickerInputModel:` <span class="spr-text-xs">{{datePickerInputModel}}</span>
+`datePickerInputModel:` <span class="mc-text-xs">{{datePickerInputModel}}</span>
 
 ```vue
 <template>
-  <spr-date-picker
+  <mc-date-picker
     id="datepicker"
     v-model="datePickerModel"
     label="Custom Date Picker Input"
@@ -90,19 +90,19 @@ You can use the default slot to use any component as the date picker input or to
     @update:model-value="handleDatePickerModelChange"
   >
     <template #default="{ handleClick }">
-      <spr-input
+      <mc-input
         v-model="datePickerInputModel"
         readonly
-        class="spr-w-full spr-cursor-pointer"
+        class="mc-w-full mc-cursor-pointer"
         placeholder="MMM / DD"
         @click="handleClick"
       >
         <template #icon>
           <Icon icon="ph:calendar-blank" />
         </template>
-      </spr-input>
+      </mc-input>
     </template>
-  </spr-date-picker>
+  </mc-date-picker>
 </template>
 
 <script lang="ts" setup>
@@ -123,20 +123,20 @@ const handleDatePickerModelChange = (newValue: string) => {
 You can manually set the width of the date picker by passing the `width` prop.
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date3" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date3" 
     label="Date Picker" 
     width="400px" 
   />
 </div>
 
-`Property Value:` <span class="spr-text-xs">{{datePickerModel.date3}}</span>
+`Property Value:` <span class="mc-text-xs">{{datePickerModel.date3}}</span>
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" width="400px" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" width="400px" />
 </template>
 
 <script lang="ts" setup>
@@ -150,11 +150,11 @@ const datePickerModel = ref('');
 
 You can specify the format of the date by passing the `format` prop. The default format is `MM-DD-YYYY`. The component will return dates in the specified format.
 
-<spr-date-picker :id="datePickerId.date28" class="[&>p]:spr-m-0" v-model="datePickerModel.date28" label="Date Picker" format="YYYY-MM-DD" />
+<mc-date-picker :id="datePickerId.date28" class="[&>p]:mc-m-0" v-model="datePickerModel.date28" label="Date Picker" format="YYYY-MM-DD" />
 Value: <code>{{ datePickerModel.date28 }}</code>
 ```vue
 <template>
-  <spr-date-picker 
+  <mc-date-picker 
     id="datepicker" 
     v-model="datePickerModel" 
     label="Date with YYYY-MM-DD format" 
@@ -170,10 +170,10 @@ const datePickerModel = ref('');
 
 ````
 
-<div class="spr-mt-3">
-  <spr-date-picker
+<div class="mc-mt-3">
+  <mc-date-picker
     :id="datePickerId.date29"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date29"
     label="Date with MM/DD/YYYY format"
     format="MM/DD/YYYY"
@@ -183,7 +183,7 @@ Value: <code>{{ datePickerModel.date29 }}</code>
 
 ```vue
 <template>
-  <spr-date-picker
+  <mc-date-picker
     id="datepicker"
     v-model="datePickerModel"
     label="Date with MM/DD/YYYY format"
@@ -202,11 +202,11 @@ const datePickerModel = ref('');
 
 Add the `disabled` prop to disable the date picker.
 
-<spr-date-picker :id="datePickerId.date4" class="[&>p]:spr-m-0" v-model="datePickerModel.date4" label="Date Picker" disabled />
+<mc-date-picker :id="datePickerId.date4" class="[&>p]:mc-m-0" v-model="datePickerModel.date4" label="Date Picker" disabled />
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" disabled />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" disabled />
 </template>
 
 <script lang="ts" setup>
@@ -220,16 +220,16 @@ const datePickerModel = ref('');
 
 Add the `readonly` prop to make date picker as read only.
 
-<div class="spr-space-y-3">
-<spr-date-picker :id="datePickerId.date5" class="[&>p]:spr-m-0" v-model="datePickerModel.date5" label="Date Picker" readonly />
+<div class="mc-space-y-3">
+<mc-date-picker :id="datePickerId.date5" class="[&>p]:mc-m-0" v-model="datePickerModel.date5" label="Date Picker" readonly />
 
-<spr-date-picker id="datepicker" v-model="datePickerModel.date5" label="Date Picker Read Only 1" readonly2 />
+<mc-date-picker id="datepicker" v-model="datePickerModel.date5" label="Date Picker Read Only 1" readonly2 />
 </div>
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker Read only" readonly />
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker Read Only 1" readonly2 />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker Read only" readonly />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker Read Only 1" readonly2 />
 </template>
 
 <script lang="ts" setup>
@@ -247,25 +247,25 @@ To display the helper message, set the `display-helper` prop to true and add the
 
 ### Using Helper Text Directly to Props
 
-<div class="spr-mt-3">
-  <spr-date-picker 
+<div class="mc-mt-3">
+  <mc-date-picker 
     :id="datePickerId.date6"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date6" 
     label="Date Picker" 
     helper-text="This is a helper message" 
     display-helper 
   />
 
-`Property Value:` <span class="spr-text-xs">{{datePickerModel.date6}}</span>
+`Property Value:` <span class="mc-text-xs">{{datePickerModel.date6}}</span>
 
 </div>
 
 ```vue
 <template>
-  <spr-date-picker
+  <mc-date-picker
     id="datepicker"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel"
     label="Date Picker"
     helper-icon="ph:warning-circle-fill"
@@ -285,10 +285,10 @@ const datePickerModel = ref('');
 
 ### Using Helper Text Slot
 
-<div class="spr-mt-3">
-  <spr-date-picker 
+<div class="mc-mt-3">
+  <mc-date-picker 
     :id="datePickerId.date7"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date7" 
     label="Date Picker" 
     display-helper 
@@ -296,16 +296,16 @@ const datePickerModel = ref('');
     <template #helperMessage>
       <span>This is a helper message</span>
     </template>
-  </spr-date-picker>
+  </mc-date-picker>
 </div>
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" class="[&>p]:spr-m-0" v-model="datePickerModel" label="Date Picker" display-helper>
+  <mc-date-picker id="datepicker" class="[&>p]:mc-m-0" v-model="datePickerModel" label="Date Picker" display-helper>
     <template #helperMessage>
       <span>This is a helper message</span>
     </template>
-  </spr-date-picker>
+  </mc-date-picker>
 </template>
 
 <script lang="ts" setup>
@@ -323,10 +323,10 @@ To handle error states, add the `error` prop to the date picker. You can also in
 
 ### Using Helper Text Directly to Props
 
-<div class="spr-mt-3">
-  <spr-date-picker 
+<div class="mc-mt-3">
+  <mc-date-picker 
     :id="datePickerId.date8"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date8" 
     label="Date Picker" 
     helper-icon="ph:warning-circle-fill"
@@ -338,7 +338,7 @@ To handle error states, add the `error` prop to the date picker. You can also in
 
 ```vue
 <template>
-  <spr-date-picker
+  <mc-date-picker
     id="datepicker"
     v-model="datePickerModel"
     label="Date Picker"
@@ -360,10 +360,10 @@ const datePickerModel = ref('');
 
 ### Using Helper Text Slot
 
-<div class="spr-mt-3">
-  <spr-date-picker 
+<div class="mc-mt-3">
+  <mc-date-picker 
     :id="datePickerId.date9"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date9" 
     label="Date Picker" 
     display-helper 
@@ -373,17 +373,17 @@ const datePickerModel = ref('');
       <Icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is a helper message</span>
     </template>
-  </spr-date-picker>
+  </mc-date-picker>
 </div>
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" display-helper error>
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" display-helper error>
     <template #helperMessage>
       <Icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is a helper message</span>
     </template>
-  </spr-date-picker>
+  </mc-date-picker>
 </template>
 
 <script lang="ts" setup>
@@ -400,9 +400,9 @@ const datePickerModel = ref('');
 You can manually set the current year to be shown in the calendar. The default current year is the current year. Pass the `current-year` prop to set the current year.
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date10" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date10" 
     label="Date Picker" 
     current-year="2000" 
@@ -411,7 +411,7 @@ You can manually set the current year to be shown in the calendar. The default c
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" current-year="2000" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" current-year="2000" />
 </template>
 
 <script lang="ts" setup>
@@ -428,9 +428,9 @@ const datePickerModel = ref('');
 It also allows you to manually set the minimum and maximum year to be shown in the calendar. The default minumum year is set `1900` and the maximum year is the current year.
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date11"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date11" 
     label="Date Picker" 
     :min-max-year="{
@@ -442,7 +442,7 @@ It also allows you to manually set the minimum and maximum year to be shown in t
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :min-max-year="minMaxYear" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :min-max-year="minMaxYear" />
 </template>
 
 <script lang="ts" setup>
@@ -468,9 +468,9 @@ const restdays = ['su', 'mo', 'tu', 'we', 'th', 'fr', 'sa'];
 ```
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date12"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date12"
     label="Date Picker" 
     :rest-days="['mo', 'we', 'fr', 'sa']" 
@@ -479,7 +479,7 @@ const restdays = ['su', 'mo', 'tu', 'we', 'th', 'fr', 'sa'];
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :rest-days="restDays" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :rest-days="restDays" />
 </template>
 
 <script lang="ts" setup>
@@ -526,9 +526,9 @@ To disable dates using `From` and `To`, pass the `disabled-dates` props that con
 `from` and `to` should be in the format `MM-DD-YYYY`.
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date13"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date13"
     label="Date Picker" 
     :disabled-dates="{ from: '02-12-2025', to: '05-15-2025' }"
@@ -537,7 +537,7 @@ To disable dates using `From` and `To`, pass the `disabled-dates` props that con
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledDates" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledDates" />
 </template>
 
 <script lang="ts" setup>
@@ -553,17 +553,17 @@ const disabledDates = ref({ from: '02-12-2025', to: '05-15-2025' });
 
 To disable past dates, pass the `disabled-dates` prop. that contains boolean of `pastDates` or `futureDates` set to `true`.
 
-<div class="spr-gap-4 spr-grid">
-  <spr-date-picker 
+<div class="mc-gap-4 mc-grid">
+  <mc-date-picker 
     :id="datePickerId.date14"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date14"
     label="Past Dates Disabled" 
     :disabled-dates="{ pastDates: true }"
   />
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date15"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date15"
     label="Future Dates Disabled" 
     :disabled-dates="{ futureDates: true }"
@@ -572,14 +572,14 @@ To disable past dates, pass the `disabled-dates` prop. that contains boolean of 
 
 ```vue
 <template>
-  <spr-date-picker
+  <mc-date-picker
     id="datepicker1"
     v-model="datePickerModel"
     label="Past Dates Disabled"
     :disabled-dates="disabledPastDates"
   />
 
-  <spr-date-picker
+  <mc-date-picker
     id="datepicker2"
     v-model="datePickerModel"
     label="Future Dates Disabled"
@@ -604,17 +604,17 @@ To disable past dates, pass the `disabled-dates` prop. that contains date string
 
 `pastDates` and `futureDates` should be in the format `MM-DD-YYYY`.
 
-<div class="spr-gap-4 spr-grid">
-  <spr-date-picker 
+<div class="mc-gap-4 mc-grid">
+  <mc-date-picker 
     :id="datePickerId.date16"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date16"
     label="Past Dates Disabled With Selected Date" 
     :disabled-dates="{ pastDates: '3-14-2025' }"
   />
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date17"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date17"
     label="Future Dates Disabled With Selected Date" 
     :disabled-dates="{ futureDates: '3-14-2025' }"
@@ -623,9 +623,9 @@ To disable past dates, pass the `disabled-dates` prop. that contains date string
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker1" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledPastDates" />
+  <mc-date-picker id="datepicker1" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledPastDates" />
 
-  <spr-date-picker
+  <mc-date-picker
     id="datepicker2"
     v-model="datePickerModel"
     label="Date Picker"
@@ -651,9 +651,9 @@ To disable selected dates, pass the `disabled-dates` prop. that contains array o
 `selectedDates` should be in the format `MM-DD-YYYY`.
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date18"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date18"
     label="Date Picker" 
     :disabled-dates="{ selectedDates: ['3-14-2025' , '3-15-2025', '3-25-2025', '3-28-2025'] }"
@@ -662,7 +662,7 @@ To disable selected dates, pass the `disabled-dates` prop. that contains array o
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledDates" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledDates" />
 </template>
 
 <script lang="ts" setup>
@@ -679,9 +679,9 @@ const disabledDates = ref({ selectedDates: ['3-14-2025', '3-15-2025', '3-25-2025
 To disable weekends, pass the `disabled-dates` prop. that contains boolean of `weekends` set to `true`.
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date19"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date19"
     label="Date Picker" 
     :disabled-dates="{ weekends: true }"
@@ -690,7 +690,7 @@ To disable weekends, pass the `disabled-dates` prop. that contains boolean of `w
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledDates" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledDates" />
 </template>
 
 <script lang="ts" setup>
@@ -707,9 +707,9 @@ const disabledDates = ref({ weekends: true });
 To disable weekdays, pass the `disabled-dates` prop. that contains boolean of `weekdays` set to `true`.
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date20"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date20"
     label="Date Picker" 
     :disabled-dates="{ weekdays: true }"
@@ -718,7 +718,7 @@ To disable weekdays, pass the `disabled-dates` prop. that contains boolean of `w
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledDates" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledDates" />
 </template>
 
 <script lang="ts" setup>
@@ -741,9 +741,9 @@ const selectedDays = ['su', 'mo', 'tu', 'we', 'th', 'fr', 'sa'];
 ```
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date21"
-    class="[&>p]:spr-m-0"
+    class="[&>p]:mc-m-0"
     v-model="datePickerModel.date21"
     label="Date Picker" 
     :disabled-dates="{ selectedDays: ['su', 'we', 'th', 'sa'] }"
@@ -752,7 +752,7 @@ const selectedDays = ['su', 'mo', 'tu', 'we', 'th', 'fr', 'sa'];
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledDates" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" :disabled-dates="disabledDates" />
 </template>
 
 <script lang="ts" setup>
@@ -768,11 +768,11 @@ const disabledDates = ref({ selectedDays: ['su', 'we', 'th', 'sa'] });
 
 You can pre-select a date by just adding value in your `v-model`. The value should be in the format `MM-DD-YYYY`.
 
-<spr-date-picker :id="datePickerId.date22" class="[&>p]:spr-m-0" v-model="datePickerModel.date22" label="Date Picker" />
+<mc-date-picker :id="datePickerId.date22" class="[&>p]:mc-m-0" v-model="datePickerModel.date22" label="Date Picker" />
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" />
 </template>
 
 <script lang="ts" setup>
@@ -786,15 +786,15 @@ const datePickerModel = ref('09-11-1997');
 
 To get the date formats, you can use the `@get-date-formats` emits. When the date is valid it will return a different formats.
 
-<div class="spr-my-3 spr-p-4 spr-bg-blue-100">
+<div class="mc-my-3 mc-p-4 mc-bg-blue-100">
   <h5>Output:</h5>
   <pre>{{ JSON.stringify(dateFormats, null, 2) }}</pre>
 </div>
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date23" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date23" 
     label="Date Picker" 
     @get-date-formats="getDateFormats" 
@@ -803,7 +803,7 @@ To get the date formats, you can use the `@get-date-formats` emits. When the dat
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" @get-date-formats="getDateFormats" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" @get-date-formats="getDateFormats" />
 </template>
 
 <script lang="ts" setup>
@@ -822,23 +822,23 @@ const getDateFormats = (date) => {
 To get the month lists used, you can use the `@get-month-lists` emits.
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date24" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date24" 
     label="Date Picker" 
     @get-month-list="getMonthList" 
   />
 </div>
 
-<div class="spr-mt-3 spr-p-4 spr-bg-blue-100">
+<div class="mc-mt-3 mc-p-4 mc-bg-blue-100">
   <h5>Output:</h5>
   <pre>{{ JSON.stringify(monthLists, null, 2) }}</pre>
 </div>
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" @get-month-list="getMonthList" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" @get-month-list="getMonthList" />
 </template>
 
 <script lang="ts" setup>
@@ -857,23 +857,23 @@ const getMonthList = (date) => {
 To get the year lists used, you can use the `@get-year-lists` emits.
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date25" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date25" 
     label="Date Picker" 
     @get-year-list="getYearList" 
   />
 </div>
 
-<div class="spr-mt-3 spr-p-4 spr-bg-blue-100">
+<div class="mc-mt-3 mc-p-4 mc-bg-blue-100">
   <h5>Output:</h5>
   <p>{{ yearLists }}</p>
 </div>
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" @get-year-list="getYearList" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" @get-year-list="getYearList" />
 </template>
 
 <script lang="ts" setup>
@@ -898,15 +898,15 @@ List of component-level error validations:
   <li>Validate Date Year if it is under min and max year</li>
 </ul>
 
-<div class="spr-my-3 spr-p-4 spr-bg-blue-100">
+<div class="mc-my-3 mc-p-4 mc-bg-blue-100">
   <h5>Output:</h5>
   <pre>{{ dateErrors }}</pre>
 </div>
 
 <div>
-  <spr-date-picker 
+  <mc-date-picker 
     :id="datePickerId.date26" 
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date26" 
     label="Date Picker" 
     @get-date-errors="getDateErrors" 
@@ -915,7 +915,7 @@ List of component-level error validations:
 
 ```vue
 <template>
-  <spr-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" @get-date-errors="getDateErrors" />
+  <mc-date-picker id="datepicker" v-model="datePickerModel" label="Date Picker" @get-date-errors="getDateErrors" />
 </template>
 
 <script lang="ts" setup>
@@ -941,12 +941,12 @@ Pass the prop `popper-strategy` to change the behavior position of the popper.
 Do not forget to pass prop `wrapperPosition` to overwrite `relative` position into `initial`.
 :::
 
-<spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+<mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-<spr-modal v-model="modalModel" title="Date Picker with Modal">
-  <spr-date-picker 
+<mc-modal v-model="modalModel" title="Date Picker with Modal">
+  <mc-date-picker 
     :id="datePickerId.date27"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="datePickerModel.date27" 
     label="Date Picker" 
     popper-strategy="fixed"
@@ -955,14 +955,14 @@ Do not forget to pass prop `wrapperPosition` to overwrite `relative` position in
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </p>
-</spr-modal>
+</mc-modal>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel" title="Date Picker with Modal">
-    <spr-date-picker
+  <mc-modal v-model="modalModel" title="Date Picker with Modal">
+    <mc-date-picker
       id="datepicker"
       v-model="datePickerModel"
       label="Date Picker"
@@ -975,7 +975,7 @@ Do not forget to pass prop `wrapperPosition` to overwrite `relative` position in
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-  </spr-modal>
+  </mc-modal>
 </template>
 
 <script lang="ts" setup>
@@ -992,7 +992,7 @@ You can also use the `popper-container` prop to specify a custom container for t
 Since the popper is being teleported to a different container, the `popper-width` prop will not work as expected. To set a custom width for the popper in this case, you can use custom styles or CSS classes to define the desired width.
 
 <div>
-  <spr-dropdown
+  <mc-dropdown
     id="sample-dropdownCustomPopper"
     width="300px"
     :triggers="['hover', 'click']"
@@ -1000,14 +1000,14 @@ Since the popper is being teleported to a different container, the `popper-width
     popper-width="500px"
     :auto-hide="false"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Custom Popper With Dropdown</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
+    </mc-button>
     <template #popper>
-      <spr-date-picker
+      <mc-date-picker
         :id="datePickerId.date27"
-        class="[&>p]:spr-m-0" 
+        class="[&>p]:mc-m-0" 
         v-model="datePickerModel.date27" 
         label="Date Picker" 
         popper-strategy="fixed"
@@ -1015,13 +1015,13 @@ Since the popper is being teleported to a different container, the `popper-width
         wrapper-position="initial"
       />
     </template>
-  </spr-dropdown>
+  </mc-dropdown>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-dropdown
+    <mc-dropdown
       id="sample-dropdownCustomPopper"
       width="300px"
       :triggers="['hover', 'click']"
@@ -1029,12 +1029,12 @@ Since the popper is being teleported to a different container, the `popper-width
       popper-width="500px"
       :auto-hide="false"
     >
-      <spr-button class="spr-w-full" tone="success" has-icon>
+      <mc-button class="mc-w-full" tone="success" has-icon>
         <span>Custom Popper With Dropdown</span>
         <Icon icon="ph:caret-down" />
-      </spr-button>
+      </mc-button>
       <template #popper>
-        <spr-date-picker
+        <mc-date-picker
           id="datepicker"
           v-model="datePickerModel"
           label="Date Picker"
@@ -1044,16 +1044,16 @@ Since the popper is being teleported to a different container, the `popper-width
           display-helper
         />
       </template>
-    </spr-dropdown>
+    </mc-dropdown>
   </div>
 </template>
 ```
 
 ## Action
 
-<div class="spr-space-y-2">
-  <spr-button tone="success" @click="clearDate()">Clear Date</spr-button>
-  <spr-date-picker 
+<div class="mc-space-y-2">
+  <mc-button tone="success" @click="clearDate()">Clear Date</mc-button>
+  <mc-date-picker 
     ref="datePickerRef"
     :id="datePickerId.date29" 
     v-model="datePickerModel.date29" 
@@ -1063,9 +1063,9 @@ Since the popper is being teleported to a different container, the `popper-width
 
 ```vue
 <template>
-  <div class="spr-space-y-2">
-    <spr-button tone="success" @click="clearDate()">Clear Date</spr-button>
-    <spr-date-picker ref="datePickerRef" id="datepicker" v-model="datePickerModel" label="Date Picker" />
+  <div class="mc-space-y-2">
+    <mc-button tone="success" @click="clearDate()">Clear Date</mc-button>
+    <mc-date-picker ref="datePickerRef" id="datepicker" v-model="datePickerModel" label="Date Picker" />
   </div>
 </template>
 
@@ -1268,12 +1268,11 @@ import { ref } from "vue";
 
 import { Icon } from "@iconify/vue";
 
-import SprDatePicker from "@/components/date-picker/date-picker.vue";
-import SprButton from "@/components/button/button.vue";
-import SprModal from "@/components/modal/modal.vue";
-import SprLogo from "@/components/logo/logo.vue";
-import SprInput from "@/components/input/input.vue";
-import SprDropdown from "@/components/dropdown/dropdown.vue";
+import McDatePicker from "@/components/date-picker/date-picker.vue";
+import McButton from "@/components/button/button.vue";
+import McModal from "@/components/modal/modal.vue";
+import McInput from "@/components/input/input.vue";
+import McDropdown from "@/components/dropdown/dropdown.vue";
 
 import dayjs from "dayjs";
 

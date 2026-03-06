@@ -1,15 +1,11 @@
 <template>
-  <div class="spr-flex spr-gap-2">
+  <div class="mc-flex mc-gap-2">
     <slot />
 
     <div :class="badgeClasses.baseClasses">
       <section :class="badgeClasses.positionClasses">
         <div
-          :class="[
-            'spr-flex spr-items-center spr-justify-center',
-            badgeClasses.variantClasses,
-            badgeClasses.sizeClasses,
-          ]"
+          :class="['mc-flex mc-items-center mc-justify-center', badgeClasses.variantClasses, badgeClasses.sizeClasses]"
         >
           {{ props.size === 'tiny' ? '' : text }}
         </div>

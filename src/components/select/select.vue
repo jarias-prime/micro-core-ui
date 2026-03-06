@@ -28,11 +28,11 @@
     >
       <div ref="selectRef">
         <div @click="!props.searchable ? (selectPopperState = !selectPopperState) : null">
-          <spr-input
+          <mc-input
             :id="`input-${props.id}`"
             v-model="inputText"
             :class="{
-              'spr-cursor-pointer': !props.searchable,
+              'mc-cursor-pointer': !props.searchable,
             }"
             :placeholder="props.placeholder"
             autocomplete="off"
@@ -49,10 +49,10 @@
             <template #icon>
               <div
                 :class="[
-                  'spr-flex spr-items-center spr-gap-1',
+                  'mc-flex mc-items-center mc-gap-1',
                   {
-                    'spr-cursor-pointer': !props.disabled,
-                    'spr-cursor-not-allowed': props.disabled,
+                    'mc-cursor-pointer': !props.disabled,
+                    'mc-cursor-not-allowed': props.disabled,
                   },
                 ]"
               >
@@ -65,7 +65,7 @@
             <template #helperMessage>
               <slot name="helperMessage" />
             </template>
-          </spr-input>
+          </mc-input>
 
           <!-- Hidden Select for QA automation -->
           <select
@@ -92,8 +92,8 @@
       </div>
 
       <template #popper>
-        <div ref="selectPopperRef" class="spr-max-h-[300px] spr-overflow-y-auto spr-overflow-x-hidden">
-          <spr-list
+        <div ref="selectPopperRef" class="mc-max-h-[300px] mc-overflow-y-auto mc-overflow-x-hidden">
+          <mc-list
             v-model="selectedListItems"
             :menu-list="isSearching && !props.disabledLocalSearch ? filteredSelectOptions : selectOptions"
             :group-items-by="props.groupItemsBy"
@@ -118,8 +118,8 @@ import { Icon } from '@iconify/vue';
 
 import 'floating-vue/dist/style.css';
 
-import SprInput from '../input/input.vue';
-import SprList from '../list/list.vue';
+import McInput from '../input/input.vue';
+import McList from '../list/list.vue';
 
 import { selectPropTypes, selectEmitTypes } from './select';
 

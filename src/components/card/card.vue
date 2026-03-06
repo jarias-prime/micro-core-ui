@@ -1,17 +1,17 @@
 <template>
   <div v-bind="id ? { id } : {}" :class="cardClasses.baseClasses" :style="{ borderWidth: props.borderWidth }">
     <div v-if="props.showHeader && ($slots.header || props.title)" :class="cardClasses.headerClasses">
-      <div v-if="props.title" class="spr-flex spr-items-center">
+      <div v-if="props.title" class="mc-flex mc-items-center">
         <Icon
           v-if="props.headerIcon"
           :icon="props.headerIcon"
-          class="spr-me-size-spacing-3xs spr-h-6 spr-w-6 spr-text-kangkong-600"
+          class="mc-me-size-spacing-3xs mc-h-6 mc-w-6 mc-text-kangkong-600"
         />
-        <div class="spr-mr-size-spacing-3xs">
-          <div class="spr-body-md-regular-medium spr-text-mushroom-950">
+        <div class="mc-mr-size-spacing-3xs">
+          <div class="mc-body-md-regular-medium mc-text-mushroom-950">
             {{ props.title }}
           </div>
-          <div v-if="props.subtitle" class="spr-body-xs-regular spr-text-mushroom-600">
+          <div v-if="props.subtitle" class="mc-body-xs-regular mc-text-mushroom-600">
             {{ props.subtitle }}
           </div>
         </div>

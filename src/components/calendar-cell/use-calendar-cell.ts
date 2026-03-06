@@ -50,17 +50,17 @@ export const useCalendarCell = (props: CalendarCellPropTypes, emit: SetupContext
   } as const;
 
   const typeClasses: Record<string, string> = {
-    standard: 'spr-border-kangkong-700 spr-bg-kangkong-50',
-    'early-morning': 'spr-border-blueberry-700 spr-bg-blueberry-50',
-    'late-morning': 'spr-border-color-pending-base spr-bg-mango-50',
-    afternoon: 'spr-border-carrot-600 spr-bg-carrot-50',
-    graveyard: 'spr-border-wintermelon-600 spr-bg-wintermelon-50',
-    broken: 'spr-border-ubas-700 spr-bg-ubas-50',
-    'multi-break': 'spr-border-[#F652F2] spr-bg-[#FDECFD]',
-    'flexible-break': 'spr-border-[#24B155] spr-bg-[#CEFFE1]',
-    'flexible-weekly': 'spr-border-[#539300] spr-bg-[#EBFFD2]',
-    'flexible-daily': 'spr-border-[#0084CB] spr-bg-[#D4F0FF]',
-    'fixed-flexible': 'spr-border-[#C771A6] spr-bg-[#FFF2FA]',
+    standard: 'mc-border-kangkong-700 mc-bg-kangkong-50',
+    'early-morning': 'mc-border-blueberry-700 mc-bg-blueberry-50',
+    'late-morning': 'mc-border-color-pending-base mc-bg-mango-50',
+    afternoon: 'mc-border-carrot-600 mc-bg-carrot-50',
+    graveyard: 'mc-border-wintermelon-600 mc-bg-wintermelon-50',
+    broken: 'mc-border-ubas-700 mc-bg-ubas-50',
+    'multi-break': 'mc-border-[#F652F2] mc-bg-[#FDECFD]',
+    'flexible-break': 'mc-border-[#24B155] mc-bg-[#CEFFE1]',
+    'flexible-weekly': 'mc-border-[#539300] mc-bg-[#EBFFD2]',
+    'flexible-daily': 'mc-border-[#0084CB] mc-bg-[#D4F0FF]',
+    'fixed-flexible': 'mc-border-[#C771A6] mc-bg-[#FFF2FA]',
   };
 
   const getCellIcon = computed((): string => {
@@ -75,7 +75,7 @@ export const useCalendarCell = (props: CalendarCellPropTypes, emit: SetupContext
   });
 
   const getCellClasses = computed((): string => {
-    return typeClasses[type.value] || 'spr-border-color-supporting spr-background-color-surface';
+    return typeClasses[type.value] || 'mc-border-color-supporting mc-background-color-surface';
   });
 
   const getCustomColorStyles = computed(() => {
@@ -97,42 +97,42 @@ export const useCalendarCell = (props: CalendarCellPropTypes, emit: SetupContext
 
   const getCalendarCellClassess = computed(() => {
     const calendarCellWrapper = classNames(
-      'spr-flex spr-items-center spr-p-size-spacing-3xs spr-gap-size-spacing-3xs spr-relative spr-rounded-lg spr-border-2 spr-transition-all spr-flex-col sm:spr-flex-row spr-overflow-hidden',
+      'mc-flex mc-items-center mc-p-size-spacing-3xs mc-gap-size-spacing-3xs mc-relative mc-rounded-lg mc-border-2 mc-transition-all mc-flex-col sm:mc-flex-row mc-overflow-hidden',
 
       {
-        'spr-w-full': fullwidth.value,
-        'spr-max-w-[217px]': !fullwidth.value,
-        'spr-cursor-pointer': !viewOnly.value,
-        'spr-h-[80px] spr-skeletal-loader': loading.value,
-        [`spr-border-[${customBorderSize.value}px]`]: customBorderSize.value,
+        'mc-w-full': fullwidth.value,
+        'mc-max-w-[217px]': !fullwidth.value,
+        'mc-cursor-pointer': !viewOnly.value,
+        'mc-h-[80px] mc-skeletal-loader': loading.value,
+        [`mc-border-[${customBorderSize.value}px]`]: customBorderSize.value,
       },
     );
 
     const statusCellClasses = classNames({
-      'spr-border-dashed': status.value === 'pending',
-      'spr-border-solid spr-border-color-danger-base': status.value === 'error',
-      'spr-border-solid': !status.value || (status.value !== 'pending' && status.value !== 'error'),
-      'spr-border-opacity-50 ': disabled.value,
+      'mc-border-dashed': status.value === 'pending',
+      'mc-border-solid mc-border-color-danger-base': status.value === 'error',
+      'mc-border-solid': !status.value || (status.value !== 'pending' && status.value !== 'error'),
+      'mc-border-opacity-50 ': disabled.value,
     });
 
-    const titleClasses = classNames('spr-text-color-strong spr-body-sm-regular-medium', {
-      'spr-text-color-danger-base': status.value === 'error',
+    const titleClasses = classNames('mc-text-color-strong mc-body-sm-regular-medium', {
+      'mc-text-color-danger-base': status.value === 'error',
     });
 
-    const descriptionClasses = classNames('spr-text-color-strong spr-body-sm-regular', {
-      'spr-text-color-danger-base': status.value === 'error',
+    const descriptionClasses = classNames('mc-text-color-strong mc-body-sm-regular', {
+      'mc-text-color-danger-base': status.value === 'error',
     });
 
-    const getTypeLabelClassess = classNames('spr-text-color-strong spr-body-sm-regular', {
-      'spr-text-color-danger-base': status.value === 'error',
-      'spr-text-color-strong spr-body-sm-regular-medium': offlineStatus.includes(type.value),
+    const getTypeLabelClassess = classNames('mc-text-color-strong mc-body-sm-regular', {
+      'mc-text-color-danger-base': status.value === 'error',
+      'mc-text-color-strong mc-body-sm-regular-medium': offlineStatus.includes(type.value),
     });
 
     const getMainClasses = classNames(calendarCellWrapper, getCellClasses.value, statusCellClasses);
 
-    const getTextFormatClasses = classNames('spr-break-words', {
-      'spr-line-through': lineThrough.value,
-      'spr-opacity-50': disabled.value,
+    const getTextFormatClasses = classNames('mc-break-words', {
+      'mc-line-through': lineThrough.value,
+      'mc-opacity-50': disabled.value,
     });
 
     return {

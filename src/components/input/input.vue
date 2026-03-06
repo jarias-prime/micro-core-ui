@@ -37,7 +37,7 @@
     <div v-if="props.displayHelper || props.showCharCount" :class="inputClasses.helperContainerClasses">
       <div v-if="props.displayHelper" :class="inputClasses.helperClasses">
         <slot name="helperMessage">
-          <Icon v-if="props.helperIcon" class="spr-h-5 spr-min-h-5 spr-w-5 spr-min-w-5" :icon="props.helperIcon" />
+          <Icon v-if="props.helperIcon" class="mc-h-5 mc-min-h-5 mc-w-5 mc-min-w-5" :icon="props.helperIcon" />
           <span>{{ props.helperText }}</span>
         </slot>
       </div>

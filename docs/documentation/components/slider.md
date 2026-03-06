@@ -11,14 +11,14 @@ The Slider component allows users to select a value from a range by dragging a h
 ## Basic Usage
 
 <div>
-  <spr-slider :min="0" :max="100" :step="1" v-model="sliderValue"/>
-  <p class="spr-m-0">Slider value: {{ sliderValue }}</p>
+  <mc-slider :min="0" :max="100" :step="1" v-model="sliderValue"/>
+  <p class="mc-m-0">Slider value: {{ sliderValue }}</p>
 </div>
 
 ```vue
 <template>
-  <spr-slider :min="0" :max="100" :step="1" v-model="sliderValue" />
-  <p class="spr-m-0">Slider value: {{ sliderValue }}</p>
+  <mc-slider :min="0" :max="100" :step="1" v-model="sliderValue" />
+  <p class="mc-m-0">Slider value: {{ sliderValue }}</p>
 </template>
 
 <script setup>
@@ -30,14 +30,14 @@ const sliderValue = ref(0);
 ## Step
 
 <div>
-  <spr-slider :min="0" :max="100" :step="20" v-model="sliderValueStep"/>
-  <p class="spr-m-0">Slider value: {{ sliderValueStep }}</p>
+  <mc-slider :min="0" :max="100" :step="20" v-model="sliderValueStep"/>
+  <p class="mc-m-0">Slider value: {{ sliderValueStep }}</p>
 </div>
 
 ```vue
 <template>
-  <spr-slider :min="0" :max="100" :step="20" v-model="sliderValueStep" />
-  <p class="spr-m-0">Slider value: {{ sliderValueStep }}</p>
+  <mc-slider :min="0" :max="100" :step="20" v-model="sliderValueStep" />
+  <p class="mc-m-0">Slider value: {{ sliderValueStep }}</p>
 </template>
 
 <script setup>
@@ -50,15 +50,15 @@ const sliderValueStep = ref(0);
 
 Slider component has 2 sizes. You can use the size prop to set the size of the slider. The default size is 'lg'. The available sizes are 'lg' and 'sm'.
 
-<div class="spr-flex spr-flex-col spr-gap-5 spr-items-center">
-  <spr-slider :min="0" :max="100" :step="1" v-model="sliderValueForLG" size="lg"/>
-  <spr-slider :min="0" :max="100" :step="1" v-model="sliderValueForSM" size="sm"/>
+<div class="mc-flex mc-flex-col mc-gap-5 mc-items-center">
+  <mc-slider :min="0" :max="100" :step="1" v-model="sliderValueForLG" size="lg"/>
+  <mc-slider :min="0" :max="100" :step="1" v-model="sliderValueForSM" size="sm"/>
 </div>
 
 ```vue
 <template>
-  <spr-slider :min="0" :max="100" :step="1" v-model="sliderValueForLG" size="lg" />
-  <spr-slider :min="0" :max="100" :step="1" v-model="sliderValueForSM" size="sm" />
+  <mc-slider :min="0" :max="100" :step="1" v-model="sliderValueForLG" size="lg" />
+  <mc-slider :min="0" :max="100" :step="1" v-model="sliderValueForSM" size="sm" />
 </template>
 
 <script setup>
@@ -71,13 +71,13 @@ const sliderValueForSM = ref(0);
 
 ## Disabled
 
-<div class="spr-flex spr-flex-col spr-gap-5 spr-items-center">
-  <spr-slider :min="0" :max="100" :step="1" v-model="sliderValueDisabled"  :disabled="true"/>
+<div class="mc-flex mc-flex-col mc-gap-5 mc-items-center">
+  <mc-slider :min="0" :max="100" :step="1" v-model="sliderValueDisabled"  :disabled="true"/>
 </div>
 
 ```vue
 <template>
-  <spr-slider :min="0" :max="100" :step="1" v-model="sliderValueDisabled" :disabled="true" />
+  <mc-slider :min="0" :max="100" :step="1" v-model="sliderValueDisabled" :disabled="true" />
 </template>
 
 <script setup>
@@ -165,7 +165,7 @@ const sliderValueDisabled = ref(50);
 
 <script lang="ts" setup>
 import {ref} from 'vue'
-import SprSlider from "@/components/slider/slider.vue";
+import McSlider from "@/components/slider/slider.vue";
 
 const sliderValue = ref(0)
 const sliderValueStep = ref(0)

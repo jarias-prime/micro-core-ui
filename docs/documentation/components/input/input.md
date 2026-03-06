@@ -10,11 +10,11 @@ UI element that allows users to enter and edit text or other data.
 
 ## Basic Usage
 
-<spr-input v-model="inputModels.basic" type="text" label="Text Input" placeholder="Enter your username"  />
+<mc-input v-model="inputModels.basic" type="text" label="Text Input" placeholder="Enter your username"  />
 
 ```vue
 <template>
-  <spr-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username" />
+  <mc-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username" />
 </template>
 
 <script lang="ts" setup>
@@ -26,11 +26,11 @@ const inputModel = ref('');
 
 ## Pre Defined Values
 
-<spr-input v-model="inputModels.preDefinedValues" type="text" label="Text Input" placeholder="Enter your username" />
+<mc-input v-model="inputModels.preDefinedValues" type="text" label="Text Input" placeholder="Enter your username" />
 
 ```vue
 <template>
-  <spr-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username" />
+  <mc-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username" />
 </template>
 
 <script lang="ts" setup>
@@ -42,11 +42,11 @@ const inputModel = ref('Sample Text');
 
 ## Active State
 
-<spr-input v-model="inputModels.activeState" type="text" label="Text Input" placeholder="Enter your username" active />
+<mc-input v-model="inputModels.activeState" type="text" label="Text Input" placeholder="Enter your username" active />
 
 ```vue
 <template>
-  <spr-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username" active />
+  <mc-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username" active />
 </template>
 
 <script lang="ts" setup>
@@ -58,19 +58,19 @@ const inputModel = ref('');
 
 ## Error State
 
-<spr-input v-model="inputModels.errorState" type="text" label="Text Input" placeholder="Enter your username" :error="true">
+<mc-input v-model="inputModels.errorState" type="text" label="Text Input" placeholder="Enter your username" :error="true">
   <template #icon>
     <Icon icon="ph:warning-circle-fill" />
   </template>
-</spr-input>
+</mc-input>
 
 ```vue
 <template>
-  <spr-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username" :error="true">
+  <mc-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username" :error="true">
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input>
+  </mc-input>
 </template>
 
 <script lang="ts" setup>
@@ -82,11 +82,11 @@ const inputModel = ref('');
 
 ## Disabled State
 
-<spr-input v-model="inputModels.disabledState" type="text" label="Text Input" placeholder="Enter your username" :disabled="true" />
+<mc-input v-model="inputModels.disabledState" type="text" label="Text Input" placeholder="Enter your username" :disabled="true" />
 
 ```vue
 <template>
-  <spr-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username" :disabled="true" />
+  <mc-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username" :disabled="true" />
 </template>
 
 <script lang="ts" setup>
@@ -100,8 +100,8 @@ const inputModel = ref('');
 
 You can set minimum or maximum length limits by passing props `min-length` or `max-length` with the corresponding number value. Additionally, you can enable a character counter display in the bottom right of the input field with the `show-char-count` prop.
 
-<div class="spr-grid spr-gap-3">
-  <spr-input 
+<div class="mc-grid mc-gap-3">
+  <mc-input 
     v-model="inputModels.minMaxCharCount1" 
     type="text" 
     label="Text Input" 
@@ -110,7 +110,7 @@ You can set minimum or maximum length limits by passing props `min-length` or `m
     :max-length="50" 
     show-char-count 
   />
-  <spr-input
+  <mc-input
     v-model="inputModels.minMaxCharCount2"
     type="text"
     label="Text Input" 
@@ -124,7 +124,7 @@ You can set minimum or maximum length limits by passing props `min-length` or `m
 
 ```vue
 <template>
-  <spr-input
+  <mc-input
     v-model="inputModel"
     type="text"
     label="Text Input"
@@ -134,7 +134,7 @@ You can set minimum or maximum length limits by passing props `min-length` or `m
     show-char-count
   />
 
-  <spr-input
+  <mc-input
     v-model="inputModel"
     type="text"
     label="Text Input"
@@ -155,19 +155,19 @@ const inputModel = ref('');
 
 ## Prefix
 
-<spr-input v-model="inputModels.prefix" type="text" label="Text Input" placeholder="Enter your username"  >
+<mc-input v-model="inputModels.prefix" type="text" label="Text Input" placeholder="Enter your username"  >
   <template #prefix>
     <Icon icon="ph:warning-circle-fill" />
   </template>
-</spr-input>
+</mc-input>
 
 ```vue
 <template>
-  <spr-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username">
+  <mc-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your username">
     <template #prefix>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input>
+  </mc-input>
 </template>
 
 <script lang="ts" setup>
@@ -179,42 +179,42 @@ const inputModel = ref('');
 
 ## Trailing Label
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-input v-model="inputModels.trailingLabel1" type="text" label="Offset xs" placeholder="00" offset-size="xs">
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-input v-model="inputModels.trailingLabel1" type="text" label="Offset xs" placeholder="00" offset-size="xs">
     <template #trailing>
       minutes
     </template>
-  </spr-input>
+  </mc-input>
 
-  <spr-input v-model="inputModels.trailingLabel2" type="text" label="offset sm" placeholder="0000000" offset-size="sm">
+  <mc-input v-model="inputModels.trailingLabel2" type="text" label="offset sm" placeholder="0000000" offset-size="sm">
     <template #trailing>
       minutes
     </template>
-  </spr-input>
+  </mc-input>
 
-  <spr-input v-model="inputModels.trailingLabel3" type="text" label="offset md" placeholder="Enter your name" offset-size="md" >
+  <mc-input v-model="inputModels.trailingLabel3" type="text" label="offset md" placeholder="Enter your name" offset-size="md" >
     <template #trailing>
       Name of the user
     </template>
-  </spr-input>
+  </mc-input>
 </div>
 
 ```vue
 <template>
   <!-- xs -->
-  <spr-input v-model="inputModel" type="text" label="Offset xs" placeholder="00" offset-size="xs">
+  <mc-input v-model="inputModel" type="text" label="Offset xs" placeholder="00" offset-size="xs">
     <template #trailing> minutes </template>
-  </spr-input>
+  </mc-input>
 
   <!-- sm -->
-  <spr-input v-model="inputModel" type="text" label="offset sm" placeholder="00" offset-size="sm">
+  <mc-input v-model="inputModel" type="text" label="offset sm" placeholder="00" offset-size="sm">
     <template #trailing> minutes </template>
-  </spr-input>
+  </mc-input>
 
   <!-- md -->
-  <spr-input v-model="inputModel" type="text" label="offset md" placeholder="Enter your name" offset-size="md">
+  <mc-input v-model="inputModel" type="text" label="offset md" placeholder="Enter your name" offset-size="md">
     <template #trailing> Name of the user </template>
-  </spr-input>
+  </mc-input>
 </template>
 
 <script lang="ts" setup>
@@ -230,8 +230,8 @@ A helper message is a text label below the input field that provides additional 
 
 To display the helper message, set the `display-helper` prop to `true` and add the `helper-text` prop with the helper message text. You can also insert an icon with the `helper-icon` prop. This uses the [Iconify](https://icon-sets.iconify.design/) icon library.
 
-<div class="spr-grid spr-gap-6">
-  <spr-input 
+<div class="mc-grid mc-gap-6">
+  <mc-input 
     v-model="inputModels.helperMessage1"
     type="text" 
     label="Text Input" 
@@ -239,7 +239,7 @@ To display the helper message, set the `display-helper` prop to `true` and add t
     helper-text="This is a helper message" 
     display-helper 
   />
-  <spr-input 
+  <mc-input 
     v-model="inputModels.helperMessage2" 
     type="text"
     label="Text Input" 
@@ -253,7 +253,7 @@ To display the helper message, set the `display-helper` prop to `true` and add t
 
 ```vue
 <template>
-  <spr-input
+  <mc-input
     v-model="inputModel"
     type="text"
     label="Text Input"
@@ -262,7 +262,7 @@ To display the helper message, set the `display-helper` prop to `true` and add t
     display-helper
   />
 
-  <spr-input
+  <mc-input
     v-model="inputModel"
     type="text"
     label="Text Input"
@@ -283,8 +283,8 @@ const inputModel = ref('');
 
 Alternatively, you can use the `helperMessage` slot to display a custom helper message.
 
-<div class="spr-grid spr-gap-6">
-  <spr-input 
+<div class="mc-grid mc-gap-6">
+  <mc-input 
     v-model="inputModels.helperMessage3" 
     type="text"
     label="Text Input" 
@@ -294,8 +294,8 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
     <template #helperMessage>
       This is a helper message
     </template>
-  </spr-input>
-  <spr-input 
+  </mc-input>
+  <mc-input 
     v-model="inputModels.helperMessage4" 
     type="text"
     label="Text Input" 
@@ -307,21 +307,21 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
       <icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is an error message</span>
     </template>
-  </spr-input>
+  </mc-input>
 </div>
 
 ```vue
 <template>
-  <spr-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your text">
+  <mc-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your text">
     <template #helperMessage> This is a helper message </template>
-  </spr-input>
+  </mc-input>
 
-  <spr-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your text" :error="true">
+  <mc-input v-model="inputModel" type="text" label="Text Input" placeholder="Enter your text" :error="true">
     <template #helperMessage>
       <icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is an error message</span>
     </template>
-  </spr-input>
+  </mc-input>
 </template>
 
 <script lang="ts" setup>
@@ -370,7 +370,7 @@ const inputModel = ref('');
       <td>id</td>
       <td>Unique identifier for the input element. Used for associating the input with a label for accessibility.</td>
       <td>string</td>
-      <td>'spr-input'</td>
+      <td>'mc-input'</td>
     </tr>
     <tr>
       <td>label</td>
@@ -520,15 +520,14 @@ import { useDebounceFn } from '@vueuse/core';
 
 import { Icon } from '@iconify/vue';
 
-import SprInput from "@/components/input/input.vue"
-import SprInputSearch from "@/components/input/input-search/input-search.vue"
-import SprInputUsername from "@/components/input/input-username/input-username.vue"
-import SprInputEmail from "@/components/input/input-email/input-email.vue"
-import SprInputPassword from "@/components/input/input-password/input-password.vue"
-import SprInputUrl from "@/components/input/input-url/input-url.vue"
+import McInput from "@/components/input/input.vue"
+import McInputSearch from "@/components/input/input-search/input-search.vue"
+import McInputUsername from "@/components/input/input-username/input-username.vue"
+import McInputEmail from "@/components/input/input-email/input-email.vue"
+import McInputPassword from "@/components/input/input-password/input-password.vue"
+import McInputUrl from "@/components/input/input-url/input-url.vue"
 
-import SprInputDropdown from "@/components/input/input-dropdown/input-dropdown.vue"
-import SprLogo from "@/components/logo/logo.vue"
+import McInputDropdown from "@/components/input/input-dropdown/input-dropdown.vue"
 
 const inputModels = ref({
   basic: '',

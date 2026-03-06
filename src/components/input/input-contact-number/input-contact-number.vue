@@ -1,5 +1,5 @@
 <template>
-  <spr-input
+  <mc-input
     v-model="formattedValue"
     v-bind="$attrs"
     type="contact-number"
@@ -19,7 +19,7 @@
     </template>
 
     <template #prefix>
-      <spr-dropdown
+      <mc-dropdown
         :id="dropdownId"
         v-model="selectedCountry.countryCode"
         :class="inputContactNumberClasses.dropdownBaseClasses"
@@ -35,16 +35,16 @@
           <span>+{{ selectedCountry.countryCallingCode }}</span>
           <icon v-if="!props.disabledCountryCallingCode" icon="ph:caret-down" width="16px" height="16px" />
         </div>
-      </spr-dropdown>
+      </mc-dropdown>
     </template>
-  </spr-input>
+  </mc-input>
 </template>
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
 
-import SprInput from '@/components/input/input.vue';
-import SprDropdown from '@/components/dropdown/dropdown.vue';
+import McInput from '@/components/input/input.vue';
+import McDropdown from '@/components/dropdown/dropdown.vue';
 
 import { useInputContactNumber } from './use-input-contact-number';
 import { COUNTRY_OPTIONS, inputContactNumberPropTypes, inputContactNumberEmitTypes } from './input-contact-number';

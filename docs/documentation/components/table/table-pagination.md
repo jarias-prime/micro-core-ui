@@ -10,10 +10,10 @@ The Table Pagination component provides a standardized way to handle pagination 
 
 ## Basic Usage
 
-<div class="spr-h-fit">
-  <spr-table :headers="headers" :data-table="data" :full-height="true">
+<div class="mc-h-fit">
+  <mc-table :headers="headers" :data-table="data" :full-height="true">
     <template #footer>
-      <spr-table-pagination
+      <mc-table-pagination
         v-model:selected-row-count="selectedRowCount"
         v-model:current-page="currentPage"
         :total-items="totalItems"
@@ -23,15 +23,15 @@ The Table Pagination component provides a standardized way to handle pagination 
         @next="handleNext"
       />
     </template>
-  </spr-table>
+  </mc-table>
 </div>
 
 ```vue
 <template>
-  <div class="spr-h-fit">
-    <spr-table :headers="headers" :data-table="data" :full-height="true">
+  <div class="mc-h-fit">
+    <mc-table :headers="headers" :data-table="data" :full-height="true">
       <template #footer>
-        <spr-table-pagination
+        <mc-table-pagination
           v-model:selected-row-count="selectedRowCount"
           v-model:current-page="currentPage"
           :total-items="totalItems"
@@ -41,14 +41,14 @@ The Table Pagination component provides a standardized way to handle pagination 
           @next="handleNext"
         />
       </template>
-    </spr-table>
+    </mc-table>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
-import SprTable from '@/components/table/table.vue';
-import SprTablePagination from '@/components/table/table-pagination/table-pagination.vue';
+import McTable from '@/components/table/table.vue';
+import McTablePagination from '@/components/table/table-pagination/table-pagination.vue';
 import tableData from '@/mock/tableData';
 
 const rawData = ref([
@@ -128,10 +128,10 @@ watch(currentPage, (newValue) => {
 
 You can enable direct page number input by setting the `editable-current-page` prop:
 
-<div class="spr-h-fit">
-  <spr-table :headers="headers" :data-table="data" :full-height="true">
+<div class="mc-h-fit">
+  <mc-table :headers="headers" :data-table="data" :full-height="true">
     <template #footer>
-      <spr-table-pagination
+      <mc-table-pagination
         v-model:selected-row-count="selectedRowCount"
         v-model:current-page="currentPage"
         :total-items="totalItems"
@@ -142,12 +142,12 @@ You can enable direct page number input by setting the `editable-current-page` p
         @next="handleNext"
       />
     </template>
-  </spr-table>
+  </mc-table>
 </div>
 
 ```vue
 <template>
-  <spr-table-pagination
+  <mc-table-pagination
     :selected-row-count="10"
     :total-items="100"
     :current-page="1"
@@ -166,8 +166,8 @@ You can enable direct page number input by setting the `editable-current-page` p
 
 ### Props
 
-<div class="spr-table-container">
-  <table class="spr-table">
+<div class="mc-table-container">
+  <table class="mc-table">
     <thead>
       <tr>
         <th>Name</th>
@@ -238,8 +238,8 @@ You can enable direct page number input by setting the `editable-current-page` p
 
 ### Events
 
-<div class="spr-table-container">
-  <table class="spr-table">
+<div class="mc-table-container">
+  <table class="mc-table">
     <thead>
       <tr>
         <th>Name</th>
@@ -274,8 +274,8 @@ You can enable direct page number input by setting the `editable-current-page` p
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import SprTable from "@/components/table/table.vue";
-import SprTablePagination from "@/components/table/table-pagination/table-pagination.vue";
+import McTable from "@/components/table/table.vue";
+import McTablePagination from "@/components/table/table-pagination/table-pagination.vue";
 import tableData from "@/mock/tableData";
 
 const headers = ref([

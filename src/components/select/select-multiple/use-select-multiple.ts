@@ -22,65 +22,63 @@ export const useMultiSelect = (props: MultiSelectPropTypes, emit: SetupContext<M
   const { displayText, persistentDisplayText, options, textField, valueField, active, disabled, error } = toRefs(props);
 
   const multiSelectClasses: ComputedRef<MultiSelectClasses> = computed(() => {
-    const baseClasses = classNames('spr-flex spr-flex-col spr-gap-size-spacing-4xs');
+    const baseClasses = classNames('mc-flex mc-flex-col mc-gap-size-spacing-4xs');
 
-    const labelClasses = classNames('spr-body-sm-regular spr-text-color-strong spr-flex spr-gap-2', {
-      'spr-text-color-on-fill-disabled': disabled.value,
+    const labelClasses = classNames('mc-body-sm-regular mc-text-color-strong mc-flex mc-gap-2', {
+      'mc-text-color-on-fill-disabled': disabled.value,
     });
 
-    const supportingLabelClasses = classNames('spr-body-sm-regular spr-text-color-supporting', {
-      'spr-text-color-on-fill-disabled': disabled.value,
+    const supportingLabelClasses = classNames('mc-body-sm-regular mc-text-color-supporting', {
+      'mc-text-color-on-fill-disabled': disabled.value,
     });
 
     const chippedInputTextBaseClasses = classNames(
-      'spr-relative spr-flex spr-items-center spr-min-h-10 spr-rounded-border-radius-md spr-border-[1.5px] spr-border-solid',
+      'mc-relative mc-flex mc-items-center mc-min-h-10 mc-rounded-border-radius-md mc-border-[1.5px] mc-border-solid',
       {
-        'spr-cursor-pointer': !disabled.value,
+        'mc-cursor-pointer': !disabled.value,
 
         // Border State
-        'spr-border-color-weak': !focused.value && !error.value && !disabled.value && !active.value,
-        'spr-border-color-brand-base': !focused.value && active.value,
-        'spr-border-color-danger-base': !focused.value && error.value,
+        'mc-border-color-weak': !focused.value && !error.value && !disabled.value && !active.value,
+        'mc-border-color-brand-base': !focused.value && active.value,
+        'mc-border-color-danger-base': !focused.value && error.value,
 
         // Border State Focused
-        'focus: spr-border-kangkong-700': focused.value && !error.value && !disabled.value && !active.value,
-        'focus: spr-border-tomato-600': focused.value && error.value,
-        'focus: spr-border-white-100': focused.value && disabled.value,
+        'focus: mc-border-kangkong-700': focused.value && !error.value && !disabled.value && !active.value,
+        'focus: mc-border-tomato-600': focused.value && error.value,
+        'focus: mc-border-white-100': focused.value && disabled.value,
 
         // Disabled State
-        'spr-background-color-disabled spr-cursor-not-allowed spr-border-mushroom-100': disabled.value,
+        'mc-background-color-disabled mc-cursor-not-allowed mc-border-mushroom-100': disabled.value,
       },
     );
 
     const chippedInputTextClasses = classNames(
-      'spr-flex spr-gap-1 spr-justify-between spr-w-full spr-outline-none spr-ring-0 spr-border-none spr-rounded-border-radius-md spr-font-size-200',
-      'spr-font-size-200 [font-weight:inherit]',
-      'placeholder:spr-text-mushroom-300',
+      'mc-flex mc-gap-1 mc-justify-between mc-w-full mc-outline-none mc-ring-0 mc-border-none mc-rounded-border-radius-md mc-font-size-200',
+      'mc-font-size-200 [font-weight:inherit]',
+      'placeholder:mc-text-mushroom-300',
       {
-        'spr-text-color-strong': !disabled.value,
+        'mc-text-color-strong': !disabled.value,
 
         // Disabled State
-        'spr-text-color-on-fill-disabled !spr-cursor-not-allowed': disabled.value,
+        'mc-text-color-on-fill-disabled !mc-cursor-not-allowed': disabled.value,
       },
     );
 
     const chippedIconClasses = classNames(
-      'spr-flex spr-items-center spr-justify-center spr-h-inherit spr-px-2 [&>svg]:spr-min-h-4 [&>svg]:spr-min-w-4',
+      'mc-flex mc-items-center mc-justify-center mc-h-inherit mc-px-2 [&>svg]:mc-min-h-4 [&>svg]:mc-min-w-4',
       {
-        'spr-text-mushroom-300': !error.value,
-        'spr-text-tomato-600': error.value,
+        'mc-text-mushroom-300': !error.value,
+        'mc-text-tomato-600': error.value,
       },
     );
 
-    const chippedHelperContainerClasses = classNames(
-      'spr-flex spr-flex-row spr-items-start spr-justify-between spr-w-full',
-    );
+    const chippedHelperContainerClasses = classNames('mc-flex mc-flex-row mc-items-start mc-justify-between mc-w-full');
 
     const chippedHelperClasses = classNames(
-      'spr-body-sm-regular spr-flex spr-items-center spr-gap-size-spacing-5xs spr-flex-1',
+      'mc-body-sm-regular mc-flex mc-items-center mc-gap-size-spacing-5xs mc-flex-1',
       {
-        'spr-text-color-danger-base': error.value,
-        'spr-text-color-supporting': !error.value,
+        'mc-text-color-danger-base': error.value,
+        'mc-text-color-supporting': !error.value,
       },
     );
 

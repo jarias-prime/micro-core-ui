@@ -17,14 +17,14 @@ export const useSelect = (props: SelectPropTypes, emit: SetupContext<SelectEmitT
   const { displayText, options, disabled, textField, valueField, disabledLocalSearch } = toRefs(props);
 
   const selectClasses: ComputedRef<SelectClasses> = computed(() => {
-    const baseClasses = classNames('spr-flex spr-flex-col spr-gap-size-spacing-4xs');
+    const baseClasses = classNames('mc-flex mc-flex-col mc-gap-size-spacing-4xs');
 
-    const labelClasses = classNames('spr-body-sm-regular spr-text-color-strong spr-flex spr-gap-2', {
-      'spr-text-color-on-fill-disabled': disabled.value,
+    const labelClasses = classNames('mc-body-sm-regular mc-text-color-strong mc-flex mc-gap-2', {
+      'mc-text-color-on-fill-disabled': disabled.value,
     });
 
-    const supportingLabelClasses = classNames('spr-body-sm-regular spr-text-color-supporting', {
-      'spr-text-color-on-fill-disabled': disabled.value,
+    const supportingLabelClasses = classNames('mc-body-sm-regular mc-text-color-supporting', {
+      'mc-text-color-on-fill-disabled': disabled.value,
     });
 
     return {

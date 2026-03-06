@@ -1,17 +1,14 @@
 <template>
-  <div 
-    ref="dateCalendarPickerRef"
-    :class="dateCalendarPickerClasses"
-  >
+  <div ref="dateCalendarPickerRef" :class="dateCalendarPickerClasses">
     <div
       :class="[
-        'spr-flex spr-justify-between spr-gap-2 spr-px-4 spr-py-3',
-        'spr-border spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid spr-border-mushroom-200',
+        'mc-flex mc-justify-between mc-gap-2 mc-px-4 mc-py-3',
+        'mc-border mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid mc-border-mushroom-200',
       ]"
     >
       <!-- Tabs -->
-      <div class="spr-flex spr-gap-1">
-        <spr-button
+      <div class="mc-flex mc-gap-1">
+        <mc-button
           v-if="showMonthInput"
           :class="getTabClasses('tab-months')"
           variant="secondary"
@@ -19,8 +16,8 @@
           @click="handleTabClick('tab-months')"
         >
           {{ getMonthObject('monthValue', calendarTabPageData.selectedMonth)?.fullText }}
-        </spr-button>
-        <spr-button
+        </mc-button>
+        <mc-button
           v-if="showYearInput"
           :class="getTabClasses('tab-years')"
           variant="secondary"
@@ -28,54 +25,54 @@
           @click="handleTabClick('tab-years')"
         >
           {{ calendarTabPageData.selectedYear }}
-        </spr-button>
+        </mc-button>
       </div>
 
       <!-- Next & Previous Buttons  -->
-      <div v-if="currentTab === 'tab-calendar'" class="spr-flex spr-gap-1">
-        <spr-button
-          class="spr-cursor-pointer"
+      <div v-if="currentTab === 'tab-calendar'" class="mc-flex mc-gap-1">
+        <mc-button
+          class="mc-cursor-pointer"
           variant="secondary"
           size="small"
           :disabled="calendarTabIsMinMonth"
           @click="calendarTabPrevMonth"
         >
           <Icon icon="ph:caret-left" />
-        </spr-button>
-        <spr-button
-          class="spr-cursor-pointer"
+        </mc-button>
+        <mc-button
+          class="mc-cursor-pointer"
           variant="secondary"
           size="small"
           :disabled="calendarTabIsMaxMonth"
           @click="calendarTabNextMonth"
         >
           <Icon icon="ph:caret-right" />
-        </spr-button>
+        </mc-button>
       </div>
 
-      <div v-if="currentTab === 'tab-years'" class="spr-flex spr-gap-1">
-        <spr-button
-          class="spr-cursor-pointer"
+      <div v-if="currentTab === 'tab-years'" class="mc-flex mc-gap-1">
+        <mc-button
+          class="mc-cursor-pointer"
           variant="secondary"
           size="small"
           :disabled="yearTabIsPreviousButtonDisabled"
           @click="yearTabGoToPreviousPage"
         >
           <Icon icon="ph:caret-left" />
-        </spr-button>
-        <spr-button
-          class="spr-cursor-pointer"
+        </mc-button>
+        <mc-button
+          class="mc-cursor-pointer"
           variant="secondary"
           size="small"
           :disabled="yearTabIsNextButtonDisabled"
           @click="yearTabGoToNextPage"
         >
           <Icon icon="ph:caret-right" />
-        </spr-button>
+        </mc-button>
       </div>
     </div>
-    
-    <div class="spr-px-4 spr-pb-4 spr-pt-2">
+
+    <div class="mc-px-4 mc-pb-4 mc-pt-2">
       <!-- Calendar Tab  -->
       <DatePickerCalendarTab
         v-if="currentTab === 'tab-calendar' && showDateInput"
@@ -146,7 +143,7 @@ const {
   currentTab,
   calendarTabPageData,
   yearTabPageData,
-  
+
   // Computed properties
   showMonthInput,
   showDateInput,
@@ -159,7 +156,7 @@ const {
   calendarTabIsMaxMonth,
   yearTabIsPreviousButtonDisabled,
   yearTabIsNextButtonDisabled,
-  
+
   // Functions
   getTabClasses,
   handleTabClick,
@@ -168,7 +165,7 @@ const {
   calendarTabNextMonth,
   yearTabGoToPreviousPage,
   yearTabGoToNextPage,
-  
+
   // Event handlers
   handleCalendarDateUpdateWrapper,
   handleCalendarMonthUpdateWrapper,
@@ -181,12 +178,11 @@ const {
 // Compute CSS classes using classNames utility
 const dateCalendarPickerClasses = computed(() => {
   return classNames(
-    'date-calendar-picker-container spr-bg-white spr-rounded-lg spr-shadow-lg spr-border spr-border-solid spr-border-mushroom-200 min-w-[320px]',
+    'date-calendar-picker-container mc-bg-white mc-rounded-lg mc-shadow-lg mc-border mc-border-solid mc-border-mushroom-200 min-w-[320px]',
     {
-      'spr-disabled': props.disabled,
-      'spr-readonly': props.readonly,
-    }
+      'mc-disabled': props.disabled,
+      'mc-readonly': props.readonly,
+    },
   );
 });
 </script>
-

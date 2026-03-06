@@ -3,8 +3,8 @@
     <Transition name="snackbar">
       <div v-if="snackbarStore.snacks.length > 0" class="snackbar-wrapper slide-in-element">
         <TransitionGroup name="snackbar" tag="ul">
-          <li v-for="snack in snackbarStore.snacks" :key="snack.id" class="snackbar-snack spr-mb-size-spacing-3xs">
-            <spr-snack
+          <li v-for="snack in snackbarStore.snacks" :key="snack.id" class="snackbar-snack mc-mb-size-spacing-3xs">
+            <mc-snack
               :text="snack.text"
               :action-text="snack.actionText"
               :tone="snack.tone"
@@ -17,7 +17,7 @@
               <slot>
                 <slot name="snackbarActions"></slot>
               </slot>
-            </spr-snack>
+            </mc-snack>
           </li>
         </TransitionGroup>
       </div>
@@ -28,7 +28,7 @@
 <script lang="ts" setup>
 import { useSnackbarStore } from '@/stores/useSnackbarStore';
 
-import SprSnack from '@/components/snackbar/snack/snack.vue';
+import McSnack from '@/components/snackbar/snack/snack.vue';
 import { useSnackbar } from '@/components/snackbar/use-snackbar';
 
 import { SnackPropTypes } from './snack/snack';

@@ -10,21 +10,21 @@ The Status component provides a standardized way to display status indicators ac
 
 ## Basic Usage
 
-<div class="spr-flex spr-flex-row spr-gap-2">
-  <spr-status state="success" />
-  <spr-status state="information" />
-  <spr-status state="pending" />
-  <spr-status state="caution" />
-  <spr-status state="danger" />
+<div class="mc-flex mc-flex-row mc-gap-2">
+  <mc-status state="success" />
+  <mc-status state="information" />
+  <mc-status state="pending" />
+  <mc-status state="caution" />
+  <mc-status state="danger" />
 </div>
 
 ```vue
 <template>
-  <spr-status state="success" />
-  <spr-status state="information" />
-  <spr-status state="pending" />
-  <spr-status state="caution" />
-  <spr-status state="danger" />
+  <mc-status state="success" />
+  <mc-status state="information" />
+  <mc-status state="pending" />
+  <mc-status state="caution" />
+  <mc-status state="danger" />
 </template>
 ```
 
@@ -32,54 +32,54 @@ The Status component provides a standardized way to display status indicators ac
 
 status component has 7 different sizes. You can use the `size` prop to set the size of the status. The default size is `base`. The available sizes are `2xl`, `xl`, `lg`, `base`, `sm`, `xs`, `2xs`.
 
-<div class="spr-flex spr-flex-row spr-gap-2 spr-items-center">
-  <spr-status state="success" size="2xl" />
-  <spr-status state="success" size="xl" />
-  <spr-status state="success" size="lg" />
-  <spr-status state="success" size="base" />
-  <spr-status state="success" size="sm" />
-  <spr-status state="success" size="xs" />
-  <spr-status state="success" size="2xs" />
+<div class="mc-flex mc-flex-row mc-gap-2 mc-items-center">
+  <mc-status state="success" size="2xl" />
+  <mc-status state="success" size="xl" />
+  <mc-status state="success" size="lg" />
+  <mc-status state="success" size="base" />
+  <mc-status state="success" size="sm" />
+  <mc-status state="success" size="xs" />
+  <mc-status state="success" size="2xs" />
 </div>
 
-<div class="spr-flex spr-flex-row spr-gap-2 spr-items-center">
-  <spr-status state="information" size="2xl" />
-  <spr-status state="information" size="xl" />
-  <spr-status state="information" size="lg"/>
-  <spr-status state="information" size="base" />
-  <spr-status state="information" size="sm" />
-  <spr-status state="information" size="xs" />
-  <spr-status state="information" size="2xs" />
+<div class="mc-flex mc-flex-row mc-gap-2 mc-items-center">
+  <mc-status state="information" size="2xl" />
+  <mc-status state="information" size="xl" />
+  <mc-status state="information" size="lg"/>
+  <mc-status state="information" size="base" />
+  <mc-status state="information" size="sm" />
+  <mc-status state="information" size="xs" />
+  <mc-status state="information" size="2xs" />
 </div>
 
-<div class="spr-flex spr-flex-row spr-gap-2 spr-items-center">
-  <spr-status state="pending" size="2xl" />
-  <spr-status state="pending" size="xl" />
-  <spr-status state="pending" size="lg"/>
-  <spr-status state="pending" size="base" />
-  <spr-status state="pending" size="sm" />
-  <spr-status state="pending" size="xs" />
-  <spr-status state="pending" size="2xs" />
+<div class="mc-flex mc-flex-row mc-gap-2 mc-items-center">
+  <mc-status state="pending" size="2xl" />
+  <mc-status state="pending" size="xl" />
+  <mc-status state="pending" size="lg"/>
+  <mc-status state="pending" size="base" />
+  <mc-status state="pending" size="sm" />
+  <mc-status state="pending" size="xs" />
+  <mc-status state="pending" size="2xs" />
 </div>
 
-<div class="spr-flex spr-flex-row spr-gap-2 spr-items-center">
-  <spr-status state="caution" size="2xl" />
-  <spr-status state="caution" size="xl" />
-  <spr-status state="caution" size="lg"/>
-  <spr-status state="caution" size="base" />
-  <spr-status state="caution" size="sm" />
-  <spr-status state="caution" size="xs" />
-  <spr-status state="caution" size="2xs" />
+<div class="mc-flex mc-flex-row mc-gap-2 mc-items-center">
+  <mc-status state="caution" size="2xl" />
+  <mc-status state="caution" size="xl" />
+  <mc-status state="caution" size="lg"/>
+  <mc-status state="caution" size="base" />
+  <mc-status state="caution" size="sm" />
+  <mc-status state="caution" size="xs" />
+  <mc-status state="caution" size="2xs" />
 </div>
 
-<div class="spr-flex spr-flex-row spr-gap-2 spr-items-center">
-  <spr-status state="danger" size="2xl" />
-  <spr-status state="danger" size="xl" />
-  <spr-status state="danger" size="lg"/>
-  <spr-status state="danger" size="base" />
-  <spr-status state="danger" size="sm" />
-  <spr-status state="danger" size="xs" />
-  <spr-status state="danger" size="2xs" />
+<div class="mc-flex mc-flex-row mc-gap-2 mc-items-center">
+  <mc-status state="danger" size="2xl" />
+  <mc-status state="danger" size="xl" />
+  <mc-status state="danger" size="lg"/>
+  <mc-status state="danger" size="base" />
+  <mc-status state="danger" size="sm" />
+  <mc-status state="danger" size="xs" />
+  <mc-status state="danger" size="2xs" />
 </div>
 
 ## API Reference
@@ -89,7 +89,7 @@ status component has 7 different sizes. You can use the `size` prop to set the s
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Type</th>
       <th>Default</th>
@@ -140,7 +140,7 @@ status component has 7 different sizes. You can use the `size` prop to set the s
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">State</th>
+      <th class="mc-min-w-[180px]">State</th>
       <th>Icon</th>
     </tr>
   </thead>
@@ -169,5 +169,5 @@ status component has 7 different sizes. You can use the `size` prop to set the s
 </table>
 
 <script lang="ts" setup>
-import SprStatus from "@/components/status/status.vue";
+import McStatus from "@/components/status/status.vue";
 </script>

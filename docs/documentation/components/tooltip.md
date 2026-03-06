@@ -10,41 +10,41 @@ The tooltip component is a simple component that displays a tooltip when hovered
 
 ## Basic Usage
 
-<div class="spr-grid spr-gap-3">
-  <spr-tooltip text="This is my tooltip text">
-    <spr-button tone="success">Hover me to view tooltip</spr-button>
-  </spr-tooltip>
-  <spr-tooltip text="This is my tooltip text">
-    <spr-chips class="spr-w-full" label="Chips" />
-  </spr-tooltip>
-  <spr-tooltip text="This is my tooltip text">
-    <spr-lozenge class="spr-w-full" label="Lozange" />
-  </spr-tooltip>
-  <spr-tooltip text="This is my tooltip text">
-    <spr-input v-model="inputValueBasic" placeholder="Enter your text" class="spr-w-full" />
-  </spr-tooltip>
+<div class="mc-grid mc-gap-3">
+  <mc-tooltip text="This is my tooltip text">
+    <mc-button tone="success">Hover me to view tooltip</mc-button>
+  </mc-tooltip>
+  <mc-tooltip text="This is my tooltip text">
+    <mc-chips class="mc-w-full" label="Chips" />
+  </mc-tooltip>
+  <mc-tooltip text="This is my tooltip text">
+    <mc-lozenge class="mc-w-full" label="Lozange" />
+  </mc-tooltip>
+  <mc-tooltip text="This is my tooltip text">
+    <mc-input v-model="inputValueBasic" placeholder="Enter your text" class="mc-w-full" />
+  </mc-tooltip>
 </div>
 
 ```vue
-<spr-tooltip text="This is my tooltip text">
+<mc-tooltip text="This is my tooltip text">
     <!-- Your component here -->
-</spr-tooltip>
+</mc-tooltip>
 ```
 
 ## Custom Text
 
 By adding the `text` prop to the tooltip component, you can customize the text that is displayed in the tooltip.
 
-<div class="spr-grid spr-gap-3">
-  <spr-tooltip text="This is my custom tooltip text">
-    <spr-button tone="success">Hover me to view tooltip</spr-button>
-  </spr-tooltip>
+<div class="mc-grid mc-gap-3">
+  <mc-tooltip text="This is my custom tooltip text">
+    <mc-button tone="success">Hover me to view tooltip</mc-button>
+  </mc-tooltip>
 </div>
 
 ```vue
-<spr-tooltip text="This is my custom tooltip text">
+<mc-tooltip text="This is my custom tooltip text">
     <!-- Your component here -->
-</spr-tooltip>
+</mc-tooltip>
 ```
 
 ## Custom Text Using HTML
@@ -55,98 +55,98 @@ You can also use HTML to further customize the text that you wanted to displayed
 If both `text` props and template `#popper-content` are used, the `text` prop will be always first displayed before the `#popper-content`.
 :::
 
-<spr-tooltip text="This is my custom tooltip text">
+<mc-tooltip text="This is my custom tooltip text">
   <template #popper-content>
     <h5>This is a sample title</h5>
   </template>
-  <spr-button tone="success">Hover me to view tooltip</spr-button>
-</spr-tooltip>
+  <mc-button tone="success">Hover me to view tooltip</mc-button>
+</mc-tooltip>
 
 ```vue
-<spr-tooltip text="This is my custom tooltip text">
+<mc-tooltip text="This is my custom tooltip text">
   <template #popper-content>
     <h5>This is a sample title</h5>
   </template>
 
   <!-- Your component here -->
-</spr-tooltip>
+</mc-tooltip>
 ```
 
 ## Plaacement
 
-<div class="spr-flex spr-flex-col spr-gap-3">
-  <div class="spr-flex spr-gap-3">
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="top">
-      <spr-button class="spr-w-full" tone="success">Top</spr-button>
-    </spr-tooltip>
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="top-start">
-      <spr-button class="spr-w-full" tone="success">Top Start</spr-button>
-    </spr-tooltip>
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="top-end">
-      <spr-button class="spr-w-full" tone="success">Top End</spr-button>
-    </spr-tooltip>
+<div class="mc-flex mc-flex-col mc-gap-3">
+  <div class="mc-flex mc-gap-3">
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="top">
+      <mc-button class="mc-w-full" tone="success">Top</mc-button>
+    </mc-tooltip>
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="top-start">
+      <mc-button class="mc-w-full" tone="success">Top Start</mc-button>
+    </mc-tooltip>
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="top-end">
+      <mc-button class="mc-w-full" tone="success">Top End</mc-button>
+    </mc-tooltip>
   </div>
-  <div class="spr-flex spr-gap-3">
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="bottom">
-      <spr-button class="spr-w-full" tone="success">Bottom</spr-button>
-    </spr-tooltip>
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="bottom-start">
-      <spr-button class="spr-w-full" tone="success">Bottom Start</spr-button>
-    </spr-tooltip>
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="bottom-end">
-      <spr-button class="spr-w-full" tone="success">Bottom End</spr-button>
-    </spr-tooltip>
+  <div class="mc-flex mc-gap-3">
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="bottom">
+      <mc-button class="mc-w-full" tone="success">Bottom</mc-button>
+    </mc-tooltip>
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="bottom-start">
+      <mc-button class="mc-w-full" tone="success">Bottom Start</mc-button>
+    </mc-tooltip>
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="bottom-end">
+      <mc-button class="mc-w-full" tone="success">Bottom End</mc-button>
+    </mc-tooltip>
   </div>
-  <div class="spr-flex spr-gap-3">
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="left">
-      <spr-button class="spr-w-full" tone="success">Left</spr-button>
-    </spr-tooltip>
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="left-start">
-      <spr-button class="spr-w-full" tone="success">Left Start</spr-button>
-    </spr-tooltip>
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="left-end">
-      <spr-button class="spr-w-full" tone="success">Left End</spr-button>
-    </spr-tooltip>
+  <div class="mc-flex mc-gap-3">
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="left">
+      <mc-button class="mc-w-full" tone="success">Left</mc-button>
+    </mc-tooltip>
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="left-start">
+      <mc-button class="mc-w-full" tone="success">Left Start</mc-button>
+    </mc-tooltip>
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="left-end">
+      <mc-button class="mc-w-full" tone="success">Left End</mc-button>
+    </mc-tooltip>
   </div>
-  <div class="spr-flex spr-gap-3">
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="right">
-      <spr-button class="spr-w-full" tone="success">Right</spr-button>
-    </spr-tooltip>
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="right-start">
-      <spr-button class="spr-w-full" tone="success">Right Start</spr-button>
-    </spr-tooltip>
-    <spr-tooltip class="!spr-w-full" text="My tooltip" placement="right-end">
-      <spr-button class="spr-w-full" tone="success">Right End</spr-button>
-    </spr-tooltip>
+  <div class="mc-flex mc-gap-3">
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="right">
+      <mc-button class="mc-w-full" tone="success">Right</mc-button>
+    </mc-tooltip>
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="right-start">
+      <mc-button class="mc-w-full" tone="success">Right Start</mc-button>
+    </mc-tooltip>
+    <mc-tooltip class="!mc-w-full" text="My tooltip" placement="right-end">
+      <mc-button class="mc-w-full" tone="success">Right End</mc-button>
+    </mc-tooltip>
   </div>
 </div>
 
 ```vue
-<spr-tooltip text="My tooltip" placement="top-start">
+<mc-tooltip text="My tooltip" placement="top-start">
     <!-- Your component here -->
-</spr-tooltip>
+</mc-tooltip>
 ```
 
 ## Distance
 
 You can set the distance of the tooltip from the target element by using the `distance` prop. The default distance is `8px`. You can set it to any value you want.
 
-<div class="spr-flex spr-gap-3">
-  <spr-tooltip text="My tooltip" :distance="16">
-    <spr-button tone="success">Distance 16px</spr-button>
-  </spr-tooltip>
-  <spr-tooltip text="My tooltip" :distance="32">
-    <spr-button tone="success">Distance 32px</spr-button>
-  </spr-tooltip>
-  <spr-tooltip text="My tooltip" :distance="64">
-    <spr-button tone="success">Distance 64px</spr-button>
-  </spr-tooltip>
+<div class="mc-flex mc-gap-3">
+  <mc-tooltip text="My tooltip" :distance="16">
+    <mc-button tone="success">Distance 16px</mc-button>
+  </mc-tooltip>
+  <mc-tooltip text="My tooltip" :distance="32">
+    <mc-button tone="success">Distance 32px</mc-button>
+  </mc-tooltip>
+  <mc-tooltip text="My tooltip" :distance="64">
+    <mc-button tone="success">Distance 64px</mc-button>
+  </mc-tooltip>
 </div>
 
 ```vue
-<spr-tooltip text="My tooltip" :distance="16">
+<mc-tooltip text="My tooltip" :distance="16">
     <!-- Your component here -->
-</spr-tooltip>
+</mc-tooltip>
 ```
 
 ## Width
@@ -157,29 +157,29 @@ You can set the width of the tooltip by using the `fit-content` prop. By default
 
 You can enable or disable the maximum width of the tooltip by using the `has-max-width prop`. By default, the max-width is enabled. When the `has-max-width` prop is set to true, the tooltip will have a maximum width of `280px`.
 
-<div class="spr-grid spr-gap-3">
-  <spr-tooltip placement="top">
+<div class="mc-grid mc-gap-3">
+  <mc-tooltip placement="top">
     <template #popper-content>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia, 
         ante sit amet condimentum varius, metus enim luctus magna, ut vehicula ipsum quam vel odio.
       </p>
     </template>
-    <spr-button tone="success">Has Max Width</spr-button>
-  </spr-tooltip>
-  <spr-tooltip placement="top" :has-max-width="false">
+    <mc-button tone="success">Has Max Width</mc-button>
+  </mc-tooltip>
+  <mc-tooltip placement="top" :has-max-width="false">
     <template #popper-content>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia, 
         ante sit amet condimentum varius, metus enim luctus magna, ut vehicula ipsum quam vel odio.
       </p>
     </template>
-    <spr-button tone="success">Has No Max Width</spr-button>
-  </spr-tooltip>
+    <mc-button tone="success">Has No Max Width</mc-button>
+  </mc-tooltip>
 </div>
 
 ```vue
-<spr-tooltip>
+<mc-tooltip>
   <template #popper-content>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia, 
@@ -188,9 +188,9 @@ You can enable or disable the maximum width of the tooltip by using the `has-max
   </template>
 
   <!-- Your component here -->
-</spr-tooltip>
+</mc-tooltip>
 
-<spr-tooltip>
+<mc-tooltip>
   <template #popper-content :has-max-width="false">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia, 
@@ -199,7 +199,7 @@ You can enable or disable the maximum width of the tooltip by using the `has-max
   </template>
 
   <!-- Your component here -->
-</spr-tooltip>
+</mc-tooltip>
 ```
 
 ## Dynamic Changing Tooltip Text
@@ -207,21 +207,21 @@ You can enable or disable the maximum width of the tooltip by using the `has-max
 You can dynamically change the tooltip text by using the `text` prop. The tooltip will automatically update when the `text` prop changes.
 
 <div>
-  <spr-tooltip 
+  <mc-tooltip 
     :text="tootltipText" 
     :fit-content="false" 
     show-triggers="hover" 
     hide-triggers="hover"
   >
-    <spr-input v-model="inputValueDynamic" placeholder="Enter your text" class="spr-w-full" />
-  </spr-tooltip>
+    <mc-input v-model="inputValueDynamic" placeholder="Enter your text" class="mc-w-full" />
+  </mc-tooltip>
 </div>
 
 ```vue
 <template>
-  <spr-tooltip :text="tootltipText" :fit-content="false" show-triggers="hover" hide-triggers="hover">
-    <spr-input v-model="inputValueDynamic" placeholder="Enter your text" class="spr-w-full" />
-  </spr-tooltip>
+  <mc-tooltip :text="tootltipText" :fit-content="false" show-triggers="hover" hide-triggers="hover">
+    <mc-input v-model="inputValueDynamic" placeholder="Enter your text" class="mc-w-full" />
+  </mc-tooltip>
 </template>
 
 <script lang="ts" setup>
@@ -242,64 +242,64 @@ You can customize the triggers for showing and hiding the tooltip by using the `
 
 Possible trigger events include `focus`, `click`, `hover`, and `touch`. You can also combine triggers to show the tooltip on one event and hide it on another.
 
-<div class="spr-flex spr-gap-6">
-  <spr-tooltip 
+<div class="mc-flex mc-gap-6">
+  <mc-tooltip 
     text="This tooltip shows on focus" 
     show-triggers="focus" 
     hide-triggers="focus"
   >
-    <spr-button tone="success">Focus Trigger</spr-button>
-  </spr-tooltip>
-  <spr-tooltip 
+    <mc-button tone="success">Focus Trigger</mc-button>
+  </mc-tooltip>
+  <mc-tooltip 
     text="This tooltip shows on click" 
     show-triggers="click" 
     hide-triggers="click"
   >
-    <spr-button tone="success">Click Trigger</spr-button>
-  </spr-tooltip>
-  <spr-tooltip 
+    <mc-button tone="success">Click Trigger</mc-button>
+  </mc-tooltip>
+  <mc-tooltip 
     text="This tooltip shows on hover" 
     show-triggers="hover" 
     hide-triggers="hover"
   >
-    <spr-button tone="success">Hover Trigger</spr-button>
-  </spr-tooltip>
+    <mc-button tone="success">Hover Trigger</mc-button>
+  </mc-tooltip>
 </div>
 
 You can also combine triggers, for example, to show the tooltip on click and hide it on hover:
 
-<div class="spr-flex spr-gap-3">
-  <spr-tooltip 
+<div class="mc-flex mc-gap-3">
+  <mc-tooltip 
     text="This tooltip shows on click" 
     :show-triggers="['click', 'hover']" 
     :hide-triggers="['click', 'hover']"
   >
-    <spr-button tone="success">Click + Hover Trigger</spr-button>
-  </spr-tooltip>
+    <mc-button tone="success">Click + Hover Trigger</mc-button>
+  </mc-tooltip>
 </div>
 
 ```vue
 <template>
-  <div class="spr-flex spr-gap-3">
-    <spr-tooltip text="This tooltip shows on focus" show-triggers="focus" hide-triggers="blur">
-      <spr-button tone="success">Focus Trigger</spr-button>
-    </spr-tooltip>
-    <spr-tooltip text="This tooltip shows on click" show-triggers="click" hide-triggers="click">
-      <spr-button tone="success">Click Trigger</spr-button>
-    </spr-tooltip>
-    <spr-tooltip text="This tooltip shows on hover" show-triggers="hover" hide-triggers="hover">
-      <spr-button tone="success">Hover Trigger</spr-button>
-    </spr-tooltip>
+  <div class="mc-flex mc-gap-3">
+    <mc-tooltip text="This tooltip shows on focus" show-triggers="focus" hide-triggers="blur">
+      <mc-button tone="success">Focus Trigger</mc-button>
+    </mc-tooltip>
+    <mc-tooltip text="This tooltip shows on click" show-triggers="click" hide-triggers="click">
+      <mc-button tone="success">Click Trigger</mc-button>
+    </mc-tooltip>
+    <mc-tooltip text="This tooltip shows on hover" show-triggers="hover" hide-triggers="hover">
+      <mc-button tone="success">Hover Trigger</mc-button>
+    </mc-tooltip>
   </div>
 
-  <div class="spr-flex spr-gap-3">
-    <spr-tooltip
+  <div class="mc-flex mc-gap-3">
+    <mc-tooltip
       text="This tooltip shows on click"
       :show-triggers="['click', 'hover']"
       :hide-triggers="['click', 'hover']"
     >
-      <spr-button tone="success">Click + Hover Trigger</spr-button>
-    </spr-tooltip>
+      <mc-button tone="success">Click + Hover Trigger</mc-button>
+    </mc-tooltip>
   </div>
 </template>
 ```
@@ -402,12 +402,11 @@ You can also combine triggers, for example, to show the tooltip on click and hid
 <script lang="ts" setup>
 import { ref, watch } from "vue";
 
-import SprTooltip from "@/components/tooltip/tooltip.vue";
-import SprButton from "@/components/button/button.vue";
-import SprChips from "@/components/chips/chips.vue";
-import SprLozenge from "@/components/lozenge/lozenge.vue"
-import SprInput from "@/components/input/input.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McTooltip from "@/components/tooltip/tooltip.vue";
+import McButton from "@/components/button/button.vue";
+import McChips from "@/components/chips/chips.vue";
+import McLozenge from "@/components/lozenge/lozenge.vue"
+import McInput from "@/components/input/input.vue";
 
 const inputValueBasic = ref("");
 const inputValueDynamic = ref("");

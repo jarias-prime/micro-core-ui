@@ -7,64 +7,63 @@ export const useIcon = (props: IconPropTypes) => {
 
   const iconClasses = computed(() => {
     const BASE_CLASSES =
-      'spr-rounded-border-radius-md spr-relative spr-inline-block spr-rounded spr-flex spr-items-center spr-justify-center';
+      'mc-rounded-border-radius-md mc-relative mc-inline-block mc-rounded mc-flex mc-items-center mc-justify-center';
 
     const TONE_MAP = {
       success: {
-        primary: 'spr-border-color-brand-base spr-text-color-inverted-strong spr-background-color-success-base',
-        secondary: 'spr-border-color-brand-base spr-text-color-success-base spr-bg-kangkong-50',
-        tertiary: 'spr-text-color-success-base',
+        primary: 'mc-border-color-brand-base mc-text-color-inverted-strong mc-background-color-success-base',
+        secondary: 'mc-border-color-brand-base mc-text-color-success-base mc-bg-kangkong-50',
+        tertiary: 'mc-text-color-success-base',
       },
       error: {
-        primary: 'spr-border-color-danger-base spr-text-color-inverted-strong spr-background-color-danger-base',
-        secondary: 'spr-border-color-danger-base spr-text-color-danger-base spr-bg-tomato-50',
-        tertiary: 'spr-text-color-danger-base',
+        primary: 'mc-border-color-danger-base mc-text-color-inverted-strong mc-background-color-danger-base',
+        secondary: 'mc-border-color-danger-base mc-text-color-danger-base mc-bg-tomato-50',
+        tertiary: 'mc-text-color-danger-base',
       },
       info: {
-        primary:
-          'spr-border-color-information-base spr-text-color-inverted-strong spr-background-color-information-base',
-        secondary: 'spr-border-color-information-base spr-text-color-information-base spr-bg-sky-50',
-        tertiary: 'spr-text-color-information-base',
+        primary: 'mc-border-color-information-base mc-text-color-inverted-strong mc-background-color-information-base',
+        secondary: 'mc-border-color-information-base mc-text-color-information-base mc-bg-sky-50',
+        tertiary: 'mc-text-color-information-base',
       },
       pending: {
-        primary: 'spr-border-color-pending-base spr-text-color-inverted-strong spr-background-color-pending-base',
-        secondary: 'spr-border-color-pending-base spr-text-color-pending-base spr-bg-yellow-50',
-        tertiary: 'spr-text-color-pending-base',
+        primary: 'mc-border-color-pending-base mc-text-color-inverted-strong mc-background-color-pending-base',
+        secondary: 'mc-border-color-pending-base mc-text-color-pending-base mc-bg-yellow-50',
+        tertiary: 'mc-text-color-pending-base',
       },
       caution: {
-        primary: 'spr-border-color-caution-base spr-text-color-inverted-strong spr-background-color-caution-base',
-        secondary: 'spr-border-color-caution-base spr-text-color-caution-base spr-bg-orange-50',
-        tertiary: 'spr-text-color-caution-base',
+        primary: 'mc-border-color-caution-base mc-text-color-inverted-strong mc-background-color-caution-base',
+        secondary: 'mc-border-color-caution-base mc-text-color-caution-base mc-bg-orange-50',
+        tertiary: 'mc-text-color-caution-base',
       },
     };
 
     const SIZE_MAP = {
-      '2xl': variant.value === 'tertiary' ? 'spr-font-size-700' : 'spr-h-20 spr-min-w-20 spr-font-size-700',
-      xl: variant.value === 'tertiary' ? 'spr-font-size-600' : 'spr-h-14 spr-min-w-14 spr-font-size-600',
-      lg: variant.value === 'tertiary' ? 'spr-font-size-500' : 'spr-h-10 spr-min-w-10 spr-font-size-500',
-      md: variant.value === 'tertiary' ? 'spr-font-size-400' : 'spr-h-9 spr-min-w-9 spr-font-size-400',
+      '2xl': variant.value === 'tertiary' ? 'mc-font-size-700' : 'mc-h-20 mc-min-w-20 mc-font-size-700',
+      xl: variant.value === 'tertiary' ? 'mc-font-size-600' : 'mc-h-14 mc-min-w-14 mc-font-size-600',
+      lg: variant.value === 'tertiary' ? 'mc-font-size-500' : 'mc-h-10 mc-min-w-10 mc-font-size-500',
+      md: variant.value === 'tertiary' ? 'mc-font-size-400' : 'mc-h-9 mc-min-w-9 mc-font-size-400',
       sm:
         variant.value === 'tertiary'
-          ? 'spr-font-size-300'
-          : 'spr-h-6 spr-min-w-6 spr-font-size-300 spr-rounded-border-radius-sm',
+          ? 'mc-font-size-300'
+          : 'mc-h-6 mc-min-w-6 mc-font-size-300 mc-rounded-border-radius-sm',
       xs:
         variant.value === 'tertiary'
-          ? 'spr-font-size-250'
-          : 'spr-h-5 spr-min-w-5 spr-font-size-250 spr-rounded-border-radius-xs',
+          ? 'mc-font-size-250'
+          : 'mc-h-5 mc-min-w-5 mc-font-size-250 mc-rounded-border-radius-xs',
       '2xs':
         variant.value === 'tertiary'
-          ? 'spr-font-size-250'
-          : 'spr-h-4 spr-min-w-4  spr-font-size-250 spr-rounded-border-radius-xs',
+          ? 'mc-font-size-250'
+          : 'mc-h-4 mc-min-w-4  mc-font-size-250 mc-rounded-border-radius-xs',
     };
 
-    const toneClasses = classNames('spr-border spr-border-solid', TONE_MAP[tone.value]?.[variant.value] || '');
+    const toneClasses = classNames('mc-border mc-border-solid', TONE_MAP[tone.value]?.[variant.value] || '');
 
     const sizeClasses = SIZE_MAP[size.value] || SIZE_MAP.md;
 
     const variantClasses = classNames({
-      'spr-border-0': variant.value === 'primary',
-      'spr-border': variant.value === 'secondary',
-      'spr-border-0 spr-bg-transparent ': variant.value === 'tertiary' || !variant.value,
+      'mc-border-0': variant.value === 'primary',
+      'mc-border': variant.value === 'secondary',
+      'mc-border-0 mc-bg-transparent ': variant.value === 'tertiary' || !variant.value,
     });
 
     return classNames(variantClasses, BASE_CLASSES, sizeClasses, toneClasses);

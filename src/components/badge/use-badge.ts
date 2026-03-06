@@ -16,33 +16,33 @@ export const useBadge = (props: BadgePropTypes) => {
 
   const badgeClasses: ComputedRef<BadgeClasses> = computed(() => {
     const baseClasses = classNames({
-      'spr-flex spr-items-center spr-gap-2': position.value === 'default',
-      'spr-relative': position.value === 'top' || position.value === 'bottom',
+      'mc-flex mc-items-center mc-gap-2': position.value === 'default',
+      'mc-relative': position.value === 'top' || position.value === 'bottom',
     });
 
     const variantClasses = classNames({
-      'spr-background-color-surface spr-text-color-base': variant.value === 'neutral',
-      'spr-background-color-danger-base spr-text-color-inverted-strong': variant.value === 'danger',
-      'spr-background-color-disabled spr-text-color-on-fill-disabled': variant.value === 'disabled',
-      'spr-background-color-information-base spr-text-color-inverted-strong': variant.value === 'information',
-      'spr-background-color-brand-base spr-text-color-inverted-strong': variant.value === 'brand',
+      'mc-background-color-surface mc-text-color-base': variant.value === 'neutral',
+      'mc-background-color-danger-base mc-text-color-inverted-strong': variant.value === 'danger',
+      'mc-background-color-disabled mc-text-color-on-fill-disabled': variant.value === 'disabled',
+      'mc-background-color-information-base mc-text-color-inverted-strong': variant.value === 'information',
+      'mc-background-color-brand-base mc-text-color-inverted-strong': variant.value === 'brand',
     });
 
     const sizeClasses = classNames({
-      'spr-label-sm-medium !spr-leading-[0] !spr-tracking-normal spr-h-[20px] spr-min-w-[20px] spr-rounded-[32px] spr-py-size-spacing-3xs spr-px-size-spacing-5xs spr-box-border':
+      'mc-label-sm-medium !mc-leading-[0] !mc-tracking-normal mc-h-[20px] mc-min-w-[20px] mc-rounded-[32px] mc-py-size-spacing-3xs mc-px-size-spacing-5xs mc-box-border':
         size.value === 'big',
-      'spr-label-xs-medium !spr-leading-[0] !spr-tracking-normal spr-h-[16px] spr-min-w-[16px] spr-rounded-[32px] spr-py-size-spacing-6xs spr-px-size-spacing-5xs spr-box-border':
+      'mc-label-xs-medium !mc-leading-[0] !mc-tracking-normal mc-h-[16px] mc-min-w-[16px] mc-rounded-[32px] mc-py-size-spacing-6xs mc-px-size-spacing-5xs mc-box-border':
         size.value === 'small',
-      'spr-h-[10px] spr-min-w-[10px] spr-rounded-full': size.value === 'tiny',
+      'mc-h-[10px] mc-min-w-[10px] mc-rounded-full': size.value === 'tiny',
     });
 
     const positionClasses = classNames({
-      'spr-absolute -spr-top-1 spr-right-1': position.value === 'top' && size.value === 'tiny',
-      'spr-absolute -spr-bottom-1 spr-right-1': position.value === 'bottom' && size.value === 'tiny',
-      'spr-absolute -spr-top-2 -spr-right-1': position.value === 'top' && size.value === 'small',
-      'spr-absolute -spr-bottom-2 -spr-right-1': position.value === 'bottom' && size.value === 'small',
-      'spr-absolute -spr-top-3 -spr-right-2': position.value === 'top' && size.value === 'big',
-      'spr-absolute -spr-bottom-3 -spr-right-2': position.value === 'bottom' && size.value === 'big',
+      'mc-absolute -mc-top-1 mc-right-1': position.value === 'top' && size.value === 'tiny',
+      'mc-absolute -mc-bottom-1 mc-right-1': position.value === 'bottom' && size.value === 'tiny',
+      'mc-absolute -mc-top-2 -mc-right-1': position.value === 'top' && size.value === 'small',
+      'mc-absolute -mc-bottom-2 -mc-right-1': position.value === 'bottom' && size.value === 'small',
+      'mc-absolute -mc-top-3 -mc-right-2': position.value === 'top' && size.value === 'big',
+      'mc-absolute -mc-bottom-3 -mc-right-2': position.value === 'bottom' && size.value === 'big',
     });
 
     return {

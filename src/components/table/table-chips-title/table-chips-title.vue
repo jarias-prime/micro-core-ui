@@ -1,5 +1,5 @@
 <template>
-  <spr-chips
+  <mc-chips
     :label="props.cell?.title"
     :icon="computeIcon"
     :icon-weight="computeIconWeight"
@@ -11,7 +11,6 @@
   />
 </template>
 
-
 <script lang="ts" setup>
 import SprChips from '@/components/chips/chips.vue';
 
@@ -20,13 +19,13 @@ import { useTableChipsTitle } from './use-table-chips-title';
 
 const props = defineProps(tableChipsTitlePropTypes);
 
-const { 
-  computeIcon, 
-  computeIconWeight, 
-  computeBadge, 
-  computeBadgeText, 
-  computeBadgeVariant, 
-  computeAvatarUrl, 
-  computeAvatarVariant 
+const {
+  computeIcon,
+  computeIconWeight,
+  computeBadge,
+  computeBadgeText,
+  computeBadgeVariant,
+  computeAvatarUrl,
+  computeAvatarVariant,
 } = useTableChipsTitle(props);
 </script>

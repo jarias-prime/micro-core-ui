@@ -8,8 +8,8 @@ import type { SetupContext } from 'vue';
 import type { ChipsPropTypes } from './chips';
 
 export const useChips = (
-  props: ChipsPropTypes, 
-  emit: SetupContext<ChipsEmitTypes>['emit'], 
+  props: ChipsPropTypes,
+  emit: SetupContext<ChipsEmitTypes>['emit'],
   slots: Record<string, unknown>,
 ) => {
   const { disabled, active, variant, iconWeight, icon, size, tone } = toRefs(props);
@@ -17,55 +17,54 @@ export const useChips = (
   const chipsBaseClasses: ComputedRef<string> = computed(() => {
     if (variant.value === 'day') {
       return classNames(
-        'spr-background-color spr-label-xs-medium spr-inline-flex spr-items-center spr-justify-center spr-rounded-full spr-transition-all spr-aspect-square spr-h-10 spr-w-10 spr-body-sm-regular spr-border spr-border-solid',
+        'mc-background-color mc-label-xs-medium mc-inline-flex mc-items-center mc-justify-center mc-rounded-full mc-transition-all mc-aspect-square mc-h-10 mc-w-10 mc-body-sm-regular mc-border mc-border-solid',
         {
           // Base cursor state
-          'hover:spr-cursor-pointer': !disabled.value,
+          'hover:mc-cursor-pointer': !disabled.value,
 
           // Disabled state (highest priority)
-          'spr-cursor-not-allowed spr-text-color-on-fill-disabled spr-background-color-disabled spr-border-color-disabled':
+          'mc-cursor-not-allowed mc-text-color-on-fill-disabled mc-background-color-disabled mc-border-color-disabled':
             disabled.value,
 
           // Active and enabled state
-          'spr-text-color-strong spr-background-color-brand-base spr-text-color-inverted-strong spr-border-color-brand-base':
+          'mc-text-color-strong mc-background-color-brand-base mc-text-color-inverted-strong mc-border-color-brand-base':
             active.value && !disabled.value,
 
           // Default state (with hover/pressed)
-          'spr-text-color-strong spr-border-color-weak hover:spr-background-color-hover active:spr-background-color-pressed':
+          'mc-text-color-strong mc-border-color-weak hover:mc-background-color-hover active:mc-background-color-pressed':
             !active.value && !disabled.value,
         },
       );
     }
 
     return classNames(
-      'spr-body-xs-regular spr-text-color-strong spr-inline-flex spr-items-center spr-justify-center spr-gap-1 spr-rounded-full spr-transition-all spr-group',
+      'mc-body-xs-regular mc-text-color-strong mc-inline-flex mc-items-center mc-justify-center mc-gap-1 mc-rounded-full mc-transition-all mc-group',
       {
         // Base cursor state
-        'hover:spr-cursor-pointer': !disabled.value,
+        'hover:mc-cursor-pointer': !disabled.value,
 
         // Padding for sizes
-        'spr-py-1.5 spr-px-2': size.value === 'md',
-        'spr-py-0.5 spr-px-1.5': size.value === 'sm',
+        'mc-py-1.5 mc-px-2': size.value === 'md',
+        'mc-py-0.5 mc-px-1.5': size.value === 'sm',
 
         // Disabled state (highest priority)
-        'spr-cursor-not-allowed spr-text-color-on-fill-disabled spr-background-color-disabled spr-border-solid spr-border-[1px] spr-border-color-disabled':
+        'mc-cursor-not-allowed mc-text-color-on-fill-disabled mc-background-color-disabled mc-border-solid mc-border-[1px] mc-border-color-disabled':
           disabled.value,
 
         // Active and enabled state
-        'spr-background-color-brand-weak spr-border-solid spr-border-[1px] spr-border-color-brand-base':
+        'mc-background-color-brand-weak mc-border-solid mc-border-[1px] mc-border-color-brand-base':
           active.value && !disabled.value,
 
         // Default state (with hover/pressed)
-        'spr-border spr-border-solid spr-border-color-weak group-hover:spr-background-color-hover group-active:spr-background-color-pressed':
+        'mc-border mc-border-solid mc-border-color-weak group-hover:mc-background-color-hover group-active:mc-background-color-pressed':
           !active.value && !disabled.value,
-          
+
         // Default state bg color
-        'spr-background-color-surface': !active.value && !disabled.value && tone.value === 'default',
-        'spr-background-color': !active.value && !disabled.value && tone.value === 'subtle',
+        'mc-background-color-surface': !active.value && !disabled.value && tone.value === 'default',
+        'mc-background-color': !active.value && !disabled.value && tone.value === 'subtle',
 
         // Reset close button styles
-        '[&_.chips-close]:hover:spr-cursor-pointer [&_.chips-close]:spr-p-0 [&_.chips-close]:spr-m-0 [&_.chips-close]:spr-border-0 [&_.chips-close]:spr-bg-transparent [&_.chips-close]:spr-inline-flex [&_.chips-close]:spr-items-center [&_.chips-close]:spr-leading-[0]':
-          true,
+        '[&_.chips-close]:hover:mc-cursor-pointer [&_.chips-close]:mc-p-0 [&_.chips-close]:mc-m-0 [&_.chips-close]:mc-border-0 [&_.chips-close]:mc-bg-transparent [&_.chips-close]:mc-inline-flex [&_.chips-close]:mc-items-center [&_.chips-close]:mc-leading-[0]': true,
       },
     );
   });
@@ -91,7 +90,7 @@ export const useChips = (
   });
 
   const hasIcon = computed(() => {
-    return props.icon || slots.icon
+    return props.icon || slots.icon;
   });
 
   return {

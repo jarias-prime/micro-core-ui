@@ -20,7 +20,7 @@ export interface Header {
   avatarVariant?: string;
   customTailwindClasses?: string;
   width?: string;
-  headerDropdown?: HeaderDropdownProperties; // Properties for table header dropdown  
+  headerDropdown?: HeaderDropdownProperties; // Properties for table header dropdown
 }
 
 export interface HeaderDropdownProperties {
@@ -193,11 +193,11 @@ export const tablePropTypes = {
   retainSelectionOnDataChange: {
     type: Boolean,
     default: false,
-  },  
+  },
   id: {
     type: String,
-    default: 'spr-table',
-  }
+    default: 'mc-table',
+  },
 };
 
 export const tableEmitTypes = {

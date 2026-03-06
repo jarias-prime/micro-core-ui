@@ -10,230 +10,230 @@ The Button component is a versatile and commonly used element in user interfaces
 
 ## Basic Usage
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-button>Buttons</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-button>Buttons</mc-button>
 </div>
 
 ```vue
-<spr-button>Button</spr-button>
+<mc-button>Button</mc-button>
 ```
 
 ## Tone
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-button data-testid="button-tone-neutral">Neutral</spr-button>
-  <spr-button data-testid="button-tone-success" tone="success">Success</spr-button>
-  <spr-button data-testid="button-tone-danger" tone="danger">Danger</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-button data-testid="button-tone-neutral">Neutral</mc-button>
+  <mc-button data-testid="button-tone-success" tone="success">Success</mc-button>
+  <mc-button data-testid="button-tone-danger" tone="danger">Danger</mc-button>
 </div>
 
 ```vue
-<spr-button>Neutral/Default</spr-button>
-<spr-button tone="success">Success</spr-button>
-<spr-button tone="danger">Danger</spr-button>
+<mc-button>Neutral/Default</mc-button>
+<mc-button tone="success">Success</mc-button>
+<mc-button tone="danger">Danger</mc-button>
 ```
 
 ## Sizes
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-button size="small" data-testid="button-size-small">Small</spr-button>
-  <spr-button data-testid="button-size-medium">Medium</spr-button>
-  <spr-button size="large" data-testid="button-size-large">Large</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-button size="small" data-testid="button-size-small">Small</mc-button>
+  <mc-button data-testid="button-size-medium">Medium</mc-button>
+  <mc-button size="large" data-testid="button-size-large">Large</mc-button>
 </div>
 
 ```vue
-<spr-button size="small">Small</spr-button>
-<spr-button>Medium/Default</spr-button>
-<spr-button size="large">Large</spr-button>
+<mc-button size="small">Small</mc-button>
+<mc-button>Medium/Default</mc-button>
+<mc-button size="large">Large</mc-button>
 ```
 
 ## Variant
 
-<div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-  <spr-button data-testid="button-tone-neutral-variant-primary">Primary</spr-button>
-  <spr-button variant="secondary" data-testid="button-tone-neutral-variant-secondary">Secondary</spr-button>
-  <spr-button variant="tertiary" data-testid="button-tone-neutral-variant-tertiary">Tertiary</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+  <mc-button data-testid="button-tone-neutral-variant-primary">Primary</mc-button>
+  <mc-button variant="secondary" data-testid="button-tone-neutral-variant-secondary">Secondary</mc-button>
+  <mc-button variant="tertiary" data-testid="button-tone-neutral-variant-tertiary">Tertiary</mc-button>
 </div>
-<div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-  <spr-button tone="success" data-testid="button-tone-success-variant-primary">Primary</spr-button>
-  <spr-button tone="success" variant="secondary" data-testid="button-tone-success-variant-secondary">Secondary</spr-button>
-  <spr-button tone="success" variant="tertiary" data-testid="button-tone-success-variant-tertiary">Tertiary</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+  <mc-button tone="success" data-testid="button-tone-success-variant-primary">Primary</mc-button>
+  <mc-button tone="success" variant="secondary" data-testid="button-tone-success-variant-secondary">Secondary</mc-button>
+  <mc-button tone="success" variant="tertiary" data-testid="button-tone-success-variant-tertiary">Tertiary</mc-button>
 </div>
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-button tone="danger" data-testid="button-tone-danger-variant-primary">Primary</spr-button>
-  <spr-button tone="danger" variant="secondary" data-testid="button-tone-danger-variant-secondary">Secondary</spr-button>
-  <spr-button tone="danger" variant="tertiary" data-testid="button-tone-danger-variant-tertiary">Tertiary</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-button tone="danger" data-testid="button-tone-danger-variant-primary">Primary</mc-button>
+  <mc-button tone="danger" variant="secondary" data-testid="button-tone-danger-variant-secondary">Secondary</mc-button>
+  <mc-button tone="danger" variant="tertiary" data-testid="button-tone-danger-variant-tertiary">Tertiary</mc-button>
 </div>
 
 ```vue
 // Primary/Default
-<spr-button>Primary/Default</spr-button>
-<spr-button variant="secondary">Secondary</spr-button>
-<spr-button variant="tertiary">Tertiary</spr-button>
+<mc-button>Primary/Default</mc-button>
+<mc-button variant="secondary">Secondary</mc-button>
+<mc-button variant="tertiary">Tertiary</mc-button>
 
 // Succees
-<spr-button tone="success">Primary/Default</spr-button>
-<spr-button tone="success" variant="secondary">Secondary</spr-button>
-<spr-button tone="success" variant="tertiary">Tertiary</spr-button>
+<mc-button tone="success">Primary/Default</mc-button>
+<mc-button tone="success" variant="secondary">Secondary</mc-button>
+<mc-button tone="success" variant="tertiary">Tertiary</mc-button>
 
 // Danger
-<spr-button tone="danger">Primary/Default</spr-button>
-<spr-button tone="danger" variant="secondary">Secondary</spr-button>
-<spr-button tone="danger" variant="tertiary">Tertiary</spr-button>
+<mc-button tone="danger">Primary/Default</mc-button>
+<mc-button tone="danger" variant="secondary">Secondary</mc-button>
+<mc-button tone="danger" variant="tertiary">Tertiary</mc-button>
 ```
 
 ## Disabled
 
-<div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-  <spr-button size="small" disabled>Primary</spr-button>
-  <spr-button size="small" variant="secondary" disabled>Secondary</spr-button>
-  <spr-button size="small" variant="tertiary" disabled>Tertiary</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+  <mc-button size="small" disabled>Primary</mc-button>
+  <mc-button size="small" variant="secondary" disabled>Secondary</mc-button>
+  <mc-button size="small" variant="tertiary" disabled>Tertiary</mc-button>
 </div>
-<div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-  <spr-button  disabled>Primary</spr-button>
-  <spr-button variant="secondary" disabled>Secondary</spr-button>
-  <spr-button variant="tertiary" disabled>Tertiary</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+  <mc-button  disabled>Primary</mc-button>
+  <mc-button variant="secondary" disabled>Secondary</mc-button>
+  <mc-button variant="tertiary" disabled>Tertiary</mc-button>
 </div>
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-button size="large" disabled>Primary</spr-button>
-  <spr-button size="large" variant="secondary" disabled>Secondary</spr-button>
-  <spr-button size="large" variant="tertiary" disabled>Tertiary</spr-button>
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-button size="large" disabled>Primary</mc-button>
+  <mc-button size="large" variant="secondary" disabled>Secondary</mc-button>
+  <mc-button size="large" variant="tertiary" disabled>Tertiary</mc-button>
 </div>
 
 ```vue
-<spr-button disabled ize="small">Small</spr-button>
-<spr-button disabled>Medium/Default</spr-button>
-<spr-button disabled size="large">Large</spr-button>
+<mc-button disabled ize="small">Small</mc-button>
+<mc-button disabled>Medium/Default</mc-button>
+<mc-button disabled size="large">Large</mc-button>
 ```
 
 ## Icon
 
 ### Icon With Text
 
-<div class="spr-mt-4">
-  <div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-    <spr-button size="small" hasIcon >
+<div class="mc-mt-4">
+  <div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+    <mc-button size="small" hasIcon >
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
-    <spr-button variant="secondary" hasIcon>
+    </mc-button>
+    <mc-button variant="secondary" hasIcon>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
-    <spr-button size="large" variant="tertiary" hasIcon>
+    </mc-button>
+    <mc-button size="large" variant="tertiary" hasIcon>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
+    </mc-button>
   </div>
 
-  <div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-    <spr-button size="small" tone="success" hasIcon>
+  <div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+    <mc-button size="small" tone="success" hasIcon>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
-    <spr-button tone="success" variant="secondary" hasIcon>
+    </mc-button>
+    <mc-button tone="success" variant="secondary" hasIcon>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
-    <spr-button size="large" tone="success"variant="tertiary" hasIcon>
+    </mc-button>
+    <mc-button size="large" tone="success"variant="tertiary" hasIcon>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
+    </mc-button>
   </div>
 
-  <div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-    <spr-button size="small" tone="danger" hasIcon>
+  <div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+    <mc-button size="small" tone="danger" hasIcon>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
-    <spr-button tone="danger" variant="secondary" hasIcon>
+    </mc-button>
+    <mc-button tone="danger" variant="secondary" hasIcon>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
-    <spr-button size="large" tone="danger" variant="tertiary" hasIcon>
+    </mc-button>
+    <mc-button size="large" tone="danger" variant="tertiary" hasIcon>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
+    </mc-button>
   </div>
 
-  <div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-    <spr-button size="small" tone="danger" hasIcon disabled>
+  <div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+    <mc-button size="small" tone="danger" hasIcon disabled>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
-    <spr-button tone="danger" variant="secondary" hasIcon disabled>
+    </mc-button>
+    <mc-button tone="danger" variant="secondary" hasIcon disabled>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
-    <spr-button size="large" tone="danger" variant="tertiary" hasIcon disabled>
+    </mc-button>
+    <mc-button size="large" tone="danger" variant="tertiary" hasIcon disabled>
       <Icon icon="ph:trash" />
       <span>Button</span>
-    </spr-button>
+    </mc-button>
   </div>
 </div>
 
 ### Icon Only
 
-<div class="spr-mt-4">
-  <div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-    <spr-button size="small" hasIcon>
+<div class="mc-mt-4">
+  <div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+    <mc-button size="small" hasIcon>
       <Icon icon="ph:trash" />
-    </spr-button>
-    <spr-button variant="secondary" hasIcon>
+    </mc-button>
+    <mc-button variant="secondary" hasIcon>
       <Icon icon="ph:trash" />
-    </spr-button>
-    <spr-button size="large" variant="tertiary" hasIcon>
+    </mc-button>
+    <mc-button size="large" variant="tertiary" hasIcon>
       <Icon icon="ph:trash" />
-    </spr-button>
+    </mc-button>
   </div>
 
-  <div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-    <spr-button size="small" tone="success" hasIcon>
+  <div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+    <mc-button size="small" tone="success" hasIcon>
       <Icon icon="ph:trash" />
-    </spr-button>
-    <spr-button tone="success"  variant="secondary" hasIcon>
+    </mc-button>
+    <mc-button tone="success"  variant="secondary" hasIcon>
       <Icon icon="ph:trash" />
-    </spr-button>
-    <spr-button size="large" tone="success"variant="tertiary" hasIcon>
+    </mc-button>
+    <mc-button size="large" tone="success"variant="tertiary" hasIcon>
       <Icon icon="ph:trash" />
-    </spr-button>
+    </mc-button>
   </div>
 
-  <div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-    <spr-button size="small" tone="danger" hasIcon>
+  <div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+    <mc-button size="small" tone="danger" hasIcon>
       <Icon icon="ph:trash" />
-    </spr-button>
-    <spr-button tone="danger" variant="secondary" hasIcon>
+    </mc-button>
+    <mc-button tone="danger" variant="secondary" hasIcon>
       <Icon icon="ph:trash" />
-    </spr-button>
-    <spr-button size="large" tone="danger" variant="tertiary" hasIcon>
+    </mc-button>
+    <mc-button size="large" tone="danger" variant="tertiary" hasIcon>
       <Icon icon="ph:trash" />
-    </spr-button>
+    </mc-button>
   </div>
 
-  <div class="spr-flex spr-items-center spr-gap-2 spr-mb-2">
-    <spr-button size="small" tone="danger" hasIcon disabled>
+  <div class="mc-flex mc-items-center mc-gap-2 mc-mb-2">
+    <mc-button size="small" tone="danger" hasIcon disabled>
       <Icon icon="ph:trash" />
-    </spr-button>
-    <spr-button tone="danger" variant="secondary" hasIcon disabled>
+    </mc-button>
+    <mc-button tone="danger" variant="secondary" hasIcon disabled>
       <Icon icon="ph:trash" />
-    </spr-button>
-    <spr-button size="large" tone="danger" variant="tertiary" hasIcon disabled>
+    </mc-button>
+    <mc-button size="large" tone="danger" variant="tertiary" hasIcon disabled>
       <Icon icon="ph:trash" />
-    </spr-button>
+    </mc-button>
   </div>
 </div>
 
 ```vue
 <template>
-  <spr-button hasIcon>
+  <mc-button hasIcon>
     <Icon icon="ph:trash" />
     <span>Button</span>
-  </spr-button>
+  </mc-button>
 
-  <spr-button iconOnly>
+  <mc-button iconOnly>
     <Icon icon="ph:trash" />
     <span>Button</span>
-  </spr-button>
+  </mc-button>
 </template>
 
 <script lang="ts" setup>
@@ -243,14 +243,14 @@ import { Icon } from '@iconify/vue';
 
 ## Fullwidth
 
-<div class="spr-space-y-2">
-<spr-button fullwidth>Buttons</spr-button>
-<spr-button fullwidth variant="secondary">Buttons</spr-button>
-<spr-button fullwidth variant="tertiary">Buttons</spr-button>
+<div class="mc-space-y-2">
+<mc-button fullwidth>Buttons</mc-button>
+<mc-button fullwidth variant="secondary">Buttons</mc-button>
+<mc-button fullwidth variant="tertiary">Buttons</mc-button>
 </div>
 
 ```vue
-<spr-button fullwidth>Button</spr-button>
+<mc-button fullwidth>Button</mc-button>
 ```
 
 ## API Reference
@@ -365,7 +365,6 @@ The button component follows accessibility best practices:
 - Supports autofocus when the `state` prop is set to 'focus'
 
 <script lang="ts" setup>
-import SprButton from "@/components/button/button.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McButton from "@/components/button/button.vue";
 import { Icon } from '@iconify/vue';
 </script>

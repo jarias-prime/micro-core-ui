@@ -1,13 +1,13 @@
 <template>
   <div :class="props.classes" @click="$emit('select')">
     <template v-if="showLozengeMode">
-      <div class="spr-flex spr-items-center spr-gap-2">
-        <spr-checkbox
+      <div class="mc-flex mc-items-center mc-gap-2">
+        <mc-checkbox
           v-if="props.multiSelect"
           :disabled="listItem.disabled || (props.disabledUnselectedItems && !isSelected)"
           :checked="isSelected"
         />
-        <spr-lozenge
+        <mc-lozenge
           :label="listItem.text || (listItem.lozengeProps?.label as string)"
           :tone="listItem.lozengeProps?.tone as string & (typeof LOZENGE_TONE)[number]"
           :fill="listItem.lozengeProps?.fill as boolean"
@@ -19,36 +19,36 @@
       </div>
     </template>
     <template v-else>
-      <div class="spr-flex spr-items-center spr-gap-2">
-        <spr-checkbox
+      <div class="mc-flex mc-items-center mc-gap-2">
+        <mc-checkbox
           v-if="props.multiSelect"
           :disabled="listItem.disabled || (props.disabledUnselectedItems && !isSelected)"
           :checked="isSelected"
         />
-        <spr-radio
+        <mc-radio
           v-if="props.radioList && !props.multiSelect"
           :id="`radio-${props.item?.value}`"
-          class="spr-flex spr-items-center"
+          class="mc-flex mc-items-center"
           name="radio-group"
           :value="props.item?.value"
           :model-value="isSelected ? props.item?.value : undefined"
           :disabled="props.item?.disabled || (props.disabledUnselectedItems && !isSelected)"
           @update:model-value="$emit('select')"
         />
-        <div :class="[listItem.textColor, 'spr-flex spr-flex-row spr-items-center spr-gap-size-spacing-3xs']">
+        <div :class="[listItem.textColor, 'mc-flex mc-flex-row mc-items-center mc-gap-size-spacing-3xs']">
           <span
             v-if="hasIcon"
             :class="[
-              'spr-flex spr-h-[30px] spr-w-[30px] spr-items-center spr-justify-center',
+              'mc-flex mc-h-[30px] mc-w-[30px] mc-items-center mc-justify-center',
               iconClasses,
-              { 'spr-text-color-disabled': listItem.disabled || (props.disabledUnselectedItems && !isSelected) },
+              { 'mc-text-color-disabled': listItem.disabled || (props.disabledUnselectedItems && !isSelected) },
             ]"
           >
-            <Icon class="spr-text-xl" :icon="iconName" />
+            <Icon class="mc-text-xl" :icon="iconName" />
           </span>
 
           <span v-if="hasAvatar">
-            <spr-avatar
+            <mc-avatar
               size="sm"
               :initial="props.avatarSource || listItem.text"
               :variant="props.avatarVariant"
@@ -58,18 +58,18 @@
 
           <div
             :class="[
-              'spr-flex spr-flex-auto spr-flex-col spr-justify-start',
-              { 'spr-text-color-disabled': listItem.disabled || (props.disabledUnselectedItems && !isSelected) },
+              'mc-flex mc-flex-auto mc-flex-col mc-justify-start',
+              { 'mc-text-color-disabled': listItem.disabled || (props.disabledUnselectedItems && !isSelected) },
             ]"
           >
-            <span class="spr-break-words spr-text-left spr-text-xs">
+            <span class="mc-break-words mc-text-left mc-text-xs">
               {{ listItem.text }}
             </span>
             <span
               v-if="item.subtext"
               :class="[
-                'spr-body-xs-regular spr-text-color-base spr-break-words spr-text-left',
-                { 'spr-text-color-disabled': listItem.disabled || (props.disabledUnselectedItems && !isSelected) },
+                'mc-body-xs-regular mc-text-color-base mc-break-words mc-text-left',
+                { 'mc-text-color-disabled': listItem.disabled || (props.disabledUnselectedItems && !isSelected) },
               ]"
             >
               {{ listItem.subtext }}
@@ -79,17 +79,17 @@
       </div>
 
       <!-- Right Side Actions -->
-      <div class="spr-flex spr-items-center spr-gap-2">
+      <div class="mc-flex mc-items-center mc-gap-2">
         <template v-if="props.ladderized">
-          <Icon v-if="hasSublevels" class="spr-text-color-weak spr-size-4" icon="ph:caret-right" />
+          <Icon v-if="hasSublevels" class="mc-text-color-weak mc-size-4" icon="ph:caret-right" />
           <Icon
             v-else-if="isSelected && !props.noCheck && !props.multiSelect && !props.radioList"
-            class="spr-text-color-brand-base spr-w-[1.39em]"
+            class="mc-text-color-brand-base mc-w-[1.39em]"
             icon="ph:check"
           />
         </template>
         <template v-else>
-          <spr-lozenge
+          <mc-lozenge
             v-if="listItem.lozenge"
             :label="listItem.lozenge?.label as string"
             :tone="listItem.lozenge?.tone as string & (typeof LOZENGE_TONE)[number]"
@@ -101,7 +101,7 @@
           />
           <Icon
             v-if="isSelected && !props.noCheck && !props.multiSelect && !props.radioList"
-            class="spr-text-color-brand-base spr-w-[1.39em]"
+            class="mc-text-color-brand-base mc-w-[1.39em]"
             icon="ph:check"
           />
         </template>
@@ -113,10 +113,10 @@
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue';
 
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
-import SprRadio from '@/components/radio/radio.vue';
-import SprLozenge from '@/components/lozenge/lozenge.vue';
-import SprAvatar from '@/components/avatar/avatar.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
+import McRadio from '@/components/radio/radio.vue';
+import McLozenge from '@/components/lozenge/lozenge.vue';
+import McAvatar from '@/components/avatar/avatar.vue';
 
 import { LOZENGE_TONE } from '@/components/lozenge/lozenge';
 

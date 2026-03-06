@@ -28,10 +28,10 @@
     >
       <div ref="ladderizedSelectState">
         <div @click="ladderizedSelectPopperState = !ladderizedSelectPopperState">
-          <spr-input
+          <mc-input
             :id="`input-${props.id}`"
             v-model="inputText"
-            class="spr-cursor-pointer"
+            class="mc-cursor-pointer"
             :placeholder="props.placeholder"
             autocomplete="off"
             :helper-text="props.helperText"
@@ -46,10 +46,10 @@
             <template #icon>
               <div
                 :class="[
-                  'spr-flex spr-items-center spr-gap-1',
+                  'mc-flex mc-items-center mc-gap-1',
                   {
-                    'spr-cursor-pointer': !props.disabled,
-                    'spr-cursor-not-allowed': props.disabled,
+                    'mc-cursor-pointer': !props.disabled,
+                    'mc-cursor-not-allowed': props.disabled,
                   },
                 ]"
               >
@@ -62,7 +62,7 @@
             <template #helperMessage>
               <slot name="helperMessage" />
             </template>
-          </spr-input>
+          </mc-input>
         </div>
 
         <!-- This div used to poppulate popper menu -->
@@ -70,9 +70,9 @@
       </div>
 
       <template #popper>
-        <div ref="ladderizedSelectPopperRef" class="spr-max-h-[300px] spr-overflow-y-auto spr-overflow-x-hidden">
+        <div ref="ladderizedSelectPopperRef" class="mc-max-h-[300px] mc-overflow-y-auto mc-overflow-x-hidden">
           <template v-if="ladderizedSelectOptions.length > 0">
-            <spr-ladderized-list
+            <mc-ladderized-list
               v-model="ladderizedSelectModel"
               :ladderized="true"
               :menu-list="ladderizedSelectOptions"
@@ -86,8 +86,8 @@
             />
           </template>
           <template v-else>
-            <div class="spr-flex spr-items-center spr-justify-center spr-p-2 spr-text-center">
-              <span class="spr-body-sm-regular spr-m-0">No results found</span>
+            <div class="mc-flex mc-items-center mc-justify-center mc-p-2 mc-text-center">
+              <span class="mc-body-sm-regular mc-m-0">No results found</span>
             </div>
           </template>
         </div>
@@ -102,8 +102,8 @@ import { Icon } from '@iconify/vue';
 
 import 'floating-vue/dist/style.css';
 
-import SprInput from '@/components/input/input.vue';
-import SprLadderizedList from '@/components/list/ladderized-list/ladderized-list.vue';
+import McInput from '@/components/input/input.vue';
+import McLadderizedList from '@/components/list/ladderized-list/ladderized-list.vue';
 
 import { selectLadderizedPropTypes, selectLadderizedEmitTypes, SelectLadderizedEmitFn } from './select-ladderized';
 import { useSelectLadderized } from './use-select-ladderized';

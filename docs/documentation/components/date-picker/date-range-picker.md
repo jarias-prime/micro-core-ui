@@ -10,13 +10,13 @@ The date range calendar allows users to select a start and end date from a calen
 
 ## Basic Usage
 
-<spr-date-range-picker id="date-range-basic" v-model="dateRangeModel.range1" display-helper />
+<mc-date-range-picker id="date-range-basic" v-model="dateRangeModel.range1" display-helper />
 
-`Property Value:` <span class="spr-text-xs">{{dateRangeModel.range1}}</span>
+`Property Value:` <span class="mc-text-xs">{{dateRangeModel.range1}}</span>
 
 ```vue
 <template>
-  <spr-date-range-picker id="date-range-basic" v-model="dateRangeModel" display-helper />
+  <mc-date-range-picker id="date-range-basic" v-model="dateRangeModel" display-helper />
 </template>
 
 <script lang="ts" setup>
@@ -27,41 +27,36 @@ const dateRangeModel = ref({ startDate: '', endDate: '' });
 
 ## Custom Input Area (Using Slot)
 
-You can fully customize the date input area using the default slot. This allows you to use any component (like `<spr-input>` or `<spr-chips>`) and react to the selected range from `v-model`.
+You can fully customize the date input area using the default slot. This allows you to use any component (like `<mc-input>` or `<mc-chips>`) and react to the selected range from `v-model`.
 
 ### Using with Input
 
-<spr-date-range-picker id="date-range-input" v-model="liveInputRange" label="Pay Period">
+<mc-date-range-picker id="date-range-input" v-model="liveInputRange" label="Pay Period">
   <template #default="{ handleClick }">
-    <spr-input
+    <mc-input
       v-model="inputDisplayString"
       readonly
-      class="spr-w-full spr-cursor-pointer"
+      class="mc-w-full mc-cursor-pointer"
       @click="handleClick"
     >
       <template #icon>
         <Icon icon="ph:calendar-blank" />
       </template>
-    </spr-input>
+    </mc-input>
   </template>
-</spr-date-range-picker>
+</mc-date-range-picker>
 
 ```vue
 <template>
-  <spr-date-range-picker
-    id="date-range-input"
-    v-model="liveInputRange"
-    label="Custom Input (spr-input)"
-    placement="top"
-  >
+  <mc-date-range-picker id="date-range-input" v-model="liveInputRange" label="Custom Input (mc-input)" placement="top">
     <template #default="{ handleClick }">
-      <spr-input v-model="inputDisplayString" readonly class="spr-w-full spr-cursor-pointer" @click="handleClick">
+      <mc-input v-model="inputDisplayString" readonly class="mc-w-full mc-cursor-pointer" @click="handleClick">
         <template #icon>
           <Icon icon="ph:calendar-blank" />
         </template>
-      </spr-input>
+      </mc-input>
     </template>
-  </spr-date-range-picker>
+  </mc-date-range-picker>
 </template>
 
 <script lang="ts" setup>
@@ -103,27 +98,27 @@ watch(
 
 ### Using with Chips
 
-<spr-date-range-picker id="date-range-chip" v-model="liveChipsRange" label="Pay Period">
+<mc-date-range-picker id="date-range-chip" v-model="liveChipsRange" label="Pay Period">
   <template #default="{ handleClick }">
-    <div class="spr-flex spr-gap-2 spr-items-center spr-p-2 spr-border">
-      <spr-chips tone="default" :label="liveChipsRange.startDate || 'Start'" @click="handleClick"/>
-      <span class="spr-text-mushroom-500">to</span>
-      <spr-chips tone="default" :label="liveChipsRange.endDate || 'End'" @click="handleClick"/>
+    <div class="mc-flex mc-gap-2 mc-items-center mc-p-2 mc-border">
+      <mc-chips tone="default" :label="liveChipsRange.startDate || 'Start'" @click="handleClick"/>
+      <span class="mc-text-mushroom-500">to</span>
+      <mc-chips tone="default" :label="liveChipsRange.endDate || 'End'" @click="handleClick"/>
     </div>
   </template>
-</spr-date-range-picker>
+</mc-date-range-picker>
 
 ```vue
 <template>
-  <spr-date-range-picker id="date-range-chip" v-model="dateRangeModel" label="Pay Period">
+  <mc-date-range-picker id="date-range-chip" v-model="dateRangeModel" label="Pay Period">
     <template #default>
-      <div class="spr-flex spr-items-center spr-gap-2 spr-p-2">
-        <spr-chips tone="default" :label="dateRangeModel.startDate || 'Start'" />
-        <span class="spr-text-mushroom-500">to</span>
-        <spr-chips tone="default" :label="dateRangeModel.endDate || 'End'" />
+      <div class="mc-flex mc-items-center mc-gap-2 mc-p-2">
+        <mc-chips tone="default" :label="dateRangeModel.startDate || 'Start'" />
+        <span class="mc-text-mushroom-500">to</span>
+        <mc-chips tone="default" :label="dateRangeModel.endDate || 'End'" />
       </div>
     </template>
-  </spr-date-range-picker>
+  </mc-date-range-picker>
 </template>
 
 <script lang="ts" setup>
@@ -137,13 +132,13 @@ You can use any component or markup in the slot, and the slot will always receiv
 
 ## Adding Label
 
-<spr-date-range-picker id="date-range-label" v-model="dateRangeModel.range2" label="Date Range" display-helper format="YYYY-MM-DD" />
+<mc-date-range-picker id="date-range-label" v-model="dateRangeModel.range2" label="Date Range" display-helper format="YYYY-MM-DD" />
 
 Value: {{ dateRangeModel.range2 }}
 
 ```vue
 <template>
-  <spr-date-range-picker
+  <mc-date-range-picker
     id="date-range-label"
     v-model="dateRangeModel"
     label="Date Range"
@@ -163,13 +158,13 @@ const dateRangeModel = ref({ startDate: '', endDate: '' });
 
 You can manually set the width of the date range calendar by passing the `width` prop.
 
-<spr-date-range-picker id="date-range-width" v-model="dateRangeModel.range3" label="Date Range" width="400px" display-helper />
+<mc-date-range-picker id="date-range-width" v-model="dateRangeModel.range3" label="Date Range" width="400px" display-helper />
 
-`Property Value:` <span class="spr-text-xs">{{dateRangeModel.range3}}</span>
+`Property Value:` <span class="mc-text-xs">{{dateRangeModel.range3}}</span>
 
 ```vue
 <template>
-  <spr-date-range-picker
+  <mc-date-range-picker
     id="date-range-width"
     v-model="dateRangeModel"
     label="Date Range"
@@ -189,12 +184,12 @@ const dateRangeModel = ref({ startDate: '', endDate: '' });
 
 You can specify the format of the date by passing the `format` prop. The default format is `MM-DD-YYYY`. The component will return dates in the specified format.
 
-<spr-date-range-picker id="date-range-format" v-model="dateRangeModel.range4" label="Date Range" display-helper format="YYYY-MM-DD" />
+<mc-date-range-picker id="date-range-format" v-model="dateRangeModel.range4" label="Date Range" display-helper format="YYYY-MM-DD" />
 Value: <code>{{ dateRangeModel.range4 }}</code>
 
 ```vue
 <template>
-  <spr-date-range-picker
+  <mc-date-range-picker
     id="date-range-format"
     v-model="dateRangeModel"
     label="Date Range"
@@ -214,11 +209,11 @@ const dateRangeModel = ref({ startDate: '', endDate: '' });
 
 Add the `disabled` prop to disable the date range calendar.
 
-<spr-date-range-picker id="date-range-disabled" v-model="dateRangeModel.range5" label="Date Range" display-helper disabled />
+<mc-date-range-picker id="date-range-disabled" v-model="dateRangeModel.range5" label="Date Range" display-helper disabled />
 
 ```vue
 <template>
-  <spr-date-range-picker id="date-range-disabled" v-model="dateRangeModel" label="Date Range" display-helper disabled />
+  <mc-date-range-picker id="date-range-disabled" v-model="dateRangeModel" label="Date Range" display-helper disabled />
 </template>
 
 <script lang="ts" setup>
@@ -232,11 +227,11 @@ const dateRangeModel = ref({ startDate: '', endDate: '' });
 
 Add the `readonly` prop to make the date range calendar read only.
 
-<spr-date-range-picker id="date-range-readonly" v-model="dateRangeModel.range6" label="Date Range" display-helper readonly />
+<mc-date-range-picker id="date-range-readonly" v-model="dateRangeModel.range6" label="Date Range" display-helper readonly />
 
 ```vue
 <template>
-  <spr-date-range-picker id="date-range-readonly" v-model="dateRangeModel" label="Date Range" display-helper readonly />
+  <mc-date-range-picker id="date-range-readonly" v-model="dateRangeModel" label="Date Range" display-helper readonly />
 </template>
 
 <script lang="ts" setup>
@@ -252,11 +247,11 @@ A helper message is a text label displayed below the input field, offering addit
 
 To display the helper message, set the `display-helper` prop to true and add the `helper-text` prop with the message content. You can also include an icon by using the `helper-icon` prop.
 
-<spr-date-range-picker id="date-range-helper-text" v-model="dateRangeModel.range7" label="Date Range" helper-text="Select a date range" display-helper />
+<mc-date-range-picker id="date-range-helper-text" v-model="dateRangeModel.range7" label="Date Range" helper-text="Select a date range" display-helper />
 
 ```vue
 <template>
-  <spr-date-range-picker
+  <mc-date-range-picker
     id="date-range-helper-text"
     v-model="dateRangeModel"
     label="Date Range"
@@ -275,11 +270,11 @@ const dateRangeModel = ref({ startDate: '', endDate: '' });
 
 To handle error states, add the `error` prop to the date range calendar. You can also include an icon by using the `helper-icon` prop.
 
-<spr-date-range-picker id="date-range-error-state" v-model="dateRangeModel.range8" label="Date Range" helper-icon="ph:warning-circle-fill" helper-text="This is a helper message" display-helper error />
+<mc-date-range-picker id="date-range-error-state" v-model="dateRangeModel.range8" label="Date Range" helper-icon="ph:warning-circle-fill" helper-text="This is a helper message" display-helper error />
 
 ```vue
 <template>
-  <spr-date-range-picker
+  <mc-date-range-picker
     id="date-range-error-state"
     v-model="dateRangeModel"
     label="Date Range"
@@ -301,11 +296,11 @@ const dateRangeModel = ref({ startDate: '', endDate: '' });
 
 You can manually set the minimum and maximum year to be shown in the calendar. The default minimum year is `1900` and the maximum year is the current year.
 
-<spr-date-range-picker id="date-range-min-max-year" v-model="dateRangeModel.range9" label="Date Range" :min-max-year="{ min: 2000, max: 2025 }" display-helper />
+<mc-date-range-picker id="date-range-min-max-year" v-model="dateRangeModel.range9" label="Date Range" :min-max-year="{ min: 2000, max: 2025 }" display-helper />
 
 ```vue
 <template>
-  <spr-date-range-picker
+  <mc-date-range-picker
     id="date-range-min-max-year"
     v-model="dateRangeModel"
     label="Date Range"
@@ -329,11 +324,11 @@ You can set the rest days in the week by passing the `rest-days` prop.
 const restDays = ['su', 'mo', 'tu', 'we', 'th', 'fr', 'sa'];
 ```
 
-<spr-date-range-picker id="date-range-rest-days" v-model="dateRangeModel.range10" label="Date Range" :rest-days="['mo', 'we', 'fr', 'sa']" display-helper />
+<mc-date-range-picker id="date-range-rest-days" v-model="dateRangeModel.range10" label="Date Range" :rest-days="['mo', 'we', 'fr', 'sa']" display-helper />
 
 ```vue
 <template>
-  <spr-date-range-picker
+  <mc-date-range-picker
     id="date-range-rest-days"
     v-model="dateRangeModel"
     label="Date Range"
@@ -369,11 +364,11 @@ This dynamic placement ensures the calendar always appears in the most appropria
 
 ### Default Inputs with Custom Placement
 
-<spr-date-range-picker id="date-range-placement" v-model="dateRangeModel.defaultTop" label="Top Placement" placement="top" display-helper />
+<mc-date-range-picker id="date-range-placement" v-model="dateRangeModel.defaultTop" label="Top Placement" placement="top" display-helper />
 
 ```vue
 <template>
-  <spr-date-range-picker
+  <mc-date-range-picker
     id="date-range-placement"
     v-model="dateRangeModel"
     label="Top Placement"
@@ -392,32 +387,32 @@ const dateRangeModel = ref({ startDate: '', endDate: '' });
 
 When using a custom slot for the input area, the component respects the `placement` prop you specify:
 
-<spr-date-range-picker id="date-range-slot" v-model="liveInputRange" label="Custom Input (spr-input)">
+<mc-date-range-picker id="date-range-slot" v-model="liveInputRange" label="Custom Input (mc-input)">
   <template #default="{ handleClick }">
-    <spr-input
+    <mc-input
       v-model="inputDisplayString"
       readonly
-      class="spr-w-full spr-cursor-pointer"
+      class="mc-w-full mc-cursor-pointer"
       @click="handleClick"
     >
       <template #icon>
         <Icon icon="ph:calendar-blank" />
       </template>
-    </spr-input>
+    </mc-input>
   </template>
-</spr-date-range-picker>
+</mc-date-range-picker>
 
 ```vue
 <template>
-  <spr-date-range-picker id="date-range-slot" v-model="liveInputRange" label="Custom Input (spr-input)">
+  <mc-date-range-picker id="date-range-slot" v-model="liveInputRange" label="Custom Input (mc-input)">
     <template #default="{ handleClick }">
-      <spr-input v-model="inputDisplayString" readonly class="spr-w-full spr-cursor-pointer" @click="handleClick">
+      <mc-input v-model="inputDisplayString" readonly class="mc-w-full mc-cursor-pointer" @click="handleClick">
         <template #icon>
           <Icon icon="ph:calendar-blank" />
         </template>
-      </spr-input>
+      </mc-input>
     </template>
-  </spr-date-range-picker>
+  </mc-date-range-picker>
 </template>
 
 <script lang="ts" setup>
@@ -481,11 +476,11 @@ You can disable specific dates by passing the `disabled-dates` prop. There are w
 const disabledDates = { from: '02-12-2025', to: '05-15-2025' };
 ```
 
-<spr-date-range-picker id="date-range-disabled-dates" v-model="dateRangeModel.range11" label="Date Range" :disabled-dates="{ from: '02-12-2025', to: '05-15-2025' }" display-helper />
+<mc-date-range-picker id="date-range-disabled-dates" v-model="dateRangeModel.range11" label="Date Range" :disabled-dates="{ from: '02-12-2025', to: '05-15-2025' }" display-helper />
 
 ```vue
 <template>
-  <spr-date-range-picker
+  <mc-date-range-picker
     id="date-range-disabled-dates"
     v-model="dateRangeModel"
     label="Date Range"
@@ -505,16 +500,11 @@ const dateRangeModel = ref({ startDate: '', endDate: '' });
 
 You can pre-select a date range by just adding values in your `v-model`. The value should be in the format `{ startDate: 'MM-DD-YYYY', endDate: 'MM-DD-YYYY' }`.
 
-<spr-date-range-picker id="date-range-pre-selected-range" v-model="dateRangeModel.range12" label="Date Range" display-helper />
+<mc-date-range-picker id="date-range-pre-selected-range" v-model="dateRangeModel.range12" label="Date Range" display-helper />
 
 ```vue
 <template>
-  <spr-date-range-picker
-    id="date-range-pre-selected-range"
-    v-model="dateRangeModel"
-    label="Date Range"
-    display-helper
-  />
+  <mc-date-range-picker id="date-range-pre-selected-range" v-model="dateRangeModel" label="Date Range" display-helper />
 </template>
 
 <script lang="ts" setup>
@@ -536,12 +526,12 @@ Pass the prop `popper-strategy` to change the behavior position of the popper.
 Do not forget to pass prop `wrapperPosition` to overwrite `relative` position into `initial`.
 :::
 
-<spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+<mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-<spr-modal v-model="modalModel" title="Date Picker with Modal">
-  <spr-date-range-picker 
+<mc-modal v-model="modalModel" title="Date Picker with Modal">
+  <mc-date-range-picker 
     id="date-range-popper-strategy"
-    class="[&>p]:spr-m-0" 
+    class="[&>p]:mc-m-0" 
     v-model="dateRangeModel.range12"
     label="Date Picker" 
     popper-strategy="fixed"
@@ -550,14 +540,14 @@ Do not forget to pass prop `wrapperPosition` to overwrite `relative` position in
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </p>
-</spr-modal>
+</mc-modal>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel" title="Date Picker with Modal">
-    <spr-date-range-picker
+  <mc-modal v-model="modalModel" title="Date Picker with Modal">
+    <mc-date-range-picker
       id="date-range-popper-strategy"
       v-model="datePickerModel"
       label="Date Picker"
@@ -570,7 +560,7 @@ Do not forget to pass prop `wrapperPosition` to overwrite `relative` position in
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-  </spr-modal>
+  </mc-modal>
 </template>
 
 <script lang="ts" setup>
@@ -587,7 +577,7 @@ You can also use the `popper-container` prop to specify a custom container for t
 Since the popper is being teleported to a different container, the `popper-width` prop will not work as expected. To set a custom width for the popper in this case, you can use custom styles or CSS classes to define the desired width.
 
 <div>
-  <spr-dropdown
+  <mc-dropdown
     id="sample-dropdownCustomPopper"
     width="300px"
     :triggers="['hover', 'click']"
@@ -595,14 +585,14 @@ Since the popper is being teleported to a different container, the `popper-width
     popper-width="500px"
     :auto-hide="false"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Custom Popper With Dropdown</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
+    </mc-button>
     <template #popper>
-      <spr-date-range-picker 
+      <mc-date-range-picker 
         id="date-range-popper-strategy"
-        class="[&>p]:spr-m-0" 
+        class="[&>p]:mc-m-0" 
         v-model="dateRangeModel.range12"
         label="Date Picker" 
         popper-strategy="fixed"
@@ -611,13 +601,13 @@ Since the popper is being teleported to a different container, the `popper-width
         display-helper
       />
     </template>
-  </spr-dropdown>
+  </mc-dropdown>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-dropdown
+    <mc-dropdown
       id="sample-dropdownCustomPopper"
       width="300px"
       :triggers="['hover', 'click']"
@@ -625,12 +615,12 @@ Since the popper is being teleported to a different container, the `popper-width
       popper-width="500px"
       :auto-hide="false"
     >
-      <spr-button class="spr-w-full" tone="success" has-icon>
+      <mc-button class="mc-w-full" tone="success" has-icon>
         <span>Custom Popper With Dropdown</span>
         <Icon icon="ph:caret-down" />
-      </spr-button>
+      </mc-button>
       <template #popper>
-        <spr-date-range-picker
+        <mc-date-range-picker
           id="date-range-popper-strategy"
           v-model="datePickerModel"
           label="Date Picker"
@@ -640,7 +630,7 @@ Since the popper is being teleported to a different container, the `popper-width
           display-helper
         />
       </template>
-    </spr-dropdown>
+    </mc-dropdown>
   </div>
 </template>
 ```
@@ -786,13 +776,12 @@ Since the popper is being teleported to a different container, the `popper-width
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 import { Icon } from '@iconify/vue';
-import SprInput from '@/components/input/input.vue';
-import SprChips from '@/components/chips/chips.vue';
-import SprDropdown from '@/components/dropdown/dropdown.vue';
-import SprButton from '@/components/button/button.vue';
-import SprDateRangePicker from '@/components/date-picker/date-range-picker/date-range-picker.vue';
-import SprModal from '@/components/modal/modal.vue';
-import SprLogo from '@/components/logo/logo.vue';
+import McInput from '@/components/input/input.vue';
+import McChips from '@/components/chips/chips.vue';
+import McDropdown from '@/components/dropdown/dropdown.vue';
+import McButton from '@/components/button/button.vue';
+import McDateRangePicker from '@/components/date-picker/date-range-picker/date-range-picker.vue';
+import McModal from '@/components/modal/modal.vue';
 
 const dateRangeModel = ref({
   range1: { startDate: '', endDate: '' },

@@ -14,22 +14,22 @@ The most basic usage involves binding your selection to `v-model` and providing 
 
 <div 
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak'
   ]"
 >
-  <spr-list v-model="listModels.basicUsage" :menu-list="menuList" />
+  <mc-list v-model="listModels.basicUsage" :menu-list="menuList" />
 </div>
 
 ```vue
 <template>
   <div
     :class="[
-      'spr-max-h-[300px] spr-overflow-auto spr-rounded-md spr-p-2',
-      'spr-border-color-weak spr-border spr-border-solid',
+      'mc-max-h-[300px] mc-overflow-auto mc-rounded-md mc-p-2',
+      'mc-border-color-weak mc-border mc-border-solid',
     ]"
   >
-    <spr-list v-model="selectedItems" :menu-list="menuList" />
+    <mc-list v-model="selectedItems" :menu-list="menuList" />
   </div>
 </template>
 
@@ -59,22 +59,22 @@ Enable multiple item selection by adding the `multi-select` prop. This displays 
 
 <div
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak'
   ]"
 >
-  <spr-list v-model="listModels.multiSelect" :menu-list="menuList" multi-select />
+  <mc-list v-model="listModels.multiSelect" :menu-list="menuList" multi-select />
 </div>
 
 ```vue
 <template>
   <div
     :class="[
-      'spr-max-h-[300px] spr-overflow-auto spr-rounded-md spr-p-2',
-      'spr-border-color-weak spr-border spr-border-solid',
+      'mc-max-h-[300px] mc-overflow-auto mc-rounded-md mc-p-2',
+      'mc-border-color-weak mc-border mc-border-solid',
     ]"
   >
-    <spr-list v-model="selectedItems" :menu-list="menuList" multi-select />
+    <mc-list v-model="selectedItems" :menu-list="menuList" multi-select />
   </div>
 </template>
 
@@ -106,22 +106,22 @@ When using multi-select mode, a "Select All" / "Unselect All" button is automati
 
 <div
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak'
   ]"
 >
-  <spr-list v-model="listModels.selectAll" :menu-list="selectAllMenuList" multi-select allow-select-all display-list-item-selected />
+  <mc-list v-model="listModels.selectAll" :menu-list="selectAllMenuList" multi-select allow-select-all display-list-item-selected />
 </div>
 
 ```vue
 <template>
   <div
     :class="[
-      'spr-max-h-[300px] spr-overflow-auto spr-rounded-md spr-p-2',
-      'spr-border-color-weak spr-border spr-border-solid',
+      'mc-max-h-[300px] mc-overflow-auto mc-rounded-md mc-p-2',
+      'mc-border-color-weak mc-border mc-border-solid',
     ]"
   >
-    <spr-list v-model="selectedItems" :menu-list="menuList" multi-select allow-select-all display-list-item-selected />
+    <mc-list v-model="selectedItems" :menu-list="menuList" multi-select allow-select-all display-list-item-selected />
   </div>
 </template>
 
@@ -159,30 +159,30 @@ Group items using the `group-items-by` prop with values `'default'`, `'A-Z'`, or
 - **A-Z**: Sorts alphabetically in ascending order
 - **Z-A**: Sorts alphabetically in descending order
 
-<div class="spr-grid spr-gap-4">
+<div class="mc-grid mc-gap-4">
   <div
     :class="[
-      'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-      'spr-border spr-border-solid spr-border-color-weak'
+      'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+      'mc-border mc-border-solid mc-border-color-weak'
     ]"
   >
-    <h5 class="spr-mb-2 spr-text-sm spr-font-medium">Grouped by default</h5>
-    <spr-list v-model="listModels.groupingDefault" :menu-list="groupedMenuList" group-items-by="default" />
+    <h5 class="mc-mb-2 mc-text-sm mc-font-medium">Grouped by default</h5>
+    <mc-list v-model="listModels.groupingDefault" :menu-list="groupedMenuList" group-items-by="default" />
   </div>
   <div
     :class="[
-      'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-      'spr-border spr-border-solid spr-border-color-weak'
+      'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+      'mc-border mc-border-solid mc-border-color-weak'
     ]"
   >
-    <h5 class="spr-mb-2 spr-text-sm spr-font-medium">Grouped by A-Z</h5>
-    <spr-list v-model="listModels.groupingAlphabetical" :menu-list="groupedMenuList" group-items-by="A-Z" />
+    <h5 class="mc-mb-2 mc-text-sm mc-font-medium">Grouped by A-Z</h5>
+    <mc-list v-model="listModels.groupingAlphabetical" :menu-list="groupedMenuList" group-items-by="A-Z" />
   </div>
 </div>
 
 ```vue
 <template>
-  <spr-list v-model="selectedItems" :menu-list="menuList" group-items-by="default" />
+  <mc-list v-model="selectedItems" :menu-list="menuList" group-items-by="default" />
 </template>
 
 <script lang="ts" setup>
@@ -206,16 +206,16 @@ Add search functionality with the `searchable-menu` prop. Users can filter items
 
 <div
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak'
   ]"
 >
-  <spr-list v-model="listModels.searchableList" :menu-list="menuList" searchable-menu />
+  <mc-list v-model="listModels.searchableList" :menu-list="menuList" searchable-menu />
 </div>
 
 ```vue
 <template>
-  <spr-list
+  <mc-list
     v-model="selectedItems"
     :menu-list="menuList"
     searchable-menu
@@ -230,16 +230,16 @@ Display a radio button selector for single-select lists using the `radio-list` p
 
 <div
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak'
   ]"
 >
-  <spr-list v-model="listModels.radioList" :menu-list="menuList" radio-list/>
+  <mc-list v-model="listModels.radioList" :menu-list="menuList" radio-list/>
 </div>
 
 ```vue
 <template>
-  <spr-list v-model="selectedItems" :menu-list="menuList" radio-list />
+  <mc-list v-model="selectedItems" :menu-list="menuList" radio-list />
 </template>
 
 <script lang="ts" setup>
@@ -263,16 +263,16 @@ Add descriptive subtext to list items by including the `subtext` property. This 
 
  <div
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak'
   ]"
 >
-  <spr-list v-model="listModels.subtext" :menu-list="itemsWithSubtext" />
+  <mc-list v-model="listModels.subtext" :menu-list="itemsWithSubtext" />
 </div>
 
 ```vue
 <template>
-  <spr-list v-model="selectedItems" :menu-list="itemsWithSubtext" />
+  <mc-list v-model="selectedItems" :menu-list="itemsWithSubtext" />
 </template>
 
 <script lang="ts" setup>
@@ -308,7 +308,7 @@ Apply a default icon to all items in the list using the `itemIcon` prop. This is
 
 ```vue
 <template>
-  <spr-list v-model="selectedItems" :menu-list="menuList" item-icon="ph:check" />
+  <mc-list v-model="selectedItems" :menu-list="menuList" item-icon="ph:check" />
 </template>
 
 <script lang="ts" setup>
@@ -330,16 +330,16 @@ Add icons to individual list items by including the `icon` property. You can opt
 
 <div
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak'
   ]"
 >
-  <spr-list v-model="listModels.itemIcons" :menu-list="itemsWithIcons" />
+  <mc-list v-model="listModels.itemIcons" :menu-list="itemsWithIcons" />
 </div>
 
 ```vue
 <template>
-  <spr-list v-model="selectedItems" :menu-list="itemsWithIcons" />
+  <mc-list v-model="selectedItems" :menu-list="itemsWithIcons" />
 </template>
 
 <script lang="ts" setup>
@@ -357,7 +357,7 @@ const itemsWithIcons = ref([
     text: 'Settings',
     value: 'settings',
     icon: 'ph:gear',
-    iconColor: 'spr-text-blue-500',
+    iconColor: 'mc-text-blue-500',
   },
   {
     text: 'Users',
@@ -376,16 +376,16 @@ Available tones: 'plain', 'pending', 'information', 'success', 'danger', 'neutra
 
 <div
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak'
   ]"
 >
-  <spr-list v-model="listModels.iconToneFill" :menu-list="menuList" item-icon="ph:star" item-icon-tone="success" :item-icon-fill="true" />
+  <mc-list v-model="listModels.iconToneFill" :menu-list="menuList" item-icon="ph:star" item-icon-tone="success" :item-icon-fill="true" />
 </div>
 
 ```vue
 <template>
-  <spr-list
+  <mc-list
     v-model="selectedItems"
     :menu-list="menuList"
     item-icon="ph:star"
@@ -411,13 +411,13 @@ const menuList = ref([
 
 Create nested hierarchical lists using the `ladderized` prop and including `sublevel` properties in items.
 
-<div class="spr-rounded-md spr-max-h-[300px] spr-border spr-border-solid spr-border-color-weak spr-overflow-hidden">
-  <spr-ladderized-list v-model="listModels.hierarchicalList" :menu-list="hierarchicalData" />
+<div class="mc-rounded-md mc-max-h-[300px] mc-border mc-border-solid mc-border-color-weak mc-overflow-hidden">
+  <mc-ladderized-list v-model="listModels.hierarchicalList" :menu-list="hierarchicalData" />
 </div>
 
 ```vue
 <template>
-  <spr-ladderized-list v-model="selectedItems" :menu-list="hierarchicalData" />
+  <mc-ladderized-list v-model="selectedItems" :menu-list="hierarchicalData" />
 </template>
 
 <script lang="ts" setup>
@@ -457,16 +457,16 @@ Display entire list items as lozenges by enabling the `lozenge` prop and providi
 
 <div
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak'
   ]"
 >
-  <spr-list v-model="lozengeListValue" :menu-list="lozengeMenuList" lozenge />
+  <mc-list v-model="lozengeListValue" :menu-list="lozengeMenuList" lozenge />
 </div>
 
 ```vue
 <template>
-  <spr-list v-model="selectedItems" :menu-list="lozengeItems" lozenge />
+  <mc-list v-model="selectedItems" :menu-list="lozengeItems" lozenge />
 </template>
 
 <script lang="ts" setup>
@@ -515,16 +515,16 @@ Display a regular list item with a lozenge badge on the right side by using the 
 
 <div
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak'
   ]"
 >
-  <spr-list v-model="listModels.lozengeBadge" :menu-list="menuItemsWithLozenge" />
+  <mc-list v-model="listModels.lozengeBadge" :menu-list="menuItemsWithLozenge" />
 </div>
 
 ```vue
 <template>
-  <spr-list v-model="selectedItems" :menu-list="menuItems" />
+  <mc-list v-model="selectedItems" :menu-list="menuItems" />
 </template>
 
 <script lang="ts" setup>
@@ -573,7 +573,7 @@ Use `pre-selected-items` to set initial selections based on item values.
 
 ```vue
 <template>
-  <spr-list v-model="selectedItems" :menu-list="menuList" :pre-selected-items="['apple', 'banana']" />
+  <mc-list v-model="selectedItems" :menu-list="menuList" :pre-selected-items="['apple', 'banana']" />
 </template>
 
 <script lang="ts" setup>
@@ -595,24 +595,24 @@ Use `@update:model-value` to react to selection changes and retrieve the complet
 
 <div
   :class="[
-    'spr-p-2 spr-rounded-md spr-max-h-[300px] spr-overflow-auto',
-    'spr-border spr-border-solid spr-border-color-weak spr-mb-4'
+    'mc-p-2 mc-rounded-md mc-max-h-[300px] mc-overflow-auto',
+    'mc-border mc-border-solid mc-border-color-weak mc-mb-4'
   ]"
 >
-  <spr-list 
+  <mc-list 
     v-model="listModels.eventHandling" 
     :menu-list="menuList" 
     @update:model-value="handleSelection"
   />
 </div>
-<div class="spr-p-4 spr-bg-blue-50 spr-rounded-md spr-border spr-border-blue-200">
-  <p class="spr-text-sm">Selected: {{ selectedItemInfo }}</p>
+<div class="mc-p-4 mc-bg-blue-50 mc-rounded-md mc-border mc-border-blue-200">
+  <p class="mc-text-sm">Selected: {{ selectedItemInfo }}</p>
 </div>
 
 ```vue
 <template>
-  <spr-list v-model="selectedItems" :menu-list="menuList" @update:model-value="handleSelection" />
-  <div v-if="selectedItem" class="spr-mt-4 spr-bg-blue-50 spr-p-4">
+  <mc-list v-model="selectedItems" :menu-list="menuList" @update:model-value="handleSelection" />
+  <div v-if="selectedItem" class="mc-mt-4 mc-bg-blue-50 mc-p-4">
     <p>Selected Item: {{ selectedItem.text }}</p>
   </div>
 </template>
@@ -831,8 +831,8 @@ import { ref } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
-import SprList from "@/components/list/list.vue"
-import SprLadderizedList from "@/components/list/ladderized-list/ladderized-list.vue"
+import McList from "@/components/list/list.vue"
+import McLadderizedList from "@/components/list/ladderized-list/ladderized-list.vue"
 
 import { MenuListType } from '@/components/list/list';
 
@@ -960,7 +960,7 @@ const itemsWithIcons = ref([
     text: 'Settings',
     value: 'settings',
     icon: 'ph:gear',
-    iconColor: 'spr-text-blue-500',
+    iconColor: 'mc-text-blue-500',
   },
   {
     text: 'Users',

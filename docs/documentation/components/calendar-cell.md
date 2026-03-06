@@ -6,7 +6,7 @@ outline: deep
 
 # Calendar Cell Component
 
-The `spr-calendar-cell` component is designed to display shift information in calendar views for scheduling and time management applications. Each cell can represent different shift types, statuses, and display customizable content.
+The `mc-calendar-cell` component is designed to display shift information in calendar views for scheduling and time management applications. Each cell can represent different shift types, statuses, and display customizable content.
 
 ## Overview
 
@@ -25,8 +25,8 @@ The component adapts to different contexts such as standard shifts, offline days
 
 The Calendar Cell component supports various shift types, each with its own visual styling. This makes it easy to distinguish between different shifts at a glance.
 
-<div class="spr-grid spr-grid-cols-3 spr-gap-4">
-  <spr-calendar-cell
+<div class="mc-grid mc-grid-cols-3 mc-gap-4">
+  <mc-calendar-cell
     v-for="(shift, index) in shifts"
     :key="index"
     :type="shift.type"
@@ -38,7 +38,7 @@ The Calendar Cell component supports various shift types, each with its own visu
 
 ```vue
 <template>
-  <spr-calendar-cell
+  <mc-calendar-cell
     v-for="(shift, index) in shifts"
     :key="index"
     :type="shift.type"
@@ -75,8 +75,8 @@ function handleClick(event) {
 
 Calendar cells can display different statuses to indicate approval state. The status affects the border style and can optionally show error indicators.
 
-<div class="spr-grid spr-grid-cols-3 spr-gap-4">
-  <spr-calendar-cell
+<div class="mc-grid mc-grid-cols-3 mc-gap-4">
+  <mc-calendar-cell
     v-for="(shift, index) in status"
     :key="index"
     :type="shift.type"
@@ -88,7 +88,7 @@ Calendar cells can display different statuses to indicate approval state. The st
 
 ```vue
 <template>
-  <spr-calendar-cell
+  <mc-calendar-cell
     v-for="(shift, index) in status"
     :key="index"
     :type="shift.type"
@@ -114,8 +114,8 @@ const status = [
 
 The component includes special types for off days, absences, and holidays. These types automatically display appropriate icons and labels.
 
-<div class="spr-grid spr-grid-cols-3 spr-gap-4">
-  <spr-calendar-cell
+<div class="mc-grid mc-grid-cols-3 mc-gap-4">
+  <mc-calendar-cell
     v-for="(shift, index) in offline"
     :key="index"
     :type="shift.type"
@@ -125,11 +125,11 @@ The component includes special types for off days, absences, and holidays. These
 
 ```vue
 <template>
-  <spr-calendar-cell v-for="(shift, index) in offline" :key="index" :type="shift.type" :status="shift.status" />
+  <mc-calendar-cell v-for="(shift, index) in offline" :key="index" :type="shift.type" :status="shift.status" />
 </template>
 
 <script lang="ts" setup>
-import SprCalendarCell from '@/components/calendar-cell/calendar-cell.vue';
+import McCalendarCell from '@/components/calendar-cell/calendar-cell.vue';
 
 const offline = [
   // Basic offline types
@@ -163,56 +163,56 @@ const offline = [
 
 The component provides slots for completely custom content while preserving the cell's styling and status indicators.
 
-<div class="spr-grid spr-grid-cols-3 spr-gap-4">
-  <spr-calendar-cell>
-    <div class="spr-p-2">
-      <div class="spr-font-medium">Custom Content</div>
+<div class="mc-grid mc-grid-cols-3 mc-gap-4">
+  <mc-calendar-cell>
+    <div class="mc-p-2">
+      <div class="mc-font-medium">Custom Content</div>
       <div>You can add any HTML here</div>
     </div>
-  </spr-calendar-cell>
-  <spr-calendar-cell
+  </mc-calendar-cell>
+  <mc-calendar-cell
     status="pending"
   >
-    <div class="spr-p-2">
-      <div class="spr-font-medium">Pending Cell</div>
+    <div class="mc-p-2">
+      <div class="mc-font-medium">Pending Cell</div>
       <div>With custom content</div>
     </div>
-  </spr-calendar-cell>
-  <spr-calendar-cell
+  </mc-calendar-cell>
+  <mc-calendar-cell
     status="error"
   >
-    <div class="spr-p-2">
-      <div class="spr-font-medium">Error Cell</div>
+    <div class="mc-p-2">
+      <div class="mc-font-medium">Error Cell</div>
       <div>With custom content</div>
     </div>
-  </spr-calendar-cell>
+  </mc-calendar-cell>
 </div>
 
 ```vue
 <template>
   <!-- Default calendar cell with custom content -->
-  <spr-calendar-cell>
-    <div class="spr-p-2">
-      <div class="spr-font-medium">Custom Content</div>
+  <mc-calendar-cell>
+    <div class="mc-p-2">
+      <div class="mc-font-medium">Custom Content</div>
       <div>You can add any HTML here</div>
     </div>
-  </spr-calendar-cell>
+  </mc-calendar-cell>
 
   <!-- Pending status with custom content -->
-  <spr-calendar-cell status="pending">
-    <div class="spr-p-2">
-      <div class="spr-font-medium">Pending Cell</div>
+  <mc-calendar-cell status="pending">
+    <div class="mc-p-2">
+      <div class="mc-font-medium">Pending Cell</div>
       <div>With custom content</div>
     </div>
-  </spr-calendar-cell>
+  </mc-calendar-cell>
 
   <!-- Error status with custom content -->
-  <spr-calendar-cell status="error">
-    <div class="spr-p-2">
-      <div class="spr-font-medium">Error Cell</div>
+  <mc-calendar-cell status="error">
+    <div class="mc-p-2">
+      <div class="mc-font-medium">Error Cell</div>
       <div>With custom content</div>
     </div>
-  </spr-calendar-cell>
+  </mc-calendar-cell>
 </template>
 ```
 
@@ -220,14 +220,14 @@ The component provides slots for completely custom content while preserving the 
 
 By default, calendar cells have a maximum width. Use the `fullwidth` prop to make the cell expand to the full width of its container.
 
-<div class="spr-grid spr-grid-cols-1 spr-gap-4">
-  <spr-calendar-cell 
+<div class="mc-grid mc-grid-cols-1 mc-gap-4">
+  <mc-calendar-cell 
     fullwidth 
     type="standard" 
     title="Full Width Calendar Cell" 
     description="This cell takes up the entire available width"
   />
-  <spr-calendar-cell 
+  <mc-calendar-cell 
     type="standard" 
     title="Default Width Calendar Cell" 
     description="This cell has the default max-width constraint"
@@ -237,7 +237,7 @@ By default, calendar cells have a maximum width. Use the `fullwidth` prop to mak
 ```vue
 <template>
   <!-- Full width calendar cell -->
-  <spr-calendar-cell
+  <mc-calendar-cell
     fullwidth
     type="standard"
     title="Full Width Calendar Cell"
@@ -245,7 +245,7 @@ By default, calendar cells have a maximum width. Use the `fullwidth` prop to mak
   />
 
   <!-- Default width calendar cell -->
-  <spr-calendar-cell
+  <mc-calendar-cell
     type="standard"
     title="Default Width Calendar Cell"
     description="This cell has the default max-width constraint"
@@ -257,13 +257,13 @@ By default, calendar cells have a maximum width. Use the `fullwidth` prop to mak
 
 Use the `loading` prop to display a skeletal loading animation while data is being fetched.
 
-<div class="spr-grid spr-grid-cols-1 spr-gap-4">
-  <spr-calendar-cell fullwidth loading />
+<div class="mc-grid mc-grid-cols-1 mc-gap-4">
+  <mc-calendar-cell fullwidth loading />
 </div>
 
 ```vue
 <template>
-  <spr-calendar-cell fullwidth loading />
+  <mc-calendar-cell fullwidth loading />
 </template>
 ```
 
@@ -271,14 +271,14 @@ Use the `loading` prop to display a skeletal loading animation while data is bei
 
 You can override the default color scheme using the `custom-color` prop. For proper background opacity, hexadecimal color codes are recommended.
 
-<div class="spr-grid spr-grid-cols-2 spr-gap-4">
-  <spr-calendar-cell 
+<div class="mc-grid mc-grid-cols-2 mc-gap-4">
+  <mc-calendar-cell 
     custom-color="#b134eb" 
     type="late-morning"
     title="Custom Hex Color" 
     description="Using hex code with opacity"
   />
-  <spr-calendar-cell 
+  <mc-calendar-cell 
     custom-color="blue" 
     type="late-morning"
     title="Named Color" 
@@ -289,7 +289,7 @@ You can override the default color scheme using the `custom-color` prop. For pro
 ```vue
 <template>
   <!-- Using hex color code (recommended for proper opacity) -->
-  <spr-calendar-cell
+  <mc-calendar-cell
     custom-color="#b134eb"
     type="late-morning"
     title="Custom Hex Color"
@@ -297,7 +297,7 @@ You can override the default color scheme using the `custom-color` prop. For pro
   />
 
   <!-- Using named color (no opacity effect) -->
-  <spr-calendar-cell
+  <mc-calendar-cell
     custom-color="blue"
     type="late-morning"
     title="Named Color"
@@ -314,48 +314,48 @@ When using custom colors, hexadecimal format (e.g., `#b134eb`) is recommended fo
 
 You can provide a custom icon using the `icon` prop to override the default icons.
 
-<div class="spr-grid spr-grid-cols-2 spr-gap-4">
-  <spr-calendar-cell 
+<div class="mc-grid mc-grid-cols-2 mc-gap-4">
+  <mc-calendar-cell 
     title="Custom Icon" 
     description="Using a custom icon"
     icon="ph:map-pin"
   />
-  <spr-calendar-cell 
+  <mc-calendar-cell 
     title="Normal Icon" 
     description="Using a normal icon"
   />
-  <spr-calendar-cell 
+  <mc-calendar-cell 
     title="Slot Icon" 
     description="Using a slot for icon"
   >
     <template #prefix>
-      <spr-icon icon="ph:map-pin" />
+      <mc-icon icon="ph:map-pin" />
     </template>
-  </spr-calendar-cell>
+  </mc-calendar-cell>
 
-  <spr-calendar-cell type="vacation" description="Using slot to override default icon">
+  <mc-calendar-cell type="vacation" description="Using slot to override default icon">
     <template #prefix>
-      <spr-icon icon="ph:car" />
+      <mc-icon icon="ph:car" />
     </template>
-  </spr-calendar-cell>
-  <spr-calendar-cell type="vacation" description="Using slot to override default icon" icon="ph:airplane" />
+  </mc-calendar-cell>
+  <mc-calendar-cell type="vacation" description="Using slot to override default icon" icon="ph:airplane" />
 </div>
 
 ```vue
 <template>
-  <spr-calendar-cell title="Custom Icon" description="Using a custom icon" icon="ph:map-pin" />
-  <spr-calendar-cell title="Normal Icon" description="Using a normal icon" />
-  <spr-calendar-cell title="Slot Icon" description="Using a slot for icon">
+  <mc-calendar-cell title="Custom Icon" description="Using a custom icon" icon="ph:map-pin" />
+  <mc-calendar-cell title="Normal Icon" description="Using a normal icon" />
+  <mc-calendar-cell title="Slot Icon" description="Using a slot for icon">
     <template #prefix>
-      <spr-icon icon="ph:map-pin" />
+      <mc-icon icon="ph:map-pin" />
     </template>
-  </spr-calendar-cell>
-  <spr-calendar-cell type="vacation" description="Using slot to override default icon">
+  </mc-calendar-cell>
+  <mc-calendar-cell type="vacation" description="Using slot to override default icon">
     <template #prefix>
-      <spr-icon icon="ph:car" />
+      <mc-icon icon="ph:car" />
     </template>
-  </spr-calendar-cell>
-  <spr-calendar-cell type="vacation" description="Using slot to override default icon" icon="ph:airplane" />
+  </mc-calendar-cell>
+  <mc-calendar-cell type="vacation" description="Using slot to override default icon" icon="ph:airplane" />
 </template>
 ```
 
@@ -495,9 +495,8 @@ You can provide a custom icon using the `icon` prop to override the default icon
 </table>
 
 <script lang="ts" setup>
-import SprCalendarCell from '@/components/calendar-cell/calendar-cell.vue'
-import SprLogo from "@/components/logo/logo.vue";
-import SprIcon from '@/components/icon/icon.vue';
+import McCalendarCell from '@/components/calendar-cell/calendar-cell.vue'
+import McIcon from '@/components/icon/icon.vue';
 
 const shifts = [
   { type: 'standard', branchName: 'Main Branch', timeRange: '9:00 AM - 5:00 PM', hours: 8 },

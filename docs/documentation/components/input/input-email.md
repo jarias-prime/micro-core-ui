@@ -10,11 +10,11 @@ Email input with native browser validation patterns.
 
 ## Basic Usage
 
-<spr-input-email v-model="inputModels.basic" label="Email" placeholder="Enter email" />
+<mc-input-email v-model="inputModels.basic" label="Email" placeholder="Enter email" />
 
 ```vue
 <template>
-  <spr-input-email v-model="inputModel" label="Email" placeholder="Enter email" />
+  <mc-input-email v-model="inputModel" label="Email" placeholder="Enter email" />
 </template>
 
 <script setup lang="ts">
@@ -26,11 +26,11 @@ const inputModel = ref('');
 
 ## Active State
 
-<spr-input-email v-model="inputModels.activeState" label="Email" placeholder="Enter email" active />
+<mc-input-email v-model="inputModels.activeState" label="Email" placeholder="Enter email" active />
 
 ```vue
 <template>
-  <spr-input-email v-model="inputModel" label="Email" placeholder="Enter email" active />
+  <mc-input-email v-model="inputModel" label="Email" placeholder="Enter email" active />
 </template>
 
 <script setup lang="ts">
@@ -42,19 +42,19 @@ const inputModel = ref('');
 
 ## Error State
 
-<spr-input-email v-model="inputModels.errorState" label="Email" placeholder="Enter email" :error="true">
+<mc-input-email v-model="inputModels.errorState" label="Email" placeholder="Enter email" :error="true">
   <template #icon>
     <Icon icon="ph:warning-circle-fill" />
   </template>
-</spr-input-email>
+</mc-input-email>
 
 ```vue
 <template>
-  <spr-input-email v-model="inputModel" label="Email" placeholder="Enter email" :error="true">
+  <mc-input-email v-model="inputModel" label="Email" placeholder="Enter email" :error="true">
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input-email>
+  </mc-input-email>
 </template>
 
 <script setup lang="ts">
@@ -66,11 +66,11 @@ const inputModel = ref('');
 
 ## Disabled State
 
-<spr-input-email v-model="inputModels.disabledState" label="Email" placeholder="Enter email" :disabled="true" />
+<mc-input-email v-model="inputModels.disabledState" label="Email" placeholder="Enter email" :disabled="true" />
 
 ```vue
 <template>
-  <spr-input-email v-model="inputModel" label="Email" placeholder="Enter email" :disabled="true" />
+  <mc-input-email v-model="inputModel" label="Email" placeholder="Enter email" :disabled="true" />
 </template>
 
 <script setup lang="ts">
@@ -94,7 +94,7 @@ import { ref } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
-import SprInputEmail from '@/components/input/input-email/input-email.vue';
+import McInputEmail from '@/components/input/input-email/input-email.vue';
 
 const inputModels = ref({
   basic: '',

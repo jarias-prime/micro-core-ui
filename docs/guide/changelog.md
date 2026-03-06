@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0 (2026-05-04)
+
+### Updates
+
+- Fix Component Export Prefix and Tailwind Class Prefix
+
 ## 1.0.1 (2026-05-03)
 
 ### Updates

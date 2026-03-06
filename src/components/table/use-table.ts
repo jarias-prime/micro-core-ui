@@ -81,10 +81,10 @@ export const useTable = (props: TablePropTypes, emit: SetupContext<TableEmitType
         if (isTouchDevice.value) {
           clearDraggedItemDataInLocalStorage();
         }
-        
+
         if (tableData.value.length === 0) {
           tableKey.value = tableKey.value + 1;
-        }        
+        }
       },
       onAdd: (evt: SortableEvent) => {
         const typedEvt = evt as SortableDragEvent;
@@ -99,7 +99,7 @@ export const useTable = (props: TablePropTypes, emit: SetupContext<TableEmitType
         tableData.value = newData;
         if (tableData.value.length > 0) {
           tableKey.value = tableKey.value + 1;
-        }        
+        }
 
         emit('onDragAdd', { element: draggedItem, newIndex: evt.newIndex!, updatedList: newData });
       },
@@ -205,19 +205,19 @@ export const useTable = (props: TablePropTypes, emit: SetupContext<TableEmitType
 
   const getTableClasses = computed(() => {
     const tableWrapperClasses = classNames(
-      'spr-flex spr-flex-col spr-h-full spr-border-color-weak spr-w-full spr-overflow-auto spr-rounded-border-radius-lg spr-border spr-border-solid spr-table-wrapper spr-relative spr-font-main',
+      'mc-flex mc-flex-col mc-h-full mc-border-color-weak mc-w-full mc-overflow-auto mc-rounded-border-radius-lg mc-border mc-border-solid mc-table-wrapper mc-relative mc-font-main',
       {
-        'spr-overflow-hidden': isDraggable.value,
-        'spr-overflow-auto': !isDraggable.value,
+        'mc-overflow-hidden': isDraggable.value,
+        'mc-overflow-auto': !isDraggable.value,
       },
     );
-    const tableFooterClasses = classNames('spr-w-full spr-bottom-0 spr-left-0', {
-      'spr-background-color-surface': props.variant === 'surface',
-      'spr-background-color': props.variant === 'white',
+    const tableFooterClasses = classNames('mc-w-full mc-bottom-0 mc-left-0', {
+      'mc-background-color-surface': props.variant === 'surface',
+      'mc-background-color': props.variant === 'white',
     });
     const headerBackground = classNames({
-      'spr-background-color': props.variant === 'white',
-      'spr-background-color-surface': props.variant === 'surface',
+      'mc-background-color': props.variant === 'white',
+      'mc-background-color-surface': props.variant === 'surface',
     });
     const headerClasses = (header: Header | null) => {
       if (header?.customTailwindClasses) {
@@ -225,56 +225,56 @@ export const useTable = (props: TablePropTypes, emit: SetupContext<TableEmitType
       }
 
       return classNames(
-        'spr-min-h-12 spr-px-size-spacing-2xs spr-py-size-spacing-3xs spr-relative',
-        'spr-text-color-strong spr-font-size-100 spr-font-line-height-100 spr-font-letter-spacing-normal spr-text-start spr-font-medium spr-uppercase',
-        'spr-border-color-weak spr-border-x-0 spr-border-y spr-border-solid',
+        'mc-min-h-12 mc-px-size-spacing-2xs mc-py-size-spacing-3xs mc-relative',
+        'mc-text-color-strong mc-font-size-100 mc-font-line-height-100 mc-font-letter-spacing-normal mc-text-start mc-font-medium mc-uppercase',
+        'mc-border-color-weak mc-border-x-0 mc-border-y mc-border-solid',
         {
-          'spr-border-t-0': !slots.default,
+          'mc-border-t-0': !slots.default,
         },
         headerBackground,
       );
     };
 
-    const headerNameClass = 'spr-flex spr-flex-row spr-items-center spr-gap-size-spacing-5xs';
+    const headerNameClass = 'mc-flex mc-flex-row mc-items-center mc-gap-size-spacing-5xs';
 
     const defaultSlotClasses = classNames({
-      'spr-px-size-spacing-sm spr-py-size-spacing-xs': !!slots.default,
+      'mc-px-size-spacing-sm mc-py-size-spacing-xs': !!slots.default,
     });
 
-    const tableHeaderActionsClasses = 'spr-border-color-weak spr-w-full spr-border spr-border-solid';
+    const tableHeaderActionsClasses = 'mc-border-color-weak mc-w-full mc-border mc-border-solid';
     const tableCellSlotClasses =
-      'spr-background-color-surface spr-text-color-strong spr-font-size-100 spr-font-line-height-100 spr-font-letter-spacing-normal spr-uppercase';
-    const tableRowClasses = classNames('spr-min-h-[60px]', {
-      'spr-cursor-pointer': props.isRowClickable,
+      'mc-background-color-surface mc-text-color-strong mc-font-size-100 mc-font-line-height-100 mc-font-letter-spacing-normal mc-uppercase';
+    const tableRowClasses = classNames('mc-min-h-[60px]', {
+      'mc-cursor-pointer': props.isRowClickable,
     });
     const tableDataClasses =
-      'spr-border-color-weak spr-overflow-hidden spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid spr-p-3';
+      'mc-border-color-weak mc-overflow-hidden mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid mc-p-3';
     const tableRowActionClasses =
-      'spr-border-color-weak spr-overflow-hidden spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid spr-p-3';
+      'mc-border-color-weak mc-overflow-hidden mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid mc-p-3';
     const tableRowDragIconClasses =
-      'spr-border-color-weak spr-overflow-hidden spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid spr-w-[5%] spr-cursor-pointer spr-px-[6px]';
+      'mc-border-color-weak mc-overflow-hidden mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid mc-w-[5%] mc-cursor-pointer mc-px-[6px]';
 
-    const tableBackgroundClasses = classNames('spr-h-full');
+    const tableBackgroundClasses = classNames('mc-h-full');
 
     const tableBodyClasses = classNames({
-      'spr-overflow-y-auto spr-h-full': fullHeight.value,
-      'spr-h-[250px]': !fullHeight.value && slots.footer,
-      'spr-h-[360px]': !fullHeight.value && !slots.footer,
+      'mc-overflow-y-auto mc-h-full': fullHeight.value,
+      'mc-h-[250px]': !fullHeight.value && slots.footer,
+      'mc-h-[360px]': !fullHeight.value && !slots.footer,
     });
 
     const emptyStateBaseClasses = classNames({
-      'spr-overflow-y-hidden spr-h-[calc(90vh-150px)] md:spr-h-[calc(80vh-150px)] sm:spr-h-[calc(70vh-150px)]':
+      'mc-overflow-y-hidden mc-h-[calc(90vh-150px)] md:mc-h-[calc(80vh-150px)] sm:mc-h-[calc(70vh-150px)]':
         fullHeight.value && slots.footer, // Adjust tbody height for header/footer
-      'spr-overflow-y-auto spr-h-[75vh]': fullHeight.value && !slots.footer, // Adjust tbody height for header/footer
-      'spr-h-[250px]': !fullHeight.value && slots.footer,
-      'spr-h-[360px]': !fullHeight.value && !slots.footer,
+      'mc-overflow-y-auto mc-h-[75vh]': fullHeight.value && !slots.footer, // Adjust tbody height for header/footer
+      'mc-h-[250px]': !fullHeight.value && slots.footer,
+      'mc-h-[360px]': !fullHeight.value && !slots.footer,
     });
 
     const multiselectRowClass = classNames(
-      'spr-border-color-weak spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid',
+      'mc-border-color-weak mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid',
     );
 
-    const multiselectClass = classNames('spr-px-size-spacing-2xs spr-py-size-spacing-3xs spr-w-[44px]');
+    const multiselectClass = classNames('mc-px-size-spacing-2xs mc-py-size-spacing-3xs mc-w-[44px]');
 
     const emptyStateClasses = classNames(`${emptyStateBaseClasses} ${props.emptyStateCustomClasses}`);
     const tableActionSlotClasses = classNames(`${defaultSlotClasses} ${props.tableActionSlotCustomClasses}`);

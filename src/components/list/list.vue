@@ -1,11 +1,11 @@
 <template>
-  <div class="spr-font-main">
+  <div class="mc-font-main">
     <!-- Header Section -->
     <template
       v-if="props.searchableMenu || props.displayListItemSelected || (props.multiSelect && props.allowSelectAll)"
     >
       <div :class="listClasses.headerClasses" :style="stickyOffsetStyle">
-        <spr-input-search
+        <mc-input-search
           v-if="props.searchableMenu"
           v-model="searchText"
           :placeholder="props.searchableMenuPlaceholder"
@@ -23,38 +23,38 @@
           >
             <span
               v-if="props.supportingDisplayText || props.displayListItemSelected"
-              class="spr-label-sm-medium spr-text-color-base spr-block"
+              class="mc-label-sm-medium mc-text-color-base mc-block"
             >
               {{ props.supportingDisplayText || `${selectedItems.length} Selected` }}
             </span>
 
-            <spr-button
+            <mc-button
               v-if="props.multiSelect && props.allowSelectAll"
               id="select-all-button"
-              :class="{ 'spr-ml-auto': true }"
+              :class="{ 'mc-ml-auto': true }"
               variant="secondary"
               size="small"
               @click="handleSelectAll"
             >
               {{ hasSelectedItems ? 'Unselect All' : 'Select All' }}
-            </spr-button>
+            </mc-button>
           </div>
         </slot>
       </div>
     </template>
 
-    <div class="spr-p-size-spacing-3xs">
+    <div class="mc-p-size-spacing-3xs">
       <!-- Grouped Items -->
       <template v-if="hasGroupedItems">
-        <div class="spr-grid spr-gap-3">
-          <div v-for="(list, listIndex) in groupedMenuList" :key="listIndex" class="spr-grid spr-gap-0.5">
+        <div class="mc-grid mc-gap-3">
+          <div v-for="(list, listIndex) in groupedMenuList" :key="listIndex" class="mc-grid mc-gap-0.5">
             <div
               v-if="list.groupLabel !== 'no-group'"
-              class="spr-label-xs-medium spr-text-color-base spr-px-size-spacing-4xs spr-py-size-spacing-3xs spr-uppercase"
+              class="mc-label-xs-medium mc-text-color-base mc-px-size-spacing-4xs mc-py-size-spacing-3xs mc-uppercase"
             >
               {{ list.groupLabel }}
             </div>
-            <div class="spr-grid spr-gap-[2px]">
+            <div class="mc-grid mc-gap-[2px]">
               <ListItem
                 v-for="item in list.items"
                 :key="item.value"
@@ -74,7 +74,7 @@
                 :avatar-source="props.avatarSource"
                 @select="handleSelectedItem(item)"
               />
-              <div v-if="props.infiniteScrollLoader" class="spr-flex spr-items-center spr-justify-center spr-p-2">
+              <div v-if="props.infiniteScrollLoader" class="mc-flex mc-items-center mc-justify-center mc-p-2">
                 <Icon icon="svg-spinners:270-ring" />
               </div>
             </div>
@@ -84,7 +84,7 @@
 
       <!-- Non-Grouped Items -->
       <template v-else-if="localizedMenuList && localizedMenuList.length > 0">
-        <div class="spr-grid spr-gap-[2px]">
+        <div class="mc-grid mc-gap-[2px]">
           <ListItem
             v-for="item in localizedMenuList"
             :key="item.value"
@@ -104,7 +104,7 @@
             :avatar-source="props.avatarSource"
             @select="handleSelectedItem(item)"
           />
-          <div v-if="props.infiniteScrollLoader" class="spr-flex spr-items-center spr-justify-center spr-p-2">
+          <div v-if="props.infiniteScrollLoader" class="mc-flex mc-items-center mc-justify-center mc-p-2">
             <Icon icon="svg-spinners:270-ring" />
           </div>
         </div>
@@ -112,15 +112,15 @@
 
       <!-- Loading State -->
       <template v-else-if="props.loading">
-        <div class="spr-grid spr-gap-[2px]">
-          <div v-for="i in 5" :key="i" class="spr-skeletal-loader spr-h-8 spr-w-full spr-rounded-md" />
+        <div class="mc-grid mc-gap-[2px]">
+          <div v-for="i in 5" :key="i" class="mc-skeletal-loader mc-h-8 mc-w-full mc-rounded-md" />
         </div>
       </template>
 
       <!-- Empty State -->
       <template v-else>
-        <div class="spr-flex spr-items-center spr-justify-center spr-p-2 spr-text-center">
-          <span class="spr-body-sm-regular spr-m-0">No results found</span>
+        <div class="mc-flex mc-items-center mc-justify-center mc-p-2 mc-text-center">
+          <span class="mc-body-sm-regular mc-m-0">No results found</span>
         </div>
       </template>
     </div>
@@ -130,8 +130,8 @@
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue';
 
-import SprInputSearch from '@/components/input/input-search/input-search.vue';
-import SprButton from '@/components/button/button.vue';
+import McInputSearch from '@/components/input/input-search/input-search.vue';
+import McButton from '@/components/button/button.vue';
 import ListItem from './list-item/list-item.vue';
 
 import { listPropTypes, listEmitTypes } from './list';

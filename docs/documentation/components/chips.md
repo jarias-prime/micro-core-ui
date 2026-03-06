@@ -6,7 +6,7 @@ outline: deep
 
 # Chips Component
 
-The `spr-chips` component provides interactive elements for filtering, selection, tagging, and displaying small pieces of information. Chips are compact, versatile UI elements that can include text, icons, avatars, and badges.
+The `mc-chips` component provides interactive elements for filtering, selection, tagging, and displaying small pieces of information. Chips are compact, versatile UI elements that can include text, icons, avatars, and badges.
 
 ## Overview
 
@@ -19,22 +19,22 @@ The `spr-chips` component provides interactive elements for filtering, selection
 
 At its simplest, a chip displays a text label. The chip can be in either an active or inactive state, controlled through the `active` prop.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips label="Basic Chip" />
-  <spr-chips label="Active Chip" :active="true" />
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips label="Basic Chip" />
+  <mc-chips label="Active Chip" :active="true" />
 </div>
 
 ```vue
 <template>
   <!-- Default inactive chip -->
-  <spr-chips label="Basic Chip" />
+  <mc-chips label="Basic Chip" />
 
   <!-- Active chip -->
-  <spr-chips label="Active Chip" :active="true" />
+  <mc-chips label="Active Chip" :active="true" />
 </template>
 
 <script lang="ts" setup>
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 </script>
 ```
 
@@ -52,19 +52,19 @@ Chips come in different sizes to accommodate various design needs. The available
 - `sm` - Small size for compact displays
 - `md` - Medium size (default)
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips label="Small Chip" size="sm" />
-  <spr-chips label="Medium Chip" />
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips label="Small Chip" size="sm" />
+  <mc-chips label="Medium Chip" />
 </div>
 
 ```vue
 <template>
-  <spr-chips label="Small Chip" size="sm" />
-  <spr-chips label="Medium Chip" />
+  <mc-chips label="Small Chip" size="sm" />
+  <mc-chips label="Medium Chip" />
 </template>
 
 <script lang="ts" setup>
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 </script>
 ```
 
@@ -75,19 +75,19 @@ Chips come in different tones to convey different meanings. The available tones 
 - `subtle` - A subtle tone for less emphasis
 - `default` - The standard tone for general use
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips label="Subtle Chip" tone="subtle" />
-  <spr-chips label="Default Chip" />
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips label="Subtle Chip" tone="subtle" />
+  <mc-chips label="Default Chip" />
 </div>
 
 ```vue
 <template>
-  <spr-chips label="Subtle Chip" tone="subtle" />
-  <spr-chips label="Default Chip" />
+  <mc-chips label="Subtle Chip" tone="subtle" />
+  <mc-chips label="Default Chip" />
 </template>
 
 <script lang="ts" setup>
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 </script>
 ```
 
@@ -95,16 +95,16 @@ import SprChips from '@/components/chips/chips.vue';
 
 Icons can enhance the visual meaning of chips and make them more recognizable. The `icon` prop accepts Iconify icon names, and the `icon-weight` prop allows you to control the icon's style.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips :active="activeIcon.isIconActive1" label="Regular Icon" icon="ph:airplane-landing" @update="(e) => handleUpdate('isIconActive1', e)"/>
-  <spr-chips :active="activeIcon.isIconActive2" label="Bold Icon" icon="ph:airplane-landing" icon-weight="bold" @update="(e) => handleUpdate('isIconActive2', e)" />
-  <spr-chips :active="activeIcon.isIconActive3" label="Fill Icon" icon="ph:airplane-landing" icon-weight="fill" @update="(e) => handleUpdate('isIconActive3', e)" />
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips :active="activeIcon.isIconActive1" label="Regular Icon" icon="ph:airplane-landing" @update="(e) => handleUpdate('isIconActive1', e)"/>
+  <mc-chips :active="activeIcon.isIconActive2" label="Bold Icon" icon="ph:airplane-landing" icon-weight="bold" @update="(e) => handleUpdate('isIconActive2', e)" />
+  <mc-chips :active="activeIcon.isIconActive3" label="Fill Icon" icon="ph:airplane-landing" icon-weight="fill" @update="(e) => handleUpdate('isIconActive3', e)" />
 </div>
 
 ```vue
 <template>
   <!-- Regular weight icon -->
-  <spr-chips
+  <mc-chips
     :active="activeChips.flight"
     label="Regular Icon"
     icon="ph:airplane-landing"
@@ -112,7 +112,7 @@ Icons can enhance the visual meaning of chips and make them more recognizable. T
   />
 
   <!-- Bold weight icon -->
-  <spr-chips
+  <mc-chips
     :active="activeChips.flightBold"
     label="Bold Icon"
     icon="ph:airplane-landing"
@@ -121,7 +121,7 @@ Icons can enhance the visual meaning of chips and make them more recognizable. T
   />
 
   <!-- Fill weight icon -->
-  <spr-chips
+  <mc-chips
     :active="activeChips.flightFill"
     label="Fill Icon"
     icon="ph:airplane-landing"
@@ -132,7 +132,7 @@ Icons can enhance the visual meaning of chips and make them more recognizable. T
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 
 const activeChips = ref({
   flight: false,
@@ -160,19 +160,19 @@ The component supports several icon weights to match your design needs:
 
 ## Chips with Avatars
 
-Chips can include avatars to represent users, clients, or any entity. The chip uses the `spr-avatar` component internally, supporting different avatar variants.
+Chips can include avatars to represent users, clients, or any entity. The chip uses the `mc-avatar` component internally, supporting different avatar variants.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips
     label="User Image"
     :avatar-url="'https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg'"
     :avatar-variant="'image'"
   />
-  <spr-chips
+  <mc-chips
     label="Client Icon"
     :avatar-variant="'client'"
   />
-  <spr-chips
+  <mc-chips
     label="User Icon"
     :avatar-variant="'user'"
   />
@@ -181,44 +181,44 @@ Chips can include avatars to represent users, clients, or any entity. The chip u
 ```vue
 <template>
   <!-- Chip with image avatar -->
-  <spr-chips
+  <mc-chips
     label="User Image"
     :avatar-url="'https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg'"
     :avatar-variant="'image'"
   />
 
   <!-- Chip with client icon avatar -->
-  <spr-chips label="Client Icon" :avatar-variant="'client'" />
+  <mc-chips label="Client Icon" :avatar-variant="'client'" />
 
   <!-- Chip with user icon avatar -->
-  <spr-chips label="User Icon" :avatar-variant="'user'" />
+  <mc-chips label="User Icon" :avatar-variant="'user'" />
 </template>
 
 <script lang="ts" setup>
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 </script>
 ```
 
 You can also use the `avatar-initials` prop to display text initials instead of an image:
 
 ```vue
-<spr-chips label="John Doe" :avatar-variant="'text'" avatar-initials="JD" />
+<mc-chips label="John Doe" :avatar-variant="'text'" avatar-initials="JD" />
 ```
 
 ## Chips with Badges
 
 Badges can be added to chips to display counts, status indicators, or other small pieces of information. Set the `badge` prop to `true` and use `badge-text` and `badge-variant` to customize the badge.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips :active="activeIcon.isBadgeActive1" label="Brand Badge" badge badge-text="1" badge-variant="brand" @update="(e) => handleUpdate('isBadgeActive1', e)"/>
-  <spr-chips :active="activeIcon.isBadgeActive2" label="Danger Badge" badge badge-text="2" badge-variant="danger" @update="(e) => handleUpdate('isBadgeActive2', e)"/>
-  <spr-chips :active="activeIcon.isBadgeActive3" label="Disabled Badge" badge badge-text="3" badge-variant="disabled" @update="(e) => handleUpdate('isBadgeActive3', e)"/>
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips :active="activeIcon.isBadgeActive1" label="Brand Badge" badge badge-text="1" badge-variant="brand" @update="(e) => handleUpdate('isBadgeActive1', e)"/>
+  <mc-chips :active="activeIcon.isBadgeActive2" label="Danger Badge" badge badge-text="2" badge-variant="danger" @update="(e) => handleUpdate('isBadgeActive2', e)"/>
+  <mc-chips :active="activeIcon.isBadgeActive3" label="Disabled Badge" badge badge-text="3" badge-variant="disabled" @update="(e) => handleUpdate('isBadgeActive3', e)"/>
 </div>
 
 ```vue
 <template>
   <!-- Chip with brand variant badge -->
-  <spr-chips
+  <mc-chips
     :active="filterCounts.messages"
     label="Messages"
     badge
@@ -228,7 +228,7 @@ Badges can be added to chips to display counts, status indicators, or other smal
   />
 
   <!-- Chip with danger variant badge -->
-  <spr-chips
+  <mc-chips
     :active="filterCounts.alerts"
     label="Alerts"
     badge
@@ -238,7 +238,7 @@ Badges can be added to chips to display counts, status indicators, or other smal
   />
 
   <!-- Chip with disabled variant badge -->
-  <spr-chips
+  <mc-chips
     :active="filterCounts.tasks"
     label="Tasks"
     badge
@@ -250,7 +250,7 @@ Badges can be added to chips to display counts, status indicators, or other smal
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 
 const filterCounts = ref({
   messages: true,
@@ -277,19 +277,19 @@ Badges in chips support these variants:
 
 Chips can have different interactive states to provide a rich user experience.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips :active="activeIcon.isToggleActive5" label="Toggleable" @update="(e) => handleUpdate('isToggleActive5', e)"/>
-  <spr-chips :active="activeIcon.isToggleActive6" label="Closable" closable @close="handleClose" :visible="visible" @update="(e) => handleUpdate('isToggleActive6', e)"/>
-  <spr-chips disabled label="Disabled" />
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips :active="activeIcon.isToggleActive5" label="Toggleable" @update="(e) => handleUpdate('isToggleActive5', e)"/>
+  <mc-chips :active="activeIcon.isToggleActive6" label="Closable" closable @close="handleClose" :visible="visible" @update="(e) => handleUpdate('isToggleActive6', e)"/>
+  <mc-chips disabled label="Disabled" />
 </div>
 
 ```vue
 <template>
   <!-- Toggleable chip that changes active state when clicked -->
-  <spr-chips :active="chipStates.toggle" label="Toggleable" @update="(value) => updateChipState('toggle', value)" />
+  <mc-chips :active="chipStates.toggle" label="Toggleable" @update="(value) => updateChipState('toggle', value)" />
 
   <!-- Closable chip with close button -->
-  <spr-chips
+  <mc-chips
     :active="chipStates.closable"
     label="Closable"
     closable
@@ -299,12 +299,12 @@ Chips can have different interactive states to provide a rich user experience.
   />
 
   <!-- Disabled chip that cannot be interacted with -->
-  <spr-chips disabled label="Disabled" />
+  <mc-chips disabled label="Disabled" />
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 
 const chipStates = ref({
   toggle: true,
@@ -338,8 +338,8 @@ When a chip is closed, you should update your data structures accordingly. The `
 
 The chip component includes a special `day` variant specifically designed for weekday selection interfaces. This variant displays the first letter of each day and has a circular appearance.
 
-<div class="spr-flex spr-items-center spr-gap-1 spr-rounded-md spr-bg-white-50 spr-p-4">
-  <spr-chips
+<div class="mc-flex mc-items-center mc-gap-1 mc-rounded-md mc-bg-white-50 mc-p-4">
+  <mc-chips
     v-for="day in days"
     :key="day"
     :day="day"
@@ -352,8 +352,8 @@ The chip component includes a special `day` variant specifically designed for we
 
 ```vue
 <template>
-  <div class="spr-flex spr-items-center spr-gap-1">
-    <spr-chips
+  <div class="mc-flex mc-items-center mc-gap-1">
+    <mc-chips
       v-for="day in days"
       :key="day"
       :day="day"
@@ -366,7 +366,7 @@ The chip component includes a special `day` variant specifically designed for we
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 
 // Array of all days of the week
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -410,50 +410,50 @@ The Chips component provides several slots for customizing content and icons.
 
 The default slot allows you to completely customize the chip content, overriding the standard label display.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips :active="true">
-    <span class="spr-flex spr-items-center spr-gap-1">
-      <Icon icon="ph:star-fill" class="spr-text-yellow-500" />
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips :active="true">
+    <span class="mc-flex mc-items-center mc-gap-1">
+      <Icon icon="ph:star-fill" class="mc-text-yellow-500" />
       <span>Custom Content</span>
     </span>
-  </spr-chips>
-  <spr-chips>
-    <span class="spr-flex spr-items-center spr-gap-1">
-      <span class="spr-w-2 spr-h-2 spr-bg-green-500 spr-rounded-full"></span>
+  </mc-chips>
+  <mc-chips>
+    <span class="mc-flex mc-items-center mc-gap-1">
+      <span class="mc-w-2 mc-h-2 mc-bg-green-500 mc-rounded-full"></span>
       <span>Status: Online</span>
     </span>
-  </spr-chips>
-  <spr-chips>
-    <span class="spr-flex spr-items-center spr-gap-1">
+  </mc-chips>
+  <mc-chips>
+    <span class="mc-flex mc-items-center mc-gap-1">
       <Icon icon="ph:building"/>
       <span>Status: Online</span>
       <Icon icon="ph:caret-down" />
     </span>
-  </spr-chips>
+  </mc-chips>
 </div>
 
 ```vue
 <template>
   <!-- Custom content with icon -->
-  <spr-chips :active="true">
-    <span class="spr-flex spr-items-center spr-gap-1">
-      <Icon icon="ph:star-fill" class="spr-text-yellow-500" />
+  <mc-chips :active="true">
+    <span class="mc-flex mc-items-center mc-gap-1">
+      <Icon icon="ph:star-fill" class="mc-text-yellow-500" />
       <span>Custom Content</span>
     </span>
-  </spr-chips>
+  </mc-chips>
 
   <!-- Custom status indicator -->
-  <spr-chips>
-    <span class="spr-flex spr-items-center spr-gap-1">
-      <span class="spr-h-2 spr-w-2 spr-rounded-full spr-bg-green-500"></span>
+  <mc-chips>
+    <span class="mc-flex mc-items-center mc-gap-1">
+      <span class="mc-h-2 mc-w-2 mc-rounded-full mc-bg-green-500"></span>
       <span>Status: Online</span>
     </span>
-  </spr-chips>
+  </mc-chips>
 </template>
 
 <script setup>
 import { Icon } from '@iconify/vue';
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 </script>
 ```
 
@@ -461,39 +461,39 @@ import SprChips from '@/components/chips/chips.vue';
 
 The `icon` slot allows you to customize the icon displayed in the chip while keeping the standard label structure.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips label="Custom Icon" icon="ph:heart" :active="true">
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips label="Custom Icon" icon="ph:heart" :active="true">
     <template #icon>
-      <Icon icon="ph:heart-fill" class="spr-text-red-500 spr-font-size-300" />
+      <Icon icon="ph:heart-fill" class="mc-text-red-500 mc-font-size-300" />
     </template>
-  </spr-chips>
-  <spr-chips label="Animated Icon" icon="ph:sparkle">
+  </mc-chips>
+  <mc-chips label="Animated Icon" icon="ph:sparkle">
     <template #icon>
-      <Icon icon="ph:sparkle" class="spr-text-purple-500 spr-font-size-300 spr-animate-spin" />
+      <Icon icon="ph:sparkle" class="mc-text-purple-500 mc-font-size-300 mc-animate-spin" />
     </template>
-  </spr-chips>
+  </mc-chips>
 </div>
 
 ```vue
 <template>
   <!-- Custom heart icon -->
-  <spr-chips label="Custom Icon" icon="ph:heart" :active="true">
+  <mc-chips label="Custom Icon" icon="ph:heart" :active="true">
     <template #icon>
-      <Icon icon="ph:heart-fill" class="spr-font-size-300 spr-text-red-500" />
+      <Icon icon="ph:heart-fill" class="mc-font-size-300 mc-text-red-500" />
     </template>
-  </spr-chips>
+  </mc-chips>
 
   <!-- Animated icon -->
-  <spr-chips label="Animated Icon" icon="ph:sparkle">
+  <mc-chips label="Animated Icon" icon="ph:sparkle">
     <template #icon>
-      <Icon icon="ph:sparkle" class="spr-font-size-300 spr-animate-spin spr-text-purple-500" />
+      <Icon icon="ph:sparkle" class="mc-font-size-300 mc-animate-spin mc-text-purple-500" />
     </template>
-  </spr-chips>
+  </mc-chips>
 </template>
 
 <script setup>
 import { Icon } from '@iconify/vue';
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 </script>
 ```
 
@@ -501,39 +501,39 @@ import SprChips from '@/components/chips/chips.vue';
 
 The `close-icon` slot allows you to customize the close button icon for closable chips.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips label="Custom Close" closable :active="true">
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips label="Custom Close" closable :active="true">
     <template #close-icon>
-      <Icon icon="ph:minus-circle" class="spr-text-red-500" />
+      <Icon icon="ph:minus-circle" class="mc-text-red-500" />
     </template>
-  </spr-chips>
-  <spr-chips label="Alternative Close" closable>
+  </mc-chips>
+  <mc-chips label="Alternative Close" closable>
     <template #close-icon>
-      <Icon icon="ph:x-circle" class="spr-text-gray-500" />
+      <Icon icon="ph:x-circle" class="mc-text-gray-500" />
     </template>
-  </spr-chips>
+  </mc-chips>
 </div>
 
 ```vue
 <template>
   <!-- Custom close icon -->
-  <spr-chips label="Custom Close" closable :active="true">
+  <mc-chips label="Custom Close" closable :active="true">
     <template #close-icon>
-      <Icon icon="ph:minus-circle" class="spr-text-red-500" />
+      <Icon icon="ph:minus-circle" class="mc-text-red-500" />
     </template>
-  </spr-chips>
+  </mc-chips>
 
   <!-- Alternative close icon -->
-  <spr-chips label="Alternative Close" closable>
+  <mc-chips label="Alternative Close" closable>
     <template #close-icon>
-      <Icon icon="ph:x-circle" class="spr-text-gray-500" />
+      <Icon icon="ph:x-circle" class="mc-text-gray-500" />
     </template>
-  </spr-chips>
+  </mc-chips>
 </template>
 
 <script setup>
 import { Icon } from '@iconify/vue';
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 </script>
 ```
 
@@ -541,53 +541,53 @@ import SprChips from '@/components/chips/chips.vue';
 
 You can combine multiple slots to create sophisticated chip designs.
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <spr-chips :active="true">
-    <span class="spr-flex spr-items-center spr-gap-2">
-      <Icon icon="ph:user-circle" class="spr-text-blue-500" />
+<div class="mc-flex mc-items-center mc-gap-2">
+  <mc-chips :active="true">
+    <span class="mc-flex mc-items-center mc-gap-2">
+      <Icon icon="ph:user-circle" class="mc-text-blue-500" />
       <span>John Doe</span>
-      <span class="spr-px-2 spr-py-1 spr-bg-blue-100 spr-text-blue-800 spr-text-xs spr-rounded-full">Admin</span>
+      <span class="mc-px-2 mc-py-1 mc-bg-blue-100 mc-text-blue-800 mc-text-xs mc-rounded-full">Admin</span>
     </span>
     <template #close-icon>
-      <Icon icon="ph:user-minus" class="spr-text-red-500" />
+      <Icon icon="ph:user-minus" class="mc-text-red-500" />
     </template>
-  </spr-chips>
-  <spr-chips>
-    <span class="spr-flex spr-items-center spr-gap-2">
-      <span class="spr-w-3 spr-h-3 spr-bg-gradient-to-r spr-from-green-400 spr-to-blue-500 spr-rounded-full"></span>
+  </mc-chips>
+  <mc-chips>
+    <span class="mc-flex mc-items-center mc-gap-2">
+      <span class="mc-w-3 mc-h-3 mc-bg-gradient-to-r mc-from-green-400 mc-to-blue-500 mc-rounded-full"></span>
       <span>Project Alpha</span>
-      <span class="spr-px-2 spr-py-1 spr-bg-gray-100 spr-text-gray-600 spr-text-xs spr-rounded-full">Active</span>
+      <span class="mc-px-2 mc-py-1 mc-bg-gray-100 mc-text-gray-600 mc-text-xs mc-rounded-full">Active</span>
     </span>
-  </spr-chips>
+  </mc-chips>
 </div>
 
 ```vue
 <template>
   <!-- User chip with custom close -->
-  <spr-chips :active="true">
-    <span class="spr-flex spr-items-center spr-gap-2">
-      <Icon icon="ph:user-circle" class="spr-text-blue-500" />
+  <mc-chips :active="true">
+    <span class="mc-flex mc-items-center mc-gap-2">
+      <Icon icon="ph:user-circle" class="mc-text-blue-500" />
       <span>John Doe</span>
-      <span class="spr-rounded-full spr-bg-blue-100 spr-px-2 spr-py-1 spr-text-xs spr-text-blue-800">Admin</span>
+      <span class="mc-rounded-full mc-bg-blue-100 mc-px-2 mc-py-1 mc-text-xs mc-text-blue-800">Admin</span>
     </span>
     <template #close-icon>
-      <Icon icon="ph:user-minus" class="spr-text-red-500" />
+      <Icon icon="ph:user-minus" class="mc-text-red-500" />
     </template>
-  </spr-chips>
+  </mc-chips>
 
   <!-- Project chip with gradient indicator -->
-  <spr-chips>
-    <span class="spr-flex spr-items-center spr-gap-2">
-      <span class="spr-h-3 spr-w-3 spr-rounded-full spr-bg-gradient-to-r spr-from-green-400 spr-to-blue-500"></span>
+  <mc-chips>
+    <span class="mc-flex mc-items-center mc-gap-2">
+      <span class="mc-h-3 mc-w-3 mc-rounded-full mc-bg-gradient-to-r mc-from-green-400 mc-to-blue-500"></span>
       <span>Project Alpha</span>
-      <span class="spr-rounded-full spr-bg-gray-100 spr-px-2 spr-py-1 spr-text-xs spr-text-gray-600">Active</span>
+      <span class="mc-rounded-full mc-bg-gray-100 mc-px-2 mc-py-1 mc-text-xs mc-text-gray-600">Active</span>
     </span>
-  </spr-chips>
+  </mc-chips>
 </template>
 
 <script setup>
 import { Icon } from '@iconify/vue';
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 </script>
 ```
 
@@ -780,7 +780,7 @@ import SprChips from '@/components/chips/chips.vue';
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
-import SprChips from '@/components/chips/chips.vue';
+import McChips from '@/components/chips/chips.vue';
 
 const activeIcon = ref({
   // Icon chips states

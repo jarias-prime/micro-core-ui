@@ -1,18 +1,18 @@
 <template>
-  <div class="spr-grid spr-grid-cols-4 spr-gap-2">
+  <div class="mc-grid mc-grid-cols-4 mc-gap-2">
     <div
       v-for="(year, index) in yearTabCurrentYearPage"
       :key="index"
       :class="[
-        'spr-subheading-xs spr-relative spr-flex spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-lg spr-p-4',
-        'spr-border spr-border-solid',
-        'spr-transition spr-duration-150 spr-ease-in-out',
-        'active:spr-scale-95',
+        'mc-subheading-xs mc-relative mc-flex mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-lg mc-p-4',
+        'mc-border mc-border-solid',
+        'mc-transition mc-duration-150 mc-ease-in-out',
+        'active:mc-scale-95',
         {
-          'spr-text-color-brand-base': year === currentYear,
-          'spr-border-color-weak hover:spr-background-color-hover active:spr-background-color-pressed':
+          'mc-text-color-brand-base': year === currentYear,
+          'mc-border-color-weak hover:mc-background-color-hover active:mc-background-color-pressed':
             year !== selectedYear,
-          'spr-border-color-brand-base spr-background-color-single-active': year === selectedYear,
+          'mc-border-color-brand-base mc-background-color-single-active': year === selectedYear,
         },
       ]"
       @click="handleYearClick(year)"
@@ -20,7 +20,7 @@
       <span>{{ year }}</span>
       <div
         v-if="year === currentYear"
-        class="spr-background-color-brand-base spr-absolute spr-bottom-2 spr-m-auto spr-h-1 spr-w-1 spr-rounded-full"
+        class="mc-background-color-brand-base mc-absolute mc-bottom-2 mc-m-auto mc-h-1 mc-w-1 mc-rounded-full"
       ></div>
     </div>
   </div>
@@ -94,7 +94,7 @@ watch(
       }
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 
 // Watch for changes in minMaxYear to reset current page
@@ -102,7 +102,7 @@ watch(
   () => props.minMaxYear,
   () => {
     emit('update:currentPage', 0);
-  }
+  },
 );
 
 // Expose methods for parent component

@@ -12,19 +12,19 @@ The checkbox component allows users to select one or more items from a set of op
 
 The most common way to use the checkbox component is with the `v-model` directive for two-way data binding.
 
-<spr-checkbox v-model="checkboxModels.checkboxBasic" label="Checkbox Label" />
+<mc-checkbox v-model="checkboxModels.checkboxBasic" label="Checkbox Label" />
 
 Value: <code>{{ checkboxModels.checkboxBasic }}</code>
 
 ```vue
 <template>
-  <spr-checkbox v-model="checkboxBasic" label="Checkbox Label" />
+  <mc-checkbox v-model="checkboxBasic" label="Checkbox Label" />
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
 
 const checkboxBasic = ref(false);
 </script>
@@ -34,7 +34,7 @@ const checkboxBasic = ref(false);
 
 You can add explanatory text below the label using the `description` prop. This is useful for providing additional context about what selecting the checkbox means.
 
-<spr-checkbox 
+<mc-checkbox 
   v-model="checkboxModels.checkboxDescription" 
   label="Accept Terms and Conditions" 
   description="By checking this box, you agree to our terms of service and privacy policy." 
@@ -42,7 +42,7 @@ You can add explanatory text below the label using the `description` prop. This 
 
 ```vue
 <template>
-  <spr-checkbox
+  <mc-checkbox
     v-model="checkboxDescription"
     label="Accept Terms and Conditions"
     description="By checking this box, you agree to our terms of service and privacy policy."
@@ -52,7 +52,7 @@ You can add explanatory text below the label using the `description` prop. This 
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
 
 const checkboxDescription = ref(false);
 </script>
@@ -64,17 +64,17 @@ There are two ways to control the checked state of a checkbox:
 
 Using `v-model` creates a two-way binding that automatically updates when the user interacts with the checkbox.
 
-<spr-checkbox v-model="checkboxModels.checkboxChecked" label="Pre-selected Option" />
+<mc-checkbox v-model="checkboxModels.checkboxChecked" label="Pre-selected Option" />
 
 ```vue
 <template>
-  <spr-checkbox v-model="checkboxChecked" label="Pre-selected Option" />
+  <mc-checkbox v-model="checkboxChecked" label="Pre-selected Option" />
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
 
 // Initialize as checked
 const checkboxChecked = ref(true);
@@ -85,15 +85,15 @@ const checkboxChecked = ref(true);
 
 The `checked` prop provides one-way binding for cases where you want to explicitly control the checked state.
 
-<spr-checkbox label="Always Checked Option" checked />
+<mc-checkbox label="Always Checked Option" checked />
 
 ```vue
 <template>
-  <spr-checkbox label="Always Checked Option" checked />
+  <mc-checkbox label="Always Checked Option" checked />
 </template>
 
 <script lang="ts" setup>
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
 </script>
 ```
 
@@ -105,19 +105,19 @@ When using the `checked` prop without `v-model`, the checkbox state won't automa
 
 Use the `disabled` prop to render a checkbox that cannot be interacted with. Disabled checkboxes are visually distinct and have the `cursor-not-allowed` style applied.
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-checkbox v-model="checkboxModels.checkboxDisabled" label="Disabled Checked" disabled />
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-checkbox v-model="checkboxModels.checkboxDisabled" label="Disabled Checked" disabled />
 </div>
 
 ```vue
 <template>
-  <spr-checkbox v-model="checkboxDisabled" label="Disabled Checked" disabled />
+  <mc-checkbox v-model="checkboxDisabled" label="Disabled Checked" disabled />
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
 
 const checkboxDisabled = ref(true);
 </script>
@@ -127,8 +127,8 @@ const checkboxDisabled = ref(true);
 
 The indeterminate state is represented by a minus sign (−) instead of a checkmark. This state is useful for representing a "partially checked" state, typically used in hierarchical checkbox structures where child items have mixed selection states.
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-checkbox 
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-checkbox 
     v-model="checkboxModels.checkboxIndeterminate" 
     label="Parent Option (Some children selected)" 
     indeterminate 
@@ -137,13 +137,13 @@ The indeterminate state is represented by a minus sign (−) instead of a checkm
 
 ```vue
 <template>
-  <spr-checkbox v-model="checkboxIndeterminate" label="Parent Option (Some children selected)" indeterminate />
+  <mc-checkbox v-model="checkboxIndeterminate" label="Parent Option (Some children selected)" indeterminate />
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
 
 const checkboxIndeterminate = ref(true);
 </script>
@@ -176,8 +176,8 @@ const parentOption = computed(() => {
 
 Use the `bordered` prop to add a border around the entire checkbox component, including the label and description. This helps create visual separation between checkbox options.
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-checkbox 
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-checkbox 
     v-model="checkboxModels.checkboxBordered" 
     label="Bordered Checkbox" 
     description="This checkbox has a border around it" 
@@ -187,7 +187,7 @@ Use the `bordered` prop to add a border around the entire checkbox component, in
 
 ```vue
 <template>
-  <spr-checkbox
+  <mc-checkbox
     v-model="checkboxBordered"
     label="Bordered Checkbox"
     description="This checkbox has a border around it"
@@ -198,7 +198,7 @@ Use the `bordered` prop to add a border around the entire checkbox component, in
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
 
 const checkboxBordered = ref(true);
 </script>
@@ -208,8 +208,8 @@ const checkboxBordered = ref(true);
 
 By default, checkboxes only take up as much width as needed for their content. Use the `fullWidth` prop to make the checkbox stretch to fill the entire width of its container.
 
-<div class="spr-flex spr-flex-col spr-gap-2 spr-border spr-border-dashed spr-border-gray-300 spr-p-4">
-  <spr-checkbox 
+<div class="mc-flex mc-flex-col mc-gap-2 mc-border mc-border-dashed mc-border-gray-300 mc-p-4">
+  <mc-checkbox 
     v-model="checkboxModels.checkboxFullWidth" 
     label="Full Width Checkbox" 
     description="This checkbox takes up the full width of its container"
@@ -220,7 +220,7 @@ By default, checkboxes only take up as much width as needed for their content. U
 
 ```vue
 <template>
-  <spr-checkbox
+  <mc-checkbox
     v-model="checkboxFullWidth"
     label="Full Width Checkbox"
     description="This checkbox takes up the full width of its container"
@@ -232,7 +232,7 @@ By default, checkboxes only take up as much width as needed for their content. U
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
 
 const checkboxFullWidth = ref(true);
 </script>
@@ -249,27 +249,27 @@ The `full-width` prop is especially useful when:
 
 ## Checkbox Groups
 
-<div class="spr-p-4 spr-border spr-border-solid spr-border-gray-200 spr-rounded">
-  <div class="spr-mb-2 spr-font-medium">Select your favorite fruits:</div>
-  <div class="spr-flex spr-flex-col spr-gap-2">
-    <spr-checkbox 
+<div class="mc-p-4 mc-border mc-border-solid mc-border-gray-200 mc-rounded">
+  <div class="mc-mb-2 mc-font-medium">Select your favorite fruits:</div>
+  <div class="mc-flex mc-flex-col mc-gap-2">
+    <mc-checkbox 
       v-model="fruits.apple" 
       label="Apple" 
     />
-    <spr-checkbox 
+    <mc-checkbox 
       v-model="fruits.banana" 
       label="Banana" 
     />
-    <spr-checkbox 
+    <mc-checkbox 
       v-model="fruits.orange" 
       label="Orange" 
     />
-    <spr-checkbox 
+    <mc-checkbox 
       v-model="fruits.strawberry" 
       label="Strawberry" 
     />
   </div>
-  <div class="spr-mt-3 spr-text-sm">
+  <div class="mc-mt-3 mc-text-sm">
     Selected: {{ Object.keys(fruits).filter(key => fruits[key]).join(', ') || 'None' }}
   </div>
 </div>
@@ -278,10 +278,10 @@ The `full-width` prop is especially useful when:
 <template>
   <div class="checkbox-group">
     <div class="group-label">Select your favorite fruits:</div>
-    <spr-checkbox v-model="fruits.apple" label="Apple" />
-    <spr-checkbox v-model="fruits.banana" label="Banana" />
-    <spr-checkbox v-model="fruits.orange" label="Orange" />
-    <spr-checkbox v-model="fruits.strawberry" label="Strawberry" />
+    <mc-checkbox v-model="fruits.apple" label="Apple" />
+    <mc-checkbox v-model="fruits.banana" label="Banana" />
+    <mc-checkbox v-model="fruits.orange" label="Orange" />
+    <mc-checkbox v-model="fruits.strawberry" label="Strawberry" />
 
     <div class="selected-summary">
       Selected:
@@ -297,7 +297,7 @@ The `full-width` prop is especially useful when:
 <script lang="ts" setup>
 import { ref, reactive } from 'vue';
 
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
 
 const fruits = reactive({
   apple: false,
@@ -395,7 +395,7 @@ const fruits = reactive({
 <script lang="ts" setup>
 import { ref, reactive } from "vue";
 
-import SprCheckbox from "@/components/checkbox/checkbox.vue";
+import McCheckbox from "@/components/checkbox/checkbox.vue";
 
 const checkboxModels = ref({
   checkboxBasic: false,

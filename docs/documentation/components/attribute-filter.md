@@ -10,7 +10,7 @@ The Attribute Filter component provides a user interface for filtering items bas
 
 ## Basic Usage
 
-<SprAttributeFilter
+<McAttributeFilter
 id="attribute_filter1"
 :filter-label="'Status'"
 width="70px"
@@ -21,7 +21,7 @@ placement="bottom-start"
 
 ```vue
 <template>
-  <SprAttributeFilter
+  <McAttributeFilter
     id="attribute_filter1"
     :filter-label="'Status'"
     width="70px"
@@ -46,7 +46,7 @@ const filterList = ref([
 
 ## Multi Select
 
-<SprAttributeFilter
+<McAttributeFilter
 id="attribute_filter5"
 :filter-label="'Status'"
 width="70px"
@@ -58,7 +58,7 @@ placement="bottom-start"
 
 ```vue
 <template>
-  <SprAttributeFilter
+  <McAttributeFilter
     id="attribute_filter5"
     :filter-label="'Status'"
     width="70px"
@@ -85,19 +85,19 @@ const filterList = ref([
 
 By default, Attribute Filter is triggered by the chip component. You can change the trigger component by providing a default slot.
 
-<SprAttributeFilter
+<McAttributeFilter
   id="attribute_filter2"
   :filter-label="'Status'"
   width="70px"
   popper-width="300px"
   placement="bottom-start"
   :filter-menu-list="filterList">
-<SprButton tone="success"> Status </SprButton>
-</SprAttributeFilter>
+<McButton tone="success"> Status </McButton>
+</McAttributeFilter>
 
 ```vue
 <template>
-  <SprAttributeFilter
+  <McAttributeFilter
     id="attribute_filter2"
     :filter-label="'Status'"
     width="70px"
@@ -105,8 +105,8 @@ By default, Attribute Filter is triggered by the chip component. You can change 
     placement="bottom-start"
     :filter-menu-list="filterList"
   >
-    <SprButton tone="success"> Status </SprButton>
-  </SprAttributeFilter>
+    <McButton tone="success"> Status </McButton>
+  </McAttributeFilter>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';
@@ -130,8 +130,8 @@ To render a search input inside the Attribute Filter popper, set the `searchable
 For API searching, disable local searching by setting the `disableLocalSearch` prop to `true`.
 :::
 
-<div class="spr-flex spr-items-center spr-gap-2">
-  <SprAttributeFilter
+<div class="mc-flex mc-items-center mc-gap-2">
+  <McAttributeFilter
     id="attribute_filter3"
     :filter-label="'Status w/ Local Search'"
     width="180px"
@@ -142,7 +142,7 @@ For API searching, disable local searching by setting the `disableLocalSearch` p
     :filter-menu-list="filterList" 
   />
 
-<SprAttributeFilter
+<McAttributeFilter
 id="attribute_filter4"
 :filter-label="'Status w/o Local Search'"
 width="180px"
@@ -159,8 +159,8 @@ placement="bottom-start"
 
 ```vue
 <template>
-  <div class="spr-flex spr-items-center spr-gap-2">
-    <SprAttributeFilter
+  <div class="mc-flex mc-items-center mc-gap-2">
+    <McAttributeFilter
       id="attribute_filter3"
       :filter-label="'Status w/ Local Search'"
       width="180px"
@@ -171,7 +171,7 @@ placement="bottom-start"
       :filter-menu-list="filterList"
     />
 
-    <SprAttributeFilter
+    <McAttributeFilter
       id="attribute_filter4"
       :filter-label="'Status w/o Local Search'"
       width="180px"
@@ -458,8 +458,8 @@ const handleSearch = (search: string) => {
 </table>
 
 <script lang="ts" setup>  
-  import SprAttributeFilter from '@/components/attribute-filter/attribute-filter.vue'
-  import SprButton from '@/components/button/button.vue'
+  import McAttributeFilter from '@/components/attribute-filter/attribute-filter.vue'
+  import McButton from '@/components/button/button.vue'
   
   import { ref } from 'vue'
 

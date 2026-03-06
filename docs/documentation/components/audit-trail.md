@@ -8,18 +8,18 @@ outline: deep
 
 ## Basic Usage
 
-<div class="spr-w-[400px]">
-  <SprAuditTrail :auditTrailLogs="mockTrailLogs" />
+<div class="mc-w-[400px]">
+  <McAuditTrail :auditTrailLogs="mockTrailLogs" />
 </div>
 
 ```vue
 <template>
-  <div class="spr-w-[400px]">
-    <SprAuditTrail :auditTrailLogs="mockTrailLogs" />
+  <div class="mc-w-[400px]">
+    <McAuditTrail :auditTrailLogs="mockTrailLogs" />
   </div>
 </template>
 <script lang="ts" setup>
-import SprAuditTrail from '@/components/audit-trail/audit-trail.vue';
+import McAuditTrail from '@/components/audit-trail/audit-trail.vue';
 
 import { ref } from 'vue';
 
@@ -123,7 +123,7 @@ const mockTrailLogs = [
 </table>
 
 <script lang="ts" setup>  
-  import SprAuditTrail from '@/components/audit-trail/audit-trail.vue'
+  import McAuditTrail from '@/components/audit-trail/audit-trail.vue'
   
   import { ref } from 'vue'
 

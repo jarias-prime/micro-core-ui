@@ -4,7 +4,7 @@
       <slot />
     </div>
     <div v-if="hasTableActions" :class="getTableClasses.tableHeaderActionsClasses">
-      <spr-table-actions
+      <mc-table-actions
         v-model:search-model="searchField"
         :toggle-search="props.tableActions.search"
         :toggle-option="props.tableActions.option"
@@ -14,18 +14,25 @@
         <template #tableActionSection>
           <slot name="tableActionSection" />
         </template>
-      </spr-table-actions>
+      </mc-table-actions>
     </div>
     <div :class="getTableClasses.tableBackgroundClasses">
-      <table :id="props.id" :key="tableKey" aria-describedby="describe" class="spr-h-full spr-w-full" cellspacing="0" cellpadding="0">
+      <table
+        :id="props.id"
+        :key="tableKey"
+        aria-describedby="describe"
+        class="mc-h-full mc-w-full"
+        cellspacing="0"
+        cellpadding="0"
+      >
         <thead>
           <tr v-if="!(props.removeHeaderOnEmpty && tableData.length <= 0)">
             <th
               v-if="props.isMultiSelect"
               :class="[getTableClasses.multiselectClass, getTableClasses.headerClasses(null)]"
             >
-              <div class="spr-flex spr-items-center spr-justify-center">
-                <spr-checkbox
+              <div class="mc-flex mc-items-center mc-justify-center">
+                <mc-checkbox
                   label=""
                   :checked="isAllSelected || isIndeterminate"
                   :indeterminate="isIndeterminate"
@@ -41,11 +48,11 @@
             >
               <div
                 v-if="header.headerDropdown?.enabled"
-                class="hover:spr-background-color-hover active:spr-background-color-pressed spr-absolute spr-inset-0 spr-z-[2] spr-cursor-pointer"
+                class="hover:mc-background-color-hover active:mc-background-color-pressed mc-absolute mc-inset-0 mc-z-[2] mc-cursor-pointer"
                 @click="handleHeaderDropdownClick(keyHeader)"
               ></div>
               <!-- Header with Dropdown Filter -->
-              <spr-table-header-dropdown
+              <mc-table-header-dropdown
                 v-if="header.headerDropdown?.enabled"
                 :id="`${props.id}-th-dropdown-${keyHeader}`"
                 :ref="(el: unknown) => setHeaderDropdownRef(el, keyHeader)"
@@ -58,19 +65,19 @@
               />
               <!-- Default Header -->
               <div v-else :class="getTableClasses.headerNameClass">
-                <span :class="[{ 'spr-cursor-pointer': header.sort }]" @click="header.sort && sortData(header.field)">
+                <span :class="[{ 'mc-cursor-pointer': header.sort }]" @click="header.sort && sortData(header.field)">
                   {{ header.name }}
                 </span>
 
                 <span v-if="header.badgeText">
-                  <spr-badge :text="header.badgeText" :variant="header.badgeVariant" size="small" />
+                  <mc-badge :text="header.badgeText" :variant="header.badgeVariant" size="small" />
                 </span>
                 <span
                   v-if="header.sort"
                   :class="[
-                    'spr-flex spr-flex-row spr-items-center spr-p-size-spacing-6xs',
-                    'hover:spr-rounded-border-radius-xs hover:spr-bg-mushroom-300',
-                    { 'spr-cursor-pointer': header.sort },
+                    'mc-flex mc-flex-row mc-items-center mc-p-size-spacing-6xs',
+                    'hover:mc-rounded-border-radius-xs hover:mc-bg-mushroom-300',
+                    { 'mc-cursor-pointer': header.sort },
                   ]"
                   @click="header.sort && sortData(header.field)"
                 >
@@ -78,7 +85,7 @@
                     :icon="getSortIcon(header.field)"
                     height="16"
                     width="16"
-                    :class="[{ 'spr-text-kangkong-700': sortField === header.field }]"
+                    :class="[{ 'mc-text-kangkong-700': sortField === header.field }]"
                   />
                 </span>
                 <span v-if="header.headerDropdown?.enabled">
@@ -86,7 +93,7 @@
                     icon="ph:funnel-simple"
                     height="20"
                     width="20"
-                    class="spr-ml-size-spacing-5xs spr-text-[#4B685E]"
+                    class="mc-ml-size-spacing-5xs mc-text-[#4B685E]"
                   />
                 </span>
               </div>
@@ -107,8 +114,8 @@
             :class="[
               getTableClasses.tableRowClasses,
               {
-                'hover:spr-background-color-hover': !isDragging && !isRowSelected(item),
-                'spr-bg-kangkong-100': isRowSelected(item),
+                'hover:mc-background-color-hover': !isDragging && !isRowSelected(item),
+                'mc-bg-kangkong-100': isRowSelected(item),
               },
             ]"
             @click="handleRowClick(item, keyIndex)"
@@ -119,8 +126,8 @@
               v-if="props.isMultiSelect"
               :class="[getTableClasses.multiselectClass, getTableClasses.multiselectRowClass]"
             >
-              <div class="spr-flex spr-items-center spr-justify-center">
-                <spr-checkbox label="" :checked="isRowSelected(item)" @update:model-value="handleSelect(item)" />
+              <div class="mc-flex mc-items-center mc-justify-center">
+                <mc-checkbox label="" :checked="isRowSelected(item)" @update:model-value="handleSelect(item)" />
               </div>
             </td>
             <td
@@ -131,8 +138,8 @@
             >
               <slot v-if="$slots[column.field]" :name="column.field" :row="item" :row-index="keyIndex" />
               <template v-else>
-                <div v-if="tableData[keyIndex][column.field]" class="spr-flex spr-flex-row spr-items-center spr-gap-2">
-                  <spr-avatar
+                <div v-if="tableData[keyIndex][column.field]" class="mc-flex mc-flex-row mc-items-center mc-gap-2">
+                  <mc-avatar
                     v-if="column.hasAvatar"
                     size="lg"
                     :src="sortedDataItem(keyIndex, column.field).image"
@@ -140,47 +147,44 @@
                     :variant="column.avatarVariant ? column.avatarVariant : 'initial'"
                     :initial="sortedDataItem(keyIndex, column.field).title as string"
                   />
-                  <div
-                    v-if="column.hasIcon"
-                    class="spr-flex spr-items-center spr-rounded-full spr-bg-mushroom-200 spr-p-1"
-                  >
+                  <div v-if="column.hasIcon" class="mc-flex mc-items-center mc-rounded-full mc-bg-mushroom-200 mc-p-1">
                     <Icon :icon="sortedDataItem(keyIndex, column.field).icon || ''" />
                   </div>
                   <div>
                     <!-- Array Title -->
                     <div
                       v-if="Array.isArray(sortedDataItem(keyIndex, column.field).title)"
-                      class="spr-flex spr-flex-wrap spr-gap-2"
+                      class="mc-flex mc-flex-wrap mc-gap-2"
                     >
                       <div v-for="(cell, index) in sortedDataItem(keyIndex, column.field).title" :key="index">
-                        <div v-if="column.hasLozengeTitle" class="spr-mt-1">
-                          <spr-table-lozenge-title :cell="cell as LozengeTitle" />
+                        <div v-if="column.hasLozengeTitle" class="mc-mt-1">
+                          <mc-table-lozenge-title :cell="cell as LozengeTitle" />
                         </div>
-                        <div v-else-if="column.hasChipTitle" class="spr-mt-1">
-                          <spr-table-chips-title :cell="cell as ChipTitle" />
+                        <div v-else-if="column.hasChipTitle" class="mc-mt-1">
+                          <mc-table-chips-title :cell="cell as ChipTitle" />
                         </div>
                       </div>
                     </div>
 
                     <!-- Single Title Handling -->
                     <div v-else>
-                      <div v-if="column.hasLozengeTitle" class="spr-mt-1">
+                      <div v-if="column.hasLozengeTitle" class="mc-mt-1">
                         <!-- Defining lozenge title in the title so it wont confuse the consumer; hence the title.title-->
                         <!-- Also this structure allows multiple instances -->
-                        <spr-table-lozenge-title :cell="sortedDataItem(keyIndex, column.field).title as LozengeTitle" />
+                        <mc-table-lozenge-title :cell="sortedDataItem(keyIndex, column.field).title as LozengeTitle" />
                       </div>
                       <!-- Defining the chip title so it wont confuse the consumer; hence the title.title -->
                       <!-- Also this structure allows multiple instances -->
-                      <div v-else-if="column.hasChipTitle" class="spr-mt-1">
-                        <spr-table-chips-title :cell="sortedDataItem(keyIndex, column.field).title as ChipTitle" />
+                      <div v-else-if="column.hasChipTitle" class="mc-mt-1">
+                        <mc-table-chips-title :cell="sortedDataItem(keyIndex, column.field).title as ChipTitle" />
                       </div>
-                      <div v-else class="spr-text-color-strong spr-font-size-200 spr-font-normal">
+                      <div v-else class="mc-text-color-strong mc-font-size-200 mc-font-normal">
                         {{ sortedDataItem(keyIndex, column.field).title }}
                       </div>
                     </div>
 
                     <!-- Subtitle -->
-                    <div v-if="column.hasSubtext" class="spr-text-color-base spr-text-xs spr-font-normal">
+                    <div v-if="column.hasSubtext" class="mc-text-color-base mc-text-xs mc-font-normal">
                       {{ sortedDataItem(keyIndex, column.field).subtext }}
                     </div>
                   </div>
@@ -188,29 +192,29 @@
               </template>
             </td>
             <td v-if="action" :class="getTableClasses.tableRowActionClasses">
-              <div class="spr-flex spr-items-center">
+              <div class="mc-flex mc-items-center">
                 <slot name="action" :row="item" />
               </div>
             </td>
             <td v-if="isDraggable" :class="getTableClasses.tableRowDragIconClasses">
-              <div class="table-row-drag-icon spr-flex spr-items-center spr-justify-center">
+              <div class="table-row-drag-icon mc-flex mc-items-center mc-justify-center">
                 <Icon icon="ph:dots-six-vertical" width="16px" height="16px" />
               </div>
             </td>
           </tr>
         </tbody>
         <tbody v-else id="tbody_empty_state" ref="sortableTBody" :class="getTableClasses.emptyStateClasses">
-          <tr v-if="!loading" class="spr-h-full">
-            <td :colspan="getHeaderCount" class="spr-flex spr-h-full spr-items-center spr-justify-center">
+          <tr v-if="!loading" class="mc-h-full">
+            <td :colspan="getHeaderCount" class="mc-flex mc-h-full mc-items-center mc-justify-center">
               <slot name="empty-state">
-                <SprEmptyState :size="getEmptyStateSize" />
+                <McEmptyState :size="getEmptyStateSize" />
               </slot>
             </td>
           </tr>
           <tr v-else>
-            <td :colspan="getHeaderCount" class="spr-overflow-hidden">
+            <td :colspan="getHeaderCount" class="mc-overflow-hidden">
               <slot name="loading">
-                <div class="spr-flex spr-items-center spr-justify-center">Loading...</div>
+                <div class="mc-flex mc-items-center mc-justify-center">Loading...</div>
               </slot>
             </td>
           </tr>
@@ -226,14 +230,14 @@
 <script lang="ts" setup>
 import { useSlots, ref, watch } from 'vue';
 import { Icon } from '@iconify/vue';
-import SprAvatar from '@/components/avatar/avatar.vue';
-import SprEmptyState from '@/components/empty-state/empty-state.vue';
-import SprBadge from '@/components/badge/badge.vue';
-import SprTableActions from '@/components/table/table-actions/table-actions.vue';
-import SprTableLozengeTitle from '@/components/table/table-lozenge-title/table-lozenge-title.vue';
-import SprTableChipsTitle from '@/components/table/table-chips-title/table-chips-title.vue';
-import SprCheckbox from '@/components/checkbox/checkbox.vue';
-import SprTableHeaderDropdown from '@/components/table/table-header-dropdown/table-header-dropdown.vue';
+import McAvatar from '@/components/avatar/avatar.vue';
+import McEmptyState from '@/components/empty-state/empty-state.vue';
+import McBadge from '@/components/badge/badge.vue';
+import McTableActions from '@/components/table/table-actions/table-actions.vue';
+import McTableLozengeTitle from '@/components/table/table-lozenge-title/table-lozenge-title.vue';
+import McTableChipsTitle from '@/components/table/table-chips-title/table-chips-title.vue';
+import McCheckbox from '@/components/checkbox/checkbox.vue';
+import McTableHeaderDropdown from '@/components/table/table-header-dropdown/table-header-dropdown.vue';
 
 import { tablePropTypes, tableEmitTypes } from './table';
 import type { ChipTitle } from '@/components/table/table-chips-title/table-chips-title';
@@ -253,7 +257,7 @@ const setHeaderDropdownRef = (el: unknown, key: string | number) => {
 };
 
 const handleHeaderDropdownClick = (keyHeader: string | number) => {
-  const dropdownRef = headerDropdownRefs.value[String(keyHeader)] as InstanceType<typeof SprTableHeaderDropdown> | null;
+  const dropdownRef = headerDropdownRefs.value[String(keyHeader)] as InstanceType<typeof McTableHeaderDropdown> | null;
   dropdownRef?.showDropdown();
 };
 

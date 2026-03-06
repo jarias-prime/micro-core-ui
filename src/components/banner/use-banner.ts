@@ -13,39 +13,36 @@ export const useBanner = (props: BannerPropTypes, showModel: Ref<boolean>) => {
   const closeBanner = () => (showModel.value = false);
 
   const bannerClasses = computed<BannerClasses>(() => {
-    const base = classNames(
-      'spr-w-full spr-flex spr-p-size-spacing-3xs spr-justify-between spr-rounded-border-radius-md',
-      {
-        'spr-background-color-success-weak': props.type === 'success',
-        'spr-background-color-danger-weak': props.type === 'error',
-        'spr-background-color-information-weak': props.type === 'info',
-        'spr-background-color-pending-weak': props.type === 'pending',
-        'spr-background-color-caution-weak': props.type === 'caution',
-      },
-    );
-
-    const icon = classNames('spr-py-[2px]', {
-      'spr-text-color-brand-base': props.type === 'success',
-      'spr-text-color-danger-base': props.type === 'error',
-      'spr-text-color-information-base': props.type === 'info',
-      'spr-text-color-pending-base': props.type === 'pending',
-      'spr-text-color-caution-base': props.type === 'caution',
+    const base = classNames('mc-w-full mc-flex mc-p-size-spacing-3xs mc-justify-between mc-rounded-border-radius-md', {
+      'mc-background-color-success-weak': props.type === 'success',
+      'mc-background-color-danger-weak': props.type === 'error',
+      'mc-background-color-information-weak': props.type === 'info',
+      'mc-background-color-pending-weak': props.type === 'pending',
+      'mc-background-color-caution-weak': props.type === 'caution',
     });
 
-    const message = classNames('spr-block spr-m-0 spr-body-sm-regular', {
-      'spr-text-color-brand-base': props.type === 'success',
-      'spr-text-color-danger-pressed': props.type === 'error',
-      'spr-text-color-information-pressed': props.type === 'info',
-      'spr-text-color-pending-pressed': props.type === 'pending',
-      'spr-text-color-caution-pressed': props.type === 'caution',
+    const icon = classNames('mc-py-[2px]', {
+      'mc-text-color-brand-base': props.type === 'success',
+      'mc-text-color-danger-base': props.type === 'error',
+      'mc-text-color-information-base': props.type === 'info',
+      'mc-text-color-pending-base': props.type === 'pending',
+      'mc-text-color-caution-base': props.type === 'caution',
     });
 
-    const close = classNames('spr-flex-none spr-cursor-pointer spr-mt-[2px]', {
-      'spr-text-color-brand-base': props.type === 'success',
-      'spr-text-color-danger-base': props.type === 'error',
-      'spr-text-color-information-base': props.type === 'info',
-      'spr-text-color-pending-base': props.type === 'pending',
-      'spr-text-color-caution-base': props.type === 'caution',
+    const message = classNames('mc-block mc-m-0 mc-body-sm-regular', {
+      'mc-text-color-brand-base': props.type === 'success',
+      'mc-text-color-danger-pressed': props.type === 'error',
+      'mc-text-color-information-pressed': props.type === 'info',
+      'mc-text-color-pending-pressed': props.type === 'pending',
+      'mc-text-color-caution-pressed': props.type === 'caution',
+    });
+
+    const close = classNames('mc-flex-none mc-cursor-pointer mc-mt-[2px]', {
+      'mc-text-color-brand-base': props.type === 'success',
+      'mc-text-color-danger-base': props.type === 'error',
+      'mc-text-color-information-base': props.type === 'info',
+      'mc-text-color-pending-base': props.type === 'pending',
+      'mc-text-color-caution-base': props.type === 'caution',
     });
 
     return {

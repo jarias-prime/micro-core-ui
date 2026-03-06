@@ -1,9 +1,9 @@
 <template>
-  <div id="mobile_sidenav_links" class="spr-relative spr-h-full spr-w-full spr-max-w-none spr-overflow-x-hidden">
+  <div id="mobile_sidenav_links" class="mc-relative mc-h-full mc-w-full mc-max-w-none mc-overflow-x-hidden">
     <Transition :name="currentLevel === 1 ? 'right-enter-left-leave' : 'left-enter-right-leave'">
       <!-- #region - Parent Links -->
-      <div v-if="currentLevel === 0" id="parent-links" class="spr-w-full spr-max-w-none">
-        <div v-for="(navLink, navLinkIndex) in compiledNavLinks" :key="navLinkIndex" class="spr-grid">
+      <div v-if="currentLevel === 0" id="parent-links" class="mc-w-full mc-max-w-none">
+        <div v-for="(navLink, navLinkIndex) in compiledNavLinks" :key="navLinkIndex" class="mc-grid">
           <template v-for="(parentLink, parentLinkIndex) in navLink.parentLinks" :key="parentLinkIndex">
             <!-- Parent Link Item -->
             <sidenav-nav-link-item
@@ -17,33 +17,33 @@
           </template>
           <div
             v-if="compiledNavLinks.length > 0 && navLinkIndex < compiledNavLinks.length - 1"
-            class="spr-background-color-hover spr-my-size-spacing-3xs spr-h-[2px] spr-w-full"
+            class="mc-background-color-hover mc-my-size-spacing-3xs mc-h-[2px] mc-w-full"
           ></div>
         </div>
       </div>
       <!-- #endregion - Parent Links -->
       <!-- #region - Menu Links -->
-      <div v-else class="spr-absolute spr-left-0 spr-top-0 spr-min-h-full spr-w-full spr-max-w-none">
+      <div v-else class="mc-absolute mc-left-0 mc-top-0 mc-min-h-full mc-w-full mc-max-w-none">
         <!-- Back Button -->
         <div
-          class="active:spr-background-color-pressed select-none -webkit-tap-highlight-color-transparent spr-flex spr-w-full spr-cursor-pointer spr-items-center spr-gap-size-spacing-3xs spr-py-size-spacing-3xs"
-          style="-webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none;"
+          class="active:mc-background-color-pressed select-none -webkit-tap-highlight-color-transparent mc-flex mc-w-full mc-cursor-pointer mc-items-center mc-gap-size-spacing-3xs mc-py-size-spacing-3xs"
+          style="-webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none"
           @click="goBack"
         >
-          <Icon icon="ph:arrow-left" class="spr-h-5 spr-w-5" />
-          <span class="spr-body-sm-regular-medium spr-text-color-strong">{{ backButtonLabel }}</span>
+          <Icon icon="ph:arrow-left" class="mc-h-5 mc-w-5" />
+          <span class="mc-body-sm-regular-medium mc-text-color-strong">{{ backButtonLabel }}</span>
         </div>
 
         <Transition :name="currentLevel === 1 ? 'left-enter-right-leave' : 'right-enter-left-leave'">
           <!-- #region - Menu Items -->
-          <div v-if="currentLevel === 1" id="menu-items" class="spr-absolute spr-w-full spr-max-w-none">
+          <div v-if="currentLevel === 1" id="menu-items" class="mc-absolute mc-w-full mc-max-w-none">
             <template v-for="(menuLink, menuLinkIndex) in currentParent?.menuLinks" :key="menuLinkIndex">
               <!-- Menu Heading -->
               <h5
                 v-if="menuLink.menuHeading"
                 :class="[
-                  'spr-label-xs-medium spr-text-color-supporting spr-m-0 spr-w-full !spr-p-size-spacing-3xs spr-uppercase',
-                  { 'spr-pt-4': menuLinkIndex !== 0 },
+                  'mc-label-xs-medium mc-text-color-supporting mc-m-0 mc-w-full !mc-p-size-spacing-3xs mc-uppercase',
+                  { 'mc-pt-4': menuLinkIndex !== 0 },
                 ]"
               >
                 {{ menuLink.menuHeading }}
@@ -65,14 +65,14 @@
           <!-- #endregion - Menu Items -->
 
           <!-- #region - Submenu Items -->
-          <div v-else id="submenu-items" class="spr-absolute spr-w-full spr-max-w-none">
+          <div v-else id="submenu-items" class="mc-absolute mc-w-full mc-max-w-none">
             <template v-for="(subMenuLink, subMenuLinkIndex) in currentMenu?.submenuLinks" :key="subMenuLinkIndex">
               <!-- Submenu Heading -->
               <h5
                 v-if="subMenuLink.subMenuHeading"
                 :class="[
-                  'spr-label-xs-medium spr-text-color-supporting spr-m-0 spr-w-full !spr-p-size-spacing-3xs spr-uppercase',
-                  { 'spr-pt-4': subMenuLinkIndex !== 0 },
+                  'mc-label-xs-medium mc-text-color-supporting mc-m-0 mc-w-full !mc-p-size-spacing-3xs mc-uppercase',
+                  { 'mc-pt-4': subMenuLinkIndex !== 0 },
                 ]"
               >
                 {{ subMenuLink.subMenuHeading }}

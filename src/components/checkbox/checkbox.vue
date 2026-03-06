@@ -1,6 +1,6 @@
 <template>
   <label :class="[checkboxClasses.baseClasses, { [checkboxClasses.borderedClasses]: props.bordered }]">
-    <div class="spr-relative spr-flex spr-items-center">
+    <div class="mc-relative mc-flex mc-items-center">
       <input
         type="checkbox"
         :class="checkboxClasses.inputCheckboxClasses"
@@ -12,7 +12,7 @@
         <Icon :icon="resolveCheckboxIcon" />
       </span>
     </div>
-    <div v-if="props.label || props.description" class="spr-grid spr-gap-0.5">
+    <div v-if="props.label || props.description" class="mc-grid mc-gap-0.5">
       <span v-if="props.label" :class="checkboxClasses.labelClasses">
         {{ props.label }}
       </span>

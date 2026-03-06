@@ -11,14 +11,14 @@ Switch component to show a boolean state (similar to a checkbox).
 ## Basic Usage
 
 <div>
-  <spr-switch v-model="switchValue1" id="switch">Switch</spr-switch>
+  <mc-switch v-model="switchValue1" id="switch">Switch</mc-switch>
   <p>switchValue1 : {{ switchValue1 }}</p>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-switch v-model="switchValue1">Switch</spr-switch>
+    <mc-switch v-model="switchValue1">Switch</mc-switch>
     <p>switchValue1: {{ switchValue1 }}</p>
   </div>
 </template>
@@ -26,7 +26,7 @@ Switch component to show a boolean state (similar to a checkbox).
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprSwitch from '@/components/switch/switch.vue';
+import McSwitch from '@/components/switch/switch.vue';
 
 const switchValue1 = ref(false);
 </script>
@@ -34,70 +34,70 @@ const switchValue1 = ref(false);
 
 ## Text Label
 
-<spr-switch v-model="switchValue2" class="spr-mb-2">
+<mc-switch v-model="switchValue2" class="mc-mb-2">
   Left
-</spr-switch>
+</mc-switch>
 
-<spr-switch v-model="switchValue3" class="spr-mb-2">
+<mc-switch v-model="switchValue3" class="mc-mb-2">
   <template #rightText>Right</template>
-</spr-switch>
+</mc-switch>
 
-<spr-switch v-model="switchValue4" class="spr-mb-2">
+<mc-switch v-model="switchValue4" class="mc-mb-2">
   <template #leftText>Left</template>
   <template #rightText>Right</template>
-</spr-switch>
+</mc-switch>
 
 ```vue
 <!-- Default text position -->
-<spr-switch v-model="switchValue2">Left</spr-switch>
+<mc-switch v-model="switchValue2">Left</mc-switch>
 
 <!-- Text position using the rightText slot -->
-<spr-switch v-model="switchValue3">
+<mc-switch v-model="switchValue3">
   <template #rightText>Right</template>
-</spr-switch>
+</mc-switch>
 
 <!-- Text position using both the leftText and rightText slots -->
-<spr-switch v-model="switchValue4">
+<mc-switch v-model="switchValue4">
   <template #leftText>Left</template>
   <template #rightText>Right</template>
-</spr-switch>
+</mc-switch>
 ```
 
 ## Disabled
 
-<spr-switch v-model="switchValue5" class="spr-mb-2" disabled>
+<mc-switch v-model="switchValue5" class="mc-mb-2" disabled>
   Disabled false switch
-</spr-switch>
+</mc-switch>
 
-<spr-switch v-model="switchValue6" class="spr-mb-2" :disabled="true">
+<mc-switch v-model="switchValue6" class="mc-mb-2" :disabled="true">
   Disabled true switch
-</spr-switch>
+</mc-switch>
 
 ```vue
 <!-- Declare the disabled property -->
-<spr-switch v-model="switchValue5" disabled>
+<mc-switch v-model="switchValue5" disabled>
   Disabled false switch
-</spr-switch>
+</mc-switch>
 
 <!-- or set a value to the disabled property -->
-<spr-switch v-model="switchValue6" :disabled="true">
+<mc-switch v-model="switchValue6" :disabled="true">
   Disabled true switch
-</spr-switch>
+</mc-switch>
 ```
 
 ## Emit
 
 The switch component uses `@vueuse/core`'s `useVModel` for properties and emit v-model binding. By default, `update:modelValue` emit is defined and can be used to listen for any value changes with `modelValue` property.
 
-<div class="spr-mt-10">
-  <spr-switch v-model="switchValue7" @update:modelValue = "switch7UpdateHandler">Switch</spr-switch>
+<div class="mc-mt-10">
+  <mc-switch v-model="switchValue7" @update:modelValue = "switch7UpdateHandler">Switch</mc-switch>
   <p>{{ switch7Label }}</p>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-switch v-model="switchValue7" @update:modelValue="switch7UpdateHandler">Switch</spr-switch>
+    <mc-switch v-model="switchValue7" @update:modelValue="switch7UpdateHandler">Switch</mc-switch>
     <p>{{ switch7Label }}</p>
   </div>
 </template>
@@ -105,7 +105,7 @@ The switch component uses `@vueuse/core`'s `useVModel` for properties and emit v
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprSwitch from '@/components/switch/switch.vue';
+import McSwitch from '@/components/switch/switch.vue';
 
 const switchValue7 = ref(true);
 const switch7Label = ref('No event yet.');
@@ -122,7 +122,7 @@ const switch7UpdateHandler = (value) => {
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Type</th>
       <th>Default</th>
@@ -177,7 +177,7 @@ const switch7UpdateHandler = (value) => {
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Parameters</th>
     </tr>
@@ -200,7 +200,7 @@ const switch7UpdateHandler = (value) => {
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -229,8 +229,7 @@ const switch7UpdateHandler = (value) => {
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprSwitch from "@/components/switch/switch.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McSwitch from "@/components/switch/switch.vue";
 
 // Basic usage
 const switchValue1 = ref(false);

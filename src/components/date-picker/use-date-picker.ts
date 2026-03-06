@@ -35,74 +35,74 @@ export const useDatePicker = (props: DatePickerPropTypes, emit: SetupContext<Dat
   const modelValue = useVModel(props, 'modelValue', emit);
 
   const datePickerClasses: ComputedRef<DatePickerClasses> = computed(() => {
-    const labelClasses = classNames('spr-body-sm-regular spr-text-color-strong spr-block', {
-      'spr-text-color-on-fill-disabled': disabled.value,
+    const labelClasses = classNames('mc-body-sm-regular mc-text-color-strong mc-block', {
+      'mc-text-color-on-fill-disabled': disabled.value,
     });
 
     const datePickerBaseInputClasses = classNames(
-      'spr-flex spr-justify-between spr-items-center spr-gap-6 spr-rounded-lg spr-bg-white-50 spr-min-w-[180px] spr-py-1.5',
+      'mc-flex mc-justify-between mc-items-center mc-gap-6 mc-rounded-lg mc-bg-white-50 mc-min-w-[180px] mc-py-1.5',
       {
         // Normal State
-        'spr-border spr-border-solid spr-border-mushroom-200 focus:spr-border-kangkong-700':
+        'mc-border mc-border-solid mc-border-mushroom-200 focus:mc-border-kangkong-700':
           (!error.value && !disabled.value && !active.value && !datePopperState.value && !readonly2.value) ||
           readonly.value,
 
         // Active State
-        'spr-border spr-border-solid spr-border-kangkong-700 spr-border-[1.5px] spr-border-solid':
+        'mc-border mc-border-solid mc-border-kangkong-700 mc-border-[1.5px] mc-border-solid':
           (active.value || datePopperState.value === true) && !readonly.value && !readonly2.value,
 
         // Error State
-        'spr-border spr-border-solid spr-border-tomato-600 focus:spr-border-tomato-600': error.value,
+        'mc-border mc-border-solid mc-border-tomato-600 focus:mc-border-tomato-600': error.value,
 
         // Disabled State
-        'spr-background-color-disabled spr-border-white-100 focus:spr-border-white-100 spr-cursor-not-allowed !spr-text-white-400':
+        'mc-background-color-disabled mc-border-white-100 focus:mc-border-white-100 mc-cursor-not-allowed !mc-text-white-400':
           disabled.value,
 
         // Readonly State
-        'spr-cursor-default': readonly.value || readonly2.value,
-        'spr-px-3': !readonly2.value,
+        'mc-cursor-default': readonly.value || readonly2.value,
+        'mc-px-3': !readonly2.value,
       },
     );
 
     const datePickerInputClasses = classNames(
-      'spr-h-full spr-border-none spr-bg-transparent spr-outline-none',
-      'spr-font-size-200',
-      'placeholder:spr-text-color-weak',
+      'mc-h-full mc-border-none mc-bg-transparent mc-outline-none',
+      'mc-font-size-200',
+      'placeholder:mc-text-color-weak',
       {
-        'spr-font-size-300': readonly2.value,
-        'spr-text-color-strong': !disabled.value,
-        'spr-text-color-on-fill-disabled': disabled.value,
-        'spr-cursor-not-allowed': disabled.value,
+        'mc-font-size-300': readonly2.value,
+        'mc-text-color-strong': !disabled.value,
+        'mc-text-color-on-fill-disabled': disabled.value,
+        'mc-cursor-not-allowed': disabled.value,
       },
     );
 
     const datePickerInputHelperClasses = classNames(
-      'spr-body-sm-regular',
-      'spr-flex spr-items-center spr-gap-size-spacing-5xs',
-      'spr-mt-size-spacing-4xs',
+      'mc-body-sm-regular',
+      'mc-flex mc-items-center mc-gap-size-spacing-5xs',
+      'mc-mt-size-spacing-4xs',
       {
-        'spr-text-color-danger-base': error.value,
-        'spr-text-color-supporting': !error.value,
+        'mc-text-color-danger-base': error.value,
+        'mc-text-color-supporting': !error.value,
       },
     );
 
     const calendarTabItemsBaseClasses = classNames(
-      'spr-relative spr-box-border spr-flex spr-h-[40px] spr-items-center spr-justify-center spr-p-2',
-      'spr-transition spr-duration-150 spr-ease-in-out',
+      'mc-relative mc-box-border mc-flex mc-h-[40px] mc-items-center mc-justify-center mc-p-2',
+      'mc-transition mc-duration-150 mc-ease-in-out',
     );
 
     const monthsTabItemsBaseClasses = classNames(
-      'spr-subheading-xs spr-relative spr-flex spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-lg spr-p-4',
-      'spr-border spr-border-solid',
-      'spr-transition spr-duration-150 spr-ease-in-out',
-      'active:spr-scale-95',
+      'mc-subheading-xs mc-relative mc-flex mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-lg mc-p-4',
+      'mc-border mc-border-solid',
+      'mc-transition mc-duration-150 mc-ease-in-out',
+      'active:mc-scale-95',
     );
 
     const yearsTabItemsBaseClasses = classNames(
-      'spr-subheading-xs spr-relative spr-flex spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-lg spr-p-4',
-      'spr-border spr-border-solid',
-      'spr-transition spr-duration-150 spr-ease-in-out',
-      'active:spr-scale-95',
+      'mc-subheading-xs mc-relative mc-flex mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-lg mc-p-4',
+      'mc-border mc-border-solid',
+      'mc-transition mc-duration-150 mc-ease-in-out',
+      'active:mc-scale-95',
     );
 
     return {
@@ -665,12 +665,12 @@ export const useDatePicker = (props: DatePickerPropTypes, emit: SetupContext<Dat
   };
 
   const getDatePickerInputClasses = (width: string) => {
-    return classNames(datePickerClasses.value.datePickerInputClasses, `spr-w-[${width}] spr-min-w-[${width}]`);
+    return classNames(datePickerClasses.value.datePickerInputClasses, `mc-w-[${width}] mc-min-w-[${width}]`);
   };
 
   const getTabClasses = (tab: string) => {
-    return classNames('spr-cursor-pointer', {
-      'spr-background-color-pressed !spr-shadow-button': currentTab.value === tab,
+    return classNames('mc-cursor-pointer', {
+      'mc-background-color-pressed !mc-shadow-button': currentTab.value === tab,
     });
   };
 

@@ -31,12 +31,12 @@
           <template v-if="props.chipped">
             <div :class="multiSelectClasses.chippedInputTextBaseClasses">
               <div ref="chippedInputTextRef" :class="multiSelectClasses.chippedInputTextClasses">
-                <div class="spr-h-auto spr-w-full">
+                <div class="mc-h-auto mc-w-full">
                   <template v-if="multiSelectedListItems.length > 0">
                     <template v-if="!props.displaySelectedCountOnly">
                       <template v-for="item in multiSelectedListItems" :key="item.value">
-                        <spr-chips
-                          class="spr-m-1 spr-inline-block"
+                        <mc-chips
+                          class="mc-m-1 mc-inline-block"
                           :label="String(item.text)"
                           closable
                           visible
@@ -46,7 +46,7 @@
                     </template>
                     <template v-else>
                       <span
-                        class="spr-text-color-supporting spr-px-3"
+                        class="mc-text-color-supporting mc-px-3"
                         :aria-label="`${multiSelectedListItems.length} selected options`"
                       >
                         {{ multiSelectedListItems.length }} item{{ multiSelectedListItems.length === 1 ? '' : 's' }}
@@ -55,16 +55,16 @@
                     </template>
                   </template>
                   <template v-else>
-                    <span class="spr-placeholder spr-px-3 spr-text-gray-400">{{ props.placeholder }}</span>
+                    <span class="mc-placeholder mc-px-3 mc-text-gray-400">{{ props.placeholder }}</span>
                   </template>
                 </div>
                 <div :class="multiSelectClasses.chippedIconClasses">
                   <div
                     :class="[
-                      'spr-flex spr-items-center spr-gap-1',
+                      'mc-flex mc-items-center mc-gap-1',
                       {
-                        'spr-cursor-pointer': !props.disabled,
-                        'spr-cursor-not-allowed': props.disabled,
+                        'mc-cursor-pointer': !props.disabled,
+                        'mc-cursor-not-allowed': props.disabled,
                       },
                     ]"
                   >
@@ -81,22 +81,18 @@
             <div v-if="props.displayHelper" :class="multiSelectClasses.chippedHelperContainerClasses">
               <div v-if="props.displayHelper" :class="multiSelectClasses.chippedHelperClasses">
                 <slot name="helperMessage">
-                  <Icon
-                    v-if="props.helperIcon"
-                    class="spr-h-5 spr-min-h-5 spr-w-5 spr-min-w-5"
-                    :icon="props.helperIcon"
-                  />
+                  <Icon v-if="props.helperIcon" class="mc-h-5 mc-min-h-5 mc-w-5 mc-min-w-5" :icon="props.helperIcon" />
                   <span>{{ props.helperText }}</span>
                 </slot>
               </div>
             </div>
           </template>
           <template v-else>
-            <spr-input
+            <mc-input
               :id="`input-${props.id}`"
               v-model="inputText"
               :class="{
-                'spr-cursor-pointer': true,
+                'mc-cursor-pointer': true,
               }"
               :placeholder="props.placeholder"
               autocomplete="off"
@@ -111,10 +107,10 @@
               <template #icon>
                 <div
                   :class="[
-                    'spr-flex spr-items-center spr-gap-1',
+                    'mc-flex mc-items-center mc-gap-1',
                     {
-                      'spr-cursor-pointer': !props.disabled,
-                      'spr-cursor-not-allowed': props.disabled,
+                      'mc-cursor-pointer': !props.disabled,
+                      'mc-cursor-not-allowed': props.disabled,
                     },
                   ]"
                 >
@@ -127,7 +123,7 @@
               <template #helperMessage>
                 <slot name="helperMessage" />
               </template>
-            </spr-input>
+            </mc-input>
           </template>
         </div>
 
@@ -148,8 +144,8 @@
       </div>
 
       <template #popper>
-        <div ref="multipleSelectPopperRef" class="spr-max-h-[300px] spr-overflow-y-auto spr-overflow-x-hidden">
-          <spr-list
+        <div ref="multipleSelectPopperRef" class="mc-max-h-[300px] mc-overflow-y-auto mc-overflow-x-hidden">
+          <mc-list
             v-model="multiSelectedListItems"
             v-model:search-value="searchInput"
             :searchable-menu="props.searchable"
@@ -184,9 +180,9 @@ import { Icon } from '@iconify/vue';
 
 import 'floating-vue/dist/style.css';
 
-import SprInput from '../../input/input.vue';
-import SprList from '../../list/list.vue';
-import SprChips from '../../chips/chips.vue';
+import McInput from '../../input/input.vue';
+import McList from '../../list/list.vue';
+import McChips from '../../chips/chips.vue';
 
 import { multiSelectPropTypes, multiSelectEmitTypes } from './select-multiple';
 

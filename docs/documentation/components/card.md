@@ -10,7 +10,7 @@ A flexible container with optional header, content, and footer used to group rel
 
 ## Basic Usage
 
-<spr-card>
+<mc-card>
   <template #content>
     <div>
       Card content
@@ -22,16 +22,16 @@ A flexible container with optional header, content, and footer used to group rel
       <br/>
     </div>
   </template>
-</spr-card>
+</mc-card>
 
 ```vue
 <template>
-  <spr-card>
+  <mc-card>
     <template #content>
       <div>Card content</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     </template>
-  </spr-card>
+  </mc-card>
 </template>
 ```
 
@@ -39,66 +39,66 @@ A flexible container with optional header, content, and footer used to group rel
 
 Cards support different tones to indicate various states or importance levels. The available tones are: `plain`, `neutral`, `success`, `information`, `pending`, `caution`, `accent`, and `danger`.
 
-<div class="spr-grid spr-gap-2">
-  <div class="spr-flex spr-gap-2 spr-justify-between">
-    <spr-card class="spr-w-full" tone="plain">
+<div class="mc-grid mc-gap-2">
+  <div class="mc-flex mc-gap-2 mc-justify-between">
+    <mc-card class="mc-w-full" tone="plain">
       <template #content>
-        <div class="spr-text-center">
+        <div class="mc-text-center">
           Plain
         </div>
       </template>
-    </spr-card>
-    <spr-card class="spr-w-full" tone="neutral">
+    </mc-card>
+    <mc-card class="mc-w-full" tone="neutral">
       <template #content>
-        <div class="spr-text-center">
+        <div class="mc-text-center">
           Neutral
         </div>
       </template>
-    </spr-card>
-    <spr-card class="spr-w-full" tone="success">
+    </mc-card>
+    <mc-card class="mc-w-full" tone="success">
       <template #content>
-        <div class="spr-text-center">
+        <div class="mc-text-center">
           Success
         </div>
       </template>
-    </spr-card>
-    <spr-card class="spr-w-full" tone="information">
+    </mc-card>
+    <mc-card class="mc-w-full" tone="information">
       <template #content>
-        <div class="spr-text-center">
+        <div class="mc-text-center">
           Information
         </div>
       </template>
-    </spr-card>
+    </mc-card>
   </div>
-  <div class="spr-flex spr-gap-2 spr-justify-between">
-    <spr-card class="spr-w-full" tone="pending">
+  <div class="mc-flex mc-gap-2 mc-justify-between">
+    <mc-card class="mc-w-full" tone="pending">
       <template #content>
-        <div class="spr-text-center">
+        <div class="mc-text-center">
           Pending
         </div>
       </template>
-    </spr-card>
-    <spr-card class="spr-w-full" tone="caution">
+    </mc-card>
+    <mc-card class="mc-w-full" tone="caution">
       <template #content>
-        <div class="spr-text-center">
+        <div class="mc-text-center">
           Caution
         </div>
       </template>
-    </spr-card>
-    <spr-card class="spr-w-full" tone="accent">
+    </mc-card>
+    <mc-card class="mc-w-full" tone="accent">
       <template #content>
-        <div class="spr-text-center">
+        <div class="mc-text-center">
           Accent
         </div>
       </template>
-    </spr-card>
-    <spr-card class="spr-w-full" tone="danger">
+    </mc-card>
+    <mc-card class="mc-w-full" tone="danger">
       <template #content>
-        <div class="spr-text-center">
+        <div class="mc-text-center">
           Danger
         </div>
       </template>
-    </spr-card>
+    </mc-card>
   </div>
 </div>
 
@@ -106,7 +106,7 @@ Cards support different tones to indicate various states or importance levels. T
 
 Passing a `title` automatically displays the header. Use the `footer` slot to add a footer.
 
-<spr-card title="Card Title">
+<mc-card title="Card Title">
   <template #content>
     <div>
       Card content
@@ -119,28 +119,28 @@ Passing a `title` automatically displays the header. Use the `footer` slot to ad
     </div>
   </template>
   <template #footer>
-    <div class="spr-flex spr-items-center spr-ms-auto spr-gap-size-spacing-3xs"> 
-      <spr-button variant="secondary">secondary</spr-button>
-      <spr-button tone="success">primary</spr-button>
+    <div class="mc-flex mc-items-center mc-ms-auto mc-gap-size-spacing-3xs"> 
+      <mc-button variant="secondary">secondary</mc-button>
+      <mc-button tone="success">primary</mc-button>
     </div>
   </template>
-</spr-card>
+</mc-card>
 
 ```vue
 <template>
-  <spr-card title="Card Title">
+  <mc-card title="Card Title">
     <template #content>
       <div>Card content</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     </template>
     <template #footer>
-      <div class="spr-ms-auto spr-flex spr-items-center spr-gap-size-spacing-3xs">
-        <spr-button variant="secondary">secondary</spr-button>
-        <spr-button tone="success">primary</spr-button>
+      <div class="mc-ms-auto mc-flex mc-items-center mc-gap-size-spacing-3xs">
+        <mc-button variant="secondary">secondary</mc-button>
+        <mc-button tone="success">primary</mc-button>
       </div>
     </template>
-  </spr-card>
+  </mc-card>
 </template>
 ```
 
@@ -148,7 +148,7 @@ Passing a `title` automatically displays the header. Use the `footer` slot to ad
 
 Pass `show-header` and `show-footer` props as `false` to hide the header and footer even if content is provided.
 
-<spr-card title="Card Title" :show-header="false" :show-footer="false">
+<mc-card title="Card Title" :show-header="false" :show-footer="false">
   <template #content>
     <div>
       Card content
@@ -161,28 +161,28 @@ Pass `show-header` and `show-footer` props as `false` to hide the header and foo
     </div>
   </template>
   <template #footer>
-    <div class="spr-flex spr-items-center spr-ms-auto spr-gap-size-spacing-3xs"> 
-      <spr-button variant="secondary">secondary</spr-button>
-      <spr-button tone="success">primary</spr-button>
+    <div class="mc-flex mc-items-center mc-ms-auto mc-gap-size-spacing-3xs"> 
+      <mc-button variant="secondary">secondary</mc-button>
+      <mc-button tone="success">primary</mc-button>
     </div>
   </template>
-</spr-card>
+</mc-card>
 
 ```vue
 <template>
-  <spr-card title="Card Title" :show-header="false" :show-footer="false">
+  <mc-card title="Card Title" :show-header="false" :show-footer="false">
     <template #content>
       <div>Card content</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     </template>
     <template #footer>
-      <div class="spr-ms-auto spr-flex spr-items-center spr-gap-size-spacing-3xs">
-        <spr-button variant="secondary">secondary</spr-button>
-        <spr-button tone="success">primary</spr-button>
+      <div class="mc-ms-auto mc-flex mc-items-center mc-gap-size-spacing-3xs">
+        <mc-button variant="secondary">secondary</mc-button>
+        <mc-button tone="success">primary</mc-button>
       </div>
     </template>
-  </spr-card>
+  </mc-card>
 </template>
 ```
 
@@ -190,7 +190,7 @@ Pass `show-header` and `show-footer` props as `false` to hide the header and foo
 
 Pass a `header-icon` prop to display an icon in the header. The `title` prop is required for the icon to be visible.
 
-<spr-card title="Card Title" header-icon="ph:check-circle-duotone">
+<mc-card title="Card Title" header-icon="ph:check-circle-duotone">
   <template #content>
     <div>
       Card content
@@ -200,27 +200,27 @@ Pass a `header-icon` prop to display an icon in the header. The `title` prop is 
     </div>
   </template>
   <template #footer>
-    <div class="spr-flex spr-items-center spr-ms-auto spr-gap-size-spacing-3xs"> 
-      <spr-button variant="secondary">secondary</spr-button>
-      <spr-button tone="success">primary</spr-button>
+    <div class="mc-flex mc-items-center mc-ms-auto mc-gap-size-spacing-3xs"> 
+      <mc-button variant="secondary">secondary</mc-button>
+      <mc-button tone="success">primary</mc-button>
     </div>
   </template>
-</spr-card>
+</mc-card>
 
 ```vue
 <template>
-  <spr-card title="Card Title" header-icon="ph:check-circle-duotone">
+  <mc-card title="Card Title" header-icon="ph:check-circle-duotone">
     <template #content>
       <div>Card content</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     </template>
     <template #footer>
-      <div class="spr-ms-auto spr-flex spr-items-center spr-gap-size-spacing-3xs">
-        <spr-button variant="secondary">secondary</spr-button>
-        <spr-button tone="success">primary</spr-button>
+      <div class="mc-ms-auto mc-flex mc-items-center mc-gap-size-spacing-3xs">
+        <mc-button variant="secondary">secondary</mc-button>
+        <mc-button tone="success">primary</mc-button>
       </div>
     </template>
-  </spr-card>
+  </mc-card>
 </template>
 ```
 
@@ -228,7 +228,7 @@ Pass a `header-icon` prop to display an icon in the header. The `title` prop is 
 
 Pass a `subtitle` prop to display a subtitle below the title. The `title` prop is required.
 
-<spr-card title="Card Title" subtitle="This is a subtitle example" header-icon="ph:check-circle-duotone">
+<mc-card title="Card Title" subtitle="This is a subtitle example" header-icon="ph:check-circle-duotone">
   <template #content>
     <div>
       Card content
@@ -238,27 +238,27 @@ Pass a `subtitle` prop to display a subtitle below the title. The `title` prop i
     </div>
   </template>
   <template #footer>
-    <div class="spr-flex spr-items-center spr-ms-auto spr-gap-size-spacing-3xs"> 
-      <spr-button variant="secondary">secondary</spr-button>
-      <spr-button tone="success">primary</spr-button>
+    <div class="mc-flex mc-items-center mc-ms-auto mc-gap-size-spacing-3xs"> 
+      <mc-button variant="secondary">secondary</mc-button>
+      <mc-button tone="success">primary</mc-button>
     </div>
   </template>
-</spr-card>
+</mc-card>
 
 ```vue
 <template>
-  <spr-card title="Card Title" subtitle="This is a subtitle example" header-icon="ph:check-circle-duotone">
+  <mc-card title="Card Title" subtitle="This is a subtitle example" header-icon="ph:check-circle-duotone">
     <template #content>
       <div>Card content</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     </template>
     <template #footer>
-      <div class="spr-ms-auto spr-flex spr-items-center spr-gap-size-spacing-3xs">
-        <spr-button variant="secondary">secondary</spr-button>
-        <spr-button tone="success">primary</spr-button>
+      <div class="mc-ms-auto mc-flex mc-items-center mc-gap-size-spacing-3xs">
+        <mc-button variant="secondary">secondary</mc-button>
+        <mc-button tone="success">primary</mc-button>
       </div>
     </template>
-  </spr-card>
+  </mc-card>
 </template>
 ```
 
@@ -266,11 +266,11 @@ Pass a `subtitle` prop to display a subtitle below the title. The `title` prop i
 
 Use the `header` slot to add a content to the header. It will be placed next to the title.
 
-<spr-card title="Card Title" header-icon="ph:newspaper-duotone">
+<mc-card title="Card Title" header-icon="ph:newspaper-duotone">
   <template #header>
-    <div class="spr-flex spr-items-center spr-justify-between spr-grow">
-      <spr-badge text="9" variant="danger" size="small"/>
-      <spr-button variant="secondary" size="small">Secondary</spr-button>
+    <div class="mc-flex mc-items-center mc-justify-between mc-grow">
+      <mc-badge text="9" variant="danger" size="small"/>
+      <mc-button variant="secondary" size="small">Secondary</mc-button>
     </div>
   </template>
   <template #content>
@@ -281,31 +281,31 @@ Use the `header` slot to add a content to the header. It will be placed next to 
       Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.
     </div>
   </template>
-</spr-card>
+</mc-card>
 
 ```vue
 <template>
-  <spr-card title="Card Title" header-icon="ph:newspaper-duotone">
+  <mc-card title="Card Title" header-icon="ph:newspaper-duotone">
     <template #header>
-      <div class="spr-flex spr-grow spr-items-center spr-justify-between">
-        <spr-badge text="9" variant="danger" size="small" />
-        <spr-button variant="secondary" size="small">Secondary</spr-button>
+      <div class="mc-flex mc-grow mc-items-center mc-justify-between">
+        <mc-badge text="9" variant="danger" size="small" />
+        <mc-button variant="secondary" size="small">Secondary</mc-button>
       </div>
     </template>
     <template #content>
       <div>Card content</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     </template>
-  </spr-card>
+  </mc-card>
 </template>
 ```
 
 If the `title` prop is omitted, the `header` slot can fully customize the header.
 
-<spr-card>
+<mc-card>
   <template #header>
     <div>
-      <img src="@/assets/images/banner-sample.svg" class="spr-w-full spr-h-[18px] spr-object-cover spr-rounded-t-border-radius-xl spr-pointer-events-none" />
+      <img src="@/assets/images/banner-sample.svg" class="mc-w-full mc-h-[18px] mc-object-cover mc-rounded-t-border-radius-xl mc-pointer-events-none" />
     </div>
   </template>
   <template #content>
@@ -316,16 +316,16 @@ If the `title` prop is omitted, the `header` slot can fully customize the header
       Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.
     </div>
   </template>
-</spr-card>
+</mc-card>
 
 ```vue
 <template>
-  <spr-card>
+  <mc-card>
     <template #header>
       <div>
         <img
           src="@/assets/images/banner-sample.svg"
-          class="spr-pointer-events-none spr-h-[18px] spr-w-full spr-rounded-t-border-radius-xl spr-object-cover"
+          class="mc-pointer-events-none mc-h-[18px] mc-w-full mc-rounded-t-border-radius-xl mc-object-cover"
         />
       </div>
     </template>
@@ -333,7 +333,7 @@ If the `title` prop is omitted, the `header` slot can fully customize the header
       <div>Card content</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     </template>
-  </spr-card>
+  </mc-card>
 </template>
 ```
 
@@ -341,35 +341,35 @@ If the `title` prop is omitted, the `header` slot can fully customize the header
 
 Pass a `border-width` prop to customize the border width of the card. Accepts any valid CSS width value.
 
-<spr-card title="Card Title" border-width="6px">
+<mc-card title="Card Title" border-width="6px">
   <template #content>
     <div>Card content</div>
     <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
   </template>
   <template #footer>
-    <div class="spr-ms-auto spr-flex spr-items-center spr-gap-size-spacing-3xs">
-      <spr-button variant="secondary">secondary</spr-button>
-      <spr-button tone="success">primary</spr-button>
+    <div class="mc-ms-auto mc-flex mc-items-center mc-gap-size-spacing-3xs">
+      <mc-button variant="secondary">secondary</mc-button>
+      <mc-button tone="success">primary</mc-button>
     </div>
   </template>
-</spr-card>
+</mc-card>
 
 ```vue
 <template>
-  <spr-card title="Card Title" border-width="6px">
+  <mc-card title="Card Title" border-width="6px">
     <template #content>
       <div>Card content</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     </template>
     <template #footer>
-      <div class="spr-ms-auto spr-flex spr-items-center spr-gap-size-spacing-3xs">
-        <spr-button variant="secondary">secondary</spr-button>
-        <spr-button tone="success">primary</spr-button>
+      <div class="mc-ms-auto mc-flex mc-items-center mc-gap-size-spacing-3xs">
+        <mc-button variant="secondary">secondary</mc-button>
+        <mc-button tone="success">primary</mc-button>
       </div>
     </template>
-  </spr-card>
+  </mc-card>
 </template>
 ```
 
@@ -377,35 +377,35 @@ Pass a `border-width` prop to customize the border width of the card. Accepts an
 
 Pass a `border-radius-size` prop to customize the border radius of the card. Accepts predefined sizes: `xl`, `lg`, `md`, `sm`, `xs`, and `2xs`.
 
-<spr-card title="Card Title" border-radius-size="sm">
+<mc-card title="Card Title" border-radius-size="sm">
   <template #content>
     <div>Card content</div>
     <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
   </template>
   <template #footer>
-    <div class="spr-ms-auto spr-flex spr-items-center spr-gap-size-spacing-3xs">
-      <spr-button variant="secondary">secondary</spr-button>
-      <spr-button tone="success">primary</spr-button>
+    <div class="mc-ms-auto mc-flex mc-items-center mc-gap-size-spacing-3xs">
+      <mc-button variant="secondary">secondary</mc-button>
+      <mc-button tone="success">primary</mc-button>
     </div>
   </template>
-</spr-card>
+</mc-card>
 
 ```vue
 <template>
-  <spr-card title="Card Title" border-radius-size="sm">
+  <mc-card title="Card Title" border-radius-size="sm">
     <template #content>
       <div>Card content</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
       <div>Lorem ipsectetur adipiscing elit. Sed etiam, sed etiam.</div>
     </template>
     <template #footer>
-      <div class="spr-ms-auto spr-flex spr-items-center spr-gap-size-spacing-3xs">
-        <spr-button variant="secondary">secondary</spr-button>
-        <spr-button tone="success">primary</spr-button>
+      <div class="mc-ms-auto mc-flex mc-items-center mc-gap-size-spacing-3xs">
+        <mc-button variant="secondary">secondary</mc-button>
+        <mc-button tone="success">primary</mc-button>
       </div>
     </template>
-  </spr-card>
+  </mc-card>
 </template>
 ```
 
@@ -544,8 +544,7 @@ Pass a `border-radius-size` prop to customize the border radius of the card. Acc
 </table>
 
 <script lang="ts" setup>
-import SprCard from '@/components/card/card.vue';
-import SprButton from '@/components/button/button.vue';
-import SprBadge from '@/components/badge/badge.vue';
-import SprLogo from "@/components/logo/logo.vue";
+import McCard from '@/components/card/card.vue';
+import McButton from '@/components/button/button.vue';
+import McBadge from '@/components/badge/badge.vue';
 </script>

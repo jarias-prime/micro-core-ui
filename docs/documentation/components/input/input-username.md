@@ -10,11 +10,11 @@ Username specific input with potential future validation rules.
 
 ## Basic Usage
 
-<spr-input-username v-model="inputModels.basic" label="Username" placeholder="Enter username" />
+<mc-input-username v-model="inputModels.basic" label="Username" placeholder="Enter username" />
 
 ```vue
 <template>
-  <spr-input-username v-model="inputModel" label="Username" placeholder="Enter username" />
+  <mc-input-username v-model="inputModel" label="Username" placeholder="Enter username" />
 </template>
 
 <script setup lang="ts">
@@ -26,11 +26,11 @@ const inputModel = ref('');
 
 ## Active State
 
-<spr-input-username v-model="inputModels.activeState" label="Username" placeholder="Enter username" active />
+<mc-input-username v-model="inputModels.activeState" label="Username" placeholder="Enter username" active />
 
 ```vue
 <template>
-  <spr-input-username v-model="inputModel" label="Username" placeholder="Enter username" active />
+  <mc-input-username v-model="inputModel" label="Username" placeholder="Enter username" active />
 </template>
 
 <script setup lang="ts">
@@ -42,19 +42,19 @@ const inputModel = ref('');
 
 ## Error State
 
-<spr-input-username v-model="inputModels.errorState" label="Username" placeholder="Enter username" :error="true">
+<mc-input-username v-model="inputModels.errorState" label="Username" placeholder="Enter username" :error="true">
   <template #icon>
     <Icon icon="ph:warning-circle-fill" />
   </template>
-</spr-input-username>
+</mc-input-username>
 
 ```vue
 <template>
-  <spr-input-username v-model="inputModel" label="Username" placeholder="Enter username" :error="true">
+  <mc-input-username v-model="inputModel" label="Username" placeholder="Enter username" :error="true">
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input-username>
+  </mc-input-username>
 </template>
 
 <script setup lang="ts">
@@ -66,11 +66,11 @@ const inputModel = ref('');
 
 ## Disabled State
 
-<spr-input-username v-model="inputModels.disabledState" label="Username" placeholder="Enter username" :disabled="true" />
+<mc-input-username v-model="inputModels.disabledState" label="Username" placeholder="Enter username" :disabled="true" />
 
 ```vue
 <template>
-  <spr-input-username v-model="inputModel" label="Username" placeholder="Enter username" :disabled="true" />
+  <mc-input-username v-model="inputModel" label="Username" placeholder="Enter username" :disabled="true" />
 </template>
 
 <script setup lang="ts">
@@ -94,7 +94,7 @@ import { ref } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
-import SprInputUsername from '@/components/input/input-username/input-username.vue';
+import McInputUsername from '@/components/input/input-username/input-username.vue';
 
 const inputModels = ref({
   basic: '',

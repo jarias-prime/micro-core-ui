@@ -11,12 +11,12 @@ The Progress Bar component visually represents the progress of a task or process
 ## Basic Usage
 
 <div>
-  <spr-progress-bar :value="progressValue"/>
+  <mc-progress-bar :value="progressValue"/>
 </div>
 
 ```vue
 <template>
-  <spr-progress-bar :value="progressValue" />
+  <mc-progress-bar :value="progressValue" />
 </template>
 
 <script setup>
@@ -28,18 +28,18 @@ const progressValue = ref(25);
 ## Size
 
 <div>
-  <spr-progress-bar :value="50" size="xs"/>
+  <mc-progress-bar :value="50" size="xs"/>
   <br />
-  <spr-progress-bar :value="75" size="sm"/>
+  <mc-progress-bar :value="75" size="sm"/>
    <br />
-  <spr-progress-bar :value="100" size="lg"/>
+  <mc-progress-bar :value="100" size="lg"/>
 </div>
 
 ```vue
 <template>
-  <spr-progress-bar :value="50" size="xs" />
-  <spr-progress-bar :value="75" size="sm" />
-  <spr-progress-bar :value="100" size="lg" />
+  <mc-progress-bar :value="50" size="xs" />
+  <mc-progress-bar :value="75" size="sm" />
+  <mc-progress-bar :value="100" size="lg" />
 </template>
 
 <script setup>
@@ -51,15 +51,15 @@ const progressValue = ref(25);
 ## Label
 
 <div>
-  <spr-progress-bar :value="100" size="lg"  :label="true"/>
+  <mc-progress-bar :value="100" size="lg"  :label="true"/>
   <br/>
-  <spr-progress-bar :value="100" size="lg"  :label="false"/>
+  <mc-progress-bar :value="100" size="lg"  :label="false"/>
 </div>
 
 ```vue
 <template>
-  <spr-progress-bar :value="100" size="lg" :label="true" />
-  <spr-progress-bar :value="100" size="lg" :label="false" />
+  <mc-progress-bar :value="100" size="lg" :label="true" />
+  <mc-progress-bar :value="100" size="lg" :label="false" />
 </template>
 
 <script setup>
@@ -73,23 +73,23 @@ const progressValue = ref(25);
 The `supporting-label` prop displays additional text alongside the percentage label. This is useful for providing context, such as the total value or unit of measurement.
 
 <div>
-  <spr-progress-bar :value="60" :max="100" :label="true" supporting-label="of 100 MB"/>
+  <mc-progress-bar :value="60" :max="100" :label="true" supporting-label="of 100 MB"/>
   <br/>
-  <spr-progress-bar :value="75" :label="true" supporting-label="Complete"/>
+  <mc-progress-bar :value="75" :label="true" supporting-label="Complete"/>
   <br/>
-  <spr-progress-bar :value="45" :label="true" supporting-label="Remaining"/>
+  <mc-progress-bar :value="45" :label="true" supporting-label="Remaining"/>
 </div>
 
 ```vue
 <template>
   <!-- Display progress with total value -->
-  <spr-progress-bar :value="60" :max="100" :label="true" supporting-label="of 100 MB" />
+  <mc-progress-bar :value="60" :max="100" :label="true" supporting-label="of 100 MB" />
 
   <!-- Display with status text -->
-  <spr-progress-bar :value="75" :label="true" supporting-label="Complete" />
+  <mc-progress-bar :value="75" :label="true" supporting-label="Complete" />
 
   <!-- Display with contextual information -->
-  <spr-progress-bar :value="45" :label="true" supporting-label="Remaining" />
+  <mc-progress-bar :value="45" :label="true" supporting-label="Remaining" />
 </template>
 
 <script setup>
@@ -105,17 +105,17 @@ The `label-placement` prop controls where the percentage label appears relative 
 
 #### Top Placements
 
-<div class="spr-grid spr-gap-4 spr-mt-4">
-  <spr-progress-bar :value="60" label-placement="top-start" :label="true"/>
-  <spr-progress-bar :value="60" label-placement="top-center" :label="true"/>
-  <spr-progress-bar :value="60" label-placement="top-end" :label="true"/>
+<div class="mc-grid mc-gap-4 mc-mt-4">
+  <mc-progress-bar :value="60" label-placement="top-start" :label="true"/>
+  <mc-progress-bar :value="60" label-placement="top-center" :label="true"/>
+  <mc-progress-bar :value="60" label-placement="top-end" :label="true"/>
 </div>
 
 ```vue
 <template>
-  <spr-progress-bar :value="60" label-placement="top-start" :label="true" />
-  <spr-progress-bar :value="60" label-placement="top-center" :label="true" />
-  <spr-progress-bar :value="60" label-placement="top-end" :label="true" />
+  <mc-progress-bar :value="60" label-placement="top-start" :label="true" />
+  <mc-progress-bar :value="60" label-placement="top-center" :label="true" />
+  <mc-progress-bar :value="60" label-placement="top-end" :label="true" />
 </template>
 
 <script setup>
@@ -127,17 +127,17 @@ const progressValue = ref(60);
 
 #### Bottom Placements
 
-<div class="spr-grid spr-gap-4 spr-mt-4">
-  <spr-progress-bar :value="60" label-placement="bottom-start" :label="true"/>
-  <spr-progress-bar :value="60" label-placement="bottom-center" :label="true"/>
-  <spr-progress-bar :value="60" label-placement="bottom-end" :label="true"/>
+<div class="mc-grid mc-gap-4 mc-mt-4">
+  <mc-progress-bar :value="60" label-placement="bottom-start" :label="true"/>
+  <mc-progress-bar :value="60" label-placement="bottom-center" :label="true"/>
+  <mc-progress-bar :value="60" label-placement="bottom-end" :label="true"/>
 </div>
 
 ```vue
 <template>
-  <spr-progress-bar :value="60" label-placement="bottom-start" :label="true" />
-  <spr-progress-bar :value="60" label-placement="bottom-center" :label="true" />
-  <spr-progress-bar :value="60" label-placement="bottom-end" :label="true" />
+  <mc-progress-bar :value="60" label-placement="bottom-start" :label="true" />
+  <mc-progress-bar :value="60" label-placement="bottom-center" :label="true" />
+  <mc-progress-bar :value="60" label-placement="bottom-end" :label="true" />
 </template>
 
 <script setup>
@@ -149,15 +149,15 @@ const progressValue = ref(60);
 
 #### Side Placements
 
-<div class="spr-grid spr-gap-4 spr-mt-4">
-  <spr-progress-bar :value="60" label-placement="left" :label="true"/>
-  <spr-progress-bar :value="60" label-placement="right" :label="true"/>
+<div class="mc-grid mc-gap-4 mc-mt-4">
+  <mc-progress-bar :value="60" label-placement="left" :label="true"/>
+  <mc-progress-bar :value="60" label-placement="right" :label="true"/>
 </div>
 
 ```vue
 <template>
-  <spr-progress-bar :value="60" label-placement="left" :label="true" />
-  <spr-progress-bar :value="60" label-placement="right" :label="true" />
+  <mc-progress-bar :value="60" label-placement="left" :label="true" />
+  <mc-progress-bar :value="60" label-placement="right" :label="true" />
 </template>
 
 <script setup>
@@ -171,33 +171,33 @@ const progressValue = ref(60);
 The Progress Bar component supports different color variants to indicate different states or contexts.
 
 <div>
-  <spr-progress-bar :value="75" color="success"/>
+  <mc-progress-bar :value="75" color="success"/>
   <br />
-  <spr-progress-bar :value="60" color="danger"/>
+  <mc-progress-bar :value="60" color="danger"/>
   <br />
-  <spr-progress-bar :value="45" color="warning"/>
+  <mc-progress-bar :value="45" color="warning"/>
   <br />
-  <spr-progress-bar :value="30" color="info"/>
+  <mc-progress-bar :value="30" color="info"/>
   <br />
-  <spr-progress-bar :value="90" color="neutral"/>
+  <mc-progress-bar :value="90" color="neutral"/>
 </div>
 
 ```vue
 <template>
   <!-- Success (default) -->
-  <spr-progress-bar :value="75" color="success" />
+  <mc-progress-bar :value="75" color="success" />
 
   <!-- Danger/Error state -->
-  <spr-progress-bar :value="60" color="danger" />
+  <mc-progress-bar :value="60" color="danger" />
 
   <!-- Warning state -->
-  <spr-progress-bar :value="45" color="warning" />
+  <mc-progress-bar :value="45" color="warning" />
 
   <!-- Info state -->
-  <spr-progress-bar :value="30" color="info" />
+  <mc-progress-bar :value="30" color="info" />
 
   <!-- Neutral state -->
-  <spr-progress-bar :value="90" color="neutral" />
+  <mc-progress-bar :value="90" color="neutral" />
 </template>
 
 <script setup>
@@ -211,23 +211,23 @@ const progressValue = ref(25);
 You can customize the maximum value to represent different scales or contexts.
 
 <div>
-  <spr-progress-bar :value="5" :max="10" label="true"/>
+  <mc-progress-bar :value="5" :max="10" label="true"/>
   <br />
-  <spr-progress-bar :value="3" :max="12" label="true"/>
+  <mc-progress-bar :value="3" :max="12" label="true"/>
   <br />
-  <spr-progress-bar :value="8" :max="20" label="true"/>
+  <mc-progress-bar :value="8" :max="20" label="true"/>
 </div>
 
 ```vue
 <template>
   <!-- 5 out of 10 = 50% -->
-  <spr-progress-bar :value="5" :max="10" :label="true" />
+  <mc-progress-bar :value="5" :max="10" :label="true" />
 
   <!-- 3 out of 12 = 25% -->
-  <spr-progress-bar :value="3" :max="12" :label="true" />
+  <mc-progress-bar :value="3" :max="12" :label="true" />
 
   <!-- 8 out of 20 = 40% -->
-  <spr-progress-bar :value="8" :max="20" :label="true" />
+  <mc-progress-bar :value="8" :max="20" :label="true" />
 </template>
 
 <script setup>
@@ -241,28 +241,28 @@ const progressValue = ref(25);
 Control where the percentage label appears relative to the progress bar. You can position it at the top, bottom, left, or right.
 
 <div>
-  <spr-progress-bar :value="60" labelPlacement="top" :label="true"/>
+  <mc-progress-bar :value="60" labelPlacement="top" :label="true"/>
   <br />
-  <spr-progress-bar :value="60" labelPlacement="bottom" :label="true"/>
+  <mc-progress-bar :value="60" labelPlacement="bottom" :label="true"/>
   <br />
-  <spr-progress-bar :value="60" labelPlacement="left" :label="true"/>
+  <mc-progress-bar :value="60" labelPlacement="left" :label="true"/>
   <br />
-  <spr-progress-bar :value="60" labelPlacement="right" :label="true"/>
+  <mc-progress-bar :value="60" labelPlacement="right" :label="true"/>
 </div>
 
 ```vue
 <template>
   <!-- Percentage above the progress bar -->
-  <spr-progress-bar :value="60" labelPlacement="top" :label="true" />
+  <mc-progress-bar :value="60" labelPlacement="top" :label="true" />
 
   <!-- Percentage below the progress bar (default) -->
-  <spr-progress-bar :value="60" labelPlacement="bottom" :label="true" />
+  <mc-progress-bar :value="60" labelPlacement="bottom" :label="true" />
 
   <!-- Percentage to the left of the progress bar -->
-  <spr-progress-bar :value="60" labelPlacement="left" :label="true" />
+  <mc-progress-bar :value="60" labelPlacement="left" :label="true" />
 
   <!-- Percentage to the right of the progress bar -->
-  <spr-progress-bar :value="60" labelPlacement="right" :label="true" />
+  <mc-progress-bar :value="60" labelPlacement="right" :label="true" />
 </template>
 
 <script setup>
@@ -276,13 +276,13 @@ const progressValue = ref(25);
 ### File Upload Progress
 
 <div>
-  <spr-progress-bar :value="uploadProgress" color="success" size="sm" :label="true"/>
+  <mc-progress-bar :value="uploadProgress" color="success" size="sm" :label="true"/>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-progress-bar :value="uploadProgress" color="success" size="sm" :label="true" />
+    <mc-progress-bar :value="uploadProgress" color="success" size="sm" :label="true" />
   </div>
 </template>
 
@@ -310,14 +310,14 @@ simulateUpload();
 ### Error State Progress
 
 <div>
-  <spr-progress-bar :value="errorProgress" color="danger" size="lg" :label="true"/>
+  <mc-progress-bar :value="errorProgress" color="danger" size="lg" :label="true"/>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-progress-bar :value="errorProgress" color="danger" size="lg" :label="true" />
-    <p class="spr-text-color-danger-base spr-text-sm">Upload failed at 60%</p>
+    <mc-progress-bar :value="errorProgress" color="danger" size="lg" :label="true" />
+    <p class="mc-text-color-danger-base mc-text-sm">Upload failed at 60%</p>
   </div>
 </template>
 
@@ -331,15 +331,15 @@ const errorProgress = ref(60);
 ### Multi-Step Process
 
 <div>
-  <spr-progress-bar :value="stepProgress" color="info" size="sm" :label="true"/>
-  <p class="spr-text-sm spr-text-color-base">Step 3 of 5 completed</p>
+  <mc-progress-bar :value="stepProgress" color="info" size="sm" :label="true"/>
+  <p class="mc-text-sm mc-text-color-base">Step 3 of 5 completed</p>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-progress-bar :value="stepProgress" color="info" size="sm" :label="true" />
-    <p class="spr-text-color-base spr-text-sm">Step {{ currentStep }} of {{ totalSteps }} completed</p>
+    <mc-progress-bar :value="stepProgress" color="info" size="sm" :label="true" />
+    <p class="mc-text-color-base mc-text-sm">Step {{ currentStep }} of {{ totalSteps }} completed</p>
   </div>
 </template>
 
@@ -359,7 +359,7 @@ const stepProgress = ref(60); // 3/5 = 60%
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Type</th>
       <th>Default</th>
@@ -457,7 +457,7 @@ const stepProgress = ref(60); // 3/5 = 60%
 
 <script lang="ts" setup>
 import {ref} from 'vue'
-import SprProgressBar from "@/components/progress-bar/progress-bar.vue";
+import McProgressBar from "@/components/progress-bar/progress-bar.vue";
 
 const progressValue = ref(25)
 

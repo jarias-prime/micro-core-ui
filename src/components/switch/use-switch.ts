@@ -45,41 +45,41 @@ export const useSwitch = (props: SwitchPropTypes) => {
   });
 
   function getDefaultBackground(): string {
-    return props.modelValue ? 'spr-background-color-success-base' : 'spr-switch-background-default';
+    return props.modelValue ? 'mc-background-color-success-base' : 'mc-switch-background-default';
   }
 
   function getHoveredBackground(): string {
-    return props.modelValue ? 'spr-background-color-success-hover' : 'spr-switch-background-hover';
+    return props.modelValue ? 'mc-background-color-success-hover' : 'mc-switch-background-hover';
   }
 
   function getPressedBackground(): string {
-    return props.modelValue ? 'spr-background-color-success-pressed' : 'spr-switch-background-pressed';
+    return props.modelValue ? 'mc-background-color-success-pressed' : 'mc-switch-background-pressed';
   }
 
   function getDisabledBackground(): string {
     return classNames(
       {
-        'spr-background-color-success-base': props.modelValue,
-        'spr-switch-background-default': !props.modelValue,
+        'mc-background-color-success-base': props.modelValue,
+        'mc-switch-background-default': !props.modelValue,
       },
-      'spr-opacity-60',
+      'mc-opacity-60',
     );
   }
   // #endregion - Background CSS Class
 
   const switchTextClass: ComputedRef<string> = computed(() => {
     if (props.disabled) {
-      return 'spr-text-color-disabled';
+      return 'mc-text-color-disabled';
     }
 
-    return 'spr-text-color-strong';
+    return 'mc-text-color-strong';
   });
 
   const switchAnimationCssClass: ComputedRef<string> = computed(() => {
     return classNames(
-      'spr-transition-colors',
-      'before:spr-transition-all before:spr-duration-150',
-      'after:spr-transition-all after:spr-duration-150',
+      'mc-transition-colors',
+      'before:mc-transition-all before:mc-duration-150',
+      'after:mc-transition-all after:mc-duration-150',
     );
   });
 
@@ -89,8 +89,8 @@ export const useSwitch = (props: SwitchPropTypes) => {
 
   const switchInputClass: ComputedRef<string> = computed(() => {
     return classNames({
-      'spr-cursor-not-allowed': props.disabled,
-      'spr-cursor-pointer': !props.disabled,
+      'mc-cursor-not-allowed': props.disabled,
+      'mc-cursor-pointer': !props.disabled,
     });
   });
 
@@ -102,6 +102,6 @@ export const useSwitch = (props: SwitchPropTypes) => {
     switchTextClass,
     switchInputClass,
     isLeftTextLabel,
-    isRightTextLabel
+    isRightTextLabel,
   };
 };

@@ -16,7 +16,7 @@ The File Upload component offers two methods for uploading files:
 2. Dragging and dropping files directly onto the upload area
 
 <div>
-  <spr-file-upload 
+  <mc-file-upload 
     v-model="files1"
     :file-types="['image/jpeg','image/png',]"
     :max-file-size="10"
@@ -27,7 +27,7 @@ The File Upload component offers two methods for uploading files:
 ```vue
 <template>
   <div>
-    <spr-file-upload
+    <mc-file-upload
       v-model="files1"
       :file-types="['image/jpeg', 'image/png']"
       :max-file-size="10"
@@ -59,8 +59,8 @@ The File Upload component supports type for two layout variants:
 - `default`: Standard horizontal layout for compact spaces
 - `center`: Centered vertical layout with more prominent drop area
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-file-upload 
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-file-upload 
     v-model="files2"
     type="default"
     :file-types="['image/jpeg','image/png',]"
@@ -68,7 +68,7 @@ The File Upload component supports type for two layout variants:
     title="Default File Upload"
     multiple
   />
-  <spr-file-upload 
+  <mc-file-upload 
     v-model="files3"
     type="center"
     :file-types="['image/jpeg','image/png',]"
@@ -80,9 +80,9 @@ The File Upload component supports type for two layout variants:
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-2">
+  <div class="mc-flex mc-flex-col mc-gap-2">
     <!-- Default layout - horizontal -->
-    <spr-file-upload
+    <mc-file-upload
       v-model="files2"
       type="default"
       :file-types="['image/jpeg', 'image/png']"
@@ -92,7 +92,7 @@ The File Upload component supports type for two layout variants:
     />
 
     <!-- Center layout - vertical with more prominent drop area -->
-    <spr-file-upload
+    <mc-file-upload
       v-model="files3"
       type="center"
       :file-types="['image/jpeg', 'image/png']"
@@ -125,8 +125,8 @@ The File Upload component can be disabled to prevent user interaction. When disa
 - Drag and drop functionality is disabled
 - The component displays with muted colors
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-file-upload 
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-file-upload 
     v-model="files4"
     type="default"
     :file-types="['image/jpeg','image/png',]"
@@ -135,7 +135,7 @@ The File Upload component can be disabled to prevent user interaction. When disa
     multiple
     disabled
   />
-  <spr-file-upload 
+  <mc-file-upload 
     v-model="files5"
     type="center"
     :file-types="['image/jpeg','image/png',]"
@@ -148,9 +148,9 @@ The File Upload component can be disabled to prevent user interaction. When disa
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-2">
+  <div class="mc-flex mc-flex-col mc-gap-2">
     <!-- Disabled default layout -->
-    <spr-file-upload
+    <mc-file-upload
       v-model="files4"
       type="default"
       :file-types="['image/jpeg', 'image/png']"
@@ -161,7 +161,7 @@ The File Upload component can be disabled to prevent user interaction. When disa
     />
 
     <!-- Disabled center layout -->
-    <spr-file-upload
+    <mc-file-upload
       v-model="files5"
       type="center"
       :file-types="['image/jpeg', 'image/png']"
@@ -196,8 +196,8 @@ The File Upload component provides built-in error display functionality to provi
 - File size exceeds the maximum allowed
 - Other custom validation rules
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-file-upload 
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-file-upload 
     v-model="files6"
     type="default"
     :file-types="['image/jpeg','image/png',]"
@@ -207,7 +207,7 @@ The File Upload component provides built-in error display functionality to provi
     :show-error="true"
     :error-messages="['File type is not supported. It must be a JPG or PNG file.']"
   />
-  <spr-file-upload 
+  <mc-file-upload 
     v-model="files7"
     type="center"
     :file-types="['image/jpeg','image/png',]"
@@ -221,9 +221,9 @@ The File Upload component provides built-in error display functionality to provi
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-2">
+  <div class="mc-flex mc-flex-col mc-gap-2">
     <!-- File type error example -->
-    <spr-file-upload
+    <mc-file-upload
       v-model="files6"
       type="default"
       :file-types="['image/jpeg', 'image/png']"
@@ -235,7 +235,7 @@ The File Upload component provides built-in error display functionality to provi
     />
 
     <!-- File size error example -->
-    <spr-file-upload
+    <mc-file-upload
       v-model="files7"
       type="center"
       :file-types="['image/jpeg', 'image/png']"
@@ -279,7 +279,7 @@ The File Upload component automatically validates uploaded files against the acc
 3. **Shows error feedback** - Displays error messages when `showError` is true
 
 <div>
-  <spr-file-upload 
+  <mc-file-upload 
     v-model="filesValidation"
     :file-types="['image/jpeg','image/png']"
     :max-file-size="10"
@@ -293,7 +293,7 @@ The File Upload component automatically validates uploaded files against the acc
 
 ```vue
 <template>
-  <spr-file-upload
+  <mc-file-upload
     v-model="filesValidation"
     :file-types="['image/jpeg', 'image/png']"
     :max-file-size="10"
@@ -341,17 +341,17 @@ By default, the component shows a list of supported file types in the upload are
 ```vue
 <template>
   <!-- Default file type display -->
-  <spr-file-upload v-model="files" :file-types="['image/jpeg', 'image/png']" />
+  <mc-file-upload v-model="files" :file-types="['image/jpeg', 'image/png']" />
 
   <!-- Custom file type label -->
-  <spr-file-upload
+  <mc-file-upload
     v-model="files"
     :file-types="['image/jpeg', 'image/png']"
     supportedFileTypeLabel="JPG and PNG images only"
   />
 
   <!-- Hide dropzone label entirely -->
-  <spr-file-upload v-model="files" :file-types="['image/jpeg', 'image/png']" :hideDropzoneLabel="true" />
+  <mc-file-upload v-model="files" :file-types="['image/jpeg', 'image/png']" :hideDropzoneLabel="true" />
 </template>
 ```
 
@@ -364,7 +364,7 @@ When files are uploaded, they appear in a list below the upload area. Users can:
 
 ```vue
 <template>
-  <spr-file-upload
+  <mc-file-upload
     v-model="uploadedFiles"
     :file-types="['application/pdf', 'image/jpeg', 'image/png']"
     :max-file-size="10"
@@ -392,9 +392,9 @@ watch(uploadedFiles, (newFiles) => {
 
 The File Upload component supports progress indicators to show upload status. Use the `show-progress` prop to display a progress bar and `progress-value` to control the progress percentage.
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-file-upload 
-    v-model="filesProgress1"
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-file-upload 
+    v-model="fileMcogress1"
     type="default"
     :file-types="['image/jpeg','image/png']"
     :max-file-size="10"
@@ -402,8 +402,8 @@ The File Upload component supports progress indicators to show upload status. Us
     :show-progress="true"
     :progress-value="progressValue1"
   />
-  <spr-file-upload 
-    v-model="filesProgress2"
+  <mc-file-upload 
+    v-model="fileMcogress2"
     type="center"
     :file-types="['application/pdf']"
     :max-file-size="5"
@@ -413,14 +413,14 @@ The File Upload component supports progress indicators to show upload status. Us
   />
 </div>
 
-**Progress Values:** <span class="spr-text-xs">Upload 1: {{progressValue1}}% | Upload 2: {{progressValue2}}%</span>
+**Progress Values:** <span class="mc-text-xs">Upload 1: {{progressValue1}}% | Upload 2: {{progressValue2}}%</span>
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-2">
+  <div class="mc-flex mc-flex-col mc-gap-2">
     <!-- Image upload with progress -->
-    <spr-file-upload
-      v-model="filesProgress1"
+    <mc-file-upload
+      v-model="fileMcogress1"
       type="default"
       :file-types="['image/jpeg', 'image/png']"
       :max-file-size="10"
@@ -430,8 +430,8 @@ The File Upload component supports progress indicators to show upload status. Us
     />
 
     <!-- Document upload with progress -->
-    <spr-file-upload
-      v-model="filesProgress2"
+    <mc-file-upload
+      v-model="fileMcogress2"
       type="center"
       :file-types="['application/pdf']"
       :max-file-size="5"
@@ -445,8 +445,8 @@ The File Upload component supports progress indicators to show upload status. Us
 <script setup>
 import { ref } from 'vue';
 
-const filesProgress1 = ref([]);
-const filesProgress2 = ref([]);
+const fileMcogress1 = ref([]);
+const fileMcogress2 = ref([]);
 
 // Simulate progress values (in real app, these would come from upload service)
 const progressValue1 = ref(75);
@@ -458,8 +458,8 @@ const progressValue2 = ref(45);
 
 The File Upload component automatically displays appropriate icons for different file types. You can control icon visibility using the `hide-file-preview-icon` prop.
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-file-upload 
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-file-upload 
     v-model="filesIcon1"
     type="default"
     :file-types="['image/jpeg','image/png','application/pdf','text/plain']"
@@ -467,7 +467,7 @@ The File Upload component automatically displays appropriate icons for different
     title="With File Icons (Default)"
     multiple
   />
-  <spr-file-upload 
+  <mc-file-upload 
     v-model="filesIcon2"
     type="default"
     :file-types="['image/jpeg','image/png','application/pdf','text/plain']"
@@ -480,9 +480,9 @@ The File Upload component automatically displays appropriate icons for different
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-2">
+  <div class="mc-flex mc-flex-col mc-gap-2">
     <!-- With file type icons (default behavior) -->
-    <spr-file-upload
+    <mc-file-upload
       v-model="filesIcon1"
       type="default"
       :file-types="['image/jpeg', 'image/png', 'application/pdf', 'text/plain']"
@@ -492,7 +492,7 @@ The File Upload component automatically displays appropriate icons for different
     />
 
     <!-- Without file type icons -->
-    <spr-file-upload
+    <mc-file-upload
       v-model="filesIcon2"
       type="default"
       :file-types="['image/jpeg', 'image/png', 'application/pdf', 'text/plain']"
@@ -516,8 +516,8 @@ const filesIcon2 = ref([]);
 
 You can combine progress indicators with error states to provide comprehensive upload feedback.
 
-<div class="spr-flex spr-flex-col spr-gap-2">
-  <spr-file-upload 
+<div class="mc-flex mc-flex-col mc-gap-2">
+  <mc-file-upload 
     v-model="filesAdvanced1"
     type="default"
     :file-types="['image/jpeg','image/png']"
@@ -526,7 +526,7 @@ You can combine progress indicators with error states to provide comprehensive u
     :show-progress="true"
     :progress-value="100"
   />
-  <spr-file-upload 
+  <mc-file-upload 
     v-model="filesAdvanced2"
     type="default"
     :file-types="['image/jpeg','image/png']"
@@ -541,9 +541,9 @@ You can combine progress indicators with error states to provide comprehensive u
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-2">
+  <div class="mc-flex mc-flex-col mc-gap-2">
     <!-- Successful upload with progress -->
-    <spr-file-upload
+    <mc-file-upload
       v-model="filesAdvanced1"
       type="default"
       :file-types="['image/jpeg', 'image/png']"
@@ -554,7 +554,7 @@ You can combine progress indicators with error states to provide comprehensive u
     />
 
     <!-- Failed upload with progress and error -->
-    <spr-file-upload
+    <mc-file-upload
       v-model="filesAdvanced2"
       type="default"
       :file-types="['image/jpeg', 'image/png']"
@@ -710,7 +710,7 @@ The component supports the following file types by default:
 - `application/pdf` - PDF files
 - `application/msword` - MS Word files
 - `application/vnd.ms-excel` - MS Excel files
-- `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` - XLSX files
+- `application/vnd.openxmlformats-officedocument.Mceadsheetml.sheet` - XLSX files
 - `application/vnd.ms-powerpoint` - MS PowerPoint files
 - `text/plain` - Text files
 - `text/csv` - CSV files
@@ -729,8 +729,7 @@ You can specify a subset of these types using the `fileTypes` prop.
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import SprFileUpload from '@/components/file-upload/file-upload.vue';
-import SprLogo from "@/components/logo/logo.vue";
+import McFileUpload from '@/components/file-upload/file-upload.vue';
 
 const files1 = ref([]);
 const files2 = ref([]);
@@ -741,8 +740,8 @@ const files6 = ref([]);
 const files7 = ref([]);
 
 // Progress examples
-const filesProgress1 = ref([]);
-const filesProgress2 = ref([]);
+const fileMcogress1 = ref([]);
+const fileMcogress2 = ref([]);
 const progressValue1 = ref(75);
 const progressValue2 = ref(45);
 

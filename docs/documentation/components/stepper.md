@@ -14,13 +14,13 @@ There is no state management involved in this component. The status of each step
 
 ## Basic Usage
 
-<spr-stepper
+<mc-stepper
   :steps="steps"
 />
 
 ```vue
 <template>
-  <spr-stepper :steps="steps" />
+  <mc-stepper :steps="steps" />
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -56,7 +56,7 @@ const steps = ref([
 Stepper type is classified as `compact` (default) and `solid`. The stepper below is an example of a `solid` type.
 
 <div style="width:200px;">
-  <spr-stepper
+  <mc-stepper
     :steps="steps"
     type="solid"
   />
@@ -65,7 +65,7 @@ Stepper type is classified as `compact` (default) and `solid`. The stepper below
 ```vue
 <template>
   <div style="width:200px;">
-    <spr-stepper :steps="steps" type="solid" />
+    <mc-stepper :steps="steps" type="solid" />
   </div>
 </template>
 <script setup lang="ts">
@@ -99,14 +99,14 @@ const steps = ref([
 
 ## Horizontal Stepper
 
-<spr-stepper
+<mc-stepper
   :steps="steps"
   variant="horizontal"
 />
 
 ```vue
 <template>
-  <spr-stepper :steps="steps" variant="horizontal" />
+  <mc-stepper :steps="steps" variant="horizontal" />
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -138,13 +138,13 @@ const steps = ref([
 
 ## Steps with Description
 
-<spr-stepper
+<mc-stepper
   :steps="stepsWithDescription"
 />
 
 ```vue
 <template>
-  <spr-stepper :steps="stepsWithDescription" />
+  <mc-stepper :steps="stepsWithDescription" />
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -179,12 +179,12 @@ const stepsWithDescription = ref([
 
 ## Has Lines
 
-<spr-stepper
+<mc-stepper
   :steps="steps"
   has-lines
 />
 
-<spr-stepper
+<mc-stepper
   :steps="steps"
   has-lines
   variant="horizontal"
@@ -196,36 +196,36 @@ The lines extend as long as there is an available space, you can manipulate the 
 
 ```vue
 <template>
-  <spr-stepper :steps="steps" has-lines />
+  <mc-stepper :steps="steps" has-lines />
 
-  <spr-stepper :steps="steps" has-lines variant="horizontal" />
+  <mc-stepper :steps="steps" has-lines variant="horizontal" />
 </template>
 ```
 
 ## State Playground
 
-<spr-stepper
+<mc-stepper
   :steps="playgroundSteps"
   has-lines
   variant="vertical"
 />
 
-<spr-stepper
+<mc-stepper
   :steps="playgroundSteps"
   has-lines
   variant="horizontal"
   class="w-1/2"
 />
 
-<spr-button tone="success" @click="updateSteps" class="spr-mt-size-spacing-md">Next State</spr-button>
+<mc-button tone="success" @click="updateSteps" class="mc-mt-size-spacing-md">Next State</mc-button>
 
 ```vue
 <template>
-  <spr-stepper :steps="playgroundSteps" has-lines variant="vertical" />
+  <mc-stepper :steps="playgroundSteps" has-lines variant="vertical" />
 
-  <spr-stepper :steps="playgroundSteps" has-lines variant="horizontal" class="w-1/2" />
+  <mc-stepper :steps="playgroundSteps" has-lines variant="horizontal" class="w-1/2" />
 
-  <spr-button tone="success" @click="updateSteps">Next State</spr-button>
+  <mc-button tone="success" @click="updateSteps">Next State</mc-button>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -270,7 +270,7 @@ const updateSteps = () => {
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Type</th>
       <th>Default</th>
@@ -325,7 +325,7 @@ const updateSteps = () => {
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Parameters</th>
     </tr>
@@ -348,7 +348,7 @@ const updateSteps = () => {
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Type</th>
       <th>Required</th>
@@ -398,10 +398,9 @@ const updateSteps = () => {
 </table>
 
 <script setup lang="ts">
-import SprStepper from "@/components/stepper/stepper.vue";
+import McStepper from "@/components/stepper/stepper.vue";
 import { ref } from 'vue';
-import SprLogo from "@/components/logo/logo.vue";
-import SprButton from "@/components/button/button.vue";
+import McButton from "@/components/button/button.vue";
 
 const steps = ref([
   {

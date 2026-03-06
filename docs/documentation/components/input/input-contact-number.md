@@ -13,11 +13,11 @@ Uses `libphonenumber-js` internally for parsing and formatting on blur.
 
 ## Basic Usage
 
-<spr-input-contact-number id="input-contact-number-basic" v-model="inputModels.basic" label="Input Contact Number"/>
+<mc-input-contact-number id="input-contact-number-basic" v-model="inputModels.basic" label="Input Contact Number"/>
 
 ```vue
 <template>
-  <spr-input-contact-number id="input-contact-number-basic" v-model="inputModel" label="Input Contact Number" />
+  <mc-input-contact-number id="input-contact-number-basic" v-model="inputModel" label="Input Contact Number" />
 </template>
 
 <script setup lang="ts">
@@ -30,7 +30,7 @@ const inputModel = ref('');
 ## Active State
 
 <div>
-  <spr-input-contact-number 
+  <mc-input-contact-number 
     id="input-contact-number-active-state" 
     v-model="inputModels.activeState" 
     label="Input Contact Number" 
@@ -40,7 +40,7 @@ const inputModel = ref('');
 
 ```vue
 <template>
-  <spr-input-contact-number
+  <mc-input-contact-number
     id="input-contact-number-active-state"
     v-model="inputModel"
     label="Input Contact Number"
@@ -58,7 +58,7 @@ const inputModel = ref('');
 ## Error State
 
 <div>
-  <spr-input-contact-number 
+  <mc-input-contact-number 
     id="input-contact-number-error-state" 
     v-model="inputModels.errorState" 
     label="Input Contact Number" 
@@ -67,12 +67,12 @@ const inputModel = ref('');
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input-contact-number>
+  </mc-input-contact-number>
 </div>
 
 ```vue
 <template>
-  <spr-input-contact-number
+  <mc-input-contact-number
     id="input-contact-number-error-state"
     v-model="inputModel"
     label="Input Contact Number"
@@ -81,7 +81,7 @@ const inputModel = ref('');
     <template #icon>
       <Icon icon="ph:warning-circle-fill" />
     </template>
-  </spr-input-contact-number>
+  </mc-input-contact-number>
 </template>
 
 <script setup lang="ts">
@@ -94,7 +94,7 @@ const inputModel = ref('');
 ## Disabled State
 
 <div>
-  <spr-input-contact-number 
+  <mc-input-contact-number 
     id="input-contact-number-disabled-state" 
     v-model="inputModels.disabledState" 
     label="Input Contact Number" 
@@ -104,7 +104,7 @@ const inputModel = ref('');
 
 ```vue
 <template>
-  <spr-input-contact-number
+  <mc-input-contact-number
     id="input-contact-number-disabled-state"
     v-model="inputModel"
     label="Input Contact Number"
@@ -122,7 +122,7 @@ const inputModel = ref('');
 ## Disabled Country Calling Code
 
 <div>
-  <spr-input-contact-number 
+  <mc-input-contact-number 
     id="input-contact-number-disabled-country-calling-code" 
     v-model="inputModels.disabledCountryCallingCode" 
     label="Input Contact Number" 
@@ -132,7 +132,7 @@ const inputModel = ref('');
 
 ```vue
 <template>
-  <spr-input-contact-number
+  <mc-input-contact-number
     id="input-contact-number-disabled-country-calling-code"
     v-model="inputModel"
     label="Input Contact Number"
@@ -149,8 +149,8 @@ const inputModel = ref('');
 
 ## Get Selected Country Codes
 
-<div class="spr-grid spr-gap-4">
-  <spr-input-contact-number 
+<div class="mc-grid mc-gap-4">
+  <mc-input-contact-number 
     id="input-contact-number-selected-country-codes"
     v-model="inputModels.selectedCountryCodes" 
     label="Input Contact Number"  
@@ -159,7 +159,7 @@ const inputModel = ref('');
     @get-parsed-international-number="handleParsedInternationalNumber"
   />
 
-  <div class="spr-p-4 spr-bg-blue-100">
+  <div class="mc-p-4 mc-bg-blue-100">
     <p>Model Output: {{ inputModels.selectedCountryCodes }}</p>
     <p>Selected Country Code: {{ selectedCountryCode }}</p>
     <p>Selected Country Calling Code: {{ selectedCountryCallingCode }}</p>
@@ -170,7 +170,7 @@ const inputModel = ref('');
 
 ```vue
 <template>
-  <spr-input-contact-number
+  <mc-input-contact-number
     id="input-contact-number-selected-country-codes"
     v-model="inputModel"
     label="Input Contact Number"
@@ -207,7 +207,7 @@ const handleParsedNumber = (val: string) => {
 ## Pre-Selected Country
 
 <div>
-  <spr-input-contact-number 
+  <mc-input-contact-number 
     id="input-contact-number-preselected-country" 
     v-model="inputModels.preSelectedCountry" 
     label="Input Contact Number" 
@@ -217,7 +217,7 @@ const handleParsedNumber = (val: string) => {
 
 ```vue
 <template>
-  <spr-input-contact-number
+  <mc-input-contact-number
     id="input-contact-number-preselected-country"
     v-model="inputModel"
     label="Input Contact Number"
@@ -230,10 +230,10 @@ const handleParsedNumber = (val: string) => {
 
 Display helpful text or error messages below the input field using the `display-helper`, `helper-text`, `helper-icon`, and `error` props. You can also customize the helper message with a slot.
 
-<div class="spr-grid spr-gap-4">
+<div class="mc-grid mc-gap-4">
   <div>
-    <p class="spr-text-sm spr-font-semibold spr-mb-2">Helper Text</p>
-    <spr-input-contact-number
+    <p class="mc-text-sm mc-font-semibold mc-mb-2">Helper Text</p>
+    <mc-input-contact-number
       id="input-contact-number-helper-text"
       v-model="inputModels.helperText"
       label="Input Contact Number"
@@ -242,8 +242,8 @@ Display helpful text or error messages below the input field using the `display-
     />
   </div>
   <div>
-    <p class="spr-text-sm spr-font-semibold spr-mb-2">Error State with Helper</p>
-    <spr-input-contact-number
+    <p class="mc-text-sm mc-font-semibold mc-mb-2">Error State with Helper</p>
+    <mc-input-contact-number
       id="input-contact-number-error-helper"
       v-model="inputModels.errorHelper"
       label="Input Contact Number"
@@ -254,8 +254,8 @@ Display helpful text or error messages below the input field using the `display-
     />
   </div>
   <div>
-    <p class="spr-text-sm spr-font-semibold spr-mb-2">Custom Helper Message</p>
-    <spr-input-contact-number
+    <p class="mc-text-sm mc-font-semibold mc-mb-2">Custom Helper Message</p>
+    <mc-input-contact-number
       id="input-contact-number-custom-helper"
       v-model="inputModels.customHelper"
       label="Input Contact Number"
@@ -264,25 +264,25 @@ Display helpful text or error messages below the input field using the `display-
       helper-text="Phone number info"
     >
       <template #helperMessage>
-        <div class="spr-flex spr-w-full spr-justify-between spr-gap-2">
-          <div class="spr-body-sm-regular spr-flex spr-items-center spr-gap-1">
-            <Icon class="spr-min-h-5 spr-min-w-5" icon="ph:info-fill" />
+        <div class="mc-flex mc-w-full mc-justify-between mc-gap-2">
+          <div class="mc-body-sm-regular mc-flex mc-items-center mc-gap-1">
+            <Icon class="mc-min-h-5 mc-min-w-5" icon="ph:info-fill" />
             <span>Enter number with country code prefix</span>
           </div>
-          <div class="spr-body-sm-regular">
+          <div class="mc-body-sm-regular">
             {{ inputModels.customHelper.length }} characters
           </div>
         </div>
       </template>
-    </spr-input-contact-number>
+    </mc-input-contact-number>
   </div>
 </div>
 
 ```vue
 <template>
-  <div class="spr-grid spr-gap-4">
+  <div class="mc-grid mc-gap-4">
     <!-- Helper Text -->
-    <spr-input-contact-number
+    <mc-input-contact-number
       id="input-contact-number-helper-text"
       v-model="inputModel"
       label="Input Contact Number"
@@ -291,7 +291,7 @@ Display helpful text or error messages below the input field using the `display-
     />
 
     <!-- Error State with Helper -->
-    <spr-input-contact-number
+    <mc-input-contact-number
       id="input-contact-number-error-helper"
       v-model="inputModel"
       label="Input Contact Number"
@@ -302,7 +302,7 @@ Display helpful text or error messages below the input field using the `display-
     />
 
     <!-- Custom Helper Message -->
-    <spr-input-contact-number
+    <mc-input-contact-number
       id="input-contact-number-custom-helper"
       v-model="inputModel"
       label="Input Contact Number"
@@ -311,15 +311,15 @@ Display helpful text or error messages below the input field using the `display-
       helper-text="Phone number info"
     >
       <template #helperMessage>
-        <div class="spr-flex spr-w-full spr-justify-between spr-gap-2">
-          <div class="spr-body-sm-regular spr-flex spr-items-center spr-gap-1">
-            <Icon class="spr-min-h-5 spr-min-w-5" icon="ph:info-fill" />
+        <div class="mc-flex mc-w-full mc-justify-between mc-gap-2">
+          <div class="mc-body-sm-regular mc-flex mc-items-center mc-gap-1">
+            <Icon class="mc-min-h-5 mc-min-w-5" icon="ph:info-fill" />
             <span>Enter number with country code prefix</span>
           </div>
-          <div class="spr-body-sm-regular">{{ inputModel.length }} characters</div>
+          <div class="mc-body-sm-regular">{{ inputModel.length }} characters</div>
         </div>
       </template>
-    </spr-input-contact-number>
+    </mc-input-contact-number>
   </div>
 </template>
 
@@ -406,7 +406,7 @@ const inputModel = ref('');
   </tbody>
 </table>
 
-<p class="spr-mt-4 spr-text-300">
+<p class="mc-mt-4 mc-text-300">
 For additional shared props, events, slots, and behavior inherited from the base input component, please refer to the
 <a href="/documentation/components/input/input.html#api-reference">Input Component API Reference</a>.
 </p>
@@ -450,7 +450,7 @@ import { ref, computed } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
-import SprInputContactNumber from "@/components/input/input-contact-number/input-contact-number.vue"
+import McInputContactNumber from "@/components/input/input-contact-number/input-contact-number.vue"
 
 const inputModels = ref({
   basic: '',

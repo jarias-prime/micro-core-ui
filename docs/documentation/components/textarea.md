@@ -8,11 +8,11 @@ outline: deep
 
 ## Basic Usage
 
-<spr-textarea v-model="textarea" label="Description" placeholder="type here...."/>
+<mc-textarea v-model="textarea" label="Description" placeholder="type here...."/>
 
 ```vue
 <template>
-  <spr-textarea v-model="textarea" label="Description" placeholder="type here...." />
+  <mc-textarea v-model="textarea" label="Description" placeholder="type here...." />
 </template>
 
 <script setup lang="ts">
@@ -28,15 +28,15 @@ A helper message is a text label below the input field that provides additional 
 
 To display the helper message, set the `display-helper` prop to `true` and add the `helper-text` prop with the helper message text. You can also insert an icon with the `helper-icon` prop. This uses the [Iconify](https://icon-sets.iconify.design/) icon library.
 
-<div class="spr-grid spr-gap-6">
-  <spr-textarea 
+<div class="mc-grid mc-gap-6">
+  <mc-textarea 
     v-model="textarea1" 
     label="Textarea" 
     display-helper 
     placeholder="type here...." 
     helper-text="This is a helper message" 
   />
-  <spr-textarea 
+  <mc-textarea 
     v-model="textarea1" 
     label="Textarea" 
     placeholder="type here...." 
@@ -49,14 +49,14 @@ To display the helper message, set the `display-helper` prop to `true` and add t
 
 ```vue
 <template>
-  <spr-textarea
+  <mc-textarea
     v-model="textarea"
     label="Textarea"
     placeholder="type here...."
     display-helper
     helper-text="This is a helper message"
   />
-  <spr-textarea
+  <mc-textarea
     v-model="textarea"
     label="Textarea"
     placeholder="type here...."
@@ -76,8 +76,8 @@ const textarea = ref('');
 
 Alternatively, you can use the `helperMessage` slot to display a custom helper message.
 
-<div class="spr-grid spr-gap-6">
-  <spr-textarea 
+<div class="mc-grid mc-gap-6">
+  <mc-textarea 
     v-model="textarea1" 
     label="Textarea" 
     display-helper 
@@ -85,8 +85,8 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
     <template #helperMessage>
       This is a helper message
     </template>
-  </spr-textarea>
-  <spr-textarea 
+  </mc-textarea>
+  <mc-textarea 
    v-model="textarea1" 
     label="Textarea" 
     display-helper 
@@ -96,20 +96,20 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
       <Icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is an error message</span>
     </template>
-  </spr-textarea>
+  </mc-textarea>
 </div>
 
 ```vue
 <template>
-  <spr-textarea v-model="textarea" label="Textarea" display-helper>
+  <mc-textarea v-model="textarea" label="Textarea" display-helper>
     <template #helperMessage> This is a helper message </template>
-  </spr-textarea>
-  <spr-textarea v-model="textarea" label="Textarea" display-helper error>
+  </mc-textarea>
+  <mc-textarea v-model="textarea" label="Textarea" display-helper error>
     <template #helperMessage>
       <Icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is an error message</span>
     </template>
-  </spr-textarea>
+  </mc-textarea>
 </template>
 
 <script setup lang="ts">
@@ -121,11 +121,11 @@ const textarea = ref('');
 
 ## Error State
 
-<spr-textarea v-model="textarea1" label="Description" placeholder="type here...." display-helper helper-text="This is an error message" helper-icon="ph:warning-circle-fill" error />
+<mc-textarea v-model="textarea1" label="Description" placeholder="type here...." display-helper helper-text="This is an error message" helper-icon="ph:warning-circle-fill" error />
 
 ```vue
 <template>
-  <spr-textarea
+  <mc-textarea
     v-model="textarea"
     label="Description"
     placeholder="type here...."
@@ -145,7 +145,7 @@ const textarea = ref('');
 
 ## Max Length
 
-<spr-textarea
+<mc-textarea
     v-model="textareaMaxLength"
     label="Description"
     placeholder="type here...."
@@ -155,7 +155,7 @@ const textarea = ref('');
 
 ```vue
 <template>
-  <spr-textarea
+  <mc-textarea
     v-model="textareaMaxLength"
     label="Description"
     placeholder="type here...."
@@ -173,11 +173,11 @@ const textareaMaxLength = ref('set Maximum Characters');
 
 ## Disabled
 
-<spr-textarea v-model="textarea" label="Description" placeholder="type here...."  disabled/>
+<mc-textarea v-model="textarea" label="Description" placeholder="type here...."  disabled/>
 
 ```vue
 <template>
-  <spr-textarea v-model="textarea" label="Description" placeholder="type here...." disabled />
+  <mc-textarea v-model="textarea" label="Description" placeholder="type here...." disabled />
 </template>
 
 <script setup lang="ts">
@@ -189,11 +189,11 @@ const textarea = ref('');
 
 ## Readonly
 
-<spr-textarea v-model="textarea2" label="Description" placeholder="type here...."  readonly/>
+<mc-textarea v-model="textarea2" label="Description" placeholder="type here...."  readonly/>
 
 ```vue
 <template>
-  <spr-textarea v-model="textarea2" label="Description" placeholder="type here...." readonly />
+  <mc-textarea v-model="textarea2" label="Description" placeholder="type here...." readonly />
 </template>
 
 <script setup lang="ts">
@@ -361,8 +361,7 @@ import { ref } from 'vue';
 
 import { Icon } from '@iconify/vue';
 
-import SprTextarea from '@/components/textarea/textarea.vue';
-import SprLogo from "@/components/logo/logo.vue";
+import McTextarea from '@/components/textarea/textarea.vue';
 
 const textarea = ref('');
 const textarea1 = ref('');

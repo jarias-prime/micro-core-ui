@@ -1,14 +1,14 @@
 <template>
   <div
     :class="[
-      'spr-sticky spr-top-0 spr-z-30',
-      'spr-flex spr-cursor-pointer spr-items-center spr-gap-size-spacing-5xs spr-bg-white-50 spr-px-size-spacing-xs spr-py-size-spacing-2xs',
-      'spr-body-xs-regular',
-      'spr-border-color-weak spr-border-0 spr-border-b spr-border-solid',
+      'mc-sticky mc-top-0 mc-z-30',
+      'mc-flex mc-cursor-pointer mc-items-center mc-gap-size-spacing-5xs mc-bg-white-50 mc-px-size-spacing-xs mc-py-size-spacing-2xs',
+      'mc-body-xs-regular',
+      'mc-border-color-weak mc-border-0 mc-border-b mc-border-solid',
     ]"
     @click="handleBackClick"
   >
-    <Icon icon="ph:arrow-left" class="spr-size-4" />
+    <Icon icon="ph:arrow-left" class="mc-size-4" />
     <span>{{ props.label }}</span>
   </div>
 </template>

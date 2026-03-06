@@ -6,13 +6,13 @@ export const useProgressBar = (props: ProgressBarPropTypes) => {
   const handleProgressBarSize = computed<string>(() => {
     switch (props.size) {
       case 'xs':
-        return 'spr-h-1';
+        return 'mc-h-1';
       case 'sm':
-        return 'spr-h-2';
+        return 'mc-h-2';
       case 'lg':
-        return 'spr-h-3';
+        return 'mc-h-3';
       default:
-        return 'spr-h-3';
+        return 'mc-h-3';
     }
   });
 
@@ -33,27 +33,27 @@ export const useProgressBar = (props: ProgressBarPropTypes) => {
   const containerClasses = computed<string>(() => {
     switch (props.labelPlacement) {
       case 'top':
-        return 'spr-flex spr-flex-col-reverse spr-gap-size-spacing-5xs';
+        return 'mc-flex mc-flex-col-reverse mc-gap-size-spacing-5xs';
       case 'top-start':
-        return 'spr-flex spr-flex-col-reverse spr-gap-size-spacing-5xs';
+        return 'mc-flex mc-flex-col-reverse mc-gap-size-spacing-5xs';
       case 'top-center':
-        return 'spr-flex spr-flex-col-reverse spr-gap-size-spacing-5xs spr-items-center';
+        return 'mc-flex mc-flex-col-reverse mc-gap-size-spacing-5xs mc-items-center';
       case 'top-end':
-        return 'spr-flex spr-flex-col-reverse spr-gap-size-spacing-5xs spr-items-end';
+        return 'mc-flex mc-flex-col-reverse mc-gap-size-spacing-5xs mc-items-end';
       case 'bottom':
-        return 'spr-flex spr-flex-col spr-gap-size-spacing-5xs';
+        return 'mc-flex mc-flex-col mc-gap-size-spacing-5xs';
       case 'bottom-start':
-        return 'spr-flex spr-flex-col spr-gap-size-spacing-5xs';
+        return 'mc-flex mc-flex-col mc-gap-size-spacing-5xs';
       case 'bottom-center':
-        return 'spr-flex spr-flex-col spr-gap-size-spacing-5xs spr-items-center';
+        return 'mc-flex mc-flex-col mc-gap-size-spacing-5xs mc-items-center';
       case 'bottom-end':
-        return 'spr-flex spr-flex-col spr-gap-size-spacing-5xs spr-items-end';
+        return 'mc-flex mc-flex-col mc-gap-size-spacing-5xs mc-items-end';
       case 'left':
-        return 'spr-flex spr-flex-row spr-gap-size-spacing-5xs spr-items-center';
+        return 'mc-flex mc-flex-row mc-gap-size-spacing-5xs mc-items-center';
       case 'right':
-        return 'spr-flex spr-flex-row-reverse spr-gap-size-spacing-5xs spr-items-center';
+        return 'mc-flex mc-flex-row-reverse mc-gap-size-spacing-5xs mc-items-center';
       default:
-        return 'spr-flex spr-flex-col spr-gap-size-spacing-5xs';
+        return 'mc-flex mc-flex-col mc-gap-size-spacing-5xs';
     }
   });
 

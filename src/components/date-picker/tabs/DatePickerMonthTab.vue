@@ -1,19 +1,18 @@
 <template>
-  <div class="spr-grid spr-grid-cols-4 spr-gap-2">
+  <div class="mc-grid mc-grid-cols-4 mc-gap-2">
     <div
       v-for="(month, monthIndex) in monthsList"
       :key="monthIndex"
       :class="[
-        'spr-subheading-xs spr-relative spr-flex spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-lg spr-p-4',
-        'spr-border spr-border-solid',
-        'spr-transition spr-duration-150 spr-ease-in-out',
-        'active:spr-scale-95',
+        'mc-subheading-xs mc-relative mc-flex mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-lg mc-p-4',
+        'mc-border mc-border-solid',
+        'mc-transition mc-duration-150 mc-ease-in-out',
+        'active:mc-scale-95',
         {
-          'spr-text-color-brand-base': month.monthValue === currentMonth,
-          'spr-border-color-weak hover:spr-background-color-hover active:spr-background-color-pressed':
+          'mc-text-color-brand-base': month.monthValue === currentMonth,
+          'mc-border-color-weak hover:mc-background-color-hover active:mc-background-color-pressed':
             month.monthValue !== selectedMonth,
-          'spr-border-color-brand-base spr-background-color-single-active':
-            month.monthValue === selectedMonth,
+          'mc-border-color-brand-base mc-background-color-single-active': month.monthValue === selectedMonth,
         },
       ]"
       @click="handleMonthClick(month)"
@@ -22,7 +21,7 @@
 
       <div
         v-if="month.monthValue === currentMonth"
-        class="spr-background-color-brand-base spr-absolute spr-bottom-2 spr-m-auto spr-h-1 spr-w-1 spr-rounded-full"
+        class="mc-background-color-brand-base mc-absolute mc-bottom-2 mc-m-auto mc-h-1 mc-w-1 mc-rounded-full"
       ></div>
     </div>
   </div>
@@ -49,7 +48,7 @@ const monthsList = computed(() =>
     text: dayjs().month(i).format('MMM'),
     fullText: dayjs().month(i).format('MMMM'),
     monthValue: i,
-  }))
+  })),
 );
 
 const currentMonth = computed(() => dayjs().month());

@@ -15,8 +15,8 @@ export const useTimePicker = (props: TimePickerPropTypes, emit: SetupContext<Tim
   const uniqueId = ref<string>(`time-picker-${dayjs().valueOf()}-${Math.floor(Math.random() * 1000)}`);
 
   const optionClasses: ComputedRef<string> = computed(() => {
-    return classNames('spr-max-h-[300px] spr-p-size-spacing-3xs spr-overflow-y-auto', {
-      'spr-w-[240px]': !fullWidth.value,
+    return classNames('mc-max-h-[300px] mc-p-size-spacing-3xs mc-overflow-y-auto', {
+      'mc-w-[240px]': !fullWidth.value,
     });
   });
 

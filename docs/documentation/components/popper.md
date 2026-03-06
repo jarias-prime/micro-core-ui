@@ -35,8 +35,8 @@ Popper provides a utility for positioning floating elements relative to referenc
 
 A basic popper requires a trigger element and content to display.
 
-<div class="spr-w-fit">
-  <spr-popper
+<div class="mc-w-fit">
+  <mc-popper
     id="basic-example"
     distance="4"
     placement="bottom"
@@ -45,32 +45,32 @@ A basic popper requires a trigger element and content to display.
     :auto-hide="false"
     :delay="0"
   >
-    <spr-button>Click for Menu</spr-button>
+    <mc-button>Click for Menu</mc-button>
     <template #content>
-      <div class="spr-p-4 spr-bg-white spr-shadow-lg spr-rounded-lg">
-        <h3 class="spr-text-lg spr-font-medium spr-mb-2">Menu Options</h3>
-        <ul class="spr-space-y-2">
-          <li class="spr-flex spr-items-center spr-gap-2 spr-p-2 spr-hover:bg-gray-50 spr-rounded">
-            <Icon icon="ph:user" class="spr-w-5 spr-h-5" />
+      <div class="mc-p-4 mc-bg-white mc-shadow-lg mc-rounded-lg">
+        <h3 class="mc-text-lg mc-font-medium mc-mb-2">Menu Options</h3>
+        <ul class="mc-space-y-2">
+          <li class="mc-flex mc-items-center mc-gap-2 mc-p-2 mc-hover:bg-gray-50 mc-rounded">
+            <Icon icon="ph:user" class="mc-w-5 mc-h-5" />
             <span>Profile</span>
           </li>
-          <li class="spr-flex spr-items-center spr-gap-2 spr-p-2 spr-hover:bg-gray-50 spr-rounded">
-            <Icon icon="ph:gear" class="spr-w-5 spr-h-5" />
+          <li class="mc-flex mc-items-center mc-gap-2 mc-p-2 mc-hover:bg-gray-50 mc-rounded">
+            <Icon icon="ph:gear" class="mc-w-5 mc-h-5" />
             <span>Settings</span>
           </li>
-          <li class="spr-flex spr-items-center spr-gap-2 spr-p-2 spr-hover:bg-gray-50 spr-rounded">
-            <Icon icon="ph:sign-out" class="spr-w-5 spr-h-5" />
+          <li class="mc-flex mc-items-center mc-gap-2 mc-p-2 mc-hover:bg-gray-50 mc-rounded">
+            <Icon icon="ph:sign-out" class="mc-w-5 mc-h-5" />
             <span>Logout</span>
           </li>
         </ul>
       </div>
     </template>
-  </spr-popper>
+  </mc-popper>
 </div>
 
 ```vue
 <template>
-  <spr-popper
+  <mc-popper
     id="basic-example"
     distance="4"
     placement="bottom"
@@ -79,27 +79,27 @@ A basic popper requires a trigger element and content to display.
     :auto-hide="false"
     :delay="0"
   >
-    <spr-button>Click for Menu</spr-button>
+    <mc-button>Click for Menu</mc-button>
     <template #content>
-      <div class="spr-bg-white spr-rounded-lg spr-p-4 spr-shadow-lg">
-        <h3 class="spr-mb-2 spr-text-lg spr-font-medium">Menu Options</h3>
-        <ul class="spr-space-y-2">
-          <li class="spr-hover:bg-gray-50 spr-flex spr-items-center spr-gap-2 spr-rounded spr-p-2">
-            <Icon icon="ph:user" class="spr-h-5 spr-w-5" />
+      <div class="mc-bg-white mc-rounded-lg mc-p-4 mc-shadow-lg">
+        <h3 class="mc-mb-2 mc-text-lg mc-font-medium">Menu Options</h3>
+        <ul class="mc-space-y-2">
+          <li class="mc-hover:bg-gray-50 mc-flex mc-items-center mc-gap-2 mc-rounded mc-p-2">
+            <Icon icon="ph:user" class="mc-h-5 mc-w-5" />
             <span>Profile</span>
           </li>
-          <li class="spr-hover:bg-gray-50 spr-flex spr-items-center spr-gap-2 spr-rounded spr-p-2">
-            <Icon icon="ph:gear" class="spr-h-5 spr-w-5" />
+          <li class="mc-hover:bg-gray-50 mc-flex mc-items-center mc-gap-2 mc-rounded mc-p-2">
+            <Icon icon="ph:gear" class="mc-h-5 mc-w-5" />
             <span>Settings</span>
           </li>
-          <li class="spr-hover:bg-gray-50 spr-flex spr-items-center spr-gap-2 spr-rounded spr-p-2">
-            <Icon icon="ph:sign-out" class="spr-h-5 spr-w-5" />
+          <li class="mc-hover:bg-gray-50 mc-flex mc-items-center mc-gap-2 mc-rounded mc-p-2">
+            <Icon icon="ph:sign-out" class="mc-h-5 mc-w-5" />
             <span>Logout</span>
           </li>
         </ul>
       </div>
     </template>
-  </spr-popper>
+  </mc-popper>
 </template>
 
 <script setup>
@@ -111,85 +111,85 @@ import { Icon } from '@iconify/vue';
 
 The popper can be positioned in different locations relative to the trigger element.
 
-<div class="spr-w-fit spr-grid spr-grid-cols-4 spr-gap-4 spr-p-8">
+<div class="mc-w-fit mc-grid mc-grid-cols-4 mc-gap-4 mc-p-8">
 
-  <spr-popper id="top-popper" placement="top" distance="4">
-    <spr-button tone="information">
+  <mc-popper id="top-popper" placement="top" distance="4">
+    <mc-button tone="information">
       <template #prefix-icon>
         <Icon icon="ph:arrow-up" />
       </template>
       Top Popper
-    </spr-button>
+    </mc-button>
     <template #content>
-      <div class="spr-p-3 spr-bg-white spr-shadow-lg spr-rounded-lg spr-flex spr-items-center spr-gap-2">
-        <Icon icon="ph:info" class="spr-text-blue-500 spr-w-5 spr-h-5" />
+      <div class="mc-p-3 mc-bg-white mc-shadow-lg mc-rounded-lg mc-flex mc-items-center mc-gap-2">
+        <Icon icon="ph:info" class="mc-text-blue-500 mc-w-5 mc-h-5" />
         <span>Top positioned content</span>
       </div>
     </template>
-  </spr-popper>
+  </mc-popper>
 
-  <spr-popper id="right-popper" placement="right" distance="4">
-    <spr-button tone="success">
+  <mc-popper id="right-popper" placement="right" distance="4">
+    <mc-button tone="success">
       <template #prefix-icon>
         <Icon icon="ph:arrow-right" />
       </template>
       Right Popper
-    </spr-button>
+    </mc-button>
     <template #content>
-      <div class="spr-p-3 spr-bg-white spr-shadow-lg spr-rounded-lg spr-flex spr-items-center spr-gap-2">
-        <Icon icon="ph:check-circle" class="spr-text-green-500 spr-w-5 spr-h-5" />
+      <div class="mc-p-3 mc-bg-white mc-shadow-lg mc-rounded-lg mc-flex mc-items-center mc-gap-2">
+        <Icon icon="ph:check-circle" class="mc-text-green-500 mc-w-5 mc-h-5" />
         <span>Right positioned content</span>
       </div>
     </template>
-  </spr-popper>
+  </mc-popper>
   
-  <spr-popper id="bottom-popper" placement="bottom" distance="4">
-    <spr-button tone="danger">
+  <mc-popper id="bottom-popper" placement="bottom" distance="4">
+    <mc-button tone="danger">
       <template #prefix-icon>
         <Icon icon="ph:arrow-down" />
       </template>
       Bottom Popper
-    </spr-button>
+    </mc-button>
     <template #content>
-      <div class="spr-p-3 spr-bg-white spr-shadow-lg spr-rounded-lg spr-flex spr-items-center spr-gap-2">
-        <Icon icon="ph:warning" class="spr-text-red-500 spr-w-5 spr-h-5" />
+      <div class="mc-p-3 mc-bg-white mc-shadow-lg mc-rounded-lg mc-flex mc-items-center mc-gap-2">
+        <Icon icon="ph:warning" class="mc-text-red-500 mc-w-5 mc-h-5" />
         <span>Bottom positioned content</span>
       </div>
     </template>
-  </spr-popper>
+  </mc-popper>
   
-  <spr-popper id="left-popper" placement="left" distance="4">
-    <spr-button tone="neutral">
+  <mc-popper id="left-popper" placement="left" distance="4">
+    <mc-button tone="neutral">
       <template #prefix-icon>
         <Icon icon="ph:arrow-left" />
       </template>
       Left Popper
-    </spr-button>
+    </mc-button>
     <template #content>
-      <div class="spr-p-3 spr-bg-white spr-shadow-lg spr-rounded-lg spr-flex spr-items-center spr-gap-2">
-        <Icon icon="ph:bell" class="spr-text-gray-500 spr-w-5 spr-h-5" />
+      <div class="mc-p-3 mc-bg-white mc-shadow-lg mc-rounded-lg mc-flex mc-items-center mc-gap-2">
+        <Icon icon="ph:bell" class="mc-text-gray-500 mc-w-5 mc-h-5" />
         <span>Left positioned content</span>
       </div>
     </template>
-  </spr-popper>
+  </mc-popper>
 </div>
 
 ```vue
 <template>
-  <spr-popper id="top-popper" placement="top">
-    <spr-button tone="information">
+  <mc-popper id="top-popper" placement="top">
+    <mc-button tone="information">
       <template #prefix-icon>
         <Icon icon="ph:arrow-up" />
       </template>
       Top Popper
-    </spr-button>
+    </mc-button>
     <template #content>
-      <div class="spr-bg-white spr-flex spr-items-center spr-gap-2 spr-rounded-lg spr-p-3 spr-shadow-lg">
-        <Icon icon="ph:info" class="spr-h-5 spr-w-5 spr-text-blue-500" />
+      <div class="mc-bg-white mc-flex mc-items-center mc-gap-2 mc-rounded-lg mc-p-3 mc-shadow-lg">
+        <Icon icon="ph:info" class="mc-h-5 mc-w-5 mc-text-blue-500" />
         <span>Top positioned content</span>
       </div>
     </template>
-  </spr-popper>
+  </mc-popper>
 
   <!-- Similar for right, bottom, and left -->
 </template>
@@ -290,7 +290,6 @@ import { Icon } from '@iconify/vue';
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
-import SprPopper from "@/components/popper/popper.vue";
-import SprButton from "@/components/button/button.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McPopper from "@/components/popper/popper.vue";
+import McButton from "@/components/button/button.vue";
 </script>

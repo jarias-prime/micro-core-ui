@@ -14,15 +14,15 @@ export const useButtonDropdown = (
   const selectedMenu = useVModel(props, 'modelValue', emits);
 
   const buttonDropdownClasses = computed(() => {
-    const mainButtonClasses = classNames('spr-rounded-r-none spr-border-r', {
-      '!spr-border-solid spr-border-l-0 spr-border-t-0 spr-border-b-0': disabled.value && variant.value !== 'secondary',
-      'spr-border-r-kangkong-800': tone.value === 'success' && !disabled.value,
-      'spr-border-r-mushroom-200': tone.value !== 'success' || (tone.value === 'success' && disabled.value),
+    const mainButtonClasses = classNames('mc-rounded-r-none mc-border-r', {
+      '!mc-border-solid mc-border-l-0 mc-border-t-0 mc-border-b-0': disabled.value && variant.value !== 'secondary',
+      'mc-border-r-kangkong-800': tone.value === 'success' && !disabled.value,
+      'mc-border-r-mushroom-200': tone.value !== 'success' || (tone.value === 'success' && disabled.value),
     });
 
-    const dropdownButtonClasses = classNames('spr-rounded-l-none', {
-      'spr-border-solid spr-border-l-0': variant.value === 'secondary',
-      'spr-border-l-transparent': variant.value !== 'secondary',
+    const dropdownButtonClasses = classNames('mc-rounded-l-none', {
+      'mc-border-solid mc-border-l-0': variant.value === 'secondary',
+      'mc-border-l-transparent': variant.value !== 'secondary',
     });
 
     return { mainButtonClasses, dropdownButtonClasses };

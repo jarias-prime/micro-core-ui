@@ -21,32 +21,32 @@ The `Calendar` component is a comprehensive and customizable weekly calendar des
 
 ### Basic Example
 
-<div class="spr-text-base">
+<div class="mc-text-base">
   <div v-if="searchEmployee">
-  <span class="spr-font-medium">Search Employee:</span>
+  <span class="mc-font-medium">Search Employee:</span>
     {{searchEmployee}}
   </div>
   <div v-if="selectedCell.employeeId">
-  <span class="spr-font-medium">Selected Cell: </span>
+  <span class="mc-font-medium">Selected Cell: </span>
   {{selectedCell}}
   </div>
   <div v-if="selectedCompany">
-  <span class="spr-font-medium">Selected Company:</span>
+  <span class="mc-font-medium">Selected Company:</span>
     {{selectedCompany}}
   </div>
   <div v-if="selectedDepartment">
-  <span class="spr-font-medium">Selected Department:</span>
+  <span class="mc-font-medium">Selected Department:</span>
     {{selectedDepartment}}
   </div>
   <div v-if="selectedBranch">
-  <span class="spr-font-medium">Selected Branch:</span>
+  <span class="mc-font-medium">Selected Branch:</span>
     {{selectedBranch}}
   </div>
 </div>
 
-<div class="spr-overflow-x-auto">
+<div class="mc-overflow-x-auto">
   <div>
-    <SprCalendar
+    <McCalendar
       v-model:search="searchEmployee"
       v-model:selected-cell="selectedCell"
       v-model:selected-company="selectedCompany"
@@ -59,7 +59,7 @@ The `Calendar` component is a comprehensive and customizable weekly calendar des
       :branch-options="branchOptions"
     >
       <template #custom="{ details }">
-        <spr-calendar-cell
+        <mc-calendar-cell
           :view-only="false"
           custom-border-size="1"
           custom-color="#FFFFFF"
@@ -68,19 +68,19 @@ The `Calendar` component is a comprehensive and customizable weekly calendar des
             onCellClick({ employeeId: employee.id, date: formatDate(date, dateFormat), shift: null })
           "
         >
-          <div class="spr-flex spr-w-full spr-items-center spr-justify-center spr-gap-size-spacing-3xs">
+          <div class="mc-flex mc-w-full mc-items-center mc-justify-center mc-gap-size-spacing-3xs">
             <Icon icon="ph:plus" />
-            <div class="spr-label-xs-medium">Create</div>
+            <div class="mc-label-xs-medium">Create</div>
           </div>
-        </spr-calendar-cell>
+        </mc-calendar-cell>
       </template>
-    </SprCalendar>
+    </McCalendar>
   </div>
 </div>
 
 ```vue
 <template>
-  <SprCalendar
+  <McCalendar
     v-model:search="searchEmployee"
     v-model:selected-cell="selectedCell"
     v-model:selected-company="selectedCompany"
@@ -95,7 +95,7 @@ The `Calendar` component is a comprehensive and customizable weekly calendar des
 </template>
 
 <script setup lang="ts">
-import SprCalendar from '@/components/calendar/calendar.vue';
+import McCalendar from '@/components/calendar/calendar.vue';
 import { ref } from 'vue';
 
 const initialDate = new Date();
@@ -211,7 +211,7 @@ Example of handling infinite scroll:
 
 ```vue
 <template>
-  <SprCalendar @load-more="handleLoadMore" :employees="employees" :loading="isLoading" />
+  <McCalendar @load-more="handleLoadMore" :employees="employees" :loading="isLoading" />
 </template>
 
 <script setup>
@@ -381,7 +381,7 @@ const handleLoadMore = async () => {
     </tr>
     <tr>
       <td>empty-state</td>
-      <td>Slot for customizing the empty state shown when there are no employees to display. By default, uses the SprEmptyState component.</td>
+      <td>Slot for customizing the empty state shown when there are no employees to display. By default, uses the McEmptyState component.</td>
       <td>
         <pre><code>&lt;template #empty-state&gt;
   &lt;div&gt;No employees found&lt;/div&gt;
@@ -391,7 +391,7 @@ const handleLoadMore = async () => {
     </tr>
     <tr>
       <td>copy</td>
-      <td>Slot for customizing the copy action shown when there are no employees to display. By default, uses the SprCopy component.</td>
+      <td>Slot for customizing the copy action shown when there are no employees to display. By default, uses the McCopy component.</td>
       <td>
         <pre><code>&lt;template #copy="{ copy }"&gt;
   &lt;div&gt;No employees found&lt;/div&gt;
@@ -431,9 +431,8 @@ const handleLoadMore = async () => {
 </table>
 
 <script setup lang="ts">
-import SprCalendar from '@/components/calendar/calendar.vue';
-import SprLogo from "@/components/logo/logo.vue";
-import SprCalendarCell from '@/components/calendar-cell/calendar-cell.vue';
+import McCalendar from '@/components/calendar/calendar.vue';
+import McCalendarCell from '@/components/calendar-cell/calendar-cell.vue';
 import { ref } from 'vue';
 
 const initialDate = new Date();

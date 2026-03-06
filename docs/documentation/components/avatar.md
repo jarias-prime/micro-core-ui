@@ -10,38 +10,38 @@ The Avatar component is a versatile and commonly used element in user interfaces
 
 ## Basic Usage
 
-<spr-avatar />
+<mc-avatar />
 
 ```vue
 <template>
-  <spr-avatar />
+  <mc-avatar />
 </template>
 ```
 
 ## Notification
 
-<spr-avatar :notification="true" />
+<mc-avatar :notification="true" />
 
 ```vue
 <template>
-  <spr-avatar :notification="true" />
+  <mc-avatar :notification="true" />
 </template>
 ```
 
 ## Badge
 
-<spr-avatar :badge="true" />
+<mc-avatar :badge="true" />
 
 ```vue
 <template>
-  <spr-avatar :badge="true" />
+  <mc-avatar :badge="true" />
 </template>
 ```
 
 ## Image
 
 <div>
-  <spr-avatar 
+  <mc-avatar 
     variant="image" 
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" 
     :notification="true" 
@@ -52,7 +52,7 @@ The Avatar component is a versatile and commonly used element in user interfaces
 
 ```vue
 <template>
-  <spr-avatar
+  <mc-avatar
     variant="image"
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
     :notification="true"
@@ -66,50 +66,50 @@ The Avatar component is a versatile and commonly used element in user interfaces
 
 avatar component has 7 different sizes. You can use the `size` prop to set the size of the avatar. The default size is `2xl`. The available sizes are `2xl`, `xl`, `lg`, `md`, `sm`, `xs`, `2xs`.
 
-<div class="spr-space-x-3 spr-flex">
-  <spr-avatar 
+<div class="mc-space-x-3 mc-flex">
+  <mc-avatar 
     variant="image" 
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" 
     :notification="true" 
     :badge="true" 
     size="2xl" 
   />
-  <spr-avatar 
+  <mc-avatar 
     variant="image" 
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" 
     :notification="true" 
     :badge="true" 
     size="xl" 
   />
-  <spr-avatar 
+  <mc-avatar 
     variant="image" 
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" 
     :notification="true" 
     :badge="true" 
     size="lg" 
   />
-  <spr-avatar 
+  <mc-avatar 
     variant="image" 
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" 
     :notification="true" 
     :badge="true" 
     size="md" 
   />
-  <spr-avatar 
+  <mc-avatar 
     variant="image" 
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" 
     :notification="true" 
     :badge="true" 
     size="sm" 
   />
-  <spr-avatar 
+  <mc-avatar 
     variant="image" 
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" 
     :notification="true" 
     :badge="true" 
     size="xs" 
   />
-  <spr-avatar 
+  <mc-avatar 
     variant="image" 
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" 
     :notification="true" 
@@ -120,7 +120,7 @@ avatar component has 7 different sizes. You can use the `size` prop to set the s
 
 ```vue
 <template>
-  <spr-avatar
+  <mc-avatar
     variant="image"
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
     :notification="true"
@@ -128,7 +128,7 @@ avatar component has 7 different sizes. You can use the `size` prop to set the s
     size="2xl"
   />
 
-  <spr-avatar
+  <mc-avatar
     variant="image"
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
     :notification="true"
@@ -136,7 +136,7 @@ avatar component has 7 different sizes. You can use the `size` prop to set the s
     size="xl"
   />
 
-  <spr-avatar
+  <mc-avatar
     variant="image"
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
     :notification="true"
@@ -144,7 +144,7 @@ avatar component has 7 different sizes. You can use the `size` prop to set the s
     size="lg"
   />
 
-  <spr-avatar
+  <mc-avatar
     variant="image"
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
     :notification="true"
@@ -152,7 +152,7 @@ avatar component has 7 different sizes. You can use the `size` prop to set the s
     size="md"
   />
 
-  <spr-avatar
+  <mc-avatar
     variant="image"
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
     :notification="true"
@@ -160,7 +160,7 @@ avatar component has 7 different sizes. You can use the `size` prop to set the s
     size="sm"
   />
 
-  <spr-avatar
+  <mc-avatar
     variant="image"
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
     :notification="true"
@@ -168,7 +168,7 @@ avatar component has 7 different sizes. You can use the `size` prop to set the s
     size="xs"
   />
 
-  <spr-avatar
+  <mc-avatar
     variant="image"
     src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
     :notification="true"
@@ -180,130 +180,130 @@ avatar component has 7 different sizes. You can use the `size` prop to set the s
 
 ## Variant
 
-<div class="spr-grid spr-gap-4">
-  <div class="spr-space-x-3 spr-flex">
-    <spr-avatar  initial="Juan Dela Cruz" size="2xl" />
-    <spr-avatar  initial="John Jay Joe" size="xl" />
-    <spr-avatar  initial="Anthony" size="lg" />
-    <spr-avatar  initial="Juan Dela Cruz" size="md" />
-    <spr-avatar  initial="Juan Dela Cruz" size="sm" />
-    <spr-avatar  initial="Juan Dela Cruz" size="xs" />
-    <spr-avatar  initial="Juan Dela Cruz" size="2xs" />
+<div class="mc-grid mc-gap-4">
+  <div class="mc-space-x-3 mc-flex">
+    <mc-avatar  initial="Juan Dela Cruz" size="2xl" />
+    <mc-avatar  initial="John Jay Joe" size="xl" />
+    <mc-avatar  initial="Anthony" size="lg" />
+    <mc-avatar  initial="Juan Dela Cruz" size="md" />
+    <mc-avatar  initial="Juan Dela Cruz" size="sm" />
+    <mc-avatar  initial="Juan Dela Cruz" size="xs" />
+    <mc-avatar  initial="Juan Dela Cruz" size="2xs" />
   </div>
 
-  <div class="spr-space-x-3 spr-flex">
-    <spr-avatar variant="count" count="10" color="secondary" size="2xl" />
-    <spr-avatar variant="count" count="2"  color="secondary" size="xl" />
-    <spr-avatar variant="count" count="3"  color="secondary" size="lg" />
-    <spr-avatar variant="count" count="4"  color="secondary" size="md" />
-    <spr-avatar variant="count" count="5"  color="secondary" size="sm" />
-    <spr-avatar variant="count" count="6"  color="secondary" size="xs" />
-    <spr-avatar variant="count" count="7"  color="secondary" size="2xs" />
+  <div class="mc-space-x-3 mc-flex">
+    <mc-avatar variant="count" count="10" color="secondary" size="2xl" />
+    <mc-avatar variant="count" count="2"  color="secondary" size="xl" />
+    <mc-avatar variant="count" count="3"  color="secondary" size="lg" />
+    <mc-avatar variant="count" count="4"  color="secondary" size="md" />
+    <mc-avatar variant="count" count="5"  color="secondary" size="sm" />
+    <mc-avatar variant="count" count="6"  color="secondary" size="xs" />
+    <mc-avatar variant="count" count="7"  color="secondary" size="2xs" />
   </div>
 
-  <div class="spr-space-x-3 spr-flex">
-    <spr-avatar variant="user-group" size="2xl" />
-    <spr-avatar variant="user-group" size="xl" />
-    <spr-avatar variant="user-group" size="lg" />
-    <spr-avatar variant="user-group" size="md" />
-    <spr-avatar variant="user-group" size="sm" />
-    <spr-avatar variant="user-group" size="xs" />
-    <spr-avatar variant="user-group" size="2xs" />
+  <div class="mc-space-x-3 mc-flex">
+    <mc-avatar variant="user-group" size="2xl" />
+    <mc-avatar variant="user-group" size="xl" />
+    <mc-avatar variant="user-group" size="lg" />
+    <mc-avatar variant="user-group" size="md" />
+    <mc-avatar variant="user-group" size="sm" />
+    <mc-avatar variant="user-group" size="xs" />
+    <mc-avatar variant="user-group" size="2xs" />
   </div>
 
-  <div class="spr-space-x-3 spr-flex">
-    <spr-avatar variant="user"  size="2xl" />
-    <spr-avatar variant="user"  size="xl" />
-    <spr-avatar variant="user"  size="lg" />
-    <spr-avatar variant="user"  size="md" />
-    <spr-avatar variant="user"  size="sm" />
-    <spr-avatar variant="user"  size="xs" />
-    <spr-avatar variant="user"  size="2xs" />
+  <div class="mc-space-x-3 mc-flex">
+    <mc-avatar variant="user"  size="2xl" />
+    <mc-avatar variant="user"  size="xl" />
+    <mc-avatar variant="user"  size="lg" />
+    <mc-avatar variant="user"  size="md" />
+    <mc-avatar variant="user"  size="sm" />
+    <mc-avatar variant="user"  size="xs" />
+    <mc-avatar variant="user"  size="2xs" />
   </div>
 
-  <div class="spr-space-x-3 spr-flex">
-    <spr-avatar variant="client" size="2xl" />
-    <spr-avatar variant="client" size="xl" />
-    <spr-avatar variant="client" size="lg" />
-    <spr-avatar variant="client" size="md" />
-    <spr-avatar variant="client" size="sm" />
-    <spr-avatar variant="client" size="xs" />
-    <spr-avatar variant="client" size="2xs" />
+  <div class="mc-space-x-3 mc-flex">
+    <mc-avatar variant="client" size="2xl" />
+    <mc-avatar variant="client" size="xl" />
+    <mc-avatar variant="client" size="lg" />
+    <mc-avatar variant="client" size="md" />
+    <mc-avatar variant="client" size="sm" />
+    <mc-avatar variant="client" size="xs" />
+    <mc-avatar variant="client" size="2xs" />
   </div>
 
-  <div class="spr-space-x-3 spr-flex">
-    <spr-avatar variant="users-four" size="2xl" />
-    <spr-avatar variant="user-sound" size="xl" />
-    <spr-avatar variant="airplane" size="lg" />
-    <spr-avatar variant="android-logo" size="md" />
-    <spr-avatar variant="arrow-down" size="sm" />
-    <spr-avatar variant="arrow-up" size="xs" />
-    <spr-avatar variant="arrow-left" size="2xs" />
+  <div class="mc-space-x-3 mc-flex">
+    <mc-avatar variant="users-four" size="2xl" />
+    <mc-avatar variant="user-sound" size="xl" />
+    <mc-avatar variant="airplane" size="lg" />
+    <mc-avatar variant="android-logo" size="md" />
+    <mc-avatar variant="arrow-down" size="sm" />
+    <mc-avatar variant="arrow-up" size="xs" />
+    <mc-avatar variant="arrow-left" size="2xs" />
   </div>
 </div>
 
 ```vue
 <template>
-  <div class="spr-grid spr-gap-4">
-    <div class="spr-space-x-3">
-      <spr-avatar initial="Juan Dela Cruz" size="2xl" />
-      <spr-avatar initial="John Jay Joe" size="xl" />
-      <spr-avatar initial="Anthony" size="lg" />
-      <spr-avatar initial="Juan Dela Cruz" size="md" />
-      <spr-avatar initial="Juan Dela Cruz" size="sm" />
-      <spr-avatar initial="Juan Dela Cruz" size="xs" />
-      <spr-avatar initial="Juan Dela Cruz" size="2xs" />
+  <div class="mc-grid mc-gap-4">
+    <div class="mc-space-x-3">
+      <mc-avatar initial="Juan Dela Cruz" size="2xl" />
+      <mc-avatar initial="John Jay Joe" size="xl" />
+      <mc-avatar initial="Anthony" size="lg" />
+      <mc-avatar initial="Juan Dela Cruz" size="md" />
+      <mc-avatar initial="Juan Dela Cruz" size="sm" />
+      <mc-avatar initial="Juan Dela Cruz" size="xs" />
+      <mc-avatar initial="Juan Dela Cruz" size="2xs" />
     </div>
 
-    <div class="spr-space-x-3">
-      <spr-avatar variant="count" count="10" color="secondary" size="2xl" />
-      <spr-avatar variant="count" count="2" color="secondary" size="xl" />
-      <spr-avatar variant="count" count="3" color="secondary" size="lg" />
-      <spr-avatar variant="count" count="4" color="secondary" size="md" />
-      <spr-avatar variant="count" count="5" color="secondary" size="sm" />
-      <spr-avatar variant="count" count="6" color="secondary" size="xs" />
-      <spr-avatar variant="count" count="7" color="secondary" size="2xs" />
+    <div class="mc-space-x-3">
+      <mc-avatar variant="count" count="10" color="secondary" size="2xl" />
+      <mc-avatar variant="count" count="2" color="secondary" size="xl" />
+      <mc-avatar variant="count" count="3" color="secondary" size="lg" />
+      <mc-avatar variant="count" count="4" color="secondary" size="md" />
+      <mc-avatar variant="count" count="5" color="secondary" size="sm" />
+      <mc-avatar variant="count" count="6" color="secondary" size="xs" />
+      <mc-avatar variant="count" count="7" color="secondary" size="2xs" />
     </div>
 
-    <div class="spr-space-x-3">
-      <spr-avatar variant="user-group" size="2xl" />
-      <spr-avatar variant="user-group" size="xl" />
-      <spr-avatar variant="user-group" size="lg" />
-      <spr-avatar variant="user-group" size="md" />
-      <spr-avatar variant="user-group" size="sm" />
-      <spr-avatar variant="user-group" size="xs" />
-      <spr-avatar variant="user-group" size="2xs" />
+    <div class="mc-space-x-3">
+      <mc-avatar variant="user-group" size="2xl" />
+      <mc-avatar variant="user-group" size="xl" />
+      <mc-avatar variant="user-group" size="lg" />
+      <mc-avatar variant="user-group" size="md" />
+      <mc-avatar variant="user-group" size="sm" />
+      <mc-avatar variant="user-group" size="xs" />
+      <mc-avatar variant="user-group" size="2xs" />
     </div>
 
-    <div class="spr-space-x-3">
-      <spr-avatar variant="user" size="2xl" />
-      <spr-avatar variant="user" size="xl" />
-      <spr-avatar variant="user" size="lg" />
-      <spr-avatar variant="user" size="md" />
-      <spr-avatar variant="user" size="sm" />
-      <spr-avatar variant="user" size="xs" />
-      <spr-avatar variant="user" size="2xs" />
+    <div class="mc-space-x-3">
+      <mc-avatar variant="user" size="2xl" />
+      <mc-avatar variant="user" size="xl" />
+      <mc-avatar variant="user" size="lg" />
+      <mc-avatar variant="user" size="md" />
+      <mc-avatar variant="user" size="sm" />
+      <mc-avatar variant="user" size="xs" />
+      <mc-avatar variant="user" size="2xs" />
     </div>
 
-    <div class="spr-space-x-3">
-      <spr-avatar variant="client" size="2xl" />
-      <spr-avatar variant="client" size="xl" />
-      <spr-avatar variant="client" size="lg" />
-      <spr-avatar variant="client" size="md" />
-      <spr-avatar variant="client" size="sm" />
-      <spr-avatar variant="client" size="xs" />
-      <spr-avatar variant="client" size="2xs" />
+    <div class="mc-space-x-3">
+      <mc-avatar variant="client" size="2xl" />
+      <mc-avatar variant="client" size="xl" />
+      <mc-avatar variant="client" size="lg" />
+      <mc-avatar variant="client" size="md" />
+      <mc-avatar variant="client" size="sm" />
+      <mc-avatar variant="client" size="xs" />
+      <mc-avatar variant="client" size="2xs" />
     </div>
 
     //CUSTOM ICONS
-    <div class="spr-space-x-3">
-      <spr-avatar variant="users-four" size="2xl" />
-      <spr-avatar variant="user-sound" size="xl" />
-      <spr-avatar variant="airplane" size="lg" />
-      <spr-avatar variant="android-logo" size="md" />
-      <spr-avatar variant="arrow-down" size="sm" />
-      <spr-avatar variant="arrow-up" size="xs" />
-      <spr-avatar variant="arrow-left" size="2xs" />
+    <div class="mc-space-x-3">
+      <mc-avatar variant="users-four" size="2xl" />
+      <mc-avatar variant="user-sound" size="xl" />
+      <mc-avatar variant="airplane" size="lg" />
+      <mc-avatar variant="android-logo" size="md" />
+      <mc-avatar variant="arrow-down" size="sm" />
+      <mc-avatar variant="arrow-up" size="xs" />
+      <mc-avatar variant="arrow-left" size="2xs" />
     </div>
   </div>
 </template>
@@ -313,125 +313,125 @@ avatar component has 7 different sizes. You can use the `size` prop to set the s
 
 Slot can be used to add custom content to the avatar. note: adjust your custom content to fit the avatar size.
 
-<div class="spr-grid spr-gap-4">
-  <div class="spr-space-x-3 spr-flex">
-    <spr-avatar :notification="true" :badge="true" size="2xl" color="primary">
+<div class="mc-grid mc-gap-4">
+  <div class="mc-space-x-3 mc-flex">
+    <mc-avatar :notification="true" :badge="true" size="2xl" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="xl" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="xl" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="lg" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="lg" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="md" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="md" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="sm" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="sm" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="xs" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="xs" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="2xs" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="2xs" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
+    </mc-avatar>
   </div>
 
-  <div class="spr-space-x-3 spr-flex">
-    <spr-avatar :notification="true" :badge="true" size="2xl">
+  <div class="mc-space-x-3 mc-flex">
+    <mc-avatar :notification="true" :badge="true" size="2xl">
       <img src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" alt="User Avatar" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="xl">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="xl">
       <img src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" alt="User Avatar" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="lg">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="lg">
       <img src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" alt="User Avatar" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="md">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="md">
       <img src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" alt="User Avatar" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="sm">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="sm">
       <img src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" alt="User Avatar" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="xs">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="xs">
       <img src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" alt="User Avatar" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="2xs">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="2xs">
       <img src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg" alt="User Avatar" />
-    </spr-avatar>
+    </mc-avatar>
   </div>
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-avatar :notification="true" :badge="true" size="2xl" color="primary">
+    <mc-avatar :notification="true" :badge="true" size="2xl" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="xl" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="xl" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="lg" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="lg" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="md" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="md" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="sm" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="sm" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="xs" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="xs" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="2xs" color="primary">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="2xs" color="primary">
       <Icon icon="ph:trash" />
-    </spr-avatar>
+    </mc-avatar>
   </div>
 
   <div>
-    <spr-avatar :notification="true" :badge="true" size="2xl">
+    <mc-avatar :notification="true" :badge="true" size="2xl">
       <img
         src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
         alt="User Avatar"
       />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="xl">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="xl">
       <img
         src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
         alt="User Avatar"
       />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="lg">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="lg">
       <img
         src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
         alt="User Avatar"
       />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="md">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="md">
       <img
         src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
         alt="User Avatar"
       />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="sm">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="sm">
       <img
         src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
         alt="User Avatar"
       />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="xs">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="xs">
       <img
         src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
         alt="User Avatar"
       />
-    </spr-avatar>
-    <spr-avatar :notification="true" :badge="true" size="2xs">
+    </mc-avatar>
+    <mc-avatar :notification="true" :badge="true" size="2xs">
       <img
         src="https://iciw.centracdn.net/client/dynamic/images/12917_212b7a319e-13555-001-1-1350x0.jpg"
         alt="User Avatar"
       />
-    </spr-avatar>
+    </mc-avatar>
   </div>
 </template>
 
@@ -442,44 +442,44 @@ import { Icon } from '@iconify/vue';
 
 ## Status
 
-<div class="spr-space-x-3 spr-flex">
-  <spr-avatar variant="initial" status="danger" initial="Matthew"  :badge="true" size="2xl" />
-  <spr-avatar variant="initial" status="disabled" initial="Mark"  :badge="true" size="2xl" />
-  <spr-avatar variant="initial" status="information" initial="John"  :badge="true" size="2xl" />
-  <spr-avatar variant="initial" status="brand" initial="Mary"  :badge="true" size="2xl" />
+<div class="mc-space-x-3 mc-flex">
+  <mc-avatar variant="initial" status="danger" initial="Matthew"  :badge="true" size="2xl" />
+  <mc-avatar variant="initial" status="disabled" initial="Mark"  :badge="true" size="2xl" />
+  <mc-avatar variant="initial" status="information" initial="John"  :badge="true" size="2xl" />
+  <mc-avatar variant="initial" status="brand" initial="Mary"  :badge="true" size="2xl" />
 </div>
 
 ```vue
 <template>
-  <spr-avatar variant="initial" status="danger" initial="Matthew" :badge="true" size="2xl" />
-  <spr-avatar variant="initial" status="disabled" initial="Mark" :badge="true" size="2xl" />
-  <spr-avatar variant="initial" status="information" initial="John" :badge="true" size="2xl" />
-  <spr-avatar variant="initial" status="brand" initial="Mary" :badge="true" size="2xl" />
+  <mc-avatar variant="initial" status="danger" initial="Matthew" :badge="true" size="2xl" />
+  <mc-avatar variant="initial" status="disabled" initial="Mark" :badge="true" size="2xl" />
+  <mc-avatar variant="initial" status="information" initial="John" :badge="true" size="2xl" />
+  <mc-avatar variant="initial" status="brand" initial="Mary" :badge="true" size="2xl" />
 </template>
 ```
 
 ## Loading
 
-<div class="spr-space-x-3 spr-flex">
-  <spr-avatar loading size="2xl" />
-  <spr-avatar loading size="xl" />
-  <spr-avatar loading size="lg"/>
-  <spr-avatar loading size="md"/>
-  <spr-avatar loading size="sm" />
-  <spr-avatar loading size="xs" />
-  <spr-avatar loading size="2xs" />
+<div class="mc-space-x-3 mc-flex">
+  <mc-avatar loading size="2xl" />
+  <mc-avatar loading size="xl" />
+  <mc-avatar loading size="lg"/>
+  <mc-avatar loading size="md"/>
+  <mc-avatar loading size="sm" />
+  <mc-avatar loading size="xs" />
+  <mc-avatar loading size="2xs" />
 </div>
 
 ```vue
 <template>
   <div>
-    <spr-avatar loading size="2xl" />
-    <spr-avatar loading size="xl" />
-    <spr-avatar loading size="lg" />
-    <spr-avatar loading size="md" />
-    <spr-avatar loading size="sm" />
-    <spr-avatar loading size="xs" />
-    <spr-avatar loading size="2xs" />
+    <mc-avatar loading size="2xl" />
+    <mc-avatar loading size="xl" />
+    <mc-avatar loading size="lg" />
+    <mc-avatar loading size="md" />
+    <mc-avatar loading size="sm" />
+    <mc-avatar loading size="xs" />
+    <mc-avatar loading size="2xs" />
   </div>
 </template>
 ```
@@ -658,8 +658,7 @@ import { Icon } from '@iconify/vue';
 </table>
 
 <script lang="ts" setup>
-import SprAvatar from "@/components/avatar/avatar.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McAvatar from "@/components/avatar/avatar.vue";
 
 import { Icon } from '@iconify/vue';
 </script>

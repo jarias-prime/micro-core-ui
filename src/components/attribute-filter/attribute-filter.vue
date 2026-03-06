@@ -22,7 +22,7 @@
   >
     <div @click="handleFilterTrigger">
       <slot>
-        <spr-chips
+        <mc-chips
           :label="props.filterLabel"
           :active="isFilterActive"
           icon="ph:funnel-simple"
@@ -52,28 +52,22 @@
         <slot name="header">
           <div
             id="attribute_filter_header"
-            class="spr-border-color-weak spr-flex spr-items-center spr-justify-between spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid spr-px-size-spacing-xs spr-py-size-spacing-2xs"
+            class="mc-border-color-weak mc-flex mc-items-center mc-justify-between mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid mc-px-size-spacing-xs mc-py-size-spacing-2xs"
           >
-            <span class="spr-text-color-strong spr-text-300 spr-font-medium"> {{ props.headerLabel }} </span>
-            <Icon
-              icon="ph:x"
-              width="20px"
-              height="20px"
-              class="spr-text-color-weak spr-cursor-pointer"
-              @click="hide()"
-            />
+            <span class="mc-text-color-strong mc-text-300 mc-font-medium"> {{ props.headerLabel }} </span>
+            <Icon icon="ph:x" width="20px" height="20px" class="mc-text-color-weak mc-cursor-pointer" @click="hide()" />
           </div>
         </slot>
         <div
           v-if="props.searchable"
           id="attribute_filter_subheader"
-          class="spr-border-color-weak spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid spr-px-size-spacing-xs spr-py-size-spacing-2xs"
+          class="mc-border-color-weak mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid mc-px-size-spacing-xs mc-py-size-spacing-2xs"
         >
-          <spr-input-search
+          <mc-input-search
             v-model="searchModel"
             label=""
             placeholder="Search..."
-            class="!spr-py-0"
+            class="!mc-py-0"
             @focus="isSearchFocused = true"
             @blur="isSearchFocused = false"
           />
@@ -84,10 +78,10 @@
             v-if="!noList"
             id="attribute_filter_body"
             ref="filterDropdownRef"
-            class="spr-max-h-[250px] spr-overflow-y-auto"
+            class="mc-max-h-[250px] mc-overflow-y-auto"
           >
-            <spr-list
-              v-model="selectedFilters"              
+            <mc-list
+              v-model="selectedFilters"
               :menu-list="attributeFilterList"
               :multi-select="props.multiselect"
               @update:model-value="handleOnSelect"
@@ -97,10 +91,10 @@
         <slot name="footer">
           <div
             id="attribute_filter_footer"
-            class="spr-border-color-weak spr-flex spr-items-center spr-justify-end spr-gap-size-spacing-3xs spr-border-x-0 spr-border-b-0 spr-border-t spr-border-solid spr-px-size-spacing-xs spr-py-size-spacing-2xs"
+            class="mc-border-color-weak mc-flex mc-items-center mc-justify-end mc-gap-size-spacing-3xs mc-border-x-0 mc-border-b-0 mc-border-t mc-border-solid mc-px-size-spacing-xs mc-py-size-spacing-2xs"
           >
-            <spr-button variant="secondary" size="medium" @click="isFilterActive = false"> Cancel </spr-button>
-            <spr-button variant="primary" size="medium" tone="success" @click="handleSave"> Save </spr-button>
+            <mc-button variant="secondary" size="medium" @click="isFilterActive = false"> Cancel </mc-button>
+            <mc-button variant="primary" size="medium" tone="success" @click="handleSave"> Save </mc-button>
           </div>
         </slot>
       </div>
@@ -111,11 +105,11 @@
 import { Menu } from 'floating-vue';
 import { attributeFilterEmitTypes, attributeFilterPropTypes } from './attribute-filter';
 import { useAttributeFilter } from './use-attribute-filter';
-import SprChips from '../chips/chips.vue';
+import McChips from '../chips/chips.vue';
 import { Icon } from '@iconify/vue';
-import SprInputSearch from '../input/input-search/input-search.vue';
-import SprList from '../list/list.vue';
-import SprButton from '../button/button.vue';
+import McInputSearch from '../input/input-search/input-search.vue';
+import McList from '../list/list.vue';
+import McButton from '../button/button.vue';
 
 import 'floating-vue/dist/style.css';
 
@@ -133,7 +127,7 @@ const {
   savedFilters,
   handleClosePopper,
   handleShowPopper,
-  handleSave,  
+  handleSave,
   handleOnSelect,
   filterDropdownRef,
   handleClear,

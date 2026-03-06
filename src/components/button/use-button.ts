@@ -17,24 +17,23 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
 
   const buttonClassses: ComputedRef<string> = computed(() => {
     const defaultClasses = classNames(
-      'spr-background-color spr-flex spr-items-center spr-gap-1.5 spr-w-fit spr-min-w-[24px] spr-items-center spr-justify-center spr-rounded-md spr-outline-2 spr-outline-offset-4',
+      'mc-background-color mc-flex mc-items-center mc-gap-1.5 mc-w-fit mc-min-w-[24px] mc-items-center mc-justify-center mc-rounded-md mc-outline-2 mc-outline-offset-4',
       {
-        'spr-w-full': fullwidth.value,
+        'mc-w-full': fullwidth.value,
       },
     );
 
-    const sizeClasses = classNames('spr-font-medium', {
-      'spr-min-w-6 spr-p-1.5 spr-leading-100 spr-font-size-100': !hasIcon.value && size.value === 'small',
-      'spr-min-w-7 spr-p-2 spr-leading-100 spr-font-size-100': !hasIcon.value && size.value === 'medium',
-      'spr-max-h-9 spr-min-w-9 spr-px-2 spr-py-3 spr-leading-300 spr-font-size-200':
-        !hasIcon.value && size.value === 'large',
+    const sizeClasses = classNames('mc-font-medium', {
+      'mc-min-w-6 mc-p-1.5 mc-leading-100 mc-font-size-100': !hasIcon.value && size.value === 'small',
+      'mc-min-w-7 mc-p-2 mc-leading-100 mc-font-size-100': !hasIcon.value && size.value === 'medium',
+      'mc-max-h-9 mc-min-w-9 mc-px-2 mc-py-3 mc-leading-300 mc-font-size-200': !hasIcon.value && size.value === 'large',
 
       // Has Icon
-      'spr-min-w-6 spr-p-1.5 spr-leading-100 spr-font-size-100 [&>svg]:spr-font-size-200':
+      'mc-min-w-6 mc-p-1.5 mc-leading-100 mc-font-size-100 [&>svg]:mc-font-size-200':
         hasIcon.value && size.value === 'small',
-      'spr-min-w-7 spr-p-2 spr-leading-100 spr-font-size-100 [&>svg]:spr-font-size-300':
+      'mc-min-w-7 mc-p-2 mc-leading-100 mc-font-size-100 [&>svg]:mc-font-size-300':
         hasIcon.value && size.value === 'medium',
-      'spr-max-h-9 spr-min-w-9 spr-px-2 spr-py-3 spr-leading-300 spr-font-size-200 [&>svg]:spr-font-size-400':
+      'mc-max-h-9 mc-min-w-9 mc-px-2 mc-py-3 mc-leading-300 mc-font-size-200 [&>svg]:mc-font-size-400':
         hasIcon.value && size.value === 'large',
     });
 
@@ -45,9 +44,9 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
     );
 
     const transitionClasses = classNames([
-      'spr-transition spr-duration-150 spr-ease-in-out',
-      'hover:spr-shadow-button-hover',
-      'active:spr-scale-95',
+      'mc-transition mc-duration-150 mc-ease-in-out',
+      'hover:mc-shadow-button-hover',
+      'active:mc-scale-95',
     ]);
 
     if (disabled.value) {
@@ -55,21 +54,21 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
         return classNames(
           defaultClasses,
           sizeClasses,
-          'spr-text-color-disabled spr-background-color-disabled !spr-shadow-none !spr-cursor-not-allowed spr-border-none',
+          'mc-text-color-disabled mc-background-color-disabled !mc-shadow-none !mc-cursor-not-allowed mc-border-none',
         );
 
       if (variant.value === 'secondary')
         return classNames(
           defaultClasses,
           sizeClasses,
-          'spr-text-color-disabled !spr-shadow-none !spr-cursor-not-allowed spr-border spr-border-solid spr-border-color-disabled',
+          'mc-text-color-disabled !mc-shadow-none !mc-cursor-not-allowed mc-border mc-border-solid mc-border-color-disabled',
         );
 
       if (variant.value === 'tertiary')
         return classNames(
           defaultClasses,
           sizeClasses,
-          'spr-text-color-disabled !spr-shadow-none !spr-cursor-not-allowed spr-border-none',
+          'mc-text-color-disabled !mc-shadow-none !mc-cursor-not-allowed mc-border-none',
         );
     }
 
@@ -79,15 +78,15 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
   const buttonTextCssClass: ComputedRef<string> = computed(() => {
     if (variant.value === 'secondary' || variant.value === 'tertiary') {
       return classNames({
-        'spr-text-color-strong': tone.value === 'neutral',
-        'spr-text-color-brand-base': tone.value === 'success',
-        'spr-text-color-danger-base': tone.value === 'danger',
+        'mc-text-color-strong': tone.value === 'neutral',
+        'mc-text-color-brand-base': tone.value === 'success',
+        'mc-text-color-danger-base': tone.value === 'danger',
       });
     }
 
     return classNames({
-      'spr-text-color-strong': tone.value === 'neutral',
-      'spr-text-color-inverted-strong': tone.value === 'success' || tone.value === 'danger',
+      'mc-text-color-strong': tone.value === 'neutral',
+      'mc-text-color-inverted-strong': tone.value === 'success' || tone.value === 'danger',
     });
   });
 
@@ -95,10 +94,10 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
   const buttonBackgroundCssClass: ComputedRef<string> = computed(() => {
     if (variant.value === 'secondary') {
       if (pressed.value) {
-        return 'spr-background-color-pressed !spr-shadow-button';
+        return 'mc-background-color-pressed !mc-shadow-button';
       }
 
-      return isHovered.value ? 'spr-background-color-hover' : 'spr-background-color ';
+      return isHovered.value ? 'mc-background-color-hover' : 'mc-background-color ';
     }
 
     if (variant.value === 'tertiary') {
@@ -110,11 +109,11 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
 
   const getTertiaryBackground = (): string => {
     if (pressed.value) {
-      return 'spr-background-color-pressed !spr-shadow-button';
+      return 'mc-background-color-pressed !mc-shadow-button';
     }
 
     return classNames('!border-none', {
-      'spr-background-color-hover': isHovered.value,
+      'mc-background-color-hover': isHovered.value,
     });
   };
 
@@ -132,9 +131,9 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
 
   const getPressedBackground = (): string => {
     const backgrounds: Record<string, string> = {
-      neutral: 'spr-background-color-pressed !spr-shadow-button',
-      success: 'spr-background-color-brand-pressed !spr-shadow-button',
-      danger: 'spr-background-color-danger-pressed !spr-shadow-button',
+      neutral: 'mc-background-color-pressed !mc-shadow-button',
+      success: 'mc-background-color-brand-pressed !mc-shadow-button',
+      danger: 'mc-background-color-danger-pressed !mc-shadow-button',
     };
 
     return backgrounds[tone.value] || '';
@@ -142,9 +141,9 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
 
   const getHoveredBackground = (): string => {
     const backgrounds: Record<string, string> = {
-      neutral: 'spr-background-color-hover',
-      success: 'spr-background-color-success-pressed',
-      danger: 'spr-background-color-danger-hover',
+      neutral: 'mc-background-color-hover',
+      success: 'mc-background-color-success-pressed',
+      danger: 'mc-background-color-danger-hover',
     };
 
     return backgrounds[tone.value] || '';
@@ -152,9 +151,9 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
 
   const getDefaultBackground = (): string => {
     const backgrounds: Record<string, string> = {
-      neutral: 'spr-background-color-base',
-      success: 'spr-background-color-brand-base',
-      danger: 'spr-background-color-danger-base',
+      neutral: 'mc-background-color-base',
+      success: 'mc-background-color-brand-base',
+      danger: 'mc-background-color-danger-base',
     };
 
     return backgrounds[tone.value] || '';
@@ -162,12 +161,12 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
   // #endregion - Background Css Class
 
   const buttonBorderCssClass: ComputedRef<string> = computed(() => {
-    return classNames('spr-border spr-border-solid', {
-      'spr-border-transparent': variant.value === 'primary' || variant.value === 'tertiary',
-      'spr-border-white-50': (focused.value && variant.value === 'primary') || variant.value === 'tertiary',
-      'spr-border-color-base': variant.value === 'secondary' && tone.value === 'neutral',
-      'spr-border-color-brand-base': variant.value === 'secondary' && tone.value === 'success',
-      'spr-border-color-danger-base': variant.value === 'secondary' && tone.value === 'danger',
+    return classNames('mc-border mc-border-solid', {
+      'mc-border-transparent': variant.value === 'primary' || variant.value === 'tertiary',
+      'mc-border-white-50': (focused.value && variant.value === 'primary') || variant.value === 'tertiary',
+      'mc-border-color-base': variant.value === 'secondary' && tone.value === 'neutral',
+      'mc-border-color-brand-base': variant.value === 'secondary' && tone.value === 'success',
+      'mc-border-color-danger-base': variant.value === 'secondary' && tone.value === 'danger',
     });
   });
 

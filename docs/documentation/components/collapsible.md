@@ -12,20 +12,20 @@ The Collapsible component provides a way to show and hide content in a smooth, a
 
 The Collapsible component is controlled through a `v-model` binding that determines whether it's expanded or collapsed. Typically, you'll pair it with a trigger element (like a button) that toggles this state.
 
-<spr-button tone="success" @click="collapsible1 = !collapsible1">Toggle Me</spr-button>
-<spr-collapsible v-model="collapsible1">
+<mc-button tone="success" @click="collapsible1 = !collapsible1">Toggle Me</mc-button>
+<mc-collapsible v-model="collapsible1">
 
-  <div class="spr-p-4">
+  <div class="mc-p-4">
     Collapsible content here
   </div>
-</spr-collapsible>
+</mc-collapsible>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="collapsible1 = !collapsible1">Toggle Me</spr-button>
-  <spr-collapsible v-model="collapsible1">
-    <div class="spr-p-4">Collapsible content here</div>
-  </spr-collapsible>
+  <mc-button tone="success" @click="collapsible1 = !collapsible1">Toggle Me</mc-button>
+  <mc-collapsible v-model="collapsible1">
+    <div class="mc-p-4">Collapsible content here</div>
+  </mc-collapsible>
 </template>
 
 <script setup>
@@ -39,41 +39,41 @@ const collapsible1 = ref(false); // Starts collapsed by default
 
 The Collapsible component works well with the Card component to create expandable card sections. This pattern is useful for dashboards, settings panels, or any interface where you want to show/hide detailed information.
 
-<spr-card title="Contact Info" subtitle="Lorem ipsum dolor sit amet consectetur. Dui nunc elit vel sit at quis." has-collapsible :is-collapsible-open="collapsible2">
+<mc-card title="Contact Info" subtitle="Lorem ipsum dolor sit amet consectetur. Dui nunc elit vel sit at quis." has-collapsible :is-collapsible-open="collapsible2">
   <template #header>
-    <div class="spr-ml-auto">
-      <spr-button variant="secondary" hasIcon size="small" @click="collapsible2 = !collapsible2">
+    <div class="mc-ml-auto">
+      <mc-button variant="secondary" hasIcon size="small" @click="collapsible2 = !collapsible2">
         <Icon icon="ph:caret-down" />
-      </spr-button>    
+      </mc-button>    
     </div>
   </template>
-  <spr-collapsible v-model="collapsible2">
-    <div class="spr-px-4 spr-py-3">
+  <mc-collapsible v-model="collapsible2">
+    <div class="mc-px-4 mc-py-3">
       Collapsible Content
     </div>
-  </spr-collapsible>
-</spr-card>
+  </mc-collapsible>
+</mc-card>
 
 ```vue
 <template>
-  <spr-card
+  <mc-card
     title="Contact Info"
     subtitle="Lorem ipsum dolor sit amet consectetur. Dui nunc elit vel sit at quis."
     has-collapsible
     :is-collapsible-open="collapsible2"
   >
     <template #header>
-      <div class="spr-ml-auto">
-        <spr-button variant="secondary" hasIcon size="small" @click="collapsible2 = !collapsible2">
+      <div class="mc-ml-auto">
+        <mc-button variant="secondary" hasIcon size="small" @click="collapsible2 = !collapsible2">
           <Icon icon="ph:caret-down" />
-        </spr-button>
+        </mc-button>
       </div>
     </template>
 
-    <spr-collapsible v-model="collapsible2">
-      <div class="spr-px-4 spr-py-3">Collapsible Content</div>
-    </spr-collapsible>
-  </spr-card>
+    <mc-collapsible v-model="collapsible2">
+      <div class="mc-px-4 mc-py-3">Collapsible Content</div>
+    </mc-collapsible>
+  </mc-card>
 </template>
 
 <script setup>
@@ -85,30 +85,30 @@ const collapsible2 = ref(false);
 ```
 
 :::tip Card Integration
-When using `spr-collapsible` with `spr-card`, you can set the card's `has-collapsible` prop to `true` and use `is-collapsible-open` to keep the card's styling in sync with the collapsible state.
+When using `mc-collapsible` with `mc-card`, you can set the card's `has-collapsible` prop to `true` and use `is-collapsible-open` to keep the card's styling in sync with the collapsible state.
 :::
 
 ## Custom Trigger
 
 The Collapsible component provides a `trigger` slot that gives you access to the `toggleCollapsible` function. This allows you to create custom trigger elements that can toggle the collapsible state without needing to manage the state externally.
 
-<spr-collapsible v-model="collapsible3">
+<mc-collapsible v-model="collapsible3">
   <template #trigger="{ toggleCollapsible }">
-    <spr-button @click="toggleCollapsible">Custom Trigger</spr-button>
+    <mc-button @click="toggleCollapsible">Custom Trigger</mc-button>
   </template>
   <div>
     Collapsible Content
   </div>
-</spr-collapsible>
+</mc-collapsible>
 
 ```vue
 <template>
-  <spr-collapsible v-model="collapsible3">
+  <mc-collapsible v-model="collapsible3">
     <template #trigger="{ toggleCollapsible }">
-      <spr-button @click="toggleCollapsible">Custom Trigger</spr-button>
+      <mc-button @click="toggleCollapsible">Custom Trigger</mc-button>
     </template>
     <div>Collapsible Content</div>
-  </spr-collapsible>
+  </mc-collapsible>
 </template>
 
 <script setup>
@@ -131,14 +131,14 @@ You can customize how quickly the collapsible content expands and collapses by a
 ```vue
 <template>
   <!-- Slow transition (500ms) -->
-  <spr-collapsible v-model="isOpen" :transition-duration="500">
-    <div class="spr-p-4">Slowly expanding/collapsing content</div>
-  </spr-collapsible>
+  <mc-collapsible v-model="isOpen" :transition-duration="500">
+    <div class="mc-p-4">Slowly expanding/collapsing content</div>
+  </mc-collapsible>
 
   <!-- Fast transition (50ms) -->
-  <spr-collapsible v-model="isOpen" :transition-duration="50">
-    <div class="spr-p-4">Quickly expanding/collapsing content</div>
-  </spr-collapsible>
+  <mc-collapsible v-model="isOpen" :transition-duration="50">
+    <div class="mc-p-4">Quickly expanding/collapsing content</div>
+  </mc-collapsible>
 </template>
 ```
 
@@ -148,19 +148,19 @@ Multiple collapsible components can be combined to create an accordion interface
 
 ```vue
 <template>
-  <div class="spr-space-y-2">
-    <div v-for="(section, index) in sections" :key="index" class="spr-rounded spr-border spr-p-2">
+  <div class="mc-space-y-2">
+    <div v-for="(section, index) in sections" :key="index" class="mc-rounded mc-border mc-p-2">
       <div
-        class="spr-flex spr-cursor-pointer spr-items-center spr-justify-between spr-font-medium"
+        class="mc-flex mc-cursor-pointer mc-items-center mc-justify-between mc-font-medium"
         @click="toggleSection(index)"
       >
         {{ section.title }}
         <Icon :icon="activeSection === index ? 'ph:caret-up' : 'ph:caret-down'" />
       </div>
 
-      <spr-collapsible :model-value="activeSection === index">
-        <div class="spr-pt-2">{{ section.content }}</div>
-      </spr-collapsible>
+      <mc-collapsible :model-value="activeSection === index">
+        <div class="mc-pt-2">{{ section.content }}</div>
+      </mc-collapsible>
     </div>
   </div>
 </template>
@@ -257,9 +257,9 @@ const toggleSection = (index) => {
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import SprCollapsible from "@/components/collapsible/collapsible.vue";
-import SprButton from '@/components/button/button.vue';
-import SprCard from '@/components/card/card.vue';
+import McCollapsible from "@/components/collapsible/collapsible.vue";
+import McButton from '@/components/button/button.vue';
+import McCard from '@/components/card/card.vue';
 import { Icon } from '@iconify/vue';
 
 const collapsible1 = ref(false)

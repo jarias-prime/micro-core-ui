@@ -6,10 +6,10 @@ import { useElementSize } from '@vueuse/core';
 export const useTabs = (props: TabsPropTypes, emit: SetupContext<TabsEmitTypes>['emit']) => {
   const tabsClasses = computed(() => {
     return classNames({
-      'spr-relative spr-px-size-spacing-xs spr-body-sm spr-text-color-strong spr-group': true,
-      'spr-transition-left spr-duration-150 spr-ease-in-out': true,
-      'capitalize spr-py-size-spacing-3xs': !props.underlined,
-      'spr-uppercase spr-border-x-0 spr-border-t-0 spr-py-size-spacing-xs': props.underlined,
+      'mc-relative mc-px-size-spacing-xs mc-body-sm mc-text-color-strong mc-group': true,
+      'mc-transition-left mc-duration-150 mc-ease-in-out': true,
+      'capitalize mc-py-size-spacing-3xs': !props.underlined,
+      'mc-uppercase mc-border-x-0 mc-border-t-0 mc-py-size-spacing-xs': props.underlined,
     });
   });
 

@@ -12,41 +12,41 @@ export const useTextArea = (props: TextAreaPropTypes, emit: SetupContext<TextAre
   const modelValue = useVModel(props, 'modelValue', emit);
 
   const textareaClasses = computed(() => {
-    const wrapperClasses = classNames('spr-flex spr-flex-col spr-gap-size-spacing-4xs');
+    const wrapperClasses = classNames('mc-flex mc-flex-col mc-gap-size-spacing-4xs');
 
-    const labelClasses = classNames('spr-body-sm-regular spr-text-color-strong spr-flex spr-gap-2', {
-      'spr-text-color-on-fill-disabled': disabled.value,
-      'spr-text-color-base': readonly.value,
+    const labelClasses = classNames('mc-body-sm-regular mc-text-color-strong mc-flex mc-gap-2', {
+      'mc-text-color-on-fill-disabled': disabled.value,
+      'mc-text-color-base': readonly.value,
     });
 
-    const supportingLabelClasses = classNames('spr-body-sm-regular spr-text-color-supporting', {
-      'spr-text-color-on-fill-disabled': disabled.value,
-      'spr-text-color-base': readonly.value,
+    const supportingLabelClasses = classNames('mc-body-sm-regular mc-text-color-supporting', {
+      'mc-text-color-on-fill-disabled': disabled.value,
+      'mc-text-color-base': readonly.value,
     });
 
     const textAreaClasses = classNames(
-      'spr-block spr-w-full spr-px-size-spacing-2xs spr-py-size-spacing-4xs spr-rounded-border-radius-md spr-outline-none spr-ring-0 spr-resize-none spr-font-main',
-      'spr-text-color-strong spr-font-size-200',
-      'spr-border spr-border-solid',
-      'placeholder:spr-text-mushroom-300',
+      'mc-block mc-w-full mc-px-size-spacing-2xs mc-py-size-spacing-4xs mc-rounded-border-radius-md mc-outline-none mc-ring-0 mc-resize-none mc-font-main',
+      'mc-text-color-strong mc-font-size-200',
+      'mc-border mc-border-solid',
+      'placeholder:mc-text-mushroom-300',
       {
-        'spr-border-mushroom-200 focus:spr-border-kangkong-700': !error.value && !disabled.value,
-        'spr-border-tomato-600 focus:spr-border-tomato-600': error.value,
-        'spr-background-color-disabled spr-border-white-100 focus:spr-border-white-100 spr-cursor-not-allowed spr-text-color-on-fill-disabled':
+        'mc-border-mushroom-200 focus:mc-border-kangkong-700': !error.value && !disabled.value,
+        'mc-border-tomato-600 focus:mc-border-tomato-600': error.value,
+        'mc-background-color-disabled mc-border-white-100 focus:mc-border-white-100 mc-cursor-not-allowed mc-text-color-on-fill-disabled':
           disabled.value,
-        'spr-background-color-disabled spr-border-white-100 focus:spr-border-white-100 spr-cursor-not-allowed   spr-text-color-base':
+        'mc-background-color-disabled mc-border-white-100 focus:mc-border-white-100 mc-cursor-not-allowed   mc-text-color-base':
           readonly.value,
       },
     );
 
-    const helperClasses = classNames('spr-body-sm-regular spr-flex spr-items-center spr-gap-size-spacing-5xs', {
-      'spr-text-color-danger-base': error.value,
-      'spr-text-color-supporting': !error.value,
+    const helperClasses = classNames('mc-body-sm-regular mc-flex mc-items-center mc-gap-size-spacing-5xs', {
+      'mc-text-color-danger-base': error.value,
+      'mc-text-color-supporting': !error.value,
     });
 
-    const slotWrapperClasses = classNames('spr-flex spr-items-start', {
-      'spr-justify-between': props.displayHelper && props.hasCounter,
-      'spr-justify-end': !props.displayHelper && props.hasCounter,
+    const slotWrapperClasses = classNames('mc-flex mc-items-start', {
+      'mc-justify-between': props.displayHelper && props.hasCounter,
+      'mc-justify-end': !props.displayHelper && props.hasCounter,
     });
 
     return { wrapperClasses, labelClasses, supportingLabelClasses, textAreaClasses, helperClasses, slotWrapperClasses };

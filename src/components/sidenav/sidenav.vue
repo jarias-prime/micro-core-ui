@@ -4,38 +4,38 @@
       id="sidenav"
       v-bind="$attrs"
       :class="[
-        'spr-hidden-scrolls spr-fixed spr-bottom-0 spr-left-0 spr-top-0 spr-z-50 spr-transition-all spr-duration-300 spr-ease-in-out',
-        { 'spr-h-full': isMobileScreen && isMobileMenuExpanded },
+        'mc-hidden-scrolls mc-fixed mc-bottom-0 mc-left-0 mc-top-0 mc-z-50 mc-transition-all mc-duration-300 mc-ease-in-out',
+        { 'mc-h-full': isMobileScreen && isMobileMenuExpanded },
         isMobileScreen
-          ? ['spr-h-fit spr-w-full']
+          ? ['mc-h-fit mc-w-full']
           : [
-              'spr-h-full spr-w-auto',
-              'spr-background-color spr-overflow-y-auto spr-overflow-x-hidden',
-              'spr-border-color-weak spr-border-b-0 spr-border-l-0 spr-border-r spr-border-t-0 spr-border-solid',
+              'mc-h-full mc-w-auto',
+              'mc-background-color mc-overflow-y-auto mc-overflow-x-hidden',
+              'mc-border-color-weak mc-border-b-0 mc-border-l-0 mc-border-r mc-border-t-0 mc-border-solid',
             ],
       ]"
     >
       <!-- #region - Desktop Section -->
       <template v-if="!isMobileScreen">
-        <div class="spr-flex spr-h-full spr-w-[68px] spr-flex-col">
+        <div class="mc-flex mc-h-full mc-w-[68px] mc-flex-col">
           <div
             :class="{
-              'spr-hidden-scrolls spr-flex spr-h-full spr-flex-col spr-justify-between spr-overflow-auto': true,
-              'spr-max-h-[calc(100vh-60px)]': props.notificationCount === null && props.requestCount === null,
-              'spr-max-h-[calc(100vh-194px)]':
+              'mc-hidden-scrolls mc-flex mc-h-full mc-flex-col mc-justify-between mc-overflow-auto': true,
+              'mc-max-h-[calc(100vh-60px)]': props.notificationCount === null && props.requestCount === null,
+              'mc-max-h-[calc(100vh-194px)]':
                 (props.notificationCount && props.requestCount) ||
                 props.notificationCount === 0 ||
                 props.requestCount === 0,
-              '!spr-max-h-[calc(100vh-150px)]': props.requestCount === '' || props.notificationCount === '',
+              '!mc-max-h-[calc(100vh-150px)]': props.requestCount === '' || props.notificationCount === '',
             }"
           >
             <!-- #region - Top Section -->
-            <div class="spr-grid spr-justify-center spr-gap-2 spr-px-3 spr-pb-4 spr-pt-4">
+            <div class="mc-grid mc-justify-center mc-gap-2 mc-px-3 mc-pb-4 mc-pt-4">
               <!-- #region - Logo -->
               <div
                 :class="[
-                  'spr-grid spr-justify-center spr-p-2',
-                  '[&>img]:spr-mx-auto [&>img]:spr-h-[24px] [&>img]:spr-w-[24px] [&>img]:spr-object-cover',
+                  'mc-grid mc-justify-center mc-p-2',
+                  '[&>img]:mc-mx-auto [&>img]:mc-h-[24px] [&>img]:mc-w-[24px] [&>img]:mc-object-cover',
                 ]"
               >
                 <slot name="logo-image" />
@@ -57,44 +57,44 @@
                 >
                   <div
                     :class="{
-                      'spr-flex spr-w-full spr-cursor-pointer spr-items-center spr-text-center spr-text-[28px] spr-transition spr-duration-150 spr-ease-in-out': true,
-                      'hover:spr-brightness-75': true,
-                      'active:spr-text-color-success-pressed active:spr-scale-90': true,
-                      'spr-text-color-inverted-disabled spr-rotate-180': isQuckActionMenuVisible,
-                      'spr-text-color-brand-base': !isQuckActionMenuVisible,
+                      'mc-flex mc-w-full mc-cursor-pointer mc-items-center mc-text-center mc-text-[28px] mc-transition mc-duration-150 mc-ease-in-out': true,
+                      'hover:mc-brightness-75': true,
+                      'active:mc-text-color-success-pressed active:mc-scale-90': true,
+                      'mc-text-color-inverted-disabled mc-rotate-180': isQuckActionMenuVisible,
+                      'mc-text-color-brand-base': !isQuckActionMenuVisible,
                     }"
                     @click="isQuckActionMenuVisible = !isQuckActionMenuVisible"
                   >
-                    <Icon icon="ph:plus-circle-fill" class="spr-w-full" />
+                    <Icon icon="ph:plus-circle-fill" class="mc-w-full" />
                   </div>
 
                   <template #popper>
                     <div
                       :class="[
-                        'spr-px-4 spr-py-3',
-                        'spr-border-color-weak spr-flex spr-justify-between spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid',
+                        'mc-px-4 mc-py-3',
+                        'mc-border-color-weak mc-flex mc-justify-between mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid',
                       ]"
                     >
-                      <h3 class="spr-body-sm-regular-medium spr-m-0">Quick Actions</h3>
+                      <h3 class="mc-body-sm-regular-medium mc-m-0">Quick Actions</h3>
                       <Icon
                         icon="ph:x"
                         :class="[
-                          'spr-text-color-weak spr-h-[20px] spr-w-[20px] spr-cursor-pointer',
-                          'spr-transition spr-duration-150 spr-ease-in-out',
-                          'active:spr-scale-90',
+                          'mc-text-color-weak mc-h-[20px] mc-w-[20px] mc-cursor-pointer',
+                          'mc-transition mc-duration-150 mc-ease-in-out',
+                          'active:mc-scale-90',
                         ]"
                         @click="isQuckActionMenuVisible = !isQuckActionMenuVisible"
                       />
                     </div>
 
-                    <div class="spr-max-h-[268px] spr-overflow-auto">
+                    <div class="mc-max-h-[268px] mc-overflow-auto">
                       <template v-for="(quickAction, quickActionIndex) in props.quickActions" :key="quickActionIndex">
                         <h5
                           v-if="quickAction.menuHeading"
                           :class="[
                             {
-                              'spr-label-xs-medium spr-text-color-supporting spr-m-0 spr-p-2': true,
-                              'spr-mt-3': quickActionIndex !== 0,
+                              'mc-label-xs-medium mc-text-color-supporting mc-m-0 mc-p-2': true,
+                              'mc-mt-3': quickActionIndex !== 0,
                             },
                           ]"
                         >
@@ -107,32 +107,32 @@
                           <div
                             v-if="!menuLinkItem.hidden"
                             :class="[
-                              'spr-flex spr-cursor-pointer spr-gap-2 spr-px-4 spr-py-3 spr-align-middle spr-duration-150 spr-ease-in-out',
-                              'hover:spr-background-color-hover',
-                              'active:spr-background-color-pressed',
+                              'mc-flex mc-cursor-pointer mc-gap-2 mc-px-4 mc-py-3 mc-align-middle mc-duration-150 mc-ease-in-out',
+                              'hover:mc-background-color-hover',
+                              'active:mc-background-color-pressed',
                             ]"
                             @click="handleRedirect(menuLinkItem, '', '', '')"
                           >
                             <div
                               :class="{
-                                'spr-flex spr-items-center spr-rounded-border-radius-md spr-p-2': true,
-                                'spr-border spr-border-solid spr-border-kangkong-400 spr-bg-kangkong-50 spr-text-kangkong-800':
+                                'mc-flex mc-items-center mc-rounded-border-radius-md mc-p-2': true,
+                                'mc-border mc-border-solid mc-border-kangkong-400 mc-bg-kangkong-50 mc-text-kangkong-800':
                                   menuLinkItem.iconBgColor === 'green',
-                                'spr-border spr-border-solid spr-border-ubas-400 spr-bg-ubas-50 spr-text-ubas-800':
+                                'mc-border mc-border-solid mc-border-ubas-400 mc-bg-ubas-50 mc-text-ubas-800':
                                   menuLinkItem.iconBgColor === 'purple',
                               }"
                             >
                               <Icon
                                 v-if="menuLinkItem.icon"
                                 :icon="menuLinkItem.icon"
-                                class="spr-h-[1em] spr-w-[1em] spr-text-[20px]"
+                                class="mc-h-[1em] mc-w-[1em] mc-text-[20px]"
                               />
                             </div>
-                            <div class="spr-grid spr-justify-between">
-                              <h5 class="spr-body-sm-regular-medium spr-text-color-strong spr-m-0 spr-truncate">
+                            <div class="mc-grid mc-justify-between">
+                              <h5 class="mc-body-sm-regular-medium mc-text-color-strong mc-m-0 mc-truncate">
                                 {{ menuLinkItem.title }}
                               </h5>
-                              <p class="spr-body-xs-regular spr-text-color-base spr-m-0 spr-truncate">
+                              <p class="mc-body-xs-regular mc-text-color-base mc-m-0 mc-truncate">
                                 {{ menuLinkItem.description }}
                               </p>
                             </div>
@@ -149,14 +149,14 @@
                   v-if="props.hasSearch"
                   id="sidenav_search"
                   :class="[
-                    'spr-flex spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-border-radius-md spr-p-2 spr-transition spr-duration-150 spr-ease-in-out',
-                    'hover:spr-background-color-hover',
-                    'active:spr-background-color-single-active active:spr-scale-90',
-                    'spr-m-auto spr-box-border spr-max-h-9 spr-max-w-9',
+                    'mc-flex mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-border-radius-md mc-p-2 mc-transition mc-duration-150 mc-ease-in-out',
+                    'hover:mc-background-color-hover',
+                    'active:mc-background-color-single-active active:mc-scale-90',
+                    'mc-m-auto mc-box-border mc-max-h-9 mc-max-w-9',
                   ]"
                   @click="emit('search', 'search-triggered')"
                 >
-                  <Icon icon="ph:magnifying-glass" class="spr-h-[1.25em] spr-w-[1.25em]" />
+                  <Icon icon="ph:magnifying-glass" class="mc-h-[1.25em] mc-w-[1.25em]" />
                 </div>
                 <!-- #endregion - Search -->
 
@@ -176,7 +176,7 @@
             <!-- #region - Bottom Section -->
             <div
               v-if="navLinks.bottom && navLinks.bottom.length > 0"
-              class="spr-grid spr-justify-center spr-gap-2 spr-px-3 spr-pb-4 spr-pt-0"
+              class="mc-grid mc-justify-center mc-gap-2 mc-px-3 mc-pb-4 mc-pt-0"
             >
               <!-- #region - Grouped Nav Links -->
               <sidenav-menu-links
@@ -197,67 +197,67 @@
             v-if="
               props.notificationCount || props.requestCount || props.notificationCount === 0 || props.requestCount === 0
             "
-            class="spr-grid spr-gap-2 spr-py-6"
+            class="mc-grid mc-gap-2 mc-py-6"
           >
             <template v-if="!props.loading">
               <!-- #region - Notification -->
-              <spr-tooltip text="NOTIFICATIONS" placement="right" :distance="4" :fit-content="false">
+              <mc-tooltip text="NOTIFICATIONS" placement="right" :distance="4" :fit-content="false">
                 <div
                   v-if="props.notificationCount || props.notificationCount === 0"
                   id="sidenav_notification"
                   :class="[
-                    'spr-2 spr-relative spr-flex spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-border-radius-md',
-                    'spr-m-auto spr-h-9 spr-w-9 spr-transition spr-duration-150 spr-ease-in-out',
-                    'active:spr-background-color-single-active active:spr-scale-90',
+                    'mc-2 mc-relative mc-flex mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-border-radius-md',
+                    'mc-m-auto mc-h-9 mc-w-9 mc-transition mc-duration-150 mc-ease-in-out',
+                    'active:mc-background-color-single-active active:mc-scale-90',
                     {
-                      'spr-background-color-single-active spr-border-color-brand-base spr-border-[1.5px] spr-border-solid active:spr-scale-90':
+                      'mc-background-color-single-active mc-border-color-brand-base mc-border-[1.5px] mc-border-solid active:mc-scale-90':
                         props.isNotifActive,
                     },
-                    { 'hover:spr-background-color-hover': !props.isNotifActive },
+                    { 'hover:mc-background-color-hover': !props.isNotifActive },
                   ]"
                   @click="emit('notifications', 'notifications-triggered')"
                 >
-                  <Icon v-if="!props.isNotifActive" icon="ph:bell" class="spr-h-[1.25em] spr-w-[1.25em]" />
-                  <Icon v-else icon="ph:bell-fill" class="spr-h-[1.25em] spr-w-[1.25em] spr-text-kangkong-700" />
-                  <spr-badge
+                  <Icon v-if="!props.isNotifActive" icon="ph:bell" class="mc-h-[1.25em] mc-w-[1.25em]" />
+                  <Icon v-else icon="ph:bell-fill" class="mc-h-[1.25em] mc-w-[1.25em] mc-text-kangkong-700" />
+                  <mc-badge
                     v-if="props.notificationCount !== 0"
-                    class="spr-absolute -spr-top-0.5 spr-right-0.5"
+                    class="mc-absolute -mc-top-0.5 mc-right-0.5"
                     :text="String(props.notificationCount)"
                     variant="danger"
                     size="small"
                   />
                 </div>
-              </spr-tooltip>
+              </mc-tooltip>
               <!-- #endregion - Notification -->
 
               <!-- #region - Requests -->
-              <spr-tooltip text="REQUESTS" placement="right" :distance="4" :fit-content="false">
+              <mc-tooltip text="REQUESTS" placement="right" :distance="4" :fit-content="false">
                 <div
                   v-if="props.requestCount || props.requestCount === 0"
                   id="sidenav_request"
                   :class="[
-                    'spr-2 spr-relative spr-flex spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-border-radius-md',
-                    'spr-m-auto spr-h-9 spr-w-9 spr-transition spr-duration-150 spr-ease-in-out',
-                    'active:spr-background-color-single-active active:spr-scale-90',
+                    'mc-2 mc-relative mc-flex mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-border-radius-md',
+                    'mc-m-auto mc-h-9 mc-w-9 mc-transition mc-duration-150 mc-ease-in-out',
+                    'active:mc-background-color-single-active active:mc-scale-90',
                     {
-                      'spr-background-color-single-active spr-border-color-brand-base spr-border-[1.5px] spr-border-solid active:spr-scale-90':
+                      'mc-background-color-single-active mc-border-color-brand-base mc-border-[1.5px] mc-border-solid active:mc-scale-90':
                         props.isRequestActive,
                     },
-                    { 'hover:spr-background-color-hover': !props.isRequestActive },
+                    { 'hover:mc-background-color-hover': !props.isRequestActive },
                   ]"
                   @click="emit('requests', 'requests-triggered')"
                 >
-                  <Icon v-if="!props.isRequestActive" icon="ph:file-text" class="spr-h-[1.25em] spr-w-[1.25em]" />
-                  <Icon v-else icon="ph:file-text-fill" class="spr-h-[1.25em] spr-w-[1.25em] spr-text-kangkong-700" />
-                  <spr-badge
+                  <Icon v-if="!props.isRequestActive" icon="ph:file-text" class="mc-h-[1.25em] mc-w-[1.25em]" />
+                  <Icon v-else icon="ph:file-text-fill" class="mc-h-[1.25em] mc-w-[1.25em] mc-text-kangkong-700" />
+                  <mc-badge
                     v-if="props.requestCount !== 0"
-                    class="spr-absolute -spr-top-0.5 spr-right-0.5"
+                    class="mc-absolute -mc-top-0.5 mc-right-0.5"
                     :text="String(props.requestCount)"
                     variant="danger"
                     size="small"
                   />
                 </div>
-              </spr-tooltip>
+              </mc-tooltip>
               <!-- #endregion - Requests -->
             </template>
             <sidenav-loader v-else />
@@ -267,9 +267,9 @@
         <div
           v-if="props.userMenu"
           :class="[
-            'spr-border-color-weak spr-absolute spr-bottom-0 spr-p-3.5',
-            'spr-border-b-0 spr-border-l-0 spr-border-r-0 spr-border-t spr-border-solid',
-            'spr-flex spr-justify-center',
+            'mc-border-color-weak mc-absolute mc-bottom-0 mc-p-3.5',
+            'mc-border-b-0 mc-border-l-0 mc-border-r-0 mc-border-t mc-border-solid',
+            'mc-flex mc-justify-center',
           ]"
         >
           <Menu
@@ -282,8 +282,8 @@
             :delay="0"
           >
             <template v-if="props.userMenu.profileImage">
-              <spr-avatar
-                class="spr-cursor-pointer"
+              <mc-avatar
+                class="mc-cursor-pointer"
                 variant="image"
                 :src="props.userMenu.profileImage"
                 :initial="props.userMenu.name"
@@ -291,19 +291,19 @@
               />
             </template>
             <template v-else>
-              <spr-avatar class="spr-cursor-pointer" :initial="props.userMenu.name" size="md" />
+              <mc-avatar class="mc-cursor-pointer" :initial="props.userMenu.name" size="md" />
             </template>
 
             <template #popper>
               <div
                 :class="[
-                  'spr-px-2 spr-py-2',
-                  'spr-border-color-weak spr-flex spr-justify-between spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid',
+                  'mc-px-2 mc-py-2',
+                  'mc-border-color-weak mc-flex mc-justify-between mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid',
                 ]"
               >
-                <div class="spr-flex spr-items-center spr-gap-2">
+                <div class="mc-flex mc-items-center mc-gap-2">
                   <template v-if="props.userMenu.profileImage">
-                    <spr-avatar
+                    <mc-avatar
                       variant="image"
                       :src="props.userMenu.profileImage"
                       :initial="props.userMenu.name"
@@ -311,38 +311,38 @@
                     />
                   </template>
                   <template v-else>
-                    <spr-avatar :initial="props.userMenu.name" size="md" />
+                    <mc-avatar :initial="props.userMenu.name" size="md" />
                   </template>
-                  <div class="spr-grid spr-justify-between spr-gap-1">
-                    <h3 class="spr-body-sm-regular spr-m-0 spr-truncate">
+                  <div class="mc-grid mc-justify-between mc-gap-1">
+                    <h3 class="mc-body-sm-regular mc-m-0 mc-truncate">
                       {{ props.userMenu.name }}
                     </h3>
-                    <p class="spr-body-xs-regular spr-text-color-supporting spr-m-0 spr-truncate">
+                    <p class="mc-body-xs-regular mc-text-color-supporting mc-m-0 mc-truncate">
                       {{ props.userMenu.email }}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div class="spr-max-h-[268px] spr-overflow-auto">
+              <div class="mc-max-h-[268px] mc-overflow-auto">
                 <template v-for="(userMenuItem, userMenuItemIndex) in props.userMenu.items" :key="userMenuItemIndex">
                   <div
                     v-if="!userMenuItem.hidden"
                     :id="`usermenu_${generateId(userMenuItem.title)}`"
                     :class="[
-                      'spr-flex spr-cursor-pointer spr-gap-2 spr-p-2 spr-align-middle spr-duration-150 spr-ease-in-out',
-                      'hover:spr-background-color-hover',
-                      'active:spr-background-color-pressed spr-bg-red',
-                      'last-of-type:spr-border-color-weak last-of-type:spr-border-0 last-of-type:spr-border-t last-of-type:spr-border-solid',
+                      'mc-flex mc-cursor-pointer mc-gap-2 mc-p-2 mc-align-middle mc-duration-150 mc-ease-in-out',
+                      'hover:mc-background-color-hover',
+                      'active:mc-background-color-pressed mc-bg-red',
+                      'last-of-type:mc-border-color-weak last-of-type:mc-border-0 last-of-type:mc-border-t last-of-type:mc-border-solid',
                     ]"
                     @click="handleRedirect(userMenuItem, '', '', '')"
                   >
                     <Icon
                       v-if="userMenuItem.icon"
                       :icon="userMenuItem.icon"
-                      class="spr-h-[1em] spr-w-[1em] spr-text-[20px]"
+                      class="mc-h-[1em] mc-w-[1em] mc-text-[20px]"
                     />
-                    <h5 class="spr-body-sm-regular spr-text-color-strong spr-m-0 spr-truncate">
+                    <h5 class="mc-body-sm-regular mc-text-color-strong mc-m-0 mc-truncate">
                       {{ userMenuItem.title }}
                     </h5>
                   </div>
@@ -356,30 +356,30 @@
       <!-- #endregion - Desktop Section -->
 
       <!-- #region - Mobile Section -->
-      <div v-else class="mobile-section spr-flex spr-h-full spr-flex-col">
+      <div v-else class="mobile-section mc-flex mc-h-full mc-flex-col">
         <div
           ref="mobileSideNavHeaderRef"
-          class="header spr-border-color-weak spr-background-color spr-box-border spr-flex spr-h-full spr-max-h-[54px] spr-items-center spr-justify-between spr-border-b spr-border-l-0 spr-border-r spr-border-t-0 spr-border-solid spr-px-3 spr-py-2"
+          class="header mc-border-color-weak mc-background-color mc-box-border mc-flex mc-h-full mc-max-h-[54px] mc-items-center mc-justify-between mc-border-b mc-border-l-0 mc-border-r mc-border-t-0 mc-border-solid mc-px-3 mc-py-2"
         >
           <div
             id="mobile_sidenav_button"
             ref="mobileButtonRef"
-            class="left-menus spr-flex spr-h-full spr-cursor-pointer spr-items-center"
+            class="left-menus mc-flex mc-h-full mc-cursor-pointer mc-items-center"
             @click="isMobileMenuExpanded = !isMobileMenuExpanded"
           >
             <div
               :class="[
-                'spr-flex spr-items-center spr-justify-center spr-rounded-border-radius-md spr-p-2 spr-transition spr-duration-150 spr-ease-in-out',
-                'hover:spr-background-color-hover',
-                'active:spr-background-color-single-active active:spr-scale-90',
-                'spr-h-full spr-w-9',
+                'mc-flex mc-items-center mc-justify-center mc-rounded-border-radius-md mc-p-2 mc-transition mc-duration-150 mc-ease-in-out',
+                'hover:mc-background-color-hover',
+                'active:mc-background-color-single-active active:mc-scale-90',
+                'mc-h-full mc-w-9',
               ]"
             >
-              <Icon v-if="!isMobileMenuExpanded" icon="ph:list" class="spr-h-[1.25em] spr-w-[1.25em]" />
-              <Icon v-else icon="ph:x" class="spr-h-[1.25em] spr-w-[1.25em]" />
+              <Icon v-if="!isMobileMenuExpanded" icon="ph:list" class="mc-h-[1.25em] mc-w-[1.25em]" />
+              <Icon v-else icon="ph:x" class="mc-h-[1.25em] mc-w-[1.25em]" />
             </div>
           </div>
-          <div class="right-menus spr-flex spr-items-center spr-gap-3">
+          <div class="right-menus mc-flex mc-items-center mc-gap-3">
             <div
               v-if="
                 props.notificationCount ||
@@ -387,66 +387,66 @@
                 props.notificationCount === 0 ||
                 props.requestCount === 0
               "
-              class="spr-flex spr-gap-2"
+              class="mc-flex mc-gap-2"
             >
               <!-- #region - Notification -->
-              <spr-tooltip text="NOTIFICATIONS" placement="top" :distance="4" :fit-content="false">
+              <mc-tooltip text="NOTIFICATIONS" placement="top" :distance="4" :fit-content="false">
                 <div
                   v-if="props.notificationCount || props.notificationCount === 0"
                   id="mobile_sidenav_notification"
                   :class="[
-                    'spr-relative spr-flex spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-border-radius-md',
-                    'spr-h-9 spr-w-9 spr-transition spr-duration-150 spr-ease-in-out',
-                    'active:spr-background-color-single-active active:spr-scale-90',
+                    'mc-relative mc-flex mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-border-radius-md',
+                    'mc-h-9 mc-w-9 mc-transition mc-duration-150 mc-ease-in-out',
+                    'active:mc-background-color-single-active active:mc-scale-90',
                     {
-                      'spr-background-color-single-active spr-border-color-brand-base spr-border-[1.5px] spr-border-solid active:spr-scale-90':
+                      'mc-background-color-single-active mc-border-color-brand-base mc-border-[1.5px] mc-border-solid active:mc-scale-90':
                         props.isNotifActive,
                     },
-                    { 'hover:spr-background-color-hover': !props.isNotifActive },
+                    { 'hover:mc-background-color-hover': !props.isNotifActive },
                   ]"
                   @click="emit('notifications', 'notifications-triggered')"
                 >
-                  <Icon v-if="!props.isNotifActive" icon="ph:bell" class="spr-h-[1.25em] spr-w-[1.25em]" />
-                  <Icon v-else icon="ph:bell-fill" class="spr-h-[1.25em] spr-w-[1.25em] spr-text-kangkong-700" />
-                  <spr-badge
+                  <Icon v-if="!props.isNotifActive" icon="ph:bell" class="mc-h-[1.25em] mc-w-[1.25em]" />
+                  <Icon v-else icon="ph:bell-fill" class="mc-h-[1.25em] mc-w-[1.25em] mc-text-kangkong-700" />
+                  <mc-badge
                     v-if="props.notificationCount !== 0"
-                    class="spr-absolute -spr-top-0.5 spr-right-0.5"
+                    class="mc-absolute -mc-top-0.5 mc-right-0.5"
                     :text="String(props.notificationCount)"
                     variant="danger"
                     size="small"
                   />
                 </div>
-              </spr-tooltip>
+              </mc-tooltip>
               <!-- #endregion - Notification -->
 
               <!-- #region - Requests -->
-              <spr-tooltip text="REQUESTS" placement="top" :distance="4" :fit-content="false">
+              <mc-tooltip text="REQUESTS" placement="top" :distance="4" :fit-content="false">
                 <div
                   v-if="props.requestCount || props.requestCount === 0"
                   id="mobile_sidenav_request"
                   :class="[
-                    'spr-relative spr-flex spr-cursor-pointer spr-items-center spr-justify-center spr-rounded-border-radius-md',
-                    'spr-h-9 spr-w-9 spr-transition spr-duration-150 spr-ease-in-out',
-                    'active:spr-background-color-single-active active:spr-scale-90',
+                    'mc-relative mc-flex mc-cursor-pointer mc-items-center mc-justify-center mc-rounded-border-radius-md',
+                    'mc-h-9 mc-w-9 mc-transition mc-duration-150 mc-ease-in-out',
+                    'active:mc-background-color-single-active active:mc-scale-90',
                     {
-                      'spr-background-color-single-active spr-border-color-brand-base spr-border-[1.5px] spr-border-solid active:spr-scale-90':
+                      'mc-background-color-single-active mc-border-color-brand-base mc-border-[1.5px] mc-border-solid active:mc-scale-90':
                         props.isRequestActive,
                     },
-                    { 'hover:spr-background-color-hover': !props.isRequestActive },
+                    { 'hover:mc-background-color-hover': !props.isRequestActive },
                   ]"
                   @click="emit('requests', 'requests-triggered')"
                 >
-                  <Icon v-if="!props.isRequestActive" icon="ph:file-text" class="spr-h-[1.25em] spr-w-[1.25em]" />
-                  <Icon v-else icon="ph:file-text-fill" class="spr-h-[1.25em] spr-w-[1.25em] spr-text-kangkong-700" />
-                  <spr-badge
+                  <Icon v-if="!props.isRequestActive" icon="ph:file-text" class="mc-h-[1.25em] mc-w-[1.25em]" />
+                  <Icon v-else icon="ph:file-text-fill" class="mc-h-[1.25em] mc-w-[1.25em] mc-text-kangkong-700" />
+                  <mc-badge
                     v-if="props.requestCount !== 0"
-                    class="spr-absolute -spr-top-0.5 spr-right-0.5"
+                    class="mc-absolute -mc-top-0.5 mc-right-0.5"
                     :text="String(props.requestCount)"
                     variant="danger"
                     size="small"
                   />
                 </div>
-              </spr-tooltip>
+              </mc-tooltip>
               <!-- #endregion - Requests -->
             </div>
 
@@ -464,8 +464,8 @@
                 popper-class="mobile-user-menu-popper"
               >
                 <template v-if="props.userMenu.profileImage">
-                  <spr-avatar
-                    class="spr-cursor-pointer"
+                  <mc-avatar
+                    class="mc-cursor-pointer"
                     variant="image"
                     :src="props.userMenu.profileImage"
                     :initial="props.userMenu.name"
@@ -473,19 +473,19 @@
                   />
                 </template>
                 <template v-else>
-                  <spr-avatar class="spr-cursor-pointer" :initial="props.userMenu.name" size="md" />
+                  <mc-avatar class="mc-cursor-pointer" :initial="props.userMenu.name" size="md" />
                 </template>
 
                 <template #popper>
                   <div
                     :class="[
-                      'spr-px-2 spr-py-2',
-                      'spr-border-color-weak spr-flex spr-justify-between spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid',
+                      'mc-px-2 mc-py-2',
+                      'mc-border-color-weak mc-flex mc-justify-between mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid',
                     ]"
                   >
-                    <div class="spr-flex spr-items-center spr-gap-2">
+                    <div class="mc-flex mc-items-center mc-gap-2">
                       <template v-if="props.userMenu.profileImage">
-                        <spr-avatar
+                        <mc-avatar
                           variant="image"
                           :src="props.userMenu.profileImage"
                           :initial="props.userMenu.name"
@@ -493,20 +493,20 @@
                         />
                       </template>
                       <template v-else>
-                        <spr-avatar :initial="props.userMenu.name" size="md" />
+                        <mc-avatar :initial="props.userMenu.name" size="md" />
                       </template>
-                      <div class="spr-grid spr-justify-between spr-gap-1">
-                        <h3 class="spr-body-sm-regular spr-m-0 spr-truncate">
+                      <div class="mc-grid mc-justify-between mc-gap-1">
+                        <h3 class="mc-body-sm-regular mc-m-0 mc-truncate">
                           {{ props.userMenu.name }}
                         </h3>
-                        <p class="spr-body-xs-regular spr-text-color-supporting spr-m-0 spr-truncate">
+                        <p class="mc-body-xs-regular mc-text-color-supporting mc-m-0 mc-truncate">
                           {{ props.userMenu.email }}
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="spr-max-h-[268px] spr-overflow-auto">
+                  <div class="mc-max-h-[268px] mc-overflow-auto">
                     <template
                       v-for="(userMenuItem, userMenuItemIndex) in props.userMenu.items"
                       :key="userMenuItemIndex"
@@ -515,19 +515,19 @@
                         v-if="!userMenuItem.hidden"
                         :id="`mobile_usermenu_${generateId(userMenuItem.title)}`"
                         :class="[
-                          'spr-flex spr-cursor-pointer spr-gap-2 spr-p-2 spr-align-middle spr-duration-150 spr-ease-in-out',
-                          'hover:spr-background-color-hover',
-                          'active:spr-background-color-pressed',
-                          'last-of-type:spr-border-color-weak last-of-type:spr-border-0 last-of-type:spr-border-t last-of-type:spr-border-solid',
+                          'mc-flex mc-cursor-pointer mc-gap-2 mc-p-2 mc-align-middle mc-duration-150 mc-ease-in-out',
+                          'hover:mc-background-color-hover',
+                          'active:mc-background-color-pressed',
+                          'last-of-type:mc-border-color-weak last-of-type:mc-border-0 last-of-type:mc-border-t last-of-type:mc-border-solid',
                         ]"
                         @click="handleRedirect(userMenuItem, '', '', '')"
                       >
                         <Icon
                           v-if="userMenuItem.icon"
                           :icon="userMenuItem.icon"
-                          class="spr-h-[1em] spr-w-[1em] spr-text-[20px]"
+                          class="mc-h-[1em] mc-w-[1em] mc-text-[20px]"
                         />
-                        <h5 class="spr-body-sm-regular spr-text-color-strong spr-m-0 spr-truncate">
+                        <h5 class="mc-body-sm-regular mc-text-color-strong mc-m-0 mc-truncate">
                           {{ userMenuItem.title }}
                         </h5>
                       </div>
@@ -544,19 +544,19 @@
             id="mobile_sidenav_content"
             ref="mobileSideNavContentRef"
             :class="[
-              'spr-border-color-weak spr-border-b-0 spr-border-l-0 spr-border-t-0 spr-border-solid [@media(min-width:481px)]:spr-border-r',
-              'spr-absolute spr-left-0 spr-top-[54px] spr-box-border spr-flex-1 spr-px-size-spacing-2xs spr-py-size-spacing-2xs',
-              'spr-background-color spr-h-[calc(100%-54px)] spr-w-screen [@media(min-width:481px)]:spr-w-[380px]',
-              'spr-z-[2] spr-transition-all spr-duration-300 spr-ease-in-out',
+              'mc-border-color-weak mc-border-b-0 mc-border-l-0 mc-border-t-0 mc-border-solid [@media(min-width:481px)]:mc-border-r',
+              'mc-absolute mc-left-0 mc-top-[54px] mc-box-border mc-flex-1 mc-px-size-spacing-2xs mc-py-size-spacing-2xs',
+              'mc-background-color mc-h-[calc(100%-54px)] mc-w-screen [@media(min-width:481px)]:mc-w-[380px]',
+              'mc-z-[2] mc-transition-all mc-duration-300 mc-ease-in-out',
             ]"
           >
             <template v-if="props.loading">
-              <div class="spr-flex spr-flex-col spr-gap-size-spacing-3xs">
+              <div class="mc-flex mc-flex-col mc-gap-size-spacing-3xs">
                 <sidenav-loader :count="5" />
               </div>
             </template>
             <template v-else>
-              <div class="spr-hidden-scrolls spr-grid spr-h-full spr-w-full">
+              <div class="mc-hidden-scrolls mc-grid mc-h-full mc-w-full">
                 <sidenav-menu-links-mobile
                   :nav-links="navLinks"
                   :active-nav="props.activeNav"
@@ -569,7 +569,7 @@
         <div
           v-if="isMobileMenuExpanded"
           id="mobile_sidenav_content_overlay"
-          class="spr-z-[1] spr-h-full spr-w-full spr-bg-overlay"
+          class="mc-z-[1] mc-h-full mc-w-full mc-bg-overlay"
         />
       </div>
 
@@ -590,9 +590,9 @@ import { useSidenav } from './use-sidenav';
 import SidenavMenuLinks from './sidenav-menu-links.vue';
 import SidenavLoader from './sidenav-loader.vue';
 
-import SprAvatar from '../avatar/avatar.vue';
-import SprBadge from '../badge/badge.vue';
-import SprTooltip from '../tooltip/tooltip.vue';
+import McAvatar from '../avatar/avatar.vue';
+import McBadge from '../badge/badge.vue';
+import McTooltip from '../tooltip/tooltip.vue';
 import { onClickOutside, useMediaQuery, useResizeObserver } from '@vueuse/core';
 import sidenavMenuLinksMobile from './mobile/sidenav-menu-links-mobile.vue';
 import { ref, watch, useTemplateRef } from 'vue';

@@ -30,7 +30,7 @@ export const filterPropTypes = {
   },
   id: {
     type: String,
-    default: 'spr-filter',
+    default: 'mc-filter',
   },
   filterMenu: {
     type: Array as PropType<FilterPropsInterface['filterMenu']>,

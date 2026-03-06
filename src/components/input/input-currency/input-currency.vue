@@ -1,5 +1,5 @@
 <template>
-  <spr-input
+  <mc-input
     v-bind="$attrs"
     v-model="modelValue"
     type="text"
@@ -15,7 +15,7 @@
     </template>
 
     <template #prefix>
-      <spr-dropdown
+      <mc-dropdown
         :id="dropdownId"
         v-model="selected.value"
         :class="inputCurrencyClasses.dropdownBaseClasses"
@@ -32,16 +32,16 @@
           <span>{{ dropdownDisplayText }}</span>
           <icon v-if="!props.disabledCountryCurrency" icon="ph:caret-down" width="16px" height="16px" />
         </span>
-      </spr-dropdown>
+      </mc-dropdown>
     </template>
-  </spr-input>
+  </mc-input>
 </template>
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
 
-import SprInput from '@/components/input/input.vue';
-import SprDropdown from '@/components/dropdown/dropdown.vue';
+import McInput from '@/components/input/input.vue';
+import McDropdown from '@/components/dropdown/dropdown.vue';
 import { useInputCurrency } from './use-input-currency';
 import { inputCurrencyPropTypes, inputCurrencyEmitTypes } from './input-currency';
 

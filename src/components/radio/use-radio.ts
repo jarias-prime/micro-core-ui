@@ -25,113 +25,110 @@ export const useRadioButton = (
   const isHovered = useElementHover(radioRef);
 
   const radioClasses: ComputedRef<RadioClasses> = computed(() => {
-    const baseClasses = classNames('spr-relative spr-m-0 spr-flex spr-items-center', {
-      'spr-inline-block': !choiceBox.value,
-      'spr-block': choiceBox.value,
-      'spr-w-full': fullWidth.value || choiceBox.value,
-      'spr-align-middle': !choiceBox.value,
-      'spr-border-color spr-border-color-weak spr-border spr-border-solid spr-p-2 spr-rounded-lg spr-transition spr-ease-in-out spr-duration-150 active:spr-scale-[0.98]':
+    const baseClasses = classNames('mc-relative mc-m-0 mc-flex mc-items-center', {
+      'mc-inline-block': !choiceBox.value,
+      'mc-block': choiceBox.value,
+      'mc-w-full': fullWidth.value || choiceBox.value,
+      'mc-align-middle': !choiceBox.value,
+      'mc-border-color mc-border-color-weak mc-border mc-border-solid mc-p-2 mc-rounded-lg mc-transition mc-ease-in-out mc-duration-150 active:mc-scale-[0.98]':
         choiceBox.value,
-      'spr-border-color-success-base spr-background-color-brand-weak':
+      'mc-border-color-success-base mc-background-color-brand-weak':
         choiceBox.value && String(modelValue?.value) === String(props.value) && !disabled.value,
-      'spr-cursor-pointer': choiceBox.value && !disabled.value,
-      'spr-cursor-not-allowed': disabled.value && choiceBox.value,
+      'mc-cursor-pointer': choiceBox.value && !disabled.value,
+      'mc-cursor-not-allowed': disabled.value && choiceBox.value,
     });
 
-    const baseInputClasses = classNames('spr-sr-only spr-peer spr-inline-block', {
-      'spr-cursor-not-allowed': disabled.value,
+    const baseInputClasses = classNames('mc-sr-only mc-peer mc-inline-block', {
+      'mc-cursor-not-allowed': disabled.value,
     });
 
     const baseIndicatorClasses = classNames(
-      'spr-inline-block spr-w-4 spr-h-4 spr-rounded-full spr-border-2 spr-border-solid spr-shrink-0',
+      'mc-inline-block mc-w-4 mc-h-4 mc-rounded-full mc-border-2 mc-border-solid mc-shrink-0',
       {
-        'spr-mr-2': slots.default,
-        'group-active:spr-scale-95': !disabled.value,
+        'mc-mr-2': slots.default,
+        'group-active:mc-scale-95': !disabled.value,
       },
 
       // Hover State
       {
         // Hover state with matching value
-        'spr-background-color-brand-hover spr-border-2 spr-border-color-brand-hover spr-shadow-[inset_0px_0px_0px_2.5px_#fff]':
+        'mc-background-color-brand-hover mc-border-2 mc-border-color-brand-hover mc-shadow-[inset_0px_0px_0px_2.5px_#fff]':
           isHovered.value && String(modelValue?.value) === String(props.value) && !disabled.value && !bordered.value,
 
         // Hover state but different value
-        'spr-background-color-base spr-border-2 spr-border-color-supporting spr-shadow-[inset_0px_0px_0px_2.5px_#fff]':
+        'mc-background-color-base mc-border-2 mc-border-color-supporting mc-shadow-[inset_0px_0px_0px_2.5px_#fff]':
           isHovered.value && String(modelValue?.value) !== String(props.value) && !disabled.value && !bordered.value,
 
         // Bordered Hover state but different value
-        'spr-background-color-base spr-border-2 spr-border-color-supporting':
+        'mc-background-color-base mc-border-2 mc-border-color-supporting':
           isHovered.value && String(modelValue?.value) !== String(props.value) && !disabled.value && bordered.value,
       },
 
       // Active State
       {
         // Active state with matching value
-        'spr-border-color-brand-base spr-background-color-brand-base spr-shadow-[inset_0px_0px_0px_2.5px_#fff] animate-shadow-grow':
+        'mc-border-color-brand-base mc-background-color-brand-base mc-shadow-[inset_0px_0px_0px_2.5px_#fff] animate-shadow-grow':
           String(modelValue?.value) === String(props.value) && !disabled.value && !bordered.value,
 
         // Active state with different value
-        'spr-border-color-supporting spr-shadow-[inset_0px_0px_0px_2.5px#fff]':
+        'mc-border-color-supporting mc-shadow-[inset_0px_0px_0px_2.5px#fff]':
           String(modelValue?.value) !== String(props.value) && !disabled.value && !bordered.value,
 
         //Bordered Active state with matching value
-        'spr-border-color-brand-base spr-background-color-brand-base animate-shadow-grow':
+        'mc-border-color-brand-base mc-background-color-brand-base animate-shadow-grow':
           String(modelValue?.value) === String(props.value) && !disabled.value && bordered.value,
 
         //Bordered Active state with different value
-        'spr-border-color-supporting':
+        'mc-border-color-supporting':
           String(modelValue?.value) !== String(props.value) && !disabled.value && bordered.value,
       },
 
       // Disabled State
       {
-        'spr-cursor-not-allowed': disabled.value,
+        'mc-cursor-not-allowed': disabled.value,
 
         // Disabled state with matching value
-        'spr-border-color-disabled spr-background-color-disabled spr-shadow-[inset_0px_0px_0px_2.5px_#fff]':
+        'mc-border-color-disabled mc-background-color-disabled mc-shadow-[inset_0px_0px_0px_2.5px_#fff]':
           disabled.value && String(modelValue?.value) === String(props.value) && !bordered.value,
 
         // Disabled state but different value
-        'spr-border-color-disabled spr-background-color spr-cursor-not-allowed':
+        'mc-border-color-disabled mc-background-color mc-cursor-not-allowed':
           disabled.value && String(modelValue?.value) !== String(props.value) && !bordered.value,
 
         // Bordered Disabled state with matching value
-        'spr-bg-white-400 spr-shadow-[inset_0px_0px_0px_2.5px_#fff]':
+        'mc-bg-white-400 mc-shadow-[inset_0px_0px_0px_2.5px_#fff]':
           disabled.value && String(modelValue?.value) === String(props.value) && bordered.value,
 
         // Bordered Disabled state but different value
-        'spr-border-white-400 spr-background-color-disabled':
+        'mc-border-white-400 mc-background-color-disabled':
           disabled.value && String(modelValue?.value) !== String(props.value) && bordered.value,
       },
     );
 
     const labelClasses = classNames(
-      'spr-group spr-m-0 spr-inline-flex spr-w-auto spr-items-center spr-p-0 spr-font-main',
-      'spr-text-color-strong spr-inline-flex spr-items-center spr-p-0',
+      'mc-group mc-m-0 mc-inline-flex mc-w-auto mc-items-center mc-p-0 mc-font-main',
+      'mc-text-color-strong mc-inline-flex mc-items-center mc-p-0',
       {
-        'spr-text-color-disabled': disabled.value && !bordered.value,
-        'spr-text-color-on-fill-disabled': disabled.value && bordered.value,
-        'spr-cursor-pointer': !disabled.value,
-        'spr-cursor-not-allowed': disabled.value,
+        'mc-text-color-disabled': disabled.value && !bordered.value,
+        'mc-text-color-on-fill-disabled': disabled.value && bordered.value,
+        'mc-cursor-pointer': !disabled.value,
+        'mc-cursor-not-allowed': disabled.value,
       },
     );
 
-    const borderedClasses = classNames(
-      'spr-border spr-rounded-md spr-p-size-spacing-2xs spr-border-solid spr-box-border',
-      {
-        //enabled state
-        'spr-border-color-brand-base spr-background-color-brand-weak':
-          String(modelValue?.value) === String(props.value) && !disabled.value, // matching value
-        'spr-border-color-weak spr-bg-white-50 hover:spr-background-color-hover':
-          String(modelValue?.value) !== String(props.value) && !disabled.value, // different value
+    const borderedClasses = classNames('mc-border mc-rounded-md mc-p-size-spacing-2xs mc-border-solid mc-box-border', {
+      //enabled state
+      'mc-border-color-brand-base mc-background-color-brand-weak':
+        String(modelValue?.value) === String(props.value) && !disabled.value, // matching value
+      'mc-border-color-weak mc-bg-white-50 hover:mc-background-color-hover':
+        String(modelValue?.value) !== String(props.value) && !disabled.value, // different value
 
-        //disabled state
-        'spr-border-color-disabled spr-background-color-disabled': disabled.value,
+      //disabled state
+      'mc-border-color-disabled mc-background-color-disabled': disabled.value,
 
-        'spr-w-full': fullWidth.value,
-        'spr-w-fit': !fullWidth.value,
-      },
-    );
+      'mc-w-full': fullWidth.value,
+      'mc-w-fit': !fullWidth.value,
+    });
 
     return {
       baseClasses,

@@ -10,7 +10,7 @@ The accordion component allows users to expand and collapse sections of content.
 
 ## Basic Usage
 
-<spr-accordion :accordion-items="accordionItems">
+<mc-accordion :accordion-items="accordionItems">
   <template #item1>
     Item1 content
   </template>
@@ -20,15 +20,15 @@ The accordion component allows users to expand and collapse sections of content.
   <template #item3>
     Item3 content
   </template>
-</spr-accordion>
+</mc-accordion>
 
 ```vue
 <template>
-  <spr-accordion :accordion-items="accordionItems">
+  <mc-accordion :accordion-items="accordionItems">
     <template #item1> Item1 content </template>
     <template #item2> Item2 content </template>
     <template #item3> Item3 content </template>
-  </spr-accordion>
+  </mc-accordion>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';
@@ -58,7 +58,7 @@ const accordionItems = ref([
 
 By default, the accordion trigger is a button. You can change the trigger element to the header by setting the `accordionTrigger` prop to `header`.
 
-<spr-accordion :accordion-items="accordionItems" accordion-trigger="header">
+<mc-accordion :accordion-items="accordionItems" accordion-trigger="header">
   <template #item1>
     Item1 content
   </template>
@@ -68,15 +68,15 @@ By default, the accordion trigger is a button. You can change the trigger elemen
   <template #item3>
     Item3 content
   </template>
-</spr-accordion>
+</mc-accordion>
 
 ```vue
 <template>
-  <spr-accordion :accordion-items="accordionItems" accordion-trigger="header">
+  <mc-accordion :accordion-items="accordionItems" accordion-trigger="header">
     <template #item1> Item1 content </template>
     <template #item2> Item2 content </template>
     <template #item3> Item3 content </template>
-  </spr-accordion>
+  </mc-accordion>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';
@@ -106,7 +106,7 @@ const accordionItems = ref([
 
 The `alwaysOpen` prop allows you to set the accordion items to be always open. This means that when one item is opened, the others will remain open as well.
 
-<spr-accordion :accordion-items="accordionItems" :always-open="true">
+<mc-accordion :accordion-items="accordionItems" :always-open="true">
   <template #item1>
     Item1 content
   </template>
@@ -116,15 +116,15 @@ The `alwaysOpen` prop allows you to set the accordion items to be always open. T
   <template #item3>
     Item3 content
   </template>
-</spr-accordion>
+</mc-accordion>
 
 ```vue
 <template>
-  <spr-accordion :accordion-items="accordionItems" :always-open="true">
+  <mc-accordion :accordion-items="accordionItems" :always-open="true">
     <template #item1> Item1 content </template>
     <template #item2> Item2 content </template>
     <template #item3> Item3 content </template>
-  </spr-accordion>
+  </mc-accordion>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';
@@ -158,7 +158,7 @@ By default, the accordion items are hidden. You can change the default state of 
 The `isDefaultOpen` prop will only work when the `alwaysOpen` prop is set to `true`.
 :::
 
-<spr-accordion :accordion-items="accordionItems" :is-default-open="true" :always-open="true">
+<mc-accordion :accordion-items="accordionItems" :is-default-open="true" :always-open="true">
   <template #item1>
     Item1 content
   </template>
@@ -168,15 +168,15 @@ The `isDefaultOpen` prop will only work when the `alwaysOpen` prop is set to `tr
   <template #item3>
     Item3 content
   </template>
-</spr-accordion>
+</mc-accordion>
 
 ```vue
 <template>
-  <spr-accordion :accordion-items="accordionItems" :is-default-open="true" :always-open="true">
+  <mc-accordion :accordion-items="accordionItems" :is-default-open="true" :always-open="true">
     <template #item1> Item1 content </template>
     <template #item2> Item2 content </template>
     <template #item3> Item3 content </template>
-  </spr-accordion>
+  </mc-accordion>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';
@@ -300,7 +300,7 @@ interface AccordionItem {
 ```
 
 <script lang="ts" setup>
-  import SprAccordion from '@/components/accordion/accordion.vue'
+  import McAccordion from '@/components/accordion/accordion.vue'
   import { ref } from 'vue'
 
   const accordionItems = ref([

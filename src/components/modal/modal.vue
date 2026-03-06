@@ -11,7 +11,7 @@
         <slot name="header"></slot>
 
         <span v-if="props.closeButtonX" :class="modalClasses.headerCloseButtonXClasses" @click="handleCloseModal">
-          <Icon class="spr-h-[20px] spr-w-[20px]" icon="ph:x" />
+          <Icon class="mc-h-[20px] mc-w-[20px]" icon="ph:x" />
         </span>
       </header>
 

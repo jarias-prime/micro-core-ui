@@ -10,8 +10,8 @@ export const useStackingSidepanel = (
 ) => {
   const activePanels = useVModel(props, 'stack', emits, { deep: true });
   const expandedPanel = ref('');
-  const isTransitioning = ref(false);  
-  const activePanel = computed(() => activePanels.value[activePanels.value.length -1] || null);
+  const isTransitioning = ref(false);
+  const activePanel = computed(() => activePanels.value[activePanels.value.length - 1] || null);
 
   // Ensure activePanels is an array
   watchDeep(activePanels, (newValue) => {
@@ -32,7 +32,7 @@ export const useStackingSidepanel = (
     expandedPanel.value = '';
     const index = activePanels.value.indexOf(name);
     if (index !== -1) {
-      activePanels.value.splice(index, 1);      
+      activePanels.value.splice(index, 1);
       undoResizeTracker();
       // Update transform immediately
       updateTransform();
@@ -50,13 +50,13 @@ export const useStackingSidepanel = (
   const { history, undo: undoResizeTracker } = useRefHistory(resizeTracker);
 
   // Watch for changes in the active panels to update the transform
-  useResizeObserver(stackingSidepanelBase, (entries) => {  
+  useResizeObserver(stackingSidepanelBase, (entries) => {
     //stop observer if panel is expanding to stop population of history of resizeTracker
     if (!!isTransitioning.value || !!expandedPanel.value) return;
 
     const entry = entries[0];
     const { width } = entry.contentRect;
-    resizeTracker.value = resizeTracker.value !== width ? width : resizeTracker.value;    
+    resizeTracker.value = resizeTracker.value !== width ? width : resizeTracker.value;
     updateTransform();
   });
 
@@ -73,7 +73,7 @@ export const useStackingSidepanel = (
     const numOfActivePanels = activePanels.value.length - 1;
     const numOfSnapshotHistory = history.value.length - 1;
     snapshot = history.value[numOfSnapshotHistory - numOfActivePanels]?.snapshot;
-    if(!snapshot) return    
+    if (!snapshot) return;
 
     stackingSidepanelBaseTransform.value = `transform: translateX(${snapshot}px);`;
   };
@@ -87,42 +87,39 @@ export const useStackingSidepanel = (
     { flush: 'post' },
   );
 
-  watch(
-    expandedPanel,
-    () => {
-      // transition delay of expanding panel
-      isTransitioning.value = true;
-      setTimeout(() => {
-        isTransitioning.value = false;
-      }, 150);
-    },
-  );
+  watch(expandedPanel, () => {
+    // transition delay of expanding panel
+    isTransitioning.value = true;
+    setTimeout(() => {
+      isTransitioning.value = false;
+    }, 150);
+  });
 
   const stackingSidepanelClasses = computed(() => {
     const sidepanelStackBackdropClasses =
-      'spr-fixed spr-left-0 spr-top-0 spr-z-[1010] spr-h-full spr-w-full spr-bg-mushroom-700/60';
+      'mc-fixed mc-left-0 mc-top-0 mc-z-[1010] mc-h-full mc-w-full mc-bg-mushroom-700/60';
 
     const sidepanelStackBaseClasses = classNames(
-      'spr-fixed spr-right-4 spr-top-1/2 spr-z-[1015] spr-flex spr-flex-row-reverse spr-gap-size-spacing-xs spr-transition-all spr-ease-[ease-in-out] spr-duration-[300ms]',
+      'mc-fixed mc-right-4 mc-top-1/2 mc-z-[1015] mc-flex mc-flex-row-reverse mc-gap-size-spacing-xs mc-transition-all mc-ease-[ease-in-out] mc-duration-[300ms]',
     );
 
     const sidepanelStackTransitionEnterActiveClasses = classNames(
-      'spr-transition-all spr-ease-[ease-in-out] spr-duration-[150ms]',
+      'mc-transition-all mc-ease-[ease-in-out] mc-duration-[150ms]',
     );
 
     const sidepanelStackTransitionLeaveActiveClasses = classNames(
-      'spr-transition-all spr-ease-[ease-in-out] spr-duration-[150ms]',
+      'mc-transition-all mc-ease-[ease-in-out] mc-duration-[150ms]',
     );
 
-    const sidepanelStackMoveClasses = classNames('spr-transition-all spr-ease-[ease-in-out] spr-duration-[300ms]');
+    const sidepanelStackMoveClasses = classNames('mc-transition-all mc-ease-[ease-in-out] mc-duration-[300ms]');
 
-    const sidepanelStackEnterFromClasses = classNames('spr-opacity-0', {
-      'spr-translate-x-1/2': activePanels.value.length <= 1,
+    const sidepanelStackEnterFromClasses = classNames('mc-opacity-0', {
+      'mc-translate-x-1/2': activePanels.value.length <= 1,
     });
 
-    const sidepanelStackLeaveToClasses = classNames('spr-opacity-0', {
-      'spr-translate-x-1/2': activePanels.value.length <= 0,
-      '-spr-translate-x-1/2': activePanels.value.length > 0,
+    const sidepanelStackLeaveToClasses = classNames('mc-opacity-0', {
+      'mc-translate-x-1/2': activePanels.value.length <= 0,
+      '-mc-translate-x-1/2': activePanels.value.length > 0,
     });
 
     return {
@@ -144,6 +141,6 @@ export const useStackingSidepanel = (
     activePanels,
     expandedPanel,
     handleExpandPanel,
-    activePanel
+    activePanel,
   };
 };

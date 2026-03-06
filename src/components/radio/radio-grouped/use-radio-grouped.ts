@@ -16,22 +16,19 @@ export const useRadioGrouped = (props: RadioGroupedPropTypes, emit: SetupContext
 
   const radioGroupedClasses: ComputedRef<RadioGroupedClasses> = computed(() => {
     const alignmentMap = {
-      left: 'spr-justify-start',
-      center: 'spr-justify-center',
-      right: 'spr-justify-end',
+      left: 'mc-justify-start',
+      center: 'mc-justify-center',
+      right: 'mc-justify-end',
     };
 
-    const containerClasses = classNames('spr-flex spr-flex-col spr-gap-2', {
+    const containerClasses = classNames('mc-flex mc-flex-col mc-gap-2', {
       [alignmentMap[horizontalAlign.value as keyof typeof alignmentMap]]: true,
     });
 
-    const helperClasses = classNames(
-      'spr-flex spr-items-center spr-gap-1 spr-mt-size-spacing-2xs spr-body-sm-regular',
-      {
-        'spr-text-mushroom-600': !error.value,
-        'spr-text-color-danger-base': error.value,
-      },
-    );
+    const helperClasses = classNames('mc-flex mc-items-center mc-gap-1 mc-mt-size-spacing-2xs mc-body-sm-regular', {
+      'mc-text-mushroom-600': !error.value,
+      'mc-text-color-danger-base': error.value,
+    });
 
     return {
       containerClasses,
@@ -40,11 +37,11 @@ export const useRadioGrouped = (props: RadioGroupedPropTypes, emit: SetupContext
   });
 
   const getOptionLabelClasses = (option: RadioOption, proxyValue): string => {
-    return classNames('spr-body-sm-regular', {
-      'spr-text-color-disabled': disabled.value || (option.disabled ?? false),
-      'spr-text-color-strong':
+    return classNames('mc-body-sm-regular', {
+      'mc-text-color-disabled': disabled.value || (option.disabled ?? false),
+      'mc-text-color-strong':
         !disabled.value && !(option.disabled ?? false) && (!choiceBox.value || proxyValue !== option.value),
-      'spr-text-color-specialty-token-dark':
+      'mc-text-color-specialty-token-dark':
         choiceBox.value && !disabled.value && !(option.disabled ?? false) && proxyValue === option.value,
     });
   };

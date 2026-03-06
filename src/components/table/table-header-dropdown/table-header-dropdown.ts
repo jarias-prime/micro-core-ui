@@ -4,8 +4,8 @@ import type { Header } from '../table';
 export const definePropType = <T>(val: unknown): PropType<T> => val as PropType<T>;
 
 const defaultSortOptions = ref([
-  { text: 'Sort Ascending', value: 'asc', icon: 'ph:sort-ascending', iconColor: 'spr-text-color-supporting' },
-  { text: 'Sort Descending', value: 'desc', icon: 'ph:sort-descending', iconColor: 'spr-text-color-supporting' },
+  { text: 'Sort Ascending', value: 'asc', icon: 'ph:sort-ascending', iconColor: 'mc-text-color-supporting' },
+  { text: 'Sort Descending', value: 'desc', icon: 'ph:sort-descending', iconColor: 'mc-text-color-supporting' },
 ]);
 
 export const tableHeaderDropdownPropTypes = {
@@ -32,14 +32,14 @@ export const tableHeaderDropdownPropTypes = {
   hasSelectAll: {
     type: Boolean,
     default: true,
-  }
+  },
 };
 
 export interface TableHeaderFilterType {
   headerField: string;
   sortBy: 'asc' | 'desc' | null;
   appliedFilters: Record<string, string>;
-};
+}
 
 export const tableHeaderDropdownEmitTypes = {
   onApplyFilter: (filter: TableHeaderFilterType) => !!filter,

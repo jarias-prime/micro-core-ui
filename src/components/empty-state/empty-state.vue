@@ -3,13 +3,13 @@
     <slot :class="emptyStateClasses.imageSizeClasses" />
 
     <div v-if="!$slots.default" :class="emptyStateClasses.imageSizeClasses">
-      <img :src="getImageUrl" alt="empty" class="spr-h-full spr-w-full spr-object-cover" />
+      <img :src="getImageUrl" alt="empty" class="mc-h-full mc-w-full mc-object-cover" />
     </div>
 
-    <section class="spr-flex spr-flex-col spr-items-center spr-justify-center spr-gap-size-spacing-md">
-      <div class="spr-text-color-strong spr-body-md spr-body-md-regular-medium spr-flex spr-flex-col">
+    <section class="mc-flex mc-flex-col mc-items-center mc-justify-center mc-gap-size-spacing-md">
+      <div class="mc-text-color-strong mc-body-md mc-body-md-regular-medium mc-flex mc-flex-col">
         <span>{{ description }}</span>
-        <div class="spr-text-color-base spr-body-sm-regular">
+        <div class="mc-text-color-base mc-body-sm-regular">
           {{ subDescription }}
         </div>
       </div>

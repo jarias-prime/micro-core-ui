@@ -21,32 +21,32 @@ The Time Picker component offers:
 
 ## Key Features
 
-<ul class="spr-ml-4">
-  <li class="spr-mb-2">
+<ul class="mc-ml-4">
+  <li class="mc-mb-2">
     <strong>Time Format Options:</strong>
     <span>
       Choose between 12-hour format with AM/PM indicators or 24-hour format using the <code>format</code> prop
     </span>
   </li>
-  <li class="spr-mb-2">
+  <li class="mc-mb-2">
     <strong>Customizable Intervals:</strong>
     <span>
       Configure the time increments (in minutes) between options using the <code>interval</code> prop
     </span>
   </li>
-  <li class="spr-mb-2">
+  <li class="mc-mb-2">
     <strong>Input Control:</strong>
     <span>
       Enable or disable manual time entry with the <code>disableTyping</code> prop to restrict selection to dropdown options only
     </span>
   </li>
-  <li class="spr-mb-2">
+  <li class="mc-mb-2">
     <strong>Form Integration:</strong>
     <span>
       Supports error states, helper text, and disabled states for seamless form integration
     </span>
   </li>
-  <li class="spr-mb-2">
+  <li class="mc-mb-2">
     <strong>Responsive Design:</strong>
     <span>
       Adapts to different container widths with the <code>fullWidth</code> prop for flexible layouts
@@ -58,7 +58,7 @@ The Time Picker component offers:
 
 The simplest implementation of the Time Picker requires only a `v-model` directive to bind the selected time value.
 
-<spr-time-picker 
+<mc-time-picker 
     v-model="selectedValue"
     label="Select a time"
     id='time-basic'
@@ -66,7 +66,7 @@ The simplest implementation of the Time Picker requires only a `v-model` directi
 
 ```vue
 <template>
-  <spr-time-picker v-model="selectedValue" label="Select a time" id="time-basic" />
+  <mc-time-picker v-model="selectedValue" label="Select a time" id="time-basic" />
 </template>
 
 <script setup>
@@ -84,14 +84,14 @@ By default, the Time Picker uses 24-hour format with 30-minute intervals. The dr
 
 The Time Picker supports both 12-hour (AM/PM) and 24-hour formats. Use the `format` prop to specify your preferred format.
 
-<div class="spr-flex spr-flex-col spr-gap-4">
-  <spr-time-picker 
+<div class="mc-flex mc-flex-col mc-gap-4">
+  <mc-time-picker 
       v-model="selectedValue1"
       label="12-hour format (AM/PM)"
       format="12"
       id='time-format-12'
     />
-  <spr-time-picker
+  <mc-time-picker
       v-model="selectedValue2"
       label="24-hour format"
       format="24"
@@ -101,12 +101,12 @@ The Time Picker supports both 12-hour (AM/PM) and 24-hour formats. Use the `form
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-4">
+  <div class="mc-flex mc-flex-col mc-gap-4">
     <!-- 12-hour format with AM/PM -->
-    <spr-time-picker v-model="selectedValue1" label="12-hour format (AM/PM)" format="12" id="time-format-12" />
+    <mc-time-picker v-model="selectedValue1" label="12-hour format (AM/PM)" format="12" id="time-format-12" />
 
     <!-- 24-hour format -->
-    <spr-time-picker v-model="selectedValue2" label="24-hour format" format="24" id="time-format-24" />
+    <mc-time-picker v-model="selectedValue2" label="24-hour format" format="24" id="time-format-24" />
   </div>
 </template>
 
@@ -128,20 +128,20 @@ const selectedValue2 = ref('');
 
 You can adjust the interval between time options using the `interval` prop. The value is specified in minutes.
 
-<div class="spr-flex spr-flex-col spr-gap-4">
-  <spr-time-picker 
+<div class="mc-flex mc-flex-col mc-gap-4">
+  <mc-time-picker 
       v-model="selectedValue3"
       label="15-minute intervals"
       interval="15"
       id="time-interval-15"
     />
-  <spr-time-picker 
+  <mc-time-picker 
       v-model="selectedValue4"
       label="30-minute intervals (default)"
       interval="30"
       id="time-interval-30"
     />
-  <spr-time-picker 
+  <mc-time-picker 
       v-model="selectedValue5"
       label="60-minute intervals (hourly)"
       interval="60"
@@ -151,12 +151,12 @@ You can adjust the interval between time options using the `interval` prop. The 
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-4">
+  <div class="mc-flex mc-flex-col mc-gap-4">
     <!-- 15-minute intervals -->
-    <spr-time-picker v-model="selectedValue3" label="15-minute intervals" interval="15" id="time-interval-15" />
+    <mc-time-picker v-model="selectedValue3" label="15-minute intervals" interval="15" id="time-interval-15" />
 
     <!-- 30-minute intervals (default) -->
-    <spr-time-picker
+    <mc-time-picker
       v-model="selectedValue4"
       label="30-minute intervals (default)"
       interval="30"
@@ -164,12 +164,7 @@ You can adjust the interval between time options using the `interval` prop. The 
     />
 
     <!-- Hourly intervals -->
-    <spr-time-picker
-      v-model="selectedValue5"
-      label="60-minute intervals (hourly)"
-      interval="60"
-      id="time-interval-60"
-    />
+    <mc-time-picker v-model="selectedValue5" label="60-minute intervals (hourly)" interval="60" id="time-interval-60" />
   </div>
 </template>
 
@@ -192,7 +187,7 @@ Smaller intervals provide more precise time selection but result in longer dropd
 
 Use the `disableTyping` prop to prevent users from manually entering a time. This restricts selection to the dropdown options only.
 
-<spr-time-picker 
+<mc-time-picker 
     v-model="selectedValue6"
     label="Selection only (no typing)"
     disableTyping
@@ -202,7 +197,7 @@ Use the `disableTyping` prop to prevent users from manually entering a time. Thi
 
 ```vue
 <template>
-  <spr-time-picker
+  <mc-time-picker
     v-model="selectedValue6"
     label="Selection only (no typing)"
     disableTyping
@@ -222,7 +217,7 @@ const selectedValue6 = ref('');
 
 You can customize the input placeholder text using the `placeholder` prop.
 
-<spr-time-picker 
+<mc-time-picker 
     v-model="selectedValue7"
     label="With custom placeholder"
     placeholder="Select meeting time..."
@@ -231,7 +226,7 @@ You can customize the input placeholder text using the `placeholder` prop.
 
 ```vue
 <template>
-  <spr-time-picker
+  <mc-time-picker
     v-model="selectedValue7"
     label="With custom placeholder"
     placeholder="Select meeting time..."
@@ -252,7 +247,7 @@ const selectedValue7 = ref('');
 
 Add explanatory text below the input field using the `helperText` prop.
 
-<spr-time-picker 
+<mc-time-picker 
     v-model="selectedValue8"
     label="Opening hours"
     helperText="Select the time your business opens"
@@ -261,7 +256,7 @@ Add explanatory text below the input field using the `helperText` prop.
 
 ```vue
 <template>
-  <spr-time-picker
+  <mc-time-picker
     v-model="selectedValue8"
     label="Opening hours"
     helperText="Select the time your business opens"
@@ -280,7 +275,7 @@ const selectedValue8 = ref('');
 
 Display an error state using the `error` prop to indicate validation issues.
 
-<spr-time-picker 
+<mc-time-picker 
     v-model="selectedValue9" 
     label="Meeting time" 
     error 
@@ -290,7 +285,7 @@ Display an error state using the `error` prop to indicate validation issues.
 
 ```vue
 <template>
-  <spr-time-picker
+  <mc-time-picker
     v-model="selectedValue9"
     label="Meeting time"
     error
@@ -310,7 +305,7 @@ const selectedValue9 = ref('');
 
 Disable the time picker using the `disabled` prop when you want to prevent interaction.
 
-<spr-time-picker 
+<mc-time-picker 
     v-model="selectedValue10"
     label="Appointment time (disabled)"
     disabled
@@ -319,7 +314,7 @@ Disable the time picker using the `disabled` prop when you want to prevent inter
 
 ```vue
 <template>
-  <spr-time-picker v-model="selectedValue10" label="Appointment time (disabled)" disabled id="time-disabled" />
+  <mc-time-picker v-model="selectedValue10" label="Appointment time (disabled)" disabled id="time-disabled" />
 </template>
 
 <script setup>
@@ -335,7 +330,7 @@ const selectedValue10 = ref('');
 
 Use the `fullWidth` prop to make the time picker expand to the full width of its container.
 
-<spr-time-picker 
+<mc-time-picker 
     v-model="selectedValue11" 
     label="Full width time picker" 
     fullWidth 
@@ -344,7 +339,7 @@ Use the `fullWidth` prop to make the time picker expand to the full width of its
 
 ```vue
 <template>
-  <spr-time-picker v-model="selectedValue11" label="Full width time picker" fullWidth id="time-full-width" />
+  <mc-time-picker v-model="selectedValue11" label="Full width time picker" fullWidth id="time-full-width" />
 </template>
 
 <script setup>
@@ -459,8 +454,7 @@ const selectedValue11 = ref('');
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import SprTimePicker from "@/components/time-picker/time-picker.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McTimePicker from "@/components/time-picker/time-picker.vue";
 
 const selectedValue = ref('');
 const selectedValue1 = ref('');

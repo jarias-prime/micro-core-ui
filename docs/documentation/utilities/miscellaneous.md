@@ -22,9 +22,9 @@ Additional utility classes for scrolling behavior, visual states, and component-
   </thead>
   <tbody>
     <tr>
-      <td><code>.spr-hidden-scrolls</code></td>
+      <td><code>.mc-hidden-scrolls</code></td>
       <td>Hides webkit scrollbars while maintaining scroll functionality</td>
-      <td>Applies <code>spr-hidden</code> to <code>::-webkit-scrollbar</code></td>
+      <td>Applies <code>mc-hidden</code> to <code>::-webkit-scrollbar</code></td>
     </tr>
   </tbody>
 </table>
@@ -43,12 +43,12 @@ Additional utility classes for scrolling behavior, visual states, and component-
   </thead>
   <tbody>
     <tr>
-      <td><code>.spr-skeletal-loader</code></td>
+      <td><code>.mc-skeletal-loader</code></td>
       <td>Creates a pulsing animation with gradient background for skeleton loading states</td>
       <td>
-        <code>spr-animate-pulse</code><br>
-        <code>spr-border-neutral-200</code><br>
-        <code>spr-bg-[linear-gradient(...)]</code>
+        <code>mc-animate-pulse</code><br>
+        <code>mc-border-neutral-200</code><br>
+        <code>mc-bg-[linear-gradient(...)]</code>
       </td>
     </tr>
   </tbody>
@@ -62,7 +62,7 @@ Use when you want to maintain scroll functionality but hide the visual scrollbar
 
 ```html
 <!-- Container with hidden scrollbar -->
-<div class="spr-hidden-scrolls overflow-y-auto max-h-96">
+<div class="mc-hidden-scrolls overflow-y-auto max-h-96">
   <div class="space-y-4">
     <!-- Content that exceeds container height -->
     <div class="p-4">Item 1</div>
@@ -73,10 +73,10 @@ Use when you want to maintain scroll functionality but hide the visual scrollbar
 </div>
 
 <!-- Chat or message container -->
-<div class="spr-hidden-scrolls overflow-y-auto h-64 p-4">
+<div class="mc-hidden-scrolls overflow-y-auto h-64 p-4">
   <div class="space-y-2">
-    <div class="spr-background-color-surface p-3 rounded">Message 1</div>
-    <div class="spr-background-color-surface p-3 rounded">Message 2</div>
+    <div class="mc-background-color-surface p-3 rounded">Message 1</div>
+    <div class="mc-background-color-surface p-3 rounded">Message 2</div>
     <!-- ... more messages -->
   </div>
 </div>
@@ -88,44 +88,44 @@ Use for loading states to improve perceived performance:
 
 ```html
 <!-- Basic skeleton loader -->
-<div class="spr-skeletal-loader spr-h-4 spr-w-full"></div>
+<div class="mc-skeletal-loader mc-h-4 mc-w-full"></div>
 
 <!-- Card skeleton -->
-<div class="spr-background-color p-6 rounded-lg space-y-4">
+<div class="mc-background-color p-6 rounded-lg space-y-4">
   <!-- Title skeleton -->
-  <div class="spr-skeletal-loader spr-h-6 spr-w-3/4"></div>
+  <div class="mc-skeletal-loader mc-h-6 mc-w-3/4"></div>
 
   <!-- Content skeleton lines -->
   <div class="space-y-2">
-    <div class="spr-skeletal-loader spr-h-4 spr-w-full"></div>
-    <div class="spr-skeletal-loader spr-h-4 spr-w-full"></div>
-    <div class="spr-skeletal-loader spr-h-4 spr-w-2/3"></div>
+    <div class="mc-skeletal-loader mc-h-4 mc-w-full"></div>
+    <div class="mc-skeletal-loader mc-h-4 mc-w-full"></div>
+    <div class="mc-skeletal-loader mc-h-4 mc-w-2/3"></div>
   </div>
 
   <!-- Button skeleton -->
-  <div class="spr-skeletal-loader spr-h-10 spr-w-24 spr-rounded-border-radius-md"></div>
+  <div class="mc-skeletal-loader mc-h-10 mc-w-24 mc-rounded-border-radius-md"></div>
 </div>
 
 <!-- Profile skeleton -->
 <div class="flex items-center space-x-4">
   <!-- Avatar skeleton -->
-  <div class="spr-skeletal-loader rounded-full spr-h-12 spr-w-12"></div>
+  <div class="mc-skeletal-loader rounded-full mc-h-12 mc-w-12"></div>
 
   <div class="space-y-2 flex-1">
     <!-- Name skeleton -->
-    <div class="spr-skeletal-loader spr-h-4 spr-w-32"></div>
+    <div class="mc-skeletal-loader mc-h-4 mc-w-32"></div>
     <!-- Email skeleton -->
-    <div class="spr-skeletal-loader spr-h-3 spr-w-48"></div>
+    <div class="mc-skeletal-loader mc-h-3 mc-w-48"></div>
   </div>
 </div>
 
 <!-- List skeleton -->
 <div class="space-y-3">
   <div v-for="i in 5" :key="i" class="flex items-center space-x-3">
-    <div class="spr-skeletal-loader rounded spr-h-8 spr-w-8"></div>
+    <div class="mc-skeletal-loader rounded mc-h-8 mc-w-8"></div>
     <div class="flex-1 space-y-2">
-      <div class="spr-skeletal-loader spr-h-4 spr-w-3/4"></div>
-      <div class="spr-skeletal-loader spr-h-3 spr-w-1/2"></div>
+      <div class="mc-skeletal-loader mc-h-4 mc-w-3/4"></div>
+      <div class="mc-skeletal-loader mc-h-3 mc-w-1/2"></div>
     </div>
   </div>
 </div>
@@ -136,7 +136,7 @@ Use for loading states to improve perceived performance:
 ### Table with Hidden Scrollbars
 
 ```html
-<div class="spr-table-wrapper">
+<div class="mc-table-wrapper">
   <table class="w-full">
     <thead>
       <tr>
@@ -145,7 +145,7 @@ Use for loading states to improve perceived performance:
         <th>Column 3</th>
       </tr>
     </thead>
-    <tbody class="spr-hidden-scrolls">
+    <tbody class="mc-hidden-scrolls">
       <!-- Table rows -->
     </tbody>
   </table>
@@ -157,17 +157,17 @@ Use for loading states to improve perceived performance:
 ```html
 <!-- Before data loads -->
 <div v-if="loading" class="space-y-4">
-  <div class="spr-skeletal-loader spr-h-8 spr-w-64"></div>
+  <div class="mc-skeletal-loader mc-h-8 mc-w-64"></div>
   <div class="grid grid-cols-3 gap-4">
-    <div class="spr-skeletal-loader spr-h-32"></div>
-    <div class="spr-skeletal-loader spr-h-32"></div>
-    <div class="spr-skeletal-loader spr-h-32"></div>
+    <div class="mc-skeletal-loader mc-h-32"></div>
+    <div class="mc-skeletal-loader mc-h-32"></div>
+    <div class="mc-skeletal-loader mc-h-32"></div>
   </div>
 </div>
 
 <!-- After data loads -->
 <div v-else>
-  <h1 class="spr-heading-lg">Loaded Content</h1>
+  <h1 class="mc-heading-lg">Loaded Content</h1>
   <!-- Actual content -->
 </div>
 ```
@@ -191,13 +191,13 @@ Use for loading states to improve perceived performance:
 ```html
 <!-- Good skeleton - matches content structure -->
 <div class="space-y-4">
-  <div class="spr-skeletal-loader spr-h-6 spr-w-3/4"></div>
+  <div class="mc-skeletal-loader mc-h-6 mc-w-3/4"></div>
   <!-- Title -->
-  <div class="spr-skeletal-loader spr-h-4 spr-w-full"></div>
+  <div class="mc-skeletal-loader mc-h-4 mc-w-full"></div>
   <!-- Line 1 -->
-  <div class="spr-skeletal-loader spr-h-4 spr-w-5/6"></div>
+  <div class="mc-skeletal-loader mc-h-4 mc-w-5/6"></div>
   <!-- Line 2 -->
-  <div class="spr-skeletal-loader spr-h-10 spr-w-32 spr-rounded-border-radius-md"></div>
+  <div class="mc-skeletal-loader mc-h-10 mc-w-32 mc-rounded-border-radius-md"></div>
   <!-- Button -->
 </div>
 

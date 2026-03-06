@@ -157,28 +157,28 @@ export const useCalendar = (props: CalendarPropTypes, emit: SetupContext<Calenda
   );
 
   const getCalendarClasses = computed(() => {
-    const borderClasses = classNames(' spr-border spr-border-color-weak spr-border-solid');
+    const borderClasses = classNames(' mc-border mc-border-color-weak mc-border-solid');
     const headerWrapper = classNames(
-      'spr-bg-color-weak spr-flex spr-w-full spr-items-center spr-justify-between spr-p-size-spacing-sm',
+      'mc-bg-color-weak mc-flex mc-w-full mc-items-center mc-justify-between mc-p-size-spacing-sm',
     );
 
     const contentWrapper = classNames(
-      ' spr-flex spr-flex-col spr-h-full spr-divide-color-weak spr-divide-x-0 spr-divide-y spr-divide-solid',
+      ' mc-flex mc-flex-col mc-h-full mc-divide-color-weak mc-divide-x-0 mc-divide-y mc-divide-solid',
     );
     const calendarTable = classNames(
-      'spr-h-full spr-table spr-w-full spr-table-fixed spr-border-collapse spr-border-spacing-0 spr-rounded-border',
+      'mc-h-full mc-table mc-w-full mc-table-fixed mc-border-collapse mc-border-spacing-0 mc-rounded-border',
     );
     const tableHeaderEmployeeName = classNames(
-      'spr-sticky spr-left-0 spr-z-20 spr-background-color spr-body-xs-regular-medium spr-p-size-spacing-3xs spr-py-size-spacing-xs spr-text-left spr-overflow-hidden spr-h-full spr-border-x-0 spr-border-t-0 ',
+      'mc-sticky mc-left-0 mc-z-20 mc-background-color mc-body-xs-regular-medium mc-p-size-spacing-3xs mc-py-size-spacing-xs mc-text-left mc-overflow-hidden mc-h-full mc-border-x-0 mc-border-t-0 ',
     );
     const tableHeader = classNames(
-      'spr-background-color spr-border-x-0 spr-border-t-0 spr-border-l  spr-px-size-spacing-3xs spr-py-size-spacing-xs spr-text-center',
+      'mc-background-color mc-border-x-0 mc-border-t-0 mc-border-l  mc-px-size-spacing-3xs mc-py-size-spacing-xs mc-text-center',
     );
     const headerContent = classNames(
-      'spr-flex lg:spr-flex-row md:spr-flex-col sm:spr-flex-col spr-w-full spr-items-center spr-gap-size-spacing-3xs spr-overflow-hidden',
+      'mc-flex lg:mc-flex-row md:mc-flex-col sm:mc-flex-col mc-w-full mc-items-center mc-gap-size-spacing-3xs mc-overflow-hidden',
     );
     const headerDate = classNames(
-      'spr-font-size-400 spr-line-height-500 spr-letter-spacing-dense spr-flex spr-h-size-spacing-md spr-w-size-spacing-md spr-items-center spr-justify-center spr-rounded-full spr-font-main spr-font-normal',
+      'mc-font-size-400 mc-line-height-500 mc-letter-spacing-dense mc-flex mc-h-size-spacing-md mc-w-size-spacing-md mc-items-center mc-justify-center mc-rounded-full mc-font-main mc-font-normal',
     );
 
     getFirstAndLastDayOfWeek();

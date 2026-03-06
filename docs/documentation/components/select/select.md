@@ -10,9 +10,9 @@ Selects are interactive components that allow users to choose from a list of opt
 
 ## Basic Usage
 
-<div class="spr-grid spr-gap-4">
+<div class="mc-grid mc-gap-4">
 
-<spr-select
+<mc-select
     id="select-basic"
     v-model="selectModel.selectBasic"
     label="Select Label"
@@ -20,14 +20,14 @@ Selects are interactive components that allow users to choose from a list of opt
     :options="options"
   />
 
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ selectModel.selectBasic ? selectModel.selectBasic : `""` }}
   </code>
 </div>
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-basic"
     v-model="selectModel"
     label="Select Label"
@@ -61,8 +61,8 @@ const options = ref([
 
 You can group items by `default`, `A-Z` or `Z-A` order by passing the `group-items-by` prop and specifying the desired grouping type.
 
-<div class="spr-grid spr-gap-4">
-  <spr-select
+<div class="mc-grid mc-gap-4">
+  <mc-select
     id="select-grouped-items-by"
     v-model="selectModel.selectGroupedItemsBy"
     label="Select Label"
@@ -74,8 +74,8 @@ You can group items by `default`, `A-Z` or `Z-A` order by passing the `group-ite
 
 ```vue
 <template>
-  <div class="spr-grid spr-gap-4">
-    <spr-select
+  <div class="mc-grid mc-gap-4">
+    <mc-select
       id="select-grouped-items-by"
       v-model="selectModel"
       label="Select Label"
@@ -93,8 +93,8 @@ The search feature allows users to quickly filter and find specific items within
 
 - Use the `searchable-options` prop to enable the search input within the select component.
 
-<div class="spr-grid spr-gap-4">
-  <spr-select
+<div class="mc-grid mc-gap-4">
+  <mc-select
     id="select-search"
     v-model="selectModel.selectSearch"
     label="Select Label"
@@ -103,14 +103,14 @@ The search feature allows users to quickly filter and find specific items within
     searchable
   />
 
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ selectModel.selectSearch ? selectModel.selectSearch : `""` }}
   </code>
 </div>
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-search"
     v-model="selectModel"
     label="Select Label"
@@ -145,8 +145,8 @@ You can disable local search by passing the `disabled-local-search` prop. This i
 
 Use `@searchString` emit to get the search string when the user types in the search input. This allows you to handle the search logic externally, such as fetching options from an API based on the search query.
 
-<div class="spr-grid spr-gap-4">
-  <spr-select
+<div class="mc-grid mc-gap-4">
+  <mc-select
     id="select-search-disabled-local-search"
     v-model="selectModel.selectSearchDisabledLocalSearch"
     label="Select Label"
@@ -156,14 +156,14 @@ Use `@searchString` emit to get the search string when the user types in the sea
     disabled-local-search
   />
   
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ selectModel.selectSearchDisabledLocalSearch ? selectModel.selectSearchDisabledLocalSearch : `""` }}
   </code>
 </div>
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-search-disabled-local-search"
     v-model="selectModel"
     label="Select Label"
@@ -204,8 +204,8 @@ Pre-selected items are options that are automatically selected when the select i
 - **Array of strings or numbers**: For single selection by array (e.g., `['apple']` or `[42]`).
 - **Object**: For single selection by object reference (e.g., `{ text: 'Apple', value: 'apple' }`). See more in the [Supported Value Types](#single-object-values).
 
-<div class="spr-grid spr-gap-4">
-  <spr-select
+<div class="mc-grid mc-gap-4">
+  <mc-select
     id="select-pre-selected-items"
     v-model="selectModel.selectPreSelectedItems"
     label="Select Label"
@@ -216,15 +216,15 @@ Pre-selected items are options that are automatically selected when the select i
     value-field="value"
   />
   
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ selectModel.selectPreSelectedItems ? selectModel.selectPreSelectedItems : `""` }}
   </code>
 </div>
 
 ```vue
 <template>
-  <div class="spr-grid spr-gap-4">
-    <spr-select
+  <div class="mc-grid mc-gap-4">
+    <mc-select
       id="select-pre-selected-items"
       v-model="selectModel"
       label="Select Label"
@@ -244,8 +244,8 @@ const selectModel = ref(['apple']);
 
 You can also pre-select items with search functionality. This allows users to see the pre-selected items while still being able to search through the options.
 
-<div class="spr-mt-4">
-  <spr-select
+<div class="mc-mt-4">
+  <mc-select
     id="select-pre-selected-items-with-search"
     v-model="selectModel.selectPreSelectedItemsWithSearch"
     label="Select Label"
@@ -263,9 +263,9 @@ The available placement options are: `auto`, `auto-start`, `auto-end`, `top`, `t
 
 The default placement is `bottom`.
 
-<div class="spr-grid spr-gap-4">
-  <div class="spr-flex spr-gap-4">
-    <spr-select
+<div class="mc-grid mc-gap-4">
+  <div class="mc-flex mc-gap-4">
+    <mc-select
       id="select-placement-auto"
       v-model="selectModel.selectPlacements"
       label="Auto"
@@ -274,7 +274,7 @@ The default placement is `bottom`.
       placement="auto"
       popper-width="200px"
     />
-    <spr-select
+    <mc-select
       id="select-placement-auto-start"
       v-model="selectModel.selectPlacements"
       label="Auto Start"
@@ -283,7 +283,7 @@ The default placement is `bottom`.
       placement="auto-start"
       popper-width="200px"
     />
-    <spr-select
+    <mc-select
       id="select-placement-auto-end"
       v-model="selectModel.selectPlacements"
       label="Auto End"
@@ -293,8 +293,8 @@ The default placement is `bottom`.
       popper-width="200px"
     />
   </div>
-  <div class="spr-flex spr-gap-4">
-    <spr-select
+  <div class="mc-flex mc-gap-4">
+    <mc-select
       id="select-placement-top"
       v-model="selectModel.selectPlacements"
       label="Top"
@@ -303,7 +303,7 @@ The default placement is `bottom`.
       placement="top"
       popper-width="200px"
     />
-    <spr-select
+    <mc-select
       id="select-placement-top-start"
       v-model="selectModel.selectPlacements"
       label="Top Start"
@@ -312,7 +312,7 @@ The default placement is `bottom`.
       placement="top-start"
       popper-width="200px"
     />
-    <spr-select
+    <mc-select
       id="select-placement-top-end"
       v-model="selectModel.selectPlacements"
       label="Top End"
@@ -322,8 +322,8 @@ The default placement is `bottom`.
       popper-width="200px"
     />
   </div>
-  <div class="spr-flex spr-gap-4">
-    <spr-select
+  <div class="mc-flex mc-gap-4">
+    <mc-select
       id="select-placement-right"
       v-model="selectModel.selectPlacements"
       label="Right"
@@ -332,7 +332,7 @@ The default placement is `bottom`.
       placement="right"
       popper-width="200px"
     />
-    <spr-select
+    <mc-select
       id="select-placement-right-start"
       v-model="selectModel.selectPlacements"
       label="Right Start"
@@ -341,7 +341,7 @@ The default placement is `bottom`.
       placement="right-start"
       popper-width="200px"
     />
-    <spr-select
+    <mc-select
       id="select-placement-right-end"
       v-model="selectModel.selectPlacements"
       label="Right End"
@@ -351,8 +351,8 @@ The default placement is `bottom`.
       popper-width="200px"
     />
   </div>
-  <div class="spr-flex spr-gap-4">
-    <spr-select
+  <div class="mc-flex mc-gap-4">
+    <mc-select
       id="select-placement-bottom"
       v-model="selectModel.selectPlacements"
       label="Bottom"
@@ -361,7 +361,7 @@ The default placement is `bottom`.
       placement="bottom"
       popper-width="200px"
     />
-    <spr-select
+    <mc-select
       id="select-placement-bottom-start"
       v-model="selectModel.selectPlacements"
       label="Bottom Start"
@@ -370,7 +370,7 @@ The default placement is `bottom`.
       placement="bottom-start"
       popper-width="200px"
     />
-    <spr-select
+    <mc-select
       id="select-placement-bottom-end"
       v-model="selectModel.selectPlacements"
       label="Bottom End"
@@ -380,8 +380,8 @@ The default placement is `bottom`.
       popper-width="200px"
     />
   </div>
-  <div class="spr-flex spr-gap-4">
-    <spr-select
+  <div class="mc-flex mc-gap-4">
+    <mc-select
       id="select-placement-left"
       v-model="selectModel.selectPlacements"
       label="Left"
@@ -390,7 +390,7 @@ The default placement is `bottom`.
       placement="left"
       popper-width="200px"
     />
-    <spr-select
+    <mc-select
       id="select-placement-left-start"
       v-model="selectModel.selectPlacements"
       label="Left Start"
@@ -399,7 +399,7 @@ The default placement is `bottom`.
       placement="left-start"
       popper-width="200px"
     />
-    <spr-select
+    <mc-select
       id="select-placement-left-end"
       v-model="selectModel.selectPlacements"
       label="Left End"
@@ -415,8 +415,8 @@ The default placement is `bottom`.
 
 The clearable feature allows users to easily remove the selected value from the select input. This is particularly useful for forms where users may want to reset their selection without having to open the select.
 
-<div class="spr-grid spr-gap-4">
-  <spr-select
+<div class="mc-grid mc-gap-4">
+  <mc-select
     id="select-clearable"
     v-model="selectModel.selectClearable"
     label="Select Label"
@@ -425,7 +425,7 @@ The clearable feature allows users to easily remove the selected value from the 
     clearable
   />
 
-  <code class="spr-font-medium">
+  <code class="mc-font-medium">
     V-Model: {{ selectModel.selectClearable ? selectModel.selectClearable : `""` }}
   </code>
 </div>
@@ -439,7 +439,7 @@ You can modify the width of the select component in two ways: by adjusting the w
 `Popper Width` - Width of only popper element
 
 <div>
-  <spr-select
+  <mc-select
     id="select-width"
     v-model="selectModel.selectWidth"
     label="Select Label"
@@ -452,7 +452,7 @@ You can modify the width of the select component in two ways: by adjusting the w
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-width"
     v-model="selectModel"
     label="Select Label"
@@ -476,10 +476,10 @@ Pass the prop `popper-strategy` to change the behavior position of the popper.
 Do not forget to pass prop `wrapperPosition` to overwrite `relative` position into `initial`.
 :::
 
-<spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+<mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-<spr-modal v-model="modalModel" title="Select with Modal">
-   <spr-select
+<mc-modal v-model="modalModel" title="Select with Modal">
+   <mc-select
     id="select-popper-strategy"
     v-model="selectModel.selectStrategy"
     label="Select Label"
@@ -491,14 +491,14 @@ Do not forget to pass prop `wrapperPosition` to overwrite `relative` position in
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </p>
-</spr-modal>
+</mc-modal>
 
 ```vue
 <template>
-  <spr-button tone="success" @click="modalModel = true">Open Modal</spr-button>
+  <mc-button tone="success" @click="modalModel = true">Open Modal</mc-button>
 
-  <spr-modal v-model="modalModel" title="Select with Modal">
-    <spr-select
+  <mc-modal v-model="modalModel" title="Select with Modal">
+    <mc-select
       id="select-popper-strategy"
       v-model="selectModel"
       label="Select Label"
@@ -512,7 +512,7 @@ Do not forget to pass prop `wrapperPosition` to overwrite `relative` position in
       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
     </p>
-  </spr-modal>
+  </mc-modal>
 </template>
 ```
 
@@ -521,7 +521,7 @@ You can also use the `popper-container` prop to specify a custom container for t
 Since the popper is being teleported to a different container, the `popper-width` prop will not work as expected. To set a custom width for the popper in this case, you can use custom styles or CSS classes to define the desired width.
 
 <div>
-  <spr-dropdown
+  <mc-dropdown
     id="dropdown-custom-popper"
     width="300px"
     :triggers="['hover', 'click']"
@@ -529,12 +529,12 @@ Since the popper is being teleported to a different container, the `popper-width
     popper-width="500px"
     :auto-hide="false"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Custom Popper With Dropdown</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
+    </mc-button>
     <template #popper>
-      <spr-select
+      <mc-select
         id="select-dropdown-custom-popper"
         v-model="selectModel.selectStrategy"
         label="Select Label"
@@ -546,12 +546,12 @@ Since the popper is being teleported to a different container, the `popper-width
         placement="bottom"
       />
     </template>
-  </spr-dropdown>
+  </mc-dropdown>
 </div>
 
 ```vue
 <template>
-  <spr-dropdown
+  <mc-dropdown
     id="dropdown-custom-popper"
     width="300px"
     :triggers="['hover', 'click']"
@@ -559,12 +559,12 @@ Since the popper is being teleported to a different container, the `popper-width
     popper-width="500px"
     :auto-hide="false"
   >
-    <spr-button class="spr-w-full" tone="success" has-icon>
+    <mc-button class="mc-w-full" tone="success" has-icon>
       <span>Custom Popper With Dropdown</span>
       <Icon icon="ph:caret-down" />
-    </spr-button>
+    </mc-button>
     <template #popper>
-      <spr-select
+      <mc-select
         id="select-dropdown-custom-popper"
         v-model="selectModel"
         label="Select Label"
@@ -576,7 +576,7 @@ Since the popper is being teleported to a different container, the `popper-width
         placement="bottom"
       />
     </template>
-  </spr-dropdown>
+  </mc-dropdown>
 </template>
 ```
 
@@ -587,7 +587,7 @@ Infinite scroll allows the select list to load more items as the user scrolls. T
 When working with infinite scroll and API-driven selects, you can use the `display-text` prop to show a display value in the input on initial load (for example, when you only have the selected value and not the full option object yet). This is especially helpful for large datasets where you don't want to fetch all options at once.
 
 <div>
-  <spr-select
+  <mc-select
     id="select-infinite-scroll"
     v-model="selectModel.selectInfiniteScroll"
     label="Select Label"
@@ -596,7 +596,7 @@ When working with infinite scroll and API-driven selects, you can use the `displ
     :options="optionsAPI"
     @infinite-scroll-trigger="handleInfiniteScrollTrigger"
   />
-  <div class="spr-my-3 spr-p-4 spr-bg-blue-100">
+  <div class="mc-my-3 mc-p-4 mc-bg-blue-100">
     <h5>Paginated Options - Should load 10 Items per page:</h5>
     <p>Pagination:</p>
     <pre>{{ JSON.stringify(pagination, null, 2) }}</pre>
@@ -607,7 +607,7 @@ When working with infinite scroll and API-driven selects, you can use the `displ
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-infinite-scroll"
     v-model="selectModel"
     label="Select Label"
@@ -681,7 +681,7 @@ For guidance on implementing error, active, and disabled states in the select co
 ### Active State
 
 <div>
-  <spr-select
+  <mc-select
     id="select-active-state"
     v-model="selectModel.selectActiveState"
     label="Select Label"
@@ -693,7 +693,7 @@ For guidance on implementing error, active, and disabled states in the select co
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-active-state"
     v-model="selectModel"
     label="Select Label"
@@ -707,7 +707,7 @@ For guidance on implementing error, active, and disabled states in the select co
 ### Disabled State
 
 <div>
-  <spr-select
+  <mc-select
     id="select-disabled-state"
     v-model="selectModel.selectDisabledState"
     label="Select Label"
@@ -719,7 +719,7 @@ For guidance on implementing error, active, and disabled states in the select co
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-disabled-state"
     v-model="selectModel"
     label="Select Label"
@@ -733,7 +733,7 @@ For guidance on implementing error, active, and disabled states in the select co
 ### Error State
 
 <div>
-  <spr-select
+  <mc-select
     id="select-error-state"
     v-model="selectModel.selectErrorState"
     label="Select Label"
@@ -745,7 +745,7 @@ For guidance on implementing error, active, and disabled states in the select co
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-error-state"
     v-model="selectModel"
     label="Select Label"
@@ -762,8 +762,8 @@ A helper message is a text label below the input field that provides additional 
 
 To display the helper message, set the `display-helper` prop to `true` and add the `helper-text` prop with the helper message text. You can also insert an icon with the `helper-icon` prop. This uses the [Iconify](https://icon-sets.iconify.design/) icon library.
 
-<div class="spr-grid spr-gap-8">
-  <spr-select
+<div class="mc-grid mc-gap-8">
+  <mc-select
     id="select-helper-message"
     v-model="selectModel.selectHelperMessage"
     label="Select Label"
@@ -772,7 +772,7 @@ To display the helper message, set the `display-helper` prop to `true` and add t
     helper-text="This is a helper message"
     display-helper
   />
-  <spr-select
+  <mc-select
     id="select-helper-message-error"
     v-model="selectModel.selectHelperMessage"
     label="Select Label"
@@ -787,7 +787,7 @@ To display the helper message, set the `display-helper` prop to `true` and add t
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-helper-message"
     v-model="selectModel"
     label="Select Label"
@@ -797,7 +797,7 @@ To display the helper message, set the `display-helper` prop to `true` and add t
     display-helper
   />
 
-  <spr-select
+  <mc-select
     id="select-helper-message-error"
     v-model="selectModel"
     label="Select Label"
@@ -813,8 +813,8 @@ To display the helper message, set the `display-helper` prop to `true` and add t
 
 Alternatively, you can use the `helperMessage` slot to display a custom helper message.
 
-<div class="spr-grid spr-gap-8">
-  <spr-select
+<div class="mc-grid mc-gap-8">
+  <mc-select
     id="select-helper-message-slot"
     v-model="selectModel.selectHelperMessage"
     label="Select Label"
@@ -823,8 +823,8 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
     display-helper
   >
     <template #helperMessage>This is a helper message</template>
-  </spr-select>
-  <spr-select
+  </mc-select>
+  <mc-select
     id="select-helper-message-error-slot"
     v-model="selectModel.selectHelperMessage"
     label="Select Label"
@@ -837,12 +837,12 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
       <icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is an error message</span>
     </template>
-  </spr-select>
+  </mc-select>
 </div>
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-helper-message-slot"
     v-model="selectModel"
     label="Select Label"
@@ -851,9 +851,9 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
     display-helper
   >
     <template #helperMessage>This is a helper message</template>
-  </spr-select>
+  </mc-select>
 
-  <spr-select
+  <mc-select
     id="select-helper-message-error-slot"
     v-model="selectModel"
     label="Select Label"
@@ -866,7 +866,7 @@ Alternatively, you can use the `helperMessage` slot to display a custom helper m
       <icon icon="ph:warning-circle-fill" width="20px" height="20px" />
       <span>This is an error message</span>
     </template>
-  </spr-select>
+  </mc-select>
 </template>
 ```
 
@@ -879,7 +879,7 @@ The select component supports various types of values. The `v-model` binding can
 For single selection of primitive types like strings or numbers:
 
 <div>
-  <spr-select
+  <mc-select
     id="select-string"
     v-model="stringValue"
     label="Select Label"
@@ -891,7 +891,7 @@ For single selection of primitive types like strings or numbers:
 Value: {{ stringValue }}
 
 <div>
-  <spr-select
+  <mc-select
     id="select-number"
     v-model="numberValue"
     label="Select Label"
@@ -904,7 +904,7 @@ Value: {{ numberValue }}
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-string"
     v-model="stringValue"
     label="Select Label"
@@ -912,7 +912,7 @@ Value: {{ numberValue }}
     :options="stringoptions"
   />
 
-  <spr-select
+  <mc-select
     id="select-number"
     v-model="numberValue"
     label="Select Label"
@@ -949,7 +949,7 @@ const numberoptions = ref([
 For single selection of full objects:
 
 <div>
-  <spr-select
+  <mc-select
     id="select-object"
     v-model="selectedUser"
     label="Select Label"
@@ -964,7 +964,7 @@ Value: {{ selectedUser }}
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-object"
     v-model="selectedUser"
     label="Select Label"
@@ -994,7 +994,7 @@ const userList = ref([
 The item subtext feature allows you to display additional information below the main text of each option in the select list. This can be useful for providing context or details about each option. Use the `subtext` props in the options array to specify the subtext for each option.
 
 <div>
-  <spr-select
+  <mc-select
     id="select-item-subtext"
     v-model="selectModel.selectItemSubtext"
     label="Select Label"
@@ -1005,7 +1005,7 @@ The item subtext feature allows you to display additional information below the 
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-item-subtext"
     v-model="selectModel"
     label="Select Label"
@@ -1036,7 +1036,7 @@ The avatar feature allows you to display a small avatar image next to the select
 Use the `avatar-variant` prop to specify the avatar type (icons): `user`, `user-light`, `building`, `building-light`
 
 <div>
-  <spr-select
+  <mc-select
     id="select-basic"
     v-model="selectModel.selectBasic"
     label="Select Label"
@@ -1048,7 +1048,7 @@ Use the `avatar-variant` prop to specify the avatar type (icons): `user`, `user-
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-basic"
     v-model="selectModel.selectBasic"
     label="Select Label"
@@ -1080,7 +1080,7 @@ The item icon feature allows you to display an icon alongside the text of each o
 Icon uses phosphor icons from [Iconify](https://icon-sets.iconify.design/)
 
 <div>
-  <spr-select
+  <mc-select
     id="select-item-icon"
     v-model="selectModel.selectItemIcon"
     label="Select Label"
@@ -1092,7 +1092,7 @@ Icon uses phosphor icons from [Iconify](https://icon-sets.iconify.design/)
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-item-icon"
     v-model="selectModel"
     label="Select Label"
@@ -1122,7 +1122,7 @@ const options = ref([
 The item custom icon feature allows you to display different icons for each option in the select list. This is useful for providing unique visual representations for each option. Add property `icon` in the options array to specify the custom icon for each option.
 
 <div>
-  <spr-select
+  <mc-select
     id="select-item-custom-icon"
     v-model="selectModel.selectItemCustomIcon"
     label="Select Label"
@@ -1133,7 +1133,7 @@ The item custom icon feature allows you to display different icons for each opti
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-item-custom-icon"
     v-model="selectModel"
     label="Select Label"
@@ -1180,7 +1180,7 @@ Lozenge Properties Reference:
 Add property `lozenge` to display the selected item as a lozenge in the select input. Then if you want to change the lozenge style for each option, you can use `lozengeProps` to customize the lozenge appearance.
 
 <div>
-  <spr-select
+  <mc-select
     id="select-display-item-lozenge"
     v-model="selectModel.selectItemLozenge"
     label="Select Label"
@@ -1192,7 +1192,7 @@ Add property `lozenge` to display the selected item as a lozenge in the select i
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-display-item-lozenge"
     v-model="selectModel"
     label="Select Label"
@@ -1222,7 +1222,7 @@ const options = ref([
 Add property `lozenge` in the options array to specify the lozenge for each option.
 
 <div>
-  <spr-select
+  <mc-select
     id="select-item-lozenge"
     v-model="selectModel.selectItemLozengeAppend"
     label="Select Label"
@@ -1233,7 +1233,7 @@ Add property `lozenge` in the options array to specify the lozenge for each opti
 
 ```vue
 <template>
-  <spr-select
+  <mc-select
     id="select-item-lozenge"
     v-model="selectModel"
     label="Select Label"
@@ -1527,7 +1527,7 @@ const optionsWithLozenge = ref([
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Method</th>
+      <th class="mc-min-w-[180px]">Method</th>
       <th>Description</th>
       <th>Parameters</th>
     </tr>
@@ -1548,14 +1548,13 @@ import { ref, onMounted } from "vue";
 
 import { Icon } from '@iconify/vue';
 
-import SprInput from "@/components/input/input.vue";
-import SprSelect from "@/components/select/select.vue";
-import SprButton from "@/components/button/button.vue";
-import SprChips from "@/components/chips/chips.vue";
-import SprLozenge from "@/components/lozenge/lozenge.vue"
-import SprModal from "@/components/modal/modal.vue"
-import SprLogo from "@/components/logo/logo.vue";
-import SprDropdown from "@/components/dropdown/dropdown.vue";
+import McInput from "@/components/input/input.vue";
+import McSelect from "@/components/select/select.vue";
+import McButton from "@/components/button/button.vue";
+import McChips from "@/components/chips/chips.vue";
+import McLozenge from "@/components/lozenge/lozenge.vue"
+import McModal from "@/components/modal/modal.vue"
+import McDropdown from "@/components/dropdown/dropdown.vue";
 
 // Import optionsType for typing
 import type { optionsType } from '@/components/list/list';

@@ -22,7 +22,7 @@ A standalone, Date Calendar Picker component that can be used independently with
 
 ## Basic Usage
 
-<spr-date-calendar-picker
+<mc-date-calendar-picker
 v-model="dateCalendarPickerModel.basic"
 :min-max-year="{ min: 2024, max: 2025 }"
 @update:month="handleDateCalendarPickerMonth"
@@ -30,11 +30,11 @@ v-model="dateCalendarPickerModel.basic"
 @update:day="handleDateCalendarPickerDay"
 />
 
-**Selected Date:** <span class="spr-text-xs">{{dateCalendarPickerModel.basic}}</span>
+**Selected Date:** <span class="mc-text-xs">{{dateCalendarPickerModel.basic}}</span>
 
 ```vue
 <template>
-  <spr-date-calendar-picker
+  <mc-date-calendar-picker
     v-model="selectedDate"
     :min-max-year="{ min: 2024, max: 2025 }"
     @update:month="handleMonthUpdate"
@@ -70,17 +70,17 @@ The Date Calendar Picker supports three different modes to control what date inf
 
 The full mode displays a complete calendar with month, day, and year selection. This is the default mode.
 
-<spr-date-calendar-picker
+<mc-date-calendar-picker
   v-model="dateCalendarPickerModel.full"
   mode="full"
   :min-max-year="{ min: 2024, max: 2025 }"
 />
 
-**Selected Date:** <span class="spr-text-xs">{{dateCalendarPickerModel.full}}</span>
+**Selected Date:** <span class="mc-text-xs">{{dateCalendarPickerModel.full}}</span>
 
 ```vue
 <template>
-  <spr-date-calendar-picker v-model="selectedDate" mode="full" :min-max-year="{ min: 2024, max: 2025 }" />
+  <mc-date-calendar-picker v-model="selectedDate" mode="full" :min-max-year="{ min: 2024, max: 2025 }" />
 </template>
 
 <script setup>
@@ -94,7 +94,7 @@ const selectedDate = ref('2024-01-15');
 
 The month-year mode displays only month and year selection, hiding the day selection.
 
-<spr-date-calendar-picker
+<mc-date-calendar-picker
 v-model="dateCalendarPickerModel.monthYear"
 mode="month-year"
 :selected-month="dateCalendarPickerSelectedMonth"
@@ -103,11 +103,11 @@ mode="month-year"
 @update:year="handleDateCalendarPickerMonthYearYear"
 />
 
-**Selected Value:** <span class="spr-text-xs">{{dateCalendarPickerModel.monthYear}}</span>
+**Selected Value:** <span class="mc-text-xs">{{dateCalendarPickerModel.monthYear}}</span>
 
 ```vue
 <template>
-  <spr-date-calendar-picker
+  <mc-date-calendar-picker
     v-model="selectedMonthYear"
     mode="month-year"
     :selected-month="selectedMonth"
@@ -138,18 +138,18 @@ const handleYearUpdate = (year) => {
 
 The year-only mode displays only year selection, hiding both month and day selection.
 
-<spr-date-calendar-picker
+<mc-date-calendar-picker
 v-model="dateCalendarPickerModel.yearOnly"
 mode="year-only"
 :selected-year="dateCalendarPickerYearOnlySelectedYear"
 @update:year="handleDateCalendarPickerYearOnlyYear"
 />
 
-**Selected Value:** <span class="spr-text-xs">{{dateCalendarPickerModel.yearOnly}}</span>
+**Selected Value:** <span class="mc-text-xs">{{dateCalendarPickerModel.yearOnly}}</span>
 
 ```vue
 <template>
-  <spr-date-calendar-picker
+  <mc-date-calendar-picker
     v-model="selectedYear"
     mode="year-only"
     :selected-year="selectedYearValue"
@@ -173,39 +173,39 @@ const handleYearUpdate = (year) => {
 
 Compare the different modes side by side:
 
-<div class="spr-grid spr-grid-cols-1 md:spr-grid-cols-3 spr-gap-4 spr-mb-6">
-  <div class="spr-p-4 spr-border spr-rounded-lg spr-bg-gray-50">
-    <h4 class="spr-text-sm spr-font-semibold spr-mb-2">Full Mode</h4>
-    <spr-date-calendar-picker
+<div class="mc-grid mc-grid-cols-1 md:mc-grid-cols-3 mc-gap-4 mc-mb-6">
+  <div class="mc-p-4 mc-border mc-rounded-lg mc-bg-gray-50">
+    <h4 class="mc-text-sm mc-font-semibold mc-mb-2">Full Mode</h4>
+    <mc-date-calendar-picker
       v-model="dateCalendarPickerModel.modeComparisonFull"
       mode="full"
       :min-max-year="{ min: 2024, max: 2025 }"
     />
-    <div class="spr-mt-2 spr-p-2 spr-bg-blue-50 spr-rounded spr-text-xs">
+    <div class="mc-mt-2 mc-p-2 mc-bg-blue-50 mc-rounded mc-text-xs">
       <strong>Value:</strong> {{ dateCalendarPickerModel.modeComparisonFull || 'None' }}
     </div>
   </div>
   
-  <div class="spr-p-4 spr-border spr-rounded-lg spr-bg-gray-50">
-    <h4 class="spr-text-sm spr-font-semibold spr-mb-2">Month-Year Mode</h4>
-    <spr-date-calendar-picker
+  <div class="mc-p-4 mc-border mc-rounded-lg mc-bg-gray-50">
+    <h4 class="mc-text-sm mc-font-semibold mc-mb-2">Month-Year Mode</h4>
+    <mc-date-calendar-picker
       v-model="dateCalendarPickerModel.modeComparisonMonthYear"
       mode="month-year"
       :selected-month="dateCalendarPickerModeComparisonMonth"
       :selected-year="dateCalendarPickerModeComparisonYear"
     />
-    <div class="spr-mt-2 spr-p-2 spr-bg-green-50 spr-rounded spr-text-xs">
+    <div class="mc-mt-2 mc-p-2 mc-bg-green-50 mc-rounded mc-text-xs">
       <strong>Value:</strong> {{ dateCalendarPickerModel.modeComparisonMonthYear || 'None' }}
     </div>
   </div>
   
-  <div class="spr-p-4 spr-border spr-rounded-lg spr-bg-gray-50">
-    <h4 class="spr-text-sm spr-font-semibold spr-mb-2">Year-Only Mode</h4>
-    <spr-date-calendar-picker
+  <div class="mc-p-4 mc-border mc-rounded-lg mc-bg-gray-50">
+    <h4 class="mc-text-sm mc-font-semibold mc-mb-2">Year-Only Mode</h4>
+    <mc-date-calendar-picker
       v-model="dateCalendarPickerModel.modeComparisonYearOnly"
       mode="year-only"
     />
-    <div class="spr-mt-2 spr-p-2 spr-bg-purple-50 spr-rounded spr-text-xs">
+    <div class="mc-mt-2 mc-p-2 mc-bg-purple-50 mc-rounded mc-text-xs">
       <strong>Value:</strong> {{ dateCalendarPickerModel.modeComparisonYearOnly || 'None' }}
     </div>
   </div>
@@ -215,17 +215,17 @@ Compare the different modes side by side:
 
 You can specify the format of the date by passing the `format` prop. The default format is `MM-DD-YYYY`.
 
-<spr-date-calendar-picker
+<mc-date-calendar-picker
   v-model="dateCalendarPickerModel.customFormat"
   format="YYYY-MM-DD"
   :min-max-year="{ min: 2024, max: 2025 }"
 />
 
-**Selected Date (YYYY-MM-DD):** <span class="spr-text-xs">{{dateCalendarPickerModel.customFormat}}</span>
+**Selected Date (YYYY-MM-DD):** <span class="mc-text-xs">{{dateCalendarPickerModel.customFormat}}</span>
 
 ```vue
 <template>
-  <spr-date-calendar-picker v-model="selectedDate" format="YYYY-MM-DD" :min-max-year="{ min: 2024, max: 2025 }" />
+  <mc-date-calendar-picker v-model="selectedDate" format="YYYY-MM-DD" :min-max-year="{ min: 2024, max: 2025 }" />
 </template>
 
 <script setup>
@@ -239,18 +239,18 @@ const selectedDate = ref('2024-01-15');
 
 You can disable specific dates by passing the `disabled-dates` prop.
 
-<spr-date-calendar-picker
+<mc-date-calendar-picker
   v-model="dateCalendarPickerModel.disabledDates"
   :min-max-year="{ min: 2024, max: 2025 }"
   :disabled-dates="dateCalendarPickerDisabledDates"
   :rest-days="['su', 'sa']"
 />
 
-**Selected Date:** <span class="spr-text-xs">{{dateCalendarPickerModel.disabledDates}}</span>
+**Selected Date:** <span class="mc-text-xs">{{dateCalendarPickerModel.disabledDates}}</span>
 
 ```vue
 <template>
-  <spr-date-calendar-picker
+  <mc-date-calendar-picker
     v-model="selectedDate"
     :min-max-year="{ min: 2024, max: 2025 }"
     :disabled-dates="disabledDates"
@@ -280,7 +280,7 @@ const disabledDates = ref({
 
 Add the `disabled` prop to disable the calendar.
 
-<spr-date-calendar-picker
+<mc-date-calendar-picker
   v-model="dateCalendarPickerModel.disabled"
   :min-max-year="{ min: 2024, max: 2025 }"
   disabled
@@ -288,7 +288,7 @@ Add the `disabled` prop to disable the calendar.
 
 ```vue
 <template>
-  <spr-date-calendar-picker v-model="selectedDate" :min-max-year="{ min: 2024, max: 2025 }" disabled />
+  <mc-date-calendar-picker v-model="selectedDate" :min-max-year="{ min: 2024, max: 2025 }" disabled />
 </template>
 
 <script setup>
@@ -302,7 +302,7 @@ const selectedDate = ref('2024-01-15');
 
 Add the `readonly` prop to make the calendar read-only.
 
-<spr-date-calendar-picker
+<mc-date-calendar-picker
   v-model="dateCalendarPickerModel.readonly"
   :min-max-year="{ min: 2024, max: 2025 }"
   readonly
@@ -310,7 +310,7 @@ Add the `readonly` prop to make the calendar read-only.
 
 ```vue
 <template>
-  <spr-date-calendar-picker v-model="selectedDate" :min-max-year="{ min: 2024, max: 2025 }" readonly />
+  <mc-date-calendar-picker v-model="selectedDate" :min-max-year="{ min: 2024, max: 2025 }" readonly />
 </template>
 
 <script setup>
@@ -324,16 +324,16 @@ const selectedDate = ref('2024-01-15');
 
 You can manually set the minimum and maximum year to be shown in the calendar.
 
-<spr-date-calendar-picker
+<mc-date-calendar-picker
   v-model="dateCalendarPickerModel.minMaxYear"
   :min-max-year="{ min: 2020, max: 2030 }"
 />
 
-**Selected Date:** <span class="spr-text-xs">{{dateCalendarPickerModel.minMaxYear}}</span>
+**Selected Date:** <span class="mc-text-xs">{{dateCalendarPickerModel.minMaxYear}}</span>
 
 ```vue
 <template>
-  <spr-date-calendar-picker v-model="selectedDate" :min-max-year="{ min: 2020, max: 2030 }" />
+  <mc-date-calendar-picker v-model="selectedDate" :min-max-year="{ min: 2020, max: 2030 }" />
 </template>
 
 <script setup>
@@ -347,17 +347,17 @@ const selectedDate = ref('2024-01-15');
 
 You can set the rest days in the week by passing the `rest-days` prop.
 
-<spr-date-calendar-picker
+<mc-date-calendar-picker
   v-model="dateCalendarPickerModel.restDays"
   :min-max-year="{ min: 2024, max: 2025 }"
   :rest-days="['mo', 'we', 'fr', 'sa']"
 />
 
-**Selected Date:** <span class="spr-text-xs">{{dateCalendarPickerModel.restDays}}</span>
+**Selected Date:** <span class="mc-text-xs">{{dateCalendarPickerModel.restDays}}</span>
 
 ```vue
 <template>
-  <spr-date-calendar-picker v-model="selectedDate" :min-max-year="{ min: 2024, max: 2025 }" :rest-days="restDays" />
+  <mc-date-calendar-picker v-model="selectedDate" :min-max-year="{ min: 2024, max: 2025 }" :rest-days="restDays" />
 </template>
 
 <script setup>
@@ -372,15 +372,15 @@ const restDays = ref(['mo', 'we', 'fr', 'sa']);
 
 The component emits events for all interactions:
 
-<div class="spr-p-4 spr-border spr-rounded-lg spr-bg-gray-50 spr-mb-4">
-  <spr-date-calendar-picker
+<div class="mc-p-4 mc-border mc-rounded-lg mc-bg-gray-50 mc-mb-4">
+  <mc-date-calendar-picker
     v-model="dateCalendarPickerModel.eventHandling"
     :min-max-year="{ min: 2024, max: 2025 }"
     @update:month="handleDateCalendarPickerEventMonth"
     @update:year="handleDateCalendarPickerEventYear"
     @update:day="handleDateCalendarPickerEventDay"
   />
-  <div class="spr-mt-3 spr-p-2 spr-bg-blue-50 spr-rounded spr-text-sm">
+  <div class="mc-mt-3 mc-p-2 mc-bg-blue-50 mc-rounded mc-text-sm">
     <p><strong>Selected Date:</strong> {{ dateCalendarPickerModel.eventHandling || 'None' }}</p>
     <p><strong>Last Month Update:</strong> {{ dateCalendarPickerEventMonth || 'None' }}</p>
     <p><strong>Last Year Update:</strong> {{ dateCalendarPickerEventYear || 'None' }}</p>
@@ -390,7 +390,7 @@ The component emits events for all interactions:
 
 ```vue
 <template>
-  <spr-date-calendar-picker
+  <mc-date-calendar-picker
     v-model="selectedDate"
     :min-max-year="{ min: 2024, max: 2025 }"
     @update:month="handleMonthUpdate"
@@ -438,7 +438,7 @@ const handleDayUpdate = (day) => {
     <button @click="showModal = true">Open Calendar</button>
 
     <Modal v-if="showModal" @close="showModal = false">
-      <spr-date-calendar-picker
+      <mc-date-calendar-picker
         v-model="selectedDate"
         :min-max-year="{ min: 2024, max: 2025 }"
         @update:modelValue="handleDateSelect"
@@ -467,7 +467,7 @@ const handleDateSelect = (date) => {
   <form @submit="handleSubmit">
     <div class="form-group">
       <label>Select Date:</label>
-      <spr-date-calendar-picker
+      <mc-date-calendar-picker
         v-model="formData.date"
         :min-max-year="{ min: 2024, max: 2025 }"
         :disabled-dates="disabledDates"
@@ -655,8 +655,7 @@ type DatePickerMode = 'full' | 'month-year' | 'year-only';
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import SprDateCalendarPicker from '@/components/date-picker/date-calendar-picker/date-calendar-picker.vue';
-import SprLogo from '@/components/logo/logo.vue';
+import McDateCalendarPicker from '@/components/date-picker/date-calendar-picker/date-calendar-picker.vue';
 
 // Basic usage reactive variables
 const dateCalendarPickerModel = ref({

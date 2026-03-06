@@ -19,22 +19,22 @@
         width: props.width,
       }"
     >
-      <div :id="props.id" :class="['spr-grid', { 'spr-gap-size-spacing-4xs': !props.readonly2 }]">
+      <div :id="props.id" :class="['mc-grid', { 'mc-gap-size-spacing-4xs': !props.readonly2 }]">
         <label v-if="props.label" :for="props.id" :class="datePickerClasses.labelClasses">
           {{ props.label }}
         </label>
         <slot :handle-click="handleSlotClick">
           <div
             ref="datePickerRef"
-            :class="[datePickerClasses.datePickerBaseInputClasses, 'spr-relative spr-z-10']"
+            :class="[datePickerClasses.datePickerBaseInputClasses, 'mc-relative mc-z-10']"
             @click="datePopperState = true"
           >
-            <div class="spr-flex spr-h-full spr-items-center spr-gap-1.5">
+            <div class="mc-flex mc-h-full mc-items-center mc-gap-1.5">
               <input
                 :id="`${props.id}-month`"
                 ref="monthInputRef"
                 v-model="monthInput"
-                :class="['spr-w-[38px] spr-min-w-[38px]', datePickerClasses.datePickerInputClasses]"
+                :class="['mc-w-[38px] mc-min-w-[38px]', datePickerClasses.datePickerInputClasses]"
                 type="text"
                 placeholder="MMM"
                 maxlength="3"
@@ -45,12 +45,12 @@
                 @keyup="handleMonthInput"
                 @keydown="handleBackspace('month', $event)"
               />
-              <span class="spr-text-color-strong spr-font-size-200 spr-text-color-weak">/</span>
+              <span class="mc-text-color-strong mc-font-size-200 mc-text-color-weak">/</span>
               <input
                 :id="`${props.id}-date`"
                 ref="dateInputRef"
                 v-model="dateInput"
-                :class="['spr-w-[24px] spr-min-w-[24px] spr-text-center', datePickerClasses.datePickerInputClasses]"
+                :class="['mc-w-[24px] mc-min-w-[24px] mc-text-center', datePickerClasses.datePickerInputClasses]"
                 type="text"
                 placeholder="DD"
                 maxlength="2"
@@ -61,12 +61,12 @@
                 @keyup="handleDateInput"
                 @keydown="handleBackspace('date', $event)"
               />
-              <span class="spr-text-color-strong spr-font-size-200 spr-text-color-weak">/</span>
+              <span class="mc-text-color-strong mc-font-size-200 mc-text-color-weak">/</span>
               <input
                 :id="`${props.id}-year`"
                 ref="yearInputRef"
                 v-model="yearInput"
-                :class="['spr-w-[42px] spr-min-w-[42px]', datePickerClasses.datePickerInputClasses]"
+                :class="['mc-w-[42px] mc-min-w-[42px]', datePickerClasses.datePickerInputClasses]"
                 type="text"
                 placeholder="YYYY"
                 maxlength="4"
@@ -78,8 +78,8 @@
                 @keydown="handleBackspace('year', $event)"
               />
             </div>
-            <div v-if="!props.readonly2 && !props.readonly" class="spr-flex spr-items-center spr-justify-center">
-              <Icon class="spr-text-color-supporting spr-h-4 spr-w-4" icon="ph:calendar-blank" />
+            <div v-if="!props.readonly2 && !props.readonly" class="mc-flex mc-items-center mc-justify-center">
+              <Icon class="mc-text-color-supporting mc-h-4 mc-w-4" icon="ph:calendar-blank" />
             </div>
           </div>
         </slot>
@@ -89,80 +89,80 @@
         <div ref="datePickerRef">
           <div
             :class="[
-              'spr-flex spr-justify-between spr-gap-2 spr-px-4 spr-py-3',
-              'spr-border spr-border-x-0 spr-border-b spr-border-t-0 spr-border-solid spr-border-mushroom-200',
+              'mc-flex mc-justify-between mc-gap-2 mc-px-4 mc-py-3',
+              'mc-border mc-border-x-0 mc-border-b mc-border-t-0 mc-border-solid mc-border-mushroom-200',
             ]"
           >
             <!-- Tabs -->
-            <div class="spr-flex spr-gap-1">
-              <spr-button
+            <div class="mc-flex mc-gap-1">
+              <mc-button
                 :class="getTabClasses('tab-months')"
                 variant="secondary"
                 size="small"
                 @click="handleTabClick('tab-months')"
               >
                 {{ getMonthObject('monthValue', calendarTabPageData.selectedMonth)?.fullText }}
-              </spr-button>
-              <spr-button
+              </mc-button>
+              <mc-button
                 :class="getTabClasses('tab-years')"
                 variant="secondary"
                 size="small"
                 @click="handleTabClick('tab-years')"
               >
                 {{ calendarTabPageData.selectedYear }}
-              </spr-button>
+              </mc-button>
             </div>
 
             <!-- Next & Previous Buttons  -->
-            <div v-if="currentTab === 'tab-calendar'" class="spr-flex spr-gap-1">
-              <spr-button
-                class="spr-cursor-pointer"
+            <div v-if="currentTab === 'tab-calendar'" class="mc-flex mc-gap-1">
+              <mc-button
+                class="mc-cursor-pointer"
                 variant="secondary"
                 size="small"
                 :disabled="calendarTabIsMinMonth"
                 @click="calendarTabPrevMonth"
               >
                 <Icon icon="ph:caret-left" />
-              </spr-button>
-              <spr-button
-                class="spr-cursor-pointer"
+              </mc-button>
+              <mc-button
+                class="mc-cursor-pointer"
                 variant="secondary"
                 size="small"
                 :disabled="calendarTabIsMaxMonth"
                 @click="calendarTabNextMonth"
               >
                 <Icon icon="ph:caret-right" />
-              </spr-button>
+              </mc-button>
             </div>
 
-            <div v-if="currentTab === 'tab-years'" class="spr-flex spr-gap-1">
-              <spr-button
-                class="spr-cursor-pointer"
+            <div v-if="currentTab === 'tab-years'" class="mc-flex mc-gap-1">
+              <mc-button
+                class="mc-cursor-pointer"
                 variant="secondary"
                 size="small"
                 :disabled="yearTabIsPreviousButtonDisabled"
                 @click="yearTabGoToPreviousPage"
               >
                 <Icon icon="ph:caret-left" />
-              </spr-button>
-              <spr-button
-                class="spr-cursor-pointer"
+              </mc-button>
+              <mc-button
+                class="mc-cursor-pointer"
                 variant="secondary"
                 size="small"
                 :disabled="yearTabIsNextButtonDisabled"
                 @click="yearTabGoToNextPage"
               >
                 <Icon icon="ph:caret-right" />
-              </spr-button>
+              </mc-button>
             </div>
           </div>
-          <div class="spr-px-4 spr-pb-4 spr-pt-2">
+          <div class="mc-px-4 mc-pb-4 mc-pt-2">
             <!-- Calendar Tab  -->
-            <div v-if="currentTab === 'tab-calendar'" class="spr-grid spr-grid-cols-7">
+            <div v-if="currentTab === 'tab-calendar'" class="mc-grid mc-grid-cols-7">
               <div
                 v-for="(dayOfWeek, dayOfWeekIndex) in daysOfWeek"
                 :key="dayOfWeekIndex"
-                class="spr-py-1 spr-text-center spr-font-semibold"
+                class="mc-py-1 mc-text-center mc-font-semibold"
               >
                 {{ dayOfWeek.text }}
               </div>
@@ -174,30 +174,30 @@
                     datePickerClasses.calendarTabItemsBaseClasses,
                     {
                       // Rest Days
-                      'spr-background-color-disabled': calendarTabIsRestDay(day),
+                      'mc-background-color-disabled': calendarTabIsRestDay(day),
 
                       // Today Indicator - only apply brand color if not selected
-                      'spr-text-color-brand-base': calendarTabIsTodayIndicator(day) && !calendarTabIsSelectedDate(day),
+                      'mc-text-color-brand-base': calendarTabIsTodayIndicator(day) && !calendarTabIsSelectedDate(day),
 
                       // Active Month Dates - only apply if not selected and not today
-                      'spr-text-color-strong':
+                      'mc-text-color-strong':
                         calendarTabIsActiveMonthDates(day) &&
                         !calendarTabIsSelectedDate(day) &&
                         !calendarTabIsTodayIndicator(day),
 
                       // Inactive Month Dates (Past/Future)
-                      'spr-text-color-disabled': calendarTabIsInactiveMonthDates(day),
+                      'mc-text-color-disabled': calendarTabIsInactiveMonthDates(day),
 
                       // Selected Date
-                      'spr-background-color-brand-base active:spr-background-color-brand-pressed spr-text-color-inverted-strong spr-cursor-pointer !spr-text-white-50 active:spr-scale-95':
+                      'mc-background-color-brand-base active:mc-background-color-brand-pressed mc-text-color-inverted-strong mc-cursor-pointer !mc-text-white-50 active:mc-scale-95':
                         calendarTabIsSelectedDate(day),
 
                       // Unselected Date
-                      'hover:spr-background-color-hover spr-border-color-weak active:spr-background-color-pressed spr-cursor-pointer spr-border spr-border-solid active:spr-scale-95':
+                      'hover:mc-background-color-hover mc-border-color-weak active:mc-background-color-pressed mc-cursor-pointer mc-border mc-border-solid active:mc-scale-95':
                         calendarTabIsUnSelectedDate(day),
 
                       // Disabled Dates
-                      'spr-cursor-not-allowed spr-opacity-30': calendarTabIsDateIsDisabled(day),
+                      'mc-cursor-not-allowed mc-opacity-30': calendarTabIsDateIsDisabled(day),
                     },
                   ]"
                   @click="!calendarTabIsDateIsDisabled(day) ? calendarTabHandleDateInput(day) : null"
@@ -205,7 +205,7 @@
                   <span>{{ day.date.getDate() }}</span>
                   <div
                     v-if="calendarTabIsTodayIndicator(day)"
-                    class="spr-background-color-brand-base spr-absolute spr-bottom-1 spr-m-auto spr-h-1 spr-w-1 spr-rounded-full"
+                    class="mc-background-color-brand-base mc-absolute mc-bottom-1 mc-m-auto mc-h-1 mc-w-1 mc-rounded-full"
                   ></div>
                 </div>
                 <div v-else></div>
@@ -213,17 +213,17 @@
             </div>
 
             <!-- Months Tab  -->
-            <div v-if="currentTab === 'tab-months'" class="spr-grid spr-grid-cols-4 spr-gap-2">
+            <div v-if="currentTab === 'tab-months'" class="mc-grid mc-grid-cols-4 mc-gap-2">
               <div
                 v-for="(month, monthIndex) in monthsList"
                 :key="monthIndex"
                 :class="[
                   datePickerClasses.monthsTabItemsBaseClasses,
                   {
-                    'spr-text-color-brand-base': month.monthValue === currentDate.month(),
-                    'spr-border-color-weak hover:spr-background-color-hover active:spr-background-color-pressed':
+                    'mc-text-color-brand-base': month.monthValue === currentDate.month(),
+                    'mc-border-color-weak hover:mc-background-color-hover active:mc-background-color-pressed':
                       month.text.toLowerCase() !== monthInput.toLowerCase(),
-                    'spr-border-color-brand-base spr-background-color-single-active':
+                    'mc-border-color-brand-base mc-background-color-single-active':
                       month.text.toLowerCase() === monthInput.toLowerCase(),
                   },
                 ]"
@@ -233,23 +233,23 @@
 
                 <div
                   v-if="month.monthValue === currentDate.month()"
-                  class="spr-background-color-brand-base spr-absolute spr-bottom-2 spr-m-auto spr-h-1 spr-w-1 spr-rounded-full"
+                  class="mc-background-color-brand-base mc-absolute mc-bottom-2 mc-m-auto mc-h-1 mc-w-1 mc-rounded-full"
                 ></div>
               </div>
             </div>
 
             <!-- Years Tab  -->
-            <div v-if="currentTab === 'tab-years'" class="spr-grid spr-grid-cols-4 spr-gap-2">
+            <div v-if="currentTab === 'tab-years'" class="mc-grid mc-grid-cols-4 mc-gap-2">
               <div
                 v-for="(year, index) in yearTabCurrentYearPage"
                 :key="index"
                 :class="[
                   datePickerClasses.yearsTabItemsBaseClasses,
                   {
-                    'spr-text-color-brand-base': year === currentDate.year(),
-                    'spr-border-color-weak hover:spr-background-color-hover active:spr-background-color-pressed':
+                    'mc-text-color-brand-base': year === currentDate.year(),
+                    'mc-border-color-weak hover:mc-background-color-hover active:mc-background-color-pressed':
                       year !== Number(yearInput),
-                    'spr-border-color-brand-base spr-background-color-single-active': year === Number(yearInput),
+                    'mc-border-color-brand-base mc-background-color-single-active': year === Number(yearInput),
                   },
                 ]"
                 @click="yearTabHandleSelectedYear(String(year))"
@@ -257,7 +257,7 @@
                 <span>{{ year }}</span>
                 <div
                   v-if="year === currentDate.year()"
-                  class="spr-background-color-brand-base spr-absolute spr-bottom-2 spr-m-auto spr-h-1 spr-w-1 spr-rounded-full"
+                  class="mc-background-color-brand-base mc-absolute mc-bottom-2 mc-m-auto mc-h-1 mc-w-1 mc-rounded-full"
                 ></div>
               </div>
             </div>
@@ -267,7 +267,7 @@
     </Menu>
     <div v-if="props.displayHelper" :class="datePickerClasses.datePickerInputHelperClasses">
       <slot name="helperMessage">
-        <Icon v-if="props.helperIcon" class="spr-h-5 spr-min-h-5 spr-w-5 spr-min-w-5" :icon="props.helperIcon" />
+        <Icon v-if="props.helperIcon" class="mc-h-5 mc-min-h-5 mc-w-5 mc-min-w-5" :icon="props.helperIcon" />
         <span>{{ props.helperText }}</span>
       </slot>
     </div>
@@ -283,7 +283,7 @@ import 'floating-vue/dist/style.css';
 import { datePickerPropTypes, datePickerEmitTypes } from './date-picker';
 import { useDatePicker } from './use-date-picker';
 
-import SprButton from '@/components/button/button.vue';
+import McButton from '@/components/button/button.vue';
 
 const props = defineProps(datePickerPropTypes);
 const emit = defineEmits(datePickerEmitTypes);

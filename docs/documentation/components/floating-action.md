@@ -29,39 +29,39 @@ The Floating Action component provides a structured layout with two key slots:
 
 This predefined structure makes it easy to implement a consistent floating action bar across your application.
 
-<spr-button size="large" tone="success" @click="showFloatingAction = true">Show Floating Action</spr-button>
+<mc-button size="large" tone="success" @click="showFloatingAction = true">Show Floating Action</mc-button>
 
-<spr-floating-action :show="showFloatingAction">
+<mc-floating-action :show="showFloatingAction">
   <template #message>
-    <div class="spr-flex spr-items-center spr-gap-1">
-      <Icon class="spr-text-mango-500 spr-size-5" icon="ph:warning-fill" />
+    <div class="mc-flex mc-items-center mc-gap-1">
+      <Icon class="mc-text-mango-500 mc-size-5" icon="ph:warning-fill" />
       <span>You have unsaved changes</span>
     </div>
   </template>
   <template #actions>
-    <spr-button size="large" variant="secondary" @click="showFloatingAction = false">Discard</spr-button>
-    <spr-button size="large" tone="success">Save Changes</spr-button>
+    <mc-button size="large" variant="secondary" @click="showFloatingAction = false">Discard</mc-button>
+    <mc-button size="large" tone="success">Save Changes</mc-button>
   </template>
-</spr-floating-action>
+</mc-floating-action>
 
 ```vue
 <template>
   <!-- Trigger button -->
-  <spr-button size="large" tone="success" @click="showFloatingAction = true"> Show Floating Action </spr-button>
+  <mc-button size="large" tone="success" @click="showFloatingAction = true"> Show Floating Action </mc-button>
 
   <!-- Floating action component -->
-  <spr-floating-action :show="showFloatingAction">
+  <mc-floating-action :show="showFloatingAction">
     <template #message>
-      <div class="spr-flex spr-items-center spr-gap-1">
-        <Icon class="spr-size-5 spr-text-mango-500" icon="ph:warning-fill" />
+      <div class="mc-flex mc-items-center mc-gap-1">
+        <Icon class="mc-size-5 mc-text-mango-500" icon="ph:warning-fill" />
         <span>You have unsaved changes</span>
       </div>
     </template>
     <template #actions>
-      <spr-button size="large" variant="secondary" @click="showFloatingAction = false"> Discard </spr-button>
-      <spr-button size="large" tone="success"> Save Changes </spr-button>
+      <mc-button size="large" variant="secondary" @click="showFloatingAction = false"> Discard </mc-button>
+      <mc-button size="large" tone="success"> Save Changes </mc-button>
     </template>
-  </spr-floating-action>
+  </mc-floating-action>
 </template>
 
 <script setup>
@@ -79,31 +79,31 @@ The floating action component is automatically centered and has responsive behav
 
 While the default structure with `message` and `actions` slots works for most cases, you can fully customize the floating action bar using the default slot. This gives you complete control over the layout, content, and styling.
 
-<spr-button size="large" tone="success" @click="showCustomFloatingAction = true">Show Custom Floating Action</spr-button>
+<mc-button size="large" tone="success" @click="showCustomFloatingAction = true">Show Custom Floating Action</mc-button>
 
-<spr-floating-action :show="showCustomFloatingAction" class="spr-rounded-sm">
-  <div class="spr-p-6 spr-w-full spr-flex spr-items-center spr-justify-between">
-    <div class="spr-body-md-regular">Custom Content</div>
+<mc-floating-action :show="showCustomFloatingAction" class="mc-rounded-sm">
+  <div class="mc-p-6 mc-w-full mc-flex mc-items-center mc-justify-between">
+    <div class="mc-body-md-regular">Custom Content</div>
     <div>
-      <spr-button size="large" variant="secondary" @click="showCustomFloatingAction = false">Cancel</spr-button>
+      <mc-button size="large" variant="secondary" @click="showCustomFloatingAction = false">Cancel</mc-button>
     </div>
   </div>
-</spr-floating-action>
+</mc-floating-action>
 
 ```vue
 <template>
-  <spr-button size="large" tone="success" @click="showCustomFloatingAction = true">
+  <mc-button size="large" tone="success" @click="showCustomFloatingAction = true">
     Show Custom Floating Action
-  </spr-button>
+  </mc-button>
 
-  <spr-floating-action :show="showCustomFloatingAction" class="spr-rounded-sm">
-    <div class="spr-flex spr-w-full spr-items-center spr-justify-between spr-p-6">
-      <div class="spr-body-md-regular">Custom Content</div>
+  <mc-floating-action :show="showCustomFloatingAction" class="mc-rounded-sm">
+    <div class="mc-flex mc-w-full mc-items-center mc-justify-between mc-p-6">
+      <div class="mc-body-md-regular">Custom Content</div>
       <div>
-        <spr-button size="large" variant="secondary" @click="showCustomFloatingAction = false"> Cancel </spr-button>
+        <mc-button size="large" variant="secondary" @click="showCustomFloatingAction = false"> Cancel </mc-button>
       </div>
     </div>
-  </spr-floating-action>
+  </mc-floating-action>
 </template>
 
 <script setup>
@@ -185,8 +185,8 @@ The Floating Action component is particularly useful for:
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import SprFloatingAction from "@/components/floating-action/floating-action.vue";
-import SprButton from '@/components/button/button.vue';
+import McFloatingAction from "@/components/floating-action/floating-action.vue";
+import McButton from '@/components/button/button.vue';
 import { Icon } from '@iconify/vue';
 
 const showFloatingAction = ref(false)

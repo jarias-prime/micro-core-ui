@@ -10,8 +10,8 @@ The `Radio Grouped` component renders a group of radio buttons from an array of 
 
 ## Basic Usage
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <spr-radio-grouped
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <mc-radio-grouped
     id="grouped-radio1"
     v-model="radioModel.grouped1"
     name="grouped_name1"
@@ -25,7 +25,7 @@ The `Radio Grouped` component renders a group of radio buttons from an array of 
 
 ```vue
 <template>
-  <spr-radio-grouped
+  <mc-radio-grouped
     id="grouped-radio"
     v-model="selectedOption"
     name="grouped_options"
@@ -46,8 +46,8 @@ const selectedOption = ref('');
 
 ## With Pre-selected Value
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <spr-radio-grouped
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <mc-radio-grouped
     id="grouped-radio2"
     v-model="radioModel.grouped2"
     name="grouped_name2"
@@ -61,7 +61,7 @@ const selectedOption = ref('');
 
 ```vue
 <template>
-  <spr-radio-grouped
+  <mc-radio-grouped
     id="grouped-radio"
     v-model="selectedOption"
     name="grouped_options"
@@ -84,10 +84,10 @@ const selectedOption = ref('value2');
 
 Add the `disabled` attribute to disable all options, or set `disabled: true` on individual options.
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-4">
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-4">
   <div>
-    <p class="spr-text-sm spr-font-semibold spr-mb-2">All Disabled</p>
-    <spr-radio-grouped
+    <p class="mc-text-sm mc-font-semibold mc-mb-2">All Disabled</p>
+    <mc-radio-grouped
       id="grouped-radio3"
       v-model="radioModel.grouped3"
       name="grouped_name3"
@@ -99,8 +99,8 @@ Add the `disabled` attribute to disable all options, or set `disabled: true` on 
     />
   </div>
   <div>
-    <p class="spr-text-sm spr-font-semibold spr-mb-2">Partial Disabled</p>
-    <spr-radio-grouped
+    <p class="mc-text-sm mc-font-semibold mc-mb-2">Partial Disabled</p>
+    <mc-radio-grouped
       id="grouped-radio4"
       v-model="radioModel.grouped4"
       name="grouped_name4"
@@ -115,9 +115,9 @@ Add the `disabled` attribute to disable all options, or set `disabled: true` on 
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-4">
+  <div class="mc-flex mc-flex-col mc-gap-4">
     <!-- All disabled -->
-    <spr-radio-grouped
+    <mc-radio-grouped
       id="grouped-radio"
       v-model="selectedOption"
       name="grouped_options"
@@ -129,7 +129,7 @@ Add the `disabled` attribute to disable all options, or set `disabled: true` on 
     />
 
     <!-- Partial disabled -->
-    <spr-radio-grouped
+    <mc-radio-grouped
       id="grouped-radio-partial"
       v-model="selectedOption"
       name="grouped_options_partial"
@@ -153,10 +153,10 @@ const selectedOption = ref('');
 
 Display helpful text or error messages below the radio group using the `display-helper`, `helper-text`, and `error` props.
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-4">
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-4">
   <div>
-    <p class="spr-text-sm spr-font-semibold spr-mb-2">Helper Text</p>
-    <spr-radio-grouped
+    <p class="mc-text-sm mc-font-semibold mc-mb-2">Helper Text</p>
+    <mc-radio-grouped
       id="grouped-radio5"
       v-model="radioModel.grouped5"
       name="grouped_name5"
@@ -169,8 +169,8 @@ Display helpful text or error messages below the radio group using the `display-
     />
   </div>
   <div>
-    <p class="spr-text-sm spr-font-semibold spr-mb-2">Error State</p>
-    <spr-radio-grouped
+    <p class="mc-text-sm mc-font-semibold mc-mb-2">Error State</p>
+    <mc-radio-grouped
       id="grouped-radio5b"
       v-model="radioModel.grouped5b"
       name="grouped_name5b"
@@ -188,9 +188,9 @@ Display helpful text or error messages below the radio group using the `display-
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-6">
+  <div class="mc-flex mc-flex-col mc-gap-6">
     <!-- Helper Text -->
-    <spr-radio-grouped
+    <mc-radio-grouped
       id="grouped-radio"
       v-model="selectedOption"
       name="grouped_options"
@@ -203,7 +203,7 @@ Display helpful text or error messages below the radio group using the `display-
     />
 
     <!-- Error State -->
-    <spr-radio-grouped
+    <mc-radio-grouped
       id="grouped-radio-error"
       v-model="selectedOption"
       name="grouped_options_error"
@@ -230,9 +230,9 @@ const selectedOption = ref('');
 
 Control the horizontal alignment of the radio group using the `horizontal-align` prop with values: `left`, `center`, or `right`.
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <p class="spr-text-sm spr-font-semibold">Left Aligned</p>
-  <spr-radio-grouped
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <p class="mc-text-sm mc-font-semibold">Left Aligned</p>
+  <mc-radio-grouped
     id="grouped-radio6"
     v-model="radioModel.grouped6"
     name="grouped_name6"
@@ -245,9 +245,9 @@ Control the horizontal alignment of the radio group using the `horizontal-align`
   />
 </div>
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <p class="spr-text-sm spr-font-semibold">Center Aligned</p>
-  <spr-radio-grouped
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <p class="mc-text-sm mc-font-semibold">Center Aligned</p>
+  <mc-radio-grouped
     id="grouped-radio7"
     v-model="radioModel.grouped7"
     name="grouped_name7"
@@ -260,9 +260,9 @@ Control the horizontal alignment of the radio group using the `horizontal-align`
   />
 </div>
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <p class="spr-text-sm spr-font-semibold">Right Aligned</p>
-  <spr-radio-grouped
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <p class="mc-text-sm mc-font-semibold">Right Aligned</p>
+  <mc-radio-grouped
     id="grouped-radio8"
     v-model="radioModel.grouped8"
     name="grouped_name8"
@@ -277,8 +277,8 @@ Control the horizontal alignment of the radio group using the `horizontal-align`
 
 ```vue
 <template>
-  <div class="spr-flex spr-flex-col spr-gap-6">
-    <spr-radio-grouped
+  <div class="mc-flex mc-flex-col mc-gap-6">
+    <mc-radio-grouped
       id="grouped-radio"
       v-model="selectedOption"
       name="grouped_options"
@@ -290,7 +290,7 @@ Control the horizontal alignment of the radio group using the `horizontal-align`
       horizontal-align="left"
     />
 
-    <spr-radio-grouped
+    <mc-radio-grouped
       id="grouped-radio-center"
       v-model="selectedOption"
       name="grouped_options_center"
@@ -302,7 +302,7 @@ Control the horizontal alignment of the radio group using the `horizontal-align`
       horizontal-align="center"
     />
 
-    <spr-radio-grouped
+    <mc-radio-grouped
       id="grouped-radio-right"
       v-model="selectedOption"
       name="grouped_options_right"
@@ -327,8 +327,8 @@ const selectedOption = ref('');
 
 Add helpful descriptions to each radio option using the `description` property in the options array. This provides additional context or details about each choice.
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <spr-radio-grouped
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <mc-radio-grouped
     id="grouped-radio-desc"
     v-model="radioModel.grouped10"
     name="grouped_name_desc"
@@ -342,7 +342,7 @@ Add helpful descriptions to each radio option using the `description` property i
 
 ```vue
 <template>
-  <spr-radio-grouped
+  <mc-radio-grouped
     id="grouped-radio"
     v-model="selectedOption"
     name="grouped_options"
@@ -365,8 +365,8 @@ const selectedOption = ref('value1');
 
 Use the `choice-box` prop to display radio options as full-width choice boxes with expanded clickable areas. This improves usability by making the entire component interactive.
 
-<div class="spr-flex spr-flex-col spr-items-start spr-gap-2">
-  <spr-radio-grouped
+<div class="mc-flex mc-flex-col mc-items-start mc-gap-2">
+  <mc-radio-grouped
     id="grouped-radio-choicebox"
     v-model="radioModel.grouped9"
     name="grouped_name_choicebox"
@@ -381,7 +381,7 @@ Use the `choice-box` prop to display radio options as full-width choice boxes wi
 
 ```vue
 <template>
-  <spr-radio-grouped
+  <mc-radio-grouped
     id="grouped-radio"
     v-model="selectedOption"
     name="grouped_options"
@@ -408,7 +408,7 @@ const selectedOption = ref('value1');
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Type</th>
       <th>Default</th>
@@ -511,7 +511,7 @@ const selectedOption = ref('value1');
 <table>
   <thead>
     <tr>
-      <th class="spr-min-w-[180px]">Name</th>
+      <th class="mc-min-w-[180px]">Name</th>
       <th>Description</th>
       <th>Parameters</th>
     </tr>
@@ -544,8 +544,7 @@ interface RadioOption {
 <script lang="ts" setup>
 import { ref } from "vue";
 
-import SprRadioGrouped from "@/components/radio/radio-grouped/radio-grouped.vue";
-import SprLogo from "@/components/logo/logo.vue";
+import McRadioGrouped from "@/components/radio/radio-grouped/radio-grouped.vue";
 
 const radioModel = ref({
   grouped1: '',

@@ -9,7 +9,7 @@ import utilities from './src/assets/scripts/utilities';
 const plugin = require('tailwindcss/plugin');
 
 export default {
-  prefix: 'spr-',
+  prefix: 'mc-',
   content: ['./index.html', './src/**/*.{vue,js,ts}', './docs/**/*.{md,ts,js}', './docs/locales/**/*.{md,ts,js}'],
   theme: {
     extend: {
