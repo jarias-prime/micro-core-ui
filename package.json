@@ -1,6 +1,7 @@
 {
   "version": "1.2.0",
   "name": "micro-core-ui",
+  "description": "Micro Core UI is a Vue 3 component library built with Vite and Tailwind CSS that provides reusable, customizable UI components to help teams build consistent and modern interfaces faster.",
   "keywords": [
     "vue",
     "vue3",
