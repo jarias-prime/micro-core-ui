@@ -1,4 +1,5 @@
 {
+  "version": "1.2.0",
   "name": "micro-core-ui",
   "keywords": [
     "vue",
@@ -25,7 +26,6 @@
     "vue-design-system"
   ],
   "private": false,
-  "version": "1.0.1",
   "main": "./dist/micro-core-ui.umd.js",
   "module": "./dist/micro-core-ui.es.js",
   "types": "./dist/micro-core-ui.es.d.ts",
