@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.2 (2026-03-13)
+
+### Updates (@jarias.prime)
+
+- Update Favicon
+
 ## 1.2.1 (2026-03-13)
 
 ### Updates (@jarias.prime)
