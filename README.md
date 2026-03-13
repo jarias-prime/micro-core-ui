@@ -17,5 +17,4 @@ Whether you're building internal tools, dashboards, or full-scale applications, 
 - 🛠 **ESLint** – Code linting to enforce quality and best practices
 - 💅 **Prettier** – Consistent code formatting across the project
 
-Preview Project:
-https://micro-core-ui.firebaseapp.com/
+Preview Project: [Micro Core UI](https://micro-core-ui.firebaseapp.com/){:target="_blank"}
