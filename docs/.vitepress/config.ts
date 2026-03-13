@@ -64,14 +64,6 @@ export default defineConfig({
               text: 'Component Documentation',
               link: '/guide/contributing/component-documentation',
             },
-            {
-              text: 'Component Testing',
-              link: '/guide/contributing/component-testing',
-            },
-            {
-              text: 'Contribution',
-              link: '/guide/contributing/contribution',
-            },
           ],
         },
         {
