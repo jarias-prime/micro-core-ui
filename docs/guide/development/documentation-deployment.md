@@ -29,27 +29,27 @@ Login to your Firebase account:
 firebase login
 ```
 
-## Build
+## Deploy
 
-Build the documentation site:
+Deploy the documentation to Firebase Hosting:
+
+```bash
+npm run docs:deploy
+```
+
+This command will:
+1. Build the documentation site (generates static files in `dist-docs` folder)
+2. Deploy to Firebase Hosting
+
+Your site will be live at `https://your-project-id.web.app` or `https://your-project-id.firebaseapp.com`.
+
+## Manual Build (Optional)
+
+If you need to build without deploying:
 
 ```bash
 npm run docs:build
 ```
-
-This will generate the static files in the `dist-docs` folder at the root of the project.
-
-**Note:** The `dist-docs` folder must exist before deploying. If it doesn't exist, run the build command above to generate it.
-
-## Deploy
-
-Deploy to Firebase Hosting:
-
-```bash
-firebase deploy
-```
-
-Your site will be live at `https://your-project-id.web.app` or `https://your-project-id.firebaseapp.com`.
 
 ## Preview Deployment
 

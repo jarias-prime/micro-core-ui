@@ -52,10 +52,6 @@ export default defineConfig({
               text: 'Quick Start',
               link: '/guide/basics/quick-start',
             },
-            {
-              text: 'Documentation Deployment',
-              link: '/guide/basics/documentation-deployment',
-            },
           ],
         },
         {
@@ -68,6 +64,15 @@ export default defineConfig({
             {
               text: 'Component Documentation',
               link: '/guide/contributing/component-documentation',
+            },
+          ],
+        },
+        {
+          text: 'Development',
+          items: [
+            {
+              text: 'Documentation Deployment',
+              link: '/guide/development/documentation-deployment',
             },
           ],
         },
