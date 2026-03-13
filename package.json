@@ -1,6 +1,6 @@
 {
-  "version": "1.2.2",
   "name": "micro-core-ui",
+  "version": "1.2.3",
   "description": "Micro Core UI is a Vue 3 component library built with Vite and Tailwind CSS that provides reusable, customizable UI components to help teams build consistent and modern interfaces faster.",
   "keywords": [
     "vue",
@@ -63,12 +63,10 @@
     "lint:style": "stylelint \"**/*.{vue,css}\"",
     "fix:style": "stylelint --fix \"**/*.{vue,css}\"",
     "lint": "npm run lint:script && npm run lint:style",
-    "prepublishOnly": "npm run build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "docs:preview": "vitepress preview docs",
-    "test:changed": "node scripts/test-changed-components.js",
     "clean": "rm -rf node_modules dist coverage package-lock.json && npm install"
   },
   "dependencies": {
@@ -90,7 +88,7 @@
     "stylelint-config-recommended-vue": "^1.6.1",
     "typescript-eslint": "^8.46.1",
     "vite-plugin-sass": "^0.1.0",
-    "vue": "^3.5.22"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@stylistic/stylelint-plugin": "^4.0.0",

@@ -37,8 +37,7 @@
     "dist/lib/main.d.ts",
     "**/docs/.vitepress/**/*.ts",
     "**/docs/documentation/**/*.vue",
-    "tests/**/*.ts",
-    "scripts/**/*.js"
+    "tests/**/*.ts"
   ],
   "exclude": ["dist/"]
 }

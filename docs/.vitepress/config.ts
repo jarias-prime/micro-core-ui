@@ -13,6 +13,7 @@ export default defineConfig({
   description:
     'Micro Core UI is a Vue 3 component library built with Vite and Tailwind CSS 4 that provides reusable components to help teams design and develop consistent, modern user interfaces.',
   srcDir: './',
+  outDir: '../dist-docs',
   vite: {
     css: {
       postcss: {
@@ -50,6 +51,10 @@ export default defineConfig({
             {
               text: 'Quick Start',
               link: '/guide/basics/quick-start',
+            },
+            {
+              text: 'Documentation Deployment',
+              link: '/guide/basics/documentation-deployment',
             },
           ],
         },

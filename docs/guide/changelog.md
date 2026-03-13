@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.3 (2026-03-14)
+
+### Updates (@jarias.prime)
+
+- Integrate Firebase Hosting
+
 ## 1.2.2 (2026-03-13)
 
 ### Updates (@jarias.prime)

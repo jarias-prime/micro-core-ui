@@ -1,6 +1,7 @@
 node_modules
 .DS_Store
 dist
+dist-docs
 dist-ssr
 dist.zip
 dist.tar
@@ -15,6 +16,7 @@ coverage
 **/.vitepress/cache
 .cache
 .turbo
+.firebase
 .temp
 dev-dist
 .stylelintcache
@@ -53,10 +55,3 @@ vite.config.ts.*
 
 # .d.ts files
 components.d.ts
-
-# Cursor IDE files
-.cursor
-**/*.mdc
-.cursor-test
-.cursor-cache
-.cursor-data
