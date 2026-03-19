@@ -5,7 +5,6 @@ import spacing from './src/assets/scripts/spacing';
 import maxWidth from './src/assets/scripts/max-width';
 import borderRadius from './src/assets/scripts/border-radius';
 import utilities from './src/assets/scripts/utilities';
-
 const plugin = require('tailwindcss/plugin');
 
 export default {
@@ -63,6 +62,9 @@ export default {
         button: '0px 2px 1px 0px rgba(0, 0, 0, 0.15) inset',
         'button-hover': '0px -2px 1px 0px rgba(0, 0, 0, 0.10) inset',
         'button-active': '0px 0px 0px 2px #394141',
+      },
+      backgroundImage: {
+        'radial-gradient-dark': 'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)',
       },
       spacing: spacing,
       maxWidth: maxWidth,

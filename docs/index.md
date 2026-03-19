@@ -1,33 +1,23 @@
 ---
-layout: home
-hero:
-  name: 'Micro Core UI'
-  tagline: 'A lightweight component library for scalable Vue apps!'
-
-features:
-  - icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><path fill="#41b883" d="M24.4 3.925H30l-14 24.15L2 3.925h10.71l3.29 5.6 3.22-5.6Z"/><path fill="#41b883" d="m2 3.925 14 24.15 14-24.15h-5.6L16 18.415 7.53 3.925Z"/><path fill="#35495e" d="M7.53 3.925 16 18.485l8.4-14.56h-5.18L16 9.525l-3.29-5.6Z"/></svg>
-    title: Built for Vue 3
-    details: Designed specifically for Vue 3 using the Composition API for modern, scalable component development.
-
-  - icon: 🚀
-    title: Build Faster
-    details: Speed up development with ready-to-use, reusable components designed for real-world applications.
-
-  - icon: 🎨
-    title: Consistent UI
-    details: Maintain a unified design language across your applications with a shared component system.
-
-  - icon: ⚡
-    title: Tailwind Powered
-    details: Styled with Tailwind CSS for fast customization and flexible design control.
-
-  - icon: 🧩
-    title: Composable Components
-    details: Flexible and modular components that can be easily combined to create complex interfaces.
-
-  - icon: 🧪
-    title: Interactive Playground
-    details: Test and experiment with components in real time through an interactive documentation playground.
-
-favicon: /public/favicon.ico
+layout: page
 ---
+
+<div class="mc-h-[calc(100vh-64px)] mc-bg-radial-gradient-dark mc-overflow-hidden">
+  <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
+
+  <div :class="['mc-flex mc-flex-col mc-gap-20 mc-items-center mc-justify-center', 'mc-h-full mc-max-w-[50em] mc-m-auto mc-text-center']">
+    <div class="mc-grid mc-gap-6">
+      <h1 class="mc-text-slate-50 mc-font-size-600 sm:mc-font-size-600 md:mc-font-size-900 lg:mc-font-size-1000 leading-tight">
+        Micro Core UI
+      </h1>
+      <p class="mc-text-slate-50 mc-font-size-500 sm:mc-font-size-500 md:mc-font-size-700 leading-snug">
+        "Design once. Reuse everywhere"
+      </p>
+    </div>
+    <p class="mc-text-slate-400">
+      Micro Core UI is a Vue 3 component library built with Vite and Tailwind CSS that provides reusable, customizable UI components to help teams build consistent and modern interfaces faster.
+    </p>
+  </div>
+</div>

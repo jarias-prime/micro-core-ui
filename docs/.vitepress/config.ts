@@ -30,7 +30,6 @@ export default defineConfig({
     search: {
       provider: 'local',
     },
-
     nav: [
       { text: 'Guide', link: '/guide/basics/installation' },
       {
@@ -38,7 +37,6 @@ export default defineConfig({
         link: '/documentation/components/accordion',
       },
     ],
-
     sidebar: {
       '/guide/': [
         {
@@ -372,7 +370,6 @@ export default defineConfig({
         },
       ],
     },
-
     socialLinks: [
       {
         icon: {
@@ -386,7 +383,6 @@ export default defineConfig({
         ariaLabel: 'Link To Micro Core UI Repository',
       },
     ],
-
     footer: {
       copyright: 'Copyright © 2026 Micro Core UI Team',
     },

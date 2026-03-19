@@ -1,7 +1,10 @@
 <template>
   <div
     id="accordion"
-    :class="{ 'mc-rounded-border-radius-xl mc-border mc-border-solid mc-border-mushroom-200': props.bordered }"
+    :class="[
+      'mc-bg-neutral-50',
+      { 'mc-rounded-border-radius-xl mc-border mc-border-solid mc-border-mushroom-200': props.bordered },
+    ]"
   >
     <template v-for="(item, index) in props.accordionItems" :key="item.collapseId">
       <div
@@ -27,9 +30,9 @@
         >
           <div class="mc-flex mc-w-[95%] mc-flex-col">
             <span class="mc-text-base mc-font-medium mc-leading-5 mc-text-mushroom-950">{{ item.title }}</span>
-            <span v-if="item.subtitle" class="mc-text-200 mc-font-normal mc-leading-5 mc-text-mushroom-600">{{
-              item.subtitle
-            }}</span>
+            <span v-if="item.subtitle" class="mc-text-200 mc-font-normal mc-leading-5 mc-text-mushroom-600">
+              {{ item.subtitle }}
+            </span>
           </div>
           <mc-button
             v-if="props.accordionTrigger === 'button'"
@@ -44,7 +47,7 @@
           <Icon v-else :icon="collapsedState[index] ? 'ph:caret-up' : 'ph:caret-down'" width="16" height="16" />
         </div>
         <mc-collapsible v-model="collapsedState[index]">
-          <div class="mc-px-size-spacing-xs mc-pb-size-spacing-sm">
+          <div class="mc-px-size-spacing-xs mc-pb-size-spacing-sm mc-text-mushroom-600">
             <slot :name="item.collapseId" />
           </div>
         </mc-collapsible>
@@ -52,6 +55,7 @@
     </template>
   </div>
 </template>
+
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue';
 

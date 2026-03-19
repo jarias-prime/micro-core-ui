@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0 (2026-03-14)
+
+### Updates (@jarias.prime)
+
+- Update documentation landing page
+- Update components to support dark mode
+
 ## 1.2.4 (2026-03-14)
 
 ### Updates (@jarias.prime)
