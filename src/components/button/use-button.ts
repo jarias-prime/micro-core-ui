@@ -1,10 +1,57 @@
 import { ref, toRefs, computed, ComputedRef } from 'vue';
 import { useElementHover, useMousePressed, useFocus } from '@vueuse/core';
 
-import classNames from 'classnames';
-
 import type { SetupContext } from 'vue';
 import type { ButtonEmitTypes, ButtonPropTypes } from './button';
+
+// Static maps — fully scannable by Tailwind
+const SIZE_CLASSES: Record<string, string> = {
+  small: 'mc:min-w-6 mc:p-1.5 mc:leading-none mc:text-xs',
+  medium: 'mc:min-w-7 mc:p-2 mc:leading-none mc:text-xs',
+  large: 'mc:max-h-9 mc:min-w-9 mc:px-2 mc:py-3 mc:leading-normal mc:text-sm',
+};
+
+const SIZE_ICON_CLASSES: Record<string, string> = {
+  small: 'mc:min-w-6 mc:p-1.5 mc:leading-none mc:text-xs [&>svg]:mc:text-sm',
+  medium: 'mc:min-w-7 mc:p-2 mc:leading-none mc:text-xs [&>svg]:mc:text-base',
+  large: 'mc:max-h-9 mc:min-w-9 mc:px-2 mc:py-3 mc:leading-normal mc:text-sm [&>svg]:mc:text-xl',
+};
+
+const DEFAULT_BG_CLASSES: Record<string, string> = {
+  neutral: 'mc-background-color-base',
+  success: 'mc-background-color-brand-base',
+  danger: 'mc-background-color-danger-base',
+};
+
+const HOVERED_BG_CLASSES: Record<string, string> = {
+  neutral: 'mc-background-color-hover',
+  success: 'mc-background-color-success-pressed',
+  danger: 'mc-background-color-danger-hover',
+};
+
+const PRESSED_BG_CLASSES: Record<string, string> = {
+  neutral: 'mc-background-color-pressed !mc:shadow-sm',
+  success: 'mc-background-color-brand-pressed !mc:shadow-sm',
+  danger: 'mc-background-color-danger-pressed !mc:shadow-sm',
+};
+
+const PRIMARY_TEXT_CLASSES: Record<string, string> = {
+  neutral: 'mc-text-color-strong',
+  success: 'mc-text-color-inverted-strong',
+  danger: 'mc-text-color-inverted-strong',
+};
+
+const SECONDARY_TERTIARY_TEXT_CLASSES: Record<string, string> = {
+  neutral: 'mc-text-color-strong',
+  success: 'mc-text-color-brand-base',
+  danger: 'mc-text-color-danger-base',
+};
+
+const SECONDARY_BORDER_CLASSES: Record<string, string> = {
+  neutral: 'mc-border-color-base',
+  success: 'mc-border-color-brand-base',
+  danger: 'mc-border-color-danger-base',
+};
 
 export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitTypes>['emit']) => {
   const { state, type, size, tone, variant, disabled, hasIcon, fullwidth } = toRefs(props);
@@ -15,177 +62,102 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
   const { pressed } = useMousePressed({ target: buttonRef });
   const { focused } = useFocus(buttonRef);
 
-  const buttonClassses: ComputedRef<string> = computed(() => {
-    const defaultClasses = classNames(
-      'mc-background-color mc-flex mc-items-center mc-gap-1.5 mc-w-fit mc-min-w-[24px] mc-items-center mc-justify-center mc-rounded-md mc-outline-2 mc-outline-offset-4',
-      {
-        'mc-w-full': fullwidth.value,
-      },
-    );
+  // #region - Class Computeds
+  const defaultClasses: ComputedRef<string> = computed(() => {
+    const base =
+      'mc:background-color mc:flex mc:items-center mc:gap-1.5 mc:w-fit mc:min-w-[24px] mc:justify-center mc:rounded-md mc:cursor-pointer';
 
-    const sizeClasses = classNames('mc-font-medium', {
-      'mc-min-w-6 mc-p-1.5 mc-leading-100 mc-font-size-100': !hasIcon.value && size.value === 'small',
-      'mc-min-w-7 mc-p-2 mc-leading-100 mc-font-size-100': !hasIcon.value && size.value === 'medium',
-      'mc-max-h-9 mc-min-w-9 mc-px-2 mc-py-3 mc-leading-300 mc-font-size-200': !hasIcon.value && size.value === 'large',
-
-      // Has Icon
-      'mc-min-w-6 mc-p-1.5 mc-leading-100 mc-font-size-100 [&>svg]:mc-font-size-200':
-        hasIcon.value && size.value === 'small',
-      'mc-min-w-7 mc-p-2 mc-leading-100 mc-font-size-100 [&>svg]:mc-font-size-300':
-        hasIcon.value && size.value === 'medium',
-      'mc-max-h-9 mc-min-w-9 mc-px-2 mc-py-3 mc-leading-300 mc-font-size-200 [&>svg]:mc-font-size-400':
-        hasIcon.value && size.value === 'large',
-    });
-
-    const toneClasses = classNames(
-      buttonBackgroundCssClass.value,
-      buttonTextCssClass.value,
-      buttonBorderCssClass.value,
-    );
-
-    const transitionClasses = classNames([
-      'mc-transition mc-duration-150 mc-ease-in-out',
-      'hover:mc-shadow-button-hover',
-      'active:mc-scale-95',
-    ]);
-
-    if (disabled.value) {
-      if (variant.value === 'primary')
-        return classNames(
-          defaultClasses,
-          sizeClasses,
-          'mc-text-color-disabled mc-background-color-disabled !mc-shadow-none !mc-cursor-not-allowed mc-border-none',
-        );
-
-      if (variant.value === 'secondary')
-        return classNames(
-          defaultClasses,
-          sizeClasses,
-          'mc-text-color-disabled !mc-shadow-none !mc-cursor-not-allowed mc-border mc-border-solid mc-border-color-disabled',
-        );
-
-      if (variant.value === 'tertiary')
-        return classNames(
-          defaultClasses,
-          sizeClasses,
-          'mc-text-color-disabled !mc-shadow-none !mc-cursor-not-allowed mc-border-none',
-        );
-    }
-
-    return classNames(defaultClasses, sizeClasses, toneClasses, transitionClasses);
+    return fullwidth.value ? `${base} mc:w-full` : base;
   });
+
+  const sizeClasses: ComputedRef<string> = computed(() => {
+    const map = hasIcon.value ? SIZE_ICON_CLASSES : SIZE_CLASSES;
+    return `mc:font-medium ${map[size.value] ?? ''}`;
+  });
+
+  const transitionClasses = 'mc:transition mc:duration-150 mc:ease-in-out hover:mc:shadow-md active:mc:scale-95';
 
   const buttonTextCssClass: ComputedRef<string> = computed(() => {
     if (variant.value === 'secondary' || variant.value === 'tertiary') {
-      return classNames({
-        'mc-text-color-strong': tone.value === 'neutral',
-        'mc-text-color-brand-base': tone.value === 'success',
-        'mc-text-color-danger-base': tone.value === 'danger',
-      });
+      return SECONDARY_TERTIARY_TEXT_CLASSES[tone.value] ?? '';
     }
 
-    return classNames({
-      'mc-text-color-strong': tone.value === 'neutral',
-      'mc-text-color-inverted-strong': tone.value === 'success' || tone.value === 'danger',
-    });
+    return PRIMARY_TEXT_CLASSES[tone.value] ?? '';
   });
 
-  // #region - Background Css Class
   const buttonBackgroundCssClass: ComputedRef<string> = computed(() => {
     if (variant.value === 'secondary') {
-      if (pressed.value) {
-        return 'mc-background-color-pressed !mc-shadow-button';
-      }
+      if (pressed.value) return 'mc-background-color-pressed !mc:shadow-sm';
+      if (isHovered.value) return 'mc-background-color-hover';
 
-      return isHovered.value ? 'mc-background-color-hover' : 'mc-background-color ';
+      return 'mc:background-color';
     }
 
     if (variant.value === 'tertiary') {
-      return getTertiaryBackground();
+      if (pressed.value) return 'mc-background-color-pressed !mc:shadow-sm';
+      if (isHovered.value) return '!mc:border-none mc-background-color-hover';
+
+      return '!mc:border-none';
     }
 
-    return getBackgroundBasedOnState();
+    // primary
+    if (pressed.value) return PRESSED_BG_CLASSES[tone.value] ?? '';
+    if (isHovered.value) return HOVERED_BG_CLASSES[tone.value] ?? '';
+
+    return DEFAULT_BG_CLASSES[tone.value] ?? '';
   });
-
-  const getTertiaryBackground = (): string => {
-    if (pressed.value) {
-      return 'mc-background-color-pressed !mc-shadow-button';
-    }
-
-    return classNames('!border-none', {
-      'mc-background-color-hover': isHovered.value,
-    });
-  };
-
-  const getBackgroundBasedOnState = (): string => {
-    if (pressed.value) {
-      return getPressedBackground();
-    }
-
-    if (isHovered.value) {
-      return getHoveredBackground();
-    }
-
-    return getDefaultBackground();
-  };
-
-  const getPressedBackground = (): string => {
-    const backgrounds: Record<string, string> = {
-      neutral: 'mc-background-color-pressed !mc-shadow-button',
-      success: 'mc-background-color-brand-pressed !mc-shadow-button',
-      danger: 'mc-background-color-danger-pressed !mc-shadow-button',
-    };
-
-    return backgrounds[tone.value] || '';
-  };
-
-  const getHoveredBackground = (): string => {
-    const backgrounds: Record<string, string> = {
-      neutral: 'mc-background-color-hover',
-      success: 'mc-background-color-success-pressed',
-      danger: 'mc-background-color-danger-hover',
-    };
-
-    return backgrounds[tone.value] || '';
-  };
-
-  const getDefaultBackground = (): string => {
-    const backgrounds: Record<string, string> = {
-      neutral: 'mc-background-color-base',
-      success: 'mc-background-color-brand-base',
-      danger: 'mc-background-color-danger-base',
-    };
-
-    return backgrounds[tone.value] || '';
-  };
-  // #endregion - Background Css Class
 
   const buttonBorderCssClass: ComputedRef<string> = computed(() => {
-    return classNames('mc-border mc-border-solid', {
-      'mc-border-transparent': variant.value === 'primary' || variant.value === 'tertiary',
-      'mc-border-white-50': (focused.value && variant.value === 'primary') || variant.value === 'tertiary',
-      'mc-border-color-base': variant.value === 'secondary' && tone.value === 'neutral',
-      'mc-border-color-brand-base': variant.value === 'secondary' && tone.value === 'success',
-      'mc-border-color-danger-base': variant.value === 'secondary' && tone.value === 'danger',
-    });
+    if (variant.value === 'secondary') {
+      const borderColor = SECONDARY_BORDER_CLASSES[tone.value] ?? '';
+
+      return `mc:border mc:border-solid ${borderColor}`;
+    }
+
+    if (variant.value === 'tertiary') {
+      return 'mc:border mc:border-solid mc:border-transparent';
+    }
+
+    // primary
+    if (focused.value) return 'mc:border mc:border-solid mc:border-white-50';
+
+    return 'mc:border mc:border-solid mc:border-transparent';
   });
 
-  const buttonProps: ComputedRef<Record<string, unknown>> = computed(() => {
-    return {
-      ...(disabled.value && { ariaDisabled: true }),
-      disabled: disabled.value,
-      autofocus: state.value === 'focus',
-      type: type.value,
-    };
+  // #endregion
+
+  const buttonClassses: ComputedRef<string> = computed(() => {
+    const base = `${defaultClasses.value} ${sizeClasses.value}`;
+
+    if (disabled.value) {
+      if (variant.value === 'primary') {
+        return `${base} mc-text-color-disabled mc:background-color-disabled !mc:shadow-none !mc:cursor-not-allowed mc:border-none`;
+      }
+
+      if (variant.value === 'secondary') {
+        return `${base} mc-text-color-disabled !mc:shadow-none !mc:cursor-not-allowed mc:border mc:border-solid mc:border-color-disabled`;
+      }
+
+      if (variant.value === 'tertiary') {
+        return `${base} mc-text-color-disabled !mc:shadow-none !mc:cursor-not-allowed mc:border-none`;
+      }
+    }
+
+    return `${base} ${buttonBackgroundCssClass.value} ${buttonTextCssClass.value} ${buttonBorderCssClass.value} ${transitionClasses}`;
   });
+
+  const buttonProps: ComputedRef<Record<string, unknown>> = computed(() => ({
+    ...(disabled.value && { ariaDisabled: true }),
+    disabled: disabled.value,
+    autofocus: state.value === 'focus',
+    type: type.value,
+  }));
 
   const handleClick = (evt: MouseEvent) => {
     if (disabled.value) {
       evt.stopPropagation();
-
       return;
     }
-
     emit('click', evt);
   };
 

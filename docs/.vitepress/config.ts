@@ -2,11 +2,8 @@
 (globalThis as Record<string, unknown>).__VUE_PROD_DEVTOOLS__ = false;
 
 import { defineConfig } from 'vitepress';
-
 import { fileURLToPath, URL } from 'url';
-
-import tailwindcss from 'tailwindcss';
-import autoprefixer from 'autoprefixer';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   title: 'Micro Core UI',
@@ -15,11 +12,7 @@ export default defineConfig({
   srcDir: './',
   outDir: '../dist-docs',
   vite: {
-    css: {
-      postcss: {
-        plugins: [tailwindcss(), autoprefixer()],
-      },
-    },
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('../../src', import.meta.url)),
@@ -31,24 +24,24 @@ export default defineConfig({
       provider: 'local',
     },
     nav: [
-      { text: 'Guide', link: '/guide/basics/installation' },
+      { text: 'Guide', link: '/documentation/guide/basics/installation' },
       {
         text: 'Components',
         link: '/documentation/components/accordion',
       },
     ],
     sidebar: {
-      '/guide/': [
+      '/documentation/guide/': [
         {
           text: 'Basics',
           items: [
             {
               text: 'Installation',
-              link: '/guide/basics/installation',
+              link: '/documentation/guide/basics/installation',
             },
             {
               text: 'Quick Start',
-              link: '/guide/basics/quick-start',
+              link: '/documentation/guide/basics/quick-start',
             },
           ],
         },
@@ -57,11 +50,11 @@ export default defineConfig({
           items: [
             {
               text: 'Component Creation',
-              link: '/guide/contributing/component-creation',
+              link: '/documentation/guide/contributing/component-creation',
             },
             {
               text: 'Component Documentation',
-              link: '/guide/contributing/component-documentation',
+              link: '/documentation/guide/contributing/component-documentation',
             },
           ],
         },
@@ -70,16 +63,16 @@ export default defineConfig({
           items: [
             {
               text: 'Documentation Deployment',
-              link: '/guide/development/documentation-deployment',
+              link: '/documentation/guide/development/documentation-deployment',
             },
           ],
         },
         {
           text: 'Changelog',
-          link: '/guide/changelog',
+          link: '/documentation/guide/changelog',
         },
       ],
-      '/documentation/': [
+      '/documentation/components/': [
         {
           text: 'Components',
           items: [
@@ -325,10 +318,6 @@ export default defineConfig({
             {
               text: 'Border Radius',
               link: '/documentation/utilities/border-radius',
-            },
-            {
-              text: 'Box Shadows',
-              link: '/documentation/utilities/box-shadows',
             },
             {
               text: 'Colors',

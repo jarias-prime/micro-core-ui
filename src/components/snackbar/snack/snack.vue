@@ -12,7 +12,7 @@
           :icon="snackIcon"
           :width="iconSize"
           :height="iconSize"
-          :class="[snackToneCssClass, 'mc-mr-size-spacing-3xs mc-flex-shrink-0']"
+          :class="[snackToneCssClass, 'mc-mr-size-spacing-3xs mc-shrink-0']"
         />
       </slot>
 

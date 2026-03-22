@@ -100,7 +100,7 @@ The Button component is a versatile and commonly used element in user interfaces
 </div>
 
 ```vue
-<mc-button disabled ize="small">Small</mc-button>
+<mc-button disabled size="small">Small</mc-button>
 <mc-button disabled>Medium/Default</mc-button>
 <mc-button disabled size="large">Large</mc-button>
 ```
@@ -134,7 +134,7 @@ The Button component is a versatile and commonly used element in user interfaces
       <Icon icon="ph:trash" />
       <span>Button</span>
     </mc-button>
-    <mc-button size="large" tone="success"variant="tertiary" hasIcon>
+    <mc-button size="large" tone="success" variant="tertiary" hasIcon>
       <Icon icon="ph:trash" />
       <span>Button</span>
     </mc-button>
@@ -190,10 +190,10 @@ The Button component is a versatile and commonly used element in user interfaces
     <mc-button size="small" tone="success" hasIcon>
       <Icon icon="ph:trash" />
     </mc-button>
-    <mc-button tone="success"  variant="secondary" hasIcon>
+    <mc-button tone="success" variant="secondary" hasIcon>
       <Icon icon="ph:trash" />
     </mc-button>
-    <mc-button size="large" tone="success"variant="tertiary" hasIcon>
+    <mc-button size="large" tone="success" variant="tertiary" hasIcon>
       <Icon icon="ph:trash" />
     </mc-button>
   </div>

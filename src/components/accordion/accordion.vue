@@ -1,26 +1,22 @@
 <template>
   <div
     id="accordion"
-    :class="[
-      'mc-bg-neutral-50',
-      { 'mc-rounded-border-radius-xl mc-border mc-border-solid mc-border-mushroom-200': props.bordered },
-    ]"
+    :class="['bg-neutral-50', { 'rounded-border-radius-xl border-mushroom-200 border border-solid': props.bordered }]"
   >
     <template v-for="(item, index) in props.accordionItems" :key="item.collapseId">
       <div
         :id="`accordion_item_${item.collapseId}`"
-        :class="{ 'mc-border-x-0 mc-border-b-0 mc-border-t mc-border-solid mc-border-mushroom-200': index !== 0 }"
+        :class="{ 'border-mushroom-200 border-x-0 border-t border-b-0 border-solid': index !== 0 }"
       >
         <div
           id="header"
           :class="[
-            'mc-flex mc-items-center mc-justify-between mc-px-size-spacing-xs mc-py-size-spacing-sm',
+            'px-size-spacing-xs py-size-spacing-sm flex items-center justify-between',
             {
-              'hover:mc-cursor-pointer': props.accordionTrigger === 'header',
+              'hover:cursor-pointer': props.accordionTrigger === 'header',
               'active:mc-background-color-pressed': clickedIndex === index && props.accordionTrigger === 'header',
-              'mc-rounded-t-border-radius-xl': clickedIndex === 0,
-              'mc-rounded-b-border-radius-xl':
-                clickedIndex === props.accordionItems.length - 1 && !collapsedState[index],
+              'rounded-t-border-radius-xl': clickedIndex === 0,
+              'rounded-b-border-radius-xl': clickedIndex === props.accordionItems.length - 1 && !collapsedState[index],
             },
           ]"
           @mousedown="setClickedIndex(index)"
@@ -28,9 +24,9 @@
           @mouseleave="clearIndex"
           @click="props.accordionTrigger === 'header' && toggleCollapse(index)"
         >
-          <div class="mc-flex mc-w-[95%] mc-flex-col">
-            <span class="mc-text-base mc-font-medium mc-leading-5 mc-text-mushroom-950">{{ item.title }}</span>
-            <span v-if="item.subtitle" class="mc-text-200 mc-font-normal mc-leading-5 mc-text-mushroom-600">
+          <div class="flex w-[95%] flex-col">
+            <span class="text-mushroom-950 text-base leading-5 font-medium">{{ item.title }}</span>
+            <span v-if="item.subtitle" class="text-mushroom-600 text-sm leading-5 font-normal">
               {{ item.subtitle }}
             </span>
           </div>
@@ -39,7 +35,7 @@
             variant="secondary"
             has-icon
             size="medium"
-            class="!mc-h-7 !mc-w-7 !mc-p-0"
+            class="!h-7 !w-7 !p-0"
             @click="toggleCollapse(index)"
           >
             <Icon :icon="collapsedState[index] ? 'ph:caret-up' : 'ph:caret-down'" width="16" height="16" />
@@ -47,7 +43,7 @@
           <Icon v-else :icon="collapsedState[index] ? 'ph:caret-up' : 'ph:caret-down'" width="16" height="16" />
         </div>
         <mc-collapsible v-model="collapsedState[index]">
-          <div class="mc-px-size-spacing-xs mc-pb-size-spacing-sm mc-text-mushroom-600">
+          <div class="px-size-spacing-xs pb-size-spacing-sm text-mushroom-600">
             <slot :name="item.collapseId" />
           </div>
         </mc-collapsible>

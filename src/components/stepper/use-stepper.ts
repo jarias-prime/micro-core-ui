@@ -17,7 +17,7 @@ export const useStepper = (props: StepperPropTypes) => {
       'mc-flex-row mc-mr-size-spacing-xs': props.variant === 'horizontal',
     });
 
-    const stepClass = classNames('mc-flex mc-flex-grow', {
+    const stepClass = classNames('mc-flex mc-grow', {
       'mc-flex-col': props.variant === 'vertical',
       'mc-flex-rows': props.variant === 'horizontal',
     });
