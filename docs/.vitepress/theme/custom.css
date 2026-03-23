@@ -23,6 +23,7 @@
 
 .VPNavBarSearch {
   .DocSearch {
+    max-height: 45px;
     background: #e2e8f0 !important;
     color: #171717 !important;
   }
