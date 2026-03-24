@@ -1,4 +1,5 @@
 ---
+layout: Default
 title: Installation
 outline: deep
 ---

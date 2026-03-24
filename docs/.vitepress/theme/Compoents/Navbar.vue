@@ -1,7 +1,7 @@
 <template>
   <nav
     :class="[
-      'mc:fixed mc:top-0 mc:z-10',
+      'mc:fixed mc:top-0 mc:z-100',
       'mc:block mc:items-center mc:justify-between mc:h-auto mc:w-full mc:px-4 mc:py-4',
       'mc:sm:flex',
       {
@@ -30,14 +30,14 @@
         <VPNavBarSearch />
         <Icon
           :class="[
-            'mc:cursor-pointer mc:text-2xl',
+            'mc:block mc:cursor-pointer mc:text-2xl',
             'mc:transition-all mc:duration-300 mc:ease-in-out',
             'mc:hover:text-indigo-400',
             'mc:active:scale-90',
             'mc:sm:hidden',
           ]"
           icon="line-md:menu"
-          @click="mainMenu = true"
+          @click="mobileSidePanel = true"
         />
       </div>
     </div>
@@ -95,7 +95,7 @@
     </ul>
   </nav>
 
-  <mc-sidepanel :is-open="mainMenu" @close="mainMenu = false" header-title="Documentations">
+  <mc-sidepanel :is-open="mobileSidePanel" @close="mobileSidePanel = false" header-title="Documentations">
     <div class="mc:grid mc:gap-2">
       <a 
         :class="[
@@ -131,11 +131,10 @@ import { Icon } from '@iconify/vue';
 
 import VPNavBarSearch from 'vitepress/dist/client/theme-default/components/VPNavBarSearch.vue';
 import McSidepanel from '@/components/sidepanel/sidepanel.vue';
-import McButton from "@/components/button/button.vue";
 
 import packageJSON from '../../../../package.json';
 
 const { frontmatter } = useData();
 
-const mainMenu = ref(false);
+const mobileSidePanel = ref(false);
 </script>
