@@ -28,19 +28,19 @@
             </div>
             <div id="sidepanel-subtitle" :class="sidepanelClasses.sidepanelHeaderSubtitleClasses">
               <slot name="subtitle">
-                <span class="mc-text-color-base">{{ headerSubtitle }}</span>
+                <span class="mc:text-color-base">{{ headerSubtitle }}</span>
               </slot>
             </div>
           </div>
-          <div v-else id="header-loaders" class="mc-w-full mc-flex mc-flex-col mc-gap-size-spacing-4xs">
-            <div class="mc-skeletal-loader mc-h-4 mc-w-[90%] mc-rounded-md"></div>
+          <div v-else id="header-loaders" class="mc:w-full mc:flex mc:flex-col mc:gap-size-spacing-4xs">
+            <div class="mc:skeletal-loader mc:h-4 mc:w-[90%] mc:rounded-md"></div>
             <div
               v-if="headerSubtitle || $slots.subtitle"
-              class="mc-skeletal-loader mc-h-8 mc-w-[95%] mc-rounded-md"
+              class="mc:skeletal-loader mc:h-8 mc:w-[95%] mc:rounded-md"
             ></div>
           </div>
 
-          <div class="mc-flex mc-items-center mc-gap-size-spacing-3xs">
+          <div class="mc:flex mc:items-center mc:gap-size-spacing-3xs">
             <Icon
               v-if="props.isExpandable"
               :class="sidepanelClasses.sidepanelHeaderIconClasses"

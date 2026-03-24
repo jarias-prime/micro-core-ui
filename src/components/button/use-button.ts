@@ -75,7 +75,7 @@ export const useButton = (props: ButtonPropTypes, emit: SetupContext<ButtonEmitT
     return `mc:font-medium ${map[size.value] ?? ''}`;
   });
 
-  const transitionClasses = 'mc:transition mc:duration-150 mc:ease-in-out hover:mc:shadow-md active:mc:scale-95';
+  const transitionClasses = 'mc:transition mc:duration-150 mc:ease-in-out mc:hover:shadow-md active:mc:scale-95';
 
   const buttonTextCssClass: ComputedRef<string> = computed(() => {
     if (variant.value === 'secondary' || variant.value === 'tertiary') {

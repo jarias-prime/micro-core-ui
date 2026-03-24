@@ -97,29 +97,29 @@ export const useStackingSidepanel = (
 
   const stackingSidepanelClasses = computed(() => {
     const sidepanelStackBackdropClasses =
-      'mc-fixed mc-left-0 mc-top-0 mc-z-[1010] mc-h-full mc-w-full mc-bg-mushroom-700/60';
+      'mc:fixed mc:left-0 mc:top-0 mc:z-[1010] mc:h-full mc:w-full mc:bg-mushroom-700/60';
 
     const sidepanelStackBaseClasses = classNames(
-      'mc-fixed mc-right-4 mc-top-1/2 mc-z-[1015] mc-flex mc-flex-row-reverse mc-gap-size-spacing-xs mc-transition-all mc-ease-[ease-in-out] mc-duration-[300ms]',
+      'mc:fixed mc:right-4 mc:top-1/2 mc:z-[1015] mc:flex mc:flex-row-reverse mc:gap-size-spacing-xs mc:transition-all mc:ease-[ease-in-out] mc:duration-[300ms]',
     );
 
     const sidepanelStackTransitionEnterActiveClasses = classNames(
-      'mc-transition-all mc-ease-[ease-in-out] mc-duration-[150ms]',
+      'mc:transition-all mc:ease-[ease-in-out] mc:duration-[150ms]',
     );
 
     const sidepanelStackTransitionLeaveActiveClasses = classNames(
-      'mc-transition-all mc-ease-[ease-in-out] mc-duration-[150ms]',
+      'mc:transition-all mc:ease-[ease-in-out] mc:duration-[150ms]',
     );
 
-    const sidepanelStackMoveClasses = classNames('mc-transition-all mc-ease-[ease-in-out] mc-duration-[300ms]');
+    const sidepanelStackMoveClasses = classNames('mc:transition-all mc:ease-[ease-in-out] mc:duration-[300ms]');
 
-    const sidepanelStackEnterFromClasses = classNames('mc-opacity-0', {
-      'mc-translate-x-1/2': activePanels.value.length <= 1,
+    const sidepanelStackEnterFromClasses = classNames('mc:opacity-0', {
+      'mc:translate-x-1/2': activePanels.value.length <= 1,
     });
 
-    const sidepanelStackLeaveToClasses = classNames('mc-opacity-0', {
-      'mc-translate-x-1/2': activePanels.value.length <= 0,
-      '-mc-translate-x-1/2': activePanels.value.length > 0,
+    const sidepanelStackLeaveToClasses = classNames('mc:opacity-0', {
+      'mc:translate-x-1/2': activePanels.value.length <= 0,
+      '-mc:translate-x-1/2': activePanels.value.length > 0,
     });
 
     return {

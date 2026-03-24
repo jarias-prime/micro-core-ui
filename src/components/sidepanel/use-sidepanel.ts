@@ -24,56 +24,56 @@ export const useSidepanel = (props: SidepanelPropTypes, emit: SetupContext<Sidep
 
   const sidepanelClasses: ComputedRef<SidepanelClasses> = computed(() => {
     const sidepanelBaseClasses = classNames(
-      'mc-right-4 mc-top-1/2 mc-z-[1015] mc-flex mc-h-full mc-min-h-[200px] mc-translate-y-[-50%] mc-flex-col mc-rounded-border-radius-xl mc-bg-white-50 mc-drop-shadow mc-transition-all mc-ease-[ease-in-out] mc-duration-[150ms]',
+      'mc:right-4 mc:top-1/2 mc:z-[1015] mc:flex mc:h-full mc:min-h-[200px] mc:translate-y-[-50%] mc:flex-col mc:rounded-border-radius-xl mc:bg-white-50 mc:drop-shadow mc:transition-all mc:ease-[ease-in-out] mc:duration-[150ms]',
       {
-        'mc-fixed': !isStacking.value,
-        'mc-w-[360px]': size.value === 'sm' && !isExpanded.value,
-        'mc-w-[420px]': size.value === 'md' && !isExpanded.value,
-        'mc-w-[480px]': size.value === 'lg' && !isExpanded.value,
-        '[@media(max-width:360px)]:mc-w-[calc(100vw-35px)]':
+        'mc:fixed': !isStacking.value,
+        'mc:w-[360px]': size.value === 'sm' && !isExpanded.value,
+        'mc:w-[420px]': size.value === 'md' && !isExpanded.value,
+        'mc:w-[480px]': size.value === 'lg' && !isExpanded.value,
+        '[@media(max-width:360px)]:mc:w-[calc(100vw-35px)]':
           size.value === 'sm' && !isExpanded.value && !isStacking.value,
-        '[@media(max-width:420px)]:mc-w-[calc(100vw-35px)]':
+        '[@media(max-width:420px)]:mc:w-[calc(100vw-35px)]':
           size.value === 'md' && !isExpanded.value && !isStacking.value,
-        '[@media(max-width:480px)]:mc-w-[calc(100vw-35px)]':
+        '[@media(max-width:480px)]:mc:w-[calc(100vw-35px)]':
           size.value === 'lg' && !isExpanded.value && !isStacking.value,
-        'mc-w-[calc(100vw-50px)]': isExpanded.value,
-        'mc-pointer-events-none': !isActivePanel.value && isStacking.value,
+        'mc:w-[calc(100vw-50px)]': isExpanded.value,
+        'mc:pointer-events-none': !isActivePanel.value && isStacking.value,
       },
     );
 
     const sidepanelHeaderClasses = classNames(
-      'mc-tw-min-h-12 mc-text-color-strong mc-flex mc-justify-between mc-border-0 mc-border-b mc-border-solid mc-border-mushroom-200 mc-p-4',
+      'mc:tw-min-h-12 mc:text-color-strong mc:flex mc:justify-between mc:border-0 mc:border-b mc:border-solid mc:border-mushroom-200 mc:p-4',
     );
 
-    const sidepanelHeaderTitleClasses = classNames('mc-subheading-xs');
+    const sidepanelHeaderTitleClasses = classNames('mc:subheading-xs');
 
-    const sidepanelHeaderSubtitleClasses = classNames('mc-text-200 mc-max-w-[95%]');
+    const sidepanelHeaderSubtitleClasses = classNames('mc:text-200 mc:max-w-[95%]');
 
-    const sidepanelHeaderIconClasses = classNames('mc-text-color-weak mc-h-5 mc-w-5 mc-cursor-pointer');
+    const sidepanelHeaderIconClasses = classNames('mc:text-color-weak mc:h-5 mc:w-5 mc:cursor-pointer');
 
-    const sidepanelContentClasses = classNames('mc-h-full mc-overflow-y-auto');
+    const sidepanelContentClasses = classNames('mc:h-full mc:overflow-y-auto');
 
     const sidepanelFooterClasses = classNames(
-      'mc-bottom-0 mc-left-0 mc-w-full mc-rounded-b-border-radius-xl mc-border-0 mc-border-solid mc-border-mushroom-200 mc-bg-white-50 ',
+      'mc:bottom-0 mc:left-0 mc:w-full mc:rounded-b-border-radius-xl mc:border-0 mc:border-solid mc:border-mushroom-200 mc:bg-white-50 ',
       {
-        'mc-py-3': !footerNoPadding.value,
-        'mc-border-t': !footerNoTopBorder.value,
+        'mc:py-3': !footerNoPadding.value,
+        'mc:border-t': !footerNoTopBorder.value,
       },
     );
 
     const sidepanelTransitionActiveClasses = classNames({
-      'mc-transition-all mc-duration-[150ms] mc-ease-[ease-in-out]': !isStacking.value,
+      'mc:transition-all mc:duration-[150ms] mc:ease-[ease-in-out]': !isStacking.value,
     });
 
-    const sidepanelTransitionHiddenClasses = classNames('mc-opacity-0', {
-      'mc-translate-x-full -mc-translate-y-2/4': !isStacking.value && position.value === 'right',
+    const sidepanelTransitionHiddenClasses = classNames('mc:opacity-0', {
+      'mc:translate-x-full -mc:translate-y-2/4': !isStacking.value && position.value === 'right',
     });
 
     const sidepanelTransitionVisibleClasses = classNames({
-      'mc-translate-x-0 -mc-translate-y-2/4': !isStacking.value && position.value === 'right',
+      'mc:translate-x-0 -mc:translate-y-2/4': !isStacking.value && position.value === 'right',
     });
     const backdropBaseClasses = classNames(
-      'mc-fixed mc-left-0 mc-top-0 mc-z-[1010] mc-h-full mc-w-full mc-bg-mushroom-700/60',
+      'mc:fixed mc:left-0 mc:top-0 mc:z-[1010] mc:h-full mc:w-full mc:bg-mushroom-700/60',
     );
 
     return {
