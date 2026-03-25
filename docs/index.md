@@ -21,7 +21,7 @@ layout: Home
         <a :class="[
             'mc:flex mc:gap-2 mc:items-center', 
             'mc:p-2 mc:cursor-pointer mc:rounded-full mc:bg-slate-200', 
-            'mc:transition-all mc:duration-300 mc:ease-in-out',
+            'mc:transition-all mc:duration-150 mc:ease-in-out',
             'mc:hover:bg-indigo-200',
             'mc:active:scale-90'
           ]"
@@ -34,7 +34,7 @@ layout: Home
            <Icon
             :class="[
               'mc:cursor-pointer mc:text-2xl',
-              'mc:transition-all mc:duration-300 mc:ease-in-out',
+              'mc:transition-all mc:duration-150 mc:ease-in-out',
               'mc:active:scale-90',
             ]"
             :icon="technology.icon"

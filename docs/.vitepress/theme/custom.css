@@ -58,7 +58,7 @@
   .search-actions {
     gap: 4px !important;
   }
- 
+
   .back-button {
     .vpi-arrow-left {
       height: 20px;
@@ -91,7 +91,6 @@
       width: 20px;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M20 5H9l-7 7 7 7h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2ZM18 9l-6 6M12 9l6 6'/%3E%3C/svg%3E");
     }
-
   }
 }
 
