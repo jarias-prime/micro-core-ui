@@ -74,10 +74,7 @@
 
                   <!-- Child items -->
                   <transition name="fade">
-                    <ul
-                      v-if="openGroups[item.link] && item.items && item.items.length > 0"
-                      class="mc:mt-2 mc:flex mc:flex-col"
-                    >
+                    <ul v-if="openGroups[item.link] && item.items && item.items.length > 0" class="mc:flex mc:flex-col">
                       <li v-for="child in item.items" :key="child.link">
                         <!-- Child header -->
                         <template v-if="child.items">
@@ -115,7 +112,7 @@
                         <transition name="fade">
                           <ul
                             v-if="openGroups[child.link] && child.items && child.items.length > 0"
-                            class="mc:mt-2 mc:flex mc:flex-col"
+                            class="mc:flex mc:flex-col"
                           >
                             <li v-for="grandchild in child.items" :key="grandchild.link">
                               <a
@@ -200,8 +197,8 @@ const toggleAll = () => {
 const sidebarLinksData = computed(() => {
   let groups = [];
 
-  if (currentRoute.value.includes('/documentation/components/')) {
-    groups = theme.value.sidebar['/documentation/components/'];
+  if (currentRoute.value.includes('/documentation/system-modules/')) {
+    groups = theme.value.sidebar['/documentation/system-modules/'];
   } else if (currentRoute.value.includes('/documentation/guide/')) {
     groups = theme.value.sidebar['/documentation/guide/'];
   }

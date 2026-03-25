@@ -72,150 +72,150 @@ export default defineConfig({
           link: '/documentation/guide/changelog',
         },
       ],
-      '/documentation/components/': [
+      '/documentation/system-modules/': [
         {
           text: 'Components',
           items: [
             {
               text: 'Accordion',
-              link: '/documentation/components/accordion',
+              link: '/documentation/system-modules/components/accordion',
             },
             {
               text: 'Attribute Filter',
-              link: '/documentation/components/attribute-filter',
+              link: '/documentation/system-modules/components/attribute-filter',
             },
             {
               text: 'Audit Trail',
-              link: '/documentation/components/audit-trail',
+              link: '/documentation/system-modules/components/audit-trail',
             },
             {
               text: 'Avatar',
-              link: '/documentation/components/avatar',
+              link: '/documentation/system-modules/components/avatar',
             },
             {
               text: 'Badge',
-              link: '/documentation/components/badge',
+              link: '/documentation/system-modules/components/badge',
             },
             {
               text: 'Banner',
-              link: '/documentation/components/banner',
+              link: '/documentation/system-modules/components/banner',
             },
             {
               text: 'Button',
-              link: '/documentation/components/button/button',
+              link: '/documentation/system-modules/components/button/button',
               items: [
                 {
                   text: 'Button Dropdown',
-                  link: '/documentation/components/button/button-dropdown',
+                  link: '/documentation/system-modules/components/button/button-dropdown',
                 },
               ],
             },
             {
               text: 'Calendar',
-              link: '/documentation/components/calendar',
+              link: '/documentation/system-modules/components/calendar',
               items: [
                 {
                   text: 'Calendar Cell',
-                  link: '/documentation/components/calendar-cell',
+                  link: '/documentation/system-modules/components/calendar-cell',
                 },
               ],
             },
 
             {
               text: 'Card',
-              link: '/documentation/components/card',
+              link: '/documentation/system-modules/components/card',
             },
             {
               text: 'Chips',
-              link: '/documentation/components/chips',
+              link: '/documentation/system-modules/components/chips',
             },
             {
               text: 'Collapsible',
-              link: '/documentation/components/collapsible',
+              link: '/documentation/system-modules/components/collapsible',
             },
             {
               text: 'Dropdown',
-              link: '/documentation/components/dropdown',
+              link: '/documentation/system-modules/components/dropdown',
             },
             {
               text: 'Empty State',
-              link: '/documentation/components/empty-state',
+              link: '/documentation/system-modules/components/empty-state',
             },
             {
               text: 'Filter',
-              link: '/documentation/components/filter',
+              link: '/documentation/system-modules/components/filter',
             },
             {
               text: 'Floating Action',
-              link: '/documentation/components/floating-action',
+              link: '/documentation/system-modules/components/floating-action',
             },
             {
               text: 'Icon',
-              link: '/documentation/components/icon',
+              link: '/documentation/system-modules/components/icon',
             },
             {
               text: 'List',
-              link: '/documentation/components/list',
+              link: '/documentation/system-modules/components/list',
             },
             {
               text: 'Lozenge',
-              link: '/documentation/components/lozenge',
+              link: '/documentation/system-modules/components/lozenge',
             },
             {
               text: 'Modal',
-              link: '/documentation/components/modal',
+              link: '/documentation/system-modules/components/modal',
             },
             {
               text: 'Progress Bar',
-              link: '/documentation/components/progress-bar',
+              link: '/documentation/system-modules/components/progress-bar',
             },
             {
               text: 'Popper',
-              link: '/documentation/components/popper',
+              link: '/documentation/system-modules/components/popper',
             },
             {
               text: 'Table',
-              link: '/documentation/components/table/table',
+              link: '/documentation/system-modules/components/table/table',
               items: [
                 {
                   text: 'Table Pagination',
-                  link: '/documentation/components/table/table-pagination',
+                  link: '/documentation/system-modules/components/table/table-pagination',
                 },
               ],
             },
             {
               text: 'Sidenav',
-              link: '/documentation/components/sidenav',
+              link: '/documentation/system-modules/components/sidenav',
             },
             {
               text: 'Sidepanel',
-              link: '/documentation/components/sidepanel/sidepanel',
+              link: '/documentation/system-modules/components/sidepanel/sidepanel',
               items: [
                 {
                   text: 'Stacking Sidepanel',
-                  link: '/documentation/components/sidepanel/stacking-sidepanel',
+                  link: '/documentation/system-modules/components/sidepanel/stacking-sidepanel',
                 },
               ],
             },
             {
               text: 'Snackbar',
-              link: '/documentation/components/snackbar',
+              link: '/documentation/system-modules/components/snackbar',
             },
             {
               text: 'Status',
-              link: '/documentation/components/status',
+              link: '/documentation/system-modules/components/status',
             },
             {
               text: 'Stepper',
-              link: '/documentation/components/stepper',
+              link: '/documentation/system-modules/components/stepper',
             },
             {
               text: 'Tabs',
-              link: '/documentation/components/tabs',
+              link: '/documentation/system-modules/components/tabs',
             },
             {
               text: 'Tooltip',
-              link: '/documentation/components/tooltip',
+              link: '/documentation/system-modules/components/tooltip',
             },
           ],
         },
@@ -224,83 +224,86 @@ export default defineConfig({
           items: [
             {
               text: 'Checkbox',
-              link: '/documentation/components/checkbox',
+              link: '/documentation/system-modules/components/checkbox',
             },
             {
               text: 'Date Picker',
-              link: '/documentation/components/date-picker/date-picker',
+              link: '/documentation/system-modules/components/date-picker/date-picker',
               items: [
                 {
                   text: 'Date Range Picker',
-                  link: '/documentation/components/date-picker/date-range-picker',
+                  link: '/documentation/system-modules/components/date-picker/date-range-picker',
                 },
                 {
                   text: 'Date Calendar Picker',
-                  link: '/documentation/components/date-picker/date-calendar-picker',
+                  link: '/documentation/system-modules/components/date-picker/date-calendar-picker',
                 },
                 {
                   text: 'Month Year Picker',
-                  link: '/documentation/components/date-picker/month-year-picker',
+                  link: '/documentation/system-modules/components/date-picker/month-year-picker',
                 },
               ],
             },
             {
               text: 'File Upload',
-              link: '/documentation/components/file-upload',
+              link: '/documentation/system-modules/components/file-upload',
             },
             {
               text: 'Input',
-              link: '/documentation/components/input/input',
+              link: '/documentation/system-modules/components/input/input',
               items: [
-                { text: 'Search Input', link: '/documentation/components/input/input-search' },
-                { text: 'Username Input', link: '/documentation/components/input/input-username' },
-                { text: 'Email Input', link: '/documentation/components/input/input-email' },
-                { text: 'Password Input', link: '/documentation/components/input/input-password' },
-                { text: 'URL Input', link: '/documentation/components/input/input-url' },
-                { text: 'Contact Number Input', link: '/documentation/components/input/input-contact-number' },
-                { text: 'Dropdown Input', link: '/documentation/components/input/input-dropdown' },
-                { text: 'Currency Input', link: '/documentation/components/input/input-currency' },
+                { text: 'Search Input', link: '/documentation/system-modules/components/input/input-search' },
+                { text: 'Username Input', link: '/documentation/system-modules/components/input/input-username' },
+                { text: 'Email Input', link: '/documentation/system-modules/components/input/input-email' },
+                { text: 'Password Input', link: '/documentation/system-modules/components/input/input-password' },
+                { text: 'URL Input', link: '/documentation/system-modules/components/input/input-url' },
+                {
+                  text: 'Contact Number Input',
+                  link: '/documentation/system-modules/components/input/input-contact-number',
+                },
+                { text: 'Dropdown Input', link: '/documentation/system-modules/components/input/input-dropdown' },
+                { text: 'Currency Input', link: '/documentation/system-modules/components/input/input-currency' },
               ],
             },
             {
               text: 'Radio',
-              link: '/documentation/components/radio/radio',
+              link: '/documentation/system-modules/components/radio/radio',
               items: [
                 {
                   text: 'Radio Grouped',
-                  link: '/documentation/components/radio/radio-grouped',
+                  link: '/documentation/system-modules/components/radio/radio-grouped',
                 },
               ],
             },
             {
               text: 'Select',
-              link: '/documentation/components/select/select',
+              link: '/documentation/system-modules/components/select/select',
               items: [
                 {
                   text: 'Multi Select',
-                  link: '/documentation/components/select/select-multiple',
+                  link: '/documentation/system-modules/components/select/select-multiple',
                 },
                 {
                   text: 'Ladderized Select',
-                  link: '/documentation/components/select/select-ladderized',
+                  link: '/documentation/system-modules/components/select/select-ladderized',
                 },
               ],
             },
             {
               text: 'Slider',
-              link: '/documentation/components/slider',
+              link: '/documentation/system-modules/components/slider',
             },
             {
               text: 'Switch',
-              link: '/documentation/components/switch',
+              link: '/documentation/system-modules/components/switch',
             },
             {
               text: 'Textarea',
-              link: '/documentation/components/textarea',
+              link: '/documentation/system-modules/components/textarea',
             },
             {
               text: 'Time Picker',
-              link: '/documentation/components/time-picker',
+              link: '/documentation/system-modules/components/time-picker',
             },
           ],
         },
@@ -309,51 +312,51 @@ export default defineConfig({
           items: [
             {
               text: 'Background Colors',
-              link: '/documentation/utilities/background-colors',
+              link: '/documentation/system-modules/utilities/background-colors',
             },
             {
               text: 'Border Colors',
-              link: '/documentation/utilities/border-colors',
+              link: '/documentation/system-modules/utilities/border-colors',
             },
             {
               text: 'Border Radius',
-              link: '/documentation/utilities/border-radius',
+              link: '/documentation/system-modules/utilities/border-radius',
             },
             {
               text: 'Colors',
-              link: '/documentation/utilities/colors',
+              link: '/documentation/system-modules/utilities/colors',
             },
             {
               text: 'Divide Colors',
-              link: '/documentation/utilities/divide-colors',
+              link: '/documentation/system-modules/utilities/divide-colors',
             },
             {
               text: 'Max Width',
-              link: '/documentation/utilities/max-width',
+              link: '/documentation/system-modules/utilities/max-width',
             },
             {
               text: 'Miscellaneous',
-              link: '/documentation/utilities/miscellaneous',
+              link: '/documentation/system-modules/utilities/miscellaneous',
             },
             {
               text: 'Skeletal Loader',
-              link: '/documentation/utilities/skeletal-loader',
+              link: '/documentation/system-modules/utilities/skeletal-loader',
             },
             {
               text: 'Spacing',
-              link: '/documentation/utilities/spacing',
+              link: '/documentation/system-modules/utilities/spacing',
             },
             {
               text: 'Text Colors',
-              link: '/documentation/utilities/text-colors',
+              link: '/documentation/system-modules/utilities/text-colors',
             },
             {
               text: 'Typography',
-              link: '/documentation/utilities/typography',
+              link: '/documentation/system-modules/utilities/typography',
             },
             {
               text: 'Typography Presets',
-              link: '/documentation/utilities/typography-presets',
+              link: '/documentation/system-modules/utilities/typography-presets',
             },
           ],
         },

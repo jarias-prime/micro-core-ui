@@ -62,6 +62,10 @@
             'mc:text-base mc:font-medium',
             'mc:transition-all mc:duration-150 mc:ease-in-out',
             'mc:hover:text-indigo-400',
+            {
+              'mc:text-indigo-400': currentRoute.includes('/documentation/guide/'),
+              'mc:text-black': !currentRoute.includes('/documentation/guide/') && frontmatter.layout !== 'Home',
+            },
           ]"
         >
           Guides
@@ -72,14 +76,19 @@
       </li>
       <li>
         <a
-          href="/documentation/components/accordion.html"
+          href="/documentation/system-modules/components/accordion.html"
           :class="[
             'mc:text-base mc:font-medium',
             'mc:transition-all mc:duration-150 mc:ease-in-out',
             'mc:hover:text-indigo-400',
+            {
+              'mc:text-indigo-400': currentRoute.includes('/documentation/system-modules/'),
+              'mc:text-black':
+                !currentRoute.includes('/documentation/system-modules/') && frontmatter.layout !== 'Home',
+            },
           ]"
         >
-          Components
+          System Modules
         </a>
       </li>
       <li>
@@ -102,6 +111,7 @@
   </nav>
 
   <mc-sidepanel :is-open="mobileSidePanel" @close="mobileSidePanel = false" header-title="Documentations">
+    <!-- Collapse / Expand -->
     <div class="mc:flex mc:justify-end mc:px-4 mc:pt-4 mc:pb-4">
       <mc-button variant="secondary" @click.stop="toggleAll">
         <span>{{ allCollapsed ? 'Expand All' : 'Collapse All' }}</span>
@@ -110,7 +120,7 @@
       </mc-button>
     </div>
 
-    <nav class="mc:flex mc:flex-col mc:gap-3 mc:h-[calc(100%-150px)] mc:px-4 mc:overflow-y-auto">
+    <nav class="mc:flex mc:flex-col mc:gap-3 mc:h-[calc(100%-85px)] mc:px-4 mc:overflow-y-auto">
       <div v-for="group in sidebarLinksData" :key="group.text">
         <!-- Group header -->
         <button
@@ -119,6 +129,11 @@
             'mc:border mc:border-slate-200',
             'mc:transition-all mc:duration-150 mc:ease-in-out',
             'mc:hover:bg-stone-50 mc:hover:text-indigo-700',
+            {
+              'mc:bg-slate-100 mc:text-indigo-500': currentRoute
+                .toLocaleLowerCase()
+                .includes(group.text.toLocaleLowerCase().replace(/\s+/g, '-')),
+            },
           ]"
           @click.stop="toggleGroup(group.text)"
         >
@@ -139,10 +154,10 @@
                     'mc:transition-all mc:duration-150 mc:ease-in-out',
                     'mc:hover:bg-stone-50 mc:hover:text-indigo-700',
                   ]"
-                  @click.stop="toggleGroup(item.link)"
+                  @click.stop="toggleGroup(item.text)"
                 >
                   <span>{{ item.text }}</span>
-                  <Icon icon="cuida:caret-down-outline" v-if="openGroups[item.link]" />
+                  <Icon icon="cuida:caret-down-outline" v-if="openGroups[item.text]" />
                   <Icon icon="cuida:caret-right-outline" v-else />
                 </button>
               </template>
@@ -152,10 +167,6 @@
                     'mc:block mc:w-full mc:p-2 mc:text-base mc:font-medium mc:rounded-lg',
                     'mc:transition-all mc:duration-150 mc:ease-in-out',
                     'mc:hover:bg-stone-50 mc:hover:text-indigo-700',
-                    {
-                      'mc:text-indigo-500': currentRoute.includes(item.link),
-                      'mc:text-stone-700': !currentRoute.includes(item.link),
-                    },
                   ]"
                   :href="item.link"
                   @click.stop="mobileSidePanel = false"
@@ -166,10 +177,7 @@
 
               <!-- Child items -->
               <transition name="fade">
-                <ul
-                  v-if="openGroups[item.link] && item.items && item.items.length > 0"
-                  class="mc:mt-2 mc:flex mc:flex-col"
-                >
+                <ul v-if="openGroups[item.text] && item.items && item.items.length > 0" class="mc:flex mc:flex-col">
                   <li v-for="child in item.items" :key="child.link">
                     <!-- Child header -->
                     <template v-if="child.items">
@@ -192,10 +200,6 @@
                           'mc:block mc:w-full mc:pl-4 mc:pr-2 mc:py-2 mc:text-sm mc:font-medium mc:rounded-lg',
                           'mc:transition-all mc:duration-150 mc:ease-in-out',
                           'mc:hover:bg-stone-50 mc:hover:text-indigo-700',
-                          {
-                            'mc:text-indigo-500': currentRoute.includes(item.link),
-                            'mc:text-stone-500': !currentRoute.includes(item.link),
-                          },
                         ]"
                         :href="child.link"
                         @click.stop="mobileSidePanel = false"
@@ -208,7 +212,7 @@
                     <transition name="fade">
                       <ul
                         v-if="openGroups[child.link] && child.items && child.items.length > 0"
-                        class="mc:mt-2 mc:flex mc:flex-col"
+                        class="mc:flex mc:flex-col"
                       >
                         <li v-for="grandchild in child.items" :key="grandchild.link">
                           <a
@@ -242,7 +246,7 @@
 
 <script lang="ts" setup>
 import { computed, reactive, ref } from 'vue';
-import { useData, useRoute, Content } from 'vitepress';
+import { useData, useRoute } from 'vitepress';
 
 import { Icon } from '@iconify/vue';
 
@@ -265,8 +269,10 @@ const allCollapsed = ref(false);
 const initGroups = (groups: any[]) => {
   groups.forEach((group) => {
     openGroups[group.text] = true;
+
     group.items?.forEach((item: any) => {
-      openGroups[item.link] = true;
+      openGroups[item.text] = true;
+
       item.items?.forEach((child: any) => {
         openGroups[child.link] = true;
       });
@@ -291,7 +297,7 @@ const sidebarLinksData = computed(() => {
 
   // remap top-level keys to friendly names
   const remap: Record<string, string> = {
-    '/documentation/components/': 'Components',
+    '/documentation/system-modules/': 'System Modules',
     '/documentation/guide/': 'Guide',
   };
 
