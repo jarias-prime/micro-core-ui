@@ -55,3 +55,4 @@ vite.config.ts.*
 
 # .d.ts files
 components.d.ts
+.vercel

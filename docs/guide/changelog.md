@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.1 (2026-04-23)
+
+### Updates (@jarias.prime)
+
+- Update Index
+- Remove Firebase
+
 ## 1.3.0 (2026-03-14)
 
 ### Updates (@jarias.prime)

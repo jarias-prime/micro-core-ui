@@ -66,15 +66,6 @@ export default defineConfig({
           ],
         },
         {
-          text: 'Development',
-          items: [
-            {
-              text: 'Documentation Deployment',
-              link: '/guide/development/documentation-deployment',
-            },
-          ],
-        },
-        {
           text: 'Changelog',
           link: '/guide/changelog',
         },
