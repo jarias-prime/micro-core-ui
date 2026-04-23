@@ -1,5 +1,7 @@
 import DefaultTheme from 'vitepress/theme';
 
+import { inject } from '@vercel/analytics';
+
 import pkg from '../../../package.json';
 
 import '../../../src/assets/styles/tailwind.css';
@@ -66,4 +68,9 @@ setLocalesOnChange();
 
 export default {
   extends: DefaultTheme,
+  enhanceApp() {
+    if (typeof window !== 'undefined') {
+      inject();
+    }
+  },
 };
